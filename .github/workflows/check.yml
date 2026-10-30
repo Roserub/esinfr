@@ -1,0 +1,36 @@
+name: Checks
+
+on:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 1"   # every Monday: catch links that died
+
+jobs:
+  data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node tools/check-data.js
+
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check every external link
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress --max-concurrency 8 --timeout 30 --max-retries 2
+            --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15"
+            --accept 200..=299,403,429
+            --exclude "localhost"
+            data/resources.js
+          fail: false
+          format: markdown
+          jobSummary: true
+      - name: Print report
+        run: cat lychee/out.md || true

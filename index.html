@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Esin FR · Doucement</title>
+  <meta name="description" content="A calm, free path to learn French from zero to C2, made for a Turkish speaker.">
+  <meta name="theme-color" content="#f6f1e9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1d1f24" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Esin FR">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-180.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip</a>
+  <header class="topbar">
+    <a class="brand" href="#/" aria-label="Home">
+      <img src="assets/icon.svg" alt="" width="28" height="28">
+      <span>Esin <b>FR</b></span>
+    </a>
+    <div class="topbar-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button data-lang="tr">TR</button><button data-lang="en">EN</button><button data-lang="fr">FR</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1"></main>
+
+  <nav class="tabbar" aria-label="Main">
+    <a href="#/" data-tab="home"><span class="ti">☀︎</span><span data-i18n="nav.home">Home</span></a>
+    <a href="#/path" data-tab="path"><span class="ti">↟</span><span data-i18n="nav.path">Path</span></a>
+    <a href="#/library" data-tab="library"><span class="ti">❏</span><span data-i18n="nav.library">Library</span></a>
+    <a href="#/cards" data-tab="cards"><span class="ti">◫</span><span data-i18n="nav.cards">Cards</span></a>
+    <a href="#/more" data-tab="more"><span class="ti">⋯</span><span data-i18n="nav.more">More</span></a>
+  </nav>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data/resources.js"></script>
+  <script src="data/path.js"></script>
+  <script src="data/decks.js"></script>
+  <script src="data/guide.js"></script>
+  <script src="assets/i18n.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
