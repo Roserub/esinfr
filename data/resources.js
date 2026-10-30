@@ -141,7 +141,7 @@
   R("sciet", "Science Étonnante", "https://www.youtube.com/@ScienceEtonnante", "video", "B2-C2", "lv", "academic", "free", "",
     "Clear science explanations by a physicist. Academic French in a friendly voice.",
     "Bir fizikçiden net bilim anlatımları. Samimi bir sesle akademik Fransızca.");
-  R("hugodecrypte", "HugoDécrypte", "https://www.youtube.com/@HugoDecrypte", "video", "B2-C1", "lv", "culture", "free", "",
+  R("hugodecrypte", "HugoDécrypte", yt("HugoDécrypte"), "video", "B2-C1", "lv", "culture", "free", "",
     "Daily news explained for young French people. Fast but very clear.",
     "Genç Fransızlar için günlük haber açıklamaları. Hızlı ama çok net.");
   R("brut", "Brut", yt("Brut France"), "video", "B1-C1", "lv", "culture", "free", "",
