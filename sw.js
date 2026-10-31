@@ -3,8 +3,8 @@ const CACHE = "esinfr-v1";
 const SHELL = [
   "./", "index.html", "manifest.webmanifest",
   "assets/style.css", "assets/app.js", "assets/i18n.js", "assets/icon.svg",
-  "data/resources.js", "data/path.js", "data/path-master.js", "data/decks.js", "data/decks-master.js",
-  "data/guide.js", "data/guide-master.js", "data/practice.js",
+  "data/resources.js", "data/resources-fr.js", "data/path.js", "data/path-master.js", "data/decks.js", "data/decks-master.js",
+  "data/guide.js", "data/guide-master.js", "data/guide-fr.js", "data/practice.js",
   "data/decks-more.js", "data/readings.js", "data/dialogues.js"
 ];
 self.addEventListener("install", e => {

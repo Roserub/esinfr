@@ -1,7 +1,7 @@
 /* Sanity checks for the data files. Run: node tools/check-data.js */
 const fs = require("fs"), vm = require("vm"), path = require("path");
 const ctx = { window: {} }; vm.createContext(ctx);
-for (const f of ["data/resources.js", "data/path.js", "data/decks.js", "data/guide.js", "data/guide-master.js", "data/decks-master.js", "data/path-master.js", "data/practice.js", "data/decks-more.js", "data/readings.js", "data/dialogues.js", "assets/i18n.js"])
+for (const f of ["data/resources.js", "data/resources-fr.js", "data/path.js", "data/decks.js", "data/guide.js", "data/guide-master.js", "data/guide-fr.js", "data/decks-master.js", "data/path-master.js", "data/practice.js", "data/decks-more.js", "data/readings.js", "data/dialogues.js", "assets/i18n.js"])
   vm.runInContext(fs.readFileSync(path.join(__dirname, "..", f), "utf8"), ctx, { filename: f });
 const { RESOURCES, PATH, DECKS, GUIDE, I18N } = ctx.window;
 const errors = [];
@@ -16,11 +16,21 @@ for (const r of RESOURCES) {
   if (!I18N.en["type." + r.type]) errors.push("unknown type " + r.type + " on " + r.id);
   for (const t of r.tracks) if (!I18N.en["track." + t]) errors.push("unknown track " + t + " on " + r.id);
 }
+for (const r of RESOURCES) {
+  if (!r.d.fr) errors.push(`resource ${r.id}: missing French description`);
+  if (r.note && !r.note.fr) errors.push(`resource ${r.id}: missing French note`);
+}
 for (const g of GUIDE) {
   for (const id of g.res || []) if (!ids.has(id)) errors.push(`guide ${g.id}: unknown resource ${id}`);
-  for (const k of ["en", "tr"]) if (!g[k]) errors.push(`guide ${g.id}: missing body ${k}`);
+  for (const k of ["en", "tr", "fr"]) if (!g[k]) errors.push(`guide ${g.id}: missing body ${k}`);
+  for (const k of ["en", "tr", "fr"]) if (g[k]) {
+    const tags = s => (g[k].match(new RegExp("<" + s + "[ >]", "g")) || []).length;
+    for (const tag of ["p", "ul", "ol", "li", "table", "tr", "h3"]) if (tags(tag) !== (g[k].match(new RegExp("</" + tag + ">", "g")) || []).length) errors.push(`guide ${g.id} (${k}): unbalanced <${tag}>`);
+  }
   for (const k of ["en", "tr", "fr"]) if (!g.t[k]) errors.push(`guide ${g.id}: missing title ${k}`);
 }
+for (const [i, m] of (ctx.window.MISTAKES || []).entries()) if (!m[4]) errors.push(`mistake ${i}: missing French explanation`);
+for (const lv of ["A1", "A2", "B1", "B2", "C1"]) if (!(ctx.window.GRAMMAR_ORDER_FR || {})[lv]) errors.push(`GRAMMAR_ORDER_FR missing ${lv}`);
 const PRACTICE = ["sounds", "numbers", "dictation", "listen", "conj", "gender", "mistakes", "speak"];
 const deckIds = new Set(DECKS.map(d => d.id)), guideIds = new Set(GUIDE.map(g => g.id)), stepIds = new Set();
 for (const lv of PATH) for (const s of lv.steps) {

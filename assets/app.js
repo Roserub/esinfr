@@ -44,7 +44,7 @@
     return s;
   }
   const loc = o => (o ? (o[lang()] || o.en || "") : "");
-  const desc = r => (lang() === "tr" ? r.d.tr : r.d.en);
+  const desc = r => r.d[lang()] || r.d.en;
   const ymd = d => { d = d || new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); };
   const today = () => Math.floor((Date.now() - new Date().getTimezoneOffset() * 60000) / 86400000);
   const levelIdx = lv => LEVELS.indexOf(lv);
@@ -277,7 +277,7 @@
     ${grammarChecklist(lv.id)}`;
   }
   function grammarChecklist(lv) {
-    const g = ((lang() === "tr" && window.GRAMMAR_ORDER_TR) || window.GRAMMAR_ORDER || {})[lv]; if (!g) return "";
+    const g = ((lang() === "tr" && window.GRAMMAR_ORDER_TR) || (lang() === "fr" && window.GRAMMAR_ORDER_FR) || window.GRAMMAR_ORDER || {})[lv]; if (!g) return "";
     const items = g.split(" · "), done = items.filter((x, i) => S.gram[lv + ":" + i]).length;
     return `<details class="card gram">
       <summary><b>🧩 ${esc(t("path.grammar", { lv }))}</b> <span class="muted small">${done}/${items.length}</span></summary>
@@ -300,7 +300,7 @@
       (!LIB.star || r.star) &&
       (!LIB.tr || r.help.includes("tr")) &&
       (!LIB.favs || S.fav[r.id]) &&
-      (!q || noAcc((r.name + " " + r.d.en + " " + r.d.tr + " " + t("type." + r.type) + " " + r.tracks.map(k => t("track." + k)).join(" ") + (r.note ? " " + loc(r.note) : "")).toLowerCase()).includes(noAcc(q)))
+      (!q || noAcc((r.name + " " + r.d.en + " " + r.d.tr + " " + (r.d.fr || "") + " " + t("type." + r.type) + " " + r.tracks.map(k => t("track." + k)).join(" ") + (r.note ? " " + loc(r.note) : "")).toLowerCase()).includes(noAcc(q)))
     );
   }
   function viewLibrary() {
@@ -440,14 +440,15 @@
       <p class="muted small">${esc(t("about.counts", { r: RES.length, c: DECKS.reduce((n, d) => n + d.cards.length, 0), s: PATH.reduce((n, l) => n + l.steps.length, 0), g: GUIDE.length }))}</p></section>`;
   }
 
+  const guideBody = g => lang() === "tr" ? g.tr : lang() === "fr" && g.fr ? g.fr : g.en;
   function viewGuide(id) {
     const g = GUIDE.find(x => x.id === id) || GUIDE[0];
-    const body = (lang() === "tr" ? g.tr : g.en).replace(/<(\/?)h3>/g, "<$1h2>");
+    const body = guideBody(g).replace(/<(\/?)h3>/g, "<$1h2>");
     const i = GUIDE.indexOf(g), prev = GUIDE[i - 1], next = GUIDE[i + 1];
     const res = (g.res || []).map(x => RES_BY_ID[x]).filter(Boolean);
     return `<a class="back" href="#/more">← ${esc(t("guide.back"))}</a>
       <article class="card guide"><h1>${g.icon} ${esc(loc(g.t))}</h1>
-        ${lang() === "fr" ? `<p class="muted small">${esc(t("guide.inEnglish"))}</p>` : ""}
+        ${lang() === "fr" && !g.fr ? `<p class="muted small">${esc(t("guide.inEnglish"))}</p>` : ""}
         ${body}</article>
       ${WIDGETS[g.widget] ? WIDGETS[g.widget]() : ""}
       ${res.length ? `<h2>${esc(t("guide.res"))}</h2><div class="res-list">${res.map(r => resCard(r, false)).join("")}</div>` : ""}
@@ -667,7 +668,7 @@
     },
     mistakes() {
       const m = pick(MISTAKES);
-      return { t: "choice", prompt: t("ex.mistakes.q"), options: shuffle([{ v: "w", label: plain(m[0]) }, { v: "r", label: plain(m[1]) }]), answer: "r", al: plain(m[1]), explain: lang() === "tr" ? m[3] : m[2], reveal: m[1] };
+      return { t: "choice", prompt: t("ex.mistakes.q"), options: shuffle([{ v: "w", label: plain(m[0]) }, { v: "r", label: plain(m[1]) }]), answer: "r", al: plain(m[1]), explain: lang() === "tr" ? m[3] : lang() === "fr" ? (m[4] || m[2]) : m[2], reveal: m[1] };
     },
     speak() {
       const c = pick(phrasePool(40));
@@ -1025,8 +1026,8 @@
     if (raw.length < 2) { out.innerHTML = `<p class="muted">${esc(t("search.hint"))}</p>`; return; }
     const qa = noAcc(raw.toLowerCase());
     const m = s => noAcc(String(s).toLowerCase()).includes(qa);
-    const res = RES.filter(r => m(r.name + " " + r.d.en + " " + r.d.tr + " " + (r.note ? r.note.en + " " + r.note.tr : ""))).slice(0, 20);
-    const guides = GUIDE.map(g => ({ g, txt: plain(lang() === "tr" ? g.tr : g.en) })).filter(x => m(loc(x.g.t) + " " + x.txt));
+    const res = RES.filter(r => m(r.name + " " + r.d.en + " " + r.d.tr + " " + (r.d.fr || "") + " " + (r.note ? r.note.en + " " + r.note.tr + " " + (r.note.fr || "") : ""))).slice(0, 20);
+    const guides = GUIDE.map(g => ({ g, txt: plain(guideBody(g)) })).filter(x => m(loc(x.g.t) + " " + x.txt));
     const cards = allDecks().flatMap(d => d.cards.map(c => ({ c, d }))).filter(x => m(x.c.fr + " " + x.c.tr + " " + x.c.en)).slice(0, 30);
     const steps = PATH.flatMap(l => l.steps.map(s => ({ l, s }))).filter(x => m(loc(x.s.t) + " " + loc(x.s.do))).slice(0, 10);
     const texts = READINGS.filter(r => m(r.t.fr + " " + loc(r.t) + " " + r.text)).map(readTile).concat(DIALOGUES.filter(d => m(d.t.fr + " " + loc(d.t) + " " + d.lines.map(l => l.fr).join(" "))).map(talkTile));

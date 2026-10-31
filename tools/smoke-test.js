@@ -31,13 +31,22 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
     const guides = await page.evaluate(() => window.GUIDE.map(g => "#/guide/" + g.id));
     for (const lang of ["tr", "en", "fr"]) {
       await page.click(`.lang-switch [data-lang=${lang}]`);
-      for (const r of ROUTES.concat(lang === "tr" ? guides : [])) {
+      for (const r of ROUTES.concat(lang !== "en" ? guides : [])) {
         await page.evaluate(h => { location.hash = h; }, r);
         await page.waitForTimeout(30);
         const over = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
         if (over > 1) problems.push(`${name} ${lang} ${r}: horizontal overflow ${over}px`);
         const raw = await page.evaluate(() => (document.querySelector("#main").innerText.match(/\b(ex|plan|pace|lib|path|home|search|ics|fw|drill|tense|prog|guide|rd|dg|cards)\.[a-zA-Z.]+/g) || []).join(" "));
         if (raw) problems.push(`${name} ${lang} ${r}: untranslated key ${raw}`);
+        if (lang === "fr" && r.startsWith("#/guide/") && await page.evaluate(() => document.querySelector("#main").innerText.includes(window.I18N.fr["guide.inEnglish"]))) problems.push(`${name} fr ${r}: guide page not in French`);
+      }
+      if (lang === "fr") {
+        await page.evaluate(() => { location.hash = "#/library"; });
+        await page.waitForTimeout(50);
+        const inFr = await page.evaluate(() => { const txt = document.querySelector("#main").innerText; return window.RESOURCES.some(r => txt.includes(r.d.fr)) && !window.RESOURCES.some(r => txt.includes(r.d.en)); });
+        if (!inFr) problems.push(`${name} fr: resource descriptions not in French`);
+        await page.evaluate(() => { location.hash = "#/guide/pron"; });
+        if (!(await page.evaluate(() => document.querySelector("#main").innerText.includes("Règle d'or")))) problems.push(`${name} fr: pronunciation guide not in French`);
       }
     }
     // Play every exercise once (10 answers each).
