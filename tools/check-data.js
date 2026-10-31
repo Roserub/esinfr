@@ -1,7 +1,7 @@
 /* Sanity checks for the data files. Run: node tools/check-data.js */
 const fs = require("fs"), vm = require("vm"), path = require("path");
 const ctx = { window: {} }; vm.createContext(ctx);
-for (const f of ["data/resources.js", "data/path.js", "data/decks.js", "data/guide.js", "assets/i18n.js"])
+for (const f of ["data/resources.js", "data/path.js", "data/decks.js", "data/guide.js", "data/guide-master.js", "data/decks-master.js", "data/path-master.js", "data/practice.js", "assets/i18n.js"])
   vm.runInContext(fs.readFileSync(path.join(__dirname, "..", f), "utf8"), ctx, { filename: f });
 const { RESOURCES, PATH, DECKS, GUIDE, I18N } = ctx.window;
 const errors = [];
@@ -9,13 +9,19 @@ const ids = new Set();
 for (const r of RESOURCES) {
   if (ids.has(r.id)) errors.push("duplicate resource id " + r.id);
   ids.add(r.id);
-  if (!/^https:\/\//.test(r.url)) errors.push("non-https url " + r.id);
+  if (!/^https?:\/\//.test(r.url)) errors.push("bad url " + r.id);
   if (!r.levels.length) errors.push("bad levels " + r.id);
   if (!r.d.en || !r.d.tr) errors.push("missing description " + r.id);
-  if (!["free", "freemium"].includes(r.cost)) errors.push("bad cost " + r.id);
+  if (!["free", "freemium", "paid", "lib"].includes(r.cost)) errors.push("bad cost " + r.id);
   if (!I18N.en["type." + r.type]) errors.push("unknown type " + r.type + " on " + r.id);
   for (const t of r.tracks) if (!I18N.en["track." + t]) errors.push("unknown track " + t + " on " + r.id);
 }
+for (const g of GUIDE) {
+  for (const id of g.res || []) if (!ids.has(id)) errors.push(`guide ${g.id}: unknown resource ${id}`);
+  for (const k of ["en", "tr"]) if (!g[k]) errors.push(`guide ${g.id}: missing body ${k}`);
+  for (const k of ["en", "tr", "fr"]) if (!g.t[k]) errors.push(`guide ${g.id}: missing title ${k}`);
+}
+const PRACTICE = ["sounds", "numbers", "dictation", "listen", "conj", "gender", "mistakes", "speak"];
 const deckIds = new Set(DECKS.map(d => d.id)), guideIds = new Set(GUIDE.map(g => g.id)), stepIds = new Set();
 for (const lv of PATH) for (const s of lv.steps) {
   if (stepIds.has(s.id)) errors.push("duplicate step " + s.id);
@@ -24,6 +30,7 @@ for (const lv of PATH) for (const s of lv.steps) {
   if (s.deck && !deckIds.has(s.deck)) errors.push(`step ${s.id}: unknown deck ${s.deck}`);
   if (s.guide && !guideIds.has(s.guide)) errors.push(`step ${s.id}: unknown guide ${s.guide}`);
   for (const k of ["en", "tr", "fr"]) if (!s.t[k]) errors.push(`step ${s.id}: missing title ${k}`);
+  if (s.practice && !PRACTICE.includes(s.practice)) errors.push(`step ${s.id}: unknown practice ${s.practice}`);
 }
 for (const d of DECKS) {
   const seen = new Set();
