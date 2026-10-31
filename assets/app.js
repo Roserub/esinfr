@@ -14,7 +14,7 @@
 
   /* ───────── State ───────── */
   const DEFAULT = () => ({ v: 1, lang: null, level: null, steps: {}, res: {}, fav: {}, cards: {}, days: {}, mine: [], newPerSession: 10, lib: {}, welcomed: false,
-    fw: {}, gram: {}, pace: { hpw: 5, dpw: 5 }, mins: {}, prac: {}, err: [], plan: {}, remind: "19:00" });
+    fw: {}, gram: {}, pace: { hpw: 5, dpw: 5 }, mins: {}, prac: {}, err: [], plan: {}, remind: "19:00", read: {}, talk: {} });
   let S = load();
   function fill(obj) {
     const s = Object.assign(DEFAULT(), obj);
@@ -273,6 +273,7 @@
     </section>
     ${p.done === p.total ? `<p class="ok-msg">${esc(t("home.allDone"))}</p>` : ""}
     <div class="steps">${steps}</div>
+    ${byLevel(READINGS, lv.id).length + byLevel(DIALOGUES, lv.id).length ? `<section class="card"><h2>📖 ${esc(t("path.readTalk"))}</h2><div class="read-list">${byLevel(READINGS, lv.id).map(readTile).join("")}${byLevel(DIALOGUES, lv.id).map(talkTile).join("")}</div></section>` : ""}
     ${grammarChecklist(lv.id)}`;
   }
   function grammarChecklist(lv) {
@@ -725,12 +726,120 @@
     const inp = $("#ex-in"); if (inp) inp.focus();
   }
 
+  /* ───────── Readings ───────── */
+  const READINGS = window.READINGS || [], DIALOGUES = window.DIALOGUES || [];
+  let RD = null; // { id, ans: {qi: oi}, start }
+  const byLevel = (arr, lv) => arr.filter(x => x.level === lv);
+  function levelGroups(arr, render) {
+    return LEVELS.filter(lv => byLevel(arr, lv).length).map(lv => `<h2 class="lv-h"><span class="badge lv">${lv}</span> ${esc(loc(PATH.find(l => l.id === lv).name))}</h2><div class="read-list">${byLevel(arr, lv).map(render).join("")}</div>`).join("");
+  }
+  const readTile = r => { const s = S.read[r.id]; return `<a class="card read-tile ${s ? "is-done" : ""}" href="#/read/${r.id}"><b>${esc(r.t.fr)}</b><small class="muted">${esc(lang() === "fr" ? r.t.en : loc(r.t))}</small>${s ? `<span class="ok-msg small">✓ ${s.score}/${s.total}</span>` : ""}</a>`; };
+  const talkTile = d => `<a class="card read-tile ${S.talk[d.id] ? "is-done" : ""}" href="#/talk/${d.id}"><b>${esc(d.t.fr)}</b><small class="muted">${esc(lang() === "fr" ? d.t.en : loc(d.t))}</small>${S.talk[d.id] ? `<span class="ok-msg small">✓</span>` : ""}</a>`;
+  function viewReadings() {
+    return `<a class="back" href="#/practice">← ${esc(t("ex.title"))}</a>
+      <h1>📖 ${esc(t("rd.title"))}</h1><p class="muted">${esc(t("rd.sub"))}</p>
+      ${levelGroups(READINGS, readTile)}`;
+  }
+  function viewReading(id) {
+    const r = READINGS.find(x => x.id === id); if (!r) return viewReadings();
+    if (!RD || RD.id !== id) RD = { id, ans: {}, start: Date.now() };
+    const paras = r.text.split(/\n\s*\n/);
+    const done = Object.keys(RD.ans).length === r.qs.length;
+    const score = r.qs.filter((q, i) => RD.ans[i] === q.a).length;
+    const i = READINGS.indexOf(r), next = READINGS[i + 1];
+    const g = lang() === "en" ? 2 : 1;
+    return `<a class="back" href="#/read">← ${esc(t("rd.title"))}</a>
+      <article class="card reading">
+        <p class="eyebrow">${r.level} · ${esc(lang() === "fr" ? r.t.en : loc(r.t))}</p>
+        <h1>${esc(r.t.fr)}</h1>
+        <div class="row"><button class="btn small ghost" data-speakall="${esc(r.id)}">🔊 ${esc(t("rd.listenAll"))}</button><button class="btn small ghost" data-action="stop-speak">⏹</button></div>
+        ${paras.map(p => `<p class="rd-p" lang="fr">${esc(p)} ${speakBtn(p)}</p>`).join("")}
+      </article>
+      <details class="card gloss"><summary><b>📚 ${esc(t("rd.gloss"))}</b> <span class="muted small">${r.gloss.length}</span></summary>
+        <ul class="word-list">${r.gloss.map(w => `<li><div class="w-fr">${esc(w[0])} ${speakBtn(w[0])}</div><div class="w-tr">${esc(w[g])}${lang() !== "en" ? ` <span class="muted">· ${esc(w[2])}</span>` : ""}</div></li>`).join("")}</ul>
+        <button class="btn small ghost" data-addgloss="${r.id}">+ ${esc(t("rd.addCards"))}</button>
+      </details>
+      <section class="card">
+        <h2>❓ ${esc(t("rd.questions"))}</h2>
+        ${r.qs.map((q, qi) => { const a = RD.ans[qi]; return `<div class="rq"><p><b>${qi + 1}.</b> ${esc(q.q)}</p><div class="opts">${q.o.map((o, oi) => `<button class="opt ${a !== undefined ? (oi === q.a ? "ok" : oi === a ? "bad" : "") : ""}" data-rq="${qi}:${oi}" ${a !== undefined ? "disabled" : ""}>${esc(o)}</button>`).join("")}</div></div>`; }).join("")}
+        ${done ? `<div class="fb ${score === r.qs.length ? "ok" : "bad"}"><p><b>${score} / ${r.qs.length}</b> · ${esc(t(score === r.qs.length ? "ex.end.great" : score >= r.qs.length / 2 ? "ex.end.good" : "rd.reread"))}</p>
+          <div class="row wrap"><button class="btn ghost" data-action="rd-again">↻ ${esc(t("ex.again"))}</button>${next ? `<a class="btn" href="#/read/${next.id}">${esc(next.t.fr)} →</a>` : ""}</div></div>` : ""}
+      </section>`;
+  }
+  function readAnswer(qi, oi) {
+    const r = READINGS.find(x => x.id === RD.id); if (!r || RD.ans[qi] !== undefined) return;
+    RD.ans[qi] = oi;
+    const d = ymd(), p = S.prac[d] || { n: 0, ok: 0 }; p.n++; if (oi === r.qs[qi].a) p.ok++; S.prac[d] = p;
+    if (Object.keys(RD.ans).length === r.qs.length) {
+      const score = r.qs.filter((q, i) => RD.ans[i] === q.a).length, prev = S.read[r.id];
+      S.read[r.id] = { score: Math.max(score, prev ? prev.score : 0), total: r.qs.length, d };
+      logMinutes(sessionMinutes(RD.start));
+    }
+    save(); const y = window.scrollY; render(); window.scrollTo(0, y);
+  }
+  function addGlossCards(id) {
+    const r = READINGS.find(x => x.id === id); if (!r) return;
+    let n = 0;
+    r.gloss.forEach(w => { if (!S.mine.some(c => c.fr === w[0])) { S.mine.push({ id: "mine:" + w[0] + ":" + Date.now().toString(36) + n, fr: w[0], tr: w[1], en: w[2], note: r.t.fr }); n++; } });
+    save(); toast(t("rd.added", { n }));
+  }
+
+  /* ───────── Dialogues ───────── */
+  let TK = null; // { id, role: false, shown: {} }
+  function viewDialogues() {
+    return `<a class="back" href="#/practice">← ${esc(t("ex.title"))}</a>
+      <h1>💬 ${esc(t("dg.title"))}</h1><p class="muted">${esc(t("dg.sub"))}</p>
+      ${levelGroups(DIALOGUES, talkTile)}`;
+  }
+  function viewDialogue(id) {
+    const d = DIALOGUES.find(x => x.id === id); if (!d) return viewDialogues();
+    if (!TK || TK.id !== id) TK = { id, role: false, trans: true, shown: {} };
+    const tr = l => lang() === "en" ? l.en : l.tr;
+    return `<a class="back" href="#/talk">← ${esc(t("dg.title"))}</a>
+      <h1>💬 ${esc(d.t.fr)}</h1>
+      <p class="muted">${d.level} · ${esc(lang() === "fr" ? d.t.en : loc(d.t))}</p>
+      <div class="row wrap dg-tools">
+        <button class="btn small" data-speakall="${esc(d.id)}">▶ ${esc(t("dg.playAll"))}</button>
+        <button class="btn small ghost" data-action="stop-speak">⏹</button>
+        ${chip("🌐 " + esc(t("dg.trans")), 'data-action="dg-trans"', TK.trans)}
+        ${chip("🎭 " + esc(t("dg.role", { r: d.roles[d.me] })), 'data-action="dg-role"', TK.role)}
+      </div>
+      ${TK.role ? `<p class="note">${esc(t("dg.roleHelp", { r: d.roles[d.me] }))}</p>` : ""}
+      <div class="dialogue">${d.lines.map((l, i) => {
+        const mine = l.who === d.me, hide = TK.role && mine && !TK.shown[i];
+        return `<div class="bubble ${mine ? "me" : ""}">
+          <span class="who">${esc(d.roles[l.who])}</span>
+          ${hide ? `<p class="hint">${esc(tr(l))}</p><button class="btn small ghost" data-reveal="${i}">👁 ${esc(t("dg.reveal"))}</button>`
+            : `<p class="fr" lang="fr">${esc(l.fr)} ${speakBtn(l.fr)}</p>${TK.trans ? `<p class="muted small">${esc(tr(l))}</p>` : ""}`}
+        </div>`;
+      }).join("")}</div>
+      <button class="btn ${S.talk[d.id] ? "ghost" : ""}" data-action="dg-done">${S.talk[d.id] ? "✓ " + esc(t("path.done")) : esc(t("path.markDone"))}</button>`;
+  }
+  let SEQ = 0;
+  function speakAll(id) {
+    if (!("speechSynthesis" in window)) return;
+    const r = READINGS.find(x => x.id === id), d = DIALOGUES.find(x => x.id === id);
+    const parts = r ? r.text.split(/\n\s*\n/).map(p => ({ text: p })) : d ? d.lines.filter((l, i) => !(TK && TK.role && l.who === d.me && !TK.shown[i])).map(l => ({ text: l.fr, alt: l.who !== d.lines[0].who })) : [];
+    speechSynthesis.cancel(); const run = ++SEQ;
+    const next = i => {
+      if (run !== SEQ || i >= parts.length) return;
+      const u = new SpeechSynthesisUtterance(parts[i].text);
+      u.lang = "fr-FR"; u.rate = 0.9; if (frVoice) u.voice = frVoice; if (parts[i].alt) u.pitch = 1.25;
+      u.onend = () => setTimeout(() => next(i + 1), d ? 500 : 250);
+      speechSynthesis.speak(u);
+    };
+    next(0);
+  }
+
   function viewPractice() {
     const d = S.prac[ymd()] || { n: 0, ok: 0 };
     const all = Object.values(S.prac).reduce((a, p) => ({ n: a.n + p.n, ok: a.ok + p.ok }), { n: 0, ok: 0 });
     return `<h1>${esc(t("ex.title"))}</h1>
       <p class="muted">${esc(t("ex.sub"))}</p>
-      <div class="ex-grid">${EX_KINDS.map(([k, ic]) => `<a class="card ex-tile" href="#/practice/${k}"><span class="ex-ic">${ic}</span><b>${esc(t("ex." + k))}</b><small>${esc(t("ex." + k + ".d"))}</small></a>`).join("")}</div>
+      <div class="ex-grid">
+        <a class="card ex-tile big" href="#/read"><span class="ex-ic">📖</span><b>${esc(t("rd.title"))}</b><small>${esc(t("rd.tile", { n: READINGS.length, d: Object.keys(S.read).length }))}</small></a>
+        <a class="card ex-tile big" href="#/talk"><span class="ex-ic">💬</span><b>${esc(t("dg.title"))}</b><small>${esc(t("dg.tile", { n: DIALOGUES.length, d: Object.keys(S.talk).length }))}</small></a>
+        ${EX_KINDS.map(([k, ic]) => `<a class="card ex-tile" href="#/practice/${k}"><span class="ex-ic">${ic}</span><b>${esc(t("ex." + k))}</b><small>${esc(t("ex." + k + ".d"))}</small></a>`).join("")}</div>
       <section class="card">
         <h2>📓 ${esc(t("ex.notebook"))}</h2>
         <p class="muted small">${esc(t("ex.notebookSub"))}</p>
@@ -920,10 +1029,12 @@
     const guides = GUIDE.map(g => ({ g, txt: plain(lang() === "tr" ? g.tr : g.en) })).filter(x => m(loc(x.g.t) + " " + x.txt));
     const cards = allDecks().flatMap(d => d.cards.map(c => ({ c, d }))).filter(x => m(x.c.fr + " " + x.c.tr + " " + x.c.en)).slice(0, 30);
     const steps = PATH.flatMap(l => l.steps.map(s => ({ l, s }))).filter(x => m(loc(x.s.t) + " " + loc(x.s.do))).slice(0, 10);
+    const texts = READINGS.filter(r => m(r.t.fr + " " + loc(r.t) + " " + r.text)).map(readTile).concat(DIALOGUES.filter(d => m(d.t.fr + " " + loc(d.t) + " " + d.lines.map(l => l.fr).join(" "))).map(talkTile));
     const snip = txt => { const i = noAcc(txt.toLowerCase()).indexOf(qa); return i < 0 ? "" : (i > 50 ? "…" : "") + txt.slice(Math.max(0, i - 50), i + 90) + "…"; };
-    const total = res.length + guides.length + cards.length + steps.length;
+    const total = res.length + guides.length + cards.length + steps.length + texts.length;
     out.innerHTML = !total ? `<p class="muted">${esc(t("search.none"))}</p>` : `
       ${steps.length ? `<h2>↟ ${esc(t("nav.path"))}</h2><ul class="s-list">${steps.map(x => `<li><a href="#/path/${x.l.id}?step=${x.s.id}"><b>${x.l.id}</b> · ${esc(loc(x.s.t))}</a></li>`).join("")}</ul>` : ""}
+      ${texts.length ? `<h2>📖 ${esc(t("rd.title"))} · ${esc(t("dg.title"))}</h2><div class="read-list">${texts.join("")}</div>` : ""}
       ${guides.length ? `<h2>📚 ${esc(t("more.guide"))}</h2><ul class="s-list">${guides.map(x => `<li><a href="#/guide/${x.g.id}">${x.g.icon} ${esc(loc(x.g.t))}</a><p class="muted small">${esc(snip(x.txt))}</p></li>`).join("")}</ul>` : ""}
       ${cards.length ? `<h2>🃏 ${esc(t("nav.cards"))}</h2><ul class="word-list">${cards.map(x => `<li><div class="w-fr">${esc(x.c.fr)} ${speakBtn(x.c.fr)}</div><div class="w-tr">${esc(x.c.tr)} <span class="muted">· ${esc(x.c.en)}</span></div><a class="small" href="#/cards/${x.d.id}/list">${esc(loc(x.d.name) || t("cards.mine"))}</a></li>`).join("")}</ul>` : ""}
       ${res.length ? `<h2>❏ ${esc(t("nav.library"))}</h2><div class="res-list">${res.map(r => resCard(r, true)).join("")}</div>` : ""}`;
@@ -966,7 +1077,7 @@
     $$("[data-i18n-label]").forEach(el => { el.setAttribute("aria-label", t(el.dataset.i18nLabel)); });
     const { parts, params } = route();
     const top = parts[0] || "home";
-    const tab = { home: "home", path: "path", practice: "practice", library: "library", cards: "cards", more: "more", guide: "more", placement: "more", progress: "more", plan: "home", search: "more" }[top] || "home";
+    const tab = { home: "home", path: "path", practice: "practice", read: "practice", talk: "practice", library: "library", cards: "cards", more: "more", guide: "more", placement: "more", progress: "more", plan: "home", search: "more" }[top] || "home";
     $$(".tabbar a").forEach(a => a.classList.toggle("on", a.dataset.tab === tab));
     let html;
     switch (top) {
@@ -981,6 +1092,8 @@
       case "practice": html = parts[1] ? viewExercise(parts[1]) : viewPractice(); break;
       case "plan": html = viewPlan(); break;
       case "search": html = viewSearch(params.get("q")); break;
+      case "read": html = parts[1] ? viewReading(parts[1]) : viewReadings(); break;
+      case "talk": html = parts[1] ? viewDialogue(parts[1]) : viewDialogues(); break;
       default: html = viewHome();
     }
     main.innerHTML = `<div class="view ${raw !== lastRendered ? "anim" : ""}">${html}</div>`;
@@ -996,6 +1109,9 @@
     const top = route().parts[0] || "home";
     if (top !== "cards") SESSION = null;
     if (EX && (top !== "practice" || EX.i >= EX.items.length)) EX = null;
+    if (RD && route().parts[1] !== RD.id) RD = null;
+    if (TK && route().parts[1] !== TK.id) TK = null;
+    SEQ++; if ("speechSynthesis" in window) speechSynthesis.cancel();
     render();
     if (top !== lastTop || !route().params.get("step")) window.scrollTo(0, 0);
     lastTop = top;
@@ -1009,6 +1125,10 @@
     if (d.lang) { S.lang = d.lang; save(); render(); return; }
     if (d.speak) { speak(d.speak, d.slow); return; }
     if (d.ans !== undefined) { exAnswer(d.ans); return; }
+    if (d.rq) { const [qi, oi] = d.rq.split(":").map(Number); readAnswer(qi, oi); return; }
+    if (d.speakall) { speakAll(d.speakall); return; }
+    if (d.addgloss) { addGlossCards(d.addgloss); return; }
+    if (d.reveal !== undefined) { TK.shown[d.reveal] = 1; const l = DIALOGUES.find(x => x.id === TK.id).lines[+d.reveal]; const y = window.scrollY; render(); window.scrollTo(0, y); speak(l.fr); return; }
     if (d.ins) { const i = $("#ex-in"); if (i) { const a = i.selectionStart ?? i.value.length, b = i.selectionEnd ?? a; i.value = i.value.slice(0, a) + d.ins + i.value.slice(b); i.focus(); i.setSelectionRange(a + d.ins.length, a + d.ins.length); } return; }
     if (d.addmin) { logMinutes(+d.addmin); toast(t("toast.logged", { m: d.addmin })); render(); return; }
     if (d.delerr) { S.err = S.err.filter(x => x.id !== d.delerr); save(); render(); return; }
@@ -1042,6 +1162,11 @@
     switch (d.action) {
       case "flip": SESSION.flipped = true; render(); break;
       case "ex-next": exNext(); break;
+      case "stop-speak": SEQ++; if ("speechSynthesis" in window) speechSynthesis.cancel(); break;
+      case "rd-again": RD = null; render(); break;
+      case "dg-trans": TK.trans = !TK.trans; render(); break;
+      case "dg-role": TK.role = !TK.role; TK.shown = {}; render(); break;
+      case "dg-done": { const id = TK.id; if (S.talk[id]) delete S.talk[id]; else { S.talk[id] = ymd(); practised(); toast(t("toast.done")); } save(); render(); break; }
       case "ex-again": startEx(EX ? EX.kind : route().parts[1]); render(); { const it = EX.items[0]; if (it && it.say && !it.sayAfter && it.t !== "speak") speak(it.say); } break;
       case "mic": micListen(el); break;
       case "err-clear": if (confirm(t("ex.clearConfirm"))) { S.err = []; save(); render(); } break;

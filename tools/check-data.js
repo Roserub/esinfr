@@ -1,7 +1,7 @@
 /* Sanity checks for the data files. Run: node tools/check-data.js */
 const fs = require("fs"), vm = require("vm"), path = require("path");
 const ctx = { window: {} }; vm.createContext(ctx);
-for (const f of ["data/resources.js", "data/path.js", "data/decks.js", "data/guide.js", "data/guide-master.js", "data/decks-master.js", "data/path-master.js", "data/practice.js", "assets/i18n.js"])
+for (const f of ["data/resources.js", "data/path.js", "data/decks.js", "data/guide.js", "data/guide-master.js", "data/decks-master.js", "data/path-master.js", "data/practice.js", "data/decks-more.js", "data/readings.js", "data/dialogues.js", "assets/i18n.js"])
   vm.runInContext(fs.readFileSync(path.join(__dirname, "..", f), "utf8"), ctx, { filename: f });
 const { RESOURCES, PATH, DECKS, GUIDE, I18N } = ctx.window;
 const errors = [];
@@ -41,7 +41,20 @@ for (const d of DECKS) {
   }
 }
 for (const k of Object.keys(I18N.en)) for (const l of ["tr", "fr"]) if (!(k in I18N[l])) errors.push(`i18n ${l} missing ${k}`);
+const { READINGS, DIALOGUES } = ctx.window, textIds = new Set();
+for (const r of READINGS) {
+  if (textIds.has(r.id)) errors.push("duplicate reading " + r.id); textIds.add(r.id);
+  if (!["A1", "A2", "B1", "B2", "C1", "C2"].includes(r.level)) errors.push("reading level " + r.id);
+  for (const k of ["fr", "tr", "en"]) if (!r.t[k]) errors.push(`reading ${r.id}: missing title ${k}`);
+  for (const g of r.gloss) if (g.length !== 3 || g.some(x => !x)) errors.push(`reading ${r.id}: bad glossary line ${g.join("|")}`);
+  r.qs.forEach((q, i) => { if (!(q.a >= 0 && q.a < q.o.length)) errors.push(`reading ${r.id}: question ${i + 1} has no valid answer`); });
+}
+for (const d of DIALOGUES) {
+  if (textIds.has(d.id)) errors.push("duplicate dialogue " + d.id); textIds.add(d.id);
+  if (!d.roles[d.me]) errors.push(`dialogue ${d.id}: unknown role ${d.me}`);
+  for (const l of d.lines) if (!d.roles[l.who] || !l.fr || !l.tr || !l.en) errors.push(`dialogue ${d.id}: bad line ${l.fr}`);
+}
 const cards = DECKS.reduce((n, d) => n + d.cards.length, 0);
-console.log(`${RESOURCES.length} resources, ${stepIds.size} steps, ${DECKS.length} decks / ${cards} cards, ${GUIDE.length} guide sections`);
+console.log(`${READINGS.length} readings, ${DIALOGUES.length} dialogues, ${RESOURCES.length} resources, ${stepIds.size} steps, ${DECKS.length} decks / ${cards} cards, ${GUIDE.length} guide sections`);
 if (errors.length) { console.error(errors.join("\n")); process.exit(1); }
 console.log("OK");

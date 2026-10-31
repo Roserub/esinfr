@@ -181,6 +181,12 @@ window.I18N = {
 
 /* Strings for the master-list features: practice, weekly plan, search, pace, widgets. */
 Object.assign(window.I18N.tr, {
+  "rd.title": "Okumalar", "rd.sub": "Bu site için yazılmış kısa metinler, A1'den C1'e: sesli, sözlükçeli ve sorulu.", "rd.tile": "{n} metin, A1–C1 · {d} tamamlandı",
+  "rd.listenAll": "Tümünü dinle", "rd.gloss": "Sözlükçe", "rd.addCards": "Bu kelimeleri kartlarıma ekle", "rd.added": "{n} kelime kartlarına eklendi ✓",
+  "rd.questions": "Anladın mı?", "rd.reread": "Metni bir kez daha dinle, sonra tekrar dene. Acele yok 🌿",
+  "dg.title": "Diyaloglar", "dg.sub": "Gerçek hayattan sahneler: dinle, oku, sonra rolünü sesli oyna.", "dg.tile": "{n} sahne, A1–B2 · {d} tamamlandı",
+  "dg.playAll": "Hepsini oynat", "dg.trans": "Çeviri", "dg.role": "Rol: {r}", "dg.roleHelp": "Sen {r}'sin: çeviriyi oku, Fransızcasını sesli söyle, sonra 👁 ile kontrol et.", "dg.reveal": "Göster",
+  "path.readTalk": "Bu seviyede okumalar ve diyaloglar",
   "a11y.progress": "İlerleme",
   "cards.capped": "Bugün en eski {n} kart yeter; geri kalanı bekleyebilir. Sorun değil 🌿",
   "nav.practice": "Alıştırma", "lib.top": "En iyi", "home.startHere": "Buradan başla", "home.logTime": "Başka yerde çalıştım:",
@@ -228,6 +234,12 @@ Object.assign(window.I18N.tr, {
   "search.none": "Sonuç yok.", "toast.logged": "+{m} dakika kaydedildi ✓"
 });
 Object.assign(window.I18N.en, {
+  "rd.title": "Readings", "rd.sub": "Short texts written for this site, A1 to C1: with audio, a glossary and questions.", "rd.tile": "{n} texts, A1–C1 · {d} done",
+  "rd.listenAll": "Listen to all", "rd.gloss": "Glossary", "rd.addCards": "Add these words to my cards", "rd.added": "{n} words added to your cards ✓",
+  "rd.questions": "Did you understand?", "rd.reread": "Listen to the text once more, then try again. No rush 🌿",
+  "dg.title": "Dialogues", "dg.sub": "Real-life scenes: listen, read, then play your part out loud.", "dg.tile": "{n} scenes, A1–B2 · {d} done",
+  "dg.playAll": "Play all", "dg.trans": "Translation", "dg.role": "Role: {r}", "dg.roleHelp": "You are {r}: read the translation, say the French out loud, then check with 👁.", "dg.reveal": "Show",
+  "path.readTalk": "Readings and dialogues at this level",
   "a11y.progress": "Progress",
   "cards.capped": "Today the {n} oldest cards are enough; the rest can wait. That's fine 🌿",
   "nav.practice": "Practice", "lib.top": "Top pick", "home.startHere": "Start here", "home.logTime": "I studied elsewhere:",
@@ -275,6 +287,12 @@ Object.assign(window.I18N.en, {
   "search.none": "No results.", "toast.logged": "+{m} minutes logged ✓"
 });
 Object.assign(window.I18N.fr, {
+  "rd.title": "Lectures", "rd.sub": "De courts textes écrits pour ce site, de A1 à C1 : avec audio, glossaire et questions.", "rd.tile": "{n} textes, A1–C1 · {d} faits",
+  "rd.listenAll": "Tout écouter", "rd.gloss": "Glossaire", "rd.addCards": "Ajouter ces mots à mes cartes", "rd.added": "{n} mots ajoutés à tes cartes ✓",
+  "rd.questions": "As-tu compris ?", "rd.reread": "Réécoute le texte une fois, puis réessaie. Rien ne presse 🌿",
+  "dg.title": "Dialogues", "dg.sub": "Des scènes de la vraie vie : écoute, lis, puis joue ton rôle à voix haute.", "dg.tile": "{n} scènes, A1–B2 · {d} faites",
+  "dg.playAll": "Tout jouer", "dg.trans": "Traduction", "dg.role": "Rôle : {r}", "dg.roleHelp": "Tu es {r} : lis la traduction, dis le français à voix haute, puis vérifie avec 👁.", "dg.reveal": "Afficher",
+  "path.readTalk": "Lectures et dialogues de ce niveau",
   "a11y.progress": "Progression",
   "cards.capped": "Aujourd'hui, les {n} plus anciennes suffisent ; le reste peut attendre. C'est normal 🌿",
   "nav.practice": "Exercices", "lib.top": "Coup de cœur", "home.startHere": "Commencer ici", "home.logTime": "J'ai étudié ailleurs :",
