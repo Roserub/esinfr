@@ -14,7 +14,7 @@ const server = http.createServer((req, res) => {
 });
 
 const ROUTES = ["#/", "#/path", "#/path/A0", "#/path/A2", "#/path/B1", "#/practice", "#/library", "#/cards", "#/cards/survival", "#/cards/falsefriends/list",
-  "#/more", "#/plan", "#/search?q=rendez", "#/placement", "#/progress", "#/practice/notebook"];
+  "#/more", "#/plan", "#/search?q=rendez", "#/placement", "#/progress", "#/practice/notebook", "#/read", "#/read/r-seance", "#/talk", "#/talk/d-kine", "#/path/C1"];
 const EXERCISES = ["sounds", "numbers", "listen", "dictation", "conj", "gender", "mistakes", "speak"];
 const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 1180 }, mac: { width: 1440, height: 900 } };
 
@@ -31,13 +31,22 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
     const guides = await page.evaluate(() => window.GUIDE.map(g => "#/guide/" + g.id));
     for (const lang of ["tr", "en", "fr"]) {
       await page.click(`.lang-switch [data-lang=${lang}]`);
-      for (const r of ROUTES.concat(lang === "tr" ? guides : [])) {
+      for (const r of ROUTES.concat(lang !== "en" ? guides : [])) {
         await page.evaluate(h => { location.hash = h; }, r);
         await page.waitForTimeout(30);
         const over = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
         if (over > 1) problems.push(`${name} ${lang} ${r}: horizontal overflow ${over}px`);
-        const raw = await page.evaluate(() => (document.querySelector("#main").innerText.match(/\b(ex|plan|pace|lib|path|home|search|ics|fw|drill|tense|prog|guide)\.[a-zA-Z.]+/g) || []).join(" "));
+        const raw = await page.evaluate(() => (document.querySelector("#main").innerText.match(/\b(ex|plan|pace|lib|path|home|search|ics|fw|drill|tense|prog|guide|rd|dg|cards)\.[a-zA-Z.]+/g) || []).join(" "));
         if (raw) problems.push(`${name} ${lang} ${r}: untranslated key ${raw}`);
+        if (lang === "fr" && r.startsWith("#/guide/") && await page.evaluate(() => document.querySelector("#main").innerText.includes(window.I18N.fr["guide.inEnglish"]))) problems.push(`${name} fr ${r}: guide page not in French`);
+      }
+      if (lang === "fr") {
+        await page.evaluate(() => { location.hash = "#/library"; });
+        await page.waitForTimeout(50);
+        const inFr = await page.evaluate(() => { const txt = document.querySelector("#main").innerText; return window.RESOURCES.some(r => txt.includes(r.d.fr)) && !window.RESOURCES.some(r => txt.includes(r.d.en)); });
+        if (!inFr) problems.push(`${name} fr: resource descriptions not in French`);
+        await page.evaluate(() => { location.hash = "#/guide/pron"; });
+        if (!(await page.evaluate(() => document.querySelector("#main").innerText.includes("Règle d'or")))) problems.push(`${name} fr: pronunciation guide not in French`);
       }
     }
     // Play every exercise once (10 answers each).
@@ -52,6 +61,17 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
       }
       if (!(await page.$(".ex-end"))) problems.push(`${name}: exercise ${ex} did not reach the end screen`);
     }
+    // Reading: answer every question, the score must be saved.
+    await page.evaluate(() => { location.hash = "#/read/r-cafe"; });
+    for (let i = 0; i < 6; i++) { const o = await page.$(".rq .opt:not([disabled])"); if (!o) break; await o.click(); }
+    if (!(await page.evaluate(() => !!JSON.parse(localStorage.getItem("esinfr.v1")).read["r-cafe"]))) problems.push(`${name}: reading score not saved`);
+    // Dialogue: role-play hides my lines, reveal shows one.
+    await page.evaluate(() => { location.hash = "#/talk/d-boulangerie"; });
+    await page.click("[data-action=dg-role]");
+    const hidden = await page.$$eval("[data-reveal]", els => els.length);
+    if (hidden < 3) problems.push(`${name}: role-play hides only ${hidden} lines`);
+    await page.click("[data-reveal]");
+    if ((await page.$$eval("[data-reveal]", els => els.length)) !== hidden - 1) problems.push(`${name}: reveal did not work`);
     // Mistakes review empties the notebook when answered right (choice items only: click the right option).
     await page.evaluate(() => { location.hash = "#/practice/notebook"; });
     if (!(await page.$("[data-delerr]"))) problems.push(`${name}: notebook is empty after wrong answers`);
