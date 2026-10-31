@@ -539,7 +539,7 @@
     "~40 audio tracks where a teacher makes you BUILD sentences from minute one. The fastest way to start speaking: weeks 1–4, beside your main course.",
     "Bir öğretmenin ilk dakikadan cümle KURDURDUĞU ~40 ses kaydı. Konuşmaya başlamanın en hızlı yolu: ana kursunla birlikte ilk 1–4 hafta.",
     N("Free app (works offline) on iPhone and Android. French is an 'Introduction' only.", "Ücretsiz uygulama (çevrimdışı çalışır), iPhone ve Android. Fransızca sadece 'Giriş' seviyesinde.", STAR));
-  R("voisins12bis", "RFI · Les voisins du 12 bis", "https://savoirs.rfi.fr/fr/apprendre-enseigner/langue-francaise/les-voisins-du-12-bis-le-podcast-en-francais-anglais", "podcast", "A0-A1", "lv", "core", "free", "en",
+  R("voisins12bis", "RFI · Les voisins du 12 bis", "https://francaisfacile.rfi.fr/fr/podcasts/les-voisins-du-12-bis-en-fran%C3%A7ais-anglais/", "podcast", "A0-A1", "lv", "core", "free", "en",
     "A bilingual French/English audio sitcom (13 episodes). The ideal very first listening.",
     "İki dilli (Fransızca/İngilizce) sesli komedi dizisi (13 bölüm). En ideal ilk dinleme.",
     N("If the link moved, search the title on francaisfacile.rfi.fr.", "Bağlantı değiştiyse başlığı francaisfacile.rfi.fr'de ara.", STAR));
@@ -1004,7 +1004,7 @@
   /* Corrections and top picks from the master list */
   const PATCH = {
     "tv5": { url: "https://apprendre.tv5monde.com/en/collection-all", levels: L.slice(1), star: true, note: { en: "App: 'TV5MONDE EDU: Learn' (offline mode). A1 course, A2 and B1 courses added in 2026.", tr: "Uygulama: 'TV5MONDE EDU: Learn' (çevrimdışı mod). A1 kursu, 2026'da A2 ve B1 eklendi." } },
-    "rfi-ff": { url: "https://www.francaisfacile.rfi.fr/", star: true },
+    "rfi-ff": { url: "https://francaisfacile.rfi.fr/fr/", star: true },
     "fi-texas": { url: "https://laits.utexas.edu/fi/page/about-us/", levels: L.slice(0, 4), star: true, note: { en: "New edition: utexas.pressbooks.pub/francais-interactif. About 1 chapter every 1–2 weeks.", tr: "Yeni baskı: utexas.pressbooks.pub/francais-interactif. 1–2 haftada yaklaşık 1 bölüm." } },
     "tex": { url: "https://laits.utexas.edu/tex/gr/overview.html", star: true },
     "lawless": { url: "https://lawlessfrench.com/", star: true },
@@ -1054,7 +1054,7 @@
     "tandem": { star: true },
     "hellotalk": { star: true },
     "ofii": { note: { en: "See the CIR entry: free training up to A2 if eligible.", tr: "CIR kaydına bak: uygunsan A2'ye kadar ücretsiz eğitim." } },
-    "vivreenfrance": { url: "https://www.fun-mooc.fr/en/cours/vivre-en-france-a1/", note: { en: "A1 (~50 h), A2 (~70 h), B1 (~90 h). Sessions may be archived: check for an open one.", tr: "A1 (~50 saat), A2 (~70 saat), B1 (~90 saat). Oturumlar arşivlenmiş olabilir: açık olanı kontrol et." } },
+    "vivreenfrance": { url: "https://www.fun-mooc.fr/fr/cours/?query=vivre%20en%20france", note: { en: "A1 (~50 h), A2 (~70 h), B1 (~90 h). The old course pages moved: search « Vivre en France » in the FUN-MOOC catalogue and pick an open session.", tr: "A1 (~50 saat), A2 (~70 saat), B1 (~90 saat). Eski kurs sayfaları taşındı: FUN-MOOC kataloğunda « Vivre en France » ara ve açık bir oturum seç." } },
     "ordremk": { url: "https://www.ordremk.fr/je-suis-kinesitherapeute/mobilite/je-suis-un-ressortissant-dun-etat-tiers/", note: { en: "Non-EU physio diplomas are not recognised as such: partial exemption in an IFMK (small quota) after tests in French, then the DE.", tr: "AB dışı fizyoterapi diplomaları olduğu gibi tanınmaz: Fransızca sınavlardan sonra bir IFMK'da kısmi muafiyet (küçük kontenjan), sonra DE." } },
     "campusfrance": { note: { en: "Living in France already? First-year admission goes through the DAP (see Service-Public R1278).", tr: "Zaten Fransa'da mı yaşıyorsun? Birinci sınıf kabulü DAP üzerinden (Service-Public R1278'e bak)." } },
     "fei-delf": { star: true, note: { en: "Diploma valid for life. Free sample papers with audio on each level page. ~130 € (A1/A2), ~140–200 € (B1/B2).", tr: "Ömür boyu geçerli diploma. Her seviye sayfasında sesli ücretsiz örnek sınavlar. ~130 € (A1/A2), ~140–200 € (B1/B2)." } },
