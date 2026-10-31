@@ -1002,6 +1002,182 @@
     "İş için başlangıç Fransızcası (açık oturum olup olmadığını kontrol et).");
 
   /* Corrections and top picks from the master list */
+  /* ───────── v3 additions (31 Oct 2026): sport, health, C1–C2 reading, podcasts, admin ───────── */
+  // Sport, STAPS, physiotherapy
+  R("irbms", "IRBMS · médecine du sport", "https://www.irbms.com/", "reading", "B2-C1", "rv", "health sport", "free", "",
+    "A sports-medicine institute's library of clear articles on injuries, training, nutrition and return to sport. Perfect professional reading.",
+    "Bir spor hekimliği enstitüsünün sakatlıklar, antrenman, beslenme ve spora dönüş üzerine anlaşılır makaleleri. Mükemmel mesleki okuma.", STAR);
+  R("handnews", "Handnews", "https://www.handnews.fr/", "news", "B1-C1", "r", "sport culture", "free", "",
+    "French handball news: clubs, national teams, transfers. Your favourite sport as daily reading practice.",
+    "Fransız hentbol haberleri: kulüpler, milli takımlar, transferler. En sevdiğin spor günlük okuma pratiği olarak.");
+  R("lnh", "LNH · Ligue nationale de handball", "https://www.lnh.fr/", "news", "B1-C1", "rl", "sport culture", "free", "",
+    "The French men's handball league: results, interviews and match videos with French commentary.",
+    "Fransa erkekler hentbol ligi: sonuçlar, röportajlar ve Fransızca anlatımlı maç videoları.");
+  R("fnek", "FNEK · étudiants en kinésithérapie", "https://www.fnek.fr/", "official", "B1-C1", "r", "health academic", "free", "",
+    "The national federation of physiotherapy students: how IFMK schools work, studies, student life. Useful to understand the French route.",
+    "Ulusal fizyoterapi öğrencileri federasyonu: IFMK okulları nasıl işler, eğitim, öğrenci hayatı. Fransız yolunu anlamak için faydalı.");
+  R("ffmkr", "FFMKR · kinésithérapeutes", "https://www.ffmkr.org/", "official", "B2-C1", "r", "health", "free", "",
+    "The main French physiotherapists' union: news about the profession, practice rules and fees.",
+    "Fransa'nın ana fizyoterapist sendikası: meslek haberleri, çalışma kuralları ve ücretler.");
+  R("sante-gouv", "Ministère de la Santé", "https://sante.gouv.fr/", "official", "B2-C1", "r", "health life", "free", "",
+    "Official health ministry site. Search « autorisation d'exercice masseur-kinésithérapeute » for the procedure for foreign diplomas.",
+    "Resmî sağlık bakanlığı sitesi. Yabancı diplomalar için prosedür: « autorisation d'exercice masseur-kinésithérapeute » diye ara.", N("Rules change: always check the date of the page.", "Kurallar değişir: sayfanın tarihine mutlaka bak."));
+  R("vae", "France VAE", "https://vae.gouv.fr/", "official", "B2-C1", "r", "academic life", "free", "",
+    "The official service to have your work experience recognised as a French diploma (validation des acquis de l'expérience).",
+    "İş deneyimini Fransız diploması olarak tanıtmak için resmî servis (validation des acquis de l'expérience).");
+  R("etudiantgouv", "etudiant.gouv.fr", "https://www.etudiant.gouv.fr/", "official", "B1-C1", "r", "academic life", "free", "",
+    "Everything about student life in France: grants, housing, health, jobs, international students.",
+    "Fransa'da öğrenci hayatı hakkında her şey: burslar, konut, sağlık, iş, uluslararası öğrenciler.");
+  R("messervices", "MesServices.étudiant (CROUS)", "https://www.messervices.etudiant.gouv.fr/", "official", "B1-C1", "r", "academic life", "free", "",
+    "Apply for a CROUS grant or student housing.",
+    "CROUS bursu veya öğrenci yurdu başvurusu.");
+  R("physiopedia", "Physiopedia (English)", "https://www.physio-pedia.com/", "reading", "B1-C2", "rv", "health academic", "free", "en",
+    "The physiotherapy wiki, in English. Look up a condition in English, then find the French terms in the Physio deck or a French article.",
+    "İngilizce fizyoterapi vikisi. Bir durumu İngilizce bak, sonra Fransızca terimleri Fizyoterapi destesinde veya Fransızca bir makalede bul.");
+  R("vidal", "VIDAL", "https://www.vidal.fr/", "tool", "B2-C1", "rv", "health", "free", "",
+    "The French reference for medicines, with patient-friendly health pages. Real medical vocabulary.",
+    "İlaçlar için Fransız referansı, hastaya yönelik sağlık sayfalarıyla. Gerçek tıbbi kelime hazinesi.");
+  R("santefr", "Santé.fr", "https://www.sante.fr/", "official", "A2-B2", "r", "health life", "free", "",
+    "Official public health information: find a doctor or a pharmacy, vaccines, prevention, in simple French.",
+    "Resmî halk sağlığı bilgisi: doktor veya eczane bul, aşılar, önleme, sade Fransızcayla.");
+  R("mangerbouger", "Manger Bouger", "https://www.mangerbouger.fr/", "reading", "A2-B2", "rv", "health sport life", "free", "",
+    "The national nutrition and physical activity site: recipes, tips, simple texts. Handy for sport-health French.",
+    "Ulusal beslenme ve fiziksel aktivite sitesi: tarifler, öneriler, basit metinler. Spor-sağlık Fransızcası için kullanışlı.");
+  R("cochrane-fr", "Cochrane France", "https://france.cochrane.org/", "reading", "C1-C2", "r", "health academic", "free", "",
+    "Evidence-based medicine in French: plain-language summaries of systematic reviews.",
+    "Fransızca kanıta dayalı tıp: sistematik derlemelerin sade dille özetleri.");
+  R("tibo", "Tibo InShape", yt("Tibo InShape"), "video", "B1-B2", "lv", "sport culture", "free", "",
+    "France's biggest fitness YouTuber: training, challenges, very spoken French. Fun listening for a sports person.",
+    "Fransa'nın en büyük fitness YouTuber'ı: antrenman, meydan okumalar, çok gündelik Fransızca. Sporcu biri için eğlenceli dinleme.");
+  R("yt-kine", "YouTube · exercices de kiné", yt("kinésithérapeute exercices rééducation"), "video", "B1-C1", "lv", "health sport", "free", "",
+    "French physios explaining rehab exercises: knee, back, shoulder. Listen to how they give instructions to patients.",
+    "Rehabilitasyon egzersizlerini anlatan Fransız fizyoterapistler: diz, bel, omuz. Hastalara nasıl talimat verdiklerini dinle.");
+  R("espritsorcier", "L'Esprit Sorcier", yt("L'Esprit Sorcier Jamy"), "video", "B1-C1", "lv", "culture health", "free", "",
+    "Jamy (from C'est pas sorcier) explains science and health clearly, with diagrams. Great for B1–B2 listening.",
+    "Jamy (C'est pas sorcier'den) bilimi ve sağlığı şemalarla açıkça anlatır. B1–B2 dinleme için harika.");
+
+  // C1–C2 reading, culture, science
+  R("shortedition", "Short Édition", "https://short-edition.com/fr", "reading", "B1-C2", "r", "culture", "free", "",
+    "Thousands of free short stories and poems, sorted by reading time (1, 3, 5 minutes). Perfect for a daily short read.",
+    "Okuma süresine göre (1, 3, 5 dakika) sıralı binlerce ücretsiz kısa öykü ve şiir. Günlük kısa okuma için mükemmel.", STAR);
+  R("bnr", "Bibliothèque numérique romande", "https://ebooks-bnr.com/", "book", "B2-C2", "r", "culture", "free", "",
+    "Beautifully made free e-books of French classics (EPUB/PDF), perfect for e-readers and iPad.",
+    "Fransız klasiklerinin özenle hazırlanmış ücretsiz e-kitapları (EPUB/PDF), e-okuyucu ve iPad için ideal.");
+  R("librivox", "LibriVox (audiobooks)", "https://librivox.org/", "podcast", "B2-C2", "lr", "culture", "free", "en",
+    "Free public-domain audiobooks read by volunteers. Filter Language: French and read along with the e-book.",
+    "Gönüllülerin okuduğu ücretsiz telifsiz sesli kitaplar. Dil: French seç ve e-kitapla birlikte takip et.");
+  R("wikipedia", "Wikipédia en français", "https://fr.wikipedia.org/", "reading", "B1-C2", "rv", "academic culture", "free", "",
+    "Tip: read the French article on a topic you know well (handball, physiotherapy, Istanbul). Prior knowledge makes it easy.",
+    "İpucu: iyi bildiğin bir konunun Fransızca makalesini oku (hentbol, fizyoterapi, İstanbul). Ön bilgi işi kolaylaştırır.");
+  R("wikimini", "Wikimini", "https://fr.wikimini.org/", "reading", "A2-B1", "r", "core culture", "free", "",
+    "An encyclopedia written by and for children: short, simple articles on every topic.",
+    "Çocuklar tarafından ve çocuklar için yazılmış ansiklopedi: her konuda kısa, basit makaleler.");
+  R("dicoado", "Le Dico des ados", "https://www.dicoado.org/", "tool", "A2-B2", "v", "core", "free", "",
+    "A dictionary written for teenagers: simple French definitions and examples. The ideal first monolingual dictionary.",
+    "Gençler için yazılmış sözlük: basit Fransızca tanımlar ve örnekler. İdeal ilk tek dilli sözlük.");
+  R("futura", "Futura Sciences", "https://www.futura-sciences.com/", "reading", "B2-C1", "r", "academic health", "free", "",
+    "Science and health news in accessible French, with a big glossary. Good bridge to academic texts.",
+    "Anlaşılır Fransızcayla bilim ve sağlık haberleri, büyük bir sözlükle. Akademik metinlere iyi bir köprü.");
+  R("cnrs", "CNRS Le journal", "https://lejournal.cnrs.fr/", "reading", "C1-C2", "r", "academic", "free", "",
+    "France's national research centre explains its research: university-level reading for C1.",
+    "Fransa'nın ulusal araştırma merkezi araştırmalarını anlatıyor: C1 için üniversite düzeyinde okuma.");
+  R("babelio", "Babelio", "https://www.babelio.com/", "community", "B2-C2", "rw", "culture", "free", "",
+    "Readers' reviews of French books: find your next novel and write short reviews to practise.",
+    "Fransızca kitaplar için okur yorumları: sıradaki romanını bul, pratik için kısa yorumlar yaz.");
+  R("ouestfrance", "Ouest-France", "https://www.ouest-france.fr/", "news", "B1-C1", "r", "culture life", "free", "",
+    "France's biggest daily newspaper, mostly free: national and local news by town.",
+    "Fransa'nın en büyük günlük gazetesi, çoğunlukla ücretsiz: ulusal ve şehir şehir yerel haberler.");
+  R("slate", "Slate.fr", "https://www.slate.fr/", "news", "C1-C2", "r", "culture", "free", "",
+    "Long-form articles, analysis and opinion: rich vocabulary and argument for C1–C2.",
+    "Uzun makaleler, analiz ve görüş yazıları: C1–C2 için zengin kelime ve argümantasyon.");
+  R("dessouscartes", "Le Dessous des cartes (ARTE)", yt("Le Dessous des cartes ARTE"), "video", "B2-C1", "lv", "culture academic", "free", "",
+    "Geopolitics explained with maps in 12 minutes. Clear, structured French: a model for presentations.",
+    "12 dakikada haritalarla jeopolitik. Açık, düzenli Fransızca: sunumlar için bir model.");
+  R("geopolitix", "Mister Geopolitix", yt("Mister Geopolitix"), "video", "B2-C1", "lv", "culture", "free", "",
+    "Popular geopolitics videos: fast but very clear French.",
+    "Popüler jeopolitik videoları: hızlı ama çok net Fransızca.");
+  R("docseven", "Doc Seven", yt("Doc Seven"), "video", "B1-B2", "l", "culture", "free", "",
+    "Fun top-10 videos on history and curiosities. Lively spoken French.",
+    "Tarih ve ilginç bilgiler üzerine eğlenceli top-10 videoları. Canlı konuşma Fransızcası.");
+  R("merciprof", "Merci Professeur ! (TV5MONDE)", yt("Merci Professeur TV5MONDE"), "video", "B2-C2", "lv", "core culture", "free", "",
+    "Two-minute videos on French expressions, spelling traps and word origins. Perfect C1 nuance.",
+    "Fransızca deyimler, yazım tuzakları ve kelime kökenleri üzerine iki dakikalık videolar. Mükemmel C1 nüansı.");
+  R("poissonfecond", "Poisson Fécond", yt("Poisson Fécond"), "video", "B2-C1", "l", "culture academic", "free", "",
+    "Science questions answered with humour (bodies, animals, health).",
+    "Bilim sorularına mizahla cevaplar (vücut, hayvanlar, sağlık).");
+
+  // Podcasts B2–C2
+  R("arteradio", "ARTE Radio", "https://www.arteradio.com/", "podcast", "B2-C2", "l", "culture", "free", "",
+    "Award-winning documentary podcasts and stories: real voices, real lives.",
+    "Ödüllü belgesel podcast'ler ve hikâyeler: gerçek sesler, gerçek hayatlar.");
+  R("binge", "Binge Audio", "https://www.binge.audio/", "podcast", "B2-C2", "l", "culture", "free", "",
+    "Popular French podcast network on society, work, relationships and culture.",
+    "Toplum, iş, ilişkiler ve kültür üzerine popüler Fransız podcast ağı.");
+  R("louie", "Louie Media · Émotions", "https://louiemedia.com/", "podcast", "B2-C2", "l", "culture", "free", "",
+    "Thoughtful podcasts; « Émotions » explores one feeling per episode (stress, shame, joy…). Calm and very human.",
+    "Düşündürücü podcast'ler; « Émotions » her bölümde bir duyguyu ele alır (stres, utanç, sevinç…). Sakin ve çok insani.");
+  R("nouvellesecoutes", "Nouvelles Écoutes", "https://www.nouvellesecoutes.fr/", "podcast", "B2-C2", "l", "culture", "free", "",
+    "Independent podcast studio: conversations, culture and society.",
+    "Bağımsız podcast stüdyosu: sohbetler, kültür ve toplum.");
+  R("franceculture", "France Culture", "https://www.radiofrance.fr/franceculture", "podcast", "C1-C2", "l", "academic culture", "free", "",
+    "Thousands of hours on science, history, philosophy and health: the C1–C2 lecture hall in your pocket.",
+    "Bilim, tarih, felsefe ve sağlık üzerine binlerce saat: cebindeki C1–C2 amfisi.");
+  R("franceinter", "France Inter", "https://www.radiofrance.fr/franceinter", "podcast", "B2-C2", "l", "culture", "free", "",
+    "France's main public radio: news, humour, interviews, podcasts on every subject.",
+    "Fransa'nın ana kamu radyosu: haberler, mizah, röportajlar, her konuda podcast.");
+  R("audiolingua", "Audio Lingua", "https://audio-lingua.eu/?lang=fr", "podcast", "A1-C1", "l", "core", "free", "",
+    "Hundreds of short recordings (under 2 minutes) by real French speakers, sorted by level, age and topic.",
+    "Gerçek Fransızların seviye, yaş ve konuya göre sıralı yüzlerce kısa kaydı (2 dakikanın altında).", STAR);
+
+  // Courses, grammar, writing
+  R("polarfle", "Polar FLE", "https://www.polarfle.com/", "course", "A1-B1", "rlg", "core", "free", "en",
+    "Learn French by solving a detective story: chapters with audio, exercises and grammar points.",
+    "Bir polisiye hikâyeyi çözerek Fransızca öğren: sesli bölümler, alıştırmalar ve dilbilgisi.");
+  R("conjuguemos", "Conjuguemos", "https://conjuguemos.com/", "tool", "A1-B2", "g", "core", "free", "en",
+    "Timed conjugation and vocabulary drills by tense. Good extra practice after the Conjugation exercise here.",
+    "Zamana göre süreli fiil çekimi ve kelime alıştırmaları. Buradaki Fiil çekimi alıştırmasından sonra iyi ek pratik.");
+  R("orthodidacte", "Orthodidacte", "https://www.orthodidacte.com/", "course", "B2-C2", "gw", "core academic", "freemium", "",
+    "Spelling and grammar for writing well in French, with a free level test and free articles.",
+    "Fransızcada iyi yazmak için yazım ve dilbilgisi; ücretsiz seviye testi ve ücretsiz makaleler.");
+  R("cordial", "Cordial en ligne", "https://www.cordial-enligne.fr/", "tool", "B1-C2", "w", "core academic", "free", "",
+    "Free online grammar and spelling checker. Use it with Bon Patron for a second opinion.",
+    "Ücretsiz çevrimiçi dilbilgisi ve yazım denetleyici. İkinci görüş için Bon Patron ile birlikte kullan.");
+  R("crisco", "Dictionnaire des synonymes (CRISCO)", "https://crisco4.unicaen.fr/des/", "tool", "B2-C2", "vw", "academic", "free", "",
+    "The University of Caen's synonym dictionary: find a better word for your essays.",
+    "Caen Üniversitesi'nin eş anlamlılar sözlüğü: kompozisyonların için daha iyi kelimeyi bul.");
+  R("usito", "Usito", "https://usito.usherbrooke.ca/", "tool", "B1-C2", "v", "core", "free", "",
+    "A modern, free French dictionary (from Québec) with clear definitions and usage notes.",
+    "Açık tanımlar ve kullanım notlarıyla modern, ücretsiz bir Fransızca sözlük (Québec'ten).");
+  R("frantastique", "Frantastique", "https://www.frantastique.com/", "course", "A1-C1", "rgw", "core", "paid", "en",
+    "A funny daily e-mail lesson (10 minutes) personalised to your mistakes. Free trial, then paid.",
+    "Hatalarına göre kişiselleştirilmiş, eğlenceli günlük e-posta dersi (10 dakika). Ücretsiz deneme, sonra ücretli.", { price: "≈ 20–30 €/month" });
+  R("tureng", "Tureng (Fransızca–Türkçe)", "https://tureng.com/", "tool", "A1-C1", "v", "turkish", "free", "tr",
+    "The popular Turkish dictionary site also has French ↔ Turkish, with many phrases.",
+    "Popüler Türkçe sözlük sitesinde Fransızca ↔ Türkçe de var, birçok ifadeyle.");
+
+  // Life in France: rights, money, admin
+  R("impots", "impots.gouv.fr", "https://www.impots.gouv.fr/", "official", "B1-C1", "r", "life", "free", "",
+    "Income tax: create your personal space and file your first return (even with no income, it's often needed).",
+    "Gelir vergisi: kişisel alanını oluştur ve ilk beyannameni ver (gelir olmasa bile çoğu zaman gerekir).");
+  R("ants", "ANTS", "https://ants.gouv.fr/", "official", "B1-C1", "r", "life", "free", "",
+    "Official site for driving licences (including exchanging a foreign licence), ID cards and vehicle papers.",
+    "Ehliyet (yabancı ehliyet değişimi dahil), kimlik kartı ve araç belgeleri için resmî site.");
+  R("mesdroits", "Mes droits sociaux", "https://www.mesdroitssociaux.gouv.fr/", "official", "B1-C1", "r", "life", "free", "",
+    "A free simulator showing which social benefits you may be entitled to.",
+    "Hangi sosyal yardımlara hakkın olabileceğini gösteren ücretsiz simülatör.");
+  R("anil", "ANIL · information logement", "https://www.anil.org/", "official", "B1-C1", "r", "life", "free", "",
+    "Free, neutral information on renting: leases, deposits, repairs, disputes. Local ADIL offices answer questions.",
+    "Kiralama hakkında ücretsiz, tarafsız bilgi: sözleşme, depozito, tamirat, anlaşmazlık. Yerel ADIL ofisleri soruları cevaplar.");
+  R("mesquestions", "Mes questions d'argent", "https://www.mesquestionsdargent.fr/", "official", "B1-B2", "r", "life", "free", "",
+    "The Banque de France's plain-language guide to banking, budgets, credit and fraud.",
+    "Banque de France'ın bankacılık, bütçe, kredi ve dolandırıcılık üzerine sade dilli rehberi.");
+  R("defenseur", "Défenseur des droits", "https://www.defenseurdesdroits.fr/", "official", "B1-C1", "r", "life", "free", "",
+    "Free help if you face discrimination or a problem with a public service.",
+    "Ayrımcılığa uğrarsan veya bir kamu hizmetiyle sorun yaşarsan ücretsiz yardım.");
+  R("gisti", "GISTI", "https://www.gisti.org/", "official", "B2-C1", "r", "life", "free", "",
+    "An association expert in foreigners' rights in France: practical guides on residence permits and procedures.",
+    "Fransa'da yabancı hakları konusunda uzman bir dernek: oturma izni ve prosedürler hakkında pratik rehberler.");
+
   const PATCH = {
     "tv5": { url: "https://apprendre.tv5monde.com/en/collection-all", levels: L.slice(1), star: true, note: { en: "App: 'TV5MONDE EDU: Learn' (offline mode). A1 course, A2 and B1 courses added in 2026.", tr: "Uygulama: 'TV5MONDE EDU: Learn' (çevrimdışı mod). A1 kursu, 2026'da A2 ve B1 eklendi." } },
     "rfi-ff": { url: "https://francaisfacile.rfi.fr/fr/", star: true },
