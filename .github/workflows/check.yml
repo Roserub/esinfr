@@ -16,6 +16,18 @@ jobs:
           node-version: 20
       - run: node tools/check-data.js
 
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 20
+      - name: Install Playwright with Chromium
+        run: npm install --no-save playwright@1.48.2 && npx playwright install --with-deps chromium
+      - name: Open every screen on phone, iPad and Mac sizes and play every exercise
+        run: node tools/smoke-test.js
+
   links:
     runs-on: ubuntu-latest
     steps:

@@ -181,6 +181,8 @@ window.I18N = {
 
 /* Strings for the master-list features: practice, weekly plan, search, pace, widgets. */
 Object.assign(window.I18N.tr, {
+  "a11y.progress": "İlerleme",
+  "cards.capped": "Bugün en eski {n} kart yeter; geri kalanı bekleyebilir. Sorun değil 🌿",
   "nav.practice": "Alıştırma", "lib.top": "En iyi", "home.startHere": "Buradan başla", "home.logTime": "Başka yerde çalıştım:",
   "path.practice": "Alıştırma", "path.cum": "toplam {c} saat", "path.grammar": "{lv} dilbilgisi kontrol listesi",
   "path.grammarSub": "İhtiyaç sırasına göre. Bir konuyu anladığında ve birkaç alıştırma yaptığında işaretle.", "path.grammarMap": "Dilbilgisi haritası",
@@ -226,6 +228,8 @@ Object.assign(window.I18N.tr, {
   "search.none": "Sonuç yok.", "toast.logged": "+{m} dakika kaydedildi ✓"
 });
 Object.assign(window.I18N.en, {
+  "a11y.progress": "Progress",
+  "cards.capped": "Today the {n} oldest cards are enough; the rest can wait. That's fine 🌿",
   "nav.practice": "Practice", "lib.top": "Top pick", "home.startHere": "Start here", "home.logTime": "I studied elsewhere:",
   "path.practice": "Practice", "path.cum": "{c} h in total", "path.grammar": "{lv} grammar checklist",
   "path.grammarSub": "In the order you need it. Tick a point when you understand it and have done a few exercises.", "path.grammarMap": "Grammar map",
@@ -271,6 +275,8 @@ Object.assign(window.I18N.en, {
   "search.none": "No results.", "toast.logged": "+{m} minutes logged ✓"
 });
 Object.assign(window.I18N.fr, {
+  "a11y.progress": "Progression",
+  "cards.capped": "Aujourd'hui, les {n} plus anciennes suffisent ; le reste peut attendre. C'est normal 🌿",
   "nav.practice": "Exercices", "lib.top": "Coup de cœur", "home.startHere": "Commencer ici", "home.logTime": "J'ai étudié ailleurs :",
   "path.practice": "Exercice", "path.cum": "{c} h au total", "path.grammar": "Grammaire {lv} : la liste",
   "path.grammarSub": "Dans l'ordre où tu en as besoin. Coche un point quand tu l'as compris et fait quelques exercices.", "path.grammarMap": "Carte de grammaire",

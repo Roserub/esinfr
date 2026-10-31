@@ -93,6 +93,7 @@
     st.due = today() + (g === "again" ? 0 : INTERVALS[st.b]);
     S.cards[card.id] = st; practised(); save();
   }
+  const DUE_CAP = 30; // a calm session: older cards first, the rest simply waits for tomorrow
   const totalDue = () => allDecks().reduce((n, d) => n + deckStats(d).due, 0);
 
   /* ───────── Path helpers ───────── */
@@ -142,7 +143,7 @@
     </article>`;
   }
   const chip = (label, attrs, on) => `<button class="chip ${on ? "on" : ""}" ${attrs} aria-pressed="${!!on}">${label}</button>`;
-  const progressBar = pct => `<div class="bar" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><span style="width:${pct}%"></span></div>`;
+  const progressBar = (pct, label) => `<div class="bar" role="progressbar" aria-label="${esc(label || t("a11y.progress"))}" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><span style="width:${pct}%"></span></div>`;
 
   /* ───────── Views ───────── */
   function viewHome() {
@@ -195,7 +196,7 @@
     <section class="grid2">
       <div class="card">
         <p class="eyebrow">${esc(t("home.cards"))}</p>
-        ${due ? `<p class="big">${due}</p><a class="btn" href="#/cards/due">${esc(t("home.review"))}</a>` : `<p class="muted">${esc(t("home.cardsNone"))}</p><a class="btn ghost" href="#/cards">${esc(t("nav.cards"))}</a>`}
+        ${due ? `<p class="big">${due}</p>${due > DUE_CAP ? `<p class="muted small">${esc(t("cards.capped", { n: DUE_CAP }))}</p>` : ""}<a class="btn" href="#/cards/due">${esc(t("home.review"))}</a>` : `<p class="muted">${esc(t("home.cardsNone"))}</p><a class="btn ghost" href="#/cards">${esc(t("nav.cards"))}</a>`}
       </div>
       <div class="card phrase">
         <p class="eyebrow">${esc(t("home.phrase"))}</p>
@@ -275,7 +276,7 @@
     ${grammarChecklist(lv.id)}`;
   }
   function grammarChecklist(lv) {
-    const g = (window.GRAMMAR_ORDER || {})[lv]; if (!g) return "";
+    const g = ((lang() === "tr" && window.GRAMMAR_ORDER_TR) || window.GRAMMAR_ORDER || {})[lv]; if (!g) return "";
     const items = g.split(" · "), done = items.filter((x, i) => S.gram[lv + ":" + i]).length;
     return `<details class="card gram">
       <summary><b>🧩 ${esc(t("path.grammar", { lv }))}</b> <span class="muted small">${done}/${items.length}</span></summary>
@@ -338,7 +339,7 @@
     <div class="decks">${decks.map(d => {
       const st = deckStats(d);
       return `<article class="deck card">
-        <div class="row between"><h3>${esc(loc(d.name))}</h3>${d.level ? `<span class="badge lv">${d.level}</span>` : ""}</div>
+        <div class="row between"><h2>${esc(loc(d.name))}</h2>${d.level ? `<span class="badge lv">${d.level}</span>` : ""}</div>
         <p class="muted small">${esc(t("cards.learned", { n: st.learned, t: st.total }))} · ${esc(t("cards.due", { n: st.due }))} · ${esc(t("cards.new", { n: st.fresh }))}</p>
         ${progressBar(st.total ? Math.round(st.learned / st.total * 100) : 0)}
         <div class="row"><a class="btn small" href="#/cards/${d.id}">${esc(t("cards.study"))}</a><a class="btn small ghost" href="#/cards/${d.id}/list">${esc(t("cards.browse"))}</a></div>
@@ -361,7 +362,8 @@
   function startSession(deckId) {
     const now = today();
     let cards;
-    if (deckId === "due") cards = allDecks().flatMap(d => d.cards.filter(c => S.cards[c.id] && S.cards[c.id].due <= now));
+    if (deckId === "due") cards = allDecks().flatMap(d => d.cards.filter(c => S.cards[c.id] && S.cards[c.id].due <= now))
+      .sort((a, b) => S.cards[a.id].due - S.cards[b.id].due).slice(0, DUE_CAP);
     else {
       const d = deckById(deckId); if (!d) return null;
       const due = d.cards.filter(c => S.cards[c.id] && S.cards[c.id].due <= now);
@@ -386,7 +388,7 @@
     const c = SESSION.queue[0];
     const trans = lang() === "en" ? [c.en, c.tr] : [c.tr, c.en];
     return `<a class="back" href="#/cards">← ${esc(t("cards.back"))}</a>
-      <p class="muted small">${esc(loc(d.name))} · ${SESSION.done}/${SESSION.total}</p>
+      <h1 class="h-study">${esc(loc(d.name))} · ${SESSION.done}/${SESSION.total}</h1>
       ${progressBar(SESSION.total ? Math.round(SESSION.done / SESSION.total * 100) : 0)}
       <section class="flash ${SESSION.flipped ? "flipped" : ""}">
         <p class="fr-big">${esc(c.fr)}</p>
@@ -439,7 +441,7 @@
 
   function viewGuide(id) {
     const g = GUIDE.find(x => x.id === id) || GUIDE[0];
-    const body = lang() === "tr" ? g.tr : g.en;
+    const body = (lang() === "tr" ? g.tr : g.en).replace(/<(\/?)h3>/g, "<$1h2>");
     const i = GUIDE.indexOf(g), prev = GUIDE[i - 1], next = GUIDE[i + 1];
     const res = (g.res || []).map(x => RES_BY_ID[x]).filter(Boolean);
     return `<a class="back" href="#/more">← ${esc(t("guide.back"))}</a>
@@ -879,7 +881,7 @@
         <label class="setting">${esc(t("plan.dpw"))} ${selectSet("dpw", [2, 3, 4, 5, 6, 7], S.pace.dpw)}</label>
         <span class="muted small">${esc(t("plan.thisWeek", { m: fmtMin(weekMinutes()) }))}</span>
       </section>
-      <div class="plan-week">${names.map((nm, d) => { const tasks = planFor(d); return `<section class="card plan-day ${d === td ? "today" : ""}"><h3>${esc(nm)}${d === td ? ` · <span class="eyebrow">${esc(t("plan.todayShort"))}</span>` : ""}</h3>${tasks ? planList(d, tasks) : restDay()}</section>`; }).join("")}</div>
+      <div class="plan-week">${names.map((nm, d) => { const tasks = planFor(d); return `<section class="card plan-day ${d === td ? "today" : ""}"><h2>${esc(nm)}${d === td ? ` · <span class="eyebrow">${esc(t("plan.todayShort"))}</span>` : ""}</h2>${tasks ? planList(d, tasks) : restDay()}</section>`; }).join("")}</div>
       ${paceWidget()}
       <section class="card">
         <h2>⏰ ${esc(t("ics.h"))}</h2>

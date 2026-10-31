@@ -117,9 +117,18 @@
     A1: "être / avoir · articles · gender &amp; plural · présent of -er verbs · negation · questions · aller, faire, venir, pouvoir, vouloir · possessives · prepositions of place · numbers, time, dates · futur proche · c'est / il est",
     A2: "passé composé (avoir / être + agreement) · imparfait · passé composé vs imparfait · object pronouns (le, la, lui, leur) · y / en · comparatives &amp; superlatives · reflexive verbs · futur simple · imperative · qui / que / où",
     B1: "conditionnel · subjonctif présent (il faut que, je veux que…) · plus-que-parfait · si + tenses · dont · passive · gérondif (en + -ant) · reported speech · connectors (donc, pourtant, cependant)",
-    B2: "subjunctive after conjunctions (bien que, pour que…) · sequence of tenses · participle clauses · nuanced connectors · formal vs informal registers"
+    B2: "subjunctive after conjunctions (bien que, pour que…) · sequence of tenses · participle clauses · nuanced connectors · formal vs informal registers",
+    C1: "passé simple (to recognise in books) · subjonctif passé · nominalisation (réduire → la réduction) · concession &amp; opposition (quoique, certes… mais) · inversion and mise en relief (c'est… que) · academic register: hedging and impersonal phrasing"
+  };
+  const GRAMMAR_ORDER_TR = {
+    A1: "être / avoir · artikeller · cinsiyet ve çoğul · -er fiillerinin présent'i · olumsuzluk · sorular · aller, faire, venir, pouvoir, vouloir · iyelikler · yer edatları · sayılar, saat, tarihler · futur proche · c'est / il est",
+    A2: "passé composé (avoir / être + uyum) · imparfait · passé composé mı imparfait mi · nesne zamirleri (le, la, lui, leur) · y / en · karşılaştırma ve üstünlük · dönüşlü fiiller · futur simple · emir kipi · qui / que / où",
+    B1: "conditionnel · subjonctif présent (il faut que, je veux que…) · plus-que-parfait · si + zamanlar · dont · edilgen çatı · gérondif (en + -ant) · dolaylı anlatım · bağlaçlar (donc, pourtant, cependant)",
+    B2: "bağlaçlardan sonra subjonctif (bien que, pour que…) · zaman uyumu · ortaç cümlecikleri · ince anlamlı bağlaçlar · resmî ve gündelik üslup",
+    C1: "passé simple (kitaplarda tanımak için) · subjonctif passé · isimleştirme (réduire → la réduction) · taviz ve karşıtlık (quoique, certes… mais) · devrik yapı ve vurgulama (c'est… que) · akademik üslup: temkinli ve kişisiz anlatım"
   };
   window.GRAMMAR_ORDER = GRAMMAR_ORDER;
+  window.GRAMMAR_ORDER_TR = GRAMMAR_ORDER_TR;
 
   const S = [];
 
@@ -386,13 +395,33 @@ ${T(["Turkish", "French", "Example"], [["-iyor / -ir", "présent", "je mange (yi
 ${T(["Turkish", "French"], [["gelen adam", "l'homme <b>qui</b> vient"], ["okuduğum kitap", "le livre <b>que</b> je lis"], ["yaşadığım şehir", "la ville <b>où</b> j'habite"], ["bahsettiğim film", "le film <b>dont</b> je parle"]])}
 <h3>11) Possessives agree with the THING owned</h3><p>annem / babam → <b>ma</b> mère / <b>mon</b> père · annesi → <b>sa</b> mère (his OR her) · kocası → <b>son</b> mari. Before a vowel: mon amie, son école.</p>
 <h3>12) Object pronouns before the verb (like Turkish)</h3><p>Onu görüyorum → Je <b>le</b> vois · Ona veriyorum → Je <b>lui</b> donne · Onu ona veriyorum → Je le lui donne · Onu görmek istiyorum → Je veux le voir · Oraya gidiyorum → J'<b>y</b> vais · Ondan istiyorum → J'<b>en</b> veux.</p>`;
-  const GORDER = lang => T([lang === "tr" ? "Seviye" : "Level", lang === "tr" ? "Dilbilgisi sırası" : "Grammar, in the order you need it"], Object.entries(GRAMMAR_ORDER).map(([k, v]) => [`<b>${k}</b>`, v]));
+  const GMAP_TR = `
+<h3>1) Kelime sırası</h3><p>Ben bir elma yiyorum. → Je mange une pomme. (Özne-Yüklem-Nesne)<br>kırmızı bir araba → une voiture rouge (çoğu sıfat isimden SONRA gelir). Önce gelenler: beau, joli, bon, mauvais, petit, grand, jeune, vieux, nouveau, premier — une petite maison.</p>
+<h3>2) Artikeller (asıl yenilik)</h3><p>bir → un / une; çoğul "bazı" = des. Türkçede "the" yok → le / la / l' / les.<br>
+Türkçeden ipucu: belirtme hâli (-ı) çoğu zaman BELİRLİ nesneyi gösterir — Kitabı okudum → J'ai lu <b>le</b> livre · Kitap okudum → J'ai lu <b>un</b> livre.<br>
+Sayılamayanlar için "biraz" = du / de la / de l' — Ekmek aldım → J'ai acheté <b>du</b> pain. Genel ifadeler: Kahve severim → J'aime <b>le</b> café.<br>
+Olumsuzlukta un/une/du/de la/des → <b>de</b>: Je n'ai pas <b>de</b> pain.</p>
+<h3>3) Cinsiyet — her ismi un/une veya le/la ile öğren</h3><p>Genelde <b>dişil</b>: -tion/-sion, -té, -ette, -ance/-ence, -ure, -ude, -ée (ama le lycée, le musée), -ie.<br>Genelde <b>eril</b>: -ment, -age (ama la page, la plage, l'image), -eau (ama l'eau, la peau), -isme, -oir, -al.</p>
+<h3>4) Özne zamirleri zorunlu</h3><p>Geliyorum → <b>Je</b> viens. je, tu, il/elle/on, nous, vous, ils/elles. « on » = insanlar, konuşmada da "biz": On y va ? = Gidelim mi?</p>
+<h3>5) Hâl ekleri → edatlar</h3>
+${T(["Türkçe", "Fransızca"], [["Okul<b>a</b> gidiyorum.", "Je vais <b>à</b> l'école. (à+le = au, à+les = aux)"], ["Doktor<b>a</b> gidiyorum.", "Je vais <b>chez</b> le médecin."], ["Ev<b>de</b>yim. · çanta<b>da</b>", "Je suis <b>à</b> la maison. · <b>dans</b> le sac"], ["İstanbul'<b>dan</b> geliyorum.", "Je viens <b>d'</b>Istanbul. (de+le = du)"], ["arkadaşım<b>la</b>", "<b>avec</b> mon ami"], ["Ayşe'<b>nin</b> kitabı · evin kapısı", "le livre <b>d'</b>Ayşe · la porte <b>de</b> la maison (sıra ters!)"], ["Türkiye'de / Fransa'ya", "<b>en</b> Turquie / <b>en</b> France · <b>à</b> Paris · <b>au</b> Portugal · <b>aux</b> États-Unis"]])}
+<h3>6) Var / yok, olmak, sahip olmak</h3><p>Masada su var → <b>Il y a</b> de l'eau sur la table. · Bir kedim var → <b>J'ai</b> un chat. · Öğrenciyim → <b>Je suis</b> étudiante.<br>Yaş, açlık, susuzluk, üşümek, sıcak, korku, ihtiyaç için être değil <b>avoir</b>: 30 yaşındayım → J'ai 30 ans · Acıktım → J'ai faim · Üşüyorum → J'ai froid.</p>
+<h3>7) Olumsuzluk</h3><p>Gelmiyorum → Je <b>ne</b> viens <b>pas</b> (konuşmada ne düşer). ne… jamais (asla) · ne… plus (artık) · ne… rien (hiçbir şey) · ne… personne (kimse).</p>
+<h3>8) Sorular ("mi" yok)</h3><p>Geliyor musun? → Tu viens ? (ses yükselir) / Est-ce que tu viens ? / Viens-tu ?<br>kim = qui · ne = que/quoi · nerede = où · ne zaman = quand · nasıl = comment · neden = pourquoi · kaç = combien · hangi = quel/quelle</p>
+<h3>9) Zamanlar — kabaca Türkçe karşılıkları</h3>
+${T(["Türkçe", "Fransızca", "Örnek"], [["-iyor / -ir", "présent", "je mange (yiyorum / yerim)"], ["-di", "passé composé", "j'ai mangé (yedim)"], ["-iyordu / -irdi (eskiden)", "imparfait", "je mangeais (yiyordum)"], ["-ecek", "futur proche / futur simple", "je vais manger / je mangerai"], ["-irdi / -se", "conditionnel", "Vaktim olsa gelirdim → Si j'avais le temps, je viendrais."], ["-miş", "zaman yok: apparemment, il paraît que, il serait parti", "(gitmiş)"], ["-meli", "devoir / il faut", "Gitmeliyim → Je dois partir."], ["-ebil", "pouvoir", "Gelebilirim → Je peux venir."], ["-mek istiyorum", "vouloir (kibarı: je voudrais)", "Gitmek istiyorum → Je veux partir."], ["-mesini istiyorum", "subjonctif", "Gelmeni istiyorum → Je veux que tu viennes."]])}
+<p>Hareket/değişim fiilleri (aller, venir, partir, arriver, entrer, sortir, monter, descendre, naître, mourir, rester, tomber…) ve tüm dönüşlü fiiller passé composé'de <b>être</b> alır; ortaç uyum gösterir: elle est allée.</p>
+<h3>10) Sıfat cümlecikleri (ortaç → qui / que / où / dont)</h3>
+${T(["Türkçe", "Fransızca"], [["gelen adam", "l'homme <b>qui</b> vient"], ["okuduğum kitap", "le livre <b>que</b> je lis"], ["yaşadığım şehir", "la ville <b>où</b> j'habite"], ["bahsettiğim film", "le film <b>dont</b> je parle"]])}
+<h3>11) İyelikler sahip olunan ŞEYE uyar</h3><p>annem / babam → <b>ma</b> mère / <b>mon</b> père · annesi → <b>sa</b> mère (onun: erkek VEYA kadın) · kocası → <b>son</b> mari. Ünlüden önce: mon amie, son école.</p>
+<h3>12) Nesne zamirleri fiilden önce (Türkçedeki gibi)</h3><p>Onu görüyorum → Je <b>le</b> vois · Ona veriyorum → Je <b>lui</b> donne · Onu ona veriyorum → Je le lui donne · Onu görmek istiyorum → Je veux le voir · Oraya gidiyorum → J'<b>y</b> vais · Ondan istiyorum → J'<b>en</b> veux.</p>`;
+  const GORDER = lang => T([lang === "tr" ? "Seviye" : "Level", lang === "tr" ? "Dilbilgisi sırası" : "Grammar, in the order you need it"], Object.entries(lang === "tr" ? GRAMMAR_ORDER_TR : GRAMMAR_ORDER).map(([k, v]) => [`<b>${k}</b>`, v]));
 
   S.push({
     id: "grammar", icon: "🧩",
     t: { en: "Grammar map: Turkish (and English) → French", tr: "Dilbilgisi haritası: Türkçe (ve İngilizce) → Fransızca", fr: "Carte de grammaire : turc (et anglais) → français" },
     en: GMAP_EN + `<h3>Grammar in the order you need it</h3>${GORDER("en")}`,
-    tr: `<p class="muted small">Örnekler iki dilde aynı; açıklamalar İngilizce, Türkçe başlıklarla.</p>` + GMAP_EN + `<h3>İhtiyaç sırasına göre dilbilgisi</h3>${GORDER("tr")}`
+    tr: GMAP_TR + `<h3>İhtiyaç sırasına göre dilbilgisi</h3>${GORDER("tr")}`
   });
 
   S.push({
