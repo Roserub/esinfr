@@ -1,0 +1,13 @@
+name: Probe (temporary)
+on: [pull_request]
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15"
+          for u in "https://savoirs.rfi.fr/fr/apprendre-enseigner/langue-francaise/les-voisins-du-12-bis-le-podcast-en-francais-anglais" "https://francaisfacile.rfi.fr/" "https://www.francaisfacile.rfi.fr/" "https://www.fun-mooc.fr/en/cours/vivre-en-france-a1/" "https://www.fun-mooc.fr/fr/cours/vivre-en-france-a1/" "https://www.fun-mooc.fr/fr/cours/vivre-en-france/"; do
+            echo "== $u"; curl -sIL -m 25 -A "$UA" "$u" | grep -i "^HTTP\|^location" || true
+          done
+          curl -sL -m 25 -A "$UA" "https://www.fun-mooc.fr/fr/recherche/?q=vivre+en+france" | grep -o 'href="/fr/cours/[^"]*"' | sort -u | head -20 || true
+          curl -sL -m 25 -A "$UA" "https://francaisfacile.rfi.fr/fr/" | grep -o 'href="[^"]*voisins[^"]*"' | sort -u | head -10 || true
