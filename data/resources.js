@@ -1139,9 +1139,6 @@
   R("orthodidacte", "Orthodidacte", "https://www.orthodidacte.com/", "course", "B2-C2", "gw", "core academic", "freemium", "",
     "Spelling and grammar for writing well in French, with a free level test and free articles.",
     "Fransızcada iyi yazmak için yazım ve dilbilgisi; ücretsiz seviye testi ve ücretsiz makaleler.");
-  R("cordial", "Cordial en ligne", "https://www.cordial-enligne.fr/", "tool", "B1-C2", "w", "core academic", "free", "",
-    "Free online grammar and spelling checker. Use it with Bon Patron for a second opinion.",
-    "Ücretsiz çevrimiçi dilbilgisi ve yazım denetleyici. İkinci görüş için Bon Patron ile birlikte kullan.");
   R("crisco", "Dictionnaire des synonymes (CRISCO)", "https://crisco4.unicaen.fr/des/", "tool", "B2-C2", "vw", "academic", "free", "",
     "The University of Caen's synonym dictionary: find a better word for your essays.",
     "Caen Üniversitesi'nin eş anlamlılar sözlüğü: kompozisyonların için daha iyi kelimeyi bul.");

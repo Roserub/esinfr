@@ -297,7 +297,6 @@ franceculture|Des milliers d'heures de science, d'histoire, de philosophie et de
 franceinter|La grande radio publique française : infos, humour, interviews, podcasts sur tous les sujets.
 polarfle|Apprends le français en résolvant une enquête policière : des chapitres avec l'audio, des exercices et des points de grammaire.
 conjuguemos|Des exercices chronométrés de conjugaison et de vocabulaire par temps. Un bon complément après l'exercice de conjugaison d'ici.
-cordial|Un correcteur de grammaire et d'orthographe gratuit en ligne. Utilise-le avec Bon Patron pour avoir un deuxième avis.
 crisco|Le dictionnaire des synonymes de l'université de Caen : trouve un meilleur mot pour tes rédactions.
 usito|Un dictionnaire français moderne et gratuit (du Québec) avec des définitions claires et des remarques d'usage.
 tureng|Le site de dictionnaire turc populaire existe aussi en français ↔ turc, avec beaucoup d'expressions.
