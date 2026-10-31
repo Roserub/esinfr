@@ -3,7 +3,8 @@ const CACHE = "esinfr-v1";
 const SHELL = [
   "./", "index.html", "manifest.webmanifest",
   "assets/style.css", "assets/app.js", "assets/i18n.js", "assets/icon.svg",
-  "data/resources.js", "data/path.js", "data/decks.js", "data/guide.js"
+  "data/resources.js", "data/path.js", "data/path-master.js", "data/decks.js", "data/decks-master.js",
+  "data/guide.js", "data/guide-master.js", "data/practice.js"
 ];
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
