@@ -33,7 +33,7 @@ for (const it of D) {
   if (!/^a[12]-s\d\d-(co|ce|pe|po)\d$/.test(it.id || "")) errors.push(`${w}: bad id`);
   if (ids.has(it.id)) errors.push(`${w}: duplicate id`); ids.add(it.id);
   if (!["A1", "A2"].includes(it.level)) errors.push(`${w}: level`);
-  if (!(it.sujet >= 1 && it.sujet <= 10)) errors.push(`${w}: sujet`);
+  if (!(it.sujet >= 1 && it.sujet <= 20)) errors.push(`${w}: sujet`);
   if (!["co", "ce", "pe", "po"].includes(it.sec)) errors.push(`${w}: sec`);
   if (it.id && it.level && it.id !== `${it.level.toLowerCase()}-s${String(it.sujet).padStart(2, "0")}-${it.sec}${it.ex}`) errors.push(`${w}: id does not match level/sujet/sec/ex`);
   if (typeof it.pts !== "number" || it.pts <= 0) errors.push(`${w}: pts`);

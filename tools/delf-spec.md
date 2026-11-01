@@ -27,7 +27,7 @@ Plain JavaScript, no imports, no template literals (`` ` ``), no `${`. Strings i
 |---|---|
 | `id` | `"<level lowercase>-s<2-digit sujet>-<sec><ex>"`, e.g. `"a2-s07-ce3"` |
 | `level` | `"A1"` or `"A2"` |
-| `sujet` | 1 … 10 |
+| `sujet` | 1 … 20 |
 | `sec` | `"co"` listening · `"ce"` reading · `"pe"` writing · `"po"` speaking |
 | `ex` | exercise number inside the section (1, 2, 3 …) |
 | `pts` | points of the exercise (integers or .5); per sujet and section they add up to 25 |
