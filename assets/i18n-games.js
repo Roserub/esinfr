@@ -2,6 +2,7 @@
 (function () {
   const L = {
     tr: {
+      "dx.trKey": "Türkçe cevap anahtarı ve açıklamalar",
       "nav.games": "Oyunlar", "home.lib": "Kaynaklar", "home.quick": "Her şey bir dokunuşta",
       "gm.title": "Oyunlar", "gm.sub": "Oynayarak öğren: hikâyeler, hafıza kartları, cümle yapbozu ve DELF oyunları. Baskı yok, sadece eğlence.",
       "gm.tile": "Maceralar, hafıza, cümle yapbozu",
@@ -21,6 +22,7 @@
       "dx.b.surv": "Dayanıklı", "dx.bd.surv": "Hayatta kalma modunda 15 doğru."
     },
     en: {
+      "dx.trKey": "Turkish answer key and explanations",
       "nav.games": "Games", "home.lib": "Library", "home.quick": "Everything, one tap away",
       "gm.title": "Games", "gm.sub": "Learn by playing: stories, memory cards, sentence puzzles and DELF games. No pressure, just fun.",
       "gm.tile": "Adventures, memory, sentence puzzle",
@@ -40,6 +42,7 @@
       "dx.b.surv": "Survivor", "dx.bd.surv": "15 right in survival mode."
     },
     fr: {
+      "dx.trKey": "Corrigé et explications en turc",
       "nav.games": "Jeux", "home.lib": "Ressources", "home.quick": "Tout en un clic",
       "gm.title": "Jeux", "gm.sub": "Apprendre en jouant : histoires, memory, phrases en désordre et jeux DELF. Aucune pression, juste du plaisir.",
       "gm.tile": "Aventures, memory, phrases en désordre",

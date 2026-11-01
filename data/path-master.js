@@ -83,7 +83,7 @@
       [], { deck: "falsefriends", guide: "falsefriends" })
   ]);
   insert("A2", "a2-write", [
-    S("a2-mistakes", "The 25 classic mistakes", "25 klasik hata", "Les 25 erreurs classiques",
+    S("a2-mistakes", "The classic mistakes", "Klasik hatalar", "Les erreurs classiques",
       "Read the checklist of mistakes Turkish speakers make (je suis 30 ans → j'ai 30 ans…), then play 'Spot the mistake'. Reread it every month.",
       "Türkçe konuşanların yaptığı hataların listesini oku (je suis 30 ans → j'ai 30 ans…), sonra 'Hatayı bul' oyununu oyna. Her ay yeniden oku.",
       [], { guide: "mistakes", practice: "mistakes" })

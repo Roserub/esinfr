@@ -75,7 +75,7 @@ ${T(["A1", "A2", "B1", "B2", "C1", "C2"], [["60–100 h", "160–200 h", "360–
 <h3>L'idéal quotidien les premiers mois (60–90 min)</h3>
 <p>+ 20 min d'écoute (podcast / YouTube pour apprenants) · + 5 min d'exercice de prononciation.</p>
 <h3>Chaque semaine</h3>
-<p>1 à 2 séances de conversation · 1 épisode de série · 1 texte corrigé · 1 relecture de ton carnet d'erreurs et des 25 erreurs classiques.</p>
+<p>1 à 2 séances de conversation · 1 épisode de série · 1 texte corrigé · 1 relecture de ton carnet d'erreurs et des erreurs classiques.</p>
 <h3>Chaque mois</h3>
 <p>Un test d'entraînement (sujet du DELF) pour voir tes progrès. Note tes heures (la page Progrès le fait pour toi).</p>
 <h3>L'immersion à la maison</h3>

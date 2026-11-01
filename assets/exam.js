@@ -17,6 +17,7 @@
     const pm = PERMS[hash(it.id + ":" + qi) % 6], o = pm.map(i => q.o[i]);
     q.a = pm.indexOf(q.a); q.o = o; q.shuffled = true;
   });
+  const HAS_TR = {}; for (const it of D) if ((it.questions || []).some(q => q.xtr)) HAS_TR[it.level + "-" + it.sujet] = true;
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
 
   const A = () => window.APP;
@@ -33,6 +34,8 @@
   const norm = s => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[’'`]/g, " ").replace(/[^a-z0-9€ ]+/g, " ").replace(/\s+/g, " ").trim();
   const words = s => (String(s || "").trim().match(/[^\s]+/g) || []).length;
   const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  /* Optional Turkish explanation (papers with a Turkish answer key), shown when the interface is in Turkish. */
+  const xtr = q => q.xtr && lang() === "tr" ? `<p class="dx-x dx-xtr" lang="tr">🇹🇷 ${esc(q.xtr)}</p>` : "";
   const para = s => esc(s).split(/\n\s*\n/).map(p => `<p>${p.replace(/\n/g, "<br>")}</p>`).join("");
 
   /* ── Scores ── */
@@ -181,7 +184,7 @@
         <div class="dx-grid">${sj.map(n => {
           const r = sujetScore(lv, n), b = d.best[lv + "-" + n], dots = SECS.map(s => `<i class="${r[s] == null ? "" : r[s] >= 12.5 ? "ok" : "low"}"></i>`).join("");
           return `<a class="dx-tile ${b && b.pass ? "pass" : ""}" href="#/exam/${lv}/s/${n}" aria-label="${esc(t("dx.sujet", { n }))}${b ? " · " + fmt(b.tot) + "/100" : ""}">
-            <span class="dx-num">${n}</span>${starStr(stars(b && { pass: b.pass, tot: b.tot }))}
+            <span class="dx-num">${n}</span>${HAS_TR[lv + "-" + n] ? `<span class="dx-trmark" title="${esc(t("dx.trKey"))}">TR ✓</span>` : ""}${starStr(stars(b && { pass: b.pass, tot: b.tot }))}
             <small>${b ? fmt(b.tot) + "/100" : esc(t("dx.todo"))}</small><span class="dx-dots" aria-hidden="true">${dots}</span></a>`;
         }).join("")}</div>
       </section>
@@ -293,7 +296,7 @@
   const qList = (it, c) => `<ol class="dx-qs">${it.questions.map((q, qi) => `<li class="dx-q ${c.checked ? (c.sel[qi] === q.a ? "ok" : "ko") : ""}">
       ${q.audio && q.audio.length ? playBtn(it, c, qi) : ""}
       <p lang="fr">${esc(q.q)}</p>${optBtns(it, c, qi, q)}
-      ${c.checked ? `<p class="dx-x" lang="fr">${c.sel[qi] === q.a ? "✓" : "→"} ${esc(q.x)}</p>` : ""}
+      ${c.checked ? `<p class="dx-x" lang="fr">${c.sel[qi] === q.a ? "✓" : "→"} ${esc(q.x)}</p>${xtr(q)}` : ""}
       ${c.checked && q.audio && q.audio.length ? transcript(q.audio, "q" + qi, c) : ""}</li>`).join("")}</ol>
     ${c.checked ? "" : `<button class="btn" data-dx="check">${esc(t("dx.check"))}</button>`}`;
   function playBtn(it, c, qi) {
@@ -441,7 +444,7 @@
       ${it.sec === "ce" ? docHtml(it.doc) : `<div class="card dx-audio"><span class="dx-wave" aria-hidden="true">🎧</span><button class="btn small" data-dx="flash-play">▶ ${esc(t("dx.listen"))}</button></div>`}
       <p class="dx-fq" lang="fr"><b>${esc(q.q)}</b></p>
       <div class="opts dx-opts">${q.o.map((o, oi) => `<button class="opt ${answered ? (oi === q.a ? "right" : FL.sel === oi ? "wrong" : "") : ""}" data-dx="flash-pick" data-o="${oi}" ${answered ? "disabled" : ""} lang="fr">${esc(o)}</button>`).join("")}</div>
-      ${answered ? `<p class="dx-x" lang="fr">${FL.sel === q.a ? "✓" : "→"} ${esc(q.x)}</p><button class="btn" data-dx="flash-next">${FL.i + 1 < FL.qs.length ? esc(t("dx.nextLine")) : esc(t("dx.finish"))}</button>` : ""}`;
+      ${answered ? `<p class="dx-x" lang="fr">${FL.sel === q.a ? "✓" : "→"} ${esc(q.x)}</p>${xtr(q)}<button class="btn" data-dx="flash-next">${FL.i + 1 < FL.qs.length ? esc(t("dx.nextLine")) : esc(t("dx.finish"))}</button>` : ""}`;
   }
 
   /* ── Survival: questions until 3 mistakes ── */
@@ -463,7 +466,7 @@
       ${it.sec === "ce" ? docHtml(it.doc) : `<div class="card dx-audio"><span class="dx-wave" aria-hidden="true">🎧</span><button class="btn small" data-dx="flash-play">▶ ${esc(t("dx.listen"))}</button></div>`}
       <p class="dx-fq" lang="fr"><b>${esc(q.q)}</b></p>
       <div class="opts dx-opts">${q.o.map((o, oi) => `<button class="opt ${answered ? (oi === q.a ? "right" : FL.sel === oi ? "wrong" : "") : ""}" data-dx="flash-pick" data-o="${oi}" ${answered ? "disabled" : ""} lang="fr">${esc(o)}</button>`).join("")}</div>
-      ${answered ? `<p class="dx-x" lang="fr">${FL.sel === q.a ? "✓" : "→"} ${esc(q.x)}</p><button class="btn" data-dx="flash-next">${over || FL.i + 1 >= FL.qs.length ? esc(t("dx.finish")) : esc(t("dx.nextLine"))}</button>` : ""}`;
+      ${answered ? `<p class="dx-x" lang="fr">${FL.sel === q.a ? "✓" : "→"} ${esc(q.x)}</p>${xtr(q)}<button class="btn" data-dx="flash-next">${over || FL.i + 1 >= FL.qs.length ? esc(t("dx.finish")) : esc(t("dx.nextLine"))}</button>` : ""}`;
   }
 
   /* ── Events ── */
