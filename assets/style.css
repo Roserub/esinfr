@@ -156,8 +156,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visibl
 .level-head h2 { margin: 0; }
 
 /* Library */
-.tracks { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
-@media (min-width: 640px) { .tracks { grid-template-columns: repeat(4, 1fr); } }
+.tracks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+@media (min-width: 640px) { .tracks { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .track {
   display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 8px; text-align: left;
   padding: 10px 12px; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); color: var(--text); font: inherit; font-size: .88rem; cursor: pointer; min-height: 52px;
@@ -215,7 +215,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visibl
 .grade .again { background: var(--warm-soft); color: var(--warm-text); border-color: var(--warm-soft); }
 .grade .good { background: var(--accent); }
 .grade .easy { background: var(--blue-soft); color: var(--blue); border-color: var(--blue-soft); }
-.add-word { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.add-word { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+.add-word input, .add-word select { min-width: 0; width: 100%; }
+.track { min-width: 0; overflow-wrap: anywhere; }
 @media (min-width: 640px) { .add-word { grid-template-columns: 1fr 1fr auto; } }
 .add-word input, .setting select { font: inherit; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg); color: var(--text); }
 .setting { display: flex; gap: 8px; align-items: center; margin-top: 12px; }
@@ -614,3 +616,14 @@ details.card > summary h2 { display: inline; }
 @media (min-width: 760px) { .quick { grid-template-columns: repeat(8, 1fr); } }
 .dx-xtr { font-size: .9rem; color: var(--muted); margin-top: -4px; }
 .dx-trmark { font-size: .62rem; font-weight: 700; color: var(--blue); background: var(--blue-soft); border-radius: 6px; padding: 0 4px; }
+/* Cards: filter chips and the DELF decks entry */
+.decks-filter { margin: 8px 0 4px; }
+.decks-filter a.chip { text-decoration: none; display: inline-flex; align-items: center; }
+.deck-delf { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+.deck-delf > span:first-child { font-size: 1.6rem; }
+.deck-delf > span:nth-child(2) { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+/* Very narrow phones: keep every tab label whole */
+@media (max-width: 374px) {
+  .tabbar a { font-size: .64rem; }
+  .tabbar a span:last-child { padding: 0 1px; }
+}

@@ -3,6 +3,8 @@
   const L = {
     tr: {
       "dx.trKey": "Türkçe cevap anahtarı ve açıklamalar",
+      "tab.home": "Bugün", "tab.exam": "DELF", "tab.games": "Oyunlar", "tab.practice": "Pratik", "tab.path": "Yol", "tab.cards": "Kartlar", "tab.more": "Diğer",
+      "cards.filter": "Desteleri süz", "cards.delf": "DELF desteleri ({n})", "cards.delfSub": "Sınav kelimeleri ve hazır cümleler, A1–A2",
       "nav.games": "Oyunlar", "home.lib": "Kaynaklar", "home.quick": "Her şey bir dokunuşta",
       "gm.title": "Oyunlar", "gm.sub": "Oynayarak öğren: hikâyeler, hafıza kartları, cümle yapbozu ve DELF oyunları. Baskı yok, sadece eğlence.",
       "gm.tile": "Maceralar, hafıza, cümle yapbozu",
@@ -23,6 +25,8 @@
     },
     en: {
       "dx.trKey": "Turkish answer key and explanations",
+      "tab.home": "Today", "tab.exam": "DELF", "tab.games": "Games", "tab.practice": "Practice", "tab.path": "Path", "tab.cards": "Cards", "tab.more": "More",
+      "cards.filter": "Filter decks", "cards.delf": "DELF decks ({n})", "cards.delfSub": "Exam vocabulary and ready-made phrases, A1–A2",
       "nav.games": "Games", "home.lib": "Library", "home.quick": "Everything, one tap away",
       "gm.title": "Games", "gm.sub": "Learn by playing: stories, memory cards, sentence puzzles and DELF games. No pressure, just fun.",
       "gm.tile": "Adventures, memory, sentence puzzle",
@@ -43,6 +47,8 @@
     },
     fr: {
       "dx.trKey": "Corrigé et explications en turc",
+      "tab.home": "Accueil", "tab.exam": "DELF", "tab.games": "Jeux", "tab.practice": "Pratique", "tab.path": "Parcours", "tab.cards": "Cartes", "tab.more": "Plus",
+      "cards.filter": "Filtrer les paquets", "cards.delf": "Paquets DELF ({n})", "cards.delfSub": "Le vocabulaire de l'examen et les phrases toutes faites, A1–A2",
       "nav.games": "Jeux", "home.lib": "Ressources", "home.quick": "Tout en un clic",
       "gm.title": "Jeux", "gm.sub": "Apprendre en jouant : histoires, memory, phrases en désordre et jeux DELF. Aucune pression, juste du plaisir.",
       "gm.tile": "Aventures, memory, phrases en désordre",

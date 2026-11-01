@@ -348,8 +348,13 @@
     S.lib = LIB; save();
   }
 
-  function viewCards() {
-    const decks = allDecks();
+  function viewCards(f) {
+    const all = allDecks(), isDelf = d => /^delf-/.test(d.id);
+    const now = all.filter(d => !isLater(d.level)), lvs = [...new Set(now.filter(d => !isDelf(d)).map(d => d.level).filter(Boolean))];
+    f = f === "delf" || lvs.includes(f) ? f : "";
+    const decks = f === "delf" ? all.filter(isDelf) : f ? all.filter(d => d.level === f && !isDelf(d)) : all.filter(d => !isDelf(d));
+    const delfN = all.filter(isDelf).length;
+    const fchip = (v, label) => `<a class="chip ${f === v ? "on" : ""}" href="#/cards${v ? "?f=" + v : ""}" ${f === v ? 'aria-current="page"' : ""}>${label}</a>`;
     const deckCard = d => {
       const st = deckStats(d);
       return `<article class="deck card">
@@ -363,8 +368,10 @@
     <h1>${esc(t("cards.title"))}</h1>
     <p class="muted">${esc(t("cards.sub"))}</p>
     ${totalDue() ? `<a class="btn" href="#/cards/due">${esc(t("home.review"))} · ${totalDue()}</a>` : ""}
+    ${delfN ? `<nav class="row wrap decks-filter" aria-label="${esc(t("cards.filter"))}">${fchip("", esc(t("lib.all")))}${fchip("delf", "🎓 " + esc(t("cards.delf", { n: delfN })))}${lvs.map(l => fchip(l, l)).join("")}</nav>` : ""}
+    ${!f && delfN ? `<a class="card deck-delf" href="#/cards?f=delf"><span aria-hidden="true">🎓</span><span><b>${esc(t("cards.delf", { n: delfN }))}</b><small class="muted">${esc(t("cards.delfSub"))}</small></span><span aria-hidden="true">→</span></a>` : ""}
     <div class="decks">${decks.filter(d => !isLater(d.level)).map(deckCard).join("")}</div>
-    ${laterBox(decks.filter(d => isLater(d.level)).length ? `<div class="decks">${decks.filter(d => isLater(d.level)).map(deckCard).join("")}</div>` : "")}
+    ${!f || f === "delf" ? laterBox(decks.filter(d => isLater(d.level)).length ? `<div class="decks">${decks.filter(d => isLater(d.level)).map(deckCard).join("")}</div>` : "") : ""}
     <section class="card">
       <h2>✍️ ${esc(t("cards.mine"))}</h2>
       <form id="add-word" class="add-word">
@@ -1120,7 +1127,7 @@
       case "path": html = viewPath(parts[1], params.get("step")); break;
       case "library": html = viewLibrary(); break;
       case "cards":
-        html = !parts[1] ? viewCards() : parts[2] === "list" ? viewDeckList(parts[1]) : viewStudy(parts[1]); break;
+        html = !parts[1] ? viewCards(params.get("f")) : parts[2] === "list" ? viewDeckList(parts[1]) : viewStudy(parts[1]); break;
       case "more": html = viewMore(); break;
       case "guide": html = viewGuide(parts[1]); break;
       case "placement": html = viewPlacement(); break;
