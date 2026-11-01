@@ -1,5 +1,6 @@
-/* Offline support: serve the app shell from cache, refresh it in the background. */
-const CACHE = "esinfr-v5";
+/* Offline support. Network first (so a new version shows on the very next visit), cache as the offline fallback.
+   When a new version activates, open pages are reloaded once so nobody stays on the old one. */
+const CACHE = "esinfr-v6";
 const SHELL = [
   "./", "index.html", "manifest.webmanifest", "assets/style.css", "assets/icon.svg", "assets/i18n.js", "assets/i18n-exam.js",
   "assets/i18n-games.js", "assets/exam.js", "assets/games.js", "assets/app.js", "data/resources.js", "data/resources-fr.js",
@@ -13,17 +14,26 @@ const SHELL = [
   "data/delf-a2-po.js", "data/delf-a2-po-2.js", "data/adv-a1-1.js", "data/adv-a1-2.js", "data/adv-a2-1.js", "data/adv-a2-2.js"
 ];
 self.addEventListener("install", e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL.map(u => new Request(u, { cache: "reload" })))).then(() => self.skipWaiting()));
 });
 self.addEventListener("activate", e => {
-  e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim()));
+  e.waitUntil((async () => {
+    const old = (await caches.keys()).filter(k => k !== CACHE);
+    await Promise.all(old.map(k => caches.delete(k)));
+    await self.clients.claim();
+    if (old.length) for (const c of await self.clients.matchAll({ type: "window" })) { try { c.navigate(c.url); } catch (err) { /* ignore */ } }
+  })());
 });
 self.addEventListener("fetch", e => {
   const url = new URL(e.request.url);
   if (e.request.method !== "GET" || url.origin !== location.origin) return;
   e.respondWith(caches.open(CACHE).then(async cache => {
-    const cached = await cache.match(e.request, { ignoreSearch: true });
-    const network = fetch(e.request).then(res => { if (res.ok) cache.put(e.request, res.clone()); return res; }).catch(() => cached);
-    return cached || network;
+    try {
+      const res = await fetch(e.request, { cache: "no-cache" });
+      if (res.ok) cache.put(e.request, res.clone());
+      return res;
+    } catch (err) {
+      return (await cache.match(e.request, { ignoreSearch: true })) || (e.request.mode === "navigate" ? cache.match("index.html") : Response.error());
+    }
   }));
 });

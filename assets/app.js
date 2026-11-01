@@ -149,6 +149,12 @@
   const progressBar = (pct, label) => `<div class="bar" role="progressbar" aria-label="${esc(label || t("a11y.progress"))}" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><span style="width:${pct}%"></span></div>`;
 
   /* ───────── Views ───────── */
+  /* One tap to every section, at the top of Today. */
+  function quickGrid() {
+    const items = [["#/exam", "🎓", "DELF"], ["#/adv", "🧭", t("av.title")], ["#/games", "🎲", t("gm.title")], ["#/practice", "🎯", t("ex.title")],
+      ["#/read", "📖", t("rd.title")], ["#/talk", "💬", t("dg.title")], ["#/cards", "🃏", t("nav.cards")], ["#/library", "📚", t("home.lib")]];
+    return `<nav class="quick" aria-label="${esc(t("home.quick"))}">${items.map(([h, i, l]) => `<a class="quick-i" href="${h}"><span aria-hidden="true">${i}</span><b>${esc(l)}</b></a>`).join("")}</nav>`;
+  }
   function viewHome() {
     const h = new Date().getHours();
     const hello = h < 12 ? t("hello.morning") : h < 18 ? t("hello.day") : t("hello.evening");
@@ -170,6 +176,8 @@
       <h1>${esc(hello)} Esin <span aria-hidden="true">${h < 18 ? "☀︎" : "☾"}</span></h1>
       <p class="muted">${esc(t("home.sub"))}</p>
     </section>
+
+    ${quickGrid()}
 
     ${!S.welcomed ? `<section class="card welcome">
       <p>${esc(t("home.welcome"))}</p>
@@ -441,6 +449,10 @@
       <div class="guide-list">${GUIDE.map(g => `<a class="guide-item" href="#/guide/${g.id}"><span>${g.icon}</span>${esc(loc(g.t))}</a>`).join("")}</div>
     </section>
     <section class="grid2">
+      <a class="card tile" href="#/library"><span>📚</span>${esc(t("nav.library"))}</a>
+      <a class="card tile" href="#/read"><span>📖</span>${esc(t("rd.title"))}</a>
+      <a class="card tile" href="#/talk"><span>💬</span>${esc(t("dg.title"))}</a>
+      <a class="card tile" href="#/adv"><span>🧭</span>${esc(t("av.title"))}</a>
       <a class="card tile" href="#/plan"><span>🗓️</span>${esc(t("plan.title"))}</a>
       <a class="card tile" href="#/search"><span>🔎</span>${esc(t("search.title"))}</a>
       <a class="card tile" href="#/placement"><span>🧭</span>${esc(t("more.placement"))}</a>
@@ -1101,7 +1113,7 @@
     $$("[data-i18n-label]").forEach(el => { el.setAttribute("aria-label", t(el.dataset.i18nLabel)); });
     const { parts, params } = route();
     const top = parts[0] || "home";
-    const tab = { home: "home", path: "path", practice: "practice", read: "practice", talk: "practice", library: "library", cards: "cards", more: "more", guide: "more", placement: "more", progress: "more", plan: "home", search: "more", exam: "exam", adv: "practice", games: "practice" }[top] || "home";
+    const tab = { home: "home", path: "path", practice: "practice", read: "practice", talk: "practice", library: "more", cards: "cards", more: "more", guide: "more", placement: "more", progress: "more", plan: "home", search: "more", exam: "exam", adv: "games", games: "games" }[top] || "home";
     $$(".tabbar a").forEach(a => a.classList.toggle("on", a.dataset.tab === tab));
     let html;
     switch (top) {
@@ -1262,6 +1274,6 @@
   render();
 
   if ("serviceWorker" in navigator && location.protocol === "https:") {
-    navigator.serviceWorker.register("sw.js").catch(() => {});
+    navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).then(r => r.update()).catch(() => {});
   }
 })();
