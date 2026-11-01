@@ -605,3 +605,10 @@ details.card > summary h2 { display: inline; }
 @media (min-width: 760px) { .dx-games { grid-template-columns: repeat(2, 1fr); } }
 @media (prefers-reduced-motion: reduce) { .mem { transition: none; } }
 .btn[disabled] { opacity: .5; cursor: default; }
+/* Quick access to every section (Today) */
+.quick { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 4px 0 16px; }
+.quick-i { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 76px; padding: 8px 4px; text-align: center; text-decoration: none; color: var(--text); background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
+.quick-i span { font-size: 1.5rem; line-height: 1; }
+.quick-i b { font-size: .74rem; line-height: 1.2; font-weight: 600; hyphens: auto; }
+.quick-i:hover { border-color: var(--accent); }
+@media (min-width: 760px) { .quick { grid-template-columns: repeat(8, 1fr); } }

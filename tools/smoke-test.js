@@ -123,6 +123,15 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
     await page.evaluate(() => { location.hash = "#/exam/A1/flash"; });
     for (let i = 0; i < 10; i++) { await page.click("[data-dx=flash-pick]"); await page.click("[data-dx=flash-next]"); }
     if (!(await page.$(".dx-result"))) problems.push(`${name}: quick challenge did not end`);
+    // Every main section is one tap away: bottom bar has DELF and Games, Today has the quick grid.
+    await page.evaluate(() => { location.hash = "#/"; });
+    await page.waitForSelector(".quick");
+    const tabs = await page.$$eval(".tabbar a", as => as.map(a => a.dataset.tab));
+    for (const tb of ["home", "exam", "games", "practice", "cards", "more"]) if (!tabs.includes(tb)) problems.push(`${name}: no ${tb} button in the bottom bar`);
+    const quick = await page.$$eval(".quick a", as => as.map(a => a.getAttribute("href")));
+    for (const h of ["#/exam", "#/adv", "#/games", "#/read", "#/talk", "#/library"]) if (!quick.includes(h)) problems.push(`${name}: quick grid misses ${h}`);
+    await page.click('.tabbar a[data-tab="games"]'); await page.waitForSelector(".gm-adv-tile");
+    if (!(await page.$('.tabbar a[data-tab="games"].on'))) problems.push(`${name}: games tab not highlighted`);
     // Survival: always pick the first option until the three lives are gone.
     await page.evaluate(() => { location.hash = "#/exam/A2/survie"; });
     for (let i = 0; i < 400 && !(await page.$(".dx-result")); i++) { await page.click("[data-dx=flash-pick]"); await page.click("[data-dx=flash-next]"); }
