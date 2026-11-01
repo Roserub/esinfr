@@ -612,3 +612,5 @@ details.card > summary h2 { display: inline; }
 .quick-i b { font-size: .74rem; line-height: 1.2; font-weight: 600; hyphens: auto; }
 .quick-i:hover { border-color: var(--accent); }
 @media (min-width: 760px) { .quick { grid-template-columns: repeat(8, 1fr); } }
+.dx-xtr { font-size: .9rem; color: var(--muted); margin-top: -4px; }
+.dx-trmark { font-size: .62rem; font-weight: 700; color: var(--blue); background: var(--blue-soft); border-radius: 6px; padding: 0 4px; }

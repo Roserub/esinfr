@@ -24,6 +24,7 @@ const checkQ = (it, q, i, needAudio) => {
   if (!isStr(q.x)) errors.push(`${w}: missing explanation x`);
   if (needAudio && !(Array.isArray(q.audio) && q.audio.length)) errors.push(`${w}: missing per-question audio`);
   if (q.audio) checkAudio(w, q.audio);
+  if (q.xtr != null && !isStr(q.xtr)) errors.push(`${w}: xtr must be a non-empty string`);
 };
 const checkAudio = (w, a) => { if (!Array.isArray(a)) return errors.push(`${w}: audio must be a list`); a.forEach((l, i) => { if (!Array.isArray(l) || !SPK.includes(l[0]) || !isStr(l[1])) errors.push(`${w}: audio line ${i + 1} must be [speaker, text] with speaker in ${SPK}`); }); };
 const checkMust = (it) => { if (!Array.isArray(it.must) || it.must.length < 2) return errors.push(`${it.id}: must needs 2+ points`); it.must.forEach((m, i) => { if (!isStr(m.c) || !Array.isArray(m.kw) || !m.kw.length) errors.push(`${it.id}: must ${i + 1} needs c and kw`); }); };
@@ -33,7 +34,7 @@ for (const it of D) {
   if (!/^a[12]-s\d\d-(co|ce|pe|po)\d$/.test(it.id || "")) errors.push(`${w}: bad id`);
   if (ids.has(it.id)) errors.push(`${w}: duplicate id`); ids.add(it.id);
   if (!["A1", "A2"].includes(it.level)) errors.push(`${w}: level`);
-  if (!(it.sujet >= 1 && it.sujet <= 20)) errors.push(`${w}: sujet`);
+  if (!(it.sujet >= 1 && it.sujet <= 30)) errors.push(`${w}: sujet`);
   if (!["co", "ce", "pe", "po"].includes(it.sec)) errors.push(`${w}: sec`);
   if (it.id && it.level && it.id !== `${it.level.toLowerCase()}-s${String(it.sujet).padStart(2, "0")}-${it.sec}${it.ex}`) errors.push(`${w}: id does not match level/sujet/sec/ex`);
   if (typeof it.pts !== "number" || it.pts <= 0) errors.push(`${w}: pts`);

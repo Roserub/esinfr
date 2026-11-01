@@ -217,7 +217,7 @@ ${T(["A1", "A2", "B1", "B2", "C1", "C2"], [["60–100 s", "160–200 s", "360–
 <h3>Daily ideal in the first months (60–90 min)</h3>
 <p>+ 20 min listening (podcast / YouTube for learners) · + 5 min pronunciation drill.</p>
 <h3>Every week</h3>
-<p>1–2 conversation sessions · 1 episode of a series · 1 corrected text · 1 review of your error log and the 25 classic mistakes.</p>
+<p>1–2 conversation sessions · 1 episode of a series · 1 corrected text · 1 review of your error log and the classic mistakes.</p>
 <h3>Every month</h3>
 <p>One practice test (DELF sample) to see progress. Note your hours (the Progress page does it for you).</p>
 <h3>Immersion habits at home</h3>
@@ -242,7 +242,7 @@ ${T(["A1", "A2", "B1", "B2", "C1", "C2"], [["60–100 s", "160–200 s", "360–
 <h3>İlk aylarda ideal gün (60–90 dk)</h3>
 <p>+ 20 dk dinleme (podcast / öğrenciler için YouTube) · + 5 dk telaffuz alıştırması.</p>
 <h3>Her hafta</h3>
-<p>1–2 sohbet seansı · bir dizi bölümü · düzeltilmiş bir metin · hata defterini ve 25 klasik hatayı bir kez gözden geçir.</p>
+<p>1–2 sohbet seansı · bir dizi bölümü · düzeltilmiş bir metin · hata defterini ve klasik hataları bir kez gözden geçir.</p>
 <h3>Her ay</h3>
 <p>İlerlemeyi görmek için bir deneme sınavı (DELF örneği). Saatlerini not et (İlerleme sayfası bunu senin için yapar).</p>
 <h3>Evde dalış alışkanlıkları</h3>

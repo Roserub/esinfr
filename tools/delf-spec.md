@@ -27,7 +27,7 @@ Plain JavaScript, no imports, no template literals (`` ` ``), no `${`. Strings i
 |---|---|
 | `id` | `"<level lowercase>-s<2-digit sujet>-<sec><ex>"`, e.g. `"a2-s07-ce3"` |
 | `level` | `"A1"` or `"A2"` |
-| `sujet` | 1 … 20 |
+| `sujet` | 1 … 30 (21–26: papers adapted from the Turkish-annotated answer-key file) |
 | `sec` | `"co"` listening · `"ce"` reading · `"pe"` writing · `"po"` speaking |
 | `ex` | exercise number inside the section (1, 2, 3 …) |
 | `pts` | points of the exercise (integers or .5); per sujet and section they add up to 25 |
@@ -38,7 +38,7 @@ Plain JavaScript, no imports, no template literals (`` ` ``), no `${`. Strings i
 ## `co` — Compréhension de l'oral (4 exercises per sujet)
 
 - `audio`: the recording, list of `[speaker, text]`. Speakers: `"N"` announcer/neutral, `"F"` woman, `"M"` man, `"F2"` second woman, `"M2"` second man, `"K"` child. The site reads it with French text-to-speech (played twice, like the exam), so write natural spoken French with full punctuation; write numbers, prices and times in digits (« 18 h 30 », « 12,50 € ») — the voice reads them.
-- `questions`: `{ q, o, a, x }` — question, 3 options (4 for picture matching), index of the right option (0-based), and a short French explanation `x` quoting the recording.
+- `questions`: `{ q, o, a, x, xtr? }` — `xtr` is an optional Turkish explanation (shown when the interface is in Turkish); question, 3 options (4 for picture matching), index of the right option (0-based), and a short French explanation `x` quoting the recording.
 - Picture questions: start each option with one emoji + 1–3 words (`"🚆 le train"`).
 - Exercise with several short recordings (e.g. matching dialogues to situations): leave the item's `audio` empty `[]` and give each question its own `audio`.
 - **A1** typical order: ex1 a phone/voicemail message · ex2 a public announcement (station, shop, school) · ex3 a message or radio ad · ex4 4–5 very short dialogues → match each to a picture/situation. 3–5 questions each; very simple, slow, high-frequency words; recordings 30–70 words.
