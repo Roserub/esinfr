@@ -216,6 +216,17 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
     await page.waitForFunction(n => window.__said.join("").replace(/[\s,]/g, "").length >= n, want.length, { timeout: 60000 }).catch(() => {});
     const got = await page.evaluate(() => window.__said.join("").replace(/[\s,]/g, ""));
     if (got !== want) problems.push(`audio (${mode}): read ${got.length}/${want.length} characters of DELF A1 19 listening 1`);
+    // "Listen to all" on a reading and on a dialogue reads everything to the end.
+    if (mode === "drop") for (const [kind, id] of [["read", "r-cafe"], ["talk", (await page.evaluate(() => window.DIALOGUES[0].id))]]) {
+      await page.evaluate(h => { location.hash = h; }, `#/${kind}/${id}`);
+      await page.waitForSelector("[data-speakall]");
+      const all = await page.evaluate(([kind, id]) => (kind === "read" ? window.READINGS.find(r => r.id === id).text : window.DIALOGUES.find(d => d.id === id).lines.map(l => l.fr).join(" ")).replace(/[\s,]/g, ""), [kind, id]);
+      await page.evaluate(() => { window.__said.length = 0; });
+      await page.click("[data-speakall]");
+      await page.waitForFunction(n => window.__said.join("").replace(/[\s,]/g, "").length >= n, all.length, { timeout: 60000 }).catch(() => {});
+      const heard = await page.evaluate(() => window.__said.join("").replace(/[\s,]/g, ""));
+      if (heard !== all) problems.push(`audio: "listen to all" on ${kind} ${id} read ${heard.length}/${all.length} characters`);
+    }
     await ctx.close();
   }
   await browser.close(); server.close();
