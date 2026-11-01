@@ -6,6 +6,8 @@ A calm, free platform to learn French from zero (A0) to mastery (C2), made for a
 
 ## What's inside
 
+- **DELF mock exams** (new in v4): 10 full DELF A1 papers and 10 full DELF A2 papers, each with the four parts of the real exam (listening with French audio, reading with realistic documents, writing with live word count and content checklist, speaking with examiner questions, role-plays and speech recognition). Zen mode (no clock, replay the audio, Turkish help) or exam mode (real timings, audio twice). Scores out of 100 with the real pass rules, stars, badges, history, one-part practice and a quick 10-question challenge.
+- **Focus A1–A2**: the site centres on A1–A2; B1 → C2 content is kept under "Later" (a switch in More shows it again).
 - **Path**: 7 CEFR levels (A0 → C2), 71 concrete steps organised in the phases of the master list (sounds & survival → A1 → … → C1), cumulative study hours per level, and a grammar checklist per level.
 - **Read & talk** (new in v3): 18 graded readings written for Esin's life (A1 → C1: café, doctor, physio session, handball, préfecture, STAPS lecture, sport-science and health articles), each with French audio, a Turkish/English glossary you can add to your cards and comprehension questions; 10 real-life dialogues (bakery, pharmacy, bank, move-in inspection, a physio session from the therapist's side, job interview…) played with two voices, with an optional translation and a role-play mode.
 - **Practice**: 8 in-site exercises with French audio — hear the difference (minimal pairs), numbers, listening, dictation with word-by-word correction, conjugation (41 verbs, tenses by level), un/une with ending rules, spot the mistake (the 25 classic mistakes of Turkish speakers), speaking with speech recognition — plus a mistakes notebook to review.
@@ -33,6 +35,7 @@ node tools/smoke-test.js      # end-to-end test (needs playwright + chromium)
 - `data/decks.js`, `data/decks-master.js` — flashcards
 - `data/guide.js`, `data/guide-master.js` — the guide (`data/guide-fr.js`: French version)
 - `data/readings.js`, `data/dialogues.js` — graded readings and dialogues
+- `data/delf-*.js` — DELF mock exams (format: `tools/delf-spec.md`, check: `node tools/check-delf.js`); engine in `assets/exam.js`
 - `data/practice.js` — verbs, nouns and minimal pairs for the exercises
 - `assets/i18n.js` — interface strings
 

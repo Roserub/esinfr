@@ -14,7 +14,7 @@
 
   /* ───────── State ───────── */
   const DEFAULT = () => ({ v: 1, lang: null, level: null, steps: {}, res: {}, fav: {}, cards: {}, days: {}, mine: [], newPerSession: 10, lib: {}, welcomed: false,
-    fw: {}, gram: {}, pace: { hpw: 5, dpw: 5 }, mins: {}, prac: {}, err: [], plan: {}, remind: "19:00", read: {}, talk: {} });
+    fw: {}, gram: {}, pace: { hpw: 5, dpw: 5 }, mins: {}, prac: {}, err: [], plan: {}, remind: "19:00", read: {}, talk: {}, delf: {}, focus: true });
   let S = load();
   function fill(obj) {
     const s = Object.assign(DEFAULT(), obj);
@@ -49,6 +49,9 @@
   const today = () => Math.floor((Date.now() - new Date().getTimezoneOffset() * 60000) / 86400000);
   const levelIdx = lv => LEVELS.indexOf(lv);
   const curLevel = () => S.level || "A0";
+  const ADV = ["B1", "B2", "C1", "C2"];
+  const isLater = lv => S.focus !== false && ADV.includes(lv);
+  const laterBox = (inner, open) => inner ? `<details class="later card" ${open ? "open" : ""}><summary><h2>⏳ ${esc(t("focus.later"))}</h2> <span class="muted small">${esc(t("focus.laterSub"))}</span></summary>${inner}</details>` : "";
 
   function toast(msg) {
     const el = $("#toast");
@@ -173,6 +176,8 @@
       <div class="row wrap"><a class="btn" href="#/guide/start">🧭 ${esc(t("home.startHere"))}</a><a class="btn ghost" href="#/placement">${esc(t("home.start"))}</a><button class="btn ghost" data-action="dismiss-welcome">OK</button></div>
     </section>` : ""}
 
+    ${window.EXAM ? window.EXAM.homeCard() : ""}
+
     ${todayPlanCard()}
 
     <section class="card">
@@ -238,9 +243,9 @@
 
   function viewPath(lvId, openStep) {
     const lv = PATH.find(l => l.id === lvId) || PATH.find(l => l.id === curLevel()) || PATH[0];
-    const tabs = PATH.map(l => {
+    const tabs = PATH.map((l, i) => {
       const p = levelProgress(l.id);
-      return `<a class="lv-tab ${l.id === lv.id ? "on" : ""} ${l.id === curLevel() ? "cur" : ""}" href="#/path/${l.id}">
+      return `${isLater(l.id) && !isLater((PATH[i - 1] || {}).id) ? `<span class="lv-sep" aria-hidden="true">⏳</span>` : ""}<a class="lv-tab ${l.id === lv.id ? "on" : ""} ${l.id === curLevel() ? "cur" : ""} ${isLater(l.id) ? "later-tab" : ""}" href="#/path/${l.id}">
         <b>${l.id}</b><span>${p.done}/${p.total}</span><i style="--p:${p.pct}%"></i></a>`;
     }).join("");
     const p = levelProgress(lv.id);
@@ -265,6 +270,7 @@
     return `
     <h1>${esc(t("path.title"))}</h1>
     <nav class="lv-tabs" aria-label="Levels">${tabs}</nav>
+    ${isLater(lv.id) ? `<p class="note">⏳ ${esc(t("focus.laterSub"))}</p>` : ""}
     <section class="card level-head">
       <div class="row between"><h2>${lv.id} · ${esc(loc(lv.name))}</h2><span class="muted small">${esc(t("path.hours", { h: lv.hours }))}${lv.cum ? " · " + esc(t("path.cum", { c: lv.cum })) : ""}</span></div>
       <p><b>${esc(t("path.can"))}:</b> ${esc(loc(lv.can))}</p>
@@ -273,6 +279,7 @@
     </section>
     ${p.done === p.total ? `<p class="ok-msg">${esc(t("home.allDone"))}</p>` : ""}
     <div class="steps">${steps}</div>
+    ${["A1", "A2"].includes(lv.id) && window.EXAM && window.EXAM.count ? `<a class="card next dx-resume" href="#/exam/${lv.id}">🎓 ${esc(t("dx.title"))} · DELF ${lv.id} →</a>` : ""}
     ${byLevel(READINGS, lv.id).length + byLevel(DIALOGUES, lv.id).length ? `<section class="card"><h2>📖 ${esc(t("path.readTalk"))}</h2><div class="read-list">${byLevel(READINGS, lv.id).map(readTile).join("")}${byLevel(DIALOGUES, lv.id).map(talkTile).join("")}</div></section>` : ""}
     ${grammarChecklist(lv.id)}`;
   }
@@ -292,7 +299,7 @@
   function libFiltered() {
     const q = LIB.q.trim().toLowerCase();
     return RES.filter(r =>
-      (!LIB.level || r.levels.includes(LIB.level)) &&
+      (LIB.level ? r.levels.includes(LIB.level) : S.focus === false || r.levels.some(l => !ADV.includes(l))) &&
       (!LIB.type || r.type === LIB.type) &&
       (!LIB.track || r.tracks.includes(LIB.track)) &&
       (!LIB.skill || r.skills.includes(LIB.skill)) &&
@@ -310,7 +317,8 @@
     <div class="tracks">${TRACKS.map(k => `<button class="track ${LIB.track === k ? "on" : ""}" data-track="${k}"><span>${TRACK_ICONS[k]}</span><b>${esc(t("track." + k))}</b><small>${counts[k]}</small></button>`).join("")}</div>
     <div class="filters card">
       <input type="search" id="lib-q" placeholder="${esc(t("lib.search"))}" value="${esc(LIB.q)}" autocomplete="off">
-      <div class="frow"><span class="flabel">${esc(t("lib.level"))}</span>${chip(esc(t("lib.all")), 'data-f="level" data-v=""', !LIB.level)}${LEVELS.map(l => chip(l, `data-f="level" data-v="${l}"`, LIB.level === l)).join("")}</div>
+      <div class="frow"><span class="flabel">${esc(t("lib.level"))}</span>${chip(esc(t("lib.all")), 'data-f="level" data-v=""', !LIB.level)}${LEVELS.filter(l => !isLater(l) || LIB.level === l).map(l => chip(l, `data-f="level" data-v="${l}"`, LIB.level === l)).join("")}</div>
+      ${S.focus !== false && !LIB.level ? `<p class="muted small">🎯 ${esc(t("focus.libNote"))}</p>` : ""}
       <div class="frow"><span class="flabel">${esc(t("lib.type"))}</span>${chip(esc(t("lib.all")), 'data-f="type" data-v=""', !LIB.type)}${TYPES.map(k => chip(esc(t("type." + k)), `data-f="type" data-v="${k}"`, LIB.type === k)).join("")}</div>
       <div class="frow"><span class="flabel">${esc(t("lib.skill"))}</span>${chip(esc(t("lib.all")), 'data-f="skill" data-v=""', !LIB.skill)}${SKILLS.map(k => chip(esc(t("skill." + k)), `data-f="skill" data-v="${k}"`, LIB.skill === k)).join("")}</div>
       <div class="frow"><span class="flabel">${esc(t("lib.cost"))}</span>${chip(esc(t("lib.all")), 'data-f="cost" data-v=""', !LIB.cost)}${["free", "freemium", "lib", "paid"].map(k => chip(esc(t("cost." + k)), `data-f="cost" data-v="${k}"`, LIB.cost === k)).join("")}</div>
@@ -333,11 +341,7 @@
 
   function viewCards() {
     const decks = allDecks();
-    return `
-    <h1>${esc(t("cards.title"))}</h1>
-    <p class="muted">${esc(t("cards.sub"))}</p>
-    ${totalDue() ? `<a class="btn" href="#/cards/due">${esc(t("home.review"))} · ${totalDue()}</a>` : ""}
-    <div class="decks">${decks.map(d => {
+    const deckCard = d => {
       const st = deckStats(d);
       return `<article class="deck card">
         <div class="row between"><h2>${esc(loc(d.name))}</h2>${d.level ? `<span class="badge lv">${d.level}</span>` : ""}</div>
@@ -345,7 +349,13 @@
         ${progressBar(st.total ? Math.round(st.learned / st.total * 100) : 0)}
         <div class="row"><a class="btn small" href="#/cards/${d.id}">${esc(t("cards.study"))}</a><a class="btn small ghost" href="#/cards/${d.id}/list">${esc(t("cards.browse"))}</a></div>
       </article>`;
-    }).join("")}</div>
+    };
+    return `
+    <h1>${esc(t("cards.title"))}</h1>
+    <p class="muted">${esc(t("cards.sub"))}</p>
+    ${totalDue() ? `<a class="btn" href="#/cards/due">${esc(t("home.review"))} · ${totalDue()}</a>` : ""}
+    <div class="decks">${decks.filter(d => !isLater(d.level)).map(deckCard).join("")}</div>
+    ${laterBox(decks.filter(d => isLater(d.level)).length ? `<div class="decks">${decks.filter(d => isLater(d.level)).map(deckCard).join("")}</div>` : "")}
     <section class="card">
       <h2>✍️ ${esc(t("cards.mine"))}</h2>
       <form id="add-word" class="add-word">
@@ -420,6 +430,11 @@
 
   function viewMore() {
     return `<h1>${esc(t("more.title"))}</h1>
+    <section class="card">
+      <h2>🎯 ${esc(t("focus.title"))}</h2>
+      <p class="muted small">${esc(t("focus.on"))}</p>
+      <div class="check"><input type="checkbox" id="focus-adv" ${S.focus === false ? "checked" : ""}><label for="focus-adv">${esc(t("focus.toggle"))}</label></div>
+    </section>
     <section class="card">
       <h2>${esc(t("more.guide"))}</h2>
       <div class="guide-list">${GUIDE.map(g => `<a class="guide-item" href="#/guide/${g.id}"><span>${g.icon}</span>${esc(loc(g.t))}</a>`).join("")}</div>
@@ -732,7 +747,9 @@
   let RD = null; // { id, ans: {qi: oi}, start }
   const byLevel = (arr, lv) => arr.filter(x => x.level === lv);
   function levelGroups(arr, render) {
-    return LEVELS.filter(lv => byLevel(arr, lv).length).map(lv => `<h2 class="lv-h"><span class="badge lv">${lv}</span> ${esc(loc(PATH.find(l => l.id === lv).name))}</h2><div class="read-list">${byLevel(arr, lv).map(render).join("")}</div>`).join("");
+    const grp = lv => `<h2 class="lv-h"><span class="badge lv">${lv}</span> ${esc(loc(PATH.find(l => l.id === lv).name))}</h2><div class="read-list">${byLevel(arr, lv).map(render).join("")}</div>`;
+    const lvs = LEVELS.filter(lv => byLevel(arr, lv).length);
+    return lvs.filter(lv => !isLater(lv)).map(grp).join("") + laterBox(lvs.filter(isLater).map(grp).join(""));
   }
   const readTile = r => { const s = S.read[r.id]; return `<a class="card read-tile ${s ? "is-done" : ""}" href="#/read/${r.id}"><b>${esc(r.t.fr)}</b><small class="muted">${esc(lang() === "fr" ? r.t.en : loc(r.t))}</small>${s ? `<span class="ok-msg small">✓ ${s.score}/${s.total}</span>` : ""}</a>`; };
   const talkTile = d => `<a class="card read-tile ${S.talk[d.id] ? "is-done" : ""}" href="#/talk/${d.id}"><b>${esc(d.t.fr)}</b><small class="muted">${esc(lang() === "fr" ? d.t.en : loc(d.t))}</small>${S.talk[d.id] ? `<span class="ok-msg small">✓</span>` : ""}</a>`;
@@ -838,6 +855,7 @@
     return `<h1>${esc(t("ex.title"))}</h1>
       <p class="muted">${esc(t("ex.sub"))}</p>
       <div class="ex-grid">
+        ${window.EXAM && window.EXAM.count ? `<a class="card ex-tile big" href="#/exam"><span class="ex-ic">🎓</span><b>${esc(t("dx.title"))}</b><small>DELF A1 · A2</small></a>` : ""}
         <a class="card ex-tile big" href="#/read"><span class="ex-ic">📖</span><b>${esc(t("rd.title"))}</b><small>${esc(t("rd.tile", { n: READINGS.length, d: Object.keys(S.read).length }))}</small></a>
         <a class="card ex-tile big" href="#/talk"><span class="ex-ic">💬</span><b>${esc(t("dg.title"))}</b><small>${esc(t("dg.tile", { n: DIALOGUES.length, d: Object.keys(S.talk).length }))}</small></a>
         ${EX_KINDS.map(([k, ic]) => `<a class="card ex-tile" href="#/practice/${k}"><span class="ex-ic">${ic}</span><b>${esc(t("ex." + k))}</b><small>${esc(t("ex." + k + ".d"))}</small></a>`).join("")}</div>
@@ -946,7 +964,8 @@
     let left = M - 10;
     if (ns && left >= 15) { const m = Math.min(30, Math.max(15, left - 15)); tasks.push({ k: "course", m, icon: "↟", label: t("plan.course") + " · " + loc(ns.step.t), href: `#/path/${ns.level.id}?step=${ns.step.id}` }); left -= m; }
     const lvRes = f => { const a = resForLevel(lv, f); return a.length ? a[(wk * 7 + day * 13) % a.length] : null; };
-    const rot = levelIdx(lv) < 1 ? ["practice", "listen", "speak", "practice"] : ["listen", "practice", "read", "speak", "write", "practice"];
+    const exam = ["A1", "A2"].includes(lv) && window.EXAM && window.EXAM.count;
+    const rot = levelIdx(lv) < 1 ? ["practice", "listen", "speak", "practice"] : exam ? ["delf", "listen", "practice", "read", "delf", "speak", "write"] : ["listen", "practice", "read", "speak", "write", "practice"];
     for (let j = 0; left >= 10 && j < 4; j++) {
       const kind = rot[(n + j) % rot.length];
       if (tasks.some(x => x.k === kind)) continue;
@@ -954,6 +973,7 @@
       if (kind === "practice") { const ex = kinds[n % kinds.length]; tasks.push({ k: kind, m, icon: EX_ICON[ex], label: t("plan.practice") + " · " + t("ex." + ex), href: "#/practice/" + ex }); }
       else if (kind === "listen") { const r = lvRes(r => ["podcast", "video"].includes(r.type)); if (r) tasks.push({ k: kind, m, icon: "🎧", label: t("plan.listen") + " · " + r.name, href: r.url, res: r.id }); }
       else if (kind === "read") { const r = lvRes(r => ["reading", "news"].includes(r.type)); if (r) tasks.push({ k: kind, m, icon: "📖", label: t("plan.read") + " · " + r.name, href: r.url, res: r.id }); }
+      else if (kind === "delf") { const sec = ["co", "ce", "pe", "po"][(n + wk) % 4]; tasks.push({ k: kind, m, icon: "🎓", label: t("dx.title") + " · " + t("dx." + sec), href: "#/exam/" + lv + "/sec/" + sec }); }
       else if (kind === "speak") tasks.push({ k: kind, m, icon: "🗣️", label: t(levelIdx(lv) < 2 ? "plan.speakEx" : "plan.speak"), href: "#/practice/speak" });
       else if (kind === "write") { const r = RES_BY_ID.bonpatron; tasks.push({ k: kind, m, icon: "✍️", label: t("plan.write"), href: r ? r.url : "#/guide/readwrite", res: r && r.id }); }
       left -= m;
@@ -1078,7 +1098,7 @@
     $$("[data-i18n-label]").forEach(el => { el.setAttribute("aria-label", t(el.dataset.i18nLabel)); });
     const { parts, params } = route();
     const top = parts[0] || "home";
-    const tab = { home: "home", path: "path", practice: "practice", read: "practice", talk: "practice", library: "library", cards: "cards", more: "more", guide: "more", placement: "more", progress: "more", plan: "home", search: "more" }[top] || "home";
+    const tab = { home: "home", path: "path", practice: "practice", read: "practice", talk: "practice", library: "library", cards: "cards", more: "more", guide: "more", placement: "more", progress: "more", plan: "home", search: "more", exam: "exam" }[top] || "home";
     $$(".tabbar a").forEach(a => a.classList.toggle("on", a.dataset.tab === tab));
     let html;
     switch (top) {
@@ -1095,6 +1115,7 @@
       case "search": html = viewSearch(params.get("q")); break;
       case "read": html = parts[1] ? viewReading(parts[1]) : viewReadings(); break;
       case "talk": html = parts[1] ? viewDialogue(parts[1]) : viewDialogues(); break;
+      case "exam": html = window.EXAM ? window.EXAM.view(parts, params) : viewHome(); break;
       default: html = viewHome();
     }
     main.innerHTML = `<div class="view ${raw !== lastRendered ? "anim" : ""}">${html}</div>`;
@@ -1113,6 +1134,7 @@
     if (RD && route().parts[1] !== RD.id) RD = null;
     if (TK && route().parts[1] !== TK.id) TK = null;
     SEQ++; if ("speechSynthesis" in window) speechSynthesis.cancel();
+    if (window.EXAM) window.EXAM.onHash();
     render();
     if (top !== lastTop || !route().params.get("step")) window.scrollTo(0, 0);
     lastTop = top;
@@ -1123,6 +1145,7 @@
     const el = e.target.closest("button, a[data-open], [data-lang]");
     if (!el) return;
     const d = el.dataset;
+    if (d.dx && window.EXAM) { window.EXAM.click(el, d, e); return; }
     if (d.lang) { S.lang = d.lang; save(); render(); return; }
     if (d.speak) { speak(d.speak, d.slow); return; }
     if (d.ans !== undefined) { exAnswer(d.ans); return; }
@@ -1186,10 +1209,12 @@
   document.addEventListener("input", e => {
     if (e.target.id === "lib-q") { LIB.q = e.target.value; renderLibList(); }
     if (e.target.id === "search-q") renderSearch();
+    if (window.EXAM) window.EXAM.input(e);
   });
   document.addEventListener("change", e => {
     if (e.target.matches("#placement input")) placementResult();
     if (e.target.id === "new-limit") { S.newPerSession = +e.target.value; save(); }
+    if (e.target.id === "focus-adv") { S.focus = !e.target.checked; save(); render(); }
     const d = e.target.dataset || {};
     if (d.set) { S.pace[d.set] = +e.target.value; save(); render(); }
     if (d.fw) { if (e.target.checked) S.fw[d.fw] = 1; else delete S.fw[d.fw]; save(); render(); }
@@ -1227,6 +1252,7 @@
   if (!S.lang) {
     S.lang = /^en/i.test(navigator.language || "") ? "en" : "tr"; save();
   }
+  window.APP = { get S() { return S; }, save, render: () => render(), t, esc, loc, lang, toast, practised, logMinutes, route, speak, speakBtn, ymd };
   render();
 
   if ("serviceWorker" in navigator && location.protocol === "https:") {
