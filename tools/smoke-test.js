@@ -195,6 +195,29 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
     if (!(await page.$(".dx-result"))) problems.push(`${name}: sentence puzzle did not end`);
     await page.close();
   }
+  // Audio: with a fake speech engine, "Listen" reads the whole recording, even when the
+  // first utterance is dropped and when the engine never says it has finished.
+  for (const mode of ["drop", "noend"]) {
+    const ctx = await browser.newContext({ viewport: SIZES.phone });
+    await ctx.addInitScript(mode => {
+      const log = window.__said = []; let cur = null, q = [], drop = mode === "drop" ? 1 : 0;
+      const S = { speaking: false, pending: false, paused: false, getVoices: () => [{ name: "Amélie", lang: "fr-FR", localService: true }], addEventListener() {}, resume() {},
+        cancel() { q = []; if (cur) { const u = cur; cur = null; S.speaking = false; if (u.onerror) u.onerror({ error: "interrupted" }); } },
+        speak(u) { if (drop) { drop--; return; } q.push(u); if (!cur) S.next(); },
+        next() { const u = q.shift(); if (!u) return; cur = u; S.speaking = true; setTimeout(() => { if (cur !== u) return; log.push(u.text); if (u.onstart) u.onstart(); setTimeout(() => { if (cur !== u) return; cur = null; S.speaking = false; if (mode !== "noend" && u.onend) u.onend(); S.next(); }, 20); }, 5); } };
+      Object.defineProperty(window, "speechSynthesis", { value: S, configurable: true });
+      window.SpeechSynthesisUtterance = function (t) { this.text = t; this.pitch = 1; };
+    }, mode);
+    const page = await ctx.newPage();
+    await page.goto(base + "#/exam");
+    await page.evaluate(() => window.EXAM.start(["a1-s19-co1"], "ex", "A1", null));
+    await page.click("[data-dx=play]");
+    const want = await page.evaluate(() => window.DELF.find(x => x.id === "a1-s19-co1").audio.map(l => l[1]).join(" ").replace(/[\s,]/g, ""));
+    await page.waitForFunction(n => window.__said.join("").replace(/[\s,]/g, "").length >= n, want.length, { timeout: 60000 }).catch(() => {});
+    const got = await page.evaluate(() => window.__said.join("").replace(/[\s,]/g, ""));
+    if (got !== want) problems.push(`audio (${mode}): read ${got.length}/${want.length} characters of DELF A1 19 listening 1`);
+    await ctx.close();
+  }
   await browser.close(); server.close();
   if (problems.length) { console.error(problems.join("\n")); process.exit(1); }
   console.log("smoke test OK");

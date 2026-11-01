@@ -94,33 +94,11 @@
   }
 
   /* ── Audio (French text-to-speech, one voice per speaker) ── */
-  let TOKEN = 0, VOICES = null;
-  function voices() {
-    if (VOICES || !("speechSynthesis" in window)) return VOICES || {};
-    const vs = speechSynthesis.getVoices().filter(v => /^fr/i.test(v.lang)); if (!vs.length) return {};
-    const male = vs.find(v => /fr.FR/i.test(v.lang) && /(Thomas|Nicolas|Daniel|Paul|Henri|Mathieu|male|homme)/i.test(v.name));
-    const fem = vs.find(v => /fr.FR/i.test(v.lang) && /(Amélie|Audrey|Marie|Aurélie|Céline|Julie|Google)/i.test(v.name)) || vs.find(v => /fr.FR/i.test(v.lang)) || vs[0];
-    VOICES = { F: fem, M: male || fem }; return VOICES;
-  }
-  if ("speechSynthesis" in window) speechSynthesis.addEventListener && speechSynthesis.addEventListener("voiceschanged", () => { VOICES = null; });
   const PITCH = { N: 1, F: 1.1, F2: 1.3, M: .8, M2: .95, K: 1.45 };
-  function stopAudio() { TOKEN++; if ("speechSynthesis" in window) speechSynthesis.cancel(); }
+  function stopAudio() { A().tts.stop(); }
   function playLines(lines, opts, done) {
-    if (!("speechSynthesis" in window) || !lines || !lines.length) { if (done) done(); return; }
-    stopAudio(); const run = TOKEN, v = voices(), lv = (opts && opts.lv) || "A1";
-    const rate = opts && opts.slow ? .68 : lv === "A1" ? .86 : .95;
-    const next = i => {
-      if (run !== TOKEN) return;
-      if (i >= lines.length) { if (done) done(); return; }
-      const [who, text] = lines[i];
-      const u = new SpeechSynthesisUtterance(text);
-      u.lang = "fr-FR"; u.rate = rate; u.pitch = PITCH[who] || 1;
-      const voice = /^M/.test(who) ? v.M : v.F; if (voice) u.voice = voice;
-      u.onend = () => setTimeout(() => next(i + 1), 450);
-      u.onerror = () => next(i + 1);
-      speechSynthesis.speak(u);
-    };
-    next(0);
+    const lv = (opts && opts.lv) || "A1";
+    A().tts.play(lines, { rate: opts && opts.slow ? .68 : lv === "A1" ? .86 : .95, pitch: PITCH }, done);
   }
 
   /* ── Run state ── */

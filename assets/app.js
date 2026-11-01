@@ -60,20 +60,90 @@
   }
   function practised() { S.days[ymd()] = 1; save(); }
 
-  /* Text-to-speech with a French voice (works offline on iPhone, iPad and Mac). */
-  let frVoice = null;
-  function pickVoice() {
-    if (!("speechSynthesis" in window)) return;
-    const vs = speechSynthesis.getVoices().filter(v => /^fr(-|_)/i.test(v.lang));
-    frVoice = vs.find(v => /fr.FR/i.test(v.lang) && /(Amélie|Audrey|Thomas|Google|Marie|Premium|Enhanced)/i.test(v.name)) || vs.find(v => /fr.FR/i.test(v.lang)) || vs[0] || null;
-  }
-  if ("speechSynthesis" in window) { pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+  /* Text-to-speech engine shared by every page (cards, readings, dialogues, DELF, adventures).
+     Robust on iPhone/iPad/Mac/Android: long texts are cut into sentences (some voices stop after ~15 s),
+     utterances are kept alive (else the browser can drop them and never fire onend), a watchdog moves on
+     when a browser forgets to fire onend, a dropped first utterance is retried, and the learner gets a
+     hint when no sound starts (iPhone silent mode, volume, a browser without French voices). */
+  const TTS = (() => {
+    const ok = "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
+    let run = 0, keep = [], V = null, timers = [], hinted = false;
+    try { if (navigator.audioSession) navigator.audioSession.type = "playback"; } catch (e) {}
+    function pick() {
+      if (!ok) return;
+      const vs = speechSynthesis.getVoices().filter(v => /^fr([-_]|$)/i.test(v.lang));
+      if (!vs.length) { V = null; return; }
+      const fr = vs.filter(v => /^fr[-_]FR/i.test(v.lang)), pool = fr.length ? fr : vs;
+      const local = pool.filter(v => v.localService), base = local.length ? local : pool;
+      const F = base.find(v => /(Amélie|Amelie|Audrey|Marie|Aurélie|Céline|Julie|Virginie|Hortense|Denise|Google)/i.test(v.name)) || base.find(v => /(Premium|Enhanced)/i.test(v.name)) || base[0];
+      const M = base.find(v => /(Thomas|Nicolas|Daniel|Paul|Henri|Mathieu|Jacques|Rémi|Remi)/i.test(v.name)) || F;
+      V = { F, M };
+    }
+    if (ok) { pick(); if (speechSynthesis.addEventListener) speechSynthesis.addEventListener("voiceschanged", pick); else speechSynthesis.onvoiceschanged = pick; }
+    // iPhone/iPad: playing a short silent sound first puts the page in the "playback" audio session,
+    // so the voice is heard even when the side switch is on silent.
+    let blank = null;
+    function unmute() {
+      if (!(/iP(hone|ad|od)/.test(navigator.userAgent) || (/Macintosh/.test(navigator.userAgent) && "ontouchend" in document))) return;
+      try {
+        if (!blank) {
+          const n = 1600, b = new Uint8Array(44 + n), dv = new DataView(b.buffer), w = (o, x) => { for (let i = 0; i < x.length; i++) b[o + i] = x.charCodeAt(i); };
+          w(0, "RIFF"); dv.setUint32(4, 36 + n, true); w(8, "WAVEfmt "); dv.setUint32(16, 16, true); dv.setUint16(20, 1, true); dv.setUint16(22, 1, true);
+          dv.setUint32(24, 8000, true); dv.setUint32(28, 8000, true); dv.setUint16(32, 1, true); dv.setUint16(34, 8, true); w(36, "data"); dv.setUint32(40, n, true); b.fill(128, 44);
+          blank = new Audio(URL.createObjectURL(new Blob([b], { type: "audio/wav" }))); blank.setAttribute("playsinline", "");
+        }
+        blank.currentTime = 0; const p = blank.play(); if (p && p.catch) p.catch(() => {});
+      } catch (e) {}
+    }
+    const later = (f, ms) => { const id = setTimeout(f, ms); timers.push(id); return id; };
+    function chunks(text) {
+      const out = [];
+      for (const sentence of String(text).replace(/\s+/g, " ").trim().match(/.+?(?:[.!?…;:]+(?=\s|$)|$)/g) || []) {
+        const x = sentence.trim(); if (!x) continue;
+        const last = out[out.length - 1];
+        if (last && last.length + x.length < 120) out[out.length - 1] = last + " " + x; else out.push(x);
+      }
+      return out.flatMap(x => x.length <= 160 ? [x] : x.split(/,\s*/).filter(Boolean));
+    }
+    function stop() {
+      run++; timers.forEach(clearTimeout); timers = []; keep = [];
+      if (ok && (speechSynthesis.speaking || speechSynthesis.pending)) speechSynthesis.cancel();
+    }
+    // lines: [[speaker, text], …]; o: { rate, pitch: {speaker: n}, gap }
+    function play(lines, o, done) {
+      o = o || {}; done = done || (() => {});
+      const q = []; (lines || []).forEach(([who, text]) => chunks(text).forEach((c, j, a) => q.push({ who, text: c, end: j === a.length - 1 })));
+      if (!q.length) { done(); return; }
+      if (!ok) { toast(t("audio.none")); done(); return; }
+      unmute(); stop(); const id = run; let started = false;
+      if (speechSynthesis.paused) speechSynthesis.resume();
+      const say = (i, retry) => {
+        if (id !== run) return;
+        if (i >= q.length) { done(); return; }
+        const c = q[i], u = new SpeechSynthesisUtterance(c.text), rate = o.rate || .9;
+        u.lang = "fr-FR"; u.rate = rate; u.pitch = (o.pitch && o.pitch[c.who]) || 1;
+        if (V) u.voice = /^M/.test(c.who) ? V.M : V.F;
+        let fin = false;
+        const finish = () => { if (fin || id !== run) return; fin = true; later(() => say(i + 1), c.end ? (o.gap == null ? 450 : o.gap) : 80); };
+        u.onstart = () => { started = true; };
+        u.onend = finish; u.onerror = e => { if (e && (e.error === "interrupted" || e.error === "canceled")) return; finish(); };
+        keep.push(u); speechSynthesis.speak(u);
+        // A dropped utterance (seen right after cancel on some phones): try once more.
+        if (!retry) later(() => { if (id === run && !fin && !started && !speechSynthesis.speaking && !speechSynthesis.pending) { fin = true; say(i, true); } }, 700);
+        // Watchdog: some browsers never fire onend.
+        const est = 1500 + c.text.length * 85 / rate;
+        const watch = () => { if (id !== run || fin) return; if (speechSynthesis.speaking) later(watch, 1000); else finish(); };
+        later(watch, est);
+      };
+      say(0);
+      later(() => { if (id === run && !started && !hinted) { hinted = true; toast(t("audio.hint")); } }, 3000);
+    }
+    document.addEventListener("visibilitychange", () => { if (document.hidden) stop(); });
+    return { play, stop, ok };
+  })();
   function speak(text, slow) {
-    if (!text || !("speechSynthesis" in window)) return;
-    speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(String(text).replace(/\(.*?\)|\//g, " "));
-    u.lang = "fr-FR"; u.rate = slow ? 0.6 : 0.9; if (frVoice) u.voice = frVoice;
-    speechSynthesis.speak(u);
+    if (!text) return;
+    TTS.play([["F", String(text).replace(/\(.*?\)|\//g, " ")]], { rate: slow ? 0.6 : 0.9 });
   }
   const speakBtn = text => `<button class="speak" data-speak="${esc(text)}" aria-label="${esc(t("speak"))}" title="${esc(t("speak"))}">🔊</button>`;
 
@@ -855,18 +925,9 @@
   }
   let SEQ = 0;
   function speakAll(id) {
-    if (!("speechSynthesis" in window)) return;
     const r = READINGS.find(x => x.id === id), d = DIALOGUES.find(x => x.id === id);
-    const parts = r ? r.text.split(/\n\s*\n/).map(p => ({ text: p })) : d ? d.lines.filter((l, i) => !(TK && TK.role && l.who === d.me && !TK.shown[i])).map(l => ({ text: l.fr, alt: l.who !== d.lines[0].who })) : [];
-    speechSynthesis.cancel(); const run = ++SEQ;
-    const next = i => {
-      if (run !== SEQ || i >= parts.length) return;
-      const u = new SpeechSynthesisUtterance(parts[i].text);
-      u.lang = "fr-FR"; u.rate = 0.9; if (frVoice) u.voice = frVoice; if (parts[i].alt) u.pitch = 1.25;
-      u.onend = () => setTimeout(() => next(i + 1), d ? 500 : 250);
-      speechSynthesis.speak(u);
-    };
-    next(0);
+    const lines = r ? r.text.split(/\n\s*\n/).map(p => ["F", p]) : d ? d.lines.filter((l, i) => !(TK && TK.role && l.who === d.me && !TK.shown[i])).map(l => [l.who !== d.lines[0].who ? "F2" : "F", l.fr]) : [];
+    SEQ++; TTS.play(lines, { rate: 0.9, pitch: { F2: 1.25 }, gap: d ? 500 : 250 });
   }
 
   function viewPractice() {
@@ -1156,7 +1217,7 @@
     if (EX && (top !== "practice" || EX.i >= EX.items.length)) EX = null;
     if (RD && route().parts[1] !== RD.id) RD = null;
     if (TK && route().parts[1] !== TK.id) TK = null;
-    SEQ++; if ("speechSynthesis" in window) speechSynthesis.cancel();
+    SEQ++; TTS.stop();
     if (window.EXAM) window.EXAM.onHash();
     if (window.GAMES) window.GAMES.onHash();
     render();
@@ -1211,7 +1272,7 @@
     switch (d.action) {
       case "flip": SESSION.flipped = true; render(); break;
       case "ex-next": exNext(); break;
-      case "stop-speak": SEQ++; if ("speechSynthesis" in window) speechSynthesis.cancel(); break;
+      case "stop-speak": SEQ++; TTS.stop(); break;
       case "rd-again": RD = null; render(); break;
       case "dg-trans": TK.trans = !TK.trans; render(); break;
       case "dg-role": TK.role = !TK.role; TK.shown = {}; render(); break;
@@ -1277,7 +1338,7 @@
   if (!S.lang) {
     S.lang = /^en/i.test(navigator.language || "") ? "en" : "tr"; save();
   }
-  window.APP = { get S() { return S; }, save, render: () => render(), t, esc, loc, lang, toast, practised, logMinutes, route, speak, speakBtn, ymd };
+  window.APP = { get S() { return S; }, save, render: () => render(), t, esc, loc, lang, toast, practised, logMinutes, route, speak, speakBtn, ymd, tts: TTS };
   render();
 
   if ("serviceWorker" in navigator && location.protocol === "https:") {
