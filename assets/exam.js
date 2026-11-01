@@ -7,7 +7,7 @@
   const ICON = { co: "🎧", ce: "📖", pe: "✍️", po: "🗣️" };
   const DUR = { A1: { co: 20, ce: 30, pe: 30, po: 10 }, A2: { co: 25, ce: 30, pe: 45, po: 10 } };
   const LVS = ["A1", "A2"];
-  const BADGES = [["first", "🌱"], ["ear", "🎧"], ["eye", "📖"], ["pen", "✍️"], ["voice", "🗣️"], ["passA1", "🎓"], ["passA2", "🏅"], ["three", "⭐"], ["exam", "⏱️"], ["five", "🏔️"], ["allA1", "👑"], ["allA2", "💎"], ["flash", "⚡"], ["fifty", "🧗"]];
+  const BADGES = [["first", "🌱"], ["ear", "🎧"], ["eye", "📖"], ["pen", "✍️"], ["voice", "🗣️"], ["passA1", "🎓"], ["passA2", "🏅"], ["three", "⭐"], ["exam", "⏱️"], ["five", "🏔️"], ["allA1", "👑"], ["allA2", "💎"], ["flash", "⚡"], ["surv", "❤️"], ["fifty", "🧗"]];
   const BY_ID = Object.fromEntries(D.map(x => [x.id, x]));
   /* Balance where the right answer sits: a fixed, per-question shuffle of 3-option lists (true/false and lettered lists keep their order). */
   const hash = str => { let h = 2166136261; for (const ch of str) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; };
@@ -23,7 +23,7 @@
   const t = (k, v) => A().t(k, v), esc = s => A().esc(s), lang = () => A().lang();
   function st() {
     const S = A().S; const d = S.delf = S.delf || {};
-    d.ex = d.ex || {}; d.best = d.best || {}; d.hist = d.hist || []; d.badges = d.badges || {}; d.flash = d.flash || {};
+    d.ex = d.ex || {}; d.best = d.best || {}; d.hist = d.hist || []; d.badges = d.badges || {}; d.flash = d.flash || {}; d.surv = d.surv || {};
     if (!d.mode) d.mode = "zen";
     if (!d.lv) d.lv = ["A0", "A1"].includes(A().S.level || "A0") ? "A1" : "A2";
     return d;
@@ -151,6 +151,7 @@
     if (parts[2] === "s") return viewSujet(d.lv, +parts[3]);
     if (parts[2] === "sec" && SECS.includes(parts[3])) return viewSection(d.lv, parts[3]);
     if (parts[2] === "flash") return viewFlash(d.lv);
+    if (parts[2] === "survie") return viewFlash(d.lv, true);
     return viewHub();
   }
 
@@ -188,7 +189,10 @@
         <h2>${esc(t("dx.oneSkill"))}</h2>
         <div class="ex-grid">${SECS.map(s => `<a class="card ex-tile" href="#/exam/${lv}/sec/${s}"><span class="ex-ic">${ICON[s]}</span><b>${esc(t("dx." + s))}</b><small lang="fr">${esc(t("dx." + s + "F"))}</small><small>${esc(t("dx.exDone", { d: secDone(s).split("/")[0], n: secDone(s).split("/")[1] }))}</small></a>`).join("")}</div>
       </section>
-      <a class="card ex-tile big dx-flash-tile" href="#/exam/${lv}/flash"><span class="ex-ic">⚡</span><b>${esc(t("dx.flash"))}</b><small>${esc(t("dx.flashSub", { b: d.flash[lv] || 0 }))}</small></a>
+      <div class="ex-grid dx-games">
+        <a class="card ex-tile dx-flash-tile" href="#/exam/${lv}/flash"><span class="ex-ic">⚡</span><b>${esc(t("dx.flash"))}</b><small>${esc(t("dx.flashSub", { b: d.flash[lv] || 0 }))}</small></a>
+        <a class="card ex-tile dx-flash-tile" href="#/exam/${lv}/survie"><span class="ex-ic">❤️</span><b>${esc(t("dx.surv"))}</b><small>${esc(t("dx.survSub", { b: d.surv[lv] || 0 }))}</small></a>
+      </div>
       <section class="card">
         <h2>${esc(t("dx.badges"))}</h2>
         <div class="dx-badges">${BADGES.map(([id, ic]) => `<div class="dxb ${d.badges[id] ? "on" : ""}" title="${esc(t("dx.bd." + id))}"><span aria-hidden="true">${ic}</span><b>${esc(t("dx.b." + id))}</b><small>${esc(t("dx.bd." + id))}</small></div>`).join("")}</div>
@@ -417,8 +421,9 @@
     }
     return pool;
   }
-  function viewFlash(lv) {
-    if (!FL || FL.lv !== lv) { FL = { lv, qs: shuffle(flashPool(lv)).slice(0, 10), i: 0, ok: 0, combo: 0, maxc: 0, sel: null, auto: true }; }
+  function viewFlash(lv, surv) {
+    if (!FL || FL.lv !== lv || !!FL.surv !== !!surv) { const pool = shuffle(flashPool(lv)); FL = { lv, surv: !!surv, lives: 3, qs: surv ? pool : pool.slice(0, 10), i: 0, ok: 0, combo: 0, maxc: 0, sel: null, auto: true }; }
+    if (surv) return viewSurv(lv);
     const best = st().flash[lv] || 0;
     if (FL.i >= FL.qs.length) {
       const rec = FL.ok > best && FL.ok > 0;
@@ -437,6 +442,28 @@
       <p class="dx-fq" lang="fr"><b>${esc(q.q)}</b></p>
       <div class="opts dx-opts">${q.o.map((o, oi) => `<button class="opt ${answered ? (oi === q.a ? "right" : FL.sel === oi ? "wrong" : "") : ""}" data-dx="flash-pick" data-o="${oi}" ${answered ? "disabled" : ""} lang="fr">${esc(o)}</button>`).join("")}</div>
       ${answered ? `<p class="dx-x" lang="fr">${FL.sel === q.a ? "✓" : "→"} ${esc(q.x)}</p><button class="btn" data-dx="flash-next">${FL.i + 1 < FL.qs.length ? esc(t("dx.nextLine")) : esc(t("dx.finish"))}</button>` : ""}`;
+  }
+
+  /* ── Survival: questions until 3 mistakes ── */
+  const hearts = () => `<span class="dx-hearts" role="img" aria-label="${esc(t("dx.lives", { n: FL.lives }))}">${"❤️".repeat(FL.lives)}${"🤍".repeat(3 - FL.lives)}</span>`;
+  function viewSurv(lv) {
+    const best = st().surv[lv] || 0, back = `<a class="back" href="#/exam/${lv}">← ${esc(t("dx.title"))}</a>`;
+    if (FL.i >= FL.qs.length) {
+      const rec = FL.ok > best && FL.ok > 0;
+      if (!FL.saved) { FL.saved = true; if (FL.ok > best) { st().surv[lv] = FL.ok; save(); } if (FL.ok >= 15) award("surv"); A().logMinutes(Math.max(2, Math.round(FL.i / 2))); if (rec) setTimeout(confetti, 200); }
+      return back + `<h1>❤️ ${esc(t("dx.surv"))}</h1>
+        <section class="card dx-result"><div class="dx-ring" style="--p:${Math.min(100, FL.ok * 5)}"><b>${FL.ok}</b><small>✓</small></div>
+        <div><p class="dx-verdict">${esc(t("dx.survEnd", { n: FL.ok }))}</p><p>${rec ? esc(t("dx.flashRec")) : esc(t("dx.survBest", { b: Math.max(best, FL.ok) }))}</p><p class="muted">${esc(t("dx.combo", { n: FL.maxc }))}</p></div></section>
+        <div class="row wrap"><button class="btn" data-dx="flash-again">${esc(t("dx.again"))}</button><a class="btn ghost" href="#/exam/${lv}">${esc(t("dx.title"))}</a></div>`;
+    }
+    const { it, q } = FL.qs[FL.i], answered = FL.sel != null, over = answered && FL.lives <= 0;
+    return back + `<h1 class="dx-h">❤️ ${esc(t("dx.surv"))}</h1>
+      <div class="row between"><p class="eyebrow">${esc(t("dx.survQ", { n: FL.i + 1, k: FL.ok }))}</p>${hearts()}</div>
+      <p class="dx-combo ${FL.combo >= 3 ? "hot" : ""}">${FL.combo > 1 ? esc(t("dx.combo", { n: FL.combo })) : ""}</p>
+      ${it.sec === "ce" ? docHtml(it.doc) : `<div class="card dx-audio"><span class="dx-wave" aria-hidden="true">🎧</span><button class="btn small" data-dx="flash-play">▶ ${esc(t("dx.listen"))}</button></div>`}
+      <p class="dx-fq" lang="fr"><b>${esc(q.q)}</b></p>
+      <div class="opts dx-opts">${q.o.map((o, oi) => `<button class="opt ${answered ? (oi === q.a ? "right" : FL.sel === oi ? "wrong" : "") : ""}" data-dx="flash-pick" data-o="${oi}" ${answered ? "disabled" : ""} lang="fr">${esc(o)}</button>`).join("")}</div>
+      ${answered ? `<p class="dx-x" lang="fr">${FL.sel === q.a ? "✓" : "→"} ${esc(q.x)}</p><button class="btn" data-dx="flash-next">${over || FL.i + 1 >= FL.qs.length ? esc(t("dx.finish")) : esc(t("dx.nextLine"))}</button>` : ""}`;
   }
 
   /* ── Events ── */
@@ -486,10 +513,10 @@
       case "flash-play": { const { it: fi, q } = FL.qs[FL.i]; playLines(q.audio || fi.audio, { lv: fi.level }); return; }
       case "flash-pick": {
         const q = FL.qs[FL.i].q; FL.sel = +d.o;
-        if (FL.sel === q.a) { FL.ok++; FL.combo++; FL.maxc = Math.max(FL.maxc, FL.combo); } else FL.combo = 0;
+        if (FL.sel === q.a) { FL.ok++; FL.combo++; FL.maxc = Math.max(FL.maxc, FL.combo); } else { FL.combo = 0; if (FL.surv) FL.lives--; }
         stopAudio(); keepScroll(() => {}); return;
       }
-      case "flash-next": FL.i++; FL.sel = null; A().render(); window.scrollTo(0, 0); { const n = FL.qs[FL.i]; if (n && n.it.sec === "co") setTimeout(() => playLines(n.q.audio, { lv: n.it.level }), 350); } return;
+      case "flash-next": FL.i++; if (FL.surv && FL.lives <= 0) FL.i = FL.qs.length; FL.sel = null; A().render(); window.scrollTo(0, 0); { const n = FL.qs[FL.i]; if (n && n.it.sec === "co") setTimeout(() => playLines(n.q.audio, { lv: n.it.level }), 350); } return;
       case "flash-again": FL = null; A().render(); return;
     }
   }
@@ -528,7 +555,7 @@
   function onHash() {
     stopAudio();
     const p = location.hash.replace(/^#\/?/, "").split("/");
-    if (p[0] !== "exam" || p[2] !== "flash") FL = null;
+    if (p[0] !== "exam" || !["flash", "survie"].includes(p[2])) FL = null;
     if (RUN && RUN.i >= RUN.ids.length && p[1] !== "run") RUN = null;
   }
   clearInterval(TIMER);
@@ -541,11 +568,11 @@
   }, 1000);
 
   window.EXAM = {
-    view, click, input, onHash, count: D.length, start: startRun,
+    view, click, input, onHash, count: D.length, start: startRun, playLines, stopAudio, confetti,
     homeCard() {
       if (!D.length) return "";
       return `<section class="card dx-home"><p class="eyebrow">🎓 DELF</p><h2>${esc(t("dx.homeTitle"))}</h2>
-        <p>${esc(t("dx.homeSub", { a: passedCount("A1"), b: passedCount("A2") }))}</p>
+        <p>${esc(t("dx.homeSub", { a: passedCount("A1"), b: passedCount("A2"), n: sujets("A1").length, m: sujets("A2").length }))}</p>
         <a class="btn" href="#/exam">${esc(t("dx.homeBtn"))} →</a></section>`;
     }
   };

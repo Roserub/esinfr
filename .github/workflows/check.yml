@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: 20
       - run: node tools/check-data.js
-      - run: node tools/check-delf.js
+      - run: node tools/check-delf.js && node tools/check-adventures.js
 
   smoke:
     runs-on: ubuntu-latest

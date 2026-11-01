@@ -15,7 +15,8 @@ const server = http.createServer((req, res) => {
 
 const ROUTES = ["#/", "#/path", "#/path/A0", "#/path/A2", "#/path/B1", "#/practice", "#/library", "#/cards", "#/cards/survival", "#/cards/falsefriends/list",
   "#/more", "#/plan", "#/search?q=rendez", "#/placement", "#/progress", "#/practice/notebook", "#/read", "#/read/r-seance", "#/talk", "#/talk/d-kine", "#/path/C1",
-  "#/exam", "#/exam/A2", "#/exam/A1/s/1", "#/exam/A2/sec/po", "#/exam/A1/sec/co"];
+  "#/exam", "#/exam/A2", "#/exam/A1/s/1", "#/exam/A2/sec/po", "#/exam/A1/sec/co",
+  "#/exam/A1/s/20", "#/exam/A2/s/20", "#/exam/A2/survie", "#/games", "#/games/memory/A1", "#/games/order/A2", "#/adv", "#/adv/av-cafe", "#/adv/av-train"];
 const EXERCISES = ["sounds", "numbers", "listen", "dictation", "conj", "gender", "mistakes", "speak"];
 const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 1180 }, mac: { width: 1440, height: 900 } };
 
@@ -88,7 +89,7 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
     // DELF mock exams: every exercise renders (phone), whole papers reach the score screen, quick challenge ends.
     if (name === "phone") {
       const ids = await page.evaluate(() => (window.DELF || []).map(x => x.id));
-      if (ids.length < 250) problems.push(`only ${ids.length} DELF exercises`);
+      if (ids.length < 500) problems.push(`only ${ids.length} DELF exercises`);
       for (const id of ids) {
         await page.evaluate(id => window.EXAM.start([id], "ex", id.slice(0, 2).toUpperCase(), null), id);
         if (!(await page.evaluate(() => !!document.querySelector(".dx-h")))) problems.push(`DELF ${id} did not render`);
@@ -122,6 +123,55 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
     await page.evaluate(() => { location.hash = "#/exam/A1/flash"; });
     for (let i = 0; i < 10; i++) { await page.click("[data-dx=flash-pick]"); await page.click("[data-dx=flash-next]"); }
     if (!(await page.$(".dx-result"))) problems.push(`${name}: quick challenge did not end`);
+    // Survival: always pick the first option until the three lives are gone.
+    await page.evaluate(() => { location.hash = "#/exam/A2/survie"; });
+    for (let i = 0; i < 400 && !(await page.$(".dx-result")); i++) { await page.click("[data-dx=flash-pick]"); await page.click("[data-dx=flash-next]"); }
+    if (!(await page.$(".dx-result"))) problems.push(`${name}: survival did not end`);
+    // Adventures: play every story to the end (one wrong answer first, then the good ones).
+    const advIds = await page.evaluate(() => (window.ADVENTURES || []).map(a => a.id));
+    if (advIds.length < 20) problems.push(`only ${advIds.length} adventures`);
+    for (const id of name === "phone" ? advIds : advIds.slice(0, 2)) {
+      await page.evaluate(id => { location.hash = "#/adv/" + id; }, id);
+      await page.waitForSelector(".av-h");
+      let triedWrong = false;
+      for (let step = 0; step < 40 && !(await page.$(".av-end")); step++) {
+        if (await page.$("[data-gm=av-go]")) { await page.click("[data-gm=av-go]"); continue; }
+        const pick = await page.evaluate(id => {
+          const a = window.ADVENTURES.find(x => x.id === id), texts = [...document.querySelectorAll("[data-gm=av-pick] [lang=fr]")].map(e => e.textContent);
+          const n = Object.values(a.nodes).find(n => n.choices && n.choices.length === texts.length && n.choices.every((c, i) => c.fr === texts[i]));
+          return n ? { ok: n.choices.findIndex(c => c.ok), bad: n.choices.findIndex(c => !c.ok && !c.go) } : null;
+        }, id);
+        if (!pick) { problems.push(`${name}: adventure ${id} lost its node`); break; }
+        if (!triedWrong && pick.bad >= 0) { triedWrong = true; await page.click(`[data-gm=av-pick][data-i="${pick.bad}"]`); if (!(await page.$(".av-fb"))) problems.push(`${name}: adventure ${id} shows no feedback`); }
+        await page.click(`[data-gm=av-pick][data-i="${pick.ok}"]`);
+      }
+      if (!(await page.$(".av-end"))) problems.push(`${name}: adventure ${id} did not reach the end`);
+      const over = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+      if (over > 1) problems.push(`${name}: adventure ${id}: horizontal overflow ${over}px`);
+    }
+    // Memory: match the pairs using the game's own tiles, then the sentence puzzle with the right order.
+    await page.evaluate(() => { location.hash = "#/games/memory/A1"; });
+    await page.waitForSelector(".mem-grid");
+    const memPairs = await page.evaluate(() => { const a = [...document.querySelectorAll(".mem")]; return a.length; });
+    if (memPairs !== 12) problems.push(`${name}: memory has ${memPairs} cards`);
+    for (let i = 0; i < 12; i++) {
+      for (let j = i + 1; j < 12; j++) {
+        if (await page.$(`.mem[data-i="${i}"].ok`)) break;
+        if (await page.$(`.mem[data-i="${j}"].ok`)) continue;
+        await page.click(`.mem[data-i="${i}"]`); await page.click(`.mem[data-i="${j}"]`);
+        if (await page.$(`.mem[data-i="${i}"].ok`)) break;
+        await page.waitForTimeout(1150);
+      }
+    }
+    if (!(await page.$(".av-end"))) problems.push(`${name}: memory did not end`);
+    await page.evaluate(() => { location.hash = "#/games/order/A1"; });
+    for (let r = 0; r < 8; r++) {
+      await page.waitForSelector(".ord-bank");
+      const n = (await page.$$(".ord-bank .tok")).length;
+      for (let k = 0; k < n; k++) await page.click(".ord-bank .tok");
+      await page.click("[data-gm=ord-check]"); await page.click("[data-gm=ord-next]");
+    }
+    if (!(await page.$(".dx-result"))) problems.push(`${name}: sentence puzzle did not end`);
     await page.close();
   }
   await browser.close(); server.close();

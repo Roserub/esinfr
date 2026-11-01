@@ -14,7 +14,7 @@
 
   /* ───────── State ───────── */
   const DEFAULT = () => ({ v: 1, lang: null, level: null, steps: {}, res: {}, fav: {}, cards: {}, days: {}, mine: [], newPerSession: 10, lib: {}, welcomed: false,
-    fw: {}, gram: {}, pace: { hpw: 5, dpw: 5 }, mins: {}, prac: {}, err: [], plan: {}, remind: "19:00", read: {}, talk: {}, delf: {}, focus: true });
+    fw: {}, gram: {}, pace: { hpw: 5, dpw: 5 }, mins: {}, prac: {}, err: [], plan: {}, remind: "19:00", read: {}, talk: {}, delf: {}, games: {}, focus: true });
   let S = load();
   function fill(obj) {
     const s = Object.assign(DEFAULT(), obj);
@@ -177,6 +177,7 @@
     </section>` : ""}
 
     ${window.EXAM ? window.EXAM.homeCard() : ""}
+    ${window.GAMES ? window.GAMES.homeCard() : ""}
 
     ${todayPlanCard()}
 
@@ -856,6 +857,8 @@
       <p class="muted">${esc(t("ex.sub"))}</p>
       <div class="ex-grid">
         ${window.EXAM && window.EXAM.count ? `<a class="card ex-tile big" href="#/exam"><span class="ex-ic">🎓</span><b>${esc(t("dx.title"))}</b><small>DELF A1 · A2</small></a>` : ""}
+        ${window.GAMES && window.GAMES.count ? `<a class="card ex-tile big" href="#/adv"><span class="ex-ic">🧭</span><b>${esc(t("av.title"))}</b><small>${esc(t("av.tile", { n: window.GAMES.count, d: Object.keys((S.games || {}).adv || {}).length }))}</small></a>` : ""}
+        ${window.GAMES ? `<a class="card ex-tile big" href="#/games"><span class="ex-ic">🎲</span><b>${esc(t("gm.title"))}</b><small>${esc(t("gm.tile"))}</small></a>` : ""}
         <a class="card ex-tile big" href="#/read"><span class="ex-ic">📖</span><b>${esc(t("rd.title"))}</b><small>${esc(t("rd.tile", { n: READINGS.length, d: Object.keys(S.read).length }))}</small></a>
         <a class="card ex-tile big" href="#/talk"><span class="ex-ic">💬</span><b>${esc(t("dg.title"))}</b><small>${esc(t("dg.tile", { n: DIALOGUES.length, d: Object.keys(S.talk).length }))}</small></a>
         ${EX_KINDS.map(([k, ic]) => `<a class="card ex-tile" href="#/practice/${k}"><span class="ex-ic">${ic}</span><b>${esc(t("ex." + k))}</b><small>${esc(t("ex." + k + ".d"))}</small></a>`).join("")}</div>
@@ -1098,7 +1101,7 @@
     $$("[data-i18n-label]").forEach(el => { el.setAttribute("aria-label", t(el.dataset.i18nLabel)); });
     const { parts, params } = route();
     const top = parts[0] || "home";
-    const tab = { home: "home", path: "path", practice: "practice", read: "practice", talk: "practice", library: "library", cards: "cards", more: "more", guide: "more", placement: "more", progress: "more", plan: "home", search: "more", exam: "exam" }[top] || "home";
+    const tab = { home: "home", path: "path", practice: "practice", read: "practice", talk: "practice", library: "library", cards: "cards", more: "more", guide: "more", placement: "more", progress: "more", plan: "home", search: "more", exam: "exam", adv: "practice", games: "practice" }[top] || "home";
     $$(".tabbar a").forEach(a => a.classList.toggle("on", a.dataset.tab === tab));
     let html;
     switch (top) {
@@ -1116,6 +1119,7 @@
       case "read": html = parts[1] ? viewReading(parts[1]) : viewReadings(); break;
       case "talk": html = parts[1] ? viewDialogue(parts[1]) : viewDialogues(); break;
       case "exam": html = window.EXAM ? window.EXAM.view(parts, params) : viewHome(); break;
+      case "adv": case "games": html = window.GAMES ? window.GAMES.view(parts) : viewHome(); break;
       default: html = viewHome();
     }
     main.innerHTML = `<div class="view ${raw !== lastRendered ? "anim" : ""}">${html}</div>`;
@@ -1135,6 +1139,7 @@
     if (TK && route().parts[1] !== TK.id) TK = null;
     SEQ++; if ("speechSynthesis" in window) speechSynthesis.cancel();
     if (window.EXAM) window.EXAM.onHash();
+    if (window.GAMES) window.GAMES.onHash();
     render();
     if (top !== lastTop || !route().params.get("step")) window.scrollTo(0, 0);
     lastTop = top;
@@ -1146,6 +1151,7 @@
     if (!el) return;
     const d = el.dataset;
     if (d.dx && window.EXAM) { window.EXAM.click(el, d, e); return; }
+    if (d.gm && window.GAMES) { window.GAMES.click(el, d, e); return; }
     if (d.lang) { S.lang = d.lang; save(); render(); return; }
     if (d.speak) { speak(d.speak, d.slow); return; }
     if (d.ans !== undefined) { exAnswer(d.ans); return; }
