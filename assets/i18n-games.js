@@ -4,6 +4,7 @@
     tr: {
       "dx.trKey": "Türkçe cevap anahtarı ve açıklamalar",
       "tab.home": "Bugün", "tab.exam": "DELF", "tab.games": "Oyunlar", "tab.practice": "Pratik", "tab.path": "Yol", "tab.cards": "Kartlar", "tab.more": "Diğer",
+      "audio.none": "Bu tarayıcı sesli okuma yapamıyor. Safari veya Chrome ile aç.", "audio.hint": "Ses yok mu? Sesi aç ve iPhone'un sessiz modunu kapat (yandaki düğme).",
       "cards.filter": "Desteleri süz", "cards.delf": "DELF desteleri ({n})", "cards.delfSub": "Sınav kelimeleri ve hazır cümleler, A1–A2",
       "nav.games": "Oyunlar", "home.lib": "Kaynaklar", "home.quick": "Her şey bir dokunuşta",
       "gm.title": "Oyunlar", "gm.sub": "Oynayarak öğren: hikâyeler, hafıza kartları, cümle yapbozu ve DELF oyunları. Baskı yok, sadece eğlence.",
@@ -26,6 +27,7 @@
     en: {
       "dx.trKey": "Turkish answer key and explanations",
       "tab.home": "Today", "tab.exam": "DELF", "tab.games": "Games", "tab.practice": "Practice", "tab.path": "Path", "tab.cards": "Cards", "tab.more": "More",
+      "audio.none": "This browser can't read aloud. Open the site in Safari or Chrome.", "audio.hint": "No sound? Turn the volume up and switch off the iPhone's silent mode (side switch).",
       "cards.filter": "Filter decks", "cards.delf": "DELF decks ({n})", "cards.delfSub": "Exam vocabulary and ready-made phrases, A1–A2",
       "nav.games": "Games", "home.lib": "Library", "home.quick": "Everything, one tap away",
       "gm.title": "Games", "gm.sub": "Learn by playing: stories, memory cards, sentence puzzles and DELF games. No pressure, just fun.",
@@ -48,6 +50,7 @@
     fr: {
       "dx.trKey": "Corrigé et explications en turc",
       "tab.home": "Accueil", "tab.exam": "DELF", "tab.games": "Jeux", "tab.practice": "Pratique", "tab.path": "Parcours", "tab.cards": "Cartes", "tab.more": "Plus",
+      "audio.none": "Ce navigateur ne sait pas lire à voix haute. Ouvre le site dans Safari ou Chrome.", "audio.hint": "Pas de son ? Monte le volume et désactive le mode silencieux de l'iPhone (bouton sur le côté).",
       "cards.filter": "Filtrer les paquets", "cards.delf": "Paquets DELF ({n})", "cards.delfSub": "Le vocabulaire de l'examen et les phrases toutes faites, A1–A2",
       "nav.games": "Jeux", "home.lib": "Ressources", "home.quick": "Tout en un clic",
       "gm.title": "Jeux", "gm.sub": "Apprendre en jouant : histoires, memory, phrases en désordre et jeux DELF. Aucune pression, juste du plaisir.",

@@ -1,6 +1,6 @@
 /* Offline support. Network first (so a new version shows on the very next visit), cache as the offline fallback.
    When a new version activates, open pages are reloaded once so nobody stays on the old one. */
-const CACHE = "esinfr-v8";
+const CACHE = "esinfr-v9";
 const SHELL = [
   "./", "index.html", "manifest.webmanifest", "assets/style.css", "assets/icon.svg", "assets/icon-180.png", "assets/i18n.js", "assets/i18n-exam.js",
   "assets/i18n-games.js", "assets/exam.js", "assets/games.js", "assets/app.js", "data/resources.js", "data/resources-fr.js",
