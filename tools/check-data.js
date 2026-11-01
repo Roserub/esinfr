@@ -1,7 +1,7 @@
 /* Sanity checks for the data files. Run: node tools/check-data.js */
 const fs = require("fs"), vm = require("vm"), path = require("path");
 const ctx = { window: {} }; vm.createContext(ctx);
-for (const f of ["data/resources.js", "data/resources-fr.js", "data/path.js", "data/decks.js", "data/guide.js", "data/guide-master.js", "data/guide-fr.js", "data/decks-master.js", "data/path-master.js", "data/practice.js", "data/decks-more.js", "data/readings.js", "data/dialogues.js", "assets/i18n.js"])
+for (const f of ["data/resources.js", "data/resources-fr.js", "data/path.js", "data/decks.js", "data/guide.js", "data/guide-master.js", "data/guide-fr.js", "data/decks-master.js", "data/path-master.js", "data/practice.js", "data/decks-more.js", "data/readings.js", "data/dialogues.js", "assets/i18n.js", "assets/i18n-exam.js"])
   vm.runInContext(fs.readFileSync(path.join(__dirname, "..", f), "utf8"), ctx, { filename: f });
 const { RESOURCES, PATH, DECKS, GUIDE, I18N } = ctx.window;
 const errors = [];
