@@ -130,6 +130,18 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
     for (const tb of ["home", "exam", "games", "practice", "cards", "more"]) if (!tabs.includes(tb)) problems.push(`${name}: no ${tb} button in the bottom bar`);
     const quick = await page.$$eval(".quick a", as => as.map(a => a.getAttribute("href")));
     for (const h of ["#/exam", "#/adv", "#/games", "#/read", "#/talk", "#/library"]) if (!quick.includes(h)) problems.push(`${name}: quick grid misses ${h}`);
+    // Tab labels are never cut off, in any language.
+    for (const lg of ["tr", "en", "fr"]) {
+      await page.click(`.lang-switch [data-lang=${lg}]`);
+      const cut = await page.$$eval(".tabbar a span:last-child", ss => ss.filter(s => s.scrollWidth > s.clientWidth + 1).map(s => s.textContent));
+      if (cut.length) problems.push(`${name} ${lg}: tab labels cut off: ${cut.join(", ")}`);
+    }
+    // Cards: the DELF decks have their own filter, reachable from the DELF tab.
+    await page.evaluate(() => { location.hash = "#/cards?f=delf"; });
+    const delfDecks = await page.$$eval(".decks .deck", ds => ds.length);
+    if (delfDecks < 20) problems.push(`${name}: DELF deck filter shows ${delfDecks} decks`);
+    await page.evaluate(() => { location.hash = "#/exam"; });
+    if (!(await page.$('.dx-study a[href="#/cards?f=delf"]'))) problems.push(`${name}: no DELF decks link on the DELF tab`);
     await page.click('.tabbar a[data-tab="games"]'); await page.waitForSelector(".gm-adv-tile");
     if (!(await page.$('.tabbar a[data-tab="games"].on'))) problems.push(`${name}: games tab not highlighted`);
     // Survival: always pick the first option until the three lives are gone.

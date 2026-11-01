@@ -196,6 +196,10 @@
         <a class="card ex-tile dx-flash-tile" href="#/exam/${lv}/flash"><span class="ex-ic">⚡</span><b>${esc(t("dx.flash"))}</b><small>${esc(t("dx.flashSub", { b: d.flash[lv] || 0 }))}</small></a>
         <a class="card ex-tile dx-flash-tile" href="#/exam/${lv}/survie"><span class="ex-ic">❤️</span><b>${esc(t("dx.surv"))}</b><small>${esc(t("dx.survSub", { b: d.surv[lv] || 0 }))}</small></a>
       </div>
+      <div class="ex-grid dx-study">
+        ${(window.DECKS || []).some(x => /^delf-/.test(x.id)) ? `<a class="card ex-tile" href="#/cards?f=delf"><span class="ex-ic">🃏</span><b>${esc(t("cards.delf", { n: window.DECKS.filter(x => /^delf-/.test(x.id)).length }))}</b><small>${esc(t("cards.delfSub"))}</small></a>` : ""}
+        ${["delf-grammar", "delf-plan"].map(id => (window.GUIDE || []).find(g => g.id === id)).filter(Boolean).map(g => `<a class="card ex-tile" href="#/guide/${g.id}"><span class="ex-ic">${g.icon}</span><b>${esc(A().loc(g.t))}</b></a>`).join("")}
+      </div>
       <section class="card">
         <h2>${esc(t("dx.badges"))}</h2>
         <div class="dx-badges">${BADGES.map(([id, ic]) => `<div class="dxb ${d.badges[id] ? "on" : ""}" title="${esc(t("dx.bd." + id))}"><span aria-hidden="true">${ic}</span><b>${esc(t("dx.b." + id))}</b><small>${esc(t("dx.bd." + id))}</small></div>`).join("")}</div>
