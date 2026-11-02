@@ -16,7 +16,7 @@ const server = http.createServer((req, res) => {
 const ROUTES = ["#/", "#/path", "#/path/A0", "#/path/A2", "#/path/B1", "#/practice", "#/library", "#/cards", "#/cards/survival", "#/cards/falsefriends/list",
   "#/more", "#/plan", "#/search?q=rendez", "#/placement", "#/progress", "#/practice/notebook", "#/read", "#/read/r-seance", "#/talk", "#/talk/d-kine", "#/path/C1",
   "#/exam", "#/exam/A2", "#/exam/A1/s/1", "#/exam/A2/sec/po", "#/exam/A1/sec/co",
-  "#/exam/A1/s/20", "#/exam/A2/s/20", "#/exam/A2/survie", "#/games", "#/games/memory/A1", "#/games/order/A2", "#/adv", "#/adv/av-cafe", "#/adv/av-train",
+  "#/exam/A1/s/20", "#/exam/A2/s/20", "#/exam/A1/s/50", "#/exam/A2/s/50", "#/exam/A2/survie", "#/games", "#/games/memory/A1", "#/games/order/A2", "#/adv", "#/adv/av-cafe", "#/adv/av-train",
   "#/basics", "#/basics/alphabet", "#/basics/sounds", "#/basics/numbers", "#/basics/house", "#/basics/house/quiz", "#/basics/alphabet/quiz", "#/read/r-cafe"];
 const EXERCISES = ["sounds", "numbers", "listen", "dictation", "conj", "gender", "mistakes", "speak"];
 const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 1180 }, mac: { width: 1440, height: 900 } };
@@ -98,8 +98,8 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
         if (over > 1) problems.push(`DELF ${id}: horizontal overflow ${over}px`);
       }
     }
-    for (const lv of ["A1", "A2"]) {
-      await page.evaluate(lv => { location.hash = "#/exam/" + lv + "/s/1"; }, lv);
+    for (const [lv, sj] of [["A1", 1], ["A2", 1], ["A1", 27], ["A2", 50]]) {
+      await page.evaluate(([lv, sj]) => { location.hash = "#/exam/" + lv + "/s/" + sj; }, [lv, sj]);
       await page.click("[data-dx=start][data-kind=sujet]");
       await page.waitForSelector(".dx-h");
       for (let step = 0; step < 20; step++) {
@@ -117,9 +117,9 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
         if (await page.$("[data-dx=checkpo]")) { if (await page.$("[data-dx=tick]")) await page.click("[data-dx=tick]"); await page.click("[data-dx=checkpo]"); await page.click("[data-dx=self][data-v='2']"); }
         if (await page.$("[data-dx=next]")) await page.click("[data-dx=next]"); else break;
       }
-      if (!(await page.$(".dx-result .dx-ring"))) problems.push(`${name}: DELF ${lv} paper 1 did not reach the score screen`);
-      const best = await page.evaluate(lv => (JSON.parse(localStorage.getItem("esinfr.v1")).delf.best || {})[lv + "-1"], lv);
-      if (!best) problems.push(`${name}: DELF ${lv} paper 1 score not saved`);
+      if (!(await page.$(".dx-result .dx-ring"))) problems.push(`${name}: DELF ${lv} paper ${sj} did not reach the score screen`);
+      const best = await page.evaluate(([lv, sj]) => (JSON.parse(localStorage.getItem("esinfr.v1")).delf.best || {})[lv + "-" + sj], [lv, sj]);
+      if (!best) problems.push(`${name}: DELF ${lv} paper ${sj} score not saved`);
     }
     await page.evaluate(() => { location.hash = "#/exam/A1/flash"; });
     for (let i = 0; i < 10; i++) { await page.click("[data-dx=flash-pick]"); await page.click("[data-dx=flash-next]"); }
