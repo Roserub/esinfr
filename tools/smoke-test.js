@@ -38,7 +38,7 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
         await page.waitForTimeout(30);
         const over = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
         if (over > 1) problems.push(`${name} ${lang} ${r}: horizontal overflow ${over}px`);
-        const raw = await page.evaluate(() => (document.querySelector("#main").innerText.match(/\b(ex|plan|pace|lib|path|home|search|ics|fw|drill|tense|prog|guide|rd|dg|cards|dx|focus)\.[a-zA-Z.]+/g) || []).join(" "));
+        const raw = await page.evaluate(() => (document.querySelector("#main").innerText.match(/\b(ex|plan|pace|lib|path|home|search|ics|fw|drill|tense|prog|guide|rd|dg|cards|dx|focus|vc)\.[a-zA-Z.]+/g) || []).join(" "));
         if (raw) problems.push(`${name} ${lang} ${r}: untranslated key ${raw}`);
         if (lang === "fr" && r.startsWith("#/guide/") && await page.evaluate(() => document.querySelector("#main").innerText.includes(window.I18N.fr["guide.inEnglish"]))) problems.push(`${name} fr ${r}: guide page not in French`);
       }
@@ -227,6 +227,70 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
       const heard = await page.evaluate(() => window.__said.join("").replace(/[\s,]/g, ""));
       if (heard !== all) problems.push(`audio: "listen to all" on ${kind} ${id} read ${heard.length}/${all.length} characters`);
     }
+    await ctx.close();
+  }
+  // Speech recognition: with a fake recogniser, the panel shows live words, then a word-by-word comparison,
+  // a retry, clear error messages, and a fallback when the browser has no recogniser.
+  for (const [name, viewport] of Object.entries(SIZES)) {
+    const ctx = await browser.newContext({ viewport });
+    await ctx.addInitScript(() => {
+      class FakeSR { constructor() { window.__sr = this; } start() {} stop() { this._end(); } abort() { this._end(); }
+        _end() { if (this.done) return; this.done = true; setTimeout(() => this.onend && this.onend(), 10); } }
+      window.SpeechRecognition = FakeSR;
+      window.__srSay = parts => window.__sr.onresult({ results: parts.map(([txt, fin]) => Object.assign([{ transcript: txt }], { isFinal: fin })) });
+      window.__srErr = code => { window.__sr.onerror({ error: code }); window.__sr._end(); };
+    });
+    const page = await ctx.newPage();
+    page.on("pageerror", e => problems.push(`voice ${name}: page error ${e.message}`));
+    const fail = m => problems.push(`voice ${name}: ${m}`);
+    await page.goto(base + "#/practice/speak");
+    const target = await page.evaluate(() => document.querySelector(".ex-card .fr-big").innerText.trim());
+    await page.click("[data-vc=start]");
+    if (!(await page.$(".vc.listening .vc-dot"))) fail("no listening state");
+    await page.evaluate(t => window.__srSay([[t.split(" ")[0], true], [t, false]]), target);
+    if (!(await page.evaluate(() => document.querySelector(".vc-mid").textContent.length > 0))) fail("interim words not shown live");
+    // Partial answer: only the first word.
+    await page.evaluate(t => { window.__srSay([[t.split(" ")[0], true]]); window.__sr.stop(); }, target);
+    await page.waitForSelector(".vc.done", { timeout: 3000 }).catch(() => fail("no result after a partial answer"));
+    if (target.split(" ").length > 2 && !(await page.$(".vc-w.miss"))) fail("missed words not highlighted");
+    if (name === "phone") await page.screenshot({ path: path.join(require("os").tmpdir(), "vc-partial.png"), fullPage: true });
+    // Retry with the full sentence: everything matched, then continue.
+    await page.click("[data-vc=start]");
+    await page.evaluate(t => { window.__srSay([[t, true]]); window.__sr.stop(); }, target);
+    await page.waitForSelector(".vc.done .vc-next", { timeout: 3000 }).catch(() => fail("no result after retry"));
+    if (await page.$(".vc-cmp .vc-w.miss")) fail("full sentence still shows missed words: " + target);
+    if (name !== "phone") await page.screenshot({ path: path.join(require("os").tmpdir(), `vc-done-${name}.png`), fullPage: true });
+    await page.click(".vc-next");
+    if (!(await page.$(".fb.ok"))) fail("full sentence not accepted");
+    await page.click("#ex-next");
+    // Errors: microphone blocked, then silence.
+    for (const [code, key] of [["not-allowed", "vc.e.perm"], ["no-speech", "vc.e.silence"]]) {
+      await page.click("[data-vc=start]");
+      await page.evaluate(c => window.__srErr(c), code);
+      await page.waitForSelector(".vc.error", { timeout: 3000 }).catch(() => {});
+      const ok = await page.evaluate(k => document.querySelector(".vc").innerText.includes(window.APP.t(k).slice(0, 20)), key);
+      if (!ok) fail(`error ${code} not explained`);
+    }
+    // DELF speaking: a free answer is shown as heard.
+    await page.evaluate(() => window.EXAM.start([window.DELF.find(x => x.sec === "po" && x.kind === "entretien").id], "ex", "A1", null));
+    await page.waitForSelector(".vc [data-vc=start]");
+    await page.click("[data-vc=start]");
+    await page.evaluate(() => { window.__srSay([["je m'appelle Esin", true]]); window.__sr.stop(); });
+    await page.waitForSelector(".vc.done", { timeout: 3000 }).catch(() => fail("DELF answer not shown"));
+    if (!(await page.evaluate(() => document.querySelector(".vc.done").innerText.includes("je m'appelle Esin")))) fail("DELF transcript missing");
+    const over = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+    if (over > 1) fail(`horizontal overflow ${over}px`);
+    await ctx.close();
+  }
+  // No recogniser (Firefox, old iPhone): explain, keep "I said it" and offer recording.
+  {
+    const ctx = await browser.newContext({ viewport: SIZES.phone });
+    await ctx.addInitScript(() => { delete window.webkitSpeechRecognition; delete window.SpeechRecognition; window.webkitSpeechRecognition = undefined; });
+    const page = await ctx.newPage();
+    await page.goto(base + "#/practice/speak");
+    if (!(await page.$(".vc.unsupported"))) problems.push("voice: no unsupported-browser message");
+    await page.click("[data-ans='✓']");
+    if (!(await page.$("#ex-next"))) problems.push("voice: 'I said it' fallback broken");
     await ctx.close();
   }
   await browser.close(); server.close();

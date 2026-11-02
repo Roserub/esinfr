@@ -795,15 +795,12 @@
     const have = new Set(norm(given).split(" ").map(noAcc));
     return answer.split(/\s+/).map(w => `<span class="${have.has(noAcc(norm(w))) ? "w-ok" : "w-bad"}">${esc(w)}</span>`).join(" ");
   }
-  function similarity(target, heard) {
-    const a = noAcc(norm(target)).split(" "), b = new Set(noAcc(norm(heard)).split(" "));
-    return a.filter(w => b.has(w)).length / a.length;
-  }
+
   function exAnswer(given) {
     const it = EX.items[EX.i]; if (!it || EX.state) return;
     let ok = false, accent = false, diff = "";
     if (it.t === "choice") ok = given === it.answer;
-    else if (it.t === "speak") ok = given !== "" && (given === "✓" || similarity(it.answer, given) >= 0.75);
+    else if (it.t === "speak") ok = given !== "" && (given === "✓" || window.VOICE.compare(it.answer, given).score >= 0.75);
     else if (it.mode === "digits") ok = String(given).replace(/\D/g, "") === it.answer;
     else {
       let g = norm(given);
@@ -960,7 +957,6 @@
         <button class="icon-btn" data-delerr="${e.id}" aria-label="${esc(t("cards.delete"))}">🗑</button>
       </li>`).join("")}</ul>`;
   }
-  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
   function viewExercise(kind) {
     if (kind === "notebook") return viewNotebook();
     if (!GEN[kind] && kind !== "review") return viewPractice();
@@ -993,17 +989,14 @@
       </form>
       ${!st && it.mode !== "digits" ? `<div class="acc" aria-label="accents">${["é", "è", "ê", "à", "â", "ç", "ù", "û", "î", "ô", "ë", "œ", "'"].map(c => `<button class="key" data-ins="${c}" tabindex="-1">${c}</button>`).join("")}</div>` : ""}`;
     } else {
-      body = st ? "" : `<div class="row wrap center">
-        ${SR ? `<button class="btn mic" data-action="mic">🎤 ${esc(t("ex.speak.mic"))}</button>` : ""}
-        <button class="btn ghost" data-ans="✓">${esc(t("ex.speak.self"))}</button>
-      </div>
-      <p class="muted small center" id="heard">${esc(SR ? t("ex.speak.hint") : t("ex.speak.nosr"))}</p>`;
+      body = st ? "" : window.VOICE.view({ id: "ex-" + EX.start + "-" + EX.i, target: it.answer, onNext: best => exAnswer(best.heard) }) +
+        `<div class="row center"><button class="btn small ghost" data-ans="✓">${esc(t("ex.speak.self"))}</button></div>`;
     }
     const fb = st ? `<div class="fb ${st.ok ? "ok" : "bad"}" role="status">
         <p><b>${st.ok ? "✓ " + esc(t(st.accent ? "ex.accent" : "ex.right")) : "✗ " + esc(t("ex.wrong"))}</b></p>
         ${!st.ok || st.accent || it.t !== "choice" || k === "listen" ? `<p class="fr-mid">${it.reveal ? it.reveal : esc(it.al || it.answer)} ${it.say ? speakBtn(it.say) : ""}</p>` : ""}
         ${st.diff ? `<p class="diff">${st.diff}</p>` : ""}
-        ${it.t === "speak" && st.given && st.given !== "✓" ? `<p class="muted small">${esc(t("ex.speak.heard"))}: « ${esc(st.given)} »</p>` : ""}
+        ${it.t === "speak" && st.given && st.given !== "✓" ? `<p class="muted small">${esc(t("ex.speak.heard"))}: « ${esc(st.given)} »</p>${window.VOICE.compareHtml(it.answer, st.given)}` : ""}
         ${it.explain ? `<p class="muted small">${esc(it.explain)}</p>` : ""}
         <button class="btn" id="ex-next" data-action="ex-next">${esc(t(EX.i + 1 < EX.items.length ? "ex.next" : "ex.finish"))} →</button>
       </div>` : "";
@@ -1017,19 +1010,6 @@
         ${body}
         ${fb}
       </section>`;
-  }
-  function micListen(btn) {
-    const it = EX && EX.items[EX.i]; if (!it || !SR) return;
-    const r = new SR(); r.lang = "fr-FR"; r.interimResults = false; r.maxAlternatives = 3;
-    btn.classList.add("on"); btn.disabled = true; const out = $("#heard"); if (out) out.textContent = t("ex.speak.listening");
-    r.onresult = e => {
-      const alts = Array.from(e.results[0]).map(a => a.transcript);
-      const best = alts.sort((a, b) => similarity(it.answer, b) - similarity(it.answer, a))[0] || "";
-      exAnswer(best);
-    };
-    r.onerror = () => { btn.classList.remove("on"); btn.disabled = false; if (out) out.textContent = t("ex.speak.err"); };
-    r.onend = () => { btn.classList.remove("on"); btn.disabled = false; };
-    try { r.start(); } catch (e) { r.onerror(); }
   }
 
   /* ───────── Weekly plan ───────── */
@@ -1233,7 +1213,8 @@
     if (d.dx && window.EXAM) { window.EXAM.click(el, d, e); return; }
     if (d.gm && window.GAMES) { window.GAMES.click(el, d, e); return; }
     if (d.lang) { S.lang = d.lang; save(); render(); return; }
-    if (d.speak) { speak(d.speak, d.slow); return; }
+    if (d.vc && window.VOICE) { window.VOICE.click(el, d); return; }
+    if (d.speak) { if (window.VOICE) window.VOICE.stop(); speak(d.speak, d.slow); return; }
     if (d.ans !== undefined) { exAnswer(d.ans); return; }
     if (d.rq) { const [qi, oi] = d.rq.split(":").map(Number); readAnswer(qi, oi); return; }
     if (d.speakall) { speakAll(d.speakall); return; }
@@ -1278,7 +1259,6 @@
       case "dg-role": TK.role = !TK.role; TK.shown = {}; render(); break;
       case "dg-done": { const id = TK.id; if (S.talk[id]) delete S.talk[id]; else { S.talk[id] = ymd(); practised(); toast(t("toast.done")); } save(); render(); break; }
       case "ex-again": startEx(EX ? EX.kind : route().parts[1]); render(); { const it = EX.items[0]; if (it && it.say && !it.sayAfter && it.t !== "speak") speak(it.say); } break;
-      case "mic": micListen(el); break;
       case "err-clear": if (confirm(t("ex.clearConfirm"))) { S.err = []; save(); render(); } break;
       case "ics": downloadIcs(); break;
       case "practised": practised(); toast(t("toast.done")); render(); break;
