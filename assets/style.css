@@ -669,3 +669,43 @@ details.card > summary h2 { display: inline; }
 .vc-rec { margin-top: 10px; padding-top: 8px; border-top: 1px dashed var(--line); text-align: center; }
 .fb .vc-cmp { font-size: 1.05rem; }
 @media (prefers-reduced-motion: reduce) { .vc-dot, .vc-bars i { animation: none; } }
+
+/* ── Audio feedback (v8): every tapped button reacts, the playing one glows, the sentence read is highlighted ── */
+button { -webkit-tap-highlight-color: transparent; }
+button:active { transform: scale(.96); }
+.speak:active, .chip:active, .opt:active { filter: brightness(.92); }
+.is-playing { box-shadow: 0 0 0 3px var(--blue-soft), 0 0 0 5px var(--blue); animation: plpulse 1.2s ease-in-out infinite; }
+.speak.is-playing { background: var(--blue); color: #fff; }
+@keyframes plpulse { 50% { box-shadow: 0 0 0 3px var(--blue-soft), 0 0 0 8px transparent; } }
+@media (prefers-reduced-motion: reduce) { .is-playing { animation: none; } button:active { transform: none; } }
+.play-bar { gap: 8px; align-items: center; margin: 6px 0 10px; }
+.rd-p, .bubble, .bs-item { transition: background-color .25s, box-shadow .25s; border-radius: 10px; }
+.rd-p.speaking { background: var(--blue-soft); box-shadow: 0 0 0 6px var(--blue-soft); }
+.bubble.speaking { box-shadow: 0 0 0 3px var(--blue); }
+.bs-item.speaking { background: var(--blue-soft); }
+.tr-line { margin: -4px 0 12px; padding: 6px 10px; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 8px 8px 0; font-size: .95rem; }
+.bubble .tr-line { margin: 6px 0 0; }
+.cheat { border: 1px dashed var(--line); background: transparent; color: var(--muted); border-radius: 999px; padding: 4px 10px; font: inherit; font-size: .82rem; cursor: pointer; margin: 0 0 10px; min-height: 32px; }
+.bubble .cheat, .rq .cheat { margin: 4px 0 0; }
+.opt-tr { display: block; color: var(--muted); font-size: .8rem; font-weight: 400; margin-top: 2px; }
+
+/* ── Basics ── */
+.bs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.bs-tile { display: flex; flex-direction: column; gap: 4px; text-decoration: none; color: inherit; padding: 14px; }
+.bs-tile .ex-ic { font-size: 1.6rem; }
+.bs-tile.is-done { border-color: var(--accent); }
+.bs-items { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 6px 12px; list-style: none; padding: 0; margin: 8px 0 0; }
+.bs-items.letters { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.bs-item { display: flex; gap: 8px; align-items: flex-start; padding: 8px; border-bottom: 1px solid var(--line); }
+.bs-item .speak { width: 34px; height: 34px; }
+.bs-fr { font-weight: 600; font-size: 1.05rem; }
+.letters .bs-fr { font-size: 1.6rem; line-height: 1.1; }
+.bs-mean { color: var(--muted); font-size: .9rem; }
+.bs-ex { border: 0; background: none; padding: 0; color: var(--blue); font: inherit; font-size: .88rem; cursor: pointer; text-align: left; }
+.hide-mean .bs-mean { filter: blur(5px); cursor: pointer; }
+.hide-mean .bs-mean.seen { filter: none; }
+.bs-q { text-align: center; }
+.bs-q .bs-big { font-size: 2rem; font-weight: 700; margin: 6px 0; }
+.bs-q .bs-prompt { font-size: 1.25rem; margin: 8px 0; }
+.bs-tip { margin: 6px 0; }
+.opt:has(.opt-tr) { flex-direction: column; align-items: flex-start; gap: 2px; }

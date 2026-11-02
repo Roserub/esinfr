@@ -1,7 +1,7 @@
 /* Sanity checks for the data files. Run: node tools/check-data.js */
 const fs = require("fs"), vm = require("vm"), path = require("path");
 const ctx = { window: {} }; vm.createContext(ctx);
-for (const f of ["data/resources.js", "data/resources-fr.js", "data/path.js", "data/decks.js", "data/guide.js", "data/guide-master.js", "data/guide-fr.js", "data/decks-master.js", "data/path-master.js", "data/practice.js", "data/decks-more.js", "data/decks-delf.js", "data/decks-delf-phrases.js", "data/guide-delf.js", "data/readings.js", "data/dialogues.js", "data/readings-a1a2-1.js", "data/readings-a1a2-2.js", "data/dialogues-a1a2-1.js", "data/dialogues-a1a2-2.js", "assets/i18n.js", "assets/i18n-exam.js", "assets/i18n-games.js"])
+for (const f of ["data/resources.js", "data/resources-fr.js", "data/path.js", "data/decks.js", "data/guide.js", "data/guide-master.js", "data/guide-fr.js", "data/decks-master.js", "data/path-master.js", "data/practice.js", "data/decks-more.js", "data/decks-delf.js", "data/decks-delf-phrases.js", "data/guide-delf.js", "data/readings.js", "data/dialogues.js", "data/readings-a1a2-1.js", "data/readings-a1a2-2.js", "data/dialogues-a1a2-1.js", "data/dialogues-a1a2-2.js", "data/readings-tr-1.js", "data/readings-tr-2.js", "data/readings-tr-3.js", "data/basics.js", "assets/i18n.js", "assets/i18n-exam.js", "assets/i18n-games.js", "assets/i18n-basics.js"])
   if (fs.existsSync(path.join(__dirname, "..", f))) vm.runInContext(fs.readFileSync(path.join(__dirname, "..", f), "utf8"), ctx, { filename: f });
 const { RESOURCES, PATH, DECKS, GUIDE, I18N } = ctx.window;
 const errors = [];
@@ -64,7 +64,30 @@ for (const d of DIALOGUES) {
   if (!d.roles[d.me]) errors.push(`dialogue ${d.id}: unknown role ${d.me}`);
   for (const l of d.lines) if (!d.roles[l.who] || !l.fr || !l.tr || !l.en) errors.push(`dialogue ${d.id}: bad line ${l.fr}`);
 }
+// Translations behind the "cheat" buttons: one per paragraph, question and option of every reading.
+const RT = ctx.window.READING_TR || {};
+for (const r of READINGS) {
+  const x = RT[r.id], n = r.text.split(/\n\s*\n/).length;
+  if (!x) { errors.push(`reading ${r.id}: no translation`); continue; }
+  for (const k of ["tr", "en"]) if (!Array.isArray(x[k]) || x[k].length !== n || x[k].some(p => !p)) errors.push(`reading ${r.id}: ${k} translation needs ${n} paragraphs`);
+  if (!Array.isArray(x.q) || x.q.length !== r.qs.length) errors.push(`reading ${r.id}: question translations needed`);
+  else x.q.forEach((q, i) => { if (!q.tr || !q.en || !q.o || q.o.length !== r.qs[i].o.length || q.o.some(o => !o[0] || !o[1])) errors.push(`reading ${r.id}: question ${i + 1} translation incomplete`); });
+}
+// Basics: topics, groups and items complete in the three languages.
+const BASICS = ctx.window.BASICS || [], bIds = new Set();
+if (BASICS.length < 10) errors.push("basics: missing topics");
+for (const b of BASICS) {
+  if (bIds.has(b.id)) errors.push("duplicate basics topic " + b.id); bIds.add(b.id);
+  if (!["letters", "sounds", "words"].includes(b.kind)) errors.push(`basics ${b.id}: bad kind`);
+  for (const k of ["fr", "tr", "en"]) { if (!b.t[k]) errors.push(`basics ${b.id}: missing title ${k}`); if (!b.intro || !b.intro[k]) errors.push(`basics ${b.id}: missing intro ${k}`); }
+  const seen = new Set();
+  for (const g of b.groups) {
+    for (const k of ["fr", "tr", "en"]) { if (!g.t[k]) errors.push(`basics ${b.id}: group title ${k}`); if (g.tip && !g.tip[k]) errors.push(`basics ${b.id}: tip ${k}`); }
+    for (const it of g.items) { if (!it.fr || !it.tr || !it.en) errors.push(`basics ${b.id}: incomplete item ${it.fr}`); if (seen.has(it.fr)) errors.push(`basics ${b.id}: duplicate ${it.fr}`); seen.add(it.fr); }
+  }
+  if (seen.size < 4) errors.push(`basics ${b.id}: too few items for a quiz`);
+}
 const cards = DECKS.reduce((n, d) => n + d.cards.length, 0);
-console.log(`${READINGS.length} readings, ${DIALOGUES.length} dialogues, ${RESOURCES.length} resources, ${stepIds.size} steps, ${DECKS.length} decks / ${cards} cards, ${GUIDE.length} guide sections`);
+console.log(`${BASICS.length} basics topics, ${READINGS.length} readings, ${DIALOGUES.length} dialogues, ${RESOURCES.length} resources, ${stepIds.size} steps, ${DECKS.length} decks / ${cards} cards, ${GUIDE.length} guide sections`);
 if (errors.length) { console.error(errors.join("\n")); process.exit(1); }
 console.log("OK");

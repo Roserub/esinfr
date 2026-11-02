@@ -16,7 +16,8 @@ const server = http.createServer((req, res) => {
 const ROUTES = ["#/", "#/path", "#/path/A0", "#/path/A2", "#/path/B1", "#/practice", "#/library", "#/cards", "#/cards/survival", "#/cards/falsefriends/list",
   "#/more", "#/plan", "#/search?q=rendez", "#/placement", "#/progress", "#/practice/notebook", "#/read", "#/read/r-seance", "#/talk", "#/talk/d-kine", "#/path/C1",
   "#/exam", "#/exam/A2", "#/exam/A1/s/1", "#/exam/A2/sec/po", "#/exam/A1/sec/co",
-  "#/exam/A1/s/20", "#/exam/A2/s/20", "#/exam/A2/survie", "#/games", "#/games/memory/A1", "#/games/order/A2", "#/adv", "#/adv/av-cafe", "#/adv/av-train"];
+  "#/exam/A1/s/20", "#/exam/A2/s/20", "#/exam/A2/survie", "#/games", "#/games/memory/A1", "#/games/order/A2", "#/adv", "#/adv/av-cafe", "#/adv/av-train",
+  "#/basics", "#/basics/alphabet", "#/basics/sounds", "#/basics/numbers", "#/basics/house", "#/basics/house/quiz", "#/basics/alphabet/quiz", "#/read/r-cafe"];
 const EXERCISES = ["sounds", "numbers", "listen", "dictation", "conj", "gender", "mistakes", "speak"];
 const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 1180 }, mac: { width: 1440, height: 900 } };
 
@@ -197,13 +198,13 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
   }
   // Audio: with a fake speech engine, "Listen" reads the whole recording, even when the
   // first utterance is dropped and when the engine never says it has finished.
-  for (const mode of ["drop", "noend"]) {
+  for (const mode of ["drop", "noend", "badvoice"]) {
     const ctx = await browser.newContext({ viewport: SIZES.phone });
     await ctx.addInitScript(mode => {
       const log = window.__said = []; let cur = null, q = [], drop = mode === "drop" ? 1 : 0;
       const S = { speaking: false, pending: false, paused: false, getVoices: () => [{ name: "Amélie", lang: "fr-FR", localService: true }], addEventListener() {}, resume() {},
         cancel() { q = []; if (cur) { const u = cur; cur = null; S.speaking = false; if (u.onerror) u.onerror({ error: "interrupted" }); } },
-        speak(u) { if (drop) { drop--; return; } q.push(u); if (!cur) S.next(); },
+        speak(u) { if (drop) { drop--; return; } if (mode === "badvoice" && u.voice) { S.speaking = true; cur = u; return; } q.push(u); if (!cur) S.next(); },
         next() { const u = q.shift(); if (!u) return; cur = u; S.speaking = true; setTimeout(() => { if (cur !== u) return; log.push(u.text); if (u.onstart) u.onstart(); setTimeout(() => { if (cur !== u) return; cur = null; S.speaking = false; if (mode !== "noend" && u.onend) u.onend(); S.next(); }, 20); }, 5); } };
       Object.defineProperty(window, "speechSynthesis", { value: S, configurable: true });
       window.SpeechSynthesisUtterance = function (t) { this.text = t; this.pitch = 1; };
@@ -217,17 +218,45 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
     const got = await page.evaluate(() => window.__said.join("").replace(/[\s,]/g, ""));
     if (got !== want) problems.push(`audio (${mode}): read ${got.length}/${want.length} characters of DELF A1 19 listening 1`);
     // "Listen to all" on a reading and on a dialogue reads everything to the end.
-    if (mode === "drop") for (const [kind, id] of [["read", "r-cafe"], ["talk", (await page.evaluate(() => window.DIALOGUES[0].id))]]) {
+    if (mode === "drop") for (const [kind, id] of [["read", "r-cafe"], ["talk", (await page.evaluate(() => window.DIALOGUES[0].id))], ["basics", "calendar"]]) {
       await page.evaluate(h => { location.hash = h; }, `#/${kind}/${id}`);
       await page.waitForSelector("[data-speakall]");
-      const all = await page.evaluate(([kind, id]) => (kind === "read" ? window.READINGS.find(r => r.id === id).text : window.DIALOGUES.find(d => d.id === id).lines.map(l => l.fr).join(" ")).replace(/[\s,]/g, ""), [kind, id]);
+      const all = await page.evaluate(([kind, id]) => (kind === "read" ? window.READINGS.find(r => r.id === id).text : kind === "talk" ? window.DIALOGUES.find(d => d.id === id).lines.map(l => l.fr).join(" ")
+        : window.BASICS_UI.lines("b:" + id + ":0").lines.map(l => l[1]).join(" ")).replace(/[\s,]/g, ""), [kind, id]);
+      await page.waitForSelector("[data-speakall]");
       await page.evaluate(() => { window.__said.length = 0; });
       await page.click("[data-speakall]");
+      await page.waitForTimeout(15);
+      if (!(await page.$("[data-speakall].is-playing"))) problems.push(`audio: "listen to all" on ${kind} shows no playing state`);
+      await page.waitForFunction(() => !!document.querySelector("[data-pl].speaking"), null, { timeout: 3000 }).catch(() => problems.push(`audio: "listen to all" on ${kind} highlights nothing`));
       await page.waitForFunction(n => window.__said.join("").replace(/[\s,]/g, "").length >= n, all.length, { timeout: 60000 }).catch(() => {});
       const heard = await page.evaluate(() => window.__said.join("").replace(/[\s,]/g, ""));
       if (heard !== all) problems.push(`audio: "listen to all" on ${kind} ${id} read ${heard.length}/${all.length} characters`);
     }
     await ctx.close();
+  }
+  // Cheat buttons show the real translation; the Basics quiz plays to the end and saves a score.
+  {
+    const page = await browser.newPage({ viewport: SIZES.phone });
+    page.on("pageerror", e => problems.push(`cheat: page error ${e.message}`));
+    await page.goto(base + "#/read/r-cafe");
+    await page.click("[data-rdtr='0']");
+    if (!(await page.evaluate(() => { const x = window.READING_TR["r-cafe"], s = document.querySelector("#main").innerText; return s.includes(x.tr[0]) || s.includes(x.en[0]); }))) problems.push("cheat: reading paragraph translation not shown");
+    await page.click("[data-rqtr='0']");
+    if (!(await page.$(".rq .opt-tr"))) problems.push("cheat: question translation not shown");
+    const did = await page.evaluate(() => window.DIALOGUES[0].id);
+    await page.evaluate(h => { location.hash = h; }, "#/talk/" + did);
+    await page.click("[data-dgtr='0']");
+    if (!(await page.evaluate(() => [window.DIALOGUES[0].lines[0].tr, window.DIALOGUES[0].lines[0].en].some(x => document.querySelector(".bubble .tr-line").innerText.includes(x))))) problems.push("cheat: dialogue line translation not shown");
+    await page.click("[data-action='tr-all']");
+    if ((await page.$$(".bubble .tr-line")).length !== await page.evaluate(() => window.DIALOGUES[0].lines.length)) problems.push("cheat: 'all translations' does not show every line");
+    for (const b of await page.evaluate(() => window.BASICS.map(x => x.id))) {
+      await page.evaluate(h => { location.hash = h; }, "#/basics/" + b + "/quiz");
+      for (let i = 0; i < 12 && await page.$("[data-bs='ans']:not([disabled])"); i++) { await page.click("[data-bs='ans']:not([disabled])"); await page.click("[data-bs='next']"); }
+      if (!(await page.$(".ex-end"))) problems.push(`basics ${b}: quiz did not end`);
+    }
+    if (await page.evaluate(() => Object.keys(window.APP.S.basics).length) !== await page.evaluate(() => window.BASICS.length)) problems.push("basics: quiz scores not saved");
+    await page.close();
   }
   // Speech recognition: with a fake recogniser, the panel shows live words, then a word-by-word comparison,
   // a retry, clear error messages, and a fallback when the browser has no recogniser.

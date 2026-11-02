@@ -14,7 +14,7 @@
 
   /* ───────── State ───────── */
   const DEFAULT = () => ({ v: 1, lang: null, level: null, steps: {}, res: {}, fav: {}, cards: {}, days: {}, mine: [], newPerSession: 10, lib: {}, welcomed: false,
-    fw: {}, gram: {}, pace: { hpw: 5, dpw: 5 }, mins: {}, prac: {}, err: [], plan: {}, remind: "19:00", read: {}, talk: {}, delf: {}, games: {}, focus: true });
+    fw: {}, gram: {}, pace: { hpw: 5, dpw: 5 }, mins: {}, prac: {}, err: [], plan: {}, remind: "19:00", read: {}, talk: {}, delf: {}, games: {}, focus: true, basics: {}, trAll: false });
   let S = load();
   function fill(obj) {
     const s = Object.assign(DEFAULT(), obj);
@@ -74,27 +74,39 @@
       const vs = speechSynthesis.getVoices().filter(v => /^fr([-_]|$)/i.test(v.lang));
       if (!vs.length) { V = null; return; }
       const fr = vs.filter(v => /^fr[-_]FR/i.test(v.lang)), pool = fr.length ? fr : vs;
-      const local = pool.filter(v => v.localService), base = local.length ? local : pool;
+      // Skip Apple's novelty voices (Grandma, Rocko…), which sound odd, and prefer voices installed on the device.
+      const odd = /(Albert|Bad News|Bahh|Bells|Boing|Bubbles|Cellos|Good News|Jester|Organ|Superstar|Trinoids|Whisper|Wobble|Zarvox|Grandma|Grandpa|Eddy|Flo\b|Reed|Rocko|Sandy|Shelley)/i;
+      const calm = pool.filter(v => !odd.test(v.name)), pool2 = calm.length ? calm : pool;
+      const local = pool2.filter(v => v.localService), base = local.length ? local : pool2;
       const F = base.find(v => /(Amélie|Amelie|Audrey|Marie|Aurélie|Céline|Julie|Virginie|Hortense|Denise|Google)/i.test(v.name)) || base.find(v => /(Premium|Enhanced)/i.test(v.name)) || base[0];
       const M = base.find(v => /(Thomas|Nicolas|Daniel|Paul|Henri|Mathieu|Jacques|Rémi|Remi)/i.test(v.name)) || F;
       V = { F, M };
     }
     if (ok) { pick(); if (speechSynthesis.addEventListener) speechSynthesis.addEventListener("voiceschanged", pick); else speechSynthesis.onvoiceschanged = pick; }
-    // iPhone/iPad: playing a short silent sound first puts the page in the "playback" audio session,
-    // so the voice is heard even when the side switch is on silent.
+    // iPhone/iPad: one short silent sound at the very first touch puts the page in the "playback" audio
+    // session, so the voice is heard even when the side switch is on silent. It is played ONCE, at the first
+    // touch, never together with speech: an <audio> starting at the same moment as a voice silences the voice on iOS.
+    const IOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (/Macintosh/.test(navigator.userAgent) && "ontouchend" in document);
     let blank = null;
     function unmute() {
-      if (!(/iP(hone|ad|od)/.test(navigator.userAgent) || (/Macintosh/.test(navigator.userAgent) && "ontouchend" in document))) return;
+      if (!IOS || blank) return;
       try {
-        if (!blank) {
-          const n = 1600, b = new Uint8Array(44 + n), dv = new DataView(b.buffer), w = (o, x) => { for (let i = 0; i < x.length; i++) b[o + i] = x.charCodeAt(i); };
-          w(0, "RIFF"); dv.setUint32(4, 36 + n, true); w(8, "WAVEfmt "); dv.setUint32(16, 16, true); dv.setUint16(20, 1, true); dv.setUint16(22, 1, true);
-          dv.setUint32(24, 8000, true); dv.setUint32(28, 8000, true); dv.setUint16(32, 1, true); dv.setUint16(34, 8, true); w(36, "data"); dv.setUint32(40, n, true); b.fill(128, 44);
-          blank = new Audio(URL.createObjectURL(new Blob([b], { type: "audio/wav" }))); blank.setAttribute("playsinline", "");
-        }
-        blank.currentTime = 0; const p = blank.play(); if (p && p.catch) p.catch(() => {});
+        const n = 1600, b = new Uint8Array(44 + n), dv = new DataView(b.buffer), w = (o, x) => { for (let i = 0; i < x.length; i++) b[o + i] = x.charCodeAt(i); };
+        w(0, "RIFF"); dv.setUint32(4, 36 + n, true); w(8, "WAVEfmt "); dv.setUint32(16, 16, true); dv.setUint16(20, 1, true); dv.setUint16(22, 1, true);
+        dv.setUint32(24, 8000, true); dv.setUint32(28, 8000, true); dv.setUint16(32, 1, true); dv.setUint16(34, 8, true); w(36, "data"); dv.setUint32(40, n, true); b.fill(128, 44);
+        blank = new Audio(URL.createObjectURL(new Blob([b], { type: "audio/wav" }))); blank.setAttribute("playsinline", "");
+        const p = blank.play(); if (p && p.catch) p.catch(() => {});
       } catch (e) {}
     }
+    if (IOS) document.addEventListener("touchend", e => { if (!(e.target.closest && e.target.closest("[data-speak],[data-speakall],[data-dx],[data-gm],[data-bq],[data-bplay]"))) unmute(); }, { passive: true });
+    // Visible feedback: the button that started the sound glows while it plays.
+    let tapped = null, tappedAt = 0, glowing = null;
+    document.addEventListener("click", e => { const b = e.target.closest && e.target.closest("button"); if (b) { tapped = b; tappedAt = Date.now(); } }, true);
+    function glow(on) {
+      if (glowing) { glowing.classList.remove("is-playing"); glowing = null; }
+      if (on && tapped && Date.now() - tappedAt < 400 && tapped.isConnected) { glowing = tapped; glowing.classList.add("is-playing"); }
+    }
+    let noVoice = false; // a chosen voice that never starts (not installed on the phone): use the default French voice
     const later = (f, ms) => { const id = setTimeout(f, ms); timers.push(id); return id; };
     function chunks(text) {
       const out = [];
@@ -105,38 +117,54 @@
       }
       return out.flatMap(x => x.length <= 160 ? [x] : x.split(/,\s*/).filter(Boolean));
     }
+    let halt = null;
     function stop() {
-      run++; timers.forEach(clearTimeout); timers = []; keep = [];
-      if (ok && (speechSynthesis.speaking || speechSynthesis.pending)) speechSynthesis.cancel();
+      run++; timers.forEach(clearTimeout); timers = []; keep = []; glow(false);
+      if (halt) { const h = halt; halt = null; try { h(); } catch (e) {} }
+      const busy = ok && (speechSynthesis.speaking || speechSynthesis.pending);
+      if (busy) speechSynthesis.cancel();
+      return busy;
     }
-    // lines: [[speaker, text], …]; o: { rate, pitch: {speaker: n}, gap }
+    // lines: [[speaker, text], …]; o: { rate, pitch: {speaker: n}, gap, onLine(i) }
     function play(lines, o, done) {
       o = o || {}; done = done || (() => {});
-      const q = []; (lines || []).forEach(([who, text]) => chunks(text).forEach((c, j, a) => q.push({ who, text: c, end: j === a.length - 1 })));
+      const q = []; (lines || []).forEach(([who, text], li) => chunks(text).forEach((c, j, a) => q.push({ who, text: c, line: li, first: j === 0, end: j === a.length - 1 })));
       if (!q.length) { done(); return; }
       if (!ok) { toast(t("audio.none")); done(); return; }
-      unmute(); stop(); const id = run; let started = false;
+      const cancelled = stop(); const id = run; let started = false; glow(true); halt = o.onHalt || null;
+      const end = () => { glow(false); halt = null; if (o.onLine) o.onLine(-1); done(); };
       if (speechSynthesis.paused) speechSynthesis.resume();
       const say = (i, retry) => {
         if (id !== run) return;
-        if (i >= q.length) { done(); return; }
+        if (i >= q.length) { end(); return; }
         const c = q[i], u = new SpeechSynthesisUtterance(c.text), rate = o.rate || .9;
         u.lang = "fr-FR"; u.rate = rate; u.pitch = (o.pitch && o.pitch[c.who]) || 1;
-        if (V) u.voice = /^M/.test(c.who) ? V.M : V.F;
-        let fin = false;
+        if (V && !noVoice) u.voice = /^M/.test(c.who) ? V.M : V.F;
+        if (c.first && !retry && o.onLine) o.onLine(c.line);
+        let fin = false, mine = false;
+        const t0 = Date.now(), est = 1500 + c.text.length * 85 / rate;
         const finish = () => { if (fin || id !== run) return; fin = true; later(() => say(i + 1), c.end ? (o.gap == null ? 450 : o.gap) : 80); };
-        u.onstart = () => { started = true; };
+        u.onstart = () => { started = mine = true; };
         u.onend = finish; u.onerror = e => { if (e && (e.error === "interrupted" || e.error === "canceled")) return; finish(); };
         keep.push(u); speechSynthesis.speak(u);
         // A dropped utterance (seen right after cancel on some phones): try once more.
-        if (!retry) later(() => { if (id === run && !fin && !started && !speechSynthesis.speaking && !speechSynthesis.pending) { fin = true; say(i, true); } }, 700);
-        // Watchdog: some browsers never fire onend.
-        const est = 1500 + c.text.length * 85 / rate;
-        const watch = () => { if (id !== run || fin) return; if (speechSynthesis.speaking) later(watch, 1000); else finish(); };
+        if (!retry) later(() => { if (id === run && !fin && !mine && !speechSynthesis.speaking && !speechSynthesis.pending) { fin = true; say(i, true); } }, 900);
+        // Nothing heard after 2.5 s although the engine says it is busy: the chosen voice is probably not
+        // installed (seen on iPhone). Start again with the phone's default French voice.
+        if (!started && u.voice) later(() => { if (id === run && !fin && !mine && !started) { fin = true; noVoice = true; speechSynthesis.cancel(); later(() => say(i, true), 150); } }, 2500);
+        // Watchdog: some browsers never fire onend, and some stay "speaking" forever after a hiccup.
+        // Past a generous limit we unstick the engine and go on with the next sentence.
+        const watch = () => {
+          if (id !== run || fin) return;
+          const over = Date.now() - t0 > est * 2 + 5000;
+          if (!over && speechSynthesis.speaking) { later(watch, 1000); return; }
+          if (over) { fin = true; speechSynthesis.cancel(); later(() => say(i + 1), 150); } else finish();
+        };
         later(watch, est);
       };
-      say(0);
-      later(() => { if (id === run && !started && !hinted) { hinted = true; toast(t("audio.hint")); } }, 3000);
+      // Speaking right after cancel() is dropped by some browsers (iPhone, Chrome): give the engine a breath.
+      if (cancelled) later(() => say(0), 150); else say(0);
+      later(() => { if (id === run && !started && !hinted) { hinted = true; toast(t("audio.hint")); } }, 4500);
     }
     document.addEventListener("visibilitychange", () => { if (document.hidden) stop(); });
     return { play, stop, ok };
@@ -221,7 +249,7 @@
   /* ───────── Views ───────── */
   /* One tap to every section, at the top of Today. */
   function quickGrid() {
-    const items = [["#/exam", "🎓", "DELF"], ["#/adv", "🧭", t("av.title")], ["#/games", "🎲", t("gm.title")], ["#/practice", "🎯", t("ex.title")],
+    const items = [["#/basics", "🧱", t("bs.title")], ["#/exam", "🎓", "DELF"], ["#/adv", "🧭", t("av.title")], ["#/games", "🎲", t("gm.title")], ["#/practice", "🎯", t("ex.title")],
       ["#/read", "📖", t("rd.title")], ["#/talk", "💬", t("dg.title")], ["#/cards", "🃏", t("nav.cards")], ["#/library", "📚", t("home.lib")]];
     return `<nav class="quick" aria-label="${esc(t("home.quick"))}">${items.map(([h, i, l]) => `<a class="quick-i" href="${h}"><span aria-hidden="true">${i}</span><b>${esc(l)}</b></a>`).join("")}</nav>`;
   }
@@ -847,7 +875,8 @@
   }
   function viewReading(id) {
     const r = READINGS.find(x => x.id === id); if (!r) return viewReadings();
-    if (!RD || RD.id !== id) RD = { id, ans: {}, start: Date.now() };
+    if (!RD || RD.id !== id) RD = { id, ans: {}, start: Date.now(), tr: {}, qtr: {} };
+    const TR = (window.READING_TR || {})[id];
     const paras = r.text.split(/\n\s*\n/);
     const done = Object.keys(RD.ans).length === r.qs.length;
     const score = r.qs.filter((q, i) => RD.ans[i] === q.a).length;
@@ -857,8 +886,8 @@
       <article class="card reading">
         <p class="eyebrow">${r.level} · ${esc(lang() === "fr" ? r.t.en : loc(r.t))}</p>
         <h1>${esc(r.t.fr)}</h1>
-        <div class="row"><button class="btn small ghost" data-speakall="${esc(r.id)}">🔊 ${esc(t("rd.listenAll"))}</button><button class="btn small ghost" data-action="stop-speak">⏹</button></div>
-        ${paras.map(p => `<p class="rd-p" lang="fr">${esc(p)} ${speakBtn(p)}</p>`).join("")}
+        ${playBar(r.id)}
+        ${paras.map((p, pi) => `<p class="rd-p" lang="fr" data-pl="${esc(r.id)}:${pi}">${esc(p)} ${speakBtn(p)}</p>${transLine(TR && TR.tr[pi] != null ? { tr: TR.tr[pi], en: TR.en[pi] } : null, RD.tr[pi], "data-rdtr=\"" + pi + "\"")}`).join("")}
       </article>
       <details class="card gloss"><summary><b>📚 ${esc(t("rd.gloss"))}</b> <span class="muted small">${r.gloss.length}</span></summary>
         <ul class="word-list">${r.gloss.map(w => `<li><div class="w-fr">${esc(w[0])} ${speakBtn(w[0])}</div><div class="w-tr">${esc(w[g])}${lang() !== "en" ? ` <span class="muted">· ${esc(w[2])}</span>` : ""}</div></li>`).join("")}</ul>
@@ -866,7 +895,9 @@
       </details>
       <section class="card">
         <h2>❓ ${esc(t("rd.questions"))}</h2>
-        ${r.qs.map((q, qi) => { const a = RD.ans[qi]; return `<div class="rq"><p><b>${qi + 1}.</b> ${esc(q.q)}</p><div class="opts">${q.o.map((o, oi) => `<button class="opt ${a !== undefined ? (oi === q.a ? "ok" : oi === a ? "bad" : "") : ""}" data-rq="${qi}:${oi}" ${a !== undefined ? "disabled" : ""}>${esc(o)}</button>`).join("")}</div></div>`; }).join("")}
+        ${r.qs.map((q, qi) => { const a = RD.ans[qi], qt = TR && TR.q && TR.q[qi], seeT = qt && (RD.qtr[qi] || S.trAll);
+          return `<div class="rq"><p><b>${qi + 1}.</b> ${esc(q.q)} ${qt && !seeT ? `<button class="cheat" data-rqtr="${qi}">🙈 ${esc(t("tr.cheat"))}</button>` : ""}</p>${seeT ? `<p class="tr-line">${esc(trPick(qt))}</p>` : ""}
+          <div class="opts">${q.o.map((o, oi) => `<button class="opt ${a !== undefined ? (oi === q.a ? "ok" : oi === a ? "bad" : "") : ""}" data-rq="${qi}:${oi}" ${a !== undefined ? "disabled" : ""}>${esc(o)}${seeT && qt.o && qt.o[oi] ? `<small class="opt-tr">${esc(trPick({ tr: qt.o[oi][0], en: qt.o[oi][1] }))}</small>` : ""}</button>`).join("")}</div></div>`; }).join("")}
         ${done ? `<div class="fb ${score === r.qs.length ? "ok" : "bad"}"><p><b>${score} / ${r.qs.length}</b> · ${esc(t(score === r.qs.length ? "ex.end.great" : score >= r.qs.length / 2 ? "ex.end.good" : "rd.reread"))}</p>
           <div class="row wrap"><button class="btn ghost" data-action="rd-again">↻ ${esc(t("ex.again"))}</button>${next ? `<a class="btn" href="#/read/${next.id}">${esc(next.t.fr)} →</a>` : ""}</div></div>` : ""}
       </section>`;
@@ -898,24 +929,19 @@
   }
   function viewDialogue(id) {
     const d = DIALOGUES.find(x => x.id === id); if (!d) return viewDialogues();
-    if (!TK || TK.id !== id) TK = { id, role: false, trans: true, shown: {} };
+    if (!TK || TK.id !== id) TK = { id, role: false, shown: {}, tshow: {} };
     const tr = l => lang() === "en" ? l.en : l.tr;
     return `<a class="back" href="#/talk">← ${esc(t("dg.title"))}</a>
       <h1>💬 ${esc(d.t.fr)}</h1>
       <p class="muted">${d.level} · ${esc(lang() === "fr" ? d.t.en : loc(d.t))}</p>
-      <div class="row wrap dg-tools">
-        <button class="btn small" data-speakall="${esc(d.id)}">▶ ${esc(t("dg.playAll"))}</button>
-        <button class="btn small ghost" data-action="stop-speak">⏹</button>
-        ${chip("🌐 " + esc(t("dg.trans")), 'data-action="dg-trans"', TK.trans)}
-        ${chip("🎭 " + esc(t("dg.role", { r: d.roles[d.me] })), 'data-action="dg-role"', TK.role)}
-      </div>
+      ${playBar(d.id, chip("🎭 " + esc(t("dg.role", { r: d.roles[d.me] })), 'data-action="dg-role"', TK.role))}
       ${TK.role ? `<p class="note">${esc(t("dg.roleHelp", { r: d.roles[d.me] }))}</p>` : ""}
       <div class="dialogue">${d.lines.map((l, i) => {
         const mine = l.who === d.me, hide = TK.role && mine && !TK.shown[i];
-        return `<div class="bubble ${mine ? "me" : ""}">
+        return `<div class="bubble ${mine ? "me" : ""}" data-pl="${esc(d.id)}:${i}">
           <span class="who">${esc(d.roles[l.who])}</span>
           ${hide ? `<p class="hint">${esc(tr(l))}</p><button class="btn small ghost" data-reveal="${i}">👁 ${esc(t("dg.reveal"))}</button>`
-            : `<p class="fr" lang="fr">${esc(l.fr)} ${speakBtn(l.fr)}</p>${TK.trans ? `<p class="muted small">${esc(tr(l))}</p>` : ""}`}
+            : `<p class="fr" lang="fr">${esc(l.fr)} ${speakBtn(l.fr)}</p>${transLine({ tr: l.tr, en: l.en }, TK.tshow[i], "data-dgtr=\"" + i + "\"")}`}
         </div>`;
       }).join("")}</div>
       <button class="btn ${S.talk[d.id] ? "ghost" : ""}" data-action="dg-done">${S.talk[d.id] ? "✓ " + esc(t("path.done")) : esc(t("path.markDone"))}</button>`;
@@ -923,9 +949,46 @@
   let SEQ = 0;
   function speakAll(id) {
     const r = READINGS.find(x => x.id === id), d = DIALOGUES.find(x => x.id === id);
-    const lines = r ? r.text.split(/\n\s*\n/).map(p => ["F", p]) : d ? d.lines.filter((l, i) => !(TK && TK.role && l.who === d.me && !TK.shown[i])).map(l => [l.who !== d.lines[0].who ? "F2" : "F", l.fr]) : [];
-    SEQ++; TTS.play(lines, { rate: 0.9, pitch: { F2: 1.25 }, gap: d ? 500 : 250 });
+    if (r) return playAll(id, r.text.split(/\n\s*\n/).map(p => ["F", p]), null, 300);
+    if (d) {
+      const lines = [], idx = [];
+      d.lines.forEach((l, i) => { if (TK && TK.role && l.who === d.me && !TK.shown[i]) return; idx.push(i); lines.push([l.who !== d.lines[0].who ? "F2" : "F", l.fr]); });
+      return playAll(id, lines, idx, 550);
+    }
+    const b = window.BASICS_UI && window.BASICS_UI.lines(id);
+    if (b) playAll(id, b.lines, b.idx, 500);
   }
+  /* "Listen to all": one shared player. The sentence being read is highlighted, the button becomes "Stop",
+     and a slow speed is one tap away. Tapping the button again stops it. */
+  let PL = null, SLOW = false;
+  function paintPL() {
+    $$("[data-pl]").forEach(el => el.classList.toggle("speaking", !!PL && el.dataset.pl === PL.key + ":" + PL.line));
+    $$("[data-speakall]").forEach(b => {
+      const on = !!PL && b.dataset.speakall === PL.key;
+      b.classList.toggle("is-playing", on); b.setAttribute("aria-pressed", on);
+      const ic = b.querySelector(".pl-i"), lb = b.querySelector(".pl-l");
+      if (ic) ic.textContent = on ? "⏹" : "▶"; if (lb) lb.textContent = t(on ? "pl.stop" : "rd.listenAll");
+    });
+    const cur = PL && PL.line >= 0 && $(`[data-pl="${PL.key}:${PL.line}"]`);
+    if (cur) { const r = cur.getBoundingClientRect(); if (r.top < 70 || r.bottom > window.innerHeight - 90) cur.scrollIntoView({ block: "center", behavior: "smooth" }); }
+  }
+  function playAll(key, lines, idx, gap) {
+    if (PL && PL.key === key) { TTS.stop(); return; }
+    const me = PL = { key, line: -1 };
+    if (window.VOICE) window.VOICE.stop();
+    TTS.play(lines, { rate: SLOW ? .7 : .9, pitch: { F2: 1.25 }, gap: gap || 400,
+      onLine: i => { if (PL !== me) return; PL.line = i < 0 ? -1 : idx ? idx[i] : i; paintPL(); },
+      onHalt: () => { if (PL === me) { PL = null; paintPL(); } } }, () => { if (PL === me) { PL = null; paintPL(); } });
+    paintPL();
+  }
+  const playBar = (key, extra, noTr) => `<div class="row wrap play-bar">
+      <button class="btn small" data-speakall="${esc(key)}" aria-pressed="false"><span class="pl-i" aria-hidden="true">▶</span> <span class="pl-l">${esc(t("rd.listenAll"))}</span></button>
+      ${chip("🐢 " + esc(t("pl.slow")), 'data-action="pl-slow"', SLOW)}
+      ${noTr ? "" : chip("👁 " + esc(t("tr.all")), 'data-action="tr-all"', S.trAll)}
+      ${extra || ""}</div>`;
+  const trPick = o => lang() === "en" ? o.en : lang() === "fr" ? o.tr + " · " + o.en : o.tr;
+  // The translation of one line: always shown when "all translations" is on, else behind a small cheat button.
+  const transLine = (o, shown, attr) => !o ? "" : (S.trAll || shown) ? `<p class="tr-line">${esc(trPick(o))}</p>` : `<button class="cheat" ${attr}>👁 ${esc(t("tr.show"))}</button>`;
 
   function viewPractice() {
     const d = S.prac[ymd()] || { n: 0, ok: 0 };
@@ -933,6 +996,7 @@
     return `<h1>${esc(t("ex.title"))}</h1>
       <p class="muted">${esc(t("ex.sub"))}</p>
       <div class="ex-grid">
+        ${window.BASICS_UI ? `<a class="card ex-tile big" href="#/basics"><span class="ex-ic">🧱</span><b>${esc(t("bs.title"))}</b><small>${esc(t("bs.tile", { n: window.BASICS_UI.count, d: window.BASICS_UI.done() }))}</small></a>` : ""}
         ${window.EXAM && window.EXAM.count ? `<a class="card ex-tile big" href="#/exam"><span class="ex-ic">🎓</span><b>${esc(t("dx.title"))}</b><small>DELF A1 · A2</small></a>` : ""}
         ${window.GAMES && window.GAMES.count ? `<a class="card ex-tile big" href="#/adv"><span class="ex-ic">🧭</span><b>${esc(t("av.title"))}</b><small>${esc(t("av.tile", { n: window.GAMES.count, d: Object.keys((S.games || {}).adv || {}).length }))}</small></a>` : ""}
         ${window.GAMES ? `<a class="card ex-tile big" href="#/games"><span class="ex-ic">🎲</span><b>${esc(t("gm.title"))}</b><small>${esc(t("gm.tile"))}</small></a>` : ""}
@@ -1161,7 +1225,7 @@
     $$("[data-i18n-label]").forEach(el => { el.setAttribute("aria-label", t(el.dataset.i18nLabel)); });
     const { parts, params } = route();
     const top = parts[0] || "home";
-    const tab = { home: "home", path: "path", practice: "practice", read: "practice", talk: "practice", library: "more", cards: "cards", more: "more", guide: "more", placement: "more", progress: "more", plan: "home", search: "more", exam: "exam", adv: "games", games: "games" }[top] || "home";
+    const tab = { home: "home", path: "path", practice: "practice", read: "practice", talk: "practice", basics: "practice", library: "more", cards: "cards", more: "more", guide: "more", placement: "more", progress: "more", plan: "home", search: "more", exam: "exam", adv: "games", games: "games" }[top] || "home";
     $$(".tabbar a").forEach(a => a.classList.toggle("on", a.dataset.tab === tab));
     let html;
     switch (top) {
@@ -1179,11 +1243,13 @@
       case "read": html = parts[1] ? viewReading(parts[1]) : viewReadings(); break;
       case "talk": html = parts[1] ? viewDialogue(parts[1]) : viewDialogues(); break;
       case "exam": html = window.EXAM ? window.EXAM.view(parts, params) : viewHome(); break;
+      case "basics": html = window.BASICS_UI ? window.BASICS_UI.view(parts) : viewHome(); break;
       case "adv": case "games": html = window.GAMES ? window.GAMES.view(parts) : viewHome(); break;
       default: html = viewHome();
     }
     main.innerHTML = `<div class="view ${raw !== lastRendered ? "anim" : ""}">${html}</div>`;
     lastRendered = raw;
+    paintPL();
     if (top === "library") { renderLibList(); }
     if (top === "placement") placementResult();
     if (top === "search") { renderSearch(); const q = $("#search-q"); if (q && !params.get("q")) q.focus(); }
@@ -1198,6 +1264,7 @@
     if (RD && route().parts[1] !== RD.id) RD = null;
     if (TK && route().parts[1] !== TK.id) TK = null;
     SEQ++; TTS.stop();
+    if (window.BASICS_UI) window.BASICS_UI.onHash();
     if (window.EXAM) window.EXAM.onHash();
     if (window.GAMES) window.GAMES.onHash();
     render();
@@ -1207,7 +1274,7 @@
 
   /* ───────── Events (delegated) ───────── */
   document.addEventListener("click", e => {
-    const el = e.target.closest("button, a[data-open], [data-lang]");
+    const el = e.target.closest("button, a[data-open], [data-lang], [data-bs]");
     if (!el) return;
     const d = el.dataset;
     if (d.dx && window.EXAM) { window.EXAM.click(el, d, e); return; }
@@ -1219,6 +1286,10 @@
     if (d.rq) { const [qi, oi] = d.rq.split(":").map(Number); readAnswer(qi, oi); return; }
     if (d.speakall) { speakAll(d.speakall); return; }
     if (d.addgloss) { addGlossCards(d.addgloss); return; }
+    if (d.rdtr !== undefined && RD) { RD.tr[d.rdtr] = 1; keepY(); return; }
+    if (d.rqtr !== undefined && RD) { RD.qtr[d.rqtr] = 1; keepY(); return; }
+    if (d.dgtr !== undefined && TK) { TK.tshow[d.dgtr] = 1; keepY(); return; }
+    if (d.bs && window.BASICS_UI) { window.BASICS_UI.click(el, d, e); return; }
     if (d.reveal !== undefined) { TK.shown[d.reveal] = 1; const l = DIALOGUES.find(x => x.id === TK.id).lines[+d.reveal]; const y = window.scrollY; render(); window.scrollTo(0, y); speak(l.fr); return; }
     if (d.ins) { const i = $("#ex-in"); if (i) { const a = i.selectionStart ?? i.value.length, b = i.selectionEnd ?? a; i.value = i.value.slice(0, a) + d.ins + i.value.slice(b); i.focus(); i.setSelectionRange(a + d.ins.length, a + d.ins.length); } return; }
     if (d.addmin) { logMinutes(+d.addmin); toast(t("toast.logged", { m: d.addmin })); render(); return; }
@@ -1254,8 +1325,9 @@
       case "flip": SESSION.flipped = true; render(); break;
       case "ex-next": exNext(); break;
       case "stop-speak": SEQ++; TTS.stop(); break;
+      case "pl-slow": SLOW = !SLOW; if (PL) { const k = PL.key; TTS.stop(); speakAll(k); } keepY(); break;
+      case "tr-all": S.trAll = !S.trAll; save(); keepY(); break;
       case "rd-again": RD = null; render(); break;
-      case "dg-trans": TK.trans = !TK.trans; render(); break;
       case "dg-role": TK.role = !TK.role; TK.shown = {}; render(); break;
       case "dg-done": { const id = TK.id; if (S.talk[id]) delete S.talk[id]; else { S.talk[id] = ymd(); practised(); toast(t("toast.done")); } save(); render(); break; }
       case "ex-again": startEx(EX ? EX.kind : route().parts[1]); render(); { const it = EX.items[0]; if (it && it.say && !it.sayAfter && it.t !== "speak") speak(it.say); } break;
@@ -1318,7 +1390,10 @@
   if (!S.lang) {
     S.lang = /^en/i.test(navigator.language || "") ? "en" : "tr"; save();
   }
-  window.APP = { get S() { return S; }, save, render: () => render(), t, esc, loc, lang, toast, practised, logMinutes, route, speak, speakBtn, ymd, tts: TTS };
+  function keepY() { const y = window.scrollY; render(); window.scrollTo(0, y); }
+  // iOS shows the :active (pressed) style only when the page listens to touches.
+  document.addEventListener("touchstart", () => {}, { passive: true });
+  window.APP = { get S() { return S; }, save, render: () => render(), t, esc, loc, lang, toast, practised, logMinutes, route, speak, speakBtn, ymd, tts: TTS, playBar, chip, keepY, sessionMinutes };
   render();
 
   if ("serviceWorker" in navigator && location.protocol === "https:") {
