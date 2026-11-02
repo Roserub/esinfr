@@ -28,7 +28,7 @@
       { q: "L'école donne le déjeuner aux enfants.", o: ["Vrai", "Faux"], a: 1, x: "L'enfant doit apporter « un pique-nique et une bouteille d'eau »." },
       { q: "L'enfant peut apporter…", o: ["son téléphone.", "une casquette.", "un jeu vidéo."], a: 1, x: "« des vêtements adaptés à la météo (casquette ou imperméable) »." },
       { q: "Les parents doivent donner l'argent et l'autorisation…", o: ["le 18 avril.", "avant le 12 avril.", "dans le car."], a: 1, x: "« avant le vendredi 12 avril »." },
-      { q: "L'école cherche…", o: ["deux parents accompagnateurs.", "un chauffeur.", "un guide."], a: 0, x: "« Nous cherchons aussi deux parents pour accompagner le groupe »." }
+      { q: "L'école cherche…", o: ["des accompagnateurs.", "un chauffeur pour le car.", "un guide."], a: 0, x: "« Nous cherchons aussi deux parents pour accompagner le groupe »." }
     ] },
 
   { id: "a2-s06-ce3", level: "A2", sujet: 6, sec: "ce", ex: 3, pts: 6,
@@ -42,7 +42,7 @@
       { q: "Il faut laver les emballages avant de les jeter.", o: ["Vrai", "Faux"], a: 1, x: "« ne les lavez pas : c'est inutile »." },
       { q: "Une assiette cassée va…", o: ["dans le conteneur à verre.", "dans la poubelle grise.", "à la déchetterie."], a: 1, x: "Poubelle grise : « tout le reste (couches, mouchoirs, vaisselle cassée…) »." },
       { q: "Les épluchures de légumes servent à faire…", o: ["du compost.", "du papier.", "du plastique."], a: 0, x: "« Ces déchets deviennent du compost »." },
-      { q: "Les piles usagées…", o: ["vont dans la poubelle jaune.", "se déposent dans les magasins ou à la déchetterie.", "vont dans la poubelle grise."], a: 1, x: "« Les piles […] se déposent à la déchetterie ou dans les magasins »." },
+      { q: "Les piles usagées…", o: ["vont dans la poubelle jaune avec les emballages.", "vont à la déchetterie ou en magasin.", "vont dans la poubelle grise."], a: 1, x: "« Les piles […] se déposent à la déchetterie ou dans les magasins »." },
       { q: "On sort la poubelle jaune…", o: ["le mardi soir.", "le mercredi soir.", "le lundi matin."], a: 0, x: "Elle est collectée « le mercredi ». « Sortez vos poubelles la veille au soir »." }
     ] },
 
@@ -56,7 +56,7 @@
       { q: "Le festival dure…", o: ["deux jours.", "quatre jours.", "une semaine."], a: 1, x: "« 25 concerts en quatre jours »." },
       { q: "C'est la dixième année du festival.", o: ["Vrai", "Faux"], a: 0, x: "« la 10e édition de son festival de jazz »." },
       { q: "La première année, il y avait…", o: ["300 spectateurs.", "12 000 spectateurs.", "25 spectateurs."], a: 0, x: "« La première année, nous avions 300 spectateurs »." },
-      { q: "Les concerts gratuits ont lieu…", o: ["le soir, au château.", "l'après-midi, sur la place.", "au camping."], a: 1, x: "« Les concerts de l'après-midi, sur la place, sont gratuits »." },
+      { q: "Les concerts gratuits ont lieu…", o: ["le soir, dans le parc du château.", "l'après-midi, sur la place.", "au camping."], a: 1, x: "« Les concerts de l'après-midi, sur la place, sont gratuits »." },
       { q: "On ne peut plus acheter de billets pour…", o: ["le concert du jeudi.", "le concert du samedi.", "les concerts de l'après-midi."], a: 1, x: "« sauf pour le concert du samedi, déjà complet »." },
       { q: "Les organisateurs conseillent de venir…", o: ["en voiture.", "en train.", "à vélo."], a: 1, x: "« les organisateurs conseillent de venir en train »." }
     ] },
@@ -87,7 +87,7 @@
       { q: "Les travaux vont durer…", o: ["une semaine.", "deux semaines.", "trois semaines."], a: 2, x: "« Pendant ces trois semaines, l'ascenseur ne fonctionnera pas »." },
       { q: "Le dimanche, quelqu'un aide les habitants à monter leurs courses.", o: ["Vrai", "Faux"], a: 1, x: "Une personne sera présente « du lundi au samedi »." },
       { q: "Le bruit sera plus fort…", o: ["la première semaine.", "la dernière semaine.", "le soir."], a: 0, x: "« Il y aura du bruit, surtout la première semaine »." },
-      { q: "Pendant les travaux, il ne faut pas…", o: ["utiliser les escaliers.", "laisser son vélo dans le hall.", "sortir le soir."], a: 1, x: "« Merci de ne pas laisser de vélos ou de poussettes dans le hall »." },
+      { q: "Pendant les travaux, il ne faut pas…", o: ["utiliser les escaliers de l'immeuble.", "laisser son vélo dans le hall.", "sortir le soir."], a: 1, x: "« Merci de ne pas laisser de vélos ou de poussettes dans le hall »." },
       { q: "Le nouvel ascenseur…", o: ["sera plus petit.", "sera plus rapide.", "transportera 4 personnes."], a: 1, x: "« plus grand et plus rapide que l'ancien »." }
     ] },
 
@@ -101,9 +101,9 @@
       { q: "Un enfant de 13 ans…", o: ["peut venir au centre.", "ne peut pas venir au centre.", "peut venir seulement en août."], a: 1, x: "Le centre accueille « les enfants de 3 à 12 ans »." },
       { q: "Le soir, les parents viennent chercher leur enfant…", o: ["avant 17 h.", "entre 17 h et 18 h 30.", "après 19 h."], a: 1, x: "« départ le soir entre 17 h et 18 h 30 »." },
       { q: "On peut s'inscrire seulement sur internet.", o: ["Vrai", "Faux"], a: 1, x: "On peut aussi s'inscrire « à l'accueil de la mairie, le mercredi »." },
-      { q: "Pour l'inscription, il faut donner…", o: ["le carnet de vaccination.", "le livret de famille.", "un certificat médical."], a: 0, x: "« Documents à fournir : le carnet de vaccination de l'enfant… »" },
+      { q: "Pour l'inscription, il faut donner…", o: ["le carnet de vaccination.", "le livret de famille.", "un certificat médical récent."], a: 0, x: "« Documents à fournir : le carnet de vaccination de l'enfant… »" },
       { q: "Il faut inscrire l'enfant…", o: ["la veille.", "au moins une semaine avant.", "un mois avant."], a: 1, x: "« inscrivez votre enfant au moins une semaine avant sa venue »." },
-      { q: "Le prix d'une journée…", o: ["est le même pour tous.", "dépend des revenus de la famille.", "ne comprend pas le repas."], a: 1, x: "« le prix dépend des revenus de la famille »." }
+      { q: "Le prix d'une journée…", o: ["est le même pour tous.", "dépend des revenus de la famille.", "ne comprend pas le repas de midi."], a: 1, x: "« le prix dépend des revenus de la famille »." }
     ] },
 
   { id: "a2-s07-ce4", level: "A2", sujet: 7, sec: "ce", ex: 4, pts: 7,
@@ -118,7 +118,7 @@
       { q: "Ses amis de la résidence venaient…", o: ["seulement du Canada.", "de plusieurs pays.", "de Rennes."], a: 1, x: "« des étudiants venus du Mexique, du Japon et d'Allemagne »." },
       { q: "À Montréal, Emma a dû parler anglais tout le temps.", o: ["Vrai", "Faux"], a: 1, x: "« À Montréal, on parle français »." },
       { q: "Grâce aux travaux en groupes, Emma…", o: ["est devenue moins timide.", "a eu de meilleures notes.", "a appris l'anglais."], a: 0, x: "« J'ai appris à parler devant les autres. Avant, j'étais très timide »." },
-      { q: "Le projet d'Emma, c'est de…", o: ["rester en France.", "travailler au Canada après son master.", "étudier au Japon."], a: 1, x: "« retourner au Canada après son master pour y travailler »." }
+      { q: "Le projet d'Emma, c'est de…", o: ["rester en France pour y travailler.", "retourner travailler au Canada.", "étudier au Japon."], a: 1, x: "« retourner au Canada après son master pour y travailler »." }
     ] },
 
   /* ===================== SUJET 8 ===================== */
@@ -163,7 +163,7 @@
       { q: "Il faut apporter sa lessive.", o: ["Vrai", "Faux"], a: 1, x: "« La lessive est comprise dans le prix : n'ajoutez pas votre lessive ! »" },
       { q: "Un lavage dure…", o: ["10 minutes.", "environ 35 minutes.", "1 heure."], a: 1, x: "« Le lavage dure environ 35 minutes »." },
       { q: "Pour sécher une machine normale, on paie environ…", o: ["1 €.", "3 €.", "10 €."], a: 1, x: "« 1 € les 10 minutes. Comptez 30 minutes » : 3 €." },
-      { q: "Le linge oublié est mis…", o: ["dans les paniers près de l'entrée.", "à la poubelle.", "à la caisse centrale."], a: 0, x: "« Le linge oublié est mis dans les paniers près de l'entrée »." }
+      { q: "Le linge oublié est mis…", o: ["dans les paniers près de l'entrée.", "à la poubelle.", "à la caisse centrale de la laverie."], a: 0, x: "« Le linge oublié est mis dans les paniers près de l'entrée »." }
     ] },
 
   { id: "a2-s08-ce4", level: "A2", sujet: 8, sec: "ce", ex: 4, pts: 7,
@@ -223,7 +223,7 @@
       { q: "S'il y a beaucoup de fumée, il faut…", o: ["ouvrir les fenêtres.", "se baisser.", "retourner dans son bureau."], a: 1, x: "« baissez-vous : l'air est plus propre près du sol »." },
       { q: "En partant, on laisse les portes…", o: ["fermées à clé.", "fermées, mais pas à clé.", "grandes ouvertes."], a: 1, x: "« fermez les portes derrière vous, mais ne les fermez pas à clé »." },
       { q: "Le point de rassemblement est…", o: ["sur le parking.", "dans le hall.", "au dernier étage."], a: 0, x: "« Le point de rassemblement se trouve sur le parking »." },
-      { q: "Une personne qui marche difficilement doit…", o: ["prendre l'ascenseur.", "attendre près de l'escalier.", "rester dans son bureau."], a: 1, x: "« Les personnes qui ont des difficultés à marcher attendent près de l'escalier »." }
+      { q: "Une personne qui marche difficilement doit…", o: ["prendre l'ascenseur.", "attendre près de l'escalier.", "rester dans son bureau, porte fermée."], a: 1, x: "« Les personnes qui ont des difficultés à marcher attendent près de l'escalier »." }
     ] },
 
   { id: "a2-s09-ce4", level: "A2", sujet: 9, sec: "ce", ex: 4, pts: 7,
@@ -264,7 +264,7 @@
       body: "Chers voisins,\n\nComme chaque année, nous organisons la Fête des voisins dans notre immeuble ! Elle aura lieu le vendredi 30 mai, à partir de 19 h, dans la cour. S'il pleut, nous irons dans la salle commune, au rez-de-chaussée.\n\nL'année dernière, nous étions plus de 50 et nous avons passé une soirée formidable. Cette fois, nous voulons faire encore mieux : il y aura de la musique et un concours du meilleur dessert, avec un petit prix pour le gagnant.\n\nLe principe est simple : chacun apporte un plat ou une boisson à partager. Si vous venez d'un autre pays, faites-nous découvrir une spécialité de chez vous ! Les assiettes et les verres sont fournis.\n\nNous avons besoin d'aide pour installer les tables vers 18 h. Si vous êtes disponible, frappez à ma porte ou laissez un mot dans ma boîte aux lettres.\n\nLes enfants sont bien sûr les bienvenus : des jeux seront organisés pour eux.\n\nÀ très bientôt !\nSylvie Marchand, 3e étage" },
     questions: [
       { q: "La fête a lieu…", o: ["dans un restaurant.", "dans la cour de l'immeuble.", "dans un parc."], a: 1, x: "« à partir de 19 h, dans la cour »." },
-      { q: "S'il pleut…", o: ["la fête est annulée.", "on va dans la salle commune.", "on va chez Sylvie."], a: 1, x: "« S'il pleut, nous irons dans la salle commune »." },
+      { q: "S'il pleut…", o: ["la fête est annulée.", "on va dans la salle commune.", "on va chez Sylvie, au 3e étage."], a: 1, x: "« S'il pleut, nous irons dans la salle commune »." },
       { q: "L'année dernière, il y avait peu de monde.", o: ["Vrai", "Faux"], a: 1, x: "« L'année dernière, nous étions plus de 50 »." },
       { q: "Le concours récompense…", o: ["le meilleur dessert.", "la meilleure chanson.", "le plus beau dessin."], a: 0, x: "« un concours du meilleur dessert »." },
       { q: "Chaque voisin doit apporter…", o: ["des assiettes.", "un plat ou une boisson.", "de l'argent."], a: 1, x: "« chacun apporte un plat ou une boisson à partager »." },

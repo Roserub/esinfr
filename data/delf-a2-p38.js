@@ -10,7 +10,7 @@
     questions: [
       { q: "Annonce 1 : où peut-on se baigner aujourd'hui ?",
         audio: [["M", "Attention, attention : aujourd'hui, le drapeau est orange. Baignez-vous seulement dans la zone surveillée, devant le poste de secours. Les rochers, à gauche de la plage, sont dangereux."]],
-        o: ["🛟 devant le poste de secours", "🪨 près des rochers", "⛵ à côté du port"], a: 0,
+        o: ["🛟 devant le poste de secours", "🪨 près des rochers, à gauche", "⛵ à côté du port"], a: 0,
         x: "« Baignez-vous seulement dans la zone surveillée, devant le poste de secours. »",
         xtr: "Sadece cankurtaran kulübesinin önündeki gözetimli alanda yüzülebilir. Kayalıklar tehlikeli; limandan söz edilmiyor." },
       { q: "Annonce 2 : le bateau de 14 h pour l'île de Groix va partir…",
@@ -35,7 +35,7 @@
         xtr: "Can yeleği herkes için zorunlu, çok iyi yüzücüler için bile (« même »)." },
       { q: "Annonce 6 : les parents de Mathis doivent aller…",
         audio: [["F", "Votre attention, s'il vous plaît : nous avons trouvé un petit garçon de 5 ans, Mathis. Il porte un maillot de bain rouge. Ses parents peuvent venir le chercher au poste de secours, à côté du glacier."]],
-        o: ["au poste de secours, à côté du glacier.", "au glacier, à côté du parking.", "au club de voile, à côté du port."], a: 0,
+        o: ["au poste de secours, à côté du glacier.", "au glacier, à côté du parking.", "au club de voile, à côté du port de plaisance."], a: 0,
         x: "« Ses parents peuvent venir le chercher au poste de secours, à côté du glacier. »",
         xtr: "Mathis'in ailesi onu dondurmacının (« glacier ») yanındaki cankurtaran noktasından alabilir. Çocuk dondurmacıda değil." }
     ] },
@@ -62,7 +62,7 @@
       { q: "Extrait 2 : pour participer, il faut…", o: ["savoir nager 25 mètres.", "s'inscrire sur internet.", "apporter son matériel."], a: 0,
         x: "« Attention : il faut savoir nager 25 mètres. »",
         xtr: "Katılmak için 25 metre yüzebilmek gerekiyor. Kayıt internetten değil, yerinde (« sur place ») yapılıyor." },
-      { q: "Extrait 3 : si un courant vous emporte, il faut…", o: ["🏊 nager très vite vers la plage", "🙋 lever le bras et appeler à l'aide", "🤿 plonger sous l'eau"], a: 1,
+      { q: "Extrait 3 : si un courant vous emporte, il faut…", o: ["🏊 nager très vite jusqu'à la plage", "🙋 lever le bras et appeler à l'aide", "🤿 plonger sous l'eau"], a: 1,
         x: "« Ne nagez pas contre lui : levez le bras et appelez à l'aide. »",
         xtr: "Akıntı sizi sürüklerse ona karşı yüzmeyin: kolunuzu kaldırıp yardım isteyin. Plaja doğru hızlı yüzmek akıntıya karşı yüzmek demek: yanlış." },
       { q: "Extrait 3 : on ne doit pas se baigner…", o: ["le matin.", "quand la mer est calme.", "juste après un grand repas."], a: 2,
@@ -93,7 +93,7 @@
       { q: "Selin peut payer…", o: ["seulement en espèces, au début du cours.", "sur internet, avant samedi.", "sur place, par carte ou en espèces."], a: 2,
         x: "« Vous pouvez payer sur place, par carte ou en espèces. »",
         xtr: "Ödeme yerinde, kartla ya da nakit yapılabilir. « en espèces » = nakit. İnternetten ödeme yok." },
-      { q: "Si Selin aime le surf, elle aura…", o: ["un cours gratuit.", "une réduction sur un stage.", "une planche en cadeau."], a: 1,
+      { q: "Si Selin aime le surf, elle aura…", o: ["un cours gratuit.", "une réduction sur un stage.", "une planche de surf en cadeau."], a: 1,
         x: "« Si vous aimez le surf, on vous fait 20 % de réduction sur le stage de 5 jours ! »",
         xtr: "Sörfü severse 5 günlük kursta %20 indirim alacak. Ücretsiz ders ya da hediye tahta yok." }
     ] },
@@ -209,7 +209,7 @@
       { q: "Document 3 : quand faut-il remettre de la crème solaire ?", o: ["Une fois le matin, avant d'aller à la plage.", "Seulement entre 12 h et 16 h.", "Toutes les 2 heures et après chaque baignade."], a: 2,
         x: "« Mettez de la crème solaire toutes les 2 heures et après chaque baignade. »",
         xtr: "Güneş kremi 2 saatte bir ve her denize girişten sonra sürülmeli. 12.00–16.00 güneşten kaçınılması gereken saatler." },
-      { q: "Document 3 : selon le document, il faut boire…", o: ["seulement quand on a soif.", "souvent, même sans avoir soif.", "après 16 h."], a: 1,
+      { q: "Document 3 : selon le document, il faut boire…", o: ["seulement quand on a très soif.", "souvent, même sans avoir soif.", "après 16 h."], a: 1,
         x: "« Buvez de l'eau souvent, même si vous n'avez pas soif. »",
         xtr: "Susamasanız bile (« même si vous n'avez pas soif ») sık sık su için." }
     ] },
@@ -230,7 +230,7 @@
       { q: "Pour faire du longe-côte, il faut…", o: ["être un très bon nageur.", "avoir une combinaison et des chaussons.", "avoir moins de 60 ans et un certificat médical."], a: 1,
         x: "« On porte une combinaison et des chaussons spéciaux. Pas besoin de savoir bien nager ! »",
         xtr: "Dalış elbisesi ve özel patikler giyilir. İyi yüzmek gerekmiyor; Nicole 63 yaşında, yani yaş sınırı yok." },
-      { q: "Pourquoi Nicole a-t-elle commencé le longe-côte ? (2 points)", o: ["Parce que sa kiné lui a conseillé ce sport après une opération du genou.", "Parce qu'elle voulait perdre du poids avant l'été.", "Parce que ses amies faisaient déjà partie du club depuis longtemps."], a: 0,
+      { q: "Pourquoi Nicole a-t-elle commencé le longe-côte ? (2 points)", o: ["Parce que sa kiné lui a conseillé ce sport après une opération du genou.", "Parce qu'elle voulait perdre du poids avant l'été.", "Parce que ses amies faisaient déjà partie du club de Berck depuis longtemps."], a: 0,
         x: "« Après une opération du genou. C'est ma kiné qui m'a conseillé ce sport. »",
         xtr: "Nicole diz ameliyatından sonra fizyoterapistinin tavsiyesiyle başladı. « je ne sens presque pas mon poids » = suda ağırlığımı neredeyse hissetmiyorum; kilo vermekle ilgili değil." },
       { q: "Selon Damien, le longe-côte…", o: ["fait travailler seulement les jambes.", "est dangereux pour les articulations.", "est bon pour tout le corps."], a: 2,

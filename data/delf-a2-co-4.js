@@ -12,9 +12,9 @@
     ],
     questions: [
       { q: "Le vol pour Marseille va partir à…", o: ["14 h 10.", "16 h 40.", "16 h 10."], a: 1, x: "« Le nouveau départ est prévu à 16 h 40. » 14 h 10, c'était l'heure prévue avant." },
-      { q: "Pourquoi le vol est-il retardé ?", o: ["À cause d'un problème technique.", "À cause de la météo.", "À cause d'une grève."], a: 0, x: "« Le vol… est retardé à cause d'un problème technique. »" },
+      { q: "Pourquoi le vol est-il retardé ?", o: ["À cause d'un problème technique.", "À cause du mauvais temps à Marseille.", "À cause d'une grève."], a: 0, x: "« Le vol… est retardé à cause d'un problème technique. »" },
       { q: "Les passagers doivent aller à…", o: ["la porte 18.", "la porte 22.", "la porte 12."], a: 1, x: "« L'embarquement se fera à la porte 22, et non plus à la porte 18. »" },
-      { q: "Au comptoir de la compagnie, les passagers peuvent recevoir…", o: ["un billet pour un autre vol.", "un médicament.", "un bon de 12 € pour manger ou boire."], a: 2, x: "« La compagnie offre à chaque passager un bon de 12 € pour un repas ou une boisson. »" },
+      { q: "Au comptoir de la compagnie, les passagers peuvent recevoir…", o: ["un billet pour un autre vol.", "un médicament.", "un bon de 12 €."], a: 2, x: "« La compagnie offre à chaque passager un bon de 12 € pour un repas ou une boisson. »" },
       { q: "Qu'est-ce que M. Demir doit envoyer à la mutuelle ?", o: ["🏦 son RIB", "🪪 sa carte d'identité", "📷 une photo"], a: 0, x: "« Il nous manque seulement une copie de votre relevé d'identité bancaire, le RIB. »" },
       { q: "Il va recevoir sa carte de mutuelle…", o: ["à l'agence.", "par e-mail.", "par la poste."], a: 2, x: "« Votre carte de mutuelle arrivera ensuite par la poste. »" }
     ] },
@@ -30,7 +30,7 @@
       { q: "Avec le sport sur ordonnance, le médecin…", o: ["prescrit une activité physique.", "vend des cours de sport.", "fait du sport avec ses patients."], a: 0, x: "« Un médecin peut prescrire une activité physique, comme il prescrit un médicament. »" },
       { q: "Ce programme est pour les personnes qui…", o: ["veulent perdre du poids rapidement.", "ont une maladie longue.", "font de la compétition."], a: 1, x: "« C'est pour les personnes qui ont une maladie longue, par exemple le diabète. »" },
       { q: "Dans un groupe, il y a combien de personnes ?", o: ["2.", "12.", "8."], a: 2, x: "« Les séances se passent en petits groupes de 8 personnes. »" },
-      { q: "Qui anime les séances ?", o: ["Le médecin.", "Un éducateur sportif ou un kinésithérapeute.", "Un infirmier."], a: 1, x: "« Avec un éducateur sportif ou un kinésithérapeute. »" },
+      { q: "Qui anime les séances ?", o: ["Le médecin qui a fait l'ordonnance.", "Un éducateur sportif ou un kiné.", "Un infirmier."], a: 1, x: "« Avec un éducateur sportif ou un kinésithérapeute. »" },
       { q: "La première année, le programme…", o: ["est gratuit.", "est remboursé par la mutuelle.", "coûte très cher."], a: 0, x: "« La première année, c'est gratuit. » Les mutuelles remboursent seulement ensuite." }
     ] },
 
@@ -51,7 +51,7 @@
     ],
     questions: [
       { q: "Depuis quand la femme a-t-elle mal ?", o: ["Depuis hier soir.", "Depuis deux mois.", "Depuis ce matin."], a: 0, x: "« J'ai très mal à une dent depuis hier soir. »" },
-      { q: "La femme…", o: ["est déjà patiente du docteur.", "habite à Nantes depuis deux mois.", "a déménagé hier."], a: 1, x: "« Non, je suis arrivée à Nantes il y a deux mois. »" },
+      { q: "La femme…", o: ["est déjà patiente du docteur.", "habite à Nantes depuis deux mois.", "a déménagé à Nantes la semaine dernière."], a: 1, x: "« Non, je suis arrivée à Nantes il y a deux mois. »" },
       { q: "Elle prend rendez-vous à…", o: ["11 h 45.", "12 h.", "17 h 30."], a: 2, x: "« Alors 17 h 30, s'il vous plaît. »" },
       { q: "Pourquoi ne choisit-elle pas 11 h 45 ?", o: ["Elle travaille le matin.", "Elle a un autre rendez-vous.", "Le cabinet est fermé."], a: 0, x: "« Le matin, je travaille… »" },
       { q: "Qu'est-ce qu'elle a déjà pris ?", o: ["De l'aspirine.", "Du paracétamol.", "Un antibiotique."], a: 1, x: "« Oui, du paracétamol ce matin. » Le secrétaire dit : « Ne prenez pas d'aspirine. »" },
@@ -86,10 +86,10 @@
       ["N", "Document 2. Chers patineurs, la séance publique se termine dans 10 minutes. Merci de quitter la piste à 17 h 50 : nous devons préparer la glace pour le match de hockey de ce soir. Les patins de location doivent être rendus à l'accueil. N'oubliez pas de reprendre votre carte d'identité ! Et pour les enfants, une nouveauté : un cours gratuit pour apprendre à patiner aura lieu dimanche à 10 h."]
     ],
     questions: [
-      { q: "Le service des objets trouvés se trouve…", o: ["à la gare.", "au rez-de-chaussée de la mairie.", "au commissariat."], a: 1, x: "« Nos bureaux se trouvent au rez-de-chaussée de la mairie. »" },
+      { q: "Le service des objets trouvés se trouve…", o: ["à la gare.", "au rez-de-chaussée de la mairie.", "au commissariat, à côté de la mairie."], a: 1, x: "« Nos bureaux se trouvent au rez-de-chaussée de la mairie. »" },
       { q: "Pour récupérer un objet, il faut apporter…", o: ["🪪 une pièce d'identité", "💶 de l'argent", "📷 une photo de l'objet"], a: 0, x: "« Venez avec une pièce d'identité. » Le service est gratuit." },
       { q: "Les objets sont gardés pendant…", o: ["3 semaines.", "1 an.", "3 mois."], a: 2, x: "« Nous gardons les objets pendant 3 mois seulement. »" },
-      { q: "Pourquoi faut-il quitter la piste ?", o: ["Parce que la patinoire va fermer.", "Pour préparer la glace pour un match.", "Pour un cours pour enfants."], a: 1, x: "« Nous devons préparer la glace pour le match de hockey de ce soir. »" },
+      { q: "Pourquoi faut-il quitter la piste ?", o: ["Parce que la patinoire va fermer.", "Pour préparer la glace pour un match.", "Pour un cours de patinage pour les enfants."], a: 1, x: "« Nous devons préparer la glace pour le match de hockey de ce soir. »" },
       { q: "Dimanche à 10 h, il y aura…", o: ["un match de hockey.", "une séance publique.", "un cours gratuit pour les enfants."], a: 2, x: "« Un cours gratuit pour apprendre à patiner aura lieu dimanche à 10 h. »" }
     ] },
 
@@ -102,7 +102,7 @@
     ],
     questions: [
       { q: "Où se trouve le nouvel espace de coworking ?", o: ["Dans une ancienne gare de marchandises.", "Dans une ancienne école.", "Dans un centre commercial."], a: 0, x: "« Dans l'ancienne gare de marchandises, à 5 minutes du centre-ville. »" },
-      { q: "Pourquoi ce lieu a-t-il été créé ?", o: ["Parce que les bureaux sont trop chers.", "Parce que les personnes qui travaillent chez elles se sentent seules.", "Parce que la gare était fermée."], a: 1, x: "« Beaucoup de personnes travaillent de chez elles, mais elles se sentent seules. »" },
+      { q: "Pourquoi ce lieu a-t-il été créé ?", o: ["Parce que les bureaux du centre-ville sont trop chers.", "Parce que les gens se sentent seuls chez eux.", "Parce que la gare était fermée."], a: 1, x: "« Beaucoup de personnes travaillent de chez elles, mais elles se sentent seules. »" },
       { q: "Un abonnement d'un mois coûte…", o: ["15 €.", "60 €.", "180 €."], a: 2, x: "« Un abonnement d'un mois, 180 €. » 15 €, c'est pour une journée." },
       { q: "Le premier mardi du mois, on peut…", o: ["☕ prendre un petit-déjeuner ensemble", "🍳 cuisiner ensemble", "🎤 écouter une conférence"], a: 0, x: "« Le premier mardi de chaque mois, il y aura un petit-déjeuner pour faire connaissance. »" },
       { q: "Pour les demandeurs d'emploi…", o: ["l'abonnement est à moitié prix.", "la première semaine est gratuite.", "les salles de réunion sont gratuites."], a: 1, x: "« Pour les demandeurs d'emploi, la première semaine est offerte. »" }
@@ -152,7 +152,7 @@
       ["M", "Document 2. Bonjour, ici le livreur de Colis Express. Je suis passé chez vous ce matin à 10 h 15 pour vous livrer un colis, mais il n'y avait personne. J'ai sonné chez votre voisin, mais il n'était pas là non plus. Alors, j'ai déposé le colis au point relais : c'est la boulangerie de la rue Pasteur. Vous pouvez le récupérer à partir de demain, 14 h, avec le code reçu par SMS. Attention, le colis reste là-bas 10 jours."]
     ],
     questions: [
-      { q: "Cette semaine, le cours de yoga a lieu…", o: ["dans la grande salle.", "dans la petite salle du premier étage.", "dans le parc."], a: 1, x: "« Il aura lieu dans la petite salle du premier étage, parce que la grande salle est en travaux. »" },
+      { q: "Cette semaine, le cours de yoga a lieu…", o: ["dans la grande salle, comme d'habitude.", "dans la petite salle du premier étage.", "dans le parc."], a: 1, x: "« Il aura lieu dans la petite salle du premier étage, parce que la grande salle est en travaux. »" },
       { q: "Le cours commence à…", o: ["19 h.", "18 h.", "19 h 30."], a: 0, x: "« L'heure ne change pas : 19 h. »" },
       { q: "Qu'est-ce qu'il faut apporter au cours ?", o: ["💧 une bouteille d'eau", "🧺 une serviette", "🧘 un tapis et un pull"], a: 2, x: "« Pensez à prendre votre tapis… apportez aussi un pull. »" },
       { q: "Le livreur est passé…", o: ["hier soir.", "ce matin à 10 h 15.", "à 14 h."], a: 1, x: "« Je suis passé chez vous ce matin à 10 h 15. »" },
@@ -194,7 +194,7 @@
       { q: "La licence dure…", o: ["3 ans.", "2 ans.", "5 ans."], a: 0, x: "« La licence dure 3 ans. »" },
       { q: "Combien d'heures de sport y a-t-il par semaine ?", o: ["3 heures.", "15 heures.", "Environ 10 heures."], a: 2, x: "« Oui, environ 10 heures par semaine. »" },
       { q: "Pour les étudiants étrangers, il faut…", o: ["un diplôme de kiné.", "un niveau B2 en français.", "un niveau A2 en français."], a: 1, x: "« Oui, le niveau B2. »" },
-      { q: "À 15 h, l'homme peut…", o: ["suivre un cours de français.", "s'inscrire sur Internet.", "visiter les installations sportives."], a: 2, x: "« Venez à la visite des installations sportives à 15 h ! »" }
+      { q: "À 15 h, l'homme peut…", o: ["suivre un cours de français au centre de langues.", "s'inscrire sur Internet.", "visiter les installations sportives."], a: 2, x: "« Venez à la visite des installations sportives à 15 h ! »" }
     ] },
 
   { id: "a2-s18-co4", level: "A2", sujet: 18, sec: "co", ex: 4, pts: 7,
@@ -227,7 +227,7 @@
     questions: [
       { q: "Les travaux vont durer…", o: ["deux jours.", "une semaine.", "deux semaines."], a: 2, x: "« Ils vont durer deux semaines. »" },
       { q: "Le mardi 13…", o: ["l'eau sera coupée.", "l'électricité sera coupée.", "les ouvriers ne viendront pas."], a: 0, x: "« Mardi 13, l'eau sera coupée toute la journée. »" },
-      { q: "Si on n'est pas chez soi pendant les travaux, on peut…", o: ["laisser sa clé chez un voisin.", "laisser sa clé à la loge du gardien.", "appeler les ouvriers."], a: 1, x: "« Laissez-moi votre clé à la loge. »" },
+      { q: "Si on n'est pas chez soi pendant les travaux, on peut…", o: ["laisser sa clé chez un voisin de l'immeuble.", "laisser sa clé à la loge du gardien.", "appeler les ouvriers."], a: 1, x: "« Laissez-moi votre clé à la loge. »" },
       { q: "La séance de kiné aura lieu…", o: ["samedi à 10 h.", "vendredi à 18 h.", "samedi à 18 h."], a: 0, x: "« Votre séance de vendredi à 18 h est déplacée à samedi matin, 10 h. »" },
       { q: "Qu'est-ce que M. Aydın doit apporter ?", o: ["💳 sa carte Vitale", "👟 des baskets", "🩳 un short et son ordonnance"], a: 2, x: "« N'oubliez pas votre ordonnance… Et prenez un short pour les exercices. »" }
     ] },
@@ -319,8 +319,8 @@
       { q: "Le salon du livre a lieu…", o: ["samedi et dimanche.", "pendant tout le mois.", "samedi seulement."], a: 0, x: "« Samedi et dimanche, de 10 h à 19 h. »" },
       { q: "Quel est le thème du salon cette année ?", o: ["🍳 la cuisine", "✈️ le voyage", "⚽ le sport"], a: 1, x: "« Cette année, le thème est « Le voyage ». »" },
       { q: "Les ateliers pour les enfants ont lieu…", o: ["le dimanche matin.", "tous les jours.", "le samedi après-midi."], a: 2, x: "« Le samedi après-midi seulement. »" },
-      { q: "Qu'est-ce qui est nouveau cette année ?", o: ["Un espace pour les personnes qui apprennent le français.", "Une navette depuis la gare.", "Des lectures d'auteurs."], a: 0, x: "« Nouveauté : un espace « livres faciles à lire », pour les personnes qui apprennent le français. »" },
-      { q: "Les livres apportés par les visiteurs vont…", o: ["être vendus.", "être donnés aux bibliothèques des hôpitaux.", "être échangés au salon."], a: 1, x: "« Ils seront donnés aux bibliothèques des hôpitaux. »" }
+      { q: "Qu'est-ce qui est nouveau cette année ?", o: ["Un espace de livres faciles à lire.", "Une navette gratuite depuis la gare.", "Des lectures d'auteurs."], a: 0, x: "« Nouveauté : un espace « livres faciles à lire », pour les personnes qui apprennent le français. »" },
+      { q: "Les livres apportés par les visiteurs vont…", o: ["être vendus.", "être donnés aux bibliothèques des hôpitaux.", "être échangés contre d'autres livres au salon."], a: 1, x: "« Ils seront donnés aux bibliothèques des hôpitaux. »" }
     ] },
 
   { id: "a2-s20-co3", level: "A2", sujet: 20, sec: "co", ex: 3, pts: 6,

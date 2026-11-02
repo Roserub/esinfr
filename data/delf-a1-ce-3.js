@@ -14,7 +14,7 @@
       { q: "Le soir, Mathilde…", o: ["🏃 court au bord de l'eau", "🏊 va à la piscine", "🍽️ dîne avec ses collègues"], a: 0, x: "« Le soir, je cours au bord de l'eau avec Paul »." },
       { q: "L'appartement de Mathilde est grand.", o: ["Vrai", "Faux"], a: 1, x: "Mathilde écrit : « Mon appartement est petit »." },
       { q: "Mathilde vous invite…", o: ["en octobre", "en août", "en décembre"], a: 0, x: "« Tu viens me voir en octobre ? »" },
-      { q: "Chez Mathilde, vous allez dormir…", o: ["🛋️ sur un canapé-lit", "🏨 à l'hôtel", "🏠 chez Paul"], a: 0, x: "« J'ai un canapé-lit pour toi. »" }
+      { q: "Chez Mathilde, vous allez dormir…", o: ["🛋️ sur un canapé-lit", "🏨 dans un hôtel en ville", "🏠 chez Paul, le voisin"], a: 0, x: "« J'ai un canapé-lit pour toi. »" }
     ] },
 
   { id: "a1-s11-ce2", level: "A1", sujet: 11, sec: "ce", ex: 2, pts: 6,
@@ -102,7 +102,7 @@
       rows: [["Poubelle", "Quoi ?", "Jour"], ["Grise", "Déchets de la cuisine, sacs", "Lundi et jeudi"], ["Jaune", "Papier, carton, plastique", "Mercredi"], ["Verte", "Herbe, feuilles, fleurs", "Samedi (d'avril à octobre)"]] },
     questions: [
       { q: "Vous avez une boîte en carton. Vous la mettez dans la poubelle…", o: ["jaune", "grise", "verte"], a: 0, x: "Poubelle jaune : « Papier, carton, plastique »." },
-      { q: "La poubelle grise passe…", o: ["le mercredi", "le samedi", "le lundi et le jeudi"], a: 2, x: "Poubelle grise : « Lundi et jeudi »." },
+      { q: "La poubelle grise passe…", o: ["le mercredi et le samedi", "le samedi", "le lundi et le jeudi"], a: 2, x: "Poubelle grise : « Lundi et jeudi »." },
       { q: "Vous sortez la poubelle jaune…", o: ["mercredi soir", "mardi soir, après 19 h", "lundi matin"], a: 1, x: "La poubelle jaune passe le mercredi. « Sortez vos poubelles la veille au soir, après 19 h » : mardi soir." },
       { q: "Les bouteilles en verre vont dans la poubelle jaune.", o: ["Vrai", "Faux"], a: 1, x: "« Le verre (bouteilles, pots) : dans les conteneurs de la rue, pas dans les poubelles. »" },
       { q: "Les jours fériés, les poubelles ne passent pas.", o: ["Vrai", "Faux"], a: 0, x: "« Les jours fériés, pas de ramassage. »" }
@@ -135,7 +135,7 @@
       { q: "Le rendez-vous est à…", o: ["9 h 30", "6 h", "12 h"], a: 0, x: "« Rendez-vous à 9 h 30 devant l'entrée principale du parc. »" },
       { q: "Ils vont faire…", o: ["3 km", "9 km", "6 km"], a: 2, x: "« On fait 6 km, doucement »." },
       { q: "Le rendez-vous est devant…", o: ["le café", "l'entrée du parc", "le lac"], a: 1, x: "« devant l'entrée principale du parc »." },
-      { q: "Après la course, ils vont…", o: ["prendre un petit-déjeuner", "faire une compétition", "rentrer à la maison"], a: 0, x: "« Après, on prend un petit-déjeuner au café du parc. »" },
+      { q: "Après la course, ils vont…", o: ["prendre un petit-déjeuner", "faire une compétition au lac", "rentrer à la maison"], a: 0, x: "« Après, on prend un petit-déjeuner au café du parc. »" },
       { q: "Vous devez répondre avant samedi midi.", o: ["Vrai", "Faux"], a: 0, x: "« Si tu viens, réponds-moi avant samedi midi. »" }
     ] },
 
@@ -209,7 +209,7 @@
     questions: [
       { q: "Le don de sang est…", o: ["vendredi après-midi", "jeudi matin", "jeudi après-midi"], a: 2, x: "« Jeudi 20 novembre, de 15 h à 19 h 30 »." },
       { q: "Pour donner votre sang, vous devez avoir…", o: ["moins de 18 ans", "entre 18 et 70 ans", "plus de 70 ans"], a: 1, x: "« Vous avez entre 18 et 70 ans ? […] Vous pouvez donner votre sang ! »" },
-      { q: "Avant de venir, il faut…", o: ["bien manger et boire", "ne pas boire", "faire une pause"], a: 0, x: "« Mangez et buvez bien avant de venir. »" },
+      { q: "Avant de venir, il faut…", o: ["bien manger et boire", "ne pas manger ni boire", "faire une pause"], a: 0, x: "« Mangez et buvez bien avant de venir. »" },
       { q: "Vous apportez…", o: ["📷 une photo", "🥪 un sandwich", "🪪 une pièce d'identité"], a: 2, x: "« Apportez une pièce d'identité. » Les sandwichs sont offerts après le don." },
       { q: "En tout, vous restez environ une heure.", o: ["Vrai", "Faux"], a: 0, x: "« Avec le questionnaire et la pause, comptez une heure. »" }
     ] },
@@ -257,7 +257,7 @@
       { q: "Inès habite au…", o: ["4e étage", "5e étage", "1er étage"], a: 0, x: "« J'habite au 5 rue Voltaire, 4e étage ». Le 5, c'est le numéro de la rue." },
       { q: "Vous pouvez prendre l'ascenseur.", o: ["Vrai", "Faux"], a: 1, x: "« Attention, l'ascenseur est en panne ! »" },
       { q: "Inès prépare…", o: ["🥗 une salade", "🍕 des pizzas", "🍝 des lasagnes"], a: 2, x: "« Je prépare des lasagnes. »" },
-      { q: "Vous pouvez apporter…", o: ["🍷 du vin", "🥤 des boissons sans alcool", "🍝 des lasagnes"], a: 1, x: "« Tu peux apporter des chips ou des boissons, mais pas d'alcool »." },
+      { q: "Vous pouvez apporter…", o: ["🍷 une bouteille de vin", "🥤 des boissons sans alcool", "🍝 un grand plat de lasagnes"], a: 1, x: "« Tu peux apporter des chips ou des boissons, mais pas d'alcool »." },
       { q: "Inès vous demande aussi…", o: ["un jeu de votre pays", "un gâteau", "une réponse par e-mail"], a: 0, x: "« Tu as un jeu de ton pays ? Prends-le ! » et « Réponds-moi par SMS. »" }
     ] },
 
@@ -272,7 +272,7 @@
       { q: "Les rues sont fermées aux voitures…", o: ["de 7 h à 13 h", "de 13 h à 20 h", "toute la journée"], a: 0, x: "« De 7 h à 13 h, les rues Crébillon et de Strasbourg sont fermées aux voitures. »" },
       { q: "Samedi à 22 h, vous pouvez laisser votre voiture dans la rue.", o: ["Vrai", "Faux"], a: 1, x: "« Le stationnement est interdit du samedi 20 h au dimanche 14 h. »" },
       { q: "Dimanche matin, pour aller en ville, vous prenez…", o: ["🚌 le bus 11", "🚌 le bus 23", "🚊 le tramway"], a: 2, x: "« Les bus 11 et 23 ne passent pas le matin. Prenez le tramway »." },
-      { q: "Les bénévoles vont…", o: ["fermer les rues", "donner de l'eau aux coureurs", "conduire les bus"], a: 1, x: "« La ville cherche des bénévoles pour donner de l'eau aux coureurs. »" }
+      { q: "Les bénévoles vont…", o: ["fermer les rues aux voitures", "donner de l'eau aux coureurs", "conduire les bus 11 et 23"], a: 1, x: "« La ville cherche des bénévoles pour donner de l'eau aux coureurs. »" }
     ] },
 
   { id: "a1-s15-ce3", level: "A1", sujet: 15, sec: "ce", ex: 3, pts: 6,
@@ -298,10 +298,10 @@
     doc: { type: "article", title: "Un espace de sport au parc de la Roseraie",
       body: "Depuis le 1er mars, il y a un nouvel espace de sport au parc de la Roseraie, à côté de l'aire de jeux.\n\nIl y a 8 appareils pour faire du sport en plein air : pour les bras, les jambes et le dos. C'est gratuit et c'est ouvert tous les jours, de 8 h à 21 h.\n\nLe mardi et le jeudi, à 18 h, un coach de la ville donne des conseils. Les appareils sont pour les personnes de plus de 14 ans.\n\n« Je viens ici le matin, avant le travail. C'est super ! », explique Rachid, 35 ans." },
     questions: [
-      { q: "L'espace de sport est…", o: ["dans le gymnase", "à côté de l'aire de jeux", "devant la mairie"], a: 1, x: "« un nouvel espace de sport au parc de la Roseraie, à côté de l'aire de jeux »." },
+      { q: "L'espace de sport est…", o: ["dans le gymnase de la ville", "à côté de l'aire de jeux", "devant la mairie"], a: 1, x: "« un nouvel espace de sport au parc de la Roseraie, à côté de l'aire de jeux »." },
       { q: "Il y a combien d'appareils ?", o: ["14", "21", "8"], a: 2, x: "« Il y a 8 appareils pour faire du sport en plein air »." },
       { q: "Pour utiliser les appareils, il faut payer.", o: ["Vrai", "Faux"], a: 1, x: "« C'est gratuit et c'est ouvert tous les jours »." },
-      { q: "Le coach est là…", o: ["le mardi et le jeudi", "tous les jours", "le samedi"], a: 0, x: "« Le mardi et le jeudi, à 18 h, un coach de la ville donne des conseils. »" },
+      { q: "Le coach est là…", o: ["le mardi et le jeudi", "tous les jours, de 8 h à 21 h", "le samedi"], a: 0, x: "« Le mardi et le jeudi, à 18 h, un coach de la ville donne des conseils. »" },
       { q: "Rachid fait du sport…", o: ["le soir, après le travail", "le matin, avant le travail", "le week-end"], a: 1, x: "« Je viens ici le matin, avant le travail. »" },
       { q: "Votre fils a 16 ans. Il peut utiliser les appareils.", o: ["Vrai", "Faux"], a: 0, x: "« Les appareils sont pour les personnes de plus de 14 ans. » 16 ans, c'est plus de 14 ans." }
     ] }

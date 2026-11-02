@@ -8,8 +8,8 @@
     help: { tr: "Telesekreterinizdeki bir mesajı dinliyorsunuz. Soruları okuyun, kaydı dinleyin ve cevaplayın.", en: "You hear a message on your answering machine. Read the questions, listen to the recording, then answer." },
     audio: [["F", "Bonjour, madame Yilmaz, ici Sandrine, du salon de coiffure Belle Tête. Votre rendez-vous est demain, mercredi, à 14 h. Mais Julie, votre coiffeuse, est absente. Je vous propose 16 h 30 avec Marc, ou jeudi à 10 h avec Julie. Une coupe et un brushing, c'est 35 €. Rappelez-nous au 03 20 54 87 12. Merci, au revoir !"]],
     questions: [
-      { q: "Votre rendez-vous est prévu quel jour ?", o: ["lundi", "mercredi", "jeudi"], a: 1, x: "Sandrine dit : « Votre rendez-vous est demain, mercredi, à 14 h. »" },
-      { q: "Quel est le problème ?", o: ["🔒 le salon est fermé", "⏰ Marc est en retard", "🙅 la coiffeuse est absente"], a: 2, x: "« Mais Julie, votre coiffeuse, est absente. »" },
+      { q: "Votre rendez-vous est prévu quel jour ?", o: ["lundi", "mercredi", "jeudi matin"], a: 1, x: "Sandrine dit : « Votre rendez-vous est demain, mercredi, à 14 h. »" },
+      { q: "Quel est le problème ?", o: ["🔒 le salon est fermé demain", "⏰ Marc est en retard", "🙅 la coiffeuse est absente"], a: 2, x: "« Mais Julie, votre coiffeuse, est absente. »" },
       { q: "Avec Julie, le nouveau rendez-vous est…", o: ["mercredi à 16 h 30", "jeudi à 10 h", "jeudi à 14 h"], a: 1, x: "« ou jeudi à 10 h avec Julie ». 16 h 30, c'est avec Marc." },
       { q: "Combien coûtent la coupe et le brushing ?", o: ["35 €", "30 €", "54 €"], a: 0, x: "« Une coupe et un brushing, c'est 35 €. »" }
     ] },
@@ -33,8 +33,8 @@
     audio: [["M", "Vendredi 29 mai, c'est la fête des voisins ! Dans votre immeuble ou dans votre rue, venez rencontrer vos voisins. Chaque personne apporte quelque chose à manger : une salade, une quiche ou un gâteau. La mairie donne des tables, des chaises et des ballons. Pour les tables, appelez la mairie avant le 20 mai. La fête commence à 19 h. Bonne fête à tous !"]],
     questions: [
       { q: "La fête des voisins, c'est quel jour ?", o: ["vendredi 29 mai", "vendredi 20 mai", "samedi 29 mai"], a: 0, x: "« Vendredi 29 mai, c'est la fête des voisins ! » Le 20 mai, c'est pour appeler la mairie." },
-      { q: "Chaque personne apporte…", o: ["🍷 une boisson", "🥗 quelque chose à manger", "🎈 des ballons"], a: 1, x: "« Chaque personne apporte quelque chose à manger : une salade, une quiche ou un gâteau. »" },
-      { q: "La mairie donne…", o: ["🍰 des gâteaux", "🎵 de la musique", "🪑 des tables et des chaises"], a: 2, x: "« La mairie donne des tables, des chaises et des ballons. »" },
+      { q: "Chaque personne apporte…", o: ["🍷 une boisson pour la fête", "🥗 quelque chose à manger", "🎈 des ballons"], a: 1, x: "« Chaque personne apporte quelque chose à manger : une salade, une quiche ou un gâteau. »" },
+      { q: "La mairie donne…", o: ["🍰 des gâteaux et des quiches", "🎵 de la musique", "🪑 des tables et des chaises"], a: 2, x: "« La mairie donne des tables, des chaises et des ballons. »" },
       { q: "La fête commence à…", o: ["19 h", "20 h", "21 h"], a: 0, x: "« La fête commence à 19 h. »" }
     ] },
 
@@ -80,7 +80,7 @@
     help: { tr: "Bir spor salonundasınız. Bu anonsu duyuyorsunuz. Soruları okuyun, kaydı dinleyin ve cevaplayın.", en: "You are at a gym. You hear this announcement. Read the questions, listen, then answer." },
     audio: [["N", "Chers clients, bienvenue à la salle Forme Plus. Aujourd'hui, la salle de musculation est fermée pour travaux. Vous pouvez utiliser les vélos et les tapis de course au 1er étage. Le cours de zumba de 18 h est à 18 h 30, avec Sarah. Et n'oubliez pas : la serviette est obligatoire sur les machines. Bon entraînement !"]],
     questions: [
-      { q: "Qu'est-ce qui est fermé aujourd'hui ?", o: ["🏋️ la salle de musculation", "🚴 la salle des vélos", "🚿 les douches"], a: 0, x: "« Aujourd'hui, la salle de musculation est fermée pour travaux. »" },
+      { q: "Qu'est-ce qui est fermé aujourd'hui ?", o: ["🏋️ la salle de musculation", "🚴 la salle des vélos", "🚿 les douches et les vestiaires"], a: 0, x: "« Aujourd'hui, la salle de musculation est fermée pour travaux. »" },
       { q: "Les vélos sont…", o: ["au rez-de-chaussée", "au 1er étage", "au 2e étage"], a: 1, x: "« les vélos et les tapis de course au 1er étage »." },
       { q: "Aujourd'hui, le cours de zumba commence à…", o: ["18 h", "19 h", "18 h 30"], a: 2, x: "« Le cours de zumba de 18 h est à 18 h 30 » : il commence à 18 h 30." },
       { q: "Qu'est-ce qui est obligatoire sur les machines ?", o: ["🥤 une bouteille d'eau", "🧻 une serviette", "👟 des baskets"], a: 1, x: "« la serviette est obligatoire sur les machines »." }
@@ -131,7 +131,7 @@
       { q: "Le déménagement est…", o: ["samedi", "dimanche", "vendredi"], a: 0, x: "« C'est pour votre déménagement de samedi. »" },
       { q: "Le camion arrive à quelle heure ?", o: ["9 h", "8 h", "5 h"], a: 1, x: "« Notre camion arrive à 8 h, pas à 9 h. »" },
       { q: "Il y a combien de déménageurs ?", o: ["5", "8", "3"], a: 2, x: "« Nous sommes 3 déménageurs. » 5, c'est l'étage." },
-      { q: "Qu'est-ce que vous devez faire ?", o: ["🛗 réserver l'ascenseur", "📦 mettre votre nom sur les cartons", "🚚 louer un camion"], a: 1, x: "« Préparez les cartons et mettez votre nom dessus ». Il n'y a pas d'ascenseur." }
+      { q: "Qu'est-ce que vous devez faire ?", o: ["🛗 réserver l'ascenseur pour samedi", "📦 mettre votre nom sur les cartons", "🚚 louer un camion"], a: 1, x: "« Préparez les cartons et mettez votre nom dessus ». Il n'y a pas d'ascenseur." }
     ] },
 
   { id: "a1-s13-co2", level: "A1", sujet: 13, sec: "co", ex: 2, pts: 6,
@@ -140,9 +140,9 @@
     help: { tr: "Postanedesiniz. Bu anonsu duyuyorsunuz. Soruları okuyun, kaydı dinleyin ve cevaplayın.", en: "You are at the post office. You hear this announcement. Read the questions, listen, then answer." },
     audio: [["N", "Bonjour et bienvenue au bureau de poste. Pour envoyer une lettre ou acheter des timbres, utilisez les machines, à droite de l'entrée. Pour retirer un colis, allez au guichet numéro 3, avec votre avis de passage et une pièce d'identité. Attention : aujourd'hui, samedi, la poste ferme à 12 h. Merci de votre visite."]],
     questions: [
-      { q: "Pour acheter des timbres, vous allez…", o: ["💻 sur internet", "🙋 au guichet numéro 3", "🖥️ aux machines, à droite"], a: 2, x: "« Pour envoyer une lettre ou acheter des timbres, utilisez les machines, à droite de l'entrée. »" },
+      { q: "Pour acheter des timbres, vous allez…", o: ["💻 sur le site de la poste", "🙋 au guichet numéro 3", "🖥️ aux machines, à droite"], a: 2, x: "« Pour envoyer une lettre ou acheter des timbres, utilisez les machines, à droite de l'entrée. »" },
       { q: "Pour retirer un colis, c'est au guichet…", o: ["numéro 1", "numéro 3", "numéro 12"], a: 1, x: "« Pour retirer un colis, allez au guichet numéro 3 »." },
-      { q: "Pour le colis, vous apportez…", o: ["🪪 une pièce d'identité", "💶 de l'argent", "✉️ une lettre"], a: 0, x: "« avec votre avis de passage et une pièce d'identité »." },
+      { q: "Pour le colis, vous apportez…", o: ["🪪 une pièce d'identité", "💶 de l'argent liquide", "✉️ une lettre"], a: 0, x: "« avec votre avis de passage et une pièce d'identité »." },
       { q: "Aujourd'hui, la poste ferme à…", o: ["12 h", "13 h", "18 h"], a: 0, x: "« aujourd'hui, samedi, la poste ferme à 12 h »." }
     ] },
 
@@ -251,7 +251,7 @@
       { q: "Nathalie appelle pour…", o: ["📕 un livre réservé", "💿 un DVD en retard", "🪪 une nouvelle carte"], a: 0, x: "« Votre livre réservé […] est arrivé. »" },
       { q: "Vous pouvez chercher le livre jusqu'au…", o: ["13 mars", "15 mars", "30 mars"], a: 1, x: "« Vous pouvez venir le chercher jusqu'au 15 mars. » 30, c'est dans le titre du livre." },
       { q: "Le samedi, la bibliothèque est ouverte…", o: ["de 13 h à 19 h", "de 10 h à 13 h", "de 10 h à 17 h"], a: 2, x: "« et le samedi, de 10 h à 17 h ». De 13 h à 19 h, c'est le mardi et le jeudi." },
-      { q: "Le livre est…", o: ["⬆️ au 1er étage", "🙋 à l'accueil, au rez-de-chaussée", "📮 à la poste"], a: 1, x: "« Le livre est à l'accueil, au rez-de-chaussée. »" }
+      { q: "Le livre est…", o: ["⬆️ au 1er étage", "🙋 à l'accueil", "📮 à la poste"], a: 1, x: "« Le livre est à l'accueil, au rez-de-chaussée. »" }
     ] },
 
   { id: "a1-s15-co2", level: "A1", sujet: 15, sec: "co", ex: 2, pts: 6,
@@ -263,7 +263,7 @@
       { q: "Le soir, le marché ferme à…", o: ["11 h", "18 h", "20 h"], a: 2, x: "« de 11 h à 20 h » : le marché ferme à 20 h." },
       { q: "Le Père Noël arrive à quelle heure ?", o: ["18 h", "20 h", "11 h"], a: 0, x: "« Ce soir, à 18 h, le Père Noël arrive sur la grande place. »" },
       { q: "Un chocolat chaud coûte…", o: ["2 €", "3 €", "4 €"], a: 1, x: "« Un chocolat chaud coûte 3 €. »" },
-      { q: "L'annonce demande de…", o: ["👜 faire attention à vos sacs", "📸 ne pas faire de photos", "🧥 porter un manteau"], a: 0, x: "« il y a beaucoup de monde. Gardez bien vos sacs ! » Les photos avec le Père Noël sont possibles." }
+      { q: "L'annonce demande de…", o: ["👜 bien garder vos sacs", "📸 ne pas faire de photos", "🧥 porter un manteau"], a: 0, x: "« il y a beaucoup de monde. Gardez bien vos sacs ! » Les photos avec le Père Noël sont possibles." }
     ] },
 
   { id: "a1-s15-co3", level: "A1", sujet: 15, sec: "co", ex: 3, pts: 6,
@@ -273,8 +273,8 @@
     audio: [["M", "Dimanche 12 avril, venez courir pour une bonne cause ! La Course du Cœur, c'est 5 ou 10 kilomètres dans le parc de la ville. Le départ est à 9 h 30. L'inscription coûte 8 €, et l'argent est pour l'hôpital des enfants. Chaque coureur reçoit un tee-shirt rouge. Inscriptions sur le site de la mairie ou au stade, jusqu'au 10 avril. À vos baskets !"]],
     questions: [
       { q: "La course est…", o: ["samedi 10 avril", "dimanche 12 avril", "dimanche 10 avril"], a: 1, x: "« Dimanche 12 avril, venez courir ». Le 10 avril, c'est la fin des inscriptions." },
-      { q: "On peut courir…", o: ["5 ou 10 kilomètres", "8 kilomètres", "12 kilomètres"], a: 0, x: "« La Course du Cœur, c'est 5 ou 10 kilomètres ». 8, c'est le prix : 8 €." },
-      { q: "L'argent est pour…", o: ["🏟️ le stade", "🏛️ la mairie", "🏥 l'hôpital des enfants"], a: 2, x: "« l'argent est pour l'hôpital des enfants »." },
+      { q: "On peut courir…", o: ["5 ou 10 kilomètres", "8 ou 12 kilomètres", "12 kilomètres"], a: 0, x: "« La Course du Cœur, c'est 5 ou 10 kilomètres ». 8, c'est le prix : 8 €." },
+      { q: "L'argent est pour…", o: ["🏟️ le stade", "🏛️ la mairie de la ville", "🏥 l'hôpital des enfants"], a: 2, x: "« l'argent est pour l'hôpital des enfants »." },
       { q: "Chaque coureur reçoit…", o: ["👟 des baskets", "🏅 une médaille", "👕 un tee-shirt"], a: 2, x: "« Chaque coureur reçoit un tee-shirt rouge. »" }
     ] },
 
