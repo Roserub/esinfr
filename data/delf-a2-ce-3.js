@@ -25,7 +25,7 @@
     questions: [
       { q: "Inès a déjà…", o: ["réservé un hôtel.", "acheté les billets de train.", "visité les îles du Frioul."], a: 1, x: "« j'ai enfin réservé les billets de train pour Marseille ! »" },
       { q: "Pour le billet, Esin doit…", o: ["rembourser Inès plus tard.", "payer à la gare.", "payer 45 € tout de suite."], a: 0, x: "« tu me rembourseras plus tard, ce n'est pas pressé »." },
-      { q: "Elles vont dormir…", o: ["à l'hôtel.", "chez les parents d'Inès.", "dans l'appartement d'un cousin."], a: 2, x: "« mon cousin Yanis nous prête son appartement »." },
+      { q: "Elles vont dormir…", o: ["dans un hôtel près du Vieux-Port.", "chez les parents d'Inès.", "dans l'appartement d'un cousin."], a: 2, x: "« mon cousin Yanis nous prête son appartement »." },
       { q: "Yanis sera à Marseille pendant le week-end.", o: ["Vrai", "Faux"], a: 1, x: "« Il est parti en Espagne pour son travail »." },
       { q: "Samedi après-midi, elles vont…", o: ["au marché aux poissons.", "au musée.", "sur les îles en bateau."], a: 2, x: "« L'après-midi, on prendra le bateau pour les îles du Frioul »." },
       { q: "S'il pleut dimanche, elles…", o: ["visiteront un musée.", "resteront à l'appartement.", "rentreront plus tôt."], a: 0, x: "« Dans ce cas, on visitera le Mucem, le grand musée au bord de la mer »." }
@@ -42,7 +42,7 @@
       { q: "Un enfant de 12 ans peut grimper avec un adulte.", o: ["Vrai", "Faux"], a: 0, x: "« Les enfants de moins de 14 ans grimpent uniquement avec un adulte »." },
       { q: "Dans cette salle, la magnésie en poudre est…", o: ["conseillée.", "vendue à l'accueil.", "interdite."], a: 2, x: "« La magnésie en poudre est interdite »." },
       { q: "Pour descendre du mur, il faut…", o: ["utiliser les prises.", "sauter.", "appeler un moniteur."], a: 0, x: "« Pour descendre, utilisez les prises : ne sautez pas du haut du mur »." },
-      { q: "Avant de grimper, on échauffe surtout…", o: ["le dos et les jambes.", "les épaules, les doigts et les poignets.", "le cou et les genoux."], a: 1, x: "« échauffer vos épaules, vos doigts et vos poignets »." },
+      { q: "Avant de grimper, on échauffe surtout…", o: ["le dos, les jambes et les chevilles.", "les épaules, les doigts, les poignets.", "le cou et les genoux."], a: 1, x: "« échauffer vos épaules, vos doigts et vos poignets »." },
       { q: "Le dimanche, la salle ferme à…", o: ["20 h.", "23 h.", "18 h."], a: 0, x: "« le samedi et le dimanche, de 9 h à 20 h »." }
     ] },
 
@@ -58,7 +58,7 @@
       { q: "Aujourd'hui, tous les vélos sont loués.", o: ["Vrai", "Faux"], a: 0, x: "« les 200 vélos sont déjà loués et 150 personnes attendent »." },
       { q: "En septembre, la ville va…", o: ["arrêter le service.", "acheter 100 vélos.", "baisser le prix."], a: 1, x: "« Nous allons acheter 100 vélos de plus en septembre »." },
       { q: "Avant, Karim allait au travail…", o: ["en bus.", "à pied.", "en voiture."], a: 2, x: "« Avant, je prenais la voiture pour aller à l'hôpital »." },
-      { q: "Pour louer un vélo, il faut…", o: ["avoir plus de 18 ans.", "laisser un chèque de 300 €.", "payer les réparations."], a: 1, x: "« laisser un chèque de caution de 300 € » ; l'âge minimum est 16 ans et les réparations sont gratuites." }
+      { q: "Pour louer un vélo, il faut…", o: ["avoir plus de 18 ans.", "laisser un chèque de 300 €.", "payer les réparations au garage."], a: 1, x: "« laisser un chèque de caution de 300 € » ; l'âge minimum est 16 ans et les réparations sont gratuites." }
     ] },
 
   /* ===================== SUJET 12 ===================== */
@@ -88,7 +88,7 @@
       { q: "Le vendredi, Esin…", o: ["ira à ses cours de français.", "travaillera à la piscine.", "commencera à 8 h."], a: 0, x: "« Le vendredi, vous serez libre pour suivre vos cours de français »." },
       { q: "Le cabinet va donner des tee-shirts à Esin.", o: ["Vrai", "Faux"], a: 0, x: "« Nous vous donnerons deux tee-shirts avec le nom du cabinet »." },
       { q: "Le cabinet s'occupe surtout…", o: ["des personnes âgées.", "des sportifs blessés.", "des enfants."], a: 1, x: "« les séances avec les sportifs blessés : c'est notre spécialité »." },
-      { q: "Le mercredi, Esin pourra…", o: ["aller à la piscine avec Julien.", "déjeuner au restaurant.", "rester chez elle."], a: 0, x: "« Le mercredi, vous pourrez aussi accompagner Julien […] à la piscine »." }
+      { q: "Le mercredi, Esin pourra…", o: ["aller à la piscine avec Julien.", "déjeuner au restaurant avec l'équipe.", "rester chez elle."], a: 0, x: "« Le mercredi, vous pourrez aussi accompagner Julien […] à la piscine »." }
     ] },
 
   { id: "a2-s12-ce3", level: "A2", sujet: 12, sec: "ce", ex: 3, pts: 6,
@@ -114,9 +114,9 @@
       body: "Depuis le 2 novembre, une épicerie solidaire a ouvert ses portes rue des Tanneurs. À l'Épicerie du Cœur, les produits coûtent entre 10 % et 30 % du prix normal. On y trouve des fruits, des légumes, du pain, mais aussi des produits d'hygiène.\n\nPour faire ses courses ici, il faut d'abord rencontrer une assistante sociale. Elle donne une carte valable six mois aux personnes qui ont de petits revenus. « Nous avons déjà 80 familles inscrites, surtout des mères seules et des étudiants », explique Yasmina Ferhat, la directrice.\n\nLes produits viennent des supermarchés de la ville et d'agriculteurs de la région. Avant, ces aliments partaient souvent à la poubelle.\n\nIci, les clients ne font pas seulement leurs courses. Le jeudi après-midi, ils peuvent participer à un atelier pour apprendre à cuisiner des repas pas chers. « J'ai appris à faire une soupe avec des légumes que je jetais avant ! », raconte Théo, 22 ans, étudiant.\n\nL'épicerie cherche encore des bénévoles, surtout pour le samedi matin." },
     questions: [
       { q: "Dans cette épicerie, les produits sont…", o: ["gratuits.", "moins chers qu'ailleurs.", "tous bio."], a: 1, x: "« les produits coûtent entre 10 % et 30 % du prix normal »." },
-      { q: "Pour faire ses courses ici, il faut d'abord…", o: ["voir une assistante sociale.", "devenir bénévole.", "payer une inscription."], a: 0, x: "« il faut d'abord rencontrer une assistante sociale »." },
+      { q: "Pour faire ses courses ici, il faut d'abord…", o: ["voir une assistante sociale.", "devenir bénévole.", "payer une inscription à l'accueil."], a: 0, x: "« il faut d'abord rencontrer une assistante sociale »." },
       { q: "La carte de l'épicerie est valable…", o: ["un mois.", "un an.", "six mois."], a: 2, x: "« Elle donne une carte valable six mois »." },
-      { q: "Les produits viennent…", o: ["de l'étranger.", "de supermarchés et d'agriculteurs.", "d'un grand marché à Paris."], a: 1, x: "« Les produits viennent des supermarchés de la ville et d'agriculteurs de la région »." },
+      { q: "Les produits viennent…", o: ["de l'étranger.", "de supermarchés et d'agriculteurs.", "d'un grand marché à Paris, chaque matin."], a: 1, x: "« Les produits viennent des supermarchés de la ville et d'agriculteurs de la région »." },
       { q: "Le jeudi après-midi, les clients peuvent…", o: ["apprendre à cuisiner.", "manger gratuitement.", "rencontrer la directrice."], a: 0, x: "« ils peuvent participer à un atelier pour apprendre à cuisiner des repas pas chers »." },
       { q: "L'épicerie a besoin de bénévoles le samedi matin.", o: ["Vrai", "Faux"], a: 0, x: "« L'épicerie cherche encore des bénévoles, surtout pour le samedi matin »." }
     ] },
@@ -158,7 +158,7 @@
     doc: { type: "notice", title: "Résidence universitaire Les Tilleuls – Votre arrivée",
       body: "Bienvenue ! Voici les informations importantes pour vos premiers jours.\n\nArrivée : l'accueil est ouvert du lundi au vendredi, de 9 h à 12 h et de 14 h à 17 h. Si vous arrivez le week-end, prévenez-nous avant par courriel : le gardien vous donnera votre clé.\n\nÉtat des lieux : dans les 7 jours après votre arrivée, vérifiez votre chambre avec un employé de la résidence. Notez tous les problèmes (mur abîmé, lampe cassée…). Sinon, vous devrez peut-être payer les réparations à votre départ.\n\nLoyer : il se paie avant le 5 de chaque mois, par virement. Vous pouvez demander une aide au logement sur le site de la CAF.\n\nInternet : le wifi est gratuit. Votre code est sur la feuille posée sur votre bureau.\n\nLaverie : au sous-sol, ouverte de 7 h à 22 h. Une machine à laver coûte 3 €, le sèche-linge 1,50 €. Paiement par carte uniquement.\n\nCuisine : chaque étage a une cuisine commune. Lavez votre vaisselle tout de suite après le repas." },
     questions: [
-      { q: "Si on arrive un samedi, il faut…", o: ["attendre le lundi.", "aller à l'accueil à 9 h.", "prévenir la résidence par courriel."], a: 2, x: "« Si vous arrivez le week-end, prévenez-nous avant par courriel »." },
+      { q: "Si on arrive un samedi, il faut…", o: ["attendre le lundi.", "aller à l'accueil le lundi à 9 h.", "prévenir la résidence par courriel."], a: 2, x: "« Si vous arrivez le week-end, prévenez-nous avant par courriel »." },
       { q: "L'état des lieux doit se faire…", o: ["pendant la première semaine.", "le jour du départ.", "avant le 5 du mois."], a: 0, x: "« dans les 7 jours après votre arrivée, vérifiez votre chambre »." },
       { q: "Si on ne note pas les problèmes de la chambre, on risque de…", o: ["perdre sa chambre.", "payer des réparations.", "ne pas recevoir sa clé."], a: 1, x: "« Sinon, vous devrez peut-être payer les réparations à votre départ »." },
       { q: "Le wifi de la résidence est gratuit.", o: ["Vrai", "Faux"], a: 0, x: "« le wifi est gratuit »." },
@@ -207,7 +207,7 @@
       { q: "Le nouvel appartement de Hugo a…", o: ["un balcon.", "un jardin.", "trois chambres."], a: 0, x: "« il a deux chambres et un petit balcon »." },
       { q: "Hugo demande à Esin d'apporter un cadeau.", o: ["Vrai", "Faux"], a: 1, x: "« Tu peux apporter un dessert si tu veux, mais surtout pas de cadeau »." },
       { q: "Pour le repas, Hugo va…", o: ["commander des pizzas.", "demander un plat à chaque invité.", "cuisiner un couscous."], a: 2, x: "« je prépare un grand couscous ! »" },
-      { q: "Pour aller chez Hugo, Esin doit…", o: ["prendre le tram, puis marcher.", "prendre le bus 1.", "venir en voiture."], a: 0, x: "« prends le tram 1 jusqu'à l'arrêt « Gare maritime », puis marche 5 minutes »." },
+      { q: "Pour aller chez Hugo, Esin doit…", o: ["prendre le tram, puis marcher.", "prendre le bus 1, puis le tram.", "venir en voiture."], a: 0, x: "« prends le tram 1 jusqu'à l'arrêt « Gare maritime », puis marche 5 minutes »." },
       { q: "Après la fête, Esin peut…", o: ["rentrer en taxi avec Hugo.", "dormir chez un voisin.", "dormir chez Hugo."], a: 2, x: "« tu peux dormir ici après la fête : la deuxième chambre est prête ! »" }
     ] },
 
@@ -218,12 +218,12 @@
     doc: { type: "notice", title: "Déchetterie des Prés – Mode d'emploi",
       body: "La déchetterie est gratuite pour les habitants des communes voisines. Pour entrer, présentez votre badge. Pour l'obtenir, faites une demande à la mairie avec un justificatif de domicile : vous le recevrez par la poste dans les 10 jours.\n\nHoraires : du mardi au samedi, de 9 h à 12 h et de 14 h à 18 h. Fermée le dimanche, le lundi et les jours fériés.\n\nVous pouvez apporter : meubles, appareils électriques (frigo, télé, ordinateur…), déchets verts (herbe, branches), cartons, piles, peinture.\n\nC'est interdit : les ordures ménagères (restes de repas), les médicaments (rapportez-les à la pharmacie) et les pneus de voiture (rapportez-les au garage).\n\nSur place, triez vous-même vos déchets dans les bonnes bennes. Un agent est là pour vous conseiller.\n\nVos objets sont encore en bon état ? Déposez-les dans le local « Seconde vie », à l'entrée : une association les répare et les revend à petit prix." },
     questions: [
-      { q: "Pour obtenir le badge, il faut…", o: ["payer 10 €.", "aller à la mairie avec un justificatif de domicile.", "téléphoner à la déchetterie."], a: 1, x: "« faites une demande à la mairie avec un justificatif de domicile »." },
+      { q: "Pour obtenir le badge, il faut…", o: ["payer 10 €.", "aller à la mairie avec un justificatif.", "téléphoner à la déchetterie avant de venir."], a: 1, x: "« faites une demande à la mairie avec un justificatif de domicile »." },
       { q: "La déchetterie est ouverte le lundi.", o: ["Vrai", "Faux"], a: 1, x: "« Fermée le dimanche, le lundi et les jours fériés »." },
       { q: "On peut apporter à la déchetterie…", o: ["un vieux frigo.", "des médicaments.", "des restes de repas."], a: 0, x: "« Vous pouvez apporter : […] appareils électriques (frigo, télé, ordinateur…) »." },
       { q: "Les vieux pneus de voiture doivent aller…", o: ["à la pharmacie.", "avec les déchets verts.", "au garage."], a: 2, x: "« les pneus de voiture (rapportez-les au garage) »." },
       { q: "À la déchetterie, qui trie les déchets ?", o: ["L'agent.", "Vous-même.", "L'association."], a: 1, x: "« triez vous-même vos déchets » ; l'agent est là « pour vous conseiller »." },
-      { q: "Une chaise en bon état peut être…", o: ["vendue à l'agent.", "jetée avec les cartons.", "réparée et revendue par une association."], a: 2, x: "« Déposez-les dans le local « Seconde vie » : une association les répare et les revend »." }
+      { q: "Une chaise en bon état peut être…", o: ["vendue à l'agent.", "jetée dans la benne des cartons.", "revendue par une association."], a: 2, x: "« Déposez-les dans le local « Seconde vie » : une association les répare et les revend »." }
     ] },
 
   { id: "a2-s14-ce4", level: "A2", sujet: 14, sec: "ce", ex: 4, pts: 7,
@@ -238,7 +238,7 @@
       { q: "Samedi, il y avait…", o: ["peu de vent.", "beaucoup de pluie.", "trop de vent."], a: 0, x: "« Samedi, le vent était faible »." },
       { q: "Les enfants ont pu fabriquer un cerf-volant gratuitement.", o: ["Vrai", "Faux"], a: 0, x: "« ils ont fabriqué leur propre cerf-volant », « L'atelier était gratuit »." },
       { q: "Pour entrer au festival, il fallait payer.", o: ["Vrai", "Faux"], a: 1, x: "« L'atelier était gratuit, comme l'entrée du festival »." },
-      { q: "L'année prochaine, la mairie va…", o: ["construire un parking.", "proposer des navettes gratuites.", "changer la date du festival."], a: 1, x: "« la mairie prévoit des navettes gratuites depuis la gare »." }
+      { q: "L'année prochaine, la mairie va…", o: ["construire un grand parking à la gare.", "proposer des navettes gratuites.", "changer la date du festival."], a: 1, x: "« la mairie prévoit des navettes gratuites depuis la gare »." }
     ] },
 
   /* ===================== SUJET 15 ===================== */
@@ -298,6 +298,6 @@
       { q: "Dans un groupe, il y a au maximum…", o: ["deux personnes.", "trois personnes.", "huit personnes."], a: 2, x: "« en petits groupes de huit personnes au maximum »." },
       { q: "Le programme de trois mois coûte…", o: ["rien.", "30 € pour les trois mois.", "30 € par séance."], a: 1, x: "« Ces trois mois coûtent 30 € en tout »." },
       { q: "Josiane prend moins de médicaments qu'avant.", o: ["Vrai", "Faux"], a: 0, x: "« mon médecin a diminué mes médicaments »." },
-      { q: "L'année prochaine, la ville veut…", o: ["arrêter le programme.", "proposer des séances aux enfants.", "construire une piscine."], a: 1, x: "« l'année prochaine, des séances seront aussi proposées aux enfants en surpoids »." }
+      { q: "L'année prochaine, la ville veut…", o: ["arrêter le programme.", "proposer des séances aux enfants.", "construire une piscine pour les patients."], a: 1, x: "« l'année prochaine, des séances seront aussi proposées aux enfants en surpoids »." }
     ] }
 );

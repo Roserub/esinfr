@@ -15,7 +15,7 @@
         xtr: "« Merci de porter votre badge sur votre veste » : ziyaretçiler yaka kartını ceketlerine takmalı. Kask gerekmiyor, imzadan da söz edilmiyor." },
       { q: "Annonce 2 : qu'est-ce qu'on peut faire gratuitement à l'entrée ?",
         audio: [["M", "Bienvenue au Salon de l'emploi ! 80 entreprises recrutent aujourd'hui. À l'entrée, un photographe fait gratuitement votre photo pour votre CV. Pour faire corriger votre CV, allez au premier étage."]],
-        o: ["Imprimer son CV.", "Faire corriger son CV.", "Faire une photo pour son CV."], a: 2,
+        o: ["Imprimer plusieurs copies de son CV.", "Faire corriger son CV.", "Faire une photo pour son CV."], a: 2,
         x: "« À l'entrée, un photographe fait gratuitement votre photo pour votre CV. » La correction du CV, c'est au premier étage.",
         xtr: "Girişte ücretsiz CV fotoğrafı çekiliyor. Tuzak: CV düzeltme hizmeti var ama birinci katta, girişte değil." },
       { q: "Annonce 3 : où les stagiaires ont-ils leur cours aujourd'hui ?",
@@ -35,7 +35,7 @@
         xtr: "Garın önünde ücretsiz otobüsler bekliyor. Tramvay bu sabah çalışmıyor; taksiden söz yok." },
       { q: "Annonce 6 : que doivent faire les employés pour utiliser le parking ?",
         audio: [["M", "Information pour le personnel : à partir de lundi, le parking des employés aura une barrière. Pour entrer, il faudra une carte verte. Demandez-la aux ressources humaines. Le parking reste gratuit."]],
-        o: ["Acheter un ticket à l'entrée du parking.", "Demander une carte aux ressources humaines.", "Laisser leur carte verte à l'accueil."], a: 1,
+        o: ["Acheter un ticket à l'entrée du parking.", "Demander une carte aux ressources humaines.", "Laisser leur carte verte au gardien du parking."], a: 1,
         x: "« Il faudra une carte verte. Demandez-la aux ressources humaines. » Le parking reste gratuit.",
         xtr: "Yeşil kartı insan kaynaklarından istemek gerekiyor. Otopark ücretsiz kalıyor, bilet yok; kartı bırakmak değil, almak gerekiyor." }
     ] },
@@ -59,10 +59,10 @@
       { q: "Extrait 1 : qu'est-ce que les visiteurs doivent apporter ?", o: ["Une pièce d'identité.", "Une lettre de motivation.", "Plusieurs CV."], a: 2,
         x: "« Apportez plusieurs CV ! »",
         xtr: "« Apportez plusieurs CV ! » = Birkaç CV getirin! Kimlikten ve niyet mektubundan söz yok." },
-      { q: "Extrait 2 : de quel métier parle-t-on ?", o: ["🚗 réparateur de voitures", "🚲 réparateur de vélos électriques", "📦 livreur à vélo"], a: 1,
+      { q: "Extrait 2 : de quel métier parle-t-on ?", o: ["🚗 réparateur de voitures", "🚲 réparateur de vélos", "📦 livreur à vélo"], a: 1,
         x: "« Parlons des réparateurs de vélos électriques. »",
         xtr: "Elektrikli bisiklet tamircilerinden bahsediliyor. « vélo en ville » geçiyor ama meslek kuryelik değil, tamircilik." },
-      { q: "Extrait 2 : pour faire ce métier, il faut…", o: ["suivre une formation de trois mois.", "avoir un diplôme technique.", "habiter dans une grande ville."], a: 0,
+      { q: "Extrait 2 : pour faire ce métier, il faut…", o: ["suivre une formation de trois mois.", "avoir un diplôme technique de mécanicien.", "habiter dans une grande ville."], a: 0,
         x: "« Pas besoin de diplôme : une formation de 3 mois suffit. »",
         xtr: "Diploma gerekmez, üç aylık bir kurs yeterli. « partout en France » = her yerde, büyük şehirde oturmak şart değil." },
       { q: "Extrait 3 : selon ce conseil, il faut arriver à l'entretien…", o: ["une demi-heure avant.", "à l'heure exacte.", "dix minutes avant."], a: 2,
@@ -81,7 +81,7 @@
       ["M", "Bonjour Madame Demir, ici Julien Marchand, de la société Lambrecq Transports. Vous avez envoyé votre candidature pour le poste d'assistante administrative et nous aimerions vous rencontrer. Je vous propose un entretien le mardi 17 novembre à 14 h 30, dans nos bureaux de Roubaix, à 15 minutes de la gare. L'entretien durera environ 45 minutes. Apportez votre carte d'identité et une copie de votre diplôme : nous avons déjà votre CV. Merci de me confirmer votre présence par courriel avant jeudi. Au revoir !"]
     ],
     questions: [
-      { q: "Pourquoi M. Marchand téléphone-t-il à Mme Demir ?", o: ["Pour lui proposer un stage.", "Pour lui demander son CV.", "Pour lui proposer un entretien."], a: 2,
+      { q: "Pourquoi M. Marchand téléphone-t-il à Mme Demir ?", o: ["Pour lui proposer un stage en entreprise.", "Pour lui demander son CV.", "Pour lui proposer un entretien."], a: 2,
         x: "« Je vous propose un entretien. » Il a déjà son CV.",
         xtr: "« Je vous propose un entretien » = Size bir görüşme öneriyorum. Stajdan söz yok, CV zaten ellerinde." },
       { q: "Pour quel poste Mme Demir a-t-elle envoyé sa candidature ?", o: ["Assistante administrative.", "Chauffeuse de camion.", "Secrétaire médicale."], a: 0,
@@ -178,7 +178,7 @@
     doc: { type: "email", from: "Centre de formation Les Tilleuls — Service des inscriptions", to: "Leïla Haddad", subject: "Confirmation de votre inscription",
       body: "Bonjour Madame Haddad,\n\nNous avons le plaisir de confirmer votre inscription à la formation « Accueil et relation client ». Elle commencera le lundi 4 janvier et durera six semaines.\n\nLes cours ont lieu du lundi au jeudi, de 9 h à 16 h 30, au 3e étage de notre centre, 12 boulevard Carnot, à Amiens. Le vendredi, vous ferez un stage dans une entreprise de la région.\n\nLe premier jour, merci d'arriver à 8 h 45 avec une photo d'identité et votre attestation de l'agence pour l'emploi. Nous vous donnerons votre carte de stagiaire à l'accueil.\n\nLa formation est gratuite, mais le repas de midi n'est pas compris. Vous pourrez utiliser la cuisine du centre (micro-ondes et réfrigérateur).\n\nPour toute question, contactez Mme Roussel, votre formatrice.\nNous vous souhaitons une bonne formation !\n\nCordialement,\nLe service des inscriptions" },
     questions: [
-      { q: "Ce courriel sert à…", o: ["inviter Mme Haddad à un entretien d'embauche.", "confirmer l'inscription de Mme Haddad à une formation.", "proposer un emploi à Mme Haddad."], a: 1,
+      { q: "Ce courriel sert à…", o: ["inviter Mme Haddad à un entretien d'embauche à Amiens.", "confirmer l'inscription de Mme Haddad à une formation.", "proposer un emploi à Mme Haddad."], a: 1,
         x: "« Nous avons le plaisir de confirmer votre inscription à la formation. »",
         xtr: "Konu satırı « Confirmation de votre inscription »: e-posta bir kursa kaydı teyit ediyor. İş görüşmesi ya da iş teklifi yok." },
       { q: "Combien de temps dure la formation ?", o: ["Six semaines.", "Quatre jours.", "Six mois."], a: 0,
@@ -193,7 +193,7 @@
       { q: "Qu'est-ce que Mme Haddad doit apporter le premier jour ?", o: ["📸 une photo d'identité et une attestation", "🪪 une carte de stagiaire et un badge", "📄 un CV et un diplôme"], a: 0,
         x: "« avec une photo d'identité et votre attestation de l'agence pour l'emploi ». La carte de stagiaire, le centre la donne.",
         xtr: "Vesikalık fotoğraf ve iş kurumundan alınan belgeyi (attestation) getirmeli. Stajyer kartını merkez verecek." },
-      { q: "Pour le repas de midi, Mme Haddad…", o: ["mangera gratuitement au restaurant du centre.", "peut apporter son repas et le réchauffer au centre.", "doit obligatoirement sortir du centre."], a: 1,
+      { q: "Pour le repas de midi, Mme Haddad…", o: ["mangera gratuitement au restaurant du centre.", "peut apporter son repas et le réchauffer au centre.", "doit obligatoirement sortir du centre pour déjeuner."], a: 1,
         x: "« Le repas de midi n'est pas compris. Vous pourrez utiliser la cuisine du centre (micro-ondes et réfrigérateur). »",
         xtr: "Öğle yemeği dahil değil ama merkezin mutfağı var: yemeğini getirip mikrodalgada ısıtabilir." }
     ] },
@@ -205,7 +205,7 @@
     doc: { type: "notice", title: "Trois documents au travail",
       body: "DOCUMENT 1 — Affiché à l'entrée de l'atelier\nRÈGLEMENT INTÉRIEUR — SÉCURITÉ DANS L'ATELIER\nPour votre sécurité, le port des chaussures de sécurité et des lunettes de protection est obligatoire dans l'atelier. Il est interdit de manger, de boire et de fumer près des machines. En cas d'accident, prévenez immédiatement votre chef d'équipe et ne déplacez pas la personne blessée. Si l'alarme sonne, quittez le bâtiment par la sortie la plus proche et rejoignez le point de rassemblement, sur le parking.\n\nDOCUMENT 2 — À côté de la photocopieuse\nPHOTOCOPIEUSE DU 2e ÉTAGE — MODE D'EMPLOI\n1. Passez votre badge devant l'écran pour allumer la machine.\n2. Posez votre document sur la vitre, face imprimée en bas.\n3. Choisissez le nombre de copies et la couleur : noir et blanc ou couleur. Attention, les copies en couleur sont réservées aux documents pour les clients.\n4. Appuyez sur le bouton vert.\n5. Si le papier est coincé, n'ouvrez pas la machine : appelez l'accueil, poste 210.\n6. Reprenez votre document original à la fin.\n\nDOCUMENT 3 — Message reçu par Maëlle\nSalut Maëlle,\nDemain, je suis en formation toute la journée, donc tu me remplaces à l'accueil. Voici quelques conseils : ouvre la porte à 8 h 30 et allume l'ordinateur. Le matin, un livreur va apporter un gros colis : mets-le dans mon bureau, pas dans la salle de réunion. Si un client appelle pour un rendez-vous, note son nom et son numéro dans le cahier rouge.\nMerci beaucoup pour ton aide !\nBastien" },
     questions: [
-      { q: "Document 1 : dans l'atelier, les employés doivent…", o: ["porter des lunettes de protection.", "boire de l'eau régulièrement.", "travailler avec des gants."], a: 0,
+      { q: "Document 1 : dans l'atelier, les employés doivent…", o: ["porter des lunettes de protection.", "boire régulièrement de l'eau près des machines.", "travailler avec des gants."], a: 0,
         x: "« Le port des chaussures de sécurité et des lunettes de protection est obligatoire. »",
         xtr: "Koruyucu gözlük takmak zorunlu. Makinelerin yanında içmek yasak; eldivenden söz yok." },
       { q: "Document 1 : si l'alarme sonne, il faut…", o: ["appeler le chef d'équipe.", "attendre près des machines.", "aller sur le parking."], a: 2,

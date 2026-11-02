@@ -77,4 +77,5 @@ Two kinds:
 - Exactly the level: A1 = présent, futur proche, very common words; A2 = passé composé, imparfait, futur, everyday vocabulary.
 - One unambiguous right answer; plausible distractors that are mentioned or hinted in the document.
 - `x` explanations are short and in simple French.
+- The right answer must not stand out by its length: `node tools/check-option-lengths.js` compares, per file, how often it is clearly the longest option with chance (LIST=1 lists the questions).
 - Run `node tools/check-delf.js` until it prints OK.

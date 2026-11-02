@@ -28,7 +28,7 @@
       { q: "Si elle annule son voyage, on lui rembourse seulement une partie du billet.", o: ["Vrai", "Faux"], a: 1, x: "« Le prix de votre billet (289 €) vous sera alors remboursé en totalité »." },
       { q: "Elle doit donner sa réponse avant le…", o: ["14 mars.", "12 mars.", "15 mars."], a: 1, x: "« Merci de nous donner votre réponse avant le mercredi 12 mars »." },
       { q: "Si elle ne répond pas, elle…", o: ["est remboursée.", "part le samedi matin.", "part le vendredi à 18 h 45."], a: 2, x: "« Sans réponse de votre part, nous vous placerons automatiquement sur le vol de 18 h 45 »." },
-      { q: "Pour répondre, elle doit…", o: ["aller sur le site de la compagnie.", "téléphoner au service clients.", "aller à l'aéroport."], a: 0, x: "« sur notre site, rubrique « Mes réservations » »." }
+      { q: "Pour répondre, elle doit…", o: ["aller sur le site de la compagnie.", "téléphoner au service clients.", "aller au guichet de la compagnie à l'aéroport."], a: 0, x: "« sur notre site, rubrique « Mes réservations » »." }
     ] },
 
   { id: "a2-s16-ce3", level: "A2", sujet: 16, sec: "ce", ex: 3, pts: 6,
@@ -43,7 +43,7 @@
       { q: "On peut réserver une salle de réunion le jour même.", o: ["Vrai", "Faux"], a: 1, x: "Les salles se réservent « au moins 24 heures avant »." },
       { q: "Le café…", o: ["est gratuit.", "coûte 0,10 €.", "est vendu à l'accueil."], a: 0, x: "« le café et le thé sont offerts »." },
       { q: "Le frigo est vidé…", o: ["chaque soir.", "chaque week-end.", "chaque mois."], a: 1, x: "« le frigo est vidé chaque week-end »." },
-      { q: "On trouve le code wifi…", o: ["chez Mathilde.", "dans l'application.", "sur le tableau près de l'entrée."], a: 2, x: "« Vous le trouverez sur le tableau à côté de l'entrée »." }
+      { q: "On trouve le code wifi…", o: ["chez Mathilde.", "dans l'application de La Ruche.", "sur le tableau près de l'entrée."], a: 2, x: "« Vous le trouverez sur le tableau à côté de l'entrée »." }
     ] },
 
   { id: "a2-s16-ce4", level: "A2", sujet: 16, sec: "ce", ex: 4, pts: 7,
@@ -58,7 +58,7 @@
       { q: "Au hand-santé…", o: ["on court beaucoup.", "on a des contacts avec les autres joueurs.", "on marche vite."], a: 2, x: "« on ne court pas : on marche vite »." },
       { q: "L'échauffement se fait avec…", o: ["une kinésithérapeute.", "Karim Belkacem.", "un médecin."], a: 0, x: "« 20 minutes d'échauffement avec une kinésithérapeute, Laure Martin »." },
       { q: "Grâce au hand-santé, Monique a moins mal aux genoux.", o: ["Vrai", "Faux"], a: 0, x: "« je dors mieux et j'ai moins mal aux genoux »." },
-      { q: "Pour la première séance, il faut…", o: ["payer 90 €.", "apporter des baskets et de l'eau.", "avoir déjà joué au handball."], a: 1, x: "« La première séance est gratuite : il suffit d'apporter des baskets et une bouteille d'eau »." }
+      { q: "Pour la première séance, il faut…", o: ["payer 90 €.", "apporter des baskets et de l'eau.", "avoir déjà joué au handball en club."], a: 1, x: "« La première séance est gratuite : il suffit d'apporter des baskets et une bouteille d'eau »." }
     ] },
 
   /* ===================== SUJET 17 ===================== */
@@ -87,7 +87,7 @@
       { q: "Le sac a été trouvé par…", o: ["un conducteur.", "un employé du bureau.", "une association."], a: 0, x: "« a été trouvé le soir même par un conducteur »." },
       { q: "Dans le sac, on n'a pas trouvé…", o: ["l'ordinateur.", "le livre de français.", "le portefeuille."], a: 2, x: "« nous n'avons pas trouvé de portefeuille »." },
       { q: "M. Yılmaz peut aller chercher son sac le mardi à 15 h.", o: ["Vrai", "Faux"], a: 1, x: "Le bureau est ouvert « de 9 h à 12 h 30 » : « Le bureau est fermé l'après-midi »." },
-      { q: "Pour récupérer son sac, M. Yılmaz doit apporter…", o: ["une photo du sac.", "une lettre signée.", "une pièce d'identité et le courriel."], a: 2, x: "« N'oubliez pas d'apporter une pièce d'identité et ce courriel »." },
+      { q: "Pour récupérer son sac, M. Yılmaz doit apporter…", o: ["une photo du sac et de son contenu.", "une lettre signée.", "une pièce d'identité et le courriel."], a: 2, x: "« N'oubliez pas d'apporter une pièce d'identité et ce courriel »." },
       { q: "Si personne ne vient chercher un objet pendant un mois…", o: ["il est envoyé chez son propriétaire.", "il est donné à une association.", "il reste au terminus."], a: 1, x: "« nous gardons les objets trouvés pendant un mois. Après, ils sont donnés à une association »." }
     ] },
 
@@ -102,7 +102,7 @@
       { q: "Pour un enfant de 3 ans, l'entrée…", o: ["coûte 3 €.", "coûte 4,50 €.", "est gratuite."], a: 2, x: "« gratuit pour les moins de 4 ans »." },
       { q: "Les enfants aussi doivent porter un bonnet de bain.", o: ["Vrai", "Faux"], a: 0, x: "« Le bonnet de bain est obligatoire pour tout le monde »." },
       { q: "Le petit bassin est surtout pour…", o: ["les nageurs.", "les familles et les enfants.", "l'aquagym."], a: 1, x: "« Le petit bassin […] est pour les familles et les enfants »." },
-      { q: "Pour utiliser un casier, il faut…", o: ["une pièce de 1 €, qu'on récupère ensuite.", "payer 2 € à l'accueil.", "avoir la carte de 10 entrées."], a: 0, x: "« ils fonctionnent avec une pièce de 1 €. La pièce est rendue quand vous ouvrez le casier »." },
+      { q: "Pour utiliser un casier, il faut…", o: ["une pièce de 1 €, rendue ensuite.", "acheter un jeton à 2 € à l'accueil.", "avoir la carte de 10 entrées."], a: 0, x: "« ils fonctionnent avec une pièce de 1 €. La pièce est rendue quand vous ouvrez le casier »." },
       { q: "Le mardi à 20 h, dans le grand bassin, on peut…", o: ["nager librement.", "faire de l'aquagym.", "jouer avec son enfant."], a: 1, x: "« Le mardi soir, de 19 h à 21 h, le grand bassin est réservé à l'aquagym »." }
     ] },
 
@@ -143,7 +143,7 @@
     doc: { type: "email", from: "Clara", to: "Esin", subject: "Enfin installée à Bordeaux !",
       body: "Salut Esin,\n\nÇa y est, j'ai déménagé ! Depuis le 1er juin, j'habite à Bordeaux. Le déménagement a été un peu difficile : il a plu toute la journée et le camion est arrivé avec deux heures de retard. Heureusement, mes cousins sont venus m'aider à porter les cartons.\n\nMon nouvel appartement est plus petit que l'ancien, mais il est très lumineux et il a un balcon. Il est au 4e étage, sans ascenseur : c'est bon pour les jambes ! Il se trouve à dix minutes à pied de la gare.\n\nJe commence mon nouveau travail à l'hôpital lundi prochain. Je suis un peu stressée, mais contente. Pour le moment, je ne connais personne ici, alors je me suis inscrite à un club de randonnée pour me faire des amis.\n\nEst-ce que tu veux venir me voir en juillet ? Il y a un canapé-lit dans le salon. On pourrait aller à la plage, à une heure d'ici.\n\nAh, et j'ai un nouveau numéro de téléphone : 07 62 18 44 30.\n\nGros bisous,\nClara" },
     questions: [
-      { q: "Le jour du déménagement…", o: ["il faisait très beau.", "le camion est arrivé en retard.", "Clara était toute seule."], a: 1, x: "« le camion est arrivé avec deux heures de retard »." },
+      { q: "Le jour du déménagement…", o: ["il faisait très beau.", "le camion est arrivé en retard.", "Clara était toute seule pour porter les cartons."], a: 1, x: "« le camion est arrivé avec deux heures de retard »." },
       { q: "Le nouvel appartement de Clara…", o: ["est plus grand que l'ancien.", "a un ascenseur.", "a un balcon."], a: 2, x: "« il est très lumineux et il a un balcon »." },
       { q: "L'appartement est près de la gare.", o: ["Vrai", "Faux"], a: 0, x: "« Il se trouve à dix minutes à pied de la gare »." },
       { q: "Clara va travailler…", o: ["dans un hôpital.", "dans une gare.", "dans un club de randonnée."], a: 0, x: "« Je commence mon nouveau travail à l'hôpital lundi prochain »." },
@@ -222,7 +222,7 @@
       { q: "On peut retirer son colis…", o: ["à 3 h du matin.", "seulement du lundi au samedi.", "un dimanche à 22 h."], a: 2, x: "« tous les jours, 24 h sur 24, mais la gare routière est fermée de 1 h à 5 h du matin »." },
       { q: "Si on ne retire pas son colis dans les 5 jours…", o: ["il est renvoyé au vendeur.", "il est livré à la maison.", "on doit payer une amende."], a: 0, x: "« Après ce délai, il est renvoyé au vendeur »." },
       { q: "Un ami peut retirer votre colis s'il a votre code.", o: ["Vrai", "Faux"], a: 0, x: "« Envoyez le SMS avec le code à un ami : il peut retirer le colis pour vous »." },
-      { q: "Un colis de 25 kg…", o: ["peut être livré dans la consigne.", "ne peut pas être livré dans la consigne.", "doit être retiré en 15 jours."], a: 1, x: "« les colis de plus de 20 kg ne peuvent pas être livrés dans une consigne »." },
+      { q: "Un colis de 25 kg…", o: ["peut être livré dans la consigne.", "ne peut pas être livré dans la consigne.", "doit être retiré à la gare en 15 jours."], a: 1, x: "« les colis de plus de 20 kg ne peuvent pas être livrés dans une consigne »." },
       { q: "En cas de problème, on peut téléphoner…", o: ["24 h sur 24.", "tous les jours, de 5 h à 1 h.", "du lundi au samedi, de 8 h à 20 h."], a: 2, x: "« Appelez le 09 70 12 34 56, du lundi au samedi, de 8 h à 20 h »." }
     ] },
 
@@ -234,7 +234,7 @@
       body: "À Lille, sur le toit d'un ancien parking du centre-ville, il y a maintenant une ferme ! Elle a ouvert au printemps dernier, après un an de travaux. Sur 2 000 m², on trouve des légumes, des herbes aromatiques, des fraises, dix poules et quatre ruches.\n\nLe projet est né de l'idée de trois amis, Thomas, Inès et Bruno. « Nous habitions en ville et nous voulions manger des légumes frais, cultivés près de chez nous », explique Inès, ancienne professeure de biologie.\n\nLa ferme emploie six personnes qui cherchaient du travail depuis longtemps. Pendant deux ans, elles apprennent le métier de maraîcher.\n\nLes légumes ne voyagent pas : ils sont vendus sur place, le mercredi et le samedi matin, ou livrés à vélo dans les restaurants du quartier. Les œufs, eux, partent très vite : « À 10 h, il n'y en a plus ! », rit Bruno.\n\nLa ferme accueille aussi les écoles. Les enfants découvrent comment poussent les tomates et ils goûtent le miel des abeilles. Pour les adultes, des ateliers de jardinage sont proposés un dimanche par mois (10 €).\n\nProchaine étape : une deuxième ferme, sur le toit d'un hôpital." },
     questions: [
       { q: "La ferme se trouve…", o: ["sur le toit d'un parking.", "dans un parc.", "sur le toit d'un hôpital."], a: 0, x: "« sur le toit d'un ancien parking du centre-ville, il y a maintenant une ferme »." },
-      { q: "Les trois amis ont créé la ferme pour…", o: ["manger des légumes frais, cultivés près de chez eux.", "vendre du miel aux écoles.", "ouvrir un restaurant."], a: 0, x: "« nous voulions manger des légumes frais, cultivés près de chez nous »." },
+      { q: "Les trois amis ont créé la ferme pour…", o: ["manger des légumes frais et locaux.", "vendre du miel aux écoles du quartier.", "ouvrir un restaurant."], a: 0, x: "« nous voulions manger des légumes frais, cultivés près de chez nous »." },
       { q: "Les six employés de la ferme…", o: ["sont d'anciens professeurs.", "apprennent le métier de maraîcher.", "vendent leurs légumes au supermarché."], a: 1, x: "« Pendant deux ans, elles apprennent le métier de maraîcher »." },
       { q: "Les légumes de la ferme sont vendus dans les supermarchés de la région.", o: ["Vrai", "Faux"], a: 1, x: "« Les légumes ne voyagent pas : ils sont vendus sur place […] ou livrés à vélo dans les restaurants du quartier »." },
       { q: "Le samedi à 11 h, il est difficile d'acheter…", o: ["des fraises.", "des tomates.", "des œufs."], a: 2, x: "« Les œufs, eux, partent très vite : « À 10 h, il n'y en a plus ! » »." },
@@ -283,7 +283,7 @@
       { q: "Vous avez rendez-vous à 10 h. Vous arrivez à 10 h 10. Votre séance finit à…", o: ["10 h 30.", "10 h 40.", "11 h."], a: 0, x: "« les séances durent 30 minutes […] la séance se terminera quand même à l'heure prévue » : 10 h 30." },
       { q: "Il faut apporter une serviette.", o: ["Vrai", "Faux"], a: 0, x: "« apportez une grande serviette et une tenue de sport confortable »." },
       { q: "On peut utiliser seul la salle de rééducation…", o: ["tous les jours.", "après la première séance.", "si le kinésithérapeute est d'accord."], a: 2, x: "« Vous pouvez l'utiliser seul(e) seulement si votre kinésithérapeute est d'accord »." },
-      { q: "Le kinésithérapeute peut venir à la maison…", o: ["pour tous les patients.", "pour les personnes qui ne peuvent pas se déplacer.", "seulement le week-end."], a: 1, x: "« Visites à domicile : elles sont possibles pour les personnes qui ne peuvent pas se déplacer »." }
+      { q: "Le kinésithérapeute peut venir à la maison…", o: ["pour tous les patients, même sans ordonnance.", "pour ceux qui ne peuvent pas se déplacer.", "seulement le week-end."], a: 1, x: "« Visites à domicile : elles sont possibles pour les personnes qui ne peuvent pas se déplacer »." }
     ] },
 
   { id: "a2-s20-ce4", level: "A2", sujet: 20, sec: "ce", ex: 4, pts: 7,
@@ -294,7 +294,7 @@
       body: "Samedi dernier, pour la Nuit européenne des musées, le musée des Beaux-Arts de Rouen est resté ouvert jusqu'à minuit. L'entrée était gratuite pour tout le monde, et plus de 6 000 personnes sont venues, deux fois plus qu'un dimanche normal.\n\nCette année, le musée avait préparé un programme spécial. Dans les salles de peinture, des musiciens jouaient du violon. Des élèves d'un collège de la ville présentaient leurs tableaux préférés aux visiteurs. « J'étais un peu timide au début, mais les gens étaient très gentils avec moi », raconte Yanis, 13 ans.\n\nLa nouveauté qui a eu le plus de succès : la visite avec une lampe de poche. Dans le noir, les visiteurs découvraient les sculptures d'une autre façon. Il fallait s'inscrire, et les 200 places sont parties en une heure.\n\nBeaucoup de visiteurs venaient pour la première fois. « D'habitude, je trouve que les musées, c'est ennuyeux et cher. Ce soir, je me suis bien amusée », dit Amandine, 29 ans.\n\nLe directeur est content : « Nous voulons accueillir un nouveau public. » Bonne nouvelle : le musée sera maintenant gratuit le premier vendredi soir de chaque mois." },
     questions: [
       { q: "Samedi dernier, le musée a fermé…", o: ["à 18 h.", "le dimanche matin.", "à minuit."], a: 2, x: "« le musée des Beaux-Arts de Rouen est resté ouvert jusqu'à minuit »." },
-      { q: "Ce soir-là, il y a eu…", o: ["deux fois plus de visiteurs qu'un dimanche normal.", "seulement 200 visiteurs.", "moins de visiteurs que d'habitude."], a: 0, x: "« plus de 6 000 personnes sont venues, deux fois plus qu'un dimanche normal »." },
+      { q: "Ce soir-là, il y a eu…", o: ["deux fois plus de monde qu'un dimanche.", "seulement 200 visiteurs.", "moins de visiteurs qu'un dimanche normal."], a: 0, x: "« plus de 6 000 personnes sont venues, deux fois plus qu'un dimanche normal »." },
       { q: "Yanis…", o: ["jouait du violon.", "a présenté des tableaux aux visiteurs.", "était le guide de la visite dans le noir."], a: 1, x: "« Des élèves d'un collège […] présentaient leurs tableaux préférés aux visiteurs » ; Yanis a 13 ans." },
       { q: "Pour la visite avec une lampe de poche…", o: ["il fallait s'inscrire.", "il fallait payer.", "il restait beaucoup de places."], a: 0, x: "« Il fallait s'inscrire, et les 200 places sont parties en une heure »." },
       { q: "D'habitude, Amandine trouve les musées ennuyeux.", o: ["Vrai", "Faux"], a: 0, x: "« D'habitude, je trouve que les musées, c'est ennuyeux et cher »." },

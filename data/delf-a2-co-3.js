@@ -51,9 +51,9 @@
     questions: [
       { q: "Deniz téléphone pour…", o: ["prendre un rendez-vous.", "parler de son stage.", "envoyer un e-mail."], a: 1, x: "« Je vous ai envoyé un e-mail la semaine dernière pour mon stage. »" },
       { q: "Le stage dure…", o: ["4 semaines.", "3 semaines.", "2 mois."], a: 0, x: "« Vous commencez le lundi 3 mars, pour 4 semaines. »" },
-      { q: "Deniz va travailler surtout avec…", o: ["Mme Rousseau.", "des personnes âgées.", "Julien, qui soigne les sportifs."], a: 2, x: "« Vous allez travailler surtout avec Julien… il s'occupe des sportifs. »" },
+      { q: "Deniz va travailler surtout avec…", o: ["Mme Rousseau.", "des personnes âgées.", "son collègue Julien."], a: 2, x: "« Vous allez travailler surtout avec Julien… il s'occupe des sportifs. »" },
       { q: "Qu'est-ce que Deniz doit apporter ?", o: ["🥼 une blouse", "👟 une tenue de sport", "💻 un ordinateur"], a: 1, x: "« Une tenue de sport et des baskets propres. Les blouses, on vous les donne ici. »" },
-      { q: "Le midi, Deniz va…", o: ["manger au restaurant.", "rentrer chez lui.", "manger au cabinet avec l'équipe."], a: 2, x: "« Le midi, on mange tous ensemble au cabinet. »" }
+      { q: "Le midi, Deniz va…", o: ["manger au restaurant.", "rentrer chez lui.", "manger au cabinet."], a: 2, x: "« Le midi, on mange tous ensemble au cabinet. »" }
     ] },
 
   { id: "a2-s11-co4", level: "A2", sujet: 11, sec: "co", ex: 4, pts: 7,
@@ -87,7 +87,7 @@
       { q: "Aujourd'hui, la visite guidée commence…", o: ["à 15 h.", "à 14 h 30.", "à 13 h."], a: 1, x: "« La visite guidée… part à 14 h 30 devant l'office, et non à 15 h. »" },
       { q: "Pour un enfant de 8 ans, la visite coûte…", o: ["8 €.", "12 €.", "rien, c'est gratuit."], a: 2, x: "« C'est gratuit pour les moins de 12 ans. »" },
       { q: "Aujourd'hui, on ne peut pas…", o: ["⛴️ prendre le bateau", "🗺️ avoir un plan", "🚶 visiter la vieille ville"], a: 0, x: "« À cause du vent, les bateaux pour l'île d'Aix ne partiront pas aujourd'hui. »" },
-      { q: "Comment va Pacha ?", o: ["Il a été opéré et il va bien.", "Il est encore endormi.", "Il est perdu dehors."], a: 0, x: "« Pacha s'est bien réveillé après l'opération : tout s'est bien passé ! »" },
+      { q: "Comment va Pacha ?", o: ["Il a été opéré et il va bien.", "Il est encore endormi après l'opération.", "Il est perdu dehors."], a: 0, x: "« Pacha s'est bien réveillé après l'opération : tout s'est bien passé ! »" },
       { q: "Mme Demir peut aller chercher son chat…", o: ["demain matin.", "ce soir, entre 17 h et 19 h.", "dans 10 jours."], a: 1, x: "« Vous pouvez venir le chercher ce soir, entre 17 h et 19 h. »" },
       { q: "Pendant 10 jours, le chat…", o: ["doit rester à la clinique.", "ne doit pas manger le matin.", "ne doit pas sortir dehors."], a: 2, x: "« Pendant 10 jours, il ne doit pas sortir dehors. » Il prend son médicament le matin, avec son repas." }
     ] },
@@ -101,7 +101,7 @@
     ],
     questions: [
       { q: "L'association Main dans la main cherche…", o: ["des professeurs payés.", "des personnes âgées seules.", "des bénévoles."], a: 2, x: "« L'association Main dans la main cherche des bénévoles. »" },
-      { q: "Pour aider l'association, il faut…", o: ["avoir de l'expérience.", "donner un peu de temps, par exemple 2 heures par semaine.", "travailler tous les soirs."], a: 1, x: "« Pas besoin d'expérience… 2 heures par semaine, c'est déjà très bien ! »" },
+      { q: "Pour aider l'association, il faut…", o: ["avoir de l'expérience.", "donner un peu de temps.", "travailler tous les soirs."], a: 1, x: "« Pas besoin d'expérience… 2 heures par semaine, c'est déjà très bien ! »" },
       { q: "Les bénévoles peuvent aider les enfants à…", o: ["📚 faire leurs devoirs", "⚽ faire du sport", "🎨 dessiner"], a: 0, x: "« Aider des enfants à faire leurs devoirs après l'école. »" },
       { q: "Au début, Marc était…", o: ["seul et triste.", "très occupé.", "timide."], a: 2, x: "« Au début, j'étais timide, mais maintenant, je me suis fait beaucoup d'amis. »" },
       { q: "La réunion d'information…", o: ["a lieu jeudi à 18 h.", "demande une inscription.", "a lieu à l'école."], a: 0, x: "« Une réunion d'information aura lieu jeudi à 18 h… sans inscription. »" }
@@ -125,7 +125,7 @@
       { q: "Combien la cliente va-t-elle payer ?", o: ["45 €.", "134 €.", "89 €."], a: 2, x: "« L'écran… ça coûte 89 €. » Elle dit : « Je fais seulement l'écran. »" },
       { q: "Le téléphone sera prêt…", o: ["demain, à partir de 15 h.", "ce soir, à 15 h.", "dans 6 jours."], a: 0, x: "« Il sera prêt demain, à partir de 15 h. »" },
       { q: "En attendant, le réparateur…", o: ["🔋 lui vend une batterie", "📱 lui prête un téléphone", "💶 lui fait une réduction"], a: 1, x: "« Je peux vous prêter un vieux téléphone en attendant. »" },
-      { q: "Le réparateur conseille de…", o: ["changer aussi la batterie.", "acheter un nouveau téléphone.", "faire une sauvegarde des photos."], a: 2, x: "« Je vous conseille de faire une sauvegarde avant. »" }
+      { q: "Le réparateur conseille de…", o: ["changer aussi la batterie.", "acheter un nouveau téléphone moins cher.", "faire une sauvegarde des photos."], a: 2, x: "« Je vous conseille de faire une sauvegarde avant. »" }
     ] },
 
   { id: "a2-s12-co4", level: "A2", sujet: 12, sec: "co", ex: 4, pts: 7,
@@ -158,7 +158,7 @@
     questions: [
       { q: "Le match de rugby commence…", o: ["à 21 h.", "à 21 h 10.", "à 21 h 30."], a: 1, x: "« Le match, prévu à 21 h, commencera à 21 h 10. »" },
       { q: "Au stand du club, on peut…", o: ["👕 acheter un maillot moins cher", "🎟️ acheter des billets", "🍺 boire un verre"], a: 0, x: "« Venez au stand du club… les maillots sont à moins 20 %. »" },
-      { q: "Après le match, …", o: ["le stand du club ferme.", "on peut fumer dans les tribunes.", "il y a des trams toutes les 5 minutes."], a: 2, x: "« À la fin du match, des trams supplémentaires partiront toutes les 5 minutes. »" },
+      { q: "Après le match, …", o: ["le stand du club ferme.", "on peut fumer dans les tribunes.", "il y a des trams en plus."], a: 2, x: "« À la fin du match, des trams supplémentaires partiront toutes les 5 minutes. »" },
       { q: "Pour ses lunettes, M. Öztürk va payer…", o: ["la moitié du prix.", "rien du tout.", "le prix normal."], a: 1, x: "« Vous n'avez rien à payer : votre mutuelle rembourse tout. »" },
       { q: "L'opticien est fermé…", o: ["le lundi.", "le samedi.", "le mardi."], a: 0, x: "« Du mardi au samedi… nous sommes fermés le lundi. »" },
       { q: "Les lentilles de contact…", o: ["sont arrivées avec les lunettes.", "ne sont pas remboursées.", "arriveront la semaine prochaine."], a: 2, x: "« Vos lentilles de contact… arriveront la semaine prochaine. »" }
@@ -193,8 +193,8 @@
       ["F", "Votre assurance paie un taxi jusqu'à la gare de Valence. Ensuite, vous pouvez prendre le train pour Marseille. Gardez bien votre billet : on va vous le rembourser."]
     ],
     questions: [
-      { q: "Où est l'homme ?", o: ["Sur l'autoroute, près de Valence.", "Dans un garage, à Valence.", "Chez ses parents, à Marseille."], a: 0, x: "« Je suis en panne sur l'autoroute A7, près de Valence. »" },
-      { q: "Qu'est-ce qui s'est passé ?", o: ["Il a eu un accident.", "Il n'a plus d'essence.", "Il y a eu de la fumée et la voiture s'est arrêtée."], a: 2, x: "« J'ai vu de la fumée, et la voiture s'est arrêtée. »" },
+      { q: "Où est l'homme ?", o: ["Sur l'autoroute, près de Valence.", "Dans un garage, près de la gare de Valence.", "Chez ses parents, à Marseille."], a: 0, x: "« Je suis en panne sur l'autoroute A7, près de Valence. »" },
+      { q: "Qu'est-ce qui s'est passé ?", o: ["Il a eu un accident sur l'autoroute.", "Il n'a plus d'essence.", "Sa voiture est tombée en panne."], a: 2, x: "« J'ai vu de la fumée, et la voiture s'est arrêtée. »" },
       { q: "La dépanneuse va arriver…", o: ["dans 4 minutes.", "dans 40 minutes environ.", "dans 2 heures."], a: 1, x: "« Une dépanneuse va arriver dans 40 minutes environ. »" },
       { q: "Comment la famille va-t-elle aller à la gare ?", o: ["🚌 en bus", "🚗 dans la dépanneuse", "🚕 en taxi"], a: 2, x: "« Votre assurance paie un taxi jusqu'à la gare de Valence. » La dépanneuse emmène seulement la voiture." },
       { q: "Pour le billet de train, l'assurance…", o: ["va le rembourser.", "ne paie rien.", "l'achète à la gare."], a: 0, x: "« Gardez bien votre billet : on va vous le rembourser. »" }
@@ -245,9 +245,9 @@
     ],
     questions: [
       { q: "Le guichet d'accueil est ouvert…", o: ["tous les jours, de 9 h à 17 h.", "du lundi au vendredi, de 9 h à 17 h.", "le samedi, à 10 h."], a: 1, x: "« Un guichet d'accueil… du lundi au vendredi, de 9 h à 17 h. »" },
-      { q: "Au guichet, les étudiants peuvent…", o: ["acheter leurs livres.", "trouver un travail.", "faire leurs démarches administratives."], a: 2, x: "« Les étudiants peuvent faire toutes leurs démarches au même endroit : le titre de séjour, l'aide au logement… »" },
-      { q: "Un « parrain », c'est…", o: ["un professeur de français.", "un étudiant français qui aide un nouvel étudiant.", "un employé de la CAF."], a: 1, x: "« Un étudiant français qui l'aide pendant les premiers mois. »" },
-      { q: "Au début, Ayşe…", o: ["ne comprenait pas les papiers.", "ne parlait pas français.", "n'avait pas de logement."], a: 0, x: "« Au début, je ne comprenais rien aux papiers. »" },
+      { q: "Au guichet, les étudiants peuvent…", o: ["acheter leurs livres pour l'université.", "trouver un travail.", "faire leurs démarches administratives."], a: 2, x: "« Les étudiants peuvent faire toutes leurs démarches au même endroit : le titre de séjour, l'aide au logement… »" },
+      { q: "Un « parrain », c'est…", o: ["un professeur de français pour les étrangers.", "un étudiant français qui aide.", "un employé de la CAF."], a: 1, x: "« Un étudiant français qui l'aide pendant les premiers mois. »" },
+      { q: "Au début, Ayşe…", o: ["ne comprenait pas les papiers.", "ne parlait pas du tout français.", "n'avait pas de logement."], a: 0, x: "« Au début, je ne comprenais rien aux papiers. »" },
       { q: "La visite de la ville…", o: ["coûte 10 €.", "a lieu dimanche.", "part devant la bibliothèque."], a: 2, x: "« Samedi, une visite gratuite… départ à 10 h, devant la bibliothèque. »" }
     ] },
 
@@ -267,8 +267,8 @@
       ["M", "Avec votre contrat, vous payez seulement 150 €. L'assurance paie le reste."]
     ],
     questions: [
-      { q: "Pourquoi Mme Polat téléphone-t-elle ?", o: ["Elle veut acheter un micro-ondes.", "L'eau de chez son voisin a coulé chez elle.", "Elle veut changer de contrat."], a: 1, x: "« Il y a eu une fuite d'eau chez mon voisin du dessus, et l'eau a coulé dans ma cuisine. »" },
-      { q: "Qu'est-ce qui est abîmé chez elle ?", o: ["Le sol et le frigo.", "Seulement le plafond.", "Le plafond et le micro-ondes."], a: 2, x: "« Le plafond est abîmé, et mon micro-ondes ne marche plus. »" },
+      { q: "Pourquoi Mme Polat téléphone-t-elle ?", o: ["Elle veut acheter un micro-ondes.", "L'eau du voisin a coulé chez elle.", "Elle veut changer de contrat d'assurance."], a: 1, x: "« Il y a eu une fuite d'eau chez mon voisin du dessus, et l'eau a coulé dans ma cuisine. »" },
+      { q: "Qu'est-ce qui est abîmé chez elle ?", o: ["Le sol de la cuisine et le frigo.", "Seulement le plafond.", "Le plafond et le micro-ondes."], a: 2, x: "« Le plafond est abîmé, et mon micro-ondes ne marche plus. »" },
       { q: "Elle doit envoyer le constat…", o: ["dans les 5 jours.", "la semaine prochaine.", "après la visite de l'expert."], a: 0, x: "« Nous l'envoyer dans les 5 jours. » L'expert vient la semaine prochaine." },
       { q: "Qu'est-ce que l'assureur lui conseille de faire ?", o: ["📞 appeler un plombier", "📸 prendre des photos", "🔧 réparer le plafond"], a: 1, x: "« Prenez aussi des photos, c'est très important. »" },
       { q: "Combien Mme Polat va-t-elle payer ?", o: ["150 €.", "Rien du tout.", "Toutes les réparations."], a: 0, x: "« Vous payez seulement 150 €. L'assurance paie le reste. »" }
@@ -320,9 +320,9 @@
     questions: [
       { q: "Le docteur Marchand va parler…", o: ["de l'alimentation des sportifs.", "des ordinateurs au bureau.", "du mal de dos."], a: 2, x: "« Le docteur Hélène Marchand… va parler d'un problème très fréquent : le mal de dos. »" },
       { q: "Selon elle, aujourd'hui, le meilleur remède, c'est…", o: ["bouger un peu chaque jour.", "se reposer.", "faire 8 heures de sport."], a: 0, x: "« Maintenant, on sait que bouger un peu chaque jour, c'est le meilleur remède. » Le repos, c'était avant." },
-      { q: "Après la conférence, un kinésithérapeute va…", o: ["répondre aux questions.", "montrer des exercices pour le bureau.", "masser le public."], a: 1, x: "« Un kinésithérapeute montrera des exercices simples à faire au bureau. »" },
+      { q: "Après la conférence, un kinésithérapeute va…", o: ["répondre aux questions sur le mal de dos.", "montrer des exercices pour le bureau.", "masser le public."], a: 1, x: "« Un kinésithérapeute montrera des exercices simples à faire au bureau. »" },
       { q: "La conférence commence…", o: ["à 18 h.", "à 19 h 30.", "à 18 h 30."], a: 2, x: "« La conférence commence à 18 h 30, dans le grand amphithéâtre. »" },
-      { q: "Pour aller à la conférence, il faut…", o: ["payer l'entrée.", "s'inscrire sur Internet.", "être étudiant."], a: 1, x: "« Elle est gratuite et ouverte à tous, mais il faut s'inscrire sur le site Internet. »" }
+      { q: "Pour aller à la conférence, il faut…", o: ["payer l'entrée sur Internet.", "s'inscrire sur Internet.", "être étudiant."], a: 1, x: "« Elle est gratuite et ouverte à tous, mais il faut s'inscrire sur le site Internet. »" }
     ] },
 
   { id: "a2-s15-co3", level: "A2", sujet: 15, sec: "co", ex: 3, pts: 6,
@@ -344,7 +344,7 @@
       { q: "Les ateliers du mardi et du jeudi…", o: ["ont lieu le soir.", "coûtent 3 €.", "ont lieu l'après-midi."], a: 2, x: "« Le mardi et le jeudi, de 14 h à 16 h. »" },
       { q: "Quel atelier la femme choisit-elle ?", o: ["Celui du lundi soir.", "Celui du mardi après-midi.", "Celui du mercredi après-midi."], a: 0, x: "« Le lundi, de 19 h à 21 h. » « Parfait, je m'inscris ! » L'après-midi, elle travaille." },
       { q: "Pour son fils, il y a du sport…", o: ["le lundi soir.", "le mercredi après-midi.", "le jeudi."], a: 1, x: "« Le mercredi après-midi, il y a du basket et du judo. »" },
-      { q: "Pour inscrire son fils, elle doit apporter…", o: ["une photo et un certificat médical.", "10 € et une carte d'identité.", "le carnet de notes de l'école."], a: 0, x: "« Pour l'inscription, apportez une photo et un certificat médical. »" }
+      { q: "Pour inscrire son fils, elle doit apporter…", o: ["une photo et un certificat médical.", "10 € et la carte d'identité de son fils.", "le carnet de notes de l'école."], a: 0, x: "« Pour l'inscription, apportez une photo et un certificat médical. »" }
     ] },
 
   { id: "a2-s15-co4", level: "A2", sujet: 15, sec: "co", ex: 4, pts: 7,
@@ -356,7 +356,7 @@
       { q: "Dialogue 1 : que fait l'homme ?", audio: [["M", "Tu pourrais m'aider à porter le canapé ? Il est trop lourd pour moi tout seul."], ["F", "Oui, bien sûr, j'arrive !"]],
         o: ["Il vend un canapé.", "Il propose son aide.", "Il demande un service.", "Il achète un meuble."], a: 2, x: "Il dit : « Tu pourrais m'aider à porter le canapé ? »" },
       { q: "Dialogue 2 : que fait la femme ?", audio: [["F", "J'ai trouvé un travail dans un club de sport ! Je commence lundi, je suis tellement contente !"], ["M", "C'est génial, bravo !"]],
-        o: ["Elle cherche un travail.", "Elle est triste.", "Elle s'inscrit dans un club.", "Elle annonce une bonne nouvelle."], a: 3, x: "Elle dit : « J'ai trouvé un travail… je suis tellement contente ! »" },
+        o: ["Elle cherche un travail.", "Elle est triste.", "Elle s'inscrit dans un club de sport.", "Elle annonce une bonne nouvelle."], a: 3, x: "Elle dit : « J'ai trouvé un travail… je suis tellement contente ! »" },
       { q: "Dialogue 3 : que fait l'homme ?", audio: [["F", "On fait une randonnée dimanche. Tu viens avec nous ?"], ["M", "Oh oui, avec plaisir ! Je prépare des sandwichs."]],
         o: ["Il accepte la proposition.", "Il refuse la proposition.", "Il organise une randonnée.", "Il demande l'heure du départ."], a: 0, x: "Il dit : « Oh oui, avec plaisir ! »" },
       { q: "Dialogue 4 : que fait la femme ?", audio: [["F", "Excusez-moi, monsieur, votre musique est très forte et il est minuit. Je ne peux pas dormir."], ["M", "Oh, pardon, je baisse tout de suite."]],

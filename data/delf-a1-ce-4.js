@@ -14,7 +14,7 @@
       { q: "Si vous travaillez, Deniz…", o: ["prend un taxi", "prend la navette", "attend à l'aéroport"], a: 1, x: "« Si tu travailles, je prends la navette »." },
       { q: "Deniz veut visiter la vieille ville.", o: ["Vrai", "Faux"], a: 0, x: "« Je veux visiter la vieille ville »." },
       { q: "Deniz arrive à Lyon…", o: ["le mardi 16 avril", "le vendredi 12 avril", "le samedi 13 avril"], a: 1, x: "« J'arrive le vendredi 12 avril »." },
-      { q: "Deniz propose de vous apporter…", o: ["🧀 du fromage", "🌸 des fleurs", "🍬 des loukoums ou du thé"], a: 2, x: "« tu veux quoi d'Istanbul ? Des loukoums ou du thé ? »" }
+      { q: "Deniz propose de vous apporter…", o: ["🧀 du fromage et du vin", "🌸 des fleurs de son jardin", "🍬 des loukoums ou du thé"], a: 2, x: "« tu veux quoi d'Istanbul ? Des loukoums ou du thé ? »" }
     ] },
 
   { id: "a1-s16-ce2", level: "A1", sujet: 16, sec: "ce", ex: 2, pts: 6,
@@ -57,7 +57,7 @@
     questions: [
       { q: "Le vélo a…", o: ["1 an", "3 ans", "6 ans"], a: 1, x: "« Il a 3 ans et il est en très bon état. »" },
       { q: "Les pneus du vélo sont neufs.", o: ["Vrai", "Faux"], a: 0, x: "« Les freins et les pneus sont neufs. »" },
-      { q: "Avec le vélo, il y a…", o: ["un casque gratuit", "un siège pour enfant", "un panier, une lumière et un antivol"], a: 2, x: "« Avec le vélo : un panier, une lumière et un antivol. »" },
+      { q: "Avec le vélo, il y a…", o: ["un casque gratuit", "un siège pour enfant et un casque gratuit", "un panier, une lumière et un antivol"], a: 2, x: "« Avec le vélo : un panier, une lumière et un antivol. »" },
       { q: "Le vélo et le casque coûtent…", o: ["150 €", "170 €", "20 €"], a: 1, x: "« Prix : 150 €. Le casque est en plus : 20 € » : 150 + 20 = 170 €." },
       { q: "Karim vend son vélo parce qu'il…", o: ["part au Canada", "achète une voiture", "n'aime pas le vélo"], a: 0, x: "« Je pars au Canada le 30 juin, alors je vends vite ! »" },
       { q: "Pour acheter le vélo, vous…", o: ["📱 envoyez un SMS", "📧 écrivez un e-mail", "📞 téléphonez à Karim"], a: 2, x: "« Téléphone : 06 45 12 78 90 (Karim). Pas de SMS, merci. »" }
@@ -76,7 +76,7 @@
       { q: "Le matin, Camille…", o: ["lit sur la plage", "visite un village", "fait du surf"], a: 2, x: "« Le matin, on prend un cours de surf. »" },
       { q: "Camille surfe très bien.", o: ["Vrai", "Faux"], a: 1, x: "« C'est difficile, je tombe tout le temps ! »" },
       { q: "Le soir, elles mangent…", o: ["🍕 une pizza", "🐟 du poisson", "🥗 une salade"], a: 1, x: "« Le soir, on mange du poisson au port. »" },
-      { q: "Demain, elles vont…", o: ["visiter un village basque", "rentrer à la maison", "nager à la piscine"], a: 0, x: "« Demain, on va visiter un petit village basque. »" }
+      { q: "Demain, elles vont…", o: ["visiter un village basque", "rentrer à la maison", "nager à la piscine de l'hôtel"], a: 0, x: "« Demain, on va visiter un petit village basque. »" }
     ] },
 
   { id: "a1-s17-ce2", level: "A1", sujet: 17, sec: "ce", ex: 2, pts: 6,
@@ -121,7 +121,7 @@
       { q: "Le thème du carnaval, c'est…", o: ["🦸 les super-héros", "🌸 les fleurs", "🦁 les animaux"], a: 2, x: "« le thème, c'est « les animaux » »." },
       { q: "Le défilé arrive place Jean-Jaurès à…", o: ["14 h", "17 h", "17 h 30"], a: 1, x: "« arriver place Jean-Jaurès à 17 h »." },
       { q: "Il y a 4 groupes de musique.", o: ["Vrai", "Faux"], a: 0, x: "« Il y a 15 chars et 4 groupes de musique. »" },
-      { q: "À 17 h 30, on…", o: ["prend le tram", "brûle Monsieur Carnaval", "met un costume"], a: 1, x: "« À 17 h 30, on brûle Monsieur Carnaval »." },
+      { q: "À 17 h 30, on…", o: ["prend le tram", "brûle Monsieur Carnaval", "arrive place Jean-Jaurès"], a: 1, x: "« À 17 h 30, on brûle Monsieur Carnaval »." },
       { q: "Samedi après-midi, pour aller dans le centre-ville, vous prenez…", o: ["🚌 le bus", "🚗 la voiture", "🚋 le tram"], a: 2, x: "« le bus ne passe pas dans le centre-ville de 13 h à 19 h. Prenez le tram ! »" }
     ] },
 
@@ -135,7 +135,7 @@
     questions: [
       { q: "Thomas est…", o: ["votre voisin", "votre collègue", "votre cousin"], a: 1, x: "« C'est Thomas, du bureau. »" },
       { q: "Le cours de cuisine est…", o: ["jeudi soir", "jeudi midi", "demain midi"], a: 0, x: "« Jeudi soir, je fais un cours de cuisine italienne »." },
-      { q: "Au cours, on va préparer…", o: ["🍕 une pizza", "🥗 une salade", "🍝 des pâtes et un tiramisu"], a: 2, x: "« On va préparer des pâtes fraîches et un tiramisu. »" },
+      { q: "Au cours, on va préparer…", o: ["🍕 des pizzas et une glace", "🥗 une salade", "🍝 des pâtes et un tiramisu"], a: 2, x: "« On va préparer des pâtes fraîches et un tiramisu. »" },
       { q: "Le cours coûte…", o: ["30 €", "35 €", "53 €"], a: 1, x: "« Il coûte 35 € »." },
       { q: "Après le cours, on mange ensemble.", o: ["Vrai", "Faux"], a: 0, x: "« après, on mange tout ensemble ! »" },
       { q: "Vous devez apporter…", o: ["des pâtes", "un dessert", "un tablier"], a: 2, x: "« Pense à prendre un tablier. »" }
@@ -180,7 +180,7 @@
       body: "Bonjour à tous !\n\nDimanche 12 octobre, le club organise une randonnée dans le Vercors. Le parcours fait 14 km, avec 600 mètres de montée. Niveau : moyen.\n\nRendez-vous à 7 h 30 sur le parking du stade. On part en voiture : pensez au covoiturage !\n\nPrenez de bonnes chaussures, un pique-nique, 2 litres d'eau et un vêtement de pluie.\n\nOn rentre vers 18 h. La randonnée est gratuite pour les membres du club, 5 € pour les autres.\n\nInscription avant jeudi auprès de Sophie." },
     questions: [
       { q: "La randonnée fait…", o: ["6 km", "14 km", "12 km"], a: 1, x: "« Le parcours fait 14 km »." },
-      { q: "Le rendez-vous est…", o: ["sur le parking du stade", "dans le Vercors", "chez Sophie"], a: 0, x: "« Rendez-vous à 7 h 30 sur le parking du stade. »" },
+      { q: "Le rendez-vous est…", o: ["sur le parking du stade", "dans le Vercors", "devant la maison de Sophie"], a: 0, x: "« Rendez-vous à 7 h 30 sur le parking du stade. »" },
       { q: "Pour le déjeuner, vous apportez…", o: ["de l'argent pour le restaurant", "un vêtement de pluie", "un pique-nique"], a: 2, x: "« Prenez […] un pique-nique »." },
       { q: "Le retour est vers…", o: ["18 h", "7 h 30", "12 h"], a: 0, x: "« On rentre vers 18 h. »" },
       { q: "Votre amie n'est pas membre du club. Elle paie…", o: ["0 €", "5 €", "12 €"], a: 1, x: "« gratuite pour les membres du club, 5 € pour les autres »." },
@@ -195,7 +195,7 @@
     doc: { type: "email", from: "Léa", to: "Esin", subject: "Ma crémaillère",
       body: "Bonjour Esin,\n\nJ'habite dans mon nouvel appartement depuis un mois et je fais une petite fête : la crémaillère ! C'est samedi 22 novembre, à partir de 19 h.\n\nL'adresse : 8, place Carnot, 2e étage, porte à gauche. Le code de la porte, c'est 4521B.\n\nJe prépare des salades et des gâteaux. Tu peux apporter quelque chose à boire ? Ton mari et tes enfants sont aussi invités, bien sûr !\n\nDis-moi avant mercredi si tu viens.\n\nBisous,\nLéa" },
     questions: [
-      { q: "Léa fait une fête pour…", o: ["son anniversaire", "son nouvel appartement", "son nouveau travail"], a: 1, x: "« J'habite dans mon nouvel appartement depuis un mois et je fais une petite fête »." },
+      { q: "Léa fait une fête pour…", o: ["son anniversaire de mariage", "son nouvel appartement", "son nouveau travail"], a: 1, x: "« J'habite dans mon nouvel appartement depuis un mois et je fais une petite fête »." },
       { q: "La fête commence…", o: ["samedi à 19 h", "mercredi à 19 h", "samedi à 22 h"], a: 0, x: "« C'est samedi 22 novembre, à partir de 19 h. »" },
       { q: "Léa habite…", o: ["au 4e étage", "au rez-de-chaussée", "au 2e étage"], a: 2, x: "« 8, place Carnot, 2e étage »." },
       { q: "Léa vous demande d'apporter…", o: ["🥗 une salade", "🧃 quelque chose à boire", "🎂 un gâteau"], a: 1, x: "« Tu peux apporter quelque chose à boire ? »" },
@@ -212,7 +212,7 @@
     questions: [
       { q: "En janvier, le parc ferme à…", o: ["18 h", "21 h", "20 h"], a: 0, x: "« de 8 h à 18 h en hiver (octobre – mars) »." },
       { q: "Avec votre chien, vous pouvez aller dans l'aire de jeux.", o: ["Vrai", "Faux"], a: 1, x: "« Ils sont interdits dans l'aire de jeux. »" },
-      { q: "Les vélos peuvent rouler…", o: ["sur la pelouse", "partout", "sur les grandes allées"], a: 2, x: "« Les vélos sont autorisés seulement sur les grandes allées. »" },
+      { q: "Les vélos peuvent rouler…", o: ["sur la pelouse du parc", "partout", "sur les grandes allées"], a: 2, x: "« Les vélos sont autorisés seulement sur les grandes allées. »" },
       { q: "Sur la pelouse, vous pouvez…", o: ["faire un barbecue", "faire un pique-nique", "faire du vélo"], a: 1, x: "« Le pique-nique est autorisé sur la pelouse, mais le barbecue est interdit. »" },
       { q: "Les toilettes sont…", o: ["à côté du kiosque", "à l'entrée du parc", "dans l'aire de jeux"], a: 0, x: "« Toilettes gratuites à côté du kiosque. »" },
       { q: "En juillet, le parc ouvre à…", o: ["7 h", "8 h", "6 h"], a: 0, x: "« de 7 h à 21 h en été (avril – septembre) »." }
@@ -243,7 +243,7 @@
     questions: [
       { q: "Marc cherche quelqu'un pour…", o: ["🎾 jouer au tennis", "🏃 courir", "🗣️ apprendre l'anglais"], a: 0, x: "« je cherche un ou une partenaire pour jouer au tennis »." },
       { q: "Marc joue au tennis…", o: ["depuis un mois", "depuis cinq ans", "depuis 34 ans"], a: 1, x: "« Je joue depuis cinq ans »." },
-      { q: "Marc est libre…", o: ["le mardi matin", "le dimanche soir", "le mardi soir et le dimanche matin"], a: 2, x: "« Je suis libre le mardi soir après 19 h et le dimanche matin. »" },
+      { q: "Marc est libre…", o: ["le mardi matin et le dimanche soir", "le dimanche soir", "le mardi soir et le dimanche matin"], a: 2, x: "« Je suis libre le mardi soir après 19 h et le dimanche matin. »" },
       { q: "Vous devez payer le court de tennis.", o: ["Vrai", "Faux"], a: 1, x: "« Pour vous, le court est gratuit »." },
       { q: "Après le match, Marc propose de…", o: ["boire un verre", "manger au restaurant", "jouer encore"], a: 0, x: "« Après le match, on peut boire un verre »." },
       { q: "Pour contacter Marc, vous…", o: ["📞 téléphonez", "🏟️ allez au club", "📧 écrivez un e-mail"], a: 2, x: "« Écrivez-moi : marc.tennis@mail.fr »." }

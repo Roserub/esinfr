@@ -10,7 +10,7 @@
     questions: [
       { q: "Le cours commence à…", o: ["10 h", "12 h", "14 h"], a: 2, x: "« le cours ne commence pas à 10 h. Il commence à 14 h »." },
       { q: "Qu'est-ce qu'on prépare comme dessert ?", o: ["🍰 un gâteau au chocolat", "🥧 une tarte aux pommes", "🍦 une glace"], a: 1, x: "« pour le dessert, une tarte aux pommes »." },
-      { q: "Qu'est-ce que vous devez apporter ?", o: ["🧑‍🍳 un tablier", "🔪 un couteau", "🥚 des œufs"], a: 0, x: "« Apportez un tablier, s'il vous plaît. »" },
+      { q: "Qu'est-ce que vous devez apporter ?", o: ["🧑‍🍳 un tablier", "🔪 un grand couteau", "🥚 des œufs"], a: 0, x: "« Apportez un tablier, s'il vous plaît. »" },
       { q: "Le cours coûte…", o: ["25 €", "15 €", "52 €"], a: 0, x: "« Le cours coûte 25 €. »" }
     ] },
 
@@ -32,9 +32,9 @@
     help: { tr: "Radyo dinliyorsunuz. Soruları okuyun, kaydı dinleyin ve cevaplayın.", en: "You are listening to the radio. Read the questions, listen, then answer." },
     audio: [["M", "Une idée pour le week-end ! Le premier dimanche du mois, le musée des Beaux-Arts de Lyon est gratuit pour tout le monde. Ce dimanche, il est ouvert de 10 h à 18 h. À 15 h, il y a une visite pour les enfants. Le café du musée est ouvert, mais il n'est pas gratuit ! Il n'y a pas de parking : prenez le métro, station Hôtel de Ville."]],
     questions: [
-      { q: "Le musée est gratuit…", o: ["tous les dimanches", "le premier dimanche du mois", "tous les samedis"], a: 1, x: "« Le premier dimanche du mois, le musée des Beaux-Arts de Lyon est gratuit »." },
+      { q: "Le musée est gratuit…", o: ["tous les dimanches du mois", "le premier dimanche du mois", "tous les samedis"], a: 1, x: "« Le premier dimanche du mois, le musée des Beaux-Arts de Lyon est gratuit »." },
       { q: "Ce dimanche, le musée ouvre à…", o: ["15 h", "18 h", "10 h"], a: 2, x: "« il est ouvert de 10 h à 18 h » : il ouvre à 10 h." },
-      { q: "À 15 h, il y a…", o: ["👧 une visite pour les enfants", "🎵 un concert", "☕ un café gratuit"], a: 0, x: "« À 15 h, il y a une visite pour les enfants. » Le café n'est pas gratuit." },
+      { q: "À 15 h, il y a…", o: ["👧 une visite pour les enfants", "🎵 un concert", "☕ un café gratuit pour tous"], a: 0, x: "« À 15 h, il y a une visite pour les enfants. » Le café n'est pas gratuit." },
       { q: "Pour aller au musée, vous prenez…", o: ["🚗 la voiture", "🚲 le vélo", "🚇 le métro"], a: 2, x: "« Il n'y a pas de parking : prenez le métro »." }
     ] },
 
@@ -93,8 +93,8 @@
     audio: [["F", "Vous aimez danser ? La nouvelle école de danse Tempo ouvre le 15 septembre, 12, rue des Lilas. Il y a des cours de salsa, de hip-hop et de danse classique. Pour les enfants, les cours sont le mercredi après-midi. Pour les adultes, c'est le soir, à 19 h. Le premier cours est gratuit ! Après, c'est 30 € par mois."]],
     questions: [
       { q: "L'école de danse ouvre le…", o: ["12 septembre", "15 septembre", "19 septembre"], a: 1, x: "« La nouvelle école de danse Tempo ouvre le 15 septembre ». 12, c'est le numéro de la rue." },
-      { q: "Les cours pour les enfants sont…", o: ["le samedi matin", "le soir, à 19 h", "le mercredi après-midi"], a: 2, x: "« Pour les enfants, les cours sont le mercredi après-midi. » 19 h, c'est pour les adultes." },
-      { q: "Le premier cours coûte…", o: ["30 €", "rien, il est gratuit", "12 €"], a: 1, x: "« Le premier cours est gratuit ! Après, c'est 30 € par mois. »" },
+      { q: "Les cours pour les enfants sont…", o: ["le samedi après-midi", "le soir, à 19 h", "le mercredi après-midi"], a: 2, x: "« Pour les enfants, les cours sont le mercredi après-midi. » 19 h, c'est pour les adultes." },
+      { q: "Le premier cours coûte…", o: ["30 €, comme les autres cours", "rien, il est gratuit", "12 €"], a: 1, x: "« Le premier cours est gratuit ! Après, c'est 30 € par mois. »" },
       { q: "Quelle danse est à l'école Tempo ?", o: ["💃 la salsa", "🕺 le rock", "🎻 le tango"], a: 0, x: "« Il y a des cours de salsa, de hip-hop et de danse classique. »" }
     ] },
 
@@ -130,7 +130,7 @@
     questions: [
       { q: "Le rendez-vous est à quelle heure ?", o: ["7 h", "7 h 30", "4 h 30"], a: 1, x: "« Rendez-vous à 7 h 30 devant la gare »." },
       { q: "Où est le rendez-vous ?", o: ["🏢 au club", "⛰️ à la montagne", "🚉 devant la gare"], a: 2, x: "« Rendez-vous à 7 h 30 devant la gare, pas au club. »" },
-      { q: "Qu'est-ce que vous devez prendre ?", o: ["🥾 de bonnes chaussures", "☂️ un parapluie", "🧢 une casquette"], a: 0, x: "« Prends de bonnes chaussures, de l'eau et un pique-nique. »" },
+      { q: "Qu'est-ce que vous devez prendre ?", o: ["🥾 de bonnes chaussures", "☂️ un parapluie", "🧢 une casquette pour le soleil"], a: 0, x: "« Prends de bonnes chaussures, de l'eau et un pique-nique. »" },
       { q: "Le matin, quel temps va-t-il faire ?", o: ["🔥 très chaud", "🌧️ il va pleuvoir", "🥶 un peu froid"], a: 2, x: "« Il va faire beau, mais un peu froid le matin »." }
     ] },
 
@@ -154,7 +154,7 @@
     questions: [
       { q: "Quelle est l'adresse du restaurant ?", o: ["17, place Kléber", "7, place Kléber", "7, rue Kléber"], a: 1, x: "« Le restaurant turc Anatolie ouvre ses portes, 7, place Kléber. »" },
       { q: "Le menu du midi coûte…", o: ["14 €", "7 €", "40 €"], a: 0, x: "« Le midi, le menu coûte 14 € ». 7, c'est le numéro de la place." },
-      { q: "Dans le menu du midi, il y a…", o: ["une entrée et un plat", "un plat et un café", "un plat, un dessert et un thé"], a: 2, x: "« le menu coûte 14 € : un plat, un dessert et un thé »." },
+      { q: "Dans le menu du midi, il y a…", o: ["une entrée, un plat et un café", "un plat et un café", "un plat, un dessert et un thé"], a: 2, x: "« le menu coûte 14 € : un plat, un dessert et un thé »." },
       { q: "Le restaurant est fermé…", o: ["le dimanche", "le lundi", "le samedi"], a: 1, x: "« Le restaurant est ouvert tous les jours, sauf le lundi. »" }
     ] },
 
@@ -203,7 +203,7 @@
       { q: "Les nouveaux horaires commencent…", o: ["le 1er mars", "le 1er mai", "le 2 mars"], a: 0, x: "« à partir du 1er mars, la mairie a de nouveaux horaires »." },
       { q: "Le samedi, la mairie est ouverte…", o: ["toute la journée", "l'après-midi", "le matin"], a: 2, x: "« et le samedi matin, de 9 h à 12 h »." },
       { q: "Du lundi au vendredi, la mairie ferme à…", o: ["12 h", "17 h", "18 h"], a: 1, x: "« du lundi au vendredi, de 8 h 30 à 17 h »." },
-      { q: "Pour un passeport, vous devez…", o: ["📞 téléphoner à la mairie", "💻 prendre rendez-vous sur Internet", "🏢 aller au 2e étage"], a: 1, x: "« Pour une carte d'identité ou un passeport, prenez rendez-vous sur Internet. » Le 2e étage, c'est pour les mariages." }
+      { q: "Pour un passeport, vous devez…", o: ["📞 téléphoner à la mairie", "💻 prendre rendez-vous sur Internet", "🏢 aller au 2e étage de la mairie"], a: 1, x: "« Pour une carte d'identité ou un passeport, prenez rendez-vous sur Internet. » Le 2e étage, c'est pour les mariages." }
     ] },
 
   { id: "a1-s19-co3", level: "A1", sujet: 19, sec: "co", ex: 3, pts: 6,
@@ -215,7 +215,7 @@
       { q: "Le défilé part à…", o: ["14 h 30", "12 h", "21 h"], a: 0, x: "« Le défilé part à 14 h 30 de la place Masséna. »" },
       { q: "Pour les enfants, le carnaval coûte…", o: ["12 €", "rien, c'est gratuit", "14,30 €"], a: 1, x: "« Pour les enfants, c'est gratuit. » 12 €, c'est pour les adultes." },
       { q: "Pour aller au carnaval, on vous conseille…", o: ["🚗 la voiture", "🚲 le vélo", "🚋 le tram"], a: 2, x: "« prenez le tram, pas la voiture ! »" },
-      { q: "À 21 h, il y a…", o: ["🎆 un feu d'artifice", "🎤 un concert", "💃 des danseurs"], a: 0, x: "« le soir, à 21 h, il y a un feu d'artifice »." }
+      { q: "À 21 h, il y a…", o: ["🎆 un feu d'artifice", "🎤 un concert", "💃 un spectacle de danse"], a: 0, x: "« le soir, à 21 h, il y a un feu d'artifice »." }
     ] },
 
   { id: "a1-s19-co4", level: "A1", sujet: 19, sec: "co", ex: 4, pts: 7,
@@ -249,9 +249,9 @@
     audio: [["M", "Bonjour, ici la ferme du Moulin. C'est pour votre visite de mercredi avec vos 2 enfants. La visite commence à 10 h et finit à 12 h. Les enfants vont donner à manger aux chèvres et aux lapins. Ils vont aussi faire du fromage ! Prenez des bottes, s'il vous plaît. C'est 6 € par enfant, et c'est gratuit pour les parents. À mercredi !"]],
     questions: [
       { q: "La visite finit à…", o: ["10 h", "12 h", "14 h"], a: 1, x: "« La visite commence à 10 h et finit à 12 h. »" },
-      { q: "Les enfants vont donner à manger…", o: ["🐄 aux vaches", "🐔 aux poules", "🐐 aux chèvres et aux lapins"], a: 2, x: "« Les enfants vont donner à manger aux chèvres et aux lapins. »" },
+      { q: "Les enfants vont donner à manger…", o: ["🐄 aux vaches et aux poules", "🐔 aux poules", "🐐 aux chèvres et aux lapins"], a: 2, x: "« Les enfants vont donner à manger aux chèvres et aux lapins. »" },
       { q: "Qu'est-ce que les enfants vont faire aussi ?", o: ["🧀 du fromage", "🍞 du pain", "🍦 de la glace"], a: 0, x: "« Ils vont aussi faire du fromage ! »" },
-      { q: "Pour vous, le parent, la visite coûte…", o: ["6 €", "12 €", "rien, c'est gratuit"], a: 2, x: "« C'est 6 € par enfant, et c'est gratuit pour les parents. »" }
+      { q: "Pour vous, le parent, la visite coûte…", o: ["6 €, comme un enfant", "12 €", "rien, c'est gratuit"], a: 2, x: "« C'est 6 € par enfant, et c'est gratuit pour les parents. »" }
     ] },
 
   { id: "a1-s20-co2", level: "A1", sujet: 20, sec: "co", ex: 2, pts: 6,
