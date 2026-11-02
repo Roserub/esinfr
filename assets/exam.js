@@ -18,7 +18,6 @@
     q.a = pm.indexOf(q.a); q.o = o; q.shuffled = true;
   });
   const HAS_TR = {}; for (const it of D) if ((it.questions || []).some(q => q.xtr)) HAS_TR[it.level + "-" + it.sujet] = true;
-  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
 
   const A = () => window.APP;
   const t = (k, v) => A().t(k, v), esc = s => A().esc(s), lang = () => A().lang();
@@ -347,16 +346,17 @@
           const now = i === c.pi && !done, mark = c.ok[i] ? (c.used[i] ? "½" : "✓") : "";
           return `<li class="${now ? "now" : c.ok[i] ? "done" : ""}">
             <div class="bubble"><span class="who">${it.kind === "echange" ? "🃏" : "🧑‍🏫"}</span><p lang="fr">${esc(it.kind === "echange" ? (it.cards[i] || p.q) : p.q)} ${it.kind === "entretien" ? A().speakBtn(p.q) : ""} <b>${mark}</b></p></div>
-            ${now ? `<div class="row wrap">${SR ? `<button class="btn small ghost" data-dx="mic" data-i="${i}">${esc(t("dx.mic"))}</button>` : ""}<button class="btn small ghost" data-dx="example" data-i="${i}">${esc(t("dx.example"))}</button><button class="btn small" data-dx="answered" data-i="${i}">${esc(t("dx.answered"))}</button></div>` : ""}
-            ${c.heard[i] ? `<p class="muted small" lang="fr">${esc(t("dx.heard", { t: c.heard[i] }))}</p>` : ""}
+            ${now ? `${window.VOICE.view({ id: "dx-" + RUN.start + "-" + it.id + "-" + i, compact: true, label: t("vc.answer"), onResult: r => { c.heard[i] = r.heard; } })}
+              <div class="row wrap"><button class="btn small ghost" data-dx="example" data-i="${i}">${esc(t("dx.example"))}</button><button class="btn small" data-dx="answered" data-i="${i}">${esc(t("dx.answered"))}</button></div>` : ""}
+            ${!now && c.heard[i] ? `<p class="muted small" lang="fr">${esc(t("dx.heard", { t: c.heard[i] }))}</p>` : ""}
             ${c.used[i] || (c.ok[i] && done) ? `<p class="dx-m" lang="fr">💡 ${esc(p.m)} ${A().speakBtn(p.m)}</p>` : ""}
           </li>`;
         }).join("")}</ol>`;
     }
     if (it.kind === "monologue") {
       return `<div class="card doc" lang="fr"><h2 class="doc-title">${esc(it.topic)}</h2><ul>${it.hints.map(h => `<li>${esc(h)}</li>`).join("")}</ul></div>
-        <div class="row wrap">${SR ? `<button class="btn small ghost" data-dx="mic" data-i="mono">${esc(t("dx.mic"))}</button>` : ""}<button class="btn small ghost" data-dx="countdown" data-s="60">⏳ ${esc(t("dx.prep"))}</button><button class="btn small ghost" data-dx="countdown" data-s="120">🗣️ ${esc(t("dx.speak2"))}</button><span class="dx-cd" id="dx-cd" aria-live="polite"></span></div>
-        ${c.heard.mono ? `<p class="muted small" lang="fr">${esc(t("dx.heard", { t: c.heard.mono }))}</p>` : ""}
+        ${window.VOICE.view({ id: "dx-" + RUN.start + "-" + it.id + "-mono", compact: true, continuous: true, label: t("vc.answer"), onResult: r => { c.heard.mono = r.heard; covered(it, r.heard).forEach((f, i) => { if (f) c.ticks[i] = true; }); keepScroll(() => {}); } })}
+        <div class="row wrap"><button class="btn small ghost" data-dx="countdown" data-s="60">⏳ ${esc(t("dx.prep"))}</button><button class="btn small ghost" data-dx="countdown" data-s="120">🗣️ ${esc(t("dx.speak2"))}</button><span class="dx-cd" id="dx-cd" aria-live="polite"></span></div>
         <div class="card"><p class="eyebrow">${esc(t("dx.tick"))}</p>${mustList(it, it.must.map((m, i) => !!c.ticks[i]), !c.checked)}</div>
         ${!c.checked ? `<button class="btn" data-dx="checkpo">${esc(t("dx.showModel"))}</button>` : `<div class="card dx-model"><p class="eyebrow">${esc(t("dx.model"))} ${A().speakBtn(model)}</p>${para(model)}</div>${selfBtns(c, true)}`}`;
     }
@@ -487,7 +487,6 @@
         if (c.pi >= it.prompts.length) { saveScore(it, poScore(it, c)); keepScroll(() => {}); return; }
         keepScroll(() => {}); if (it.kind === "entretien") A().speak(it.prompts[c.pi].q); return;
       }
-      case "mic": return listen(el, d.i);
       case "countdown": return countdown(+d.s);
       case "dlg-next": {
         c.line++; const l = it.model[c.line]; keepScroll(() => {});
@@ -506,21 +505,6 @@
     }
   }
   const $$ = s => Array.from(document.querySelectorAll(s));
-  function listen(btn, key) {
-    if (!SR) return; const c = curState();
-    const r = new SR(); r.lang = "fr-FR"; r.interimResults = false; r.continuous = key === "mono";
-    btn.classList.add("on"); btn.textContent = t("dx.listening");
-    let heard = "";
-    r.onresult = e => { heard = Array.from(e.results).map(x => x[0].transcript).join(" "); };
-    r.onerror = () => {};
-    r.onend = () => {
-      const it = curItem(); if (!it) return;
-      c.heard[key] = heard || "…";
-      if (key === "mono" && heard) covered(it, heard).forEach((f, i) => { if (f) c.ticks[i] = true; });
-      keepScroll(() => {});
-    };
-    try { r.start(); } catch (e) { r.onend(); }
-  }
   let CD = null;
   function countdown(s) {
     clearInterval(CD); const end = Date.now() + s * 1000;
