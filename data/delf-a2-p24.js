@@ -56,7 +56,7 @@
       { q: "Extrait 1 : selon ce conseil, il ne faut pas boire de café…", o: ["le matin.", "après 16 heures.", "pendant les repas."], a: 1,
         x: "« Évitez le café après 16 heures. »",
         xtr: "« évitez le café après 16 heures » = saat 16'dan sonra kahveden kaçının. Sabah ve yemek sırasında kahveden söz edilmiyor." },
-      { q: "Extrait 1 : le soir, qu'est-ce que la radio conseille de faire ?", o: ["📱 regarder son téléphone au lit", "🏃 courir dans la rue", "📖 lire un livre dans un fauteuil"], a: 2,
+      { q: "Extrait 1 : le soir, qu'est-ce que la radio conseille de faire ?", o: ["📱 regarder son téléphone au lit", "🏃 courir dans la rue", "📖 lire un livre"], a: 2,
         x: "« Le soir, lisez plutôt un livre ou buvez une tisane. » Il faut éteindre son téléphone.",
         xtr: "« Le soir, lisez plutôt un livre » deniyor. Tam tersine, telefonu yatmadan bir saat önce kapatmak gerekir; koşmaktan söz edilmiyor." },
       { q: "Extrait 2 : pendant la semaine du goût, des cuisiniers vont…", o: ["dans les écoles.", "dans les hôpitaux.", "dans les supermarchés."], a: 0,

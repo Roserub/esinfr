@@ -132,7 +132,7 @@
     consigne: "Vous êtes en vacances à Cauterets, dans les Pyrénées. Vous lisez ces annonces à l'office de tourisme. Vos amis et votre famille cherchent une activité. Associez chaque personne à la bonne annonce. Attention : deux personnes ne correspondent à aucune annonce.",
     help: { tr: "Pireneler'deki Cauterets'de tatildesiniz. Turizm ofisinde bu ilanları okuyorsunuz. Arkadaşlarınız ve aileniz bir etkinlik arıyor. Her kişiyi doğru ilanla eşleştirin. Dikkat: iki kişi hiçbir ilana uymuyor.", en: "You are on holiday in the Pyrenees. You read these ads at the tourist office. Match each person with the right activity. Two people match no ad." },
     doc: { type: "annonce", title: "Cet été, à la montagne",
-      body: "A. Avec un guide de montagne, montez au sommet du Pic du Lion (3 100 m) ! Sortie de 2 jours, avec une nuit en refuge. Pour les randonneurs en très bonne forme. Matériel fourni. 180 €.\n\nB. Balade facile autour du lac, en famille, avec une animatrice du parc national. 2 heures, chemin plat, poussettes acceptées. Gratuit, le mercredi matin.\n\nC. Altitude Sports loue tout le matériel de randonnée : chaussures, bâtons, sacs à dos, tentes. À la journée ou à la semaine.\n\nD. Vous vous perdez souvent ? Cours de lecture de carte et d'utilisation de la boussole. Une soirée, à la Maison de la montagne. 15 €.\n\nE. Randonnée avec des ânes : l'âne porte vos sacs, vous marchez léger ! Idéal avec des enfants. Une demi-journée, 45 € par âne.\n\nF. Nuit des étoiles : observez le ciel en montagne avec un astronome, de 22 h à minuit. Apportez un vêtement chaud et une lampe." },
+      body: "A. Avec un guide de montagne, montez au sommet du Pic du Lion (3 100 m) ! Sortie de 2 jours, avec une nuit en refuge. Pour les randonneurs en très bonne forme. Matériel fourni. 180 €.\n\nB. Balade facile autour du lac, en famille, avec une animatrice du parc national. 2 heures, chemin plat, poussettes acceptées. Gratuit, le mercredi matin.\n\nC. Altitude Sports loue tout le matériel de randonnée : chaussures, bâtons, sacs à dos, tentes. À la journée ou à la semaine. Pas de location de vélos.\n\nD. Vous vous perdez souvent ? Cours de lecture de carte et d'utilisation de la boussole. Une soirée, à la Maison de la montagne. 15 €.\n\nE. Randonnée avec des ânes : l'âne porte vos sacs, vous marchez léger ! Idéal avec des enfants. Une demi-journée, 45 € par âne.\n\nF. Nuit des étoiles : observez le ciel en montagne avec un astronome, de 22 h à minuit. Apportez un vêtement chaud et une lampe." },
     questions: [
       { q: "Les enfants de Mme Roche (6 et 8 ans) n'aiment pas porter leur sac à dos, mais ils adorent les animaux.", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D", "Annonce E", "Annonce F", "Aucune annonce"], a: 4,
         x: "Annonce E : « l'âne porte vos sacs… Idéal avec des enfants ».",
@@ -156,8 +156,8 @@
         x: "Aucune annonce : il n'y a pas de parapente dans les annonces.",
         xtr: "Yamaç paraşütü (« parapente ») ilanı yok. F'de gökyüzüne bakılıyor ama uçulmuyor!" },
       { q: "Lina voudrait louer un VTT pour faire du vélo en montagne.", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D", "Annonce E", "Annonce F", "Aucune annonce"], a: 6,
-        x: "Aucune annonce : Altitude Sports (annonce C) loue du matériel de randonnée, pas des vélos.",
-        xtr: "Tuzak: C ilanında kiralama var ama sadece yürüyüş malzemesi (ayakkabı, baton, çanta, çadır); dağ bisikleti (« VTT ») yok." }
+        x: "Aucune annonce : Altitude Sports (annonce C) loue du matériel de randonnée : « Pas de location de vélos. »",
+        xtr: "Tuzak: C ilanında kiralama var ama sadece yürüyüş malzemesi (ayakkabı, baton, çanta, çadır); ilanda açıkça « Pas de location de vélos » yazıyor: dağ bisikleti (« VTT ») yok." }
     ] },
 
   { id: "a2-s30-ce2", level: "A2", sujet: 30, sec: "ce", ex: 2, pts: 6,

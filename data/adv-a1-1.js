@@ -124,11 +124,11 @@
            ] },
       c2: { say: [["F", "Le carnet, c'est 16 €. Vous avez moins de 26 ans ? Il y a un tarif jeune."]],
            choices: [
-             { fr: "Oui, j'ai 24 ans.", tr: "Evet, 24 yaşındayım.", en: "Yes, I'm 24.", ok: true, go: "d" },
-             { fr: "Oui, je suis 24 ans.", tr: "Evet, ben 24 yaşım.", en: "Yes, I am 24 years.", ok: false,
-               fb: { fr: "Le piège classique ! En français, on « a » son âge : « j'ai 24 ans ». (Ce n'est pas comme « I am » 😉)", tr: "Klasik tuzak! Fransızcada yaş « sahip olunur »: « j'ai 24 ans ». (İngilizcedeki « I am » gibi değil 😉)", en: "The classic trap! In French you « have » your age: « j'ai 24 ans ». (Not like « I am » 😉)" } },
+             { fr: "Non, j'ai 30 ans.", tr: "Hayır, 30 yaşındayım.", en: "No, I'm 30.", ok: true, go: "d" },
+             { fr: "Non, je suis 30 ans.", tr: "Hayır, ben 30 yaşım.", en: "No, I am 30 years.", ok: false,
+               fb: { fr: "Le piège classique ! En français, on « a » son âge : « j'ai 30 ans ». (Ce n'est pas comme « I am » 😉)", tr: "Klasik tuzak! Fransızcada yaş « sahip olunur »: « j'ai 30 ans ». (İngilizcedeki « I am » gibi değil 😉)", en: "The classic trap! In French you « have » your age: « j'ai 30 ans ». (Not like « I am » 😉)" } },
              { fr: "Non, j'ai 16 €.", tr: "Hayır, 16 eurom var.", en: "No, I have 16 euros.", ok: false,
-               fb: { fr: "Elle parle de votre âge, pas de votre argent 💶😄. Dites « oui, j'ai … ans ».", tr: "Paranızı değil, yaşınızı soruyor 💶😄. « Oui, j'ai … ans » deyin.", en: "She's asking your age, not your money 💶😄. Say « oui, j'ai … ans »." } }
+               fb: { fr: "Elle parle de votre âge, pas de votre argent 💶😄. Dites « non, j'ai … ans ».", tr: "Paranızı değil, yaşınızı soruyor 💶😄. « Non, j'ai … ans » deyin.", en: "She's asking your age, not your money 💶😄. Say « non, j'ai … ans »." } }
            ] },
       d: { scene: { fr: "Vous avez votre ticket. Maintenant, vous voulez aller à l'arrêt Bellevue.", tr: "Biletiniz elinizde. Şimdi Bellevue durağına gitmek istiyorsunuz.", en: "You have your ticket. Now you want to go to the Bellevue stop." },
            say: [["F", "Voilà, madame ! Vous avez besoin d'autre chose ?"]],

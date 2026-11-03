@@ -274,7 +274,7 @@
       { c: "Parler des collègues", kw: ["collègues", "collègue", "collegue", "équipe", "equipe", "chef", "cheffe", "patron", "patronne"] },
       { c: "Dire ce que vous aimez", kw: ["j'aime", "j'adore", "intéressant", "interessant", "contente", "content", "super", "génial", "genial"] }
     ],
-    model: "Salut Inès,\nJ'ai un nouveau travail ! Je suis kiné dans un centre de rééducation à Nantes. Je travaille du lundi au vendredi, de 8 heures à 16 heures. Mes collègues sont très sympas et ma cheffe est gentille. J'aime beaucoup mon travail : j'aide des sportifs après une blessure. Je suis contente !\nBisous,\nEsin" },
+    model: "Salut Inès,\nJ'ai un nouveau travail ! Je travaille à l'accueil d'une salle de sport à Nantes, du lundi au vendredi, de 8 heures à 13 heures. Mes collègues sont très sympas et ma cheffe est gentille. J'aime beaucoup mon travail : je parle avec les sportifs et je pratique mon français. Je suis contente !\nBisous,\nEsin" },
 
   { id: "a1-s20-pe1", level: "A1", sujet: 20, sec: "pe", ex: 1, pts: 10, kind: "form",
     title: "Inscription à une course solidaire",

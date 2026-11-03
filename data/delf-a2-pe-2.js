@@ -138,8 +138,8 @@
     model: "Samedi dernier, j'ai participé à la collecte de la banque alimentaire. Avec cinq autres bénévoles, j'étais à l'entrée d'un supermarché de mon quartier. J'ai accueilli les clients et j'ai expliqué la collecte. Ensuite, nous avons trié les pâtes, le riz et les conserves dans des cartons. J'ai rencontré des retraités et des étudiants très sympathiques. Le soir, j'étais fatiguée mais heureuse : je me suis sentie utile et j'ai beaucoup parlé français !" },
   { id: "a2-s16-pe2", level: "A2", sujet: 16, sec: "pe", ex: 2, pts: 12, kind: "text",
     title: "Prévenir d'un retard",
-    consigne: "Vous travaillez dans un cabinet de kinésithérapie. Votre collègue Julien vous écrit : « Petit rappel : demain, réunion d'équipe à 8 h 30, puis tes patients à partir de 9 h 15. » Demain matin, vous avez un rendez-vous important. Vous lui répondez : vous l'informez de votre retard, vous expliquez pourquoi, vous dites à quelle heure vous arriverez et vous lui demandez un service. (60 mots minimum)",
-    help: { tr: "Bir fizyoterapi kliniğinde çalışıyorsunuz. İş arkadaşınız Julien size yazıyor: « Küçük bir hatırlatma: yarın 8.30'da ekip toplantısı, sonra 9.15'ten itibaren hastaların. » Yarın sabah önemli bir randevunuz var. Ona cevap verin: geç kalacağınızı bildirin, nedenini açıklayın, saat kaçta geleceğinizi söyleyin ve ondan bir yardım isteyin. (En az 60 kelime)", en: "You work in a physiotherapy practice. Your colleague Julien writes: « Quick reminder: tomorrow, team meeting at 8:30, then your patients from 9:15. » Tomorrow morning you have an important appointment. Reply: tell him you will be late, explain why, say what time you will arrive and ask him a favour. (60 words minimum)" },
+    consigne: "Vous travaillez à l'accueil d'une salle de sport. Votre collègue Julien vous écrit : « Petit rappel : demain, réunion d'équipe à 8 h 30, puis tu ouvres l'accueil à 9 h 15. » Demain matin, vous avez un rendez-vous important. Vous lui répondez : vous l'informez de votre retard, vous expliquez pourquoi, vous dites à quelle heure vous arriverez et vous lui demandez un service. (60 mots minimum)",
+    help: { tr: "Bir spor salonunun resepsiyonunda çalışıyorsunuz. İş arkadaşınız Julien size yazıyor: « Küçük bir hatırlatma: yarın 8.30'da ekip toplantısı, sonra 9.15'te resepsiyonu sen açıyorsun. » Yarın sabah önemli bir randevunuz var. Ona cevap verin: geç kalacağınızı bildirin, nedenini açıklayın, saat kaçta geleceğinizi söyleyin ve ondan bir yardım isteyin. (En az 60 kelime)", en: "You work at the front desk of a gym. Your colleague Julien writes: « Quick reminder: tomorrow, team meeting at 8:30, then you open the front desk at 9:15. » Tomorrow morning you have an important appointment. Reply: tell him you will be late, explain why, say what time you will arrive and ask him a favour. (60 words minimum)" },
     min: 60,
     must: [
       { c: "Informer de votre retard", kw: ["en retard", "retard", "j'arriverai", "arriverai", "plus tard"] },
@@ -147,7 +147,7 @@
       { c: "Dire à quelle heure vous arriverez", kw: ["vers", "heures", "à 10", "10 h", "avant midi"] },
       { c: "Demander un service", kw: ["est-ce que tu pourrais", "pourrais-tu", "peux-tu", "tu peux", "prévenir", "déplacer", "merci"] }
     ],
-    model: "Bonjour Julien,\nMerci pour le rappel. Malheureusement, je serai en retard demain matin. J'ai un rendez-vous à la préfecture à 8 heures pour mon titre de séjour et je ne peux pas le changer. Je pense que j'arriverai au cabinet vers 10 heures. Je suis désolée de manquer la réunion. Est-ce que tu pourrais prévenir mon patient de 9 h 15 et déplacer son rendez-vous à 11 heures ? Merci beaucoup !\nEsin" },
+    model: "Bonjour Julien,\nMerci pour le rappel. Malheureusement, je serai en retard demain matin. J'ai un rendez-vous à la préfecture à 8 heures pour mon titre de séjour et je ne peux pas le changer. Je pense que j'arriverai à la salle vers 10 heures. Je suis désolée de manquer la réunion. Est-ce que tu pourrais ouvrir l'accueil à ma place à 9 h 15 et prévenir notre cheffe ? Merci beaucoup !\nEsin" },
 
   { id: "a2-s17-pe1", level: "A2", sujet: 17, sec: "pe", ex: 1, pts: 13, kind: "text",
     title: "Ma première journée de ski",
@@ -222,7 +222,7 @@
       { c: "Proposer un jour et un lieu", kw: ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche", "café", "médiathèque", "on pourrait"] },
       { c: "Terminer le message poliment", kw: ["à bientôt", "bonne journée", "cordialement", "votre réponse", "bises", "merci"] }
     ],
-    model: "Bonjour Hugo,\nJe m'appelle Esin, j'ai 29 ans et je suis turque. J'habite en France depuis six mois et je suis kinésithérapeute. Votre annonce m'intéresse beaucoup : je voudrais pratiquer le français à l'oral, parce que je parle encore lentement. Et moi, je peux vous aider en turc avec plaisir ! Est-ce que vous êtes libre le mercredi soir ? On pourrait se retrouver au café de la gare vers 18 h 30.\nÀ bientôt,\nEsin" },
+    model: "Bonjour Hugo,\nJe m'appelle Esin, j'ai 30 ans et je suis turque. J'habite en France depuis un an et je suis kinésithérapeute. Votre annonce m'intéresse beaucoup : je voudrais pratiquer le français à l'oral, parce que je parle encore lentement. Et moi, je peux vous aider en turc avec plaisir ! Est-ce que vous êtes libre le mercredi soir ? On pourrait se retrouver au café de la gare vers 18 h 30.\nÀ bientôt,\nEsin" },
 
   { id: "a2-s20-pe1", level: "A2", sujet: 20, sec: "pe", ex: 1, pts: 13, kind: "text",
     title: "La visite de mes parents",
@@ -235,7 +235,7 @@
       { c: "Parler d'un moment particulier", kw: ["moment préféré", "préféré", "moment", "traduit", "surprise", "dîner"] },
       { c: "Dire ce que vous avez ressenti", kw: ["émue", "ému", "triste", "heureuse", "heureux", "contente", "content", "c'était"] }
     ],
-    model: "Le mois dernier, mes parents sont venus d'Istanbul pour une semaine. Je suis allée les chercher à l'aéroport et j'étais très émue. Je leur ai montré ma ville, mon appartement et le cabinet où je travaille. Nous avons visité la vieille ville et nous sommes allés au marché le dimanche. Mon père ne parle pas français, alors j'ai tout traduit ! Mon moment préféré, c'était notre dîner au bord du lac. Quand ils sont partis, j'étais un peu triste." },
+    model: "Le mois dernier, mes parents sont venus d'Istanbul pour une semaine. Je suis allée les chercher à l'aéroport et j'étais très émue. Je leur ai montré ma ville, notre appartement et l'école où j'apprends le français. Nous avons visité la vieille ville et nous sommes allés au marché le dimanche. Mon père ne parle pas français, alors j'ai tout traduit ! Mon moment préféré, c'était notre dîner au bord du lac. Quand ils sont partis, j'étais un peu triste." },
   { id: "a2-s20-pe2", level: "A2", sujet: 20, sec: "pe", ex: 2, pts: 12, kind: "text",
     title: "Remercier pour un week-end",
     consigne: "Vous avez passé le week-end à la campagne chez les parents de votre amie Margaux. Margaux vous écrit : « Mes parents ont été très contents de te recevoir ! Tu peux leur écrire un petit mot, ça leur fera plaisir. » Vous écrivez un e-mail à M. et Mme Dubois : vous les remerciez, vous dites ce que vous avez aimé et vous les invitez à votre tour. (60 mots minimum)",

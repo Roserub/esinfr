@@ -45,8 +45,8 @@
     audio: [],
     questions: [
       { q: "Dialogue 1 : où sont ces personnes ?",
-        audio: [["F", "Bonjour, je voudrais envoyer ce colis en Turquie, à Izmir."], ["M", "Bien sûr. Mettez-le sur la balance, s'il vous plaît. Ça fait 24,50 €."]],
-        o: ["🧁 à la pâtisserie", "📚 à la bibliothèque", "🦁 au zoo", "📮 à la poste"], a: 3, x: "« Je voudrais envoyer ce colis en Turquie » : on est à la poste." },
+        audio: [["F", "Bonjour, je viens chercher un colis. Voilà ma carte d'identité."], ["M", "Merci, madame. Signez ici, s'il vous plaît… Voilà votre colis !"]],
+        o: ["🧁 à la pâtisserie", "📚 à la bibliothèque", "🦁 au zoo", "📮 à la poste"], a: 3, x: "« je viens chercher un colis », « Voilà votre colis » : on est à la poste." },
       { q: "Dialogue 2 : où sont ces personnes ?",
         audio: [["M", "Bonjour, un éclair au chocolat et 2 tartelettes aux fraises, s'il vous plaît."], ["F", "Voilà, monsieur. Ça fait 9,80 €."]],
         o: ["🧁 à la pâtisserie", "📮 à la poste", "🚲 à la location de vélos", "📚 à la bibliothèque"], a: 0, x: "« un éclair au chocolat et 2 tartelettes aux fraises » : on est à la pâtisserie." },

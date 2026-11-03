@@ -134,7 +134,7 @@
       { q: "Le lundi, le hammam est…", o: ["fermé", "ouvert de 11 h à 21 h", "réservé aux femmes"], a: 0,
         x: "« Ouvert du mardi au dimanche… Fermé le lundi. »",
         xtr: "« Fermé le lundi » = pazartesi kapalı. Kadınlara ayrılan gün çarşamba (mercredi)." },
-      { q: "Le mercredi matin, qui peut aller au hammam ?", o: ["les hommes", "les femmes", "les enfants"], a: 1,
+      { q: "Le mercredi, de 11 h à 15 h, qui peut aller au hammam ?", o: ["les hommes", "les femmes", "les enfants"], a: 1,
         x: "« Le mercredi, de 11 h à 15 h : réservé aux femmes. »",
         xtr: "« Réservé aux femmes » = sadece kadınlara ayrılmış. Çocuklar 12 yaşından küçükse hiç giremiyor." },
       { q: "À l'accueil, on vous donne…", o: ["🩱 un maillot de bain", "📱 un casier pour le téléphone", "💧 une bouteille d'eau"], a: 2,

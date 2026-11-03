@@ -59,7 +59,7 @@
       { c: "Expliquer pourquoi", kw: ["parce que", "car", "je suis malade", "je travaille", "je dois", "j'ai un", "j'ai rendez-vous", "travailler", "malade"] },
       { c: "Proposer un autre jour", kw: ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "dimanche", "demain", "semaine prochaine", "un autre jour", "tu es libre", "on peut"] }
     ],
-    model: "Salut Claire,\nJe suis désolée, je ne peux pas aller au cinéma avec toi samedi. Mon chef m'appelle : je dois travailler samedi après-midi au cabinet. On peut aller voir le film dimanche soir ? Ou mercredi prochain ? Tu es libre ? Réponds-moi vite !\nBisous,\nEsin" },
+    model: "Salut Claire,\nJe suis désolée, je ne peux pas aller au cinéma avec toi samedi. Mon chef m'appelle : je dois travailler samedi après-midi à la salle de sport. On peut aller voir le film dimanche soir ? Ou mercredi prochain ? Tu es libre ? Réponds-moi vite !\nBisous,\nEsin" },
 
   { id: "a1-s03-pe1", level: "A1", sujet: 3, sec: "pe", ex: 1, pts: 10, kind: "form",
     title: "Fiche client à l'hôtel",
@@ -201,16 +201,16 @@
     ] },
   { id: "a1-s07-pe2", level: "A1", sujet: 7, sec: "pe", ex: 2, pts: 15, kind: "text",
     title: "Message à un collègue",
-    consigne: "Vous travaillez dans un cabinet de kinésithérapie. Demain matin, vous ne pouvez pas venir. Vous écrivez un message à votre collègue Julien : vous expliquez pourquoi, vous lui demandez de prendre vos patients de 9 h à 11 h et vous le remerciez. (40 mots minimum)",
-    help: { tr: "Bir fizyoterapi muayenehanesinde çalışıyorsunuz. Yarın sabah gelemiyorsunuz. İş arkadaşınız Julien'e mesaj yazın: nedenini açıklayın, 9:00–11:00 arası hastalarınıza bakmasını rica edin ve ona teşekkür edin. (En az 40 kelime)", en: "You work in a physiotherapy practice. Tomorrow morning you can't come in. Write a message to your colleague Julien: explain why, ask him to see your patients from 9 to 11 and thank him. (40 words minimum)" },
+    consigne: "Vous travaillez à l'accueil d'une salle de sport. Demain matin, vous ne pouvez pas venir. Vous écrivez un message à votre collègue Julien : vous expliquez pourquoi, vous lui demandez de vous remplacer à l'accueil de 9 h à 11 h et vous le remerciez. (40 mots minimum)",
+    help: { tr: "Bir spor salonunun resepsiyonunda çalışıyorsunuz. Yarın sabah gelemiyorsunuz. İş arkadaşınız Julien'e mesaj yazın: nedenini açıklayın, 9:00–11:00 arası resepsiyonda yerinize bakmasını rica edin ve ona teşekkür edin. (En az 40 kelime)", en: "You work at the front desk of a gym. Tomorrow morning you can't come in. Write a message to your colleague Julien: explain why, ask him to cover the front desk for you from 9 to 11 and thank him. (40 words minimum)" },
     min: 40,
     must: [
       { c: "Expliquer pourquoi vous ne venez pas", kw: ["parce que", "car", "rendez-vous", "médecin", "je dois", "malade", "préfecture"] },
-      { c: "Demander de prendre vos patients", kw: ["est-ce que tu peux", "tu peux", "peux-tu", "patients", "remplacer"] },
+      { c: "Demander de vous remplacer", kw: ["est-ce que tu peux", "tu peux", "peux-tu", "remplacer", "accueil"] },
       { c: "Donner les heures", kw: ["9 h", "11 h", "9h", "11h", "neuf", "onze", "matin", "heure"] },
       { c: "Remercier", kw: ["merci", "remercie", "je t'invite", "j'offre", "café"] }
     ],
-    model: "Bonjour Julien,\nDemain matin, je ne peux pas venir au cabinet parce que j'ai rendez-vous à la préfecture pour mon titre de séjour. Est-ce que tu peux prendre mes patients de 9 h à 11 h ? La liste est sur mon bureau. Merci beaucoup ! Je t'invite au café vendredi.\nEsin" },
+    model: "Bonjour Julien,\nDemain matin, je ne peux pas venir à la salle parce que j'ai rendez-vous à la préfecture pour mon titre de séjour. Est-ce que tu peux me remplacer à l'accueil de 9 h à 11 h ? Les clés sont dans mon casier. Merci beaucoup ! Je t'invite au café vendredi.\nEsin" },
 
   { id: "a1-s08-pe1", level: "A1", sujet: 8, sec: "pe", ex: 1, pts: 10, kind: "form",
     title: "Nouvelle patiente chez le médecin",
@@ -240,7 +240,7 @@
       { c: "Parler de vos loisirs", kw: ["j'aime", "j'adore", "sport", "loisirs", "lire", "cuisine", "musique", "yoga", "je cours"] },
       { c: "Dire quelle langue vous cherchez", kw: ["apprendre", "parler", "langue", "échange", "je cherche", "français", "pratiquer", "partenaire"] }
     ],
-    model: "Bonjour à tous !\nJe m'appelle Esin, j'ai 32 ans et je suis turque. J'habite à Montpellier depuis un an. Je suis kinésithérapeute. J'adore le sport : je cours et je fais du yoga. J'aime aussi la cuisine. Je cherche un partenaire pour parler français. Moi, je peux vous aider en turc ou en anglais !" },
+    model: "Bonjour à tous !\nJe m'appelle Esin, j'ai 30 ans et je suis turque. J'habite à Montpellier depuis un an. Je suis kinésithérapeute. J'adore le sport : je cours et je fais du yoga. J'aime aussi la cuisine. Je cherche un partenaire pour parler français. Moi, je peux vous aider en turc ou en anglais !" },
 
   { id: "a1-s09-pe1", level: "A1", sujet: 9, sec: "pe", ex: 1, pts: 10, kind: "form",
     title: "Participer au concours photo",
@@ -301,5 +301,5 @@
       { c: "Présenter le programme", kw: ["programme", "on va", "danser", "manger", "musique", "gâteau", "barbecue", "jeux", "karaoké"] },
       { c: "Demander une réponse", kw: ["répondez", "réponse", "dites-moi", "vous venez", "confirmer", "avant"] }
     ],
-    model: "Bonjour à tous,\nJe vais avoir 30 ans ! Je vous invite à ma fête d'anniversaire samedi 14 juin, à 19 h, chez moi, 8 rue des Lilas. Au programme : un grand barbecue dans le jardin, de la musique turque et un gros gâteau au chocolat ! Vous venez ? Répondez-moi avant mercredi, s'il vous plaît.\nBises,\nEsin" }
+    model: "Bonjour à tous,\nJe vais avoir 31 ans ! Je vous invite à ma fête d'anniversaire samedi 14 juin, à 19 h, chez moi, 8 rue des Lilas. Au programme : un grand barbecue dans le jardin, de la musique turque et un gros gâteau au chocolat ! Vous venez ? Répondez-moi avant mercredi, s'il vous plaît.\nBises,\nEsin" }
 );

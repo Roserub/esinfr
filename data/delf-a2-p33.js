@@ -268,7 +268,7 @@
       { c: "Poser deux questions", kw: ["est-ce que", "faut-il", "il faut", "combien", "quand", "comment"] },
       { c: "Prendre congé poliment", kw: ["cordialement", "merci", "bonne journée", "bonne journee", "à bientôt", "a bientot", "salutations"] }
     ],
-    model: "Bonjour,\nJe m'appelle Esin, j'ai 29 ans et je suis kinésithérapeute. J'ai lu votre annonce sur votre site. Je voudrais devenir bénévole parce que j'adore les animaux, mais mon appartement est trop petit pour avoir un chien. En plus, j'aime beaucoup marcher !\nJe suis libre le samedi matin et le dimanche après-midi.\nEst-ce qu'il faut avoir une expérience avec les animaux ? Et combien d'heures par semaine est-ce que je dois venir ?\nMerci d'avance,\nCordialement,\nEsin" },
+    model: "Bonjour,\nJe m'appelle Esin, j'ai 30 ans et je suis kinésithérapeute. J'ai lu votre annonce sur votre site. Je voudrais devenir bénévole parce que j'adore les animaux, mais mon appartement est trop petit pour avoir un chien. En plus, j'aime beaucoup marcher !\nJe suis libre le samedi matin et le dimanche après-midi.\nEst-ce qu'il faut avoir une expérience avec les animaux ? Et combien d'heures par semaine est-ce que je dois venir ?\nMerci d'avance,\nCordialement,\nEsin" },
 
   /* ───────────── Production orale ───────────── */
   { id: "a2-s33-po1", level: "A2", sujet: 33, sec: "po", ex: 1, pts: 8, kind: "entretien",

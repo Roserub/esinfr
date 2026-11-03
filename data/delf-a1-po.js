@@ -269,8 +269,8 @@
       { q: "Bonjour madame. Votre nom, s'il vous plaît ?", m: "Bonjour. Je m'appelle Esin." },
       { q: "Vous venez d'où ?", m: "Je viens de Turquie." },
       { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute." },
-      { q: "Où est-ce que vous travaillez ?", m: "Je travaille dans un cabinet, en ville." },
-      { q: "Vous commencez à quelle heure ?", m: "Je commence à 8 heures et je finis à 18 heures." },
+      { q: "Où est-ce que vous travaillez ?", m: "En France, je travaille à l'accueil d'une salle de sport, en ville." },
+      { q: "Vous commencez à quelle heure ?", m: "Je commence à 8 heures et je finis à 13 heures." },
       { q: "Comment est-ce que vous allez au travail ?", m: "Je vais au travail en bus." },
       { q: "Vous aimez votre travail ? Pourquoi ?", m: "Oui, j'aime beaucoup mon travail. J'aime aider les gens." },
       { q: "Vos collègues sont sympathiques ?", m: "Oui, mes collègues sont très sympas." }
@@ -802,7 +802,7 @@
     prompts: [
       { q: "Bonjour madame. Comment vous appelez-vous ?", m: "Bonjour. Je m'appelle Esin." },
       { q: "Vous habitez où ?", m: "J'habite dans le centre-ville, près de la gare." },
-      { q: "Vous habitez seule ?", m: "Non, j'habite avec une amie." },
+      { q: "Vous habitez seule ?", m: "Non, j'habite avec mon mari." },
       { q: "Comment est votre appartement ?", m: "Il est petit et clair. Il y a un balcon." },
       { q: "Vous habitez à quel étage ?", m: "J'habite au deuxième étage. Il n'y a pas d'ascenseur." },
       { q: "Qu'est-ce qu'il y a dans votre quartier ?", m: "Il y a une boulangerie, une pharmacie et un parc." },
@@ -933,7 +933,7 @@
       { q: "Vous habitez en France depuis quand ?", m: "J'habite en France depuis un an." },
       { q: "Où est-ce que vous apprenez le français ?", m: "J'apprends le français sur Internet et avec une application." },
       { q: "C'est difficile, le français ?", m: "Oui, c'est difficile, mais j'aime bien. La prononciation est difficile." },
-      { q: "Vous parlez français au travail ?", m: "Oui, je parle français avec mes patients." },
+      { q: "Vous parlez français avec vos voisins ?", m: "Oui, je parle français avec mes voisins. Ils sont gentils." },
       { q: "Quel mot français est-ce que vous aimez ?", m: "J'aime le mot « bonjour ». Il est joli !" }
     ] },
   { id: "a1-s08-po2", level: "A1", sujet: 8, sec: "po", ex: 2, pts: 8, kind: "echange",

@@ -519,7 +519,7 @@ Avec plaisir !|Memnuniyetle!|With pleasure!`),
 Je m'appelle Esin.|Benim adım Esin.|My name is Esin.
 Comment vous appelez-vous ?|Adınız ne?|What's your name? (polite)
 Tu t'appelles comment ?|Adın ne?|What's your name? (casual)
-J'ai 35 ans.|35 yaşındayım.|I'm 35.|J'ai trente-cinq ans.
+J'ai 30 ans.|30 yaşındayım.|I'm 30.|J'ai trente ans.
 Quel âge avez-vous ?|Kaç yaşındasınız?|How old are you?
 Je viens de Turquie.|Türkiye'den geliyorum.|I come from Turkey.
 Je suis turque.|Türküm. (kadın)|I'm Turkish. (woman)
@@ -529,9 +529,9 @@ J'étais kinésithérapeute du sport.|Spor fizyoterapistiydim.|I was a sports ph
 Enchantée !|Memnun oldum! (kadın)|Nice to meet you! (said by a woman)
 Ravie de vous rencontrer.|Sizinle tanıştığıma çok sevindim. (kadın)|Delighted to meet you. (woman)
 Je vous présente Claire.|Size Claire'i tanıştırayım.|Let me introduce Claire.`, {
-          fr: "Pour l'âge, on utilise « avoir » : « J'ai 35 ans » (littéralement : j'ai 35 années). Une femme écrit « Enchantée » et « turque » avec un « e ».",
-          tr: "Yaş söylerken 'olmak' değil 'sahip olmak' fiili kullanılır: J'ai 35 ans = '35 yılım var'. Kadın olduğunuz için 'Enchantée', 'turque', 'désolée' yazılır (sonda e). Okunuşu genelde aynı.",
-          en: "Age uses 'avoir' (to have): J'ai 35 ans = 'I have 35 years'. As a woman you write 'Enchantée', 'turque', 'désolée' with an extra e; the sound is usually the same."
+          fr: "Pour l'âge, on utilise « avoir » : « J'ai 30 ans » (littéralement : j'ai 30 années). Une femme écrit « Enchantée » et « turque » avec un « e ».",
+          tr: "Yaş söylerken 'olmak' değil 'sahip olmak' fiili kullanılır: J'ai 30 ans = '30 yılım var'. Kadın olduğunuz için 'Enchantée', 'turque', 'désolée' yazılır (sonda e). Okunuşu genelde aynı.",
+          en: "Age uses 'avoir' (to have): J'ai 30 ans = 'I have 30 years'. As a woman you write 'Enchantée', 'turque', 'désolée' with an extra e; the sound is usually the same."
         }),
         G("Comment ça va ?", "Nasılsınız?", "How are you?", `
 Comment allez-vous ?|Nasılsınız?|How are you? (polite)

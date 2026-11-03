@@ -103,7 +103,7 @@ main { max-width: 860px; margin: 0 auto; padding: 8px 16px 24px; outline: none; 
 .icon-btn { border: 0; background: transparent; font-size: 1.25rem; cursor: pointer; color: var(--muted); min-width: 40px; min-height: 40px; }
 .icon-btn.fav.on { color: var(--gold); }
 .speak { border: 0; background: var(--blue-soft); color: var(--blue); border-radius: 999px; width: 36px; height: 36px; cursor: pointer; font-size: 1rem; vertical-align: middle; flex: none; }
-button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visible, select:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
 
 /* Home */
 .hero h1 { font-size: 1.85rem; margin-bottom: .1em; }
@@ -196,7 +196,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visibl
 .badge.star { background: #f5e6b8; color: #7a5a0c; }
 @media (prefers-color-scheme: dark) { .badge.star { background: #4a3d1a; color: var(--gold); } }
 .res-note { font-size: .85rem; margin: 4px 0 8px; }
-.badge.tr { background: #e30a1720; color: #c5121c; }
+.badge.tr { background: #e30a1720; color: #a80f18; }
 @media (prefers-color-scheme: dark) { .badge.tr { color: #ff8b8f; } }
 
 /* Cards */
@@ -421,7 +421,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visibl
 .dx-num { font-size: 1.6rem; font-weight: 800; line-height: 1.1; }
 .dx-tile small { font-size: .75rem; color: var(--muted); }
 .stars { color: var(--gold); letter-spacing: 1px; font-size: .95rem; }
-.stars .off { color: var(--line); }
+.stars .off { color: color-mix(in srgb, var(--muted) 45%, var(--line)); }
 .dx-dots { display: flex; gap: 4px; margin-top: 3px; }
 .dx-dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
 .dx-dots i.ok { background: var(--accent); }
@@ -709,3 +709,6 @@ button:active { transform: scale(.96); }
 .bs-q .bs-prompt { font-size: 1.25rem; margin: 8px 0; }
 .bs-tip { margin: 6px 0; }
 .opt:has(.opt-tr) { flex-direction: column; align-items: flex-start; gap: 2px; }
+
+/* Focus is moved to the page on each navigation (screen readers start at the new content); no ring needed there. */
+#main:focus { outline: none; }

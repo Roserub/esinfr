@@ -17,7 +17,7 @@
       { q: "La réunion est dans…", o: ["la salle 2", "la salle 10", "la salle 12"], a: 2,
         x: "« C'est dans la salle 12, au deuxième étage. » 2, c'est l'étage ; 10, c'est l'heure.",
         xtr: "Toplantı 12 numaralı salonda. « 2 » katı gösterir (deuxième étage), 10 ise toplantının saatidir." },
-      { q: "Qu'est-ce que vous devez apporter ?", o: ["💻 un ordinateur portable", "☕ des tasses de café", "🥐 des croissants"], a: 0,
+      { q: "Qu'est-ce que vous devez apporter ?", o: ["💻 un ordinateur", "☕ des tasses de café", "🥐 des croissants"], a: 0,
         x: "« N'oublie pas ton ordinateur. » Julien apporte les cafés et les croissants.",
         xtr: "« N'oublie pas ton ordinateur » = Bilgisayarını unutma. Kahveleri ve kruvasanları Julien getiriyor (« Moi, j'apporte… »)." }
     ] },

@@ -244,7 +244,7 @@
     help: { tr: "Sınav görevlisini selamlayın. Size kendiniz, eğitiminiz ve spor hakkında sorular sorar. Tam cümleyle cevap verin.", en: "Guided interview (about 1 minute, no preparation). Greet the examiner and answer questions about yourself, your studies and sport." },
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour, monsieur. Je m'appelle Esin." },
-      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. Je travaille avec des sportifs." },
+      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. En Turquie, j'ai travaillé avec des sportifs." },
       { q: "Vous étudiez en ce moment ?", m: "Oui, j'étudie le français. J'ai des cours trois fois par semaine." },
       { q: "Quel sport est-ce que vous faites ?", m: "Je joue au handball. J'adore les sports d'équipe." },
       { q: "Vous faites du sport combien de fois par semaine ?", m: "Je fais du sport deux ou trois fois par semaine, le soir." },

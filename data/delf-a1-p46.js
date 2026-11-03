@@ -253,9 +253,9 @@
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour, monsieur. Je m'appelle Esin." },
       { q: "Vous êtes de quelle nationalité ?", m: "Je suis turque. Je viens d'Istanbul." },
-      { q: "Qu'est-ce que vous faites comme travail ?", m: "Je suis kinésithérapeute. Je travaille avec des sportifs." },
+      { q: "Qu'est-ce que vous faites comme travail ?", m: "Je suis kinésithérapeute. En Turquie, j'ai travaillé avec des sportifs." },
       { q: "Vous aimez votre travail ?", m: "Oui, j'adore mon travail. J'aime aider les gens." },
-      { q: "Vous travaillez combien d'heures par jour ?", m: "Je travaille huit heures par jour, du lundi au vendredi." },
+      { q: "Vous travaillez en France ?", m: "Oui, un peu : je travaille à l'accueil d'une salle de sport, le matin." },
       { q: "Vous aimez travailler avec des enfants ?", m: "Oui, les enfants sont drôles. Mais c'est fatigant !" },
       { q: "Qu'est-ce que vous faites en été ?", m: "En été, je vais en Turquie chez mes parents et je vais à la plage." },
       { q: "Vous parlez quelles langues ?", m: "Je parle turc, anglais et un peu français." }

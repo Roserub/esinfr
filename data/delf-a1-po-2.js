@@ -9,7 +9,7 @@
     },
     prompts: [
       { q: "Bonjour. Quel est votre prénom ?", m: "Bonjour ! Je m'appelle Esin." },
-      { q: "Vous habitez en France depuis combien de temps ?", m: "J'habite en France depuis trois mois." },
+      { q: "Vous habitez en France depuis combien de temps ?", m: "J'habite en France depuis un an." },
       { q: "Vous habitez dans quelle ville ?", m: "J'habite dans une petite ville. C'est calme et joli." },
       { q: "Vous aimez la vie en France ?", m: "Oui, j'aime bien. Les gens sont gentils." },
       { q: "Qu'est-ce que vous aimez en France ?", m: "J'aime le pain, les marchés et les petites rues." },
@@ -85,7 +85,7 @@
     prompts: [
       { q: "Bonjour, asseyez-vous. Quel est votre nom ?", m: "Merci. Bonjour, je m'appelle Esin." },
       { q: "Vous prenez un petit-déjeuner le matin ?", m: "Oui, je mange du pain, du fromage, des olives et je bois du thé." },
-      { q: "Où est-ce que vous déjeunez ?", m: "Je déjeune au travail, avec mes collègues." },
+      { q: "Où est-ce que vous déjeunez ?", m: "Je déjeune à la maison, avec mon mari." },
       { q: "Vous mangez à quelle heure le soir ?", m: "Je dîne vers 19 h 30." },
       { q: "Qui fait la cuisine chez vous ?", m: "C'est moi. J'aime bien faire la cuisine." },
       { q: "Quel plat de votre pays est-ce que vous aimez ?", m: "J'aime beaucoup les mantı. Ce sont des petites pâtes à la viande." },
@@ -536,13 +536,13 @@
     },
     prompts: [
       { q: "Bonjour. Vous pouvez épeler votre prénom ?", m: "Bonjour. Je m'appelle Esin : E, S, I, N." },
-      { q: "Vous êtes étudiante ?", m: "Non, je ne suis pas étudiante. Je travaille." },
-      { q: "Vous avez un diplôme ?", m: "Oui, j'ai un diplôme de kinésithérapeute." },
+      { q: "Vous êtes étudiante ?", m: "Oui, j'apprends le français dans une école de langues." },
+      { q: "Vous avez un diplôme ?", m: "Oui, j'ai un diplôme de kinésithérapeute, en Turquie." },
       { q: "Vous aimez apprendre ?", m: "Oui, j'aime beaucoup apprendre de nouvelles choses." },
       { q: "Vous étudiez le français combien d'heures par semaine ?", m: "J'étudie le français cinq heures par semaine." },
       { q: "Comment est-ce que vous apprenez le français ?", m: "Je vais en cours, j'écoute la radio et je regarde des séries." },
       { q: "Qu'est-ce qui est facile pour vous en français ?", m: "Les nombres et les couleurs, c'est facile." },
-      { q: "Vous voulez faire une formation en France ?", m: "Oui, je voudrais faire une formation pour travailler ici." }
+      { q: "Vous voulez faire une formation en France ?", m: "Oui, je voudrais étudier en STAPS, et après, la kinésithérapie." }
     ] },
   { id: "a1-s18-po2", level: "A1", sujet: 18, sec: "po", ex: 2, pts: 8, kind: "echange",
     title: "Les sorties",

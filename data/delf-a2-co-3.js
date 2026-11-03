@@ -66,8 +66,8 @@
         o: ["Il demande son chemin.", "Il appelle un taxi.", "Il propose son aide.", "Il refuse d'aider."], a: 2, x: "Il dit : « Je peux porter votre valise jusqu'au taxi ? »" },
       { q: "Dialogue 2 : que fait la femme ?", audio: [["F", "Si tu as mal au genou, tu devrais arrêter de courir quelques jours et mettre de la glace."], ["M", "Tu as raison, je vais essayer."]],
         o: ["Elle donne un conseil.", "Elle se plaint.", "Elle prend rendez-vous.", "Elle propose d'aller courir."], a: 0, x: "Elle dit : « Tu devrais arrêter de courir quelques jours. »" },
-      { q: "Dialogue 3 : que fait l'homme ?", audio: [["M", "Est-ce que je peux ouvrir la fenêtre ? Il fait très chaud ici."], ["F", "Oui, bien sûr, allez-y."]],
-        o: ["Il ferme la fenêtre.", "Il parle de la météo.", "Il se plaint du bruit.", "Il demande la permission."], a: 3, x: "Il dit : « Est-ce que je peux ouvrir la fenêtre ? »" },
+      { q: "Dialogue 3 : que fait l'homme ?", audio: [["M", "Excusez-moi, madame, vous savez si une pharmacie est ouverte le dimanche dans le quartier ?"], ["F", "Oui, celle de la place du marché, jusqu'à 13 h."]],
+        o: ["Il achète des médicaments.", "Il parle de sa santé.", "Il se plaint du bruit.", "Il demande une information."], a: 3, x: "Il demande : « vous savez si une pharmacie est ouverte le dimanche dans le quartier ? »" },
       { q: "Dialogue 4 : que fait la femme ?", audio: [["F", "Tu as eu ton permis de conduire ? Bravo, félicitations !"], ["M", "Merci ! J'étais tellement stressé."]],
         o: ["Elle console son ami.", "Elle félicite son ami.", "Elle demande un conseil.", "Elle passe son permis."], a: 1, x: "Elle dit : « Bravo, félicitations ! »" },
       { q: "Dialogue 5 : que fait l'homme ?", audio: [["M", "Excusez-moi, j'ai commandé un café, et vous m'avez apporté un thé. En plus, il est froid."], ["F", "Oh, pardon, monsieur, je vous change ça tout de suite."]],
@@ -288,8 +288,8 @@
         o: ["Elle prend rendez-vous.", "Elle a mal au dos.", "Elle recommande une kiné.", "Elle cherche une adresse."], a: 2, x: "Elle dit : « Elle est super, je te la recommande. »" },
       { q: "Dialogue 4 : que fait l'homme ?", audio: [["F", "Tu reprends un peu de gâteau ?"], ["M", "Non merci, c'est très gentil, mais j'ai trop mangé !"]],
         o: ["Il refuse poliment.", "Il demande la recette.", "Il accepte avec plaisir.", "Il offre un gâteau."], a: 0, x: "Il dit : « Non merci, c'est très gentil, mais j'ai trop mangé ! »" },
-      { q: "Dialogue 5 : que fait la femme ?", audio: [["F", "Bon, il est tard, je dois y aller. Merci pour cette soirée, à bientôt !"], ["M", "Rentre bien !"]],
-        o: ["Elle arrive chez son ami.", "Elle invite son ami.", "Elle dit au revoir.", "Elle demande l'heure."], a: 2, x: "Elle dit : « Je dois y aller… à bientôt ! »" }
+      { q: "Dialogue 5 : que fait la femme ?", audio: [["F", "Devine quoi ? J'ai trouvé un appartement avec un balcon, juste à côté du parc !"], ["M", "Génial ! Tu déménages quand ?"]],
+        o: ["Elle arrive chez son ami.", "Elle visite un appartement avec lui.", "Elle annonce une bonne nouvelle.", "Elle demande l'heure."], a: 2, x: "Elle dit : « Devine quoi ? J'ai trouvé un appartement avec un balcon ! »" }
     ] },
 
   /* ───────────── Sujet 15 ───────────── */

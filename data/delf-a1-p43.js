@@ -247,7 +247,7 @@
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour, madame. Je m'appelle Esin." },
       { q: "Vous venez d'où ?", m: "Je viens de Turquie. Je suis née à Istanbul." },
-      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. Je travaille avec des sportifs." },
+      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute du sport. Maintenant, j'apprends le français." },
       { q: "Quelle est la fête nationale dans votre pays ?", m: "En Turquie, la fête nationale, c'est le 29 octobre. Il y a des drapeaux partout." },
       { q: "Est-ce que vous aimez les feux d'artifice ?", m: "Oui, j'adore ! Les couleurs dans le ciel, c'est très beau." },
       { q: "Est-ce que vous aimez danser ?", m: "Oui, un peu. J'aime danser avec mes amis, mais je danse mal !" },
