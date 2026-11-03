@@ -152,9 +152,9 @@
       { q: "Après le repas, vous devez…", o: ["payer 3,30 € à la caisse", "rapporter votre plateau", "montrer votre carte"], a: 1,
         x: "« Après le repas, merci de rapporter votre plateau. »",
         xtr: "« Rapporter votre plateau » = tepsinizi geri götürün. Ödeme ve kart yemekten önce." },
-      { q: "Le restaurant est ouvert le samedi.", o: ["Vrai", "Faux"], a: 1,
+      { q: "Le dimanche, le restaurant est fermé.", o: ["Vrai", "Faux"], a: 0,
         x: "« Le samedi et le dimanche, le restaurant est fermé. »",
-        xtr: "Yanlış: cumartesi ve pazar yemekhane kapalı (« fermé »). Sadece pazartesiden cumaya açık." }
+        xtr: "Doğru: cumartesi ve pazar yemekhane kapalı (« fermé »). Sadece pazartesiden cumaya açık." }
     ] },
 
   { id: "a1-s27-ce3", level: "A1", sujet: 27, sec: "ce", ex: 3, pts: 6,

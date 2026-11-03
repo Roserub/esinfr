@@ -71,7 +71,7 @@
       { q: "Pourquoi le rendez-vous de mardi est annulé ?", o: ["🤒 le docteur est malade", "🏖️ le docteur est en vacances", "🚗 le docteur est en retard"], a: 0, x: "« est annulé : le docteur est malade »." },
       { q: "Le nouveau rendez-vous est…", o: ["mardi à 10 h", "jeudi à 15 h 45", "vendredi à 15 h 45"], a: 1, x: "« Nous vous proposons jeudi, à 15 h 45. »" },
       { q: "Qu'est-ce que vous devez apporter ?", o: ["🛂 votre passeport", "💶 de l'argent", "💳 votre carte Vitale"], a: 2, x: "« N'oubliez pas votre carte Vitale. »" },
-      { q: "Vous pouvez appeler le cabinet…", o: ["tous les jours", "du lundi au vendredi", "le week-end"], a: 1, x: "« appelez-nous au 04 78 32 10 55, du lundi au vendredi »." }
+      { q: "Vous pouvez appeler le cabinet…", o: ["tous les jours", "du lundi au vendredi", "le samedi et le dimanche"], a: 1, x: "« appelez-nous au 04 78 32 10 55, du lundi au vendredi »." }
     ] },
 
   { id: "a1-s02-co2", level: "A1", sujet: 2, sec: "co", ex: 2, pts: 6,
@@ -198,9 +198,9 @@
     title: "Embarquement à l'aéroport",
     consigne: "Vous êtes à l'aéroport. Vous entendez cette annonce. Lisez les questions, écoutez le document puis répondez.",
     help: { tr: "Havalimanındasınız. Bu anonsu duyuyorsunuz. Soruları okuyun, kaydı dinleyin ve cevaplayın.", en: "You are at the airport. You hear this announcement. Read the questions, listen, then answer." },
-    audio: [["N", "Mesdames et messieurs, les passagers du vol 1234, en provenance de Paris et à destination d'Istanbul, sont invités à se présenter porte 32. L'embarquement commence à 13 h 40. Préparez votre carte d'embarquement et votre passeport. Attention : 1 seul bagage à main par personne. Merci."]],
+    audio: [["N", "Mesdames et messieurs, les passagers du vol 1234 à destination d'Istanbul sont invités à se présenter porte 32. L'embarquement commence à 13 h 40. Préparez votre carte d'embarquement et votre passeport. Attention : 1 seul bagage à main par personne. Merci."]],
     questions: [
-      { q: "L'avion va à…", o: ["Paris", "Istanbul", "Ankara"], a: 1, x: "« à destination d'Istanbul ». L'avion vient de Paris." },
+      { q: "L'avion va à…", o: ["Paris", "Istanbul", "Ankara"], a: 1, x: "« les passagers du vol 1234 à destination d'Istanbul »." },
       { q: "Les passagers vont à quelle porte ?", o: ["porte 12", "porte 23", "porte 32"], a: 2, x: "« sont invités à se présenter porte 32 »." },
       { q: "L'embarquement commence à…", o: ["13 h 40", "13 h 14", "14 h 30"], a: 0, x: "« L'embarquement commence à 13 h 40. »" },
       { q: "Qu'est-ce que vous préparez ?", o: ["🧳 une grande valise", "💶 de l'argent", "🛂 le passeport"], a: 2, x: "« Préparez votre carte d'embarquement et votre passeport. »" }
@@ -251,7 +251,7 @@
       { q: "Martine part en vacances pour…", o: ["2 jours", "1 semaine", "2 semaines"], a: 1, x: "« Je pars en vacances demain, pour 1 semaine »." },
       { q: "Martine va…", o: ["chez sa fille", "chez sa sœur", "à l'hôtel"], a: 0, x: "« chez ma fille, à Nice »." },
       { q: "Qu'est-ce que vous devez faire ?", o: ["📬 prendre le courrier", "🌱 arroser les plantes", "🐱 nourrir le chat"], a: 2, x: "« Vous pouvez donner à manger à mon chat, s'il vous plaît ? »" },
-      { q: "Où est la clé ce soir ?", o: ["📫 dans votre boîte aux lettres", "🚪 sous la porte", "🏠 chez la gardienne"], a: 0, x: "« Je vais mettre la clé dans votre boîte aux lettres ce soir. »" }
+      { q: "Où est la clé ce soir ?", o: ["📫 dans votre boîte aux lettres", "🚪 sous la porte", "🏠 chez la gardienne de l'immeuble"], a: 0, x: "« Je vais mettre la clé dans votre boîte aux lettres ce soir. »" }
     ] },
 
   { id: "a1-s05-co2", level: "A1", sujet: 5, sec: "co", ex: 2, pts: 6,
@@ -262,7 +262,7 @@
     questions: [
       { q: "Le musée ferme à…", o: ["18 h", "18 h 15", "18 h 30"], a: 0, x: "« le musée va fermer dans 30 minutes, à 18 h »." },
       { q: "Qu'est-ce qui reste ouvert jusqu'à 18 h 15 ?", o: ["🖼️ les salles", "🛍️ la boutique", "☕ le café"], a: 1, x: "« La boutique du musée reste ouverte jusqu'à 18 h 15. »" },
-      { q: "Le musée est gratuit…", o: ["le mardi", "tous les dimanches", "le premier dimanche du mois"], a: 2, x: "« le musée est gratuit le premier dimanche du mois »." },
+      { q: "Le musée est gratuit…", o: ["le mardi", "tous les dimanches du mois", "le premier dimanche du mois"], a: 2, x: "« le musée est gratuit le premier dimanche du mois »." },
       { q: "Le musée est fermé le…", o: ["lundi", "mardi", "dimanche"], a: 1, x: "« Le musée est fermé le mardi. »" }
     ] },
 

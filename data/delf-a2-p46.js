@@ -30,7 +30,7 @@
         xtr: "Üç kalem alana kalemlik hediye. Defterler bedava değil, yarı fiyatına (« à moitié prix »)." },
       { q: "Annonce 5 : demain…",
         audio: [["F", "Attention, chers parents : demain, à cause de la neige, il n'y aura pas de bus scolaire. L'école reste ouverte. Les enfants qui ne peuvent pas venir feront les exercices envoyés par les professeurs sur l'espace numérique."]],
-        o: ["l'école sera fermée.", "les élèves feront leurs exercices chez eux.", "le bus scolaire partira plus tôt à cause de la neige."], a: 1,
+        o: ["l'école sera fermée.", "les élèves absents travailleront chez eux.", "le bus scolaire partira plus tôt à cause de la neige."], a: 1,
         x: "« Les enfants qui ne peuvent pas venir feront les exercices envoyés par les professeurs. »",
         xtr: "Kar yüzünden okul servisi yok ama okul açık (« L'école reste ouverte »). Gelemeyen çocuklar alıştırmaları evde, internetten yapacak." },
       { q: "Annonce 6 : les enfants qui ont oublié leur bonnet de bain…",

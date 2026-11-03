@@ -279,7 +279,7 @@
       { q: "Bonjour ! Comment vous appelez-vous ? D'où venez-vous ?", m: "Bonjour ! Je m'appelle Esin, je viens d'Istanbul, en Turquie." },
       { q: "Qu'est-ce que vous faites pour rester en bonne santé ?", m: "Je marche beaucoup, je cours deux fois par semaine et j'essaie de manger des légumes tous les jours." },
       { q: "Vous dormez combien d'heures par nuit ?", m: "En général, je dors sept heures. Mais quand je suis stressée, je dors mal." },
-      { q: "Est-ce que vous avez un médecin en France ?", m: "Oui, j'ai un médecin traitant près de chez moi. Elle est très gentille et elle parle un peu anglais." },
+      { q: "Est-ce que vous avez un médecin en France ?", m: "Oui, j'ai une médecin traitante près de chez moi. Elle est très gentille et elle parle un peu anglais." },
       { q: "Vous êtes déjà allée à l'hôpital en France ?", m: "Oui, une fois, pour une radio du poignet. J'ai attendu longtemps, mais tout le monde était très professionnel." },
       { q: "Qu'est-ce qui est différent entre la France et la Turquie pour la santé ?", m: "En France, il faut souvent prendre rendez-vous longtemps avant. En Turquie, on va plus facilement directement à l'hôpital." },
       { q: "Qu'est-ce que vous faites quand vous êtes stressée ?", m: "Je fais du yoga, ou je téléphone à ma sœur à Istanbul. Ça m'aide beaucoup !" },

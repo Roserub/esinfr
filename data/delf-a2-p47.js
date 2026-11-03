@@ -114,7 +114,7 @@
         audio: [["M", "En ce moment, je suis très stressé par mon travail. Le soir, je n'arrive pas à m'endormir."], ["F", "Tu devrais faire du sport, Karim. Moi, je nage deux fois par semaine, et après, je dors comme un bébé !"], ["M", "Bonne idée. Je vais essayer."]],
         o: ["Donner un conseil", "Se plaindre", "Proposer une sortie", "S'excuser"], a: 0,
         x: "La femme dit : « Tu devrais faire du sport. »",
-        xtr: "« Tu devrais + mastar » = \"… yapmalısın\": tipik bir tavsiye kalıbı. Karim stresinden söz ediyor ama diyaloğun amacı kadının verdiği öneri." },
+        xtr: "« Tu devrais + mastar » = « … yapmalısın »: tipik bir tavsiye kalıbı. Karim stresinden söz ediyor ama diyaloğun amacı kadının verdiği öneri." },
       { q: "Dialogue 3 : quelle est la situation ?",
         audio: [["F", "Alors, Hugo, ton examen de piano ?"], ["M", "Je l'ai réussi ! J'ai eu 17 sur 20 !"], ["F", "Bravo ! C'est génial ! Tu as tellement travaillé, je suis très fière de toi !"], ["M", "Merci, c'est gentil."]],
         o: ["Rassurer un ami", "S'excuser", "Proposer une sortie", "Féliciter quelqu'un"], a: 3,
@@ -124,7 +124,7 @@
         audio: [["M", "Dimanche, il va faire beau. On va marcher en forêt ? On part à 9 h et on pique-nique là-bas."], ["F", "Oh oui, avec plaisir ! J'ai besoin de nature après cette semaine."], ["M", "Super, je passe te chercher en voiture."]],
         o: ["Se plaindre", "Proposer une sortie", "Donner un conseil", "Féliciter quelqu'un"], a: 1,
         x: "L'homme propose : « On va marcher en forêt ? On part à 9 h et on pique-nique là-bas. »",
-        xtr: "« On va… ? » = \"… yapalım mı?\": ormanda yürüyüş ve piknik önerisi. Kadının zor bir haftası olmuş ama şikâyet etmiyor, teklifi kabul ediyor." }
+        xtr: "« On va… ? » = « … yapalım mı? »: ormanda yürüyüş ve piknik önerisi. Kadının zor bir haftası olmuş ama şikâyet etmiyor, teklifi kabul ediyor." }
     ] },
 
   /* ───────────── Compréhension des écrits ───────────── */
@@ -284,8 +284,6 @@
       { q: "Combien d'heures est-ce que vous dormez par nuit ?", m: "Je dors sept ou huit heures. Je me couche vers 23 heures et je me lève à 7 heures." },
       { q: "Qu'est-ce que vous faites pour vous détendre ?", m: "Je fais du sport, surtout du handball avec une équipe. Et j'aime marcher au bord de l'eau." },
       { q: "Est-ce que vous avez déjà essayé la méditation ou le yoga ?", m: "Oui, j'ai essayé la méditation avec une application. Dix minutes le matin, c'est très agréable." },
-      { q: "Est-ce que vous préférez vous reposer seule ou avec des amis ?", m: "Ça dépend. Après une longue journée, je préfère être seule. Le week-end, j'aime voir mes amis." },
-      { q: "Quand vous étiez kinésithérapeute, est-ce que votre travail était stressant ?", m: "Oui, parfois, surtout avant les grands matchs. Mais j'adorais aider les joueurs." },
       { q: "Qu'est-ce que vous allez faire après l'examen ?", m: "Je vais fêter ça avec mes amis ! Et dimanche, je vais faire une grande promenade en forêt." }
     ] },
 

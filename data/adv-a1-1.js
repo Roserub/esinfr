@@ -303,7 +303,7 @@
       b: { say: [["M", "Elles sont à 3 € le kilo. Je vous mets combien ?"]],
            choices: [
              { fr: "Un kilo, s'il vous plaît.", tr: "Bir kilo, lütfen.", en: "A kilo, please.", ok: true, go: "c" },
-             { fr: "Un demi-kilo, s'il vous plaît.", tr: "Yarım kilo, lütfen.", en: "Half a kilo, please.", ok: true, go: "c" },
+             { fr: "Elles sont belles ! Un kilo, s'il vous plaît.", tr: "Çok güzeller! Bir kilo, lütfen.", en: "They look lovely! A kilo, please.", ok: true, go: "c" },
              { fr: "Un kilomètre, s'il vous plaît.", tr: "Bir kilometre, lütfen.", en: "A kilometre, please.", ok: false,
                fb: { fr: "Un kilomètre de tomates 🍅🍅🍅… c'est beaucoup 😄 ! Pour le poids : « un kilo ».", tr: "Bir kilometre domates 🍅🍅🍅… bu çok fazla 😄! Ağırlık için: « un kilo ».", en: "A kilometre of tomatoes 🍅🍅🍅… that's a lot 😄! For weight: « un kilo »." } }
            ] },
@@ -319,21 +319,21 @@
            scene: { fr: "Il vous donne une fraise. Elle est très sucrée !", tr: "Size bir çilek veriyor. Çok tatlı!", en: "He gives you a strawberry. It's very sweet!" },
            choices: [
              { fr: "Mmm, elles sont délicieuses ! Une barquette, s'il vous plaît.", tr: "Mmm, çok lezzetliler! Bir kutu, lütfen.", en: "Mmm, they're delicious! One punnet, please.", ok: true, go: "e" },
-             { fr: "C'est très bon ! Deux barquettes, s'il vous plaît.", tr: "Çok güzel! İki kutu, lütfen.", en: "It's very good! Two punnets, please.", ok: true, go: "e" },
+             { fr: "C'est très bon ! Je prends une barquette.", tr: "Çok güzel! Bir kutu alıyorum.", en: "It's very good! I'll take one punnet.", ok: true, go: "e" },
              { fr: "Non merci, je suis pleine.", tr: "Hayır teşekkürler, doydum.", en: "No thanks, I'm full.", ok: false,
                fb: { fr: "Oups ! « Je suis pleine » se dit… pour une vache qui attend un bébé 🐄😄. Dites « non merci, ça va » ou « je n'ai plus faim ».", tr: "Eyvah! « Je suis pleine »… yavru bekleyen bir inek için söylenir 🐄😄. « Non merci, ça va » ya da « je n'ai plus faim » deyin.", en: "Oops! « Je suis pleine » is said… about a cow expecting a calf 🐄😄. Say « non merci, ça va » or « je n'ai plus faim »." } }
            ] },
       d2: { say: [["M", "Les pommes de terre, c'est 2 € le kilo. C'est pour faire des frites ?"]],
            choices: [
              { fr: "Oui, pour des frites ! Deux kilos, s'il vous plaît.", tr: "Evet, kızartma için! İki kilo, lütfen.", en: "Yes, for chips! Two kilos, please.", ok: true, go: "e" },
-             { fr: "Non, pour une soupe. Un kilo, s'il vous plaît.", tr: "Hayır, çorba için. Bir kilo, lütfen.", en: "No, for a soup. One kilo, please.", ok: true, go: "e" },
+             { fr: "Non, pour une soupe. Deux kilos, s'il vous plaît.", tr: "Hayır, çorba için. İki kilo, lütfen.", en: "No, for a soup. Two kilos, please.", ok: true, go: "e" },
              { fr: "Oui, je suis frite !", tr: "Evet, ben kızartmayım!", en: "Yes, I am fried!", ok: false,
                fb: { fr: "« Je suis frite » = vous êtes une frite 🍟😄. Dites « oui, pour des frites ! »", tr: "« Je suis frite » = ben bir patates kızartmasıyım 🍟😄. « Oui, pour des frites ! » deyin.", en: "« Je suis frite » = you're a chip 🍟😄. Say « oui, pour des frites ! »" } }
            ] },
-      e: { say: [["M", "Et avec ça, madame ? Des oignons ? Des poivrons ?"]],
+      e: { say: [["M", "Et avec ça, madame ? J'ai des oignons à 2,50 € le kilo."]],
            choices: [
-             { fr: "Non merci, c'est tout.", tr: "Hayır teşekkürler, bu kadar.", en: "No thanks, that's all.", ok: true, go: "f" },
-             { fr: "Oui, trois oignons, s'il vous plaît. Et c'est tout.", tr: "Evet, üç soğan, lütfen. Bu kadar.", en: "Yes, three onions, please. And that's all.", ok: true, go: "f" },
+             { fr: "Oui, un kilo d'oignons, s'il vous plaît. Et c'est tout.", tr: "Evet, bir kilo soğan, lütfen. Bu kadar.", en: "Yes, a kilo of onions, please. And that's all.", ok: true, go: "f" },
+             { fr: "Un kilo d'oignons, et c'est tout, merci.", tr: "Bir kilo soğan, bu kadar, teşekkürler.", en: "A kilo of onions, and that's all, thanks.", ok: true, go: "f" },
              { fr: "Non merci, je suis finie.", tr: "Hayır teşekkürler, ben bittim.", en: "No thanks, I'm finished.", ok: false,
                fb: { fr: "« Je suis finie » = c'est la fin de votre vie 😱😄 ! On dit « c'est tout » ou « j'ai fini ».", tr: "« Je suis finie » = hayatım bitti demek 😱😄! « C'est tout » ya da « j'ai fini » denir.", en: "« Je suis finie » = your life is over 😱😄! Say « c'est tout » or « j'ai fini »." } }
            ] },

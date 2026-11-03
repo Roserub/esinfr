@@ -67,7 +67,7 @@ Z|zed|'zed'|zède|zéro`, {
 ô|accent circonflexe: kapalı 'o'|closed 'oh'|o accent circonflexe|hôtel, tôt
 ù|accent grave: sadece 'où' (nerede) kelimesinde, 'u' okunur|only in 'où' (where), sounds 'oo'|u accent grave|où
 û|accent circonflexe: 'ü'|sounds 'ü'|u accent circonflexe|sûr
-œ|'ö' (o ve e bitişik)|'o' and 'e' joined: like 'ur' in 'fur'|o e dans l'o|cœur, sœur`, {
+œ|'ö' (o ve e bitişik)|'o' and 'e' joined: like 'ur' in 'fur'|e dans l'o|cœur, sœur`, {
           fr: "Attention : le « ç » français se prononce « s », pas comme le « ç » turc ! Et « é » ressemble beaucoup au « e » turc.",
           tr: "Dikkat: Fransızca 'ç' = 's'! Türkçe 'ç' sesi değil: garçon = 'garson'. Fransızca 'é' ise Türkçe 'e'ye çok benzer. Aksanlar Türk klavyede yoksa telefonda harfe uzun basın.",
           en: "Careful: French 'ç' sounds like 's': garçon = 'garson'. The accents matter in writing; on a phone, long-press the letter to find them."
@@ -126,7 +126,7 @@ in, im, ain, ein|genizden açık 'e'|nasal version of 'a' in 'cat'|vin|vin, pain
 un, um|bugün çoğu kişi 'in' gibi söyler|today mostly said like 'in'|un|un, lundi, parfum
 ien|'y' + genizden 'e'|'y' + nasal 'in'|bien|bien, chien, italien
 oin|'u' + genizden 'e' ('vuen' gibi)|'w' + nasal 'in'|loin|loin, coin, besoin
-bon / bonne|ünlü veya nn gelirse genizden ses kaybolur: 'bon' ↔ 'bon-n'|before a vowel or double n the nasal goes: 'bonne' has a clear n|bon, bonne|bonne, une, ami`, {
+bon / bonne|ünlü veya nn gelirse genizden ses kaybolur: 'bon' ↔ 'bon-n'|before a vowel or double n the nasal goes: 'bonne' has a clear n|bon, bonne|bonne, une, pleine`, {
           fr: "Pour un son nasal, l'air passe aussi par le nez et on ne prononce pas le « n ». Pincez votre nez : vous devez sentir une vibration.",
           tr: "Türkçede bu sesler yok, o yüzden ilk başta zor gelmesi çok normal. Hava burundan da çıkar ve 'n' söylenmez: 'bon' = 'bo' + genizden. Burnunuzu hafifçe tutun: titreşim hissetmelisiniz.",
           en: "Air goes through the nose too, and the 'n' is not pronounced: 'bon' is 'bo' through the nose. Pinch your nose gently: you should feel it vibrate."
@@ -1114,7 +1114,7 @@ la pharmacie|eczane|pharmacy
 la banque|banka|bank
 la mairie|belediye|town hall
 l'hôpital|hastane|hospital
-le médecin|doktor|doctor
+le cabinet médical|muayenehane, doktor|doctor's surgery
 le supermarché|süpermarket|supermarket
 le marché|pazar|market
 la boulangerie|fırın, ekmekçi|bakery

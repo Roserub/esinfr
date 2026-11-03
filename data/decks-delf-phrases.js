@@ -205,7 +205,7 @@ Je préfère le thé au café.|Çayı kahveye tercih ederim.|I prefer tea to cof
 Mon plat préféré, c'est le poulet aux légumes.|En sevdiğim yemek sebzeli tavuk.|My favourite dish is chicken with vegetables.
 Ce que j'aime le plus, c'est la mer.|En çok sevdiğim şey deniz.|What I love most is the sea.
 Moi aussi.|Ben de.|Me too.|Reply to a positive sentence.
-Moi non plus.|Ben de (değil).|Me neither.|Reply to a negative: Je n'aime pas le froid. – Moi non plus.
+Moi non plus.|Ben de. (olumsuz cümleye cevap)|Me neither.|Reply to a negative: Je n'aime pas le froid. – Moi non plus.
 Moi, si !|Ben ise evet!|I do!|Disagree with a negative sentence.
 Moi, non.|Ben ise hayır.|I don't.|Disagree with a positive sentence.
 Je vais vous parler de mon quartier.|Size mahallemden bahsedeceğim.|I'm going to talk to you about my neighbourhood.|Monologue plan: topic, 2–3 ideas + examples, short conclusion (about 2 minutes).

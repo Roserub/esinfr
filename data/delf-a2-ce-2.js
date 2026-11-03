@@ -11,7 +11,7 @@
     questions: [
       { q: "Pierre veut vivre seul, au calme. Il a une voiture. Quelle annonce lui correspond ?", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D"], a: 3, x: "Annonce D : « Studio indépendant », « Idéal pour une personne qui veut être tranquille », « Place de parking »." },
       { q: "Samia commence à travailler à l'hôpital en septembre. Quelle annonce lui correspond ?", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D"], a: 2, x: "Annonce C : « près de l'hôpital », « Libre dès le 1er septembre »." },
-      { q: "Lucie est étudiante. Elle adore faire la fête. Quelle annonce lui correspond ?", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D"], a: 0, x: "Annonce A : « près de l'université », « Ambiance festive »." },
+      { q: "Lucie est étudiante. Elle adore faire la fête. Quelle annonce lui correspond ?", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D"], a: 0, x: "Annonce A : « à 15 minutes en bus de l'université », « Ambiance festive »." },
       { q: "Ibrahim a très peu d'argent et il aime rendre service. Quelle annonce lui correspond ?", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D"], a: 1, x: "Annonce B : « contre un peu d'aide (courses, ménage) », « 150 € par mois »." },
       { q: "Un homme peut louer la chambre de l'annonce C.", o: ["Vrai", "Faux"], a: 1, x: "« femme uniquement »." }
     ] },
@@ -25,7 +25,7 @@
     questions: [
       { q: "Les élèves vont…", o: ["au musée.", "au zoo.", "à la ferme."], a: 1, x: "« les deux classes de CE2 iront au parc zoologique »." },
       { q: "Le car part à…", o: ["7 h 45.", "8 h 15.", "18 h."], a: 0, x: "« Le car partira à 7 h 45 devant l'école »." },
-      { q: "L'école donne le déjeuner aux enfants.", o: ["Vrai", "Faux"], a: 1, x: "L'enfant doit apporter « un pique-nique et une bouteille d'eau »." },
+      { q: "Le soir, le car revient devant l'école.", o: ["Vrai", "Faux"], a: 0, x: "« Le car partira à 7 h 45 devant l'école. […] Le retour est prévu vers 18 h, au même endroit »." },
       { q: "L'enfant peut apporter…", o: ["son téléphone.", "une casquette.", "un jeu vidéo."], a: 1, x: "« des vêtements adaptés à la météo (casquette ou imperméable) »." },
       { q: "Les parents doivent donner l'argent et l'autorisation…", o: ["le 18 avril.", "avant le 12 avril.", "dans le car."], a: 1, x: "« avant le vendredi 12 avril »." },
       { q: "L'école cherche…", o: ["des accompagnateurs.", "un chauffeur pour le car.", "un guide."], a: 0, x: "« Nous cherchons aussi deux parents pour accompagner le groupe »." }
@@ -73,7 +73,7 @@
       { q: "Yusuf veut fêter ses 30 ans avec 25 amis. Quel restaurant lui correspond ?", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D"], a: 3, x: "Annonce D : « Salle privée pour les anniversaires […] jusqu'à 40 personnes »." },
       { q: "Martin et Sophie veulent déjeuner le dimanche avec leurs trois enfants. Quel restaurant leur correspond ?", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D"], a: 2, x: "Annonce C : « espace de jeux pour les enfants », « Ouvert le dimanche midi »." },
       { q: "Léo rentre du travail à 22 h. Il veut manger chez lui sans sortir. Quel restaurant lui correspond ?", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D"], a: 1, x: "Annonce B : « jusqu'à minuit », « Livraison gratuite à domicile »." },
-      { q: "On peut dîner au Jardin Vert.", o: ["Vrai", "Faux"], a: 1, x: "Le Jardin Vert est « Fermé le soir »." }
+      { q: "La pizzeria Bella Napoli est ouverte le dimanche.", o: ["Vrai", "Faux"], a: 0, x: "La pizzeria est « Ouverte tous les jours jusqu'à minuit »." }
     ] },
 
   { id: "a2-s07-ce2", level: "A2", sujet: 7, sec: "ce", ex: 2, pts: 6,
@@ -85,7 +85,7 @@
     questions: [
       { q: "Les travaux concernent…", o: ["les escaliers.", "l'ascenseur.", "les fenêtres."], a: 1, x: "« L'ascenseur […] va être complètement changé »." },
       { q: "Les travaux vont durer…", o: ["une semaine.", "deux semaines.", "trois semaines."], a: 2, x: "« Pendant ces trois semaines, l'ascenseur ne fonctionnera pas »." },
-      { q: "Le dimanche, quelqu'un aide les habitants à monter leurs courses.", o: ["Vrai", "Faux"], a: 1, x: "Une personne sera présente « du lundi au samedi »." },
+      { q: "Le samedi matin, quelqu'un aide les habitants à monter leurs courses.", o: ["Vrai", "Faux"], a: 0, x: "Une personne sera présente « du lundi au samedi, de 9 h à 12 h et de 16 h à 19 h »." },
       { q: "Le bruit sera plus fort…", o: ["la première semaine.", "la dernière semaine.", "le soir."], a: 0, x: "« Il y aura du bruit, surtout la première semaine »." },
       { q: "Pendant les travaux, il ne faut pas…", o: ["utiliser les escaliers de l'immeuble.", "laisser son vélo dans le hall.", "sortir le soir."], a: 1, x: "« Merci de ne pas laisser de vélos ou de poussettes dans le hall »." },
       { q: "Le nouvel ascenseur…", o: ["sera plus petit.", "sera plus rapide.", "transportera 4 personnes."], a: 1, x: "« plus grand et plus rapide que l'ancien »." }
@@ -144,7 +144,7 @@
       body: "Madame Kaya,\n\nNous avons bien reçu votre inscription au cours « Niveau A2 – Communiquer au quotidien ». Bienvenue dans notre école !\n\nLe cours commence le lundi 3 février et se termine le vendredi 28 mars. Il a lieu le lundi et le jeudi, de 18 h à 20 h, dans la salle 4, au premier étage. Votre professeure s'appelle Hélène Martin.\n\nAvant le premier cours, vous devez passer un petit test de niveau en ligne. Il dure 30 minutes. Le lien se trouve en bas de ce message. Merci de le faire avant le 27 janvier.\n\nVous avez choisi de payer en trois fois. Vous avez déjà payé 120 €. Les deux autres paiements de 120 € seront pris sur votre compte le 1er février et le 1er mars.\n\nLe livre du cours n'est pas compris dans le prix. Vous pouvez l'acheter à notre accueil (22 €) ou dans une librairie.\n\nSi vous ne pouvez pas venir à un cours, merci de prévenir le secrétariat par courriel.\n\nÀ bientôt !\nLe secrétariat" },
     questions: [
       { q: "Le cours a lieu…", o: ["le lundi et le jeudi.", "le lundi et le vendredi.", "tous les jours."], a: 0, x: "« Il a lieu le lundi et le jeudi, de 18 h à 20 h »." },
-      { q: "Mme Kaya doit passer le test de niveau à l'école.", o: ["Vrai", "Faux"], a: 1, x: "« un petit test de niveau en ligne »." },
+      { q: "Le test de niveau dure une demi-heure.", o: ["Vrai", "Faux"], a: 0, x: "« un petit test de niveau en ligne. Il dure 30 minutes »." },
       { q: "Elle doit faire le test avant le…", o: ["27 janvier.", "3 février.", "28 mars."], a: 0, x: "« Merci de le faire avant le 27 janvier »." },
       { q: "Le prix total du cours est de…", o: ["120 €.", "240 €.", "360 €."], a: 2, x: "Trois paiements de 120 € : 3 × 120 = 360 €." },
       { q: "Le livre du cours…", o: ["est gratuit.", "coûte 22 € à l'accueil.", "est donné par la professeure."], a: 1, x: "« Vous pouvez l'acheter à notre accueil (22 €) »." },
@@ -174,7 +174,7 @@
       body: "Après trois ans de travaux, la nouvelle ligne C du tramway a été inaugurée samedi dernier. Elle relie la gare au nouvel hôpital, en passant par le centre-ville et l'université. Elle compte 18 stations sur 9 kilomètres.\n\nLe premier week-end, le tram était gratuit, et des milliers d'habitants sont venus l'essayer. « Avant, il me fallait 45 minutes en bus pour aller à l'hôpital. Maintenant, c'est 20 minutes ! », se réjouit Nadia, infirmière.\n\nLe tram circule de 5 h à minuit en semaine, et jusqu'à 1 h du matin le vendredi et le samedi. Aux heures de pointe, il passe toutes les 5 minutes. Le prix du ticket ne change pas : 1,70 € pour une heure de voyage.\n\nLes commerçants du centre sont satisfaits. Pendant les travaux, ils avaient perdu beaucoup de clients, mais maintenant ils espèrent en accueillir plus qu'avant.\n\nUn grand parking gratuit de 600 places a aussi été construit au terminus, pour les personnes qui viennent en voiture des villages voisins. La ville prévoit déjà une ligne D pour 2030." },
     questions: [
       { q: "La ligne C va de la gare…", o: ["à l'aéroport.", "à l'hôpital.", "au stade."], a: 1, x: "« Elle relie la gare au nouvel hôpital »." },
-      { q: "Le premier week-end, il fallait payer le tram.", o: ["Vrai", "Faux"], a: 1, x: "« Le premier week-end, le tram était gratuit »." },
+      { q: "Aux heures de pointe, il y a un tram toutes les 5 minutes.", o: ["Vrai", "Faux"], a: 0, x: "« Aux heures de pointe, il passe toutes les 5 minutes »." },
       { q: "Pour Nadia, le trajet jusqu'à l'hôpital dure maintenant…", o: ["5 minutes.", "20 minutes.", "45 minutes."], a: 1, x: "« Maintenant, c'est 20 minutes ! »" },
       { q: "Le samedi soir, le tram circule jusqu'à…", o: ["minuit.", "1 h du matin.", "5 h du matin."], a: 1, x: "« jusqu'à 1 h du matin le vendredi et le samedi »." },
       { q: "Pendant les travaux, les commerçants…", o: ["ont perdu des clients.", "ont fermé leurs magasins.", "ont gagné plus d'argent."], a: 0, x: "« ils avaient perdu beaucoup de clients »." },
@@ -205,7 +205,7 @@
     questions: [
       { q: "Laura écrit pour…", o: ["inviter Esin en Espagne.", "demander un service à Esin.", "donner son chat à Esin."], a: 1, x: "« J'ai un petit service à te demander »." },
       { q: "Laura part en vacances avec…", o: ["sa mère.", "son frère.", "une amie."], a: 1, x: "« je pars en Espagne avec mon frère »." },
-      { q: "Cette année, le chat va chez la mère de Laura.", o: ["Vrai", "Faux"], a: 1, x: "« cette année, elle part aussi en vacances »." },
+      { q: "Le chat de Laura connaît déjà Esin.", o: ["Vrai", "Faux"], a: 0, x: "« il n'aime pas trop les inconnus, mais il te connaît déjà »." },
       { q: "Esin doit donner à manger au chat…", o: ["une fois par jour.", "deux fois par jour.", "deux fois par semaine."], a: 0, x: "« il faut lui donner à manger une fois par jour, le soir »." },
       { q: "Esin va trouver les clés…", o: ["chez Mme Petit.", "sous le paillasson.", "chez la mère de Laura."], a: 0, x: "« Je vais laisser les clés chez ma voisine du 2e étage, Mme Petit »." },
       { q: "Pour remercier Esin, Laura va…", o: ["lui donner de l'argent.", "l'inviter au restaurant.", "lui offrir un chat."], a: 1, x: "« je t'invite au restaurant à mon retour ! »" }
@@ -265,7 +265,7 @@
     questions: [
       { q: "La fête a lieu…", o: ["dans un restaurant.", "dans la cour de l'immeuble.", "dans un parc."], a: 1, x: "« à partir de 19 h, dans la cour »." },
       { q: "S'il pleut…", o: ["la fête est annulée.", "on va dans la salle commune.", "on va chez Sylvie, au 3e étage."], a: 1, x: "« S'il pleut, nous irons dans la salle commune »." },
-      { q: "L'année dernière, il y avait peu de monde.", o: ["Vrai", "Faux"], a: 1, x: "« L'année dernière, nous étions plus de 50 »." },
+      { q: "Sylvie habite au 3e étage de l'immeuble.", o: ["Vrai", "Faux"], a: 0, x: "Elle signe : « Sylvie Marchand, 3e étage »." },
       { q: "Le concours récompense…", o: ["le meilleur dessert.", "la meilleure chanson.", "le plus beau dessin."], a: 0, x: "« un concours du meilleur dessert »." },
       { q: "Chaque voisin doit apporter…", o: ["des assiettes.", "un plat ou une boisson.", "de l'argent."], a: 1, x: "« chacun apporte un plat ou une boisson à partager »." },
       { q: "Sylvie cherche de l'aide pour…", o: ["faire les courses.", "installer les tables.", "garder les enfants."], a: 1, x: "« Nous avons besoin d'aide pour installer les tables vers 18 h »." }
@@ -294,7 +294,7 @@
       body: "Dimanche prochain, Michel Garnier va courir le marathon de Paris. Ce sera son trentième marathon ! Pourtant, cet ancien professeur de mathématiques n'a pas toujours été sportif.\n\n« Quand j'étais jeune, je détestais le sport et je fumais beaucoup », raconte-t-il. À 45 ans, son médecin lui a conseillé de changer ses habitudes. Michel a arrêté de fumer et il a commencé à courir, d'abord dix minutes par jour, autour du lycée où il travaillait.\n\nTrois ans plus tard, il a couru son premier marathon, à Lyon. « J'ai mis 5 heures et j'avais mal partout, mais j'étais tellement fier ! » Depuis, il a couru à New York, à Berlin, à Tokyo et même dans le désert, au Maroc.\n\nAujourd'hui à la retraite, Michel s'entraîne cinq fois par semaine avec un club de sa ville. Il fait attention à ce qu'il mange et il se couche tôt. Son meilleur temps : 3 h 25, à 55 ans.\n\nSon secret ? « Courir avec des amis. Seul, on abandonne vite. Ensemble, on va plus loin. » Et après Paris ? Michel rêve de courir à Istanbul, où le marathon traverse le pont entre l'Europe et l'Asie." },
     questions: [
       { q: "Avant sa retraite, Michel était…", o: ["professeur.", "médecin.", "sportif professionnel."], a: 0, x: "« cet ancien professeur de mathématiques »." },
-      { q: "Quand il était jeune, Michel aimait beaucoup le sport.", o: ["Vrai", "Faux"], a: 1, x: "« Quand j'étais jeune, je détestais le sport »." },
+      { q: "Michel avait 48 ans quand il a couru son premier marathon.", o: ["Vrai", "Faux"], a: 0, x: "Il a commencé à courir à 45 ans, et « Trois ans plus tard, il a couru son premier marathon » : 45 + 3 = 48 ans." },
       { q: "Michel a commencé à courir…", o: ["à 45 ans.", "à 55 ans.", "à 68 ans."], a: 0, x: "« À 45 ans, son médecin lui a conseillé de changer ses habitudes […] il a commencé à courir »." },
       { q: "Il a couru son premier marathon à…", o: ["Paris.", "Lyon.", "New York."], a: 1, x: "« il a couru son premier marathon, à Lyon »." },
       { q: "Pour Michel, le secret, c'est de…", o: ["courir seul.", "courir avec des amis.", "courir tous les jours."], a: 1, x: "« Courir avec des amis. Seul, on abandonne vite »." },

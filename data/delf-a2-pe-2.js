@@ -44,8 +44,8 @@
     min: 60,
     must: [
       { c: "Remercier", kw: ["merci", "remercie", "gentille", "gentil"] },
-      { c: "Parler de vos vacances", kw: ["vacances", "voyage", "je suis allée", "je suis allé", "nous sommes allés", "turquie", "famille", "mer"] },
-      { c: "Proposer quelque chose pour remercier", kw: ["je vous invite", "inviter", "café", "thé", "cadeau", "rapporté", "passer", "venir"] },
+      { c: "Parler de vos vacances", kw: ["vacances", "voyage", "je suis allée", "je suis allé", "nous sommes allés", "turquie", "famille", "la mer"] },
+      { c: "Proposer quelque chose pour remercier", kw: ["je vous invite", "inviter", "café", "du thé", "cadeau", "rapporté", "passer", "venir"] },
       { c: "Utiliser des formules de politesse", kw: ["madame", "chère", "bien amicalement", "cordialement", "bonne journée"] }
     ],
     model: "Chère Madame Roche,\nMerci beaucoup d'avoir arrosé mes plantes ! Vous êtes très gentille. Mes vacances étaient excellentes : nous sommes allés deux semaines en Turquie pour voir ma famille. Il faisait très chaud et nous sommes allés à la mer presque tous les jours. Je vous ai rapporté un petit cadeau : du thé et des loukoums. Est-ce que vous voulez passer prendre un café chez moi samedi après-midi ?\nBien amicalement,\nEsin" },
@@ -56,7 +56,7 @@
     help: { tr: "Geçen hafta sonu bir doğa yürüyüşü yaptınız. Bir arkadaşınıza mesaj yazın: yeri ve havayı anlatın, yürüyüşü anlatın ve izlenimlerinizi söyleyin. (En az 60 kelime)", en: "Last weekend you went hiking. Write a message to a friend: describe the place and the weather, tell her about the hike and give your impressions. (60 words minimum)" },
     min: 60,
     must: [
-      { c: "Décrire le lieu", kw: ["calanques", "montagne", "forêt", "mer", "chemin", "sentier", "rochers", "paysages", "lac"] },
+      { c: "Décrire le lieu", kw: ["calanques", "montagne", "forêt", "la mer", "chemin", "sentier", "rochers", "paysages", "le lac"] },
       { c: "Parler du temps", kw: ["il faisait", "beau", "soleil", "chaud", "froid", "vent", "pluie"] },
       { c: "Raconter la randonnée", kw: ["marché", "nous avons", "j'ai fait", "heures", "kilomètres", "pique-niqué", "nagé", "monté"] },
       { c: "Donner vos impressions", kw: ["c'était", "magnifique", "magnifiques", "superbe", "adoré", "aimé", "fatiguée", "fatigué", "mal aux jambes"] }
@@ -108,7 +108,7 @@
     must: [
       { c: "Parler de la préparation", kw: ["entraînée", "entraîné", "entraînement", "préparé", "par semaine", "mois", "semaines"] },
       { c: "Raconter le jour de la course", kw: ["course", "départ", "coureurs", "couru", "il faisait", "le jour"] },
-      { c: "Décrire un moment difficile", kw: ["mal", "difficile", "trop vite", "fatiguée", "fatigué", "kilomètre", "dur"] },
+      { c: "Décrire un moment difficile", kw: ["j'avais mal", "mal aux", "difficile", "trop vite", "fatiguée", "fatigué", "kilomètre", "c'était dur"] },
       { c: "Donner vos impressions", kw: ["fière", "fier", "contente", "content", "médaille", "c'était", "recommencer", "j'étais"] }
     ],
     model: "Dimanche dernier, j'ai couru ma première course de 10 km à Lyon ! Pendant deux mois, je me suis entraînée trois fois par semaine avec une amie. Le jour de la course, il faisait frais et il y avait 3 000 coureurs. Je suis partie trop vite et, au septième kilomètre, j'avais mal aux jambes. Mais le public nous encourageait et j'ai fini en 58 minutes. J'étais très fière de ma médaille ! Je vais recommencer l'année prochaine." },
@@ -122,7 +122,7 @@
       { c: "Demander des nouvelles", kw: ["comment", "est-ce que", "fatiguée", "dort", "dormir", "la nuit", "tu vas bien"] },
       { c: "Proposer une visite ou de l'aide", kw: ["passer vous voir", "visite", "venir", "aider", "aide", "repas", "courses", "cadeau"] }
     ],
-    model: "Chère Amandine,\nFélicitations ! Quelle bonne nouvelle ! Lina est un très joli prénom. Je suis tellement contente pour vous trois. Comment tu te sens ? Tu n'es pas trop fatiguée ? Est-ce que Lina dort bien la nuit ? Quand tu seras rentrée à la maison, je pourrais passer vous voir avec un petit cadeau. Si tu veux, je peux aussi vous apporter un repas ou faire quelques courses pour vous.\nGros bisous à tous les trois,\nEsin" },
+    model: "Chère Amandine,\nFélicitations ! Quelle bonne nouvelle ! Lina est un très joli prénom. Je suis tellement contente pour vous trois. Comment tu te sens ? Tu n'es pas trop fatiguée ? Est-ce que Lina dort bien la nuit ? Quand tu seras à la maison, je pourrai passer vous voir avec un petit cadeau. Si tu veux, je peux aussi vous apporter un repas ou faire quelques courses pour vous.\nGros bisous à tous les trois,\nEsin" },
 
   { id: "a2-s16-pe1", level: "A2", sujet: 16, sec: "pe", ex: 1, pts: 13, kind: "text",
     title: "Une journée de bénévolat",
@@ -143,7 +143,7 @@
     min: 60,
     must: [
       { c: "Informer de votre retard", kw: ["en retard", "retard", "j'arriverai", "arriverai", "plus tard"] },
-      { c: "Expliquer pourquoi", kw: ["parce que", "car", "rendez-vous", "préfecture", "grève", "médecin", "école"] },
+      { c: "Expliquer pourquoi", kw: ["parce que", "à cause", "rendez-vous", "préfecture", "grève", "médecin", "école"] },
       { c: "Dire à quelle heure vous arriverez", kw: ["vers", "heures", "à 10", "10 h", "avant midi"] },
       { c: "Demander un service", kw: ["est-ce que tu pourrais", "pourrais-tu", "peux-tu", "tu peux", "prévenir", "déplacer", "merci"] }
     ],
@@ -185,7 +185,7 @@
       { c: "Raconter la journée", kw: ["arrivée", "arrivé", "installer", "matin", "clients", "négociaient", "à la fin", "discuté"] },
       { c: "Donner vos impressions", kw: ["c'était", "sympa", "amusant", "fatigant", "contente", "content", "j'ai aimé", "gagné"] }
     ],
-    model: "Dimanche dernier, j'ai participé à mon premier vide-grenier, sur la place de mon quartier. Après mon arrivée en France, j'avais trop de choses dans mon petit appartement ! Je suis arrivée à 6 heures du matin pour installer mon stand. J'ai vendu des vêtements, des livres et de la vaisselle. Les clients négociaient tous les prix, c'était amusant. À la fin, j'ai gagné 85 € et j'ai acheté une jolie lampe pour 5 €. C'était fatigant mais très sympa !" },
+    model: "Dimanche dernier, j'ai participé à mon premier vide-grenier, sur la place de mon quartier. Depuis mon déménagement, j'avais trop de choses dans mon petit appartement ! Je suis arrivée à 6 heures du matin pour installer mon stand. J'ai vendu des vêtements, des livres et de la vaisselle. Les clients négociaient tous les prix, c'était amusant. À la fin, j'ai gagné 85 € et j'ai acheté une jolie lampe pour 5 €. C'était fatigant mais très sympa !" },
   { id: "a2-s18-pe2", level: "A2", sujet: 18, sec: "pe", ex: 2, pts: 12, kind: "text",
     title: "Un colis abîmé",
     consigne: "Vous avez commandé six assiettes sur le site d'un magasin de décoration. Vous recevez ce message : « Votre colis a été livré le 3 mars. Votre avis nous intéresse : tout s'est bien passé ? » Mais deux assiettes sont cassées. Vous écrivez au service client : vous rappelez votre commande, vous expliquez le problème et vous demandez une solution. (60 mots minimum)",
@@ -205,7 +205,7 @@
     help: { tr: "Bir hafta sonu Fransa'da ünlü bir şato gezdiniz. Bir arkadaşınıza mesaj yazın: yeri anlatın, ziyareti anlatın, en sevdiğiniz anı söyleyin ve izlenimlerinizi verin. (En az 60 kelime)", en: "One weekend you visited a famous castle in France. Write a message to a friend: describe the place, tell her about the visit, say what your favourite moment was and give your impressions. (60 words minimum)" },
     min: 60,
     must: [
-      { c: "Décrire le lieu", kw: ["château", "immense", "grand", "siècle", "roi", "jardins", "escalier"] },
+      { c: "Décrire le lieu", kw: ["château", "immense", "grand", "siècle", "le roi", "jardins", "escalier"] },
       { c: "Raconter la visite", kw: ["visité", "visite guidée", "guide", "audioguide", "promenés", "photos", "nous avons"] },
       { c: "Parler de votre moment préféré", kw: ["préféré", "moment", "surtout", "le plus"] },
       { c: "Donner vos impressions", kw: ["c'était", "magnifique", "impressionnant", "j'ai aimé", "adoré", "beau", "compris"] }
@@ -217,10 +217,10 @@
     help: { tr: "Kütüphanede şu ilanı okuyorsunuz: « Merhaba! Adım Hugo, 32 yaşındayım ve Türkçe öğreniyorum. Dil değişimi için Türk birini arıyorum: bir saat Fransızca, bir saat Türkçe. Bana yazın! » Ona cevap verin: kendinizi tanıtın, bu değişimin neden ilginizi çektiğini söyleyin ve buluşmak için bir gün ve yer önerin. (En az 60 kelime)", en: "You read this ad at the library: « Hello! My name is Hugo, I'm 32 and I'm learning Turkish. I'm looking for a Turkish person for a language exchange: one hour in French, one hour in Turkish. Write to me! » Reply: introduce yourself, say why the exchange interests you and suggest a day and a place to meet. (60 words minimum)" },
     min: 60,
     must: [
-      { c: "Vous présenter", kw: ["je m'appelle", "je suis", "j'ai", "ans", "turque", "turc", "j'habite", "kinésithérapeute"] },
+      { c: "Vous présenter", kw: ["je m'appelle", "je suis", "j'ai", "turque", "turc", "j'habite", "kinésithérapeute"] },
       { c: "Dire pourquoi l'échange vous intéresse", kw: ["m'intéresse", "intéressée", "intéressé", "pratiquer", "progresser", "améliorer", "parler"] },
       { c: "Proposer un jour et un lieu", kw: ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche", "café", "médiathèque", "on pourrait"] },
-      { c: "Terminer le message poliment", kw: ["à bientôt", "bonne journée", "cordialement", "votre réponse", "bonjour"] }
+      { c: "Terminer le message poliment", kw: ["à bientôt", "bonne journée", "cordialement", "votre réponse", "bises", "merci"] }
     ],
     model: "Bonjour Hugo,\nJe m'appelle Esin, j'ai 29 ans et je suis turque. J'habite en France depuis six mois et je suis kinésithérapeute. Votre annonce m'intéresse beaucoup : je voudrais pratiquer le français à l'oral, parce que je parle encore lentement. Et moi, je peux vous aider en turc avec plaisir ! Est-ce que vous êtes libre le mercredi soir ? On pourrait se retrouver au café de la gare vers 18 h 30.\nÀ bientôt,\nEsin" },
 

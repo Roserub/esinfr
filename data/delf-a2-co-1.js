@@ -15,7 +15,7 @@
       { q: "Le train part de quelle voie ?", o: ["De la voie 3.", "De la voie 5.", "De la voie 8."], a: 0, x: "« Ce train partira de la voie 3, et non de la voie 5. »" },
       { q: "Cette semaine, combien coûtent les pommes ?", o: ["2,50 € le kilo.", "1,50 € le kilo.", "1,99 € le kilo."], a: 2, x: "« Les pommes et les poires sont à 1,99 € le kilo. » Les oranges coûtent 2,50 €." },
       { q: "Samedi prochain, le magasin ferme à…", o: ["18 h.", "19 h.", "20 h."], a: 0, x: "« Samedi prochain, il fermera exceptionnellement à 18 h. »" },
-      { q: "Pour un gâteau d'anniversaire, il faut…", o: ["téléphoner au magasin.", "le commander 2 jours avant.", "venir le samedi matin."], a: 1, x: "« Pensez à les commander à l'accueil, 48 heures à l'avance. » 48 heures = 2 jours." }
+      { q: "Pour un gâteau d'anniversaire, il faut…", o: ["téléphoner au magasin la veille.", "le commander 2 jours avant.", "venir le samedi matin."], a: 1, x: "« Pensez à les commander à l'accueil, 48 heures à l'avance. » 48 heures = 2 jours." }
     ] },
 
   { id: "a2-s01-co2", level: "A2", sujet: 1, sec: "co", ex: 2, pts: 6,
@@ -61,15 +61,15 @@
     audio: [],
     questions: [
       { q: "Dialogue 1 : que fait l'homme ?", audio: [["M", "Excusez-moi, madame, je suis vraiment désolé. Je suis en retard, mon bus n'est pas passé."], ["F", "Ce n'est pas grave, asseyez-vous. Nous commençons le cours."]],
-        o: ["Il s'excuse.", "Il remercie la dame.", "Il demande l'heure.", "Il invite la dame."], a: 0, x: "Il dit : « Je suis vraiment désolé. Je suis en retard. »" },
+        o: ["Il demande l'heure.", "Il remercie la dame.", "Il s'excuse.", "Il invite la dame."], a: 2, x: "Il dit : « Je suis vraiment désolé. Je suis en retard. »" },
       { q: "Dialogue 2 : que fait la femme ?", audio: [["F", "Samedi, j'organise un petit repas chez moi pour mon anniversaire. Tu veux venir ?"], ["M", "Avec plaisir ! À quelle heure ?"]],
-        o: ["Elle accepte une invitation.", "Elle invite son ami.", "Elle annule une fête.", "Elle demande l'heure."], a: 1, x: "Elle dit : « J'organise un petit repas… Tu veux venir ? »" },
+        o: ["Elle invite son ami.", "Elle accepte une invitation.", "Elle annule une fête.", "Elle demande l'heure."], a: 0, x: "Elle dit : « J'organise un petit repas… Tu veux venir ? »" },
       { q: "Dialogue 3 : que fait l'homme ?", audio: [["M", "Bonjour, je voudrais savoir à quelle heure ferme la bibliothèque le dimanche."], ["F", "Le dimanche, nous fermons à 13 h, monsieur."]],
-        o: ["Il rend un livre.", "Il se plaint des horaires.", "Il demande un renseignement.", "Il prend un rendez-vous."], a: 2, x: "Il dit : « Je voudrais savoir à quelle heure ferme la bibliothèque. »" },
+        o: ["Il rend un livre.", "Il se plaint des horaires.", "Il prend un rendez-vous.", "Il demande un renseignement."], a: 3, x: "Il dit : « Je voudrais savoir à quelle heure ferme la bibliothèque. »" },
       { q: "Dialogue 4 : que fait la femme ?", audio: [["F", "Oh, merci beaucoup pour les fleurs ! Elles sont magnifiques, c'est très gentil."], ["M", "Je t'en prie, ça me fait plaisir."]],
-        o: ["Elle refuse un cadeau.", "Elle offre des fleurs.", "Elle s'excuse.", "Elle remercie."], a: 3, x: "Elle dit : « Merci beaucoup pour les fleurs ! »" },
+        o: ["Elle refuse un cadeau.", "Elle remercie.", "Elle s'excuse.", "Elle offre des fleurs."], a: 1, x: "Elle dit : « Merci beaucoup pour les fleurs ! »" },
       { q: "Dialogue 5 : que fait l'homme ?", audio: [["M", "Merci pour l'invitation au cinéma, mais ce soir, je ne peux pas : je travaille tard. Une autre fois ?"], ["F", "D'accord, pas de problème."]],
-        o: ["Il accepte une invitation.", "Il refuse une invitation.", "Il propose un film.", "Il donne un conseil."], a: 1, x: "Il dit : « Ce soir, je ne peux pas : je travaille tard. »" }
+        o: ["Il accepte une invitation.", "Il propose un film.", "Il refuse une invitation.", "Il donne un conseil."], a: 2, x: "Il dit : « Ce soir, je ne peux pas : je travaille tard. »" }
     ] },
 
   /* ───────────── Sujet 2 ───────────── */
@@ -121,8 +121,8 @@
     questions: [
       { q: "Quel est le problème ce matin ?", o: ["Il n'y a plus d'eau chaude.", "La cuisine est sale.", "Le frigo est vide."], a: 1, x: "« La cuisine est encore sale ce matin. »" },
       { q: "Hier soir, Thomas…", o: ["a travaillé tard.", "est allé au cinéma.", "a regardé un match avec des amis."], a: 2, x: "« Hier soir, j'ai invité des amis pour regarder le match. »" },
-      { q: "Inès commence le travail à…", o: ["1 h.", "23 h.", "7 h."], a: 2, x: "« Moi, je commence le travail à 7 h. » À 1 h, elle s'est réveillée." },
-      { q: "Thomas propose…", o: ["de faire un planning pour le ménage.", "de changer d'appartement.", "d'acheter un lave-vaisselle."], a: 0, x: "« On fait un planning pour le ménage. »" },
+      { q: "La femme commence le travail à…", o: ["1 h.", "23 h.", "7 h."], a: 2, x: "« Moi, je commence le travail à 7 h. » À 1 h, elle s'est réveillée." },
+      { q: "Thomas propose…", o: ["de faire un planning pour le ménage.", "de changer d'appartement.", "d'acheter un lave-vaisselle pour la cuisine."], a: 0, x: "« On fait un planning pour le ménage. »" },
       { q: "En semaine, les amis de Thomas partiront…", o: ["avant 22 h.", "avant 23 h.", "après minuit."], a: 1, x: "« En semaine, mes amis partiront avant 23 h. »" },
       { q: "Ce soir, Thomas va…", o: ["sortir avec ses amis.", "préparer le dîner.", "regarder un autre match."], a: 1, x: "« Ce soir, c'est moi qui fais les courses et je prépare le dîner pour nous deux. »" }
     ] },
@@ -134,15 +134,15 @@
     audio: [],
     questions: [
       { q: "Dialogue 1 : que fait la femme ?", audio: [["F", "Pardon, monsieur, pour aller à la gare, c'est loin d'ici ?"], ["M", "Non, c'est tout droit, puis la deuxième rue à gauche. 5 minutes à pied."]],
-        o: ["Elle demande son chemin.", "Elle achète un billet.", "Elle donne une adresse.", "Elle se plaint du bruit."], a: 0, x: "Elle dit : « Pour aller à la gare, c'est loin d'ici ? »" },
+        o: ["Elle achète un billet.", "Elle demande son chemin.", "Elle donne une adresse.", "Elle se plaint du bruit."], a: 1, x: "Elle dit : « Pour aller à la gare, c'est loin d'ici ? »" },
       { q: "Dialogue 2 : que fait l'homme ?", audio: [["M", "Bravo, Sophie ! Tu as réussi ton permis de conduire du premier coup, c'est génial !"], ["F", "Merci, je suis tellement contente !"]],
-        o: ["Il console Sophie.", "Il félicite Sophie.", "Il demande une permission.", "Il s'excuse."], a: 1, x: "Il dit : « Bravo, Sophie ! Tu as réussi ton permis. »" },
+        o: ["Il console Sophie.", "Il s'excuse.", "Il demande une permission.", "Il félicite Sophie."], a: 3, x: "Il dit : « Bravo, Sophie ! Tu as réussi ton permis. »" },
       { q: "Dialogue 3 : que fait la femme ?", audio: [["F", "Monsieur, ça fait 40 minutes que j'attends mon plat. Et la soupe était froide ! Ce n'est pas normal."], ["M", "Je suis désolé, madame, je vais voir en cuisine."]],
-        o: ["Elle commande un plat.", "Elle félicite le cuisinier.", "Elle se plaint.", "Elle paie l'addition."], a: 2, x: "Elle dit : « Ça fait 40 minutes que j'attends… Ce n'est pas normal. »" },
+        o: ["Elle se plaint.", "Elle félicite le cuisinier.", "Elle commande un plat.", "Elle paie l'addition."], a: 0, x: "Elle dit : « Ça fait 40 minutes que j'attends… Ce n'est pas normal. »" },
       { q: "Dialogue 4 : que fait l'homme ?", audio: [["M", "Tu as l'air fatiguée. Tu devrais te coucher plus tôt et arrêter le café après 16 h."], ["F", "Oui, tu as raison, je vais essayer."]],
-        o: ["Il propose un café.", "Il invite son amie.", "Il refuse de l'aider.", "Il donne un conseil."], a: 3, x: "Il dit : « Tu devrais te coucher plus tôt. »" },
+        o: ["Il propose un café.", "Il invite son amie.", "Il donne un conseil.", "Il refuse de l'aider."], a: 2, x: "Il dit : « Tu devrais te coucher plus tôt. »" },
       { q: "Dialogue 5 : que fait la femme ?", audio: [["F", "Est-ce que je peux ouvrir la fenêtre ? Il fait très chaud ici."], ["M", "Oui, bien sûr, allez-y."]],
-        o: ["Elle demande la permission.", "Elle se plaint du froid.", "Elle propose son aide.", "Elle remercie l'homme."], a: 0, x: "Elle dit : « Est-ce que je peux ouvrir la fenêtre ? »" }
+        o: ["Elle remercie l'homme.", "Elle se plaint du froid.", "Elle propose son aide.", "Elle demande la permission."], a: 3, x: "Elle dit : « Est-ce que je peux ouvrir la fenêtre ? »" }
     ] },
 
   /* ───────────── Sujet 3 ───────────── */
@@ -174,7 +174,7 @@
       { q: "Un adulte a besoin de dormir…", o: ["7 à 8 heures.", "6 heures.", "9 heures."], a: 0, x: "« Un adulte a besoin de 7 à 8 heures de sommeil par nuit. »" },
       { q: "Il faut éteindre son téléphone…", o: ["juste avant de dormir.", "à 15 h.", "une heure avant de dormir."], a: 2, x: "« Il faut éteindre son téléphone une heure avant de dormir. »" },
       { q: "Dans la chambre, la température idéale est de…", o: ["15 degrés.", "18 degrés.", "21 degrés."], a: 1, x: "« La température idéale est de 18 degrés. »" },
-      { q: "Selon le docteur, le sport…", o: ["est mauvais pour le sommeil.", "est meilleur tard le soir.", "est bon, mais pas juste avant de dormir."], a: 2, x: "« C'est bon pour le sommeil, mais pas juste avant d'aller au lit ! »" }
+      { q: "Selon le docteur, le sport…", o: ["est mauvais pour le sommeil.", "est meilleur tard le soir, avant le lit.", "est bon, mais pas juste avant de dormir."], a: 2, x: "« C'est bon pour le sommeil, mais pas juste avant d'aller au lit ! »" }
     ] },
 
   { id: "a2-s03-co3", level: "A2", sujet: 3, sec: "co", ex: 3, pts: 6,
@@ -317,7 +317,7 @@
     questions: [
       { q: "Le forum de l'emploi a lieu…", o: ["lundi 15 mars.", "mardi 15 mars.", "mardi 5 mai."], a: 1, x: "« Mardi 15 mars, le forum de l'emploi aura lieu au palais des congrès de Tours. »" },
       { q: "Combien d'entreprises seront présentes ?", o: ["Plus de 80.", "1 200.", "3 000."], a: 0, x: "« Plus de 80 entreprises seront présentes. » 1 200, c'est le nombre de postes." },
-      { q: "Pour entrer au forum, il faut…", o: ["s'inscrire sur internet.", "payer 10 €.", "seulement venir : c'est gratuit et sans inscription."], a: 2, x: "« L'entrée est gratuite et sans inscription. »" },
+      { q: "Pour entrer au forum, il faut…", o: ["s'inscrire sur internet.", "payer 10 €.", "simplement venir."], a: 2, x: "« L'entrée est gratuite et sans inscription. »" },
       { q: "Le journaliste conseille d'apporter…", o: ["📄 au moins 10 CV", "🪪 une pièce d'identité", "💻 un ordinateur"], a: 0, x: "« Apportez plusieurs CV imprimés, au moins 10. »" },
       { q: "Sur place, les conseillers aident à…", o: ["trouver un logement.", "préparer un entretien.", "remplir des papiers administratifs."], a: 1, x: "« Des conseillers vous aideront… à préparer un entretien. »" }
     ] },

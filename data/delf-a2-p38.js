@@ -224,9 +224,9 @@
       { q: "Le longe-côte, c'est…", o: ["une course à pied sur la plage.", "une marche dans la mer.", "une forme de natation rapide."], a: 1,
         x: "« Ils ne nagent pas, ils marchent ! […] On marche dans l'eau, parallèlement à la plage. »",
         xtr: "« longe-côte » = denizde, kıyıya paralel yürüyüş. Kumda koşu ya da yüzme değil." },
-      { q: "« Le club de Berck pratique ce sport seulement en été. »", o: ["Vrai", "Faux"], a: 1,
-        x: "Faux : « tous les samedis matin, même en hiver ».",
-        xtr: "Yanlış: kulüp her cumartesi sabahı, kışın bile denize giriyor." },
+      { q: "« Les membres du club de Berck entrent dans la mer même en hiver. »", o: ["Vrai", "Faux"], a: 0,
+        x: "Vrai : « tous les samedis matin, même en hiver ».",
+        xtr: "Doğru: kulüp üyeleri her cumartesi sabahı, kışın bile denize giriyor." },
       { q: "Pour faire du longe-côte, il faut…", o: ["être un très bon nageur.", "avoir une combinaison et des chaussons.", "avoir moins de 60 ans et un certificat médical."], a: 1,
         x: "« On porte une combinaison et des chaussons spéciaux. Pas besoin de savoir bien nager ! »",
         xtr: "Dalış elbisesi ve özel patikler giyilir. İyi yüzmek gerekmiyor; Nicole 63 yaşında, yani yaş sınırı yok." },
@@ -263,7 +263,7 @@
     must: [
       { c: "Vous excuser", kw: ["désolé", "désolée", "desole", "desolee", "pardon", "excuse", "je m'excuse"] },
       { c: "Expliquer ce qui s'est passé (passé composé / imparfait)", kw: ["j'ai", "je suis tombée", "je suis tombé", "il y avait", "c'était", "c'etait", "rocher", "rochers", "vague", "vagues", "cassé", "casse", "abîmé", "abime"] },
-      { c: "Proposer une solution", kw: ["je vais payer", "je paierai", "je vais réparer", "je vais reparer", "je vais acheter", "réparation", "reparation", "je te propose", "je peux", "nouveau"] },
+      { c: "Proposer une solution", kw: ["je vais payer", "je paierai", "c'est moi qui paie", "je paie", "je vais réparer", "je vais reparer", "je vais acheter", "réparation", "reparation", "je te propose", "je peux", "nouveau"] },
       { c: "Remercier pour le prêt", kw: ["merci", "remercie", "gentil", "sympa", "prêté", "prete"] }
     ],
     model: "Salut Yannick,\nMerci encore de m'avoir prêté ton paddle ce week-end : c'était génial ! Mais j'ai une mauvaise nouvelle et je suis vraiment désolée. Dimanche matin, il y avait plus de vagues que prévu. Je suis tombée près des rochers et l'aileron sous la planche s'est cassé.\nJe suis allée dans un magasin de sport à Lorient : ils peuvent le changer en deux jours, pour 35 €. Bien sûr, c'est moi qui paie ! Je te rapporte le paddle jeudi soir, d'accord ?\nEncore pardon,\nEsin" },

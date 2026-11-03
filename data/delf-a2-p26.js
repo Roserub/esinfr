@@ -112,8 +112,8 @@
           ["F", "Dans un magasin spécialisé : il y a une garantie."]
         ],
         o: ["Demander un conseil", "Proposer son aide", "Inviter quelqu'un", "Féliciter quelqu'un"], a: 0,
-        x: "Léo demande : « À ton avis, j'en achète un d'occasion ? » et « où est-ce que je l'achète ? »",
-        xtr: "« À ton avis » = sence. Léo, Inès'ten fikir ve tavsiye istiyor." },
+        x: "Le jeune homme demande à Inès : « À ton avis, j'en achète un d'occasion ? » et « où est-ce que je l'achète ? »",
+        xtr: "« À ton avis » = sence. Genç adam Inès'ten fikir ve tavsiye istiyor." },
       { q: "Dialogue 2 : quelle est la situation ?",
         audio: [
           ["F2", "Hugo, tu as sorti la poubelle jaune hier soir ?"],
@@ -132,8 +132,8 @@
           ["M2", "Si tu veux, je viens avec toi."]
         ],
         o: ["Inviter quelqu'un", "S'excuser d'un oubli", "Proposer son aide", "Refuser une proposition"], a: 2,
-        x: "Hugo dit : « Attends, je vais t'aider ! Je peux les porter jusqu'à la voiture. »",
-        xtr: "Hugo yardım teklif ediyor. « Je viens avec toi » bir davet değil, yardım teklifidir." },
+        x: "Le colocataire dit : « Attends, je vais t'aider ! Je peux les porter jusqu'à la voiture. »",
+        xtr: "Ev arkadaşı yardım teklif ediyor. « Je viens avec toi » bir davet değil, yardım teklifidir." },
       { q: "Dialogue 4 : quelle est la situation ?",
         audio: [
           ["M", "Je fais la liste des courses. On prend des fraises pour le dessert ?"],
@@ -142,8 +142,8 @@
           ["F2", "Non plus. Je préfère des pommes de la région."]
         ],
         o: ["Féliciter quelqu'un", "Demander un conseil", "Inviter quelqu'un", "Refuser une proposition"], a: 3,
-        x: "Léo propose des fraises, puis des cerises ; Chloé répond : « Ah non ! » et « Non plus. »",
-        xtr: "Léo iki kez öneride bulunuyor, Chloé iki kez reddediyor: « Ah non ! » ve « Non plus » (o da hayır)." }
+        x: "L'homme propose des fraises, puis des cerises ; sa colocataire répond : « Ah non ! » et « Non plus. »",
+        xtr: "Adam iki kez öneride bulunuyor, ev arkadaşı iki kez reddediyor: « Ah non ! » ve « Non plus » (o da hayır)." }
     ] },
 
   /* ───────────── Compréhension des écrits ───────────── */

@@ -130,8 +130,8 @@
           ["F2", "Des chaussures plates : on danse toute la nuit !"]
         ],
         o: ["Féliciter quelqu'un.", "Demander un conseil.", "Refuser une proposition.", "Proposer son aide."], a: 1,
-        x: "Léa demande : « Qu'est-ce que tu me conseilles de mettre ? »",
-        xtr: "Léa « Qu'est-ce que tu me conseilles de mettre ? » diye soruyor, Nadia tavsiye veriyor. Düğünden söz ediliyor ama kimse tebrik etmiyor." },
+        x: "La jeune femme demande à Nadia : « Qu'est-ce que tu me conseilles de mettre ? »",
+        xtr: "Kadın « Qu'est-ce que tu me conseilles de mettre ? » diye soruyor, Nadia tavsiye veriyor. Düğünden söz ediliyor ama kimse tebrik etmiyor." },
       { q: "Dialogue 3 : quelle est la situation ?",
         audio: [
           ["F", "Paul, tu veux encore un peu de gâteau au chocolat ?"],
@@ -150,8 +150,8 @@
           ["F", "Merci beaucoup, c'est gentil !"]
         ],
         o: ["Demander un conseil.", "Féliciter quelqu'un.", "Accepter une invitation.", "Proposer son aide."], a: 1,
-        x: "Yanis dit : « Bravo ! Toutes mes félicitations ! »",
-        xtr: "Camille hemşirelik diplomasını almış; Yanis « Bravo ! Toutes mes félicitations ! » diyerek onu tebrik ediyor." }
+        x: "L'homme dit : « Bravo ! Toutes mes félicitations ! »",
+        xtr: "Camille hemşirelik diplomasını almış; arkadaşı « Bravo ! Toutes mes félicitations ! » diyerek onu tebrik ediyor." }
     ] },
 
   /* ───────────── Compréhension des écrits ───────────── */

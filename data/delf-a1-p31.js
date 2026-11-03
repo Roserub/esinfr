@@ -70,7 +70,7 @@
     questions: [
       { q: "Dialogue 1 : quelle est la situation ?",
         audio: [["M", "Bonjour, madame. Mon pneu est crevé. Vous pouvez le réparer ?"], ["F", "Oui, bien sûr. Laissez le vélo ici et revenez dans une heure. Ça fait 12 €."], ["M", "Parfait, merci !"]],
-        o: ["🛒 un achat au magasin", "🔧 une réparation à l'atelier", "🚆 une question au guichet de la gare", "👮 un contrôle de police"], a: 1,
+        o: ["🛒 un achat au magasin", "🔧 une réparation à l'atelier", "🚆 une question à la gare", "🔑 une location de vélo pour la journée"], a: 1,
         x: "« Mon pneu est crevé. Vous pouvez le réparer ? » : c'est une réparation à l'atelier.",
         xtr: "« Mon pneu est crevé » = lastiğim patladı, « réparer » = tamir etmek. Bisiklet atölyede bırakılıyor: bu bir tamir." },
       { q: "Dialogue 2 : quelle est la situation ?",
@@ -80,7 +80,7 @@
         xtr: "« antivol » = bisiklet kilidi. « Il coûte 29 € » (29 € tutuyor) ve « je le prends » (alıyorum): mağazada alışveriş." },
       { q: "Dialogue 3 : quelle est la situation ?",
         audio: [["K", "Papa, regarde ! Une route juste pour les vélos !"], ["M", "Oui, ici, il n'y a pas de voitures. Mais reste à droite, et attention aux piétons !"], ["K", "D'accord, papa !"]],
-        o: ["🚴 une balade sur la piste cyclable", "🔧 une réparation à l'atelier", "🛒 un achat au magasin", "🚆 une question à la gare"], a: 0,
+        o: ["🚴 une balade sur la piste cyclable", "🔧 une réparation à l'atelier", "🔑 une location de vélo pour la journée", "🚆 une question à la gare"], a: 0,
         x: "« Une route juste pour les vélos ! » « il n'y a pas de voitures » : le père et l'enfant sont sur la piste cyclable.",
         xtr: "« Une route juste pour les vélos » = sadece bisikletler için bir yol, yani bisiklet yolu (piste cyclable). Baba ve çocuk birlikte geziyor." },
       { q: "Dialogue 4 : quelle est la situation ?",
@@ -92,7 +92,7 @@
         audio: [["M", "Bonsoir, madame. Police municipale. Il fait nuit : vous n'avez pas de lumière sur votre vélo !"], ["F", "Oh, pardon, monsieur. Elle ne marche pas. J'achète une lumière demain, c'est promis !"]],
         o: ["🚆 une question à la gare", "👮 un contrôle de police", "🚴 une balade sur la piste cyclable", "🔧 une réparation à l'atelier"], a: 1,
         x: "« Police municipale. » « vous n'avez pas de lumière sur votre vélo ! » : c'est un contrôle de police.",
-        xtr: "« Police municipale » = belediye polisi. Polis, gece bisiklette lamba olmadığını söylüyor: bu bir polis kontrolü." }
+        xtr: "« Police municipale » = belediye polisi. Polis, gece bisiklette lamba olmadığını söylüyor: bu bir polis kontrolü. Bisiklet kiralama durumu hiçbir diyaloğa uymuyor." }
     ] },
 
   /* ───────── Compréhension des écrits ───────── */

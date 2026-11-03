@@ -87,7 +87,8 @@
   function recordSujet(lv, n) {
     const r = sujetScore(lv, n); if (!r.complete) return r;
     const d = st(), k = lv + "-" + n, b = d.best[k];
-    if (!b || r.tot > b.tot) d.best[k] = { tot: Math.round(r.tot * 10) / 10, pass: r.pass, d: A().ymd() };
+    // Best result: a passed paper beats a failed one, then the higher score.
+    if (!b || (r.pass && !b.pass) || (r.pass === !!b.pass && r.tot > b.tot)) d.best[k] = { tot: Math.round(r.tot * 10) / 10, pass: r.pass, d: A().ymd() };
     d.hist.unshift({ k, tot: Math.round(r.tot * 10) / 10, pass: r.pass, d: A().ymd(), m: d.mode }); d.hist = d.hist.slice(0, 30);
     save(); return r;
   }
@@ -316,7 +317,14 @@
       }).join("")}</form></div>
       ${c.checked ? "" : `<button class="btn" data-dx="checkform">${esc(t("dx.check"))}</button>`}`;
   }
-  const covered = (it, text) => it.must.map(m => m.kw.some(k => norm(text).includes(norm(k))));
+  /* A keyword counts only at the start of a word ("mer" must not tick "merci"); a short one (3 letters or less)
+     must be the whole word, plural/feminine allowed ("an" ≠ "dans"). */
+  function hasKw(T, k) {
+    const n = norm(k); if (!n) return String(T.raw).includes(k);
+    if (n.length > 3) return T.n.includes(" " + n);
+    return ["", "s", "e", "es", "x"].some(e => T.n.includes(" " + n + e + " "));
+  }
+  const covered = (it, text) => { const T = { raw: text || "", n: " " + norm(text) + " " }; return it.must.map(m => m.kw.some(k => hasKw(T, k))); };
   function mustList(it, flags, manual) {
     return `<ul class="dx-must" id="dx-must">${it.must.map((m, i) => `<li class="${flags[i] ? "ok" : ""}">${manual ? `<button class="tick ${flags[i] ? "on" : ""}" data-dx="tick" data-i="${i}" aria-pressed="${!!flags[i]}">${flags[i] ? "✓" : "○"}</button>` : `<span aria-hidden="true">${flags[i] ? "✓" : "○"}</span>`} <span lang="fr">${esc(m.c)}</span></li>`).join("")}</ul>`;
   }
@@ -333,7 +341,8 @@
   }
   function textScore(it, c) {
     const f = covered(it, c.text), must = f.filter(Boolean).length / f.length, len = Math.min(1, words(c.text) / it.min);
-    return it.pts * (.45 * must + .2 * len + .35 * [.3, .7, 1][c.self]);
+    // The self-assessment counts in proportion to the length written: an empty page cannot earn points.
+    return it.pts * (.45 * must + .2 * len + .35 * [.3, .7, 1][c.self] * len);
   }
 
   function runPO(it, c) {

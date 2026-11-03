@@ -172,7 +172,7 @@
         xtr: "Pazar günü kasap 8.30–12.30 açık. 19 h hafta içi kapanış saati, 8 h 30 açılış saati." },
       { q: "Le samedi, la poste est ouverte…", o: ["de 9 h à 12 h", "de 9 h à 17 h", "de 8 h à 13 h"], a: 0,
         x: "Bureau de poste : « le samedi, de 9 h à 12 h ».",
-        xtr: "Postane cumartesi 9–12 arası açık. 9–17 hafta içi saatleri, 8–13 pazarın saatleri." },
+        xtr: "Postane cumartesi 9–12 arası açık. 9–17 hafta içi saatleri, 8–13 semt pazarının saatleri." },
       { q: "Quel commerce est ouvert tous les jours ?", o: ["La boucherie", "Le fleuriste", "La boulangerie"], a: 1,
         x: "« Fleuriste Rose et Lilas : tous les jours ».",
         xtr: "Çiçekçi her gün açık. Kasap ve fırın pazartesi kapalı." }
@@ -242,7 +242,7 @@
     help: { tr: "Sınav görevlisini selamlayın (« Bonjour, madame / monsieur »). Size kendiniz, aileniz, zevkleriniz ve etkinlikleriniz hakkında sorular sorar. Tam cümleyle cevap verin.", en: "Guided interview (about 1 minute, no preparation). Greet the examiner and answer questions about yourself, your family, your tastes and your activities." },
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour, madame. Je m'appelle Elif." },
-      { q: "Pouvez-vous épeler votre nom ?", m: "Oui : E - S - I - N." },
+      { q: "Pouvez-vous épeler votre nom ?", m: "Oui : E - L - I - F." },
       { q: "Quel âge avez-vous ?", m: "J'ai trente-deux ans." },
       { q: "Vous êtes de quelle nationalité ?", m: "Je suis turque." },
       { q: "Où est-ce que vous habitez ?", m: "J'habite en France, dans un appartement, près du centre." },

@@ -142,9 +142,9 @@
       { q: "À l'accueil, on peut acheter…", o: ["🦴 des croquettes", "🧸 des jouets", "💊 des médicaments"], a: 0,
         x: "« Vous pouvez acheter des croquettes à l'accueil. »",
         xtr: "Danışmada kuru mama (« croquettes ») satılıyor. Oyuncak ve ilaç afişte yok." },
-      { q: "Le parking de la clinique est payant.", o: ["Vrai", "Faux"], a: 1,
+      { q: "Le parking de la clinique est gratuit.", o: ["Vrai", "Faux"], a: 0,
         x: "« Parking gratuit derrière la clinique. »",
-        xtr: "Yanlış: otopark ücretsiz (« gratuit ») ve kliniğin arkasında." }
+        xtr: "Doğru: otopark ücretsiz (« gratuit ») ve kliniğin arkasında." }
     ] },
 
   { id: "a1-s29-ce3", level: "A1", sujet: 29, sec: "ce", ex: 3, pts: 6,
@@ -258,7 +258,7 @@
       { q: "Parc ?", m: "Est-ce qu'il y a un parc près de chez vous ? / Vous allez au parc le week-end ?" },
       { q: "Forêt ?", m: "Est-ce que vous aimez vous promener dans la forêt ? / Il y a une forêt près de votre ville ?" },
       { q: "Campagne ?", m: "Est-ce que vous préférez la ville ou la campagne ? / Vous allez souvent à la campagne ?" },
-      { q: "Ferme ?", m: "Est-ce que vous visitez des fermes ? / Il y a des animaux dans votre ferme préférée ?" },
+      { q: "Ferme ?", m: "Est-ce que vous visitez des fermes ? / Il y a une ferme près de chez vous ?" },
       { q: "Mer ?", m: "Est-ce que vous aimez la mer ? / Vous allez à la mer en été ?" },
       { q: "Montagne ?", m: "Est-ce que vous faites des randonnées à la montagne ? / Vous aimez la montagne en hiver ?" },
       { q: "Dimanche ?", m: "Qu'est-ce que vous faites le dimanche matin ? / Est-ce que vous vous promenez le dimanche ?" },

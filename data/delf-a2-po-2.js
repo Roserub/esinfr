@@ -33,7 +33,7 @@
       "Pourquoi vous l'aimez ?"
     ],
     must: [
-      { c: "Dire quelle saison", kw: ["printemps", "été", "ete", "automne", "hiver", "saison"] },
+      { c: "Dire quelle saison", kw: ["printemps", "l'été", "l'ete", "en été", "en ete", "automne", "hiver", "saison"] },
       { c: "Décrire le temps", kw: ["il fait", "soleil", "pluie", "il pleut", "chaud", "froid", "doux", "neige", "fleurs"] },
       { c: "Parler de vos activités", kw: ["je fais", "je vais", "je cours", "je me promène", "je me promene", "je peux", "du vélo", "du velo", "dehors"] },
       { c: "Raconter un souvenir au passé", kw: ["l'année dernière", "l'annee derniere", "je suis allée", "je suis allee", "je suis allé", "je suis alle", "nous avons", "on a", "c'était", "c'etait", "j'ai"] },
@@ -125,7 +125,7 @@
       { c: "Expliquer ce qui s'est passé", kw: ["perdu", "oublié", "oublie", "laissé", "laisse", "hier", "dans le bus", "ligne"] },
       { c: "Décrire le sac", kw: ["noir", "sac à dos", "sac a dos", "grand", "petit", "poche", "couleur"] },
       { c: "Dire ce qu'il y a dedans", kw: ["dedans", "il y a", "clés", "cles", "livre", "veste"] },
-      { c: "Laisser vos coordonnées", kw: ["numéro", "numero", "téléphone", "telephone", "je m'appelle", "nom", "fiche", "m'appeler"] }
+      { c: "Laisser vos coordonnées", kw: ["numéro", "numero", "téléphone", "telephone", "je m'appelle", "mon nom", "fiche", "m'appeler"] }
     ],
     model: [
       ["E", "Bonjour, je vous écoute."],
@@ -249,12 +249,12 @@
       "Pourquoi vous l'avez aimé"
     ],
     must: [
-      { c: "Présenter le livre", kw: ["livre", "roman", "titre", "s'appelle", "auteur", "écrit", "ecrit", "de "] },
-      { c: "Dire quand vous l'avez lu", kw: ["je l'ai lu", "je l'ai relu", "lu", "quand j'avais", "il y a", "l'année dernière", "l'annee derniere"] },
+      { c: "Présenter le livre", kw: ["livre", "roman", "titre", "s'appelle", "auteur", "écrit", "ecrit", "c'est un livre"] },
+      { c: "Dire quand vous l'avez lu", kw: ["je l'ai lu", "je l'ai relu", "j'ai lu", "quand j'avais", "il y a", "l'année dernière", "l'annee derniere"] },
       { c: "Raconter l'histoire", kw: ["c'est l'histoire", "histoire", "il rencontre", "personnage", "raconte", "parle de"] },
       { c: "Donner votre avis", kw: ["parce que", "j'ai aimé", "j'ai aime", "j'ai adoré", "j'ai adore", "beau", "je le conseille", "pour moi"] }
     ],
-    model: "Je vais parler d'un livre que j'ai beaucoup aimé : « Le Petit Prince », d'Antoine de Saint-Exupéry. Je l'ai lu la première fois quand j'avais douze ans, en turc. L'année dernière, je l'ai relu en français, avec un dictionnaire ! C'est l'histoire d'un pilote. Son avion tombe en panne dans le désert et là, il rencontre un petit garçon. Il vient d'une toute petite planète. Il raconte ses voyages et ses rencontres avec des adultes un peu bizarres. J'ai aimé ce livre parce qu'il est simple, mais très profond. Il parle de l'amitié et de ce qui est important dans la vie. Pour moi, c'est un livre pour les enfants et pour les adultes. Je le conseille aux personnes qui apprennent le français, parce que les phrases sont courtes." },
+    model: "Je vais parler d'un livre que j'ai beaucoup aimé : « Le Petit Prince », d'Antoine de Saint-Exupéry. Je l'ai lu la première fois quand j'avais douze ans, en turc. L'année dernière, je l'ai relu en français, avec un dictionnaire ! C'est l'histoire d'un pilote. Son avion tombe en panne dans le désert et là, il rencontre un petit garçon. Ce garçon vient d'une toute petite planète. Il raconte ses voyages et ses rencontres avec des adultes un peu bizarres. J'ai aimé ce livre parce qu'il est simple, mais très profond. Il parle de l'amitié et de ce qui est important dans la vie. Pour moi, c'est un livre pour les enfants et pour les adultes. Je le conseille aux personnes qui apprennent le français, parce que les phrases sont courtes." },
   { id: "a2-s14-po3", level: "A2", sujet: 14, sec: "po", ex: 3, pts: 9, kind: "dialogue",
     title: "Échanger un jour de travail",
     consigne: "Exercice en interaction (3 minutes environ). Vous avez un problème avec vos horaires de travail. Vous demandez à un(e) collègue de changer de jour avec vous. Vous expliquez la situation et vous trouvez une solution ensemble. L'examinateur joue le rôle de votre collègue.",
@@ -351,7 +351,7 @@
       ["E", "Oui, c'est une bonne idée, mais une plante, ça ne coûte pas très cher. On a 50 euros."],
       ["C", "Alors, on peut ajouter autre chose. Elle va en Italie cet été… Pourquoi pas un petit guide de Rome ?"],
       ["E", "Ah, super idée ! La plante et le guide, ça fait combien ?"],
-      ["C", "Je pense environ 25 euros pour la plante et 20 euros pour le guide. Ça fait 45 euros."],
+      ["C", "À mon avis, environ 25 euros pour la plante et 20 euros pour le guide. Ça fait 45 euros."],
       ["E", "Parfait, ça fait moins de 25 euros chacun."],
       ["C", "Oui ! On va acheter les cadeaux ensemble demain ? Il y a un fleuriste et une librairie dans la même rue."],
       ["E", "D'accord. On se retrouve à quelle heure ?"],
@@ -470,7 +470,7 @@
       { c: "Dire ce qu'on y mange ou boit", kw: ["je prends", "je commande", "café", "cafe", "croissant", "brunch", "plat", "menu", "euros"] },
       { c: "Raconter la première visite", kw: ["la première fois", "la premiere fois", "j'y suis allée", "j'y suis allee", "j'y suis allé", "j'y suis alle", "c'était", "c'etait", "elle m'a"] }
     ],
-    model: "J'aime beaucoup un petit café près de chez moi. Il se trouve dans une rue calme, en face d'un parc. Il n'est pas très grand, mais il est joli : il y a des plantes partout et des vieilles photos sur les murs. Quand il fait beau, on peut s'asseoir en terrasse. Le matin, je prends un café et un croissant, et le dimanche, ils servent un brunch délicieux pour 15 euros. La première fois, j'y suis allée un jour de pluie, juste pour me protéger. La serveuse était très gentille : elle m'a parlé lentement et elle m'a aidée avec le menu. Depuis, j'y vais souvent, seule pour étudier ou avec des amis le week-end. J'aime ce café parce que je me sens chez moi." },
+    model: "J'aime beaucoup un petit café près de chez moi. Il se trouve dans une rue calme, en face d'un parc. Il n'est pas très grand, mais il est joli : il y a des plantes partout et de vieilles photos sur les murs. Quand il fait beau, on peut s'asseoir en terrasse. Le matin, je prends un café et un croissant, et le dimanche, ils servent un brunch délicieux pour 15 euros. La première fois, j'y suis allée un jour de pluie, juste pour me protéger. La serveuse était très gentille : elle m'a parlé lentement et elle m'a aidée avec le menu. Depuis, j'y vais souvent, seule pour étudier ou avec des amis le week-end. J'aime ce café parce que je me sens chez moi." },
   { id: "a2-s17-po3", level: "A2", sujet: 17, sec: "po", ex: 3, pts: 9, kind: "dialogue",
     title: "Le chauffage en panne",
     consigne: "Exercice en interaction (3 minutes environ). Vous téléphonez à l'agence immobilière qui s'occupe de votre appartement. Vous expliquez le problème, vous demandez une réparation rapide et vous fixez un rendez-vous avec le technicien. L'examinateur joue le rôle de l'employé(e) de l'agence.",
@@ -489,7 +489,7 @@
     ],
     model: [
       ["E", "Agence du Centre, bonjour !"],
-      ["C", "Bonjour monsieur. Je m'appelle Esin. Je suis locataire d'un appartement de votre agence, rue des Lilas."],
+      ["C", "Bonjour monsieur. Je m'appelle Esin Yilmaz. Je suis locataire d'un appartement de votre agence, rue des Lilas."],
       ["E", "Bonjour madame. Qu'est-ce qui se passe ?"],
       ["C", "Le chauffage ne marche plus depuis deux jours. Il fait seulement 15 degrés dans le salon."],
       ["E", "Ah, c'est embêtant. Vous avez essayé d'éteindre et de rallumer la chaudière ?"],

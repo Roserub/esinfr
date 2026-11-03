@@ -143,7 +143,7 @@
       { q: "Le 1er janvier, à 11 h, on peut…", o: ["🏊 se baigner dans la mer", "💃 danser au bal", "🎆 regarder le feu d'artifice"], a: 0,
         x: "« 1er janvier, 11 h : bain du Nouvel An dans la mer ! »",
         xtr: "« Bain dans la mer » = denizde yüzme. 1 Ocak sabahı soğuk denize giriliyor! Balo ve havai fişek 31 Aralık gecesi." },
-      { q: "Vous pouvez venir avec votre chien.", o: ["Vrai", "Faux"], a: 1,
+      { q: "Vrai ou faux ? Vous pouvez venir avec votre chien.", o: ["Vrai", "Faux"], a: 1,
         x: "Faux : « Les chiens ne sont pas acceptés. »",
         xtr: "Yanlış: « Les chiens ne sont pas acceptés » = köpekler kabul edilmiyor." }
     ] },

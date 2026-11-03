@@ -298,12 +298,12 @@
     consigne: "Vous allez entendre une annonce à la gare routière et un message sur votre répondeur. Lisez les questions, écoutez les documents puis répondez.",
     help: { tr: "Otogarda bir anons ve telesekreterinizde bir mesaj dinleyeceksiniz. Soruları okuyun, kayıtları dinleyin ve cevaplayın.", en: "You will hear an announcement at the coach station and a message on your answering machine. Read the questions, listen, then answer." },
     audio: [
-      ["N", "Document 1. Votre attention, s'il vous plaît. Le car numéro 405, à destination de Grenoble, partira du quai 7 à 10 h 15. Les passagers doivent mettre leurs grandes valises dans la soute, sous le car. Attention : il y a des embouteillages sur la route, et le trajet durera 2 heures au lieu d'1 h 30. Le wifi est gratuit à bord ; le mot de passe est écrit sur votre billet."],
+      ["N", "Document 1. Votre attention, s'il vous plaît. Le car numéro 405, à destination de Grenoble, partira du quai 7 à 10 h 15. Les passagers doivent mettre leurs grandes valises dans la soute, sous le car. Attention : il y a des embouteillages sur la route, et le trajet durera 2 heures au lieu d'une heure et demie. Le wifi est gratuit à bord ; le mot de passe est écrit sur votre billet."],
       ["F", "Document 2. Bonjour madame Koç, c'est le pressing Blanc Net. Votre manteau et vos deux chemises sont prêts. Par contre, pour la robe, nous n'avons pas pu enlever la tache de café, désolés. Ça fait 24 € au total. Vous pouvez passer du lundi au samedi, de 8 h à 19 h ; le mercredi, nous fermons à 12 h. Pensez à apporter votre ticket."]
     ],
     questions: [
       { q: "Le car pour Grenoble part…", o: ["du quai 4, à 10 h 15.", "du quai 7, à 10 h 15.", "du quai 7, à 11 h 45."], a: 1, x: "« Le car numéro 405… partira du quai 7 à 10 h 15. »" },
-      { q: "Aujourd'hui, le trajet va durer…", o: ["1 h 30.", "2 h 15.", "2 heures."], a: 2, x: "« Le trajet durera 2 heures au lieu d'1 h 30. »" },
+      { q: "Aujourd'hui, le trajet va durer…", o: ["1 h 30.", "2 h 15.", "2 heures."], a: 2, x: "« Le trajet durera 2 heures au lieu d'une heure et demie. »" },
       { q: "Où faut-il mettre les grandes valises ?", o: ["🧳 dans la soute", "💺 sous les sièges", "🚪 près de la porte"], a: 0, x: "« Les passagers doivent mettre leurs grandes valises dans la soute, sous le car. »" },
       { q: "Au pressing, quel vêtement a encore un problème ?", o: ["🧥 le manteau", "👔 une chemise", "👗 la robe"], a: 2, x: "« Pour la robe, nous n'avons pas pu enlever la tache de café. »" },
       { q: "Mme Koç doit payer…", o: ["12 €.", "24 €.", "42 €."], a: 1, x: "« Ça fait 24 € au total. »" },

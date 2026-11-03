@@ -272,7 +272,7 @@
              { fr: "Bien sûr, et voilà aussi mon mot de passe : soleil123.", tr: "Tabii, işte şifrem de: soleil123.", en: "Sure, and here's my password too: soleil123.", ok: false,
                fb: { fr: "Stop 🔐 ! On ne donne jamais son mot de passe, même à sa banque. L'adresse e-mail suffit.", tr: "Dur 🔐! Şifre kimseye verilmez, bankaya bile. E-posta adresi yeterli.", en: "Stop 🔐! Never give your password, not even to your bank. The email address is enough." } }
            ] },
-      i: { say: [["F", "Parfait, c'est vérifié. Votre carte arrivera à l'agence mardi ou mercredi, on vous enverra un SMS. Je peux faire autre chose pour vous ?"]],
+      i: { say: [["F", "Parfait, c'est vérifié. Votre carte arrivera à l'agence mercredi ou jeudi, on vous enverra un SMS. Je peux faire autre chose pour vous ?"]],
            choices: [
              { fr: "Non, c'est tout. Merci beaucoup, vous m'avez beaucoup aidée !", tr: "Hayır, bu kadar. Çok teşekkürler, bana çok yardımcı oldunuz!", en: "No, that's all. Thank you so much, you've been a great help!", ok: true, go: "fin" },
              { fr: "Oui, une question : est-ce que l'opposition est payante ?", tr: "Evet, bir sorum var: kartı bloke ettirmek ücretli mi?", en: "Yes, one question: do you charge for blocking the card?", ok: true, go: "frais" },

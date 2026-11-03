@@ -11,7 +11,7 @@
       { q: "Le cours commence quel jour ?", o: ["lundi", "mardi", "jeudi"], a: 0, x: "« Votre cours commence lundi prochain, à 9 h 30 »." },
       { q: "Le cours est dans quelle salle ?", o: ["salle 1", "salle 12", "salle 9"], a: 1, x: "« salle 12, au 1er étage ». 1, c'est l'étage." },
       { q: "Qu'est-ce que vous devez apporter ?", o: ["📕 un dictionnaire", "💶 de l'argent", "📷 une photo d'identité"], a: 2, x: "« Apportez une photo d'identité et un cahier, s'il vous plaît. »" },
-      { q: "Le cours coûte…", o: ["rien, c'est gratuit", "9,30 €", "12 €"], a: 0, x: "« Le cours est gratuit. »" }
+      { q: "Le cours coûte…", o: ["rien", "9,30 €", "12 €"], a: 0, x: "« Le cours est gratuit. »" }
     ] },
 
   { id: "a1-s06-co2", level: "A1", sujet: 6, sec: "co", ex: 2, pts: 6,
@@ -66,7 +66,7 @@
     title: "Une réservation au restaurant",
     consigne: "Vous écoutez un message sur votre répondeur. Lisez les questions, écoutez le document puis répondez.",
     help: { tr: "Telesekreterinizdeki bir mesajı dinliyorsunuz. Soruları okuyun, kaydı dinleyin ve cevaplayın.", en: "You hear a message on your answering machine. Read the questions, listen to the recording, then answer." },
-    audio: [["M", "Bonjour, ici le restaurant Le Petit Jardin. C'est pour votre réservation de vendredi soir. Pour 6 personnes à 20 h, ce n'est pas possible : nous sommes complets. Mais nous avons une table pour 6 personnes à 21 h, en terrasse. Vous pouvez nous rappeler avant jeudi midi ? Merci et bonne journée !"]],
+    audio: [["M", "Bonjour, ici le restaurant Le Petit Jardin. C'est pour votre réservation de vendredi soir. Pour 6 personnes à 20 h, ce n'est pas possible : c'est complet. Mais nous avons une table pour 6 personnes à 21 h, en terrasse. Vous pouvez nous rappeler avant jeudi midi ? Merci et bonne journée !"]],
     questions: [
       { q: "La réservation est pour combien de personnes ?", o: ["2", "6", "8"], a: 1, x: "« Pour 6 personnes à 20 h, ce n'est pas possible »." },
       { q: "Le restaurant propose une table à…", o: ["20 h", "12 h", "21 h"], a: 2, x: "« nous avons une table pour 6 personnes à 21 h ». À 20 h, c'est complet." },
@@ -105,14 +105,14 @@
     audio: [],
     questions: [
       { q: "Dialogue 1 : où sont ces personnes ?",
-        audio: [["F", "Il est frais, votre saumon ?"], ["M", "Oui, madame, il arrive ce matin. 2 tranches ?"], ["F", "Oui, merci."]],
+        audio: [["F", "Il est frais, votre saumon ?"], ["M", "Oui, madame, il est arrivé ce matin. 2 tranches ?"], ["F", "Oui, merci."]],
         o: ["📰 au kiosque", "🐟 à la poissonnerie", "🅿️ dans un parking", "🏛️ à la mairie"], a: 1, x: "« votre saumon », « 2 tranches » : le saumon est un poisson." },
       { q: "Dialogue 2 : où sont ces personnes ?",
         audio: [["M", "Bonjour, le journal d'aujourd'hui, s'il vous plaît."], ["F", "Voilà, monsieur. 2,20 €."]],
         o: ["📰 au kiosque", "⛽ à la station-service", "🐟 à la poissonnerie", "🅿️ dans un parking"], a: 0, x: "« le journal d'aujourd'hui » : on achète le journal au kiosque." },
       { q: "Dialogue 3 : où sont ces personnes ?",
-        audio: [["F", "Excusez-moi, la machine ne prend pas ma carte."], ["M", "Il faut payer à la caisse, au niveau -1. C'est 4 € pour 2 heures."]],
-        o: ["🏛️ à la mairie", "📰 au kiosque", "⛽ à la station-service", "🅿️ dans un parking"], a: 3, x: "« au niveau -1 », « 4 € pour 2 heures » : c'est le prix d'un parking." },
+        audio: [["F", "Excusez-moi, la machine ne prend pas ma carte."], ["M", "Il faut payer à la caisse, au niveau moins 1. C'est 4 € pour 2 heures."]],
+        o: ["🏛️ à la mairie", "📰 au kiosque", "⛽ à la station-service", "🅿️ dans un parking"], a: 3, x: "« au niveau moins 1 », « 4 € pour 2 heures » : c'est le prix d'un parking." },
       { q: "Dialogue 4 : où sont ces personnes ?",
         audio: [["M", "Bonjour, je viens pour une carte d'identité."], ["F", "Vous avez rendez-vous ? Le service est au 1er étage, bureau 5."]],
         o: ["🐟 à la poissonnerie", "🅿️ dans un parking", "🏛️ à la mairie", "📰 au kiosque"], a: 2, x: "« je viens pour une carte d'identité » : on fait sa carte d'identité à la mairie." },
@@ -203,7 +203,7 @@
       { q: "La bibliothèque ferme dans…", o: ["5 minutes", "15 minutes", "50 minutes"], a: 1, x: "« la bibliothèque va fermer dans 15 minutes »." },
       { q: "Le mois prochain, la bibliothèque est aussi ouverte…", o: ["le dimanche matin", "le lundi matin", "le dimanche après-midi"], a: 0, x: "« la bibliothèque est aussi ouverte le dimanche matin, de 10 h à 13 h »." },
       { q: "Mercredi à 15 h, il y a une activité pour…", o: ["🎓 les étudiants", "👵 les grands-parents", "🧒 les enfants"], a: 2, x: "« l'heure du conte pour les enfants de 3 à 6 ans »." },
-      { q: "L'heure du conte coûte…", o: ["3 €", "rien, c'est gratuit", "6 €"], a: 1, x: "« C'est gratuit ! » 3 et 6, c'est l'âge des enfants." }
+      { q: "L'heure du conte coûte…", o: ["3 €", "rien", "6 €"], a: 1, x: "« C'est gratuit ! » 3 et 6, c'est l'âge des enfants." }
     ] },
 
   { id: "a1-s09-co3", level: "A1", sujet: 9, sec: "co", ex: 3, pts: 6,

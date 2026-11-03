@@ -182,9 +182,9 @@
       { q: "Pourquoi faut-il vérifier la trousse médicale ?", o: ["Parce qu'elle est trop lourde pour l'avion.", "Parce qu'il n'y a pas de pharmacie près de l'hôtel.", "Parce que le médecin ne vient pas en Hongrie."], a: 1,
         x: "« Il n'y a pas de pharmacie près de l'hôtel : vérifiez bien la trousse médicale. »",
         xtr: "Otelin yakınında eczane olmadığı için ilk yardım çantası iyi kontrol edilmeli. Ağırlık ya da doktordan söz edilmiyor." },
-      { q: "« Pour ce voyage, il faut un passeport. »", o: ["Vrai", "Faux"], a: 1,
-        x: "Faux : « Prenez votre carte d'identité : pas besoin de passeport pour la Hongrie ! »",
-        xtr: "Yanlış: Macaristan için kimlik kartı yeterli, pasaport gerekmiyor (« pas besoin de »)." }
+      { q: "« Pour ce voyage, la carte d'identité suffit. »", o: ["Vrai", "Faux"], a: 0,
+        x: "Vrai : « Prenez votre carte d'identité : pas besoin de passeport pour la Hongrie ! »",
+        xtr: "Doğru: Macaristan için kimlik kartı yeterli, pasaport gerekmiyor (« pas besoin de »)." }
     ] },
 
   { id: "a2-s28-ce3", level: "A2", sujet: 28, sec: "ce", ex: 3, pts: 6,

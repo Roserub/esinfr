@@ -326,7 +326,7 @@
       ["E", "Très bien. Quel goût est-ce que vous préférez ?"],
       ["C", "Ma grand-mère adore les fraises, et mon grand-père le chocolat. C'est possible de faire les deux ?"],
       ["E", "Oui : un gâteau au chocolat avec des fraises, c'est délicieux. Et pour la décoration ?"],
-      ["C", "Est-ce que vous pouvez écrire « 50 ans d'amour » en lettres dorées ?"],
+      ["C", "Est-ce que vous pouvez écrire « 50 ans d'amour » en lettres dorées ? Et ça coûte combien ?"],
       ["E", "Bien sûr. Pour 30 parts, ça fait 120 €."],
       ["C", "D'accord. Est-ce que vous pouvez le livrer au restaurant La Bonne Auberge ?"],
       ["E", "Oui, la livraison coûte 10 €. On l'apporte à 11 h 30, ça vous va ?"],

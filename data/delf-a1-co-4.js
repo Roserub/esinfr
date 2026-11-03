@@ -78,12 +78,12 @@
     title: "Au parking du centre commercial",
     consigne: "Vous êtes dans le parking d'un centre commercial. Vous entendez cette annonce. Lisez les questions, écoutez le document puis répondez.",
     help: { tr: "Bir alışveriş merkezinin otoparkındasınız. Bu anonsu duyuyorsunuz. Soruları okuyun, kaydı dinleyin ve cevaplayın.", en: "You are in a shopping centre car park. You hear this announcement. Read the questions, listen, then answer." },
-    audio: [["N", "Attention, s'il vous plaît. Le parking du centre commercial Les Arcades ferme à 21 h. Les 2 premières heures sont gratuites. Après, c'est 1,50 € par heure. Vous payez à la machine, au niveau -1, à côté des ascenseurs. Attention : aujourd'hui, le niveau -3 est fermé pour le nettoyage. Merci et bonne soirée."]],
+    audio: [["N", "Attention, s'il vous plaît. Le parking du centre commercial Les Arcades ferme à 21 h. Les 2 premières heures sont gratuites. Après, c'est 1,50 € par heure. Vous payez à la machine, au niveau moins 1, à côté des ascenseurs. Attention : aujourd'hui, le niveau moins 3 est fermé pour le nettoyage. Merci et bonne soirée."]],
     questions: [
       { q: "Le parking ferme à…", o: ["20 h", "21 h", "23 h"], a: 1, x: "« Le parking du centre commercial Les Arcades ferme à 21 h. »" },
       { q: "Les 2 premières heures sont…", o: ["gratuites", "à 1,50 €", "à 3 €"], a: 0, x: "« Les 2 premières heures sont gratuites. Après, c'est 1,50 € par heure. »" },
-      { q: "La machine pour payer est…", o: ["à l'entrée du parking", "au niveau -3", "au niveau -1"], a: 2, x: "« Vous payez à la machine, au niveau -1, à côté des ascenseurs. »" },
-      { q: "Aujourd'hui, quel niveau est fermé ?", o: ["le niveau -3", "le niveau -1", "le niveau -2"], a: 0, x: "« aujourd'hui, le niveau -3 est fermé pour le nettoyage »." }
+      { q: "La machine pour payer est…", o: ["à l'entrée du parking", "au niveau -3", "au niveau -1"], a: 2, x: "« Vous payez à la machine, au niveau moins 1, à côté des ascenseurs. »" },
+      { q: "Aujourd'hui, quel niveau est fermé ?", o: ["le niveau -3", "le niveau -1", "le niveau -2"], a: 0, x: "« aujourd'hui, le niveau moins 3 est fermé pour le nettoyage »." }
     ] },
 
   { id: "a1-s17-co3", level: "A1", sujet: 17, sec: "co", ex: 3, pts: 6,
@@ -95,7 +95,7 @@
       { q: "L'école de danse ouvre le…", o: ["12 septembre", "15 septembre", "19 septembre"], a: 1, x: "« La nouvelle école de danse Tempo ouvre le 15 septembre ». 12, c'est le numéro de la rue." },
       { q: "Les cours pour les enfants sont…", o: ["le samedi après-midi", "le soir, à 19 h", "le mercredi après-midi"], a: 2, x: "« Pour les enfants, les cours sont le mercredi après-midi. » 19 h, c'est pour les adultes." },
       { q: "Le premier cours coûte…", o: ["30 €, comme les autres cours", "rien, il est gratuit", "12 €"], a: 1, x: "« Le premier cours est gratuit ! Après, c'est 30 € par mois. »" },
-      { q: "Quelle danse est à l'école Tempo ?", o: ["💃 la salsa", "🕺 le rock", "🎻 le tango"], a: 0, x: "« Il y a des cours de salsa, de hip-hop et de danse classique. »" }
+      { q: "Quelle danse est-ce qu'on peut apprendre à l'école Tempo ?", o: ["💃 la salsa", "🕺 le rock", "🎻 le tango"], a: 0, x: "« Il y a des cours de salsa, de hip-hop et de danse classique. »" }
     ] },
 
   { id: "a1-s17-co4", level: "A1", sujet: 17, sec: "co", ex: 4, pts: 7,
@@ -213,7 +213,7 @@
     audio: [["M", "Samedi, c'est le carnaval à Nice ! Le défilé part à 14 h 30 de la place Masséna. Il y a de la musique, des danseurs et de grandes poupées. Pour les enfants, c'est gratuit. Pour les adultes, la place coûte 12 €. Attention, il y a beaucoup de monde : prenez le tram, pas la voiture ! Et le soir, à 21 h, il y a un feu d'artifice."]],
     questions: [
       { q: "Le défilé part à…", o: ["14 h 30", "12 h", "21 h"], a: 0, x: "« Le défilé part à 14 h 30 de la place Masséna. »" },
-      { q: "Pour les enfants, le carnaval coûte…", o: ["12 €", "rien, c'est gratuit", "14,30 €"], a: 1, x: "« Pour les enfants, c'est gratuit. » 12 €, c'est pour les adultes." },
+      { q: "Pour les enfants, le carnaval coûte…", o: ["12 €", "rien", "14,30 €"], a: 1, x: "« Pour les enfants, c'est gratuit. » 12 €, c'est pour les adultes." },
       { q: "Pour aller au carnaval, on vous conseille…", o: ["🚗 la voiture", "🚲 le vélo", "🚋 le tram"], a: 2, x: "« prenez le tram, pas la voiture ! »" },
       { q: "À 21 h, il y a…", o: ["🎆 un feu d'artifice", "🎤 un concert", "💃 un spectacle de danse"], a: 0, x: "« le soir, à 21 h, il y a un feu d'artifice »." }
     ] },

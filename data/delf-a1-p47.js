@@ -140,7 +140,7 @@
       { q: "À l'accueil, on vous donne…", o: ["🩱 un maillot de bain", "📱 un casier pour le téléphone", "💧 une bouteille d'eau"], a: 2,
         x: "« une bouteille d'eau est offerte à l'accueil ».",
         xtr: "« Offerte » = ikram ediliyor, bedava. Mayo zorunlu ama onu siz getiriyorsunuz; dolaplar (« casiers ») telefonlar için, afişte resepsiyonda verildiği yazmıyor." },
-      { q: "Votre fils a 8 ans. Il peut entrer au hammam.", o: ["Vrai", "Faux"], a: 1,
+      { q: "Vrai ou faux ? Votre fils a 8 ans. Il peut entrer au hammam.", o: ["Vrai", "Faux"], a: 1,
         x: "Faux : « Interdit aux enfants de moins de 12 ans. »",
         xtr: "Yanlış: 12 yaşından küçük çocuklara yasak (« interdit aux enfants de moins de 12 ans »). 8 yaşındaki çocuk giremez." }
     ] },
@@ -195,7 +195,7 @@
       { q: "On peut faire la sieste…", o: ["le matin, à 9 h", "le soir, après 18 h", "entre 13 h et 15 h"], a: 2,
         x: "« entre 13 h et 15 h ».",
         xtr: "« Entre 13 h et 15 h » = 13.00 ile 15.00 arasında, yani öğle yemeğinden sonra." },
-      { q: "Pour le directeur, la sieste est une bonne idée.", o: ["Vrai", "Faux"], a: 0,
+      { q: "Vrai ou faux ? Pour le directeur, la sieste est une bonne idée.", o: ["Vrai", "Faux"], a: 0,
         x: "Vrai : « Le directeur, Marc Duval, est content » ; les employés « travaillent mieux ».",
         xtr: "Doğru: müdür memnun (« content ») ve çalışanların daha iyi çalıştığını (« travaillent mieux ») söylüyor." }
     ] },

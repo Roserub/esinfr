@@ -120,7 +120,7 @@
       { c: "Parler du quartier", kw: ["quartier", "rue", "près", "parc", "magasins", "métro", "calme", "boulangerie", "centre", "à côté"] },
       { c: "Inviter votre ami", kw: ["viens", "venir", "invite", "tu peux", "passe", "dîner", "tu es libre"] }
     ],
-    model: "Salut Marc !\nJ'ai un nouvel appartement à Lyon. Il a trois pièces : un salon, une chambre et une petite cuisine. Il y a aussi un balcon. J'adore le salon, il est grand et lumineux ! Le quartier est calme, il y a un parc et une boulangerie près de chez moi. Tu viens dîner samedi ?\nBises,\nEsin" },
+    model: "Salut Marc !\nJ'ai un nouvel appartement à Lyon. Il a deux pièces : un salon et une chambre. Il y a aussi une petite cuisine et un balcon. J'adore le salon, il est grand et lumineux ! Le quartier est calme, il y a un parc et une boulangerie près de chez moi. Tu viens dîner samedi ?\nBises,\nEsin" },
 
   { id: "a1-s05-pe1", level: "A1", sujet: 5, sec: "pe", ex: 1, pts: 10, kind: "form",
     title: "Abonnement à la salle de sport",

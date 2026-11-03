@@ -317,7 +317,7 @@ deux fois par jour|günde iki kez|twice a day
 la carte Vitale|carte Vitale (sağlık kartı)|health insurance card
 la mutuelle|tamamlayıcı sağlık sigortası|top-up health insurance
 les urgences|acil servis|A&E, emergency room
-le 15 (SAMU) / le 112|112|emergency numbers|15 = medical emergency, 112 works everywhere in Europe.
+le 15 (SAMU) / le 112|acil durum numaraları|emergency numbers|15 = medical emergency, 112 works everywhere in Europe.
 Depuis quand ?|Ne zamandan beri?|Since when?
 Depuis trois jours|Üç günden beri|For three days
 Où avez-vous mal ?|Neresi ağrıyor?|Where does it hurt?

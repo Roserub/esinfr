@@ -39,7 +39,7 @@
         xtr: "Büfe salonun en arkasında (« au fond de la salle »). Sandviç ve içecekler orada." },
       { q: "Qu'est-ce qui est interdit ?", o: ["📸 les photos avec flash", "🥪 les sandwichs", "📣 les chansons des supporters"], a: 0,
         x: "« Attention : les photos avec flash sont interdites. »",
-        xtr: "« Interdites » = yasak. Flaşlı fotoğraf yasak, çünkü oyuncuların gözünü alıyor. Sandviç büfede satılıyor." }
+        xtr: "« Interdites » = yasak. Flaşlı fotoğraf yasak. Sandviç büfede satılıyor." }
     ] },
 
   { id: "a1-s38-co3", level: "A1", sujet: 38, sec: "co", ex: 3, pts: 6,

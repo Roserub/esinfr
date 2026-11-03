@@ -83,7 +83,7 @@
         xtr: "Gilles ilk sepet hakkında bilgi vermek için arıyor. Ödemeden söz edilmiyor; dağıtım iptal edilmiyor, sadece yeri değişiyor." },
       { q: "Cette semaine, où Mme Şahin doit-elle aller chercher son panier ?", o: ["🏛️ à la salle des fêtes", "🚜 à la ferme", "🛒 à l'épicerie du village"], a: 1,
         x: "« Cette semaine, la distribution n'aura pas lieu à la salle des fêtes, mais ici, à la ferme. »",
-        xtr: "« ne… pas…, mais… » = \"…değil, …\": bu hafta dağıtım salonda değil, çiftlikte." },
+        xtr: "« ne… pas…, mais… » = « …değil, … »: bu hafta dağıtım salonda değil, çiftlikte." },
       { q: "La distribution a lieu…", o: ["de 18 h à 19 h 30.", "de 8 h à 9 h 30.", "de 18 h 30 à 19 h."], a: 0,
         x: "« De 18 h à 19 h 30. »",
         xtr: "Dağıtım 18.00 ile 19.30 arasında. Saatleri dikkatle dinleyin: « dix-huit heures » (18) ve « dix-neuf heures trente » (19.30)." },
@@ -282,7 +282,6 @@
       { q: "Où est-ce que vous faites vos courses ?", m: "Je vais au supermarché, mais le samedi, j'aime aller au marché pour acheter des fruits et des légumes de la région." },
       { q: "Qu'est-ce que vous aimez faire dans la nature ?", m: "J'aime marcher, faire du vélo et pique-niquer avec des amis. Le sport dehors, c'est le meilleur !" },
       { q: "Est-ce que vous avez déjà visité une ferme ?", m: "Oui, l'été dernier, j'ai visité une ferme en Bretagne. J'ai vu des vaches et j'ai goûté du fromage frais." },
-      { q: "Vous préférez les vacances à la mer, à la montagne ou à la campagne ?", m: "Je préfère la mer, parce que j'adore nager. Mais la campagne, c'est parfait pour se reposer." },
       { q: "Plus tard, vous voudriez habiter où ?", m: "Je voudrais habiter dans une petite ville, pas loin de la nature, avec un jardin." }
     ] },
 
