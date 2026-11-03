@@ -760,7 +760,7 @@
   const EX_ICON = Object.fromEntries(EX_KINDS);
   const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
   const pick = a => a[Math.floor(Math.random() * a.length)];
-  const norm = s => String(s || "").toLowerCase().replace(/[’`]/g, "'").replace(/[.,!?;:«»"()…¿¡]/g, " ").replace(/\s+/g, " ").trim();
+  const norm = s => String(s || "").toLowerCase().replace(/[’‘ʼ´`]/g, "'").replace(/[.,!?;:«»"()…¿¡]/g, " ").replace(/\s+/g, " ").trim();
   const noAcc = s => String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/œ/g, "oe");
   const plain = html => String(html || "").replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&nbsp;/g, " ");
   const meaning = x => (lang() === "en" ? x.en : x.tr) || x.en;
@@ -827,8 +827,10 @@
     },
     listen() {
       const pool = phrasePool(), c = pick(pool);
-      const same = shuffle(pool.filter(x => x.deck === c.deck && x.fr !== c.fr && meaning(x) !== meaning(c)));
-      const others = (same.length >= 3 ? same : same.concat(shuffle(pool.filter(x => x.deck !== c.deck)))).slice(0, 3);
+      // Wrong options: other phrases with a meaning of their own (never a second option that also fits, never twice the same label).
+      const seen = new Set([c.fr, meaning(c)]), fresh = x => !seen.has(x.fr) && !seen.has(meaning(x)) && seen.add(x.fr).add(meaning(x));
+      const same = shuffle(pool.filter(x => x.deck === c.deck)).filter(fresh);
+      const others = (same.length >= 3 ? same : same.concat(shuffle(pool.filter(x => x.deck !== c.deck)).filter(fresh))).slice(0, 3);
       return { t: "choice", prompt: t("ex.listen.q"), say: c.fr, options: shuffle([c].concat(others)).map(x => ({ v: x.fr, label: meaning(x) })), answer: c.fr, al: c.fr + " = " + meaning(c), explain: c.note };
     },
     dictation() {
@@ -891,6 +893,9 @@
     if (ok) { EX.ok++; if (it.fromErr) S.err = S.err.filter(e => e.id !== it.fromErr); }
     else if (!it.fromErr && it.t !== "speak") {
       const item = Object.assign({}, it); delete item.fromErr; delete item.k;
+      // The same mistake made again moves to the top of the notebook instead of being listed twice.
+      const same = e => e.k === EX.kind && (e.item.show || "") === (item.show || "") && (e.item.say || "") === (item.say || "") && (e.item.al || e.item.answer) === (item.al || item.answer);
+      S.err = S.err.filter(e => !same(e));
       S.err.push({ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), k: EX.kind, item, y: String(given), d });
       if (S.err.length > 150) S.err.shift();
     }

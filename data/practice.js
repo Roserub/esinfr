@@ -48,7 +48,7 @@
     V("écrire", "yazmak", "to write", "écris écris écrit écrivons écrivez écrivent", "écrir", "écrit", "avoir", "A2"),
     V("boire", "içmek", "to drink", "bois bois boit buvons buvez boivent", "boir", "bu", "avoir", "A2"),
     V("connaître", "tanımak, bilmek", "to know (a person, a place)", "connais connais connaît connaissons connaissez connaissent", "connaîtr", "connu", "avoir", "B1"),
-    V("recevoir", "almak (bir şey gelince)", "to receive", "reçois reçois reçoit recevons recevez reçoivent", "recevr", "reçu", "avoir", "B1")
+    V("recevoir", "almak (mektup, paket…), teslim almak", "to receive", "reçois reçois reçoit recevons recevez reçoivent", "recevr", "reçu", "avoir", "B1")
   ];
 
   /* Nouns for the le/la game: "word|m or f|tr|en" */

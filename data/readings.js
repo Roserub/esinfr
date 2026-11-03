@@ -81,16 +81,16 @@ Depuis trois jours, Esin a mal à la gorge et elle tousse beaucoup. Elle prend r
 
 Le médecin l'examine. « Vous avez de la fièvre ? » — « Un peu, hier soir : 38,2. » Le médecin regarde sa gorge et écoute ses poumons. « Ce n'est pas grave, c'est une angine virale. Pas besoin d'antibiotiques. Buvez beaucoup d'eau, reposez-vous, et prenez du paracétamol si vous avez mal. »
 
-Il lui donne une ordonnance et un arrêt de travail de deux jours. Esin paie la consultation avec sa carte Vitale : l'Assurance maladie rembourse une grande partie du prix.`, `
+Il lui donne une ordonnance et un arrêt de travail de deux jours. Esin paie la consultation et donne sa carte Vitale : l'Assurance maladie rembourse une grande partie du prix.`, `
 avoir mal à la gorge|boğazı ağrımak|to have a sore throat
 tousser|öksürmek|to cough
 le médecin généraliste|pratisyen hekim|GP
 la fièvre|ateş|fever
 les poumons|akciğerler|lungs
 l'ordonnance (f.)|reçete|prescription
-l'arrêt de travail (m.)|iş göremez raporu|sick note
+l'arrêt de travail (m.)|iş göremezlik raporu|sick note
 rembourser|geri ödemek|to reimburse`, [
-      Q("Depuis quand Esin est malade ?", ["Une semaine", "Trois jours", "Un mois"], 1),
+      Q("Depuis combien de temps Esin est malade ?", ["Une semaine", "Trois jours", "Un mois"], 1),
       Q("Qu'est-ce que le médecin dit ?", ["Il faut des antibiotiques", "Ce n'est pas grave", "Il faut aller à l'hôpital"], 1),
       Q("Qu'est-ce qu'il lui donne ?", ["Une ordonnance et un arrêt de travail", "Un vaccin", "Une radio"], 0),
       Q("Qui rembourse une partie du prix ?", ["La mairie", "L'Assurance maladie", "Le pharmacien"], 1)
@@ -189,7 +189,7 @@ le poste|pozisyon|job, position
 être convoqué(e)|çağrılmak|to be invited (officially)
 le parcours|kariyer yolu, geçmiş|background, path
 diplômé(e) en…|… mezunu|graduated in…
-faire reconnaître son diplôme|diplomasını tanıtmak|to get one's degree recognised
+faire reconnaître son diplôme|diplomasını tanıttırmak (denklik almak)|to get one's degree recognised
 la formation|eğitim|training`, [
       Q("Pour quel poste Esin postule ?", ["Assistante dans un centre de rééducation", "Professeure de sport", "Infirmière"], 0),
       Q("Qu'est-ce qu'elle est en train de faire ?", ["Apprendre à conduire", "Faire reconnaître son diplôme", "Chercher un appartement"], 1),

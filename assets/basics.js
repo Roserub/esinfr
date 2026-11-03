@@ -59,7 +59,9 @@
       const kind = kinds[n % kinds.length];
       const same = pool.filter(o => o !== it && o.gi === it.gi), other = pool.filter(o => o !== it && o.gi !== it.gi);
       const key = kind === "fr" ? (o => mean(o)) : (o => o.fr);
-      const wrong = uniq(shuffle(same).concat(shuffle(other)), key).filter(o => key(o) !== key(it)).slice(0, 3);
+      // A wrong option must not also fit the question: same sound when listening, same meaning when the meaning is shown.
+      const clash = kind === "listen" ? (o => sayOf(o).toLowerCase() === sayOf(it).toLowerCase()) : kind === "meaning" ? (o => mean(o) === mean(it)) : () => false;
+      const wrong = uniq(shuffle(same).concat(shuffle(other)), key).filter(o => key(o) !== key(it) && !clash(o)).slice(0, 3);
       return { kind, it, opts: shuffle([it].concat(wrong)).map(key), answer: key(it) };
     });
     return { id: x.id, qs, i: 0, ok: 0, given: null, start: Date.now() };

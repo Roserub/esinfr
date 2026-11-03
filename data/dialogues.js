@@ -23,7 +23,7 @@ B|Oui, bonjour ! Je m'appelle Esin. J'habite au deuxième étage.|Evet, merhaba!
 A|Enchantée, moi c'est Claire. Vous venez d'où ?|Memnun oldum, ben Claire. Nerelisiniz?|Nice to meet you, I'm Claire. Where are you from?
 B|Je viens de Turquie. J'apprends le français.|Türkiye'den geliyorum. Fransızca öğreniyorum.|I'm from Turkey. I'm learning French.
 A|Vous parlez déjà bien ! Vous travaillez ici ?|Şimdiden iyi konuşuyorsunuz! Burada mı çalışıyorsunuz?|You already speak well! Do you work here?
-B|Pas encore. Je suis kinésithérapeute, mais mon diplôme est turc.|Henüz değil. Fizyoterapistim ama diplomam Türk.|Not yet. I'm a physiotherapist, but my degree is Turkish.
+B|Pas encore. Je suis kinésithérapeute, mais mon diplôme est turc.|Henüz değil. Fizyoterapistim ama diplomam Türkiye'den.|Not yet. I'm a physiotherapist, but my degree is Turkish.
 A|Ah, c'est super ! Si vous avez besoin de quelque chose, je suis au premier.|Ah, harika! Bir şeye ihtiyacınız olursa ben birinci kattayım.|Oh, great! If you need anything, I'm on the first floor.
 B|Merci beaucoup, c'est très gentil !|Çok teşekkürler, çok naziksiniz!|Thank you very much, that's very kind!`),
 
@@ -34,7 +34,7 @@ A|Vous avez d'autres symptômes ? Mal à la gorge, toux ?|Başka belirtiniz var 
 B|Non, seulement la tête. Et je suis très fatiguée.|Hayır, sadece baş. Bir de çok yorgunum.|No, just my head. And I'm very tired.
 A|Vous êtes allergique à un médicament ?|Herhangi bir ilaca alerjiniz var mı?|Are you allergic to any medicine?
 B|Non, pas à ma connaissance.|Hayır, bildiğim kadarıyla yok.|No, not that I know of.
-A|Je vous conseille du paracétamol : un comprimé toutes les six heures, pas plus de trois par jour.|Parasetamol öneririm: altı saatte bir tablet, günde üçten fazla değil.|I recommend paracetamol: one tablet every six hours, no more than three a day.
+A|Je vous conseille du paracétamol : un comprimé, avec au moins six heures entre deux prises, pas plus de trois par jour.|Parasetamol öneririm: bir tablet, iki doz arasında en az altı saat, günde üçten fazla değil.|I recommend paracetamol: one tablet, at least six hours between doses, no more than three a day.
 B|D'accord. Et si ça ne passe pas ?|Tamam. Geçmezse ne yapayım?|OK. And if it doesn't go away?
 A|Si la fièvre dure plus de trois jours, consultez un médecin.|Ateş üç günden fazla sürerse doktora gidin.|If the fever lasts more than three days, see a doctor.
 B|Merci beaucoup. Je vous dois combien ?|Çok teşekkürler. Borcum ne kadar?|Thank you very much. How much do I owe you?`),
@@ -106,7 +106,7 @@ A|Pour un diplôme étranger, il faut une traduction par un traducteur asserment
 B|D'accord. Et est-ce que je peux demander une validation d'acquis pour certains cours ? J'ai déjà un diplôme en physiothérapie.|Tamam. Bazı dersler için muafiyet isteyebilir miyim? Zaten fizyoterapi diplomam var.|OK. And can I apply to have some courses validated? I already have a degree in physiotherapy.
 A|C'est possible. Il faut faire une demande auprès du responsable pédagogique, avec vos relevés de notes et les programmes des cours.|Mümkün. Not dökümünüz ve ders içerikleriyle birlikte eğitim sorumlusuna başvurmanız gerekiyor.|It's possible. You need to apply to the head of the programme, with your transcripts and course syllabi.
 B|Il y a une date limite ?|Bir son tarih var mı?|Is there a deadline?
-A|Avant la fin septembre, en général. Je vous conseille de lui écrire dès aujourd'hui.|Genelde eylül sonundan önce. Bugünden yazmanızı öneririm.|Before the end of September, usually. I'd advise you to write to them today.
+A|Avant la fin septembre, en général. Je vous conseille de lui écrire dès aujourd'hui.|Genelde eylül sonundan önce. Ona bugün hemen yazmanızı öneririm.|Before the end of September, usually. I'd advise you to write to them today.
 B|Merci, c'est très clair. Je m'en occupe tout de suite.|Teşekkürler, çok açık. Hemen ilgileniyorum.|Thank you, that's very clear. I'll deal with it right away.`),
 
     D("d-entretien", "B2", "L'entretien : les questions difficiles", "Mülakat: zor sorular", "The interview: tricky questions", { A: "Recruteur", B: "Esin" }, "B", `

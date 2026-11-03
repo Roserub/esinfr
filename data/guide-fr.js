@@ -53,11 +53,11 @@
 <li><b>Fais du turc un allié.</b> Quand la grammaire est confuse, regarde une explication en turc. Puis reviens au français.</li>
 </ul>`;
 
-  FR.roadmap = `<p><b>Heures guidées cumulées</b> (estimations de l'Alliance Française ; une turcophone peut viser le haut de la fourchette, l'anglais B2 et la vie en France aident) :</p>
+  FR.roadmap = `<p><b>Heures guidées cumulées</b> (estimations de l'Alliance Française ; une turcophone devrait prévoir le haut de la fourchette ; l'anglais B2 et la vie en France aident) :</p>
 ${T(["A1", "A2", "B1", "B2", "C1", "C2"], [["60–100 h", "160–200 h", "360–400 h", "560–650 h", "810–950 h", "1 060–1 200 h"]])}
 <p>« Heures » = étude active : cours, exercices, conversation, écoute attentive. La télé en fond ne compte qu'en partie. Utilise le calculateur ci-dessous avec ton propre rythme.</p>
 <h3>Phase 0 : semaines 1–2, les sons et la survie (~15–20 h)</h3>
-<p>Lire le français à voix haute avec les bons sons ; saluer, se présenter, les nombres de 0 à 100, les 40 phrases de survie. Avec : le guide de prononciation + prononcer.net · Language Transfer pistes 1–10 · Les voisins du 12 bis 1–4 · Alice Ayel · Duolingo 10 min/jour · les cartes.</p>
+<p>Lire le français à voix haute avec les bons sons ; saluer, se présenter, les nombres de 0 à 100, les phrases de survie. Avec : le guide de prononciation + prononcer.net · Language Transfer pistes 1–10 · Les voisins du 12 bis 1–4 · Alice Ayel · Duolingo 10 min/jour · les cartes.</p>
 <h3>Phase 1 : A1, mois 1 à 2/3</h3>
 <p>Parler de soi, de sa famille, de sa journée, des courses, de l'heure et des dates ; poser des questions simples. <b>Colonne vertébrale :</b> Français interactif ch. 1–4 (+ Tex's) OU TV5MONDE A1. <b>Chaque jour :</b> finir Language Transfer · cartes (500 premiers mots) · Duolingo/Busuu. <b>Écouter :</b> Les voisins du 12 bis · Coffee Break · Alice Ayel · Super Easy French · Extr@. <b>Lire :</b> Global Storybooks niveaux 1–2 avec la version turque à côté. <b>Parler :</b> un échange tandem par semaine. <b>Vérifier :</b> un sujet d'exemple du DELF A1.</p>
 <h3>Phase 2 : A2, mois 3 à 5</h3>
@@ -68,7 +68,7 @@ ${T(["A1", "A2", "B1", "B2", "C1", "C2"], [["60–100 h", "160–200 h", "360–
 <p>Argumenter, suivre l'actualité et les films, le français universitaire et professionnel. L'université attend un B2 en pratique ; DFP Santé B2 pour les métiers de la santé. Podcasts pour natifs, HugoDécrypte, séries avec puis sans sous-titres, textes de ton domaine, essais au format du DELF B2. <b>Vérifier :</b> DELF B2 (dispense du test de langue à l'université).</p>
 <h3>Phase 5 : C1 (deuxième année et après)</h3>
 <p>Nuance, rapidité, vocabulaire spécialisé. DALF C1 / DFP Santé C1. Uniquement des médias pour natifs.</p>
-<p class="muted small">Le Foreign Service Institute américain classe le français parmi les langues les plus faciles pour les anglophones : environ 30 semaines à temps plein (~690 heures de cours + travail personnel) pour un niveau professionnel.</p>`;
+<p class="muted small">Le Foreign Service Institute américain classe le français parmi les langues les plus faciles pour les anglophones : environ 30 semaines à temps plein (~750 heures de cours + travail personnel) pour un niveau professionnel.</p>`;
 
   FR.routines = `<h3>Le minimum quotidien (30–45 min, pour garder le fil les mauvais jours)</h3>
 <p>10 min de cartes · 10–15 min d'appli · 15–20 min de ton cours principal (une leçon).</p>
@@ -77,7 +77,7 @@ ${T(["A1", "A2", "B1", "B2", "C1", "C2"], [["60–100 h", "160–200 h", "360–
 <h3>Chaque semaine</h3>
 <p>1 à 2 séances de conversation · 1 épisode de série · 1 texte corrigé · 1 relecture de ton carnet d'erreurs et des erreurs classiques.</p>
 <h3>Chaque mois</h3>
-<p>Un test d'entraînement (sujet du DELF) pour voir tes progrès. Note tes heures (la page Progrès le fait pour toi).</p>
+<p>Un test d'entraînement (sujet du DELF) pour voir tes progrès. Note tes heures (la page Progression le fait pour toi).</p>
 <h3>L'immersion à la maison</h3>
 <ul><li>Des post-it sur les objets AVEC l'article, une couleur par genre : la porte, le frigo, la fenêtre.</li>
 <li>Raconte ce que tu fais, à voix haute : « Je prépare le café. J'ouvre la fenêtre. Je cherche mes clés. »</li>
@@ -103,7 +103,7 @@ ${T(["A1", "A2", "B1", "B2", "C1", "C2"], [["60–100 h", "160–200 h", "360–
 <h3>~40 € par mois</h3>
 <p>Le plan à 0 € + 2 à 4 séances par mois avec un tuteur en ligne pas cher (italki / Preply, ~5–15 $ de l'heure). Dès l'A2, c'est le meilleur usage de ton argent : parler et être corrigée.</p>
 <h3>Budget examens (exemples 2026, fixés par chaque centre)</h3>
-${T(["Examen", "Prix"], [["DELF A2", "~130 €"], ["DELF B1", "~140–160 €"], ["DELF B2", "~140–200 €"], ["TCF IRN", "~174–200 €"], ["TEF IRN", "~180 €"], ["Examen civique", "~60–80 €"]])}
+${T(["Examen", "Prix"], [["DELF A1", "~100–130 €"], ["DELF A2", "~130 €"], ["DELF B1", "~140–160 €"], ["DELF B2", "~140–200 €"], ["TCF IRN", "~174–200 €"], ["TEF IRN", "~180 €"], ["Examen civique", "~60–80 €"]])}
 <h3>Ne paie pas pour</h3>
 <ul><li>Les offres « à vie » ou les abonnements annuels le premier mois : teste d'abord la version gratuite.</li>
 <li>Plusieurs applis payantes en même temps (elles se recoupent).</li>
@@ -168,7 +168,7 @@ ${T(["Examen", "Prix"], [["DELF A2", "~130 €"], ["DELF B1", "~140–160 €"],
     ["<b>th / ph</b>", "thé, photo", "t / f"],
     ["<b>h</b>", "homme, hôtel", "MUET : « om », « otel »"],
     ["<b>r</b>", "rouge, Paris", "r du fond de la gorge (un léger gargarisme), pas le r roulé turc"],
-    ["<b>ill</b> (après voyelle)", "fille, travail", "y : « fiy », « travay » (mais ville, mille, tranquille = « il »)"],
+    ["<b>ill</b>, <b>-il</b> après une voyelle", "fille, travail", "y : « fiy », « travay » (mais ville, mille, tranquille = « il »)"],
     ["<b>ti</b> + voyelle", "nation, patient", "s : « nasyo~ », « pasya~ »"],
     ["<b>x</b>", "taxi / six / deux", "« ks » / « s » / muet : ça dépend"]
   ])}
@@ -228,10 +228,10 @@ ${T(["Turc", "Français"], [
     ["bahsettiğim film", "le film <b>dont</b> je parle"]
   ])}
 <h3>11) Les possessifs s'accordent avec la CHOSE possédée</h3><p>annem / babam → <b>ma</b> mère / <b>mon</b> père · annesi → <b>sa</b> mère (de lui OU d'elle) · kocası → <b>son</b> mari. Devant une voyelle : mon amie, son école.</p>
-<h3>12) Les pronoms compléments avant le verbe (comme en turc)</h3><p>Onu görüyorum → Je <b>le</b> vois · Ona veriyorum → Je <b>lui</b> donne · Onu ona veriyorum → Je le lui donne · Onu görmek istiyorum → Je veux le voir · Oraya gidiyorum → J'<b>y</b> vais · Ondan istiyorum → J'<b>en</b> veux.</p>
+<h3>12) Les pronoms compléments avant le verbe (comme en turc)</h3><p>Onu görüyorum → Je <b>le</b> vois · Ona veriyorum → Je <b>lui</b> donne · Onu ona veriyorum → Je le lui donne · Onu görmek istiyorum → Je veux le voir · Oraya gidiyorum → J'<b>y</b> vais · Ondan biraz istiyorum → J'<b>en</b> veux.</p>
 <h3>La grammaire dans l'ordre où tu en as besoin</h3>${GORDER_FR}`;
 
-  FR.loanwords = `<p>Le turc a emprunté environ <b>5 000 mots</b> au français : le dictionnaire de la TDK comptait 4 977 mots d'origine française en 2005, soit environ 72 % de tous ses mots d'origine occidentale (Vural &amp; Böler 2008). Feuillette le paquet « Les mots que tu connais déjà » : 140 d'entre eux, avec l'audio.</p>
+  FR.loanwords = `<p>Le turc a emprunté environ <b>5 000 mots</b> au français : le dictionnaire de la TDK comptait 4 977 mots d'origine française en 2005, soit environ 72 % de tous ses mots d'origine occidentale (Vural &amp; Böler 2008). Feuillette le paquet « Les mots que tu connais déjà » : plus de 160 d'entre eux, avec l'audio.</p>
 <h3>Les mots français cachés dans le turc (* = le sens a changé, voir les faux amis)</h3>
 ${T(["Thème", "Turc → français"], [
     ["Transports et ville", "otobüs (autobus), otomobil, taksi, metro, kamyon (camion), bisiklet (bicyclette), şoför (chauffeur), garaj, bulvar (boulevard), asansör (ascenseur), apartman* (appartement)"],
@@ -245,7 +245,7 @@ ${T(["Thème", "Turc → français"], [
   ])}
 <p><b>Méthode :</b> un nouveau mot français → « Est-ce qu'il existe en turc ? » → dis-le à la turque → corrige les voyelles et enlève les lettres muettes. Souvent juste à 80 % du premier coup.</p>
 <h3>Astuces pour deviner le mot français</h3>
-<ul><li>Le <b>-syon</b> turc = le <b>-tion</b> français : televizyon → télévision, rehabilitasyon → réhabilitation.</li>
+<ul><li>Le <b>-syon</b> turc = le <b>-tion / -sion</b> français : televizyon → télévision, rehabilitasyon → réhabilitation.</li>
 <li>Le <b>ş</b> turc correspond souvent au <b>ch</b> français : şans → chance, şömine → cheminée, şampiyon → champion.</li>
 <li>Le <b>j</b> turc = le <b>j/g</b> français (même son !) : masaj → massage, garaj → garage.</li></ul>
 <h3>Correspondances anglais → français (des milliers de mots gratuits)</h3>
@@ -322,11 +322,11 @@ ${T(["Français", "veut dire", "attention"], [
     ["collège", "middle school", "college = université"],
     ["excité", "surexcité (peut être sexuel !)", "I'm excited = J'ai hâte !"]
   ])}
-<p>Ils sont tous dans le paquet de cartes « Faux amis ».</p>`;
+<p>Ils sont tous dans le paquet de cartes « Les faux amis ».</p>`;
 
   FR.mistakes = `<p>Relis cette liste chaque mois, et teste-toi avec l'exercice « Trouve l'erreur ».</p>${T(["✗ faux", "✓ juste", "pourquoi"], (window.MISTAKES || []).map(m => [m[0], m[1], m[4] || m[2]]))}`;
 
-  FR.survival = `<p>Les 40 phrases du premier jour sont dans le paquet « Phrases de survie », avec l'audio. (e) = ajoute -e quand c'est une femme qui parle : enchanté → enchantée, perdu → perdue.</p>
+  FR.survival = `<p>Les phrases du premier jour sont dans le paquet « Les phrases de survie », avec l'audio. (e) = ajoute -e quand c'est une femme qui parle : enchanté → enchantée, perdu → perdue.</p>
 <h3>Les numéros d'urgence en France</h3>
 ${T(["Numéro", "Pour"], [["<b>112</b>", "Numéro d'urgence européen (fonctionne partout)"], ["<b>15</b>", "Urgence médicale (SAMU)"], ["<b>17</b>", "Police"], ["<b>18</b>", "Pompiers"], ["<b>114</b>", "Par SMS, si tu ne peux pas parler ou entendre"]])}
 <p>Phrases clés : « Au secours ! » · « Appelez un médecin / une ambulance ! » · « Je suis malade. J'ai mal ici. » · « Je suis perdue. »</p>`;
@@ -392,7 +392,7 @@ ${T(["Niveau", "Quoi faire"], [
 <p><b>Plan d'un essai (DELF B2 / université) :</b> introduction (thème + problématique + annonce du plan) → partie 1 (argument + exemple) → partie 2 (contre-argument ou second argument + exemple) → conclusion (réponse + ouverture). Utilise le paquet des connecteurs.</p>`;
 
   FR.exams = `${T(["Examen", "Pour quoi faire", "Validité", "Prix (2026)"], [
-    ["DELF A1–B2", "Diplôme ; titres de séjour ; le DELF B2 dispense du test de langue à l'université", "À vie", "~130–200 €"],
+    ["DELF A1–B2", "Diplôme ; titres de séjour ; le DELF B2 dispense du test de langue à l'université", "À vie", "~100–200 €"],
     ["DALF C1/C2", "Diplôme avancé", "À vie", "~180–220 €"],
     ["TCF IRN / TEF IRN", "Titres de séjour et nationalité ; 4 compétences, le même jour", "2 ans", "~174–200 €"],
     ["TCF tout public (+ expression écrite)", "Admission à l'université (DAP)", "2 ans", "variable"],
@@ -429,7 +429,7 @@ ${T(["Étape", "Niveau demandé"], [["Première carte de séjour pluriannuelle",
 <p>Français intensif à l'université ≈ 6,50 € de l'heure (1 560 € le semestre) · Alliance Française. Le plan gratuit + un tuteur en ligne pas cher couvre l'essentiel de ce qu'ils proposent.</p>`;
 
   FR.fos = `<h3>La santé</h3>
-<p>Préparation gratuite au DFP Santé · le français sur objectif spécifique du Point du FLE (vocabulaire médical, « La piqûre du français » du CCDMD) · les actualités santé et sciences de RFI de l'A1 au B2 · les entraînements DFP Santé de RFI. Ton avance grâce au turc : klinik, masaj, egzersiz, refleks, tendon, anatomi, ortopedi, protez, romatizma, migren, sendrom… sont tous des mots français. Le glossaire de la kiné est dans le paquet « Kiné et médecine du sport ».</p>
+<p>Préparation gratuite au DFP Santé · le français sur objectif spécifique du Point du FLE (vocabulaire médical, « La piqûre du français » du CCDMD) · les actualités santé et sciences de RFI de l'A1 au B2 · les entraînements DFP Santé de RFI. Ton avance grâce au turc : klinik, masaj, egzersiz, refleks, tendon, anatomi, ortopedi, protez, romatizma, migren, sendrom… sont tous des mots français. Le glossaire de la kiné est dans le paquet « Kinésithérapie et médecine du sport ».</p>
 <p>Les institutions clés : <b>IFMK</b> (institut de formation en masso-kinésithérapie) · <b>DE</b> (diplôme d'État) · <b>Ordre des masseurs-kinésithérapeutes</b>.</p>
 <h3>L'université</h3>
 <p>Mooc2Move (~24 h de français pour les études) · RFI « Étudier en France » (C1–C2). Les mots du premier jour : le cours magistral (CM) · les travaux dirigés (TD) · le partiel · la licence / le master · la prise de notes · la dissertation · la synthèse.</p>

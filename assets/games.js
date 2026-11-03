@@ -137,7 +137,7 @@
       MEM.moves++;
       const [a, b] = MEM.open;
       if (MEM.tiles[a].k === MEM.tiles[b].k) { MEM.done[a] = MEM.done[b] = 1; MEM.open = []; }
-      else { MEM.lock = true; setTimeout(() => { if (!MEM) return; MEM.open = []; MEM.lock = false; if (location.hash.startsWith("#/games/memory")) keepScroll(() => {}); }, 1100); }
+      else { const m = MEM; MEM.lock = true; setTimeout(() => { if (MEM !== m) return; MEM.open = []; MEM.lock = false; if (location.hash.startsWith("#/games/memory")) keepScroll(() => {}); }, 1100); }
     }
     keepScroll(() => {});
   }
@@ -212,16 +212,16 @@
         if (c.go) AV.pending = { go: c.go, me: c.fr };
         keepScroll(() => {}); return;
       }
-      case "av-go": { const p = AV.pending; AV.log.push({ me: p.me, bad: true }); advGo(p.go); return; }
+      case "av-go": { const p = AV.pending; if (!p) return; AV.log.push({ me: p.me, bad: true }); advGo(p.go); return; }
       case "av-again": { const id = AV.id; AV = null; stopAudio(); A().render(); window.scrollTo(0, 0); void id; return; }
       case "mem": memPick(+d.i); return;
       case "mem-again": MEM = null; A().render(); return;
-      case "ord-pick": if (!ORD.checked) { ORD.picked.push(+d.i); keepScroll(() => {}); } return;
+      case "ord-pick": if (!ORD.checked && !ORD.picked.includes(+d.i)) { ORD.picked.push(+d.i); keepScroll(() => {}); } return;
       case "ord-un": ORD.picked.splice(+d.p, 1); keepScroll(() => {}); return;
       case "ord-clear": ORD.picked = []; keepScroll(() => {}); return;
       case "ord-play": A().speak(ORD.qs[ORD.i].fr); return;
       case "ord-check": {
-        const q = ORD.qs[ORD.i]; ORD.checked = true;
+        const q = ORD.qs[ORD.i]; if (ORD.checked || ORD.picked.length < q.toks.length) return; ORD.checked = true;
         if (ORD.picked.map(i => q.toks[i]).join(" ") === q.fr) ORD.ok++;
         A().speak(q.fr); keepScroll(() => {}); return;
       }

@@ -41,17 +41,52 @@
     ["<b>th / ph</b>", "thé, photo", "t / f"],
     ["<b>h</b>", "homme, hôtel", "SILENT — « om », « otel »"],
     ["<b>r</b>", "rouge, Paris", "back-of-throat r (a light gargle), not the tapped Turkish r"],
-    ["<b>ill</b> (after vowel)", "fille, travail", "y — « fiy », « travay » (but ville, mille, tranquille = « il »)"],
+    ["<b>ill</b>, <b>-il</b> after a vowel", "fille, travail", "y — « fiy », « travay » (but ville, mille, tranquille = « il »)"],
     ["<b>ti</b> + vowel", "nation, patient", "s — « nasyo~ », « pasya~ »"],
     ["<b>x</b>", "taxi / six / deux", "« ks » / « s » / silent — it depends"]
   ];
+  const VOWELS_TR = [
+    ["<b>u</b>", "tu, rue", "ü — « tü », « rü »"],
+    ["<b>ou</b>", "vous, rouge", "u — « vu », « ruj »"],
+    ["<b>eu, œu</b> (kapalı)", "deux, bleu", "ö — « dö », « blö »"],
+    ["<b>eu, œu</b> (açık)", "peur, sœur", "ö, biraz daha açık"],
+    ["<b>e</b> (vurgusuz)", "le, je, petit", "kısa ö — « lö », « jö », çoğu zaman yutulur: « p'ti »"],
+    ["<b>é</b>", "été, café", "kapalı e — « ete », « kafe »"],
+    ["<b>è, ê, ai, ei</b>", "mère, fête, lait, neige", "açık e"],
+    ["<b>i, î, y</b>", "ici, île, stylo", "i (Fransızcada ı YOK)"],
+    ["<b>o, ô, au, eau</b>", "dos, hôtel, auto, beau", "o"],
+    ["<b>oi</b>", "moi, trois", "« ua » — « mua », « trua »"],
+    ["<b>oy</b>", "voyage", "« uay » — « vuayaj »"],
+    ["<b>ui</b>", "huit, nuit", "« üi » — « üit », « nüi »"]
+  ];
+  const NASALS_TR = NASALS.slice(0, 3).concat([["<b>un, um</b>", "un, parfum", "e~ (bazıları ö~ der)"]]);
+  const CONS_TR = [
+    ["<b>ch</b>", "chat, chose", "ş — « şa », « şoz »"],
+    ["<b>j</b>", "je, jour", "j — « jö », « jur » (garaj, plaj gibi)"],
+    ["<b>g</b> + e/i/y", "gens, girafe, garage", "j — « ja~ », « jiraf »"],
+    ["<b>g</b> + a/o/u", "gare, goût", "g"],
+    ["<b>gu</b> + e/i", "guide, guerre", "g — u okunmaz"],
+    ["<b>gn</b>", "montagne", "« ny » — « mo~tany »"],
+    ["<b>c</b> + e/i/y", "ce, ici, cycle", "s — ⚠️ Fransızca c HİÇBİR ZAMAN Türkçe c değildir"],
+    ["<b>c</b> + a/o/u", "café, comme", "k"],
+    ["<b>ç</b>", "ça, garçon", "s — ⚠️ Fransızca ç = s, Türkçe ç DEĞİL"],
+    ["<b>qu</b>", "qui, quatre", "k — « ki », « katr »"],
+    ["iki ünlü arasında <b>s</b>", "maison, rose", "z — « mezo~ », « roz »"],
+    ["<b>ss</b>", "poisson", "s — « puaso~ » (poison « puazo~ » = zehir!)"],
+    ["<b>th / ph</b>", "thé, photo", "t / f"],
+    ["<b>h</b>", "homme, hôtel", "OKUNMAZ — « om », « otel »"],
+    ["<b>r</b>", "rouge, Paris", "gırtlaktan r (hafif bir gargara), Türkçedeki dil ucu r'si değil"],
+    ["<b>ill</b>, ünlüden sonra <b>-il</b>", "fille, travail", "y — « fiy », « travay » (ama ville, mille, tranquille = « il »)"],
+    ["<b>ti</b> + ünlü", "nation, patient", "s — « nasyo~ », « pasya~ »"],
+    ["<b>x</b>", "taxi / six / deux", "« ks » / « s » / okunmaz — duruma göre"]
+  ];
   const MISTAKES = [
     ["Je mange pomme.", "Je mange <b>une</b> pomme.", "articles are compulsory", "artikel zorunlu"],
-    ["Mange une pomme. (= I eat)", "<b>Je</b> mange une pomme.", "subject pronoun is compulsory", "özne zamiri zorunlu"],
+    ["Suis fatiguée.", "<b>Je</b> suis fatiguée.", "subject pronoun is compulsory", "özne zamiri zorunlu"],
     ["Je une pomme mange.", "Je <b>mange</b> une pomme.", "S-V-O, not S-O-V", "ÖYN, ÖNY değil"],
-    ["« ça » read like Turkish ça", "ça = « sa », ce = « sö », h = silent", "French letter values", "Fransızca harf değerleri"],
+    ["ça = « ça », ce = « ce », homme = « homme »", "ça = « sa », ce = « sö », homme = « om »", "French letter values", "Fransızca harf değerleri"],
     ["ils parlent = « parlent »", "« il parl »", "-ent of verbs is silent", "fiil sonundaki -ent okunmaz"],
-    ["bon = « bon » with an n", "« bo~ »", "nasal: no n sound", "genizden: n sesi yok"],
+    ["bon = « bon »", "bon = « bo~ »", "nasal: no n sound", "genizden: n sesi yok"],
     ["une petit maison", "une petit<b>e</b> maison", "adjective agreement", "sıfat uyumu"],
     ["sa mari / son mère", "<b>son</b> mari / <b>sa</b> mère", "agrees with the noun", "isme göre değişir"],
     ["Je suis 30 ans.", "<b>J'ai</b> 30 ans.", "age = avoir", "yaş = avoir"],
@@ -60,7 +95,7 @@
     ["Je vais à France / en Paris.", "Je vais <b>en</b> France / <b>à</b> Paris.", "en + country, à + city", "en + ülke, à + şehir"],
     ["une rouge voiture", "une voiture <b>rouge</b>", "most adjectives after", "çoğu sıfat sonra gelir"],
     ["J'ai allé.", "<b>Je suis allé(e).</b>", "movement verbs take être", "hareket fiilleri être alır"],
-    ["Je suis content. (a woman)", "Je suis content<b>e</b>.", "feminine for yourself", "kendin için dişil"],
+    ["Esin : « Je suis content. »", "Esin : « Je suis content<b>e</b>. »", "feminine for yourself", "kendin için dişil"],
     ["Elle est allé.", "Elle est allé<b>e</b>.", "agreement with être", "être ile uyum"],
     ["Je n'ai pas un chat.", "Je n'ai pas <b>de</b> chat.", "negation: un/du → de", "olumsuzluk: un/du → de"],
     ["beaucoup des gens", "beaucoup <b>de</b> gens", "beaucoup de + noun", "beaucoup de + isim"],
@@ -68,7 +103,7 @@
     ["Je ne vois pas personne.", "Je ne vois <b>personne</b>.", "personne replaces pas", "personne, pas'nın yerini alır"],
     ["Tu viens mi ?", "Tu viens ? / Est-ce que tu viens ?", "no question particle", "soru eki yok"],
     ["C'est nécessaire aller.", "<b>Il faut</b> aller. / Je dois aller.", "-mek lazım = il faut", "-mek lazım = il faut"],
-    ["« tu » to a stranger / an official", "<b>vous</b>", "politeness = siz", "nezaket = siz"],
+    ["Monsieur, tu peux m'aider ?", "Monsieur, <b>vous pouvez</b> m'aider ?", "politeness = siz", "nezaket = siz"],
     ["pour je mange", "pour <b>manger</b>", "pour + infinitive", "pour + mastar"],
     ["les amis = « le ami »", "« le-zami »", "liaison", "liaison (bağlama)"]
   ];
@@ -180,7 +215,7 @@
 ${T(["A1", "A2", "B1", "B2", "C1", "C2"], [["60–100 h", "160–200 h", "360–400 h", "560–650 h", "810–950 h", "1,060–1,200 h"]])}
 <p>"Hours" = active study: course, exercises, conversation, attentive listening. Background TV only partly counts. Use the calculator below with your own pace.</p>
 <h3>Phase 0 — weeks 1–2 — sounds &amp; survival (~15–20 h)</h3>
-<p>Read French aloud with the right sounds; greet, introduce yourself, numbers 0–100, the 40 survival phrases. Use: pronunciation guide + prononcer.net · Language Transfer tracks 1–10 · Les voisins du 12 bis 1–4 · Alice Ayel · Duolingo 10 min/day · flashcards.</p>
+<p>Read French aloud with the right sounds; greet, introduce yourself, numbers 0–100, the survival phrases. Use: pronunciation guide + prononcer.net · Language Transfer tracks 1–10 · Les voisins du 12 bis 1–4 · Alice Ayel · Duolingo 10 min/day · flashcards.</p>
 <h3>Phase 1 — A1 — months 1–2/3</h3>
 <p>Talk about yourself, family, routine, shopping, time and dates; ask simple questions. <b>Spine:</b> Français interactif ch. 1–4 (+ Tex's) OR TV5MONDE A1. <b>Daily:</b> finish Language Transfer · flashcards (first 500 words) · Duolingo/Busuu. <b>Listen:</b> Les voisins du 12 bis · Coffee Break · Alice Ayel · Super Easy French · Extr@. <b>Read:</b> Global Storybooks 1–2 with the Turkish version beside. <b>Speak:</b> 1 tandem chat a week. <b>Check:</b> one DELF A1 sample.</p>
 <h3>Phase 2 — A2 — months 3–5</h3>
@@ -191,12 +226,12 @@ ${T(["A1", "A2", "B1", "B2", "C1", "C2"], [["60–100 h", "160–200 h", "360–
 <p>Argue, follow news and films, academic and professional French. University expects B2 in practice; DFP Santé B2 for health careers. Native podcasts, HugoDécrypte, series with then without subtitles, texts from your field, DELF B2-style essays. <b>Check:</b> DELF B2 (exempts from the university language test).</p>
 <h3>Phase 5 — C1 (year 2+)</h3>
 <p>Nuance, speed, specialised vocabulary. DALF C1 / DFP Santé C1. Native media only.</p>
-<p class="muted small">The US Foreign Service Institute puts French in its easiest category for English speakers: ~30 weeks full-time (~690 class hours + self-study) for professional proficiency.</p>`,
+<p class="muted small">The US Foreign Service Institute puts French in its easiest category for English speakers: ~30 weeks full-time (~750 class hours + self-study) for professional proficiency.</p>`,
     tr: `<p><b>Toplam rehberli saatler</b> (Alliance Française tahminleri; Türkçe konuşan biri üst sınırı planlamalı — B2 İngilizce ve Fransa'da yaşamak yardımcı olur):</p>
 ${T(["A1", "A2", "B1", "B2", "C1", "C2"], [["60–100 s", "160–200 s", "360–400 s", "560–650 s", "810–950 s", "1.060–1.200 s"]])}
 <p>"Saat" = aktif çalışma: kurs, alıştırma, sohbet, dikkatli dinleme. Arka planda TV kısmen sayılır. Aşağıdaki hesaplayıcıyı kendi temponla kullan.</p>
 <h3>Aşama 0 — 1–2. haftalar — sesler ve hayatta kalma (~15–20 s)</h3>
-<p>Fransızcayı doğru seslerle yüksek sesle oku; selamlaş, kendini tanıt, 0–100 sayılar, 40 temel ifade. Kullan: telaffuz rehberi + prononcer.net · Language Transfer 1–10 · Les voisins du 12 bis 1–4 · Alice Ayel · Duolingo günde 10 dk · kartlar.</p>
+<p>Fransızcayı doğru seslerle yüksek sesle oku; selamlaş, kendini tanıt, 0–100 sayılar, temel ifadeler. Kullan: telaffuz rehberi + prononcer.net · Language Transfer 1–10 · Les voisins du 12 bis 1–4 · Alice Ayel · Duolingo günde 10 dk · kartlar.</p>
 <h3>Aşama 1 — A1 — 1–2/3. aylar</h3>
 <p>Kendin, ailen, günlük rutin, alışveriş, saat ve tarihler; basit sorular. <b>Ana kurs:</b> Français interactif 1–4. bölüm (+ Tex's) VEYA TV5MONDE A1. <b>Her gün:</b> Language Transfer'ı bitir · kartlar (ilk 500 kelime) · Duolingo/Busuu. <b>Dinle:</b> Les voisins du 12 bis · Coffee Break · Alice Ayel · Super Easy French · Extr@. <b>Oku:</b> Global Storybooks 1–2, Türkçesi yanında. <b>Konuş:</b> haftada 1 tandem. <b>Kontrol:</b> bir DELF A1 örneği.</p>
 <h3>Aşama 2 — A2 — 3–5. aylar</h3>
@@ -206,7 +241,8 @@ ${T(["A1", "A2", "B1", "B2", "C1", "C2"], [["60–100 s", "160–200 s", "360–
 <h3>Aşama 4 — B2 — 10–16. aylar</h3>
 <p>Tartış, haberleri ve filmleri takip et, akademik ve mesleki Fransızca. Üniversite pratikte B2 bekler; sağlık kariyerleri için DFP Santé B2. Anadil podcast'leri, HugoDécrypte, önce altyazılı sonra altyazısız diziler, alanından metinler, DELF B2 tarzı kompozisyonlar. <b>Kontrol:</b> DELF B2 (üniversite dil testinden muaf tutar).</p>
 <h3>Aşama 5 — C1 (2. yıl+)</h3>
-<p>Nüans, hız, uzmanlık kelimeleri. DALF C1 / DFP Santé C1. Sadece anadil medyası.</p>`
+<p>Nüans, hız, uzmanlık kelimeleri. DALF C1 / DFP Santé C1. Sadece anadil medyası.</p>
+<p class="muted small">ABD Dışişleri Enstitüsü (FSI), Fransızcayı İngilizce konuşanlar için en kolay dil grubuna koyar: profesyonel yeterlik için tam zamanlı ~30 hafta (~750 saat ders + bireysel çalışma).</p>`
   });
 
   S.push({
@@ -228,7 +264,7 @@ ${T(["A1", "A2", "B1", "B2", "C1", "C2"], [["60–100 s", "160–200 s", "360–
 <li>From A2: phone and apps in French. From B1: social media in French.</li>
 <li>Errands in French: bakery, pharmacy, post office — the best real-life lessons, and free.</li></ul>
 <h3>Living with a French speaker (tips for both of you)</h3>
-<ul><li>A daily « French moment» (breakfast, dinner or a walk): French only, 15–30 minutes.</li>
+<ul><li>A daily « French moment » (breakfast, dinner or a walk): French only, 15–30 minutes.</li>
 <li>The native speaker: short sentences, slower, repeat or rephrase before switching to English.</li>
 <li>Correct by <b>recasting</b>: repeat the sentence correctly and continue — don't stop at every mistake.</li>
 <li>Agree on a signal (« Pause — en anglais ? ») for when it's too much. Frustration kills motivation.</li>
@@ -274,7 +310,7 @@ ${T(["A1", "A2", "B1", "B2", "C1", "C2"], [["60–100 s", "160–200 s", "360–
 <h3>~40 € a month</h3>
 <p>The 0 € plan + 2–4 sessions a month with a cheap online community tutor (italki / Preply, ~5–15 $ an hour). From A2, this is the best use of money: speaking with correction.</p>
 <h3>Exam budget (2026 examples, set by each centre)</h3>
-${T(["Exam", "Fee"], [["DELF A2", "~130 €"], ["DELF B1", "~140–160 €"], ["DELF B2", "~140–200 €"], ["TCF IRN", "~174–200 €"], ["TEF IRN", "~180 €"], ["Civic exam", "~60–80 €"]])}
+${T(["Exam", "Fee"], [["DELF A1", "~100–130 €"], ["DELF A2", "~130 €"], ["DELF B1", "~140–160 €"], ["DELF B2", "~140–200 €"], ["TCF IRN", "~174–200 €"], ["TEF IRN", "~180 €"], ["Civic exam", "~60–80 €"]])}
 <h3>Don't pay for</h3>
 <ul><li>"Lifetime" app deals or yearly subscriptions in the first month — test the free tier first.</li>
 <li>Several paid apps at once (they overlap).</li>
@@ -286,7 +322,7 @@ ${T(["Exam", "Fee"], [["DELF A2", "~130 €"], ["DELF B1", "~140–160 €"], ["
 <h3>Ayda ~40 €</h3>
 <p>0 € planı + ayda 2–4 kez ucuz bir çevrimiçi topluluk eğitmeni (italki / Preply, saati ~5–15 $). A2'den itibaren paranın en iyi kullanımı: düzeltmeli konuşma.</p>
 <h3>Sınav bütçesi (2026 örnekleri, her merkez belirler)</h3>
-${T(["Sınav", "Ücret"], [["DELF A2", "~130 €"], ["DELF B1", "~140–160 €"], ["DELF B2", "~140–200 €"], ["TCF IRN", "~174–200 €"], ["TEF IRN", "~180 €"], ["Yurttaşlık sınavı", "~60–80 €"]])}
+${T(["Sınav", "Ücret"], [["DELF A1", "~100–130 €"], ["DELF A2", "~130 €"], ["DELF B1", "~140–160 €"], ["DELF B2", "~140–200 €"], ["TCF IRN", "~174–200 €"], ["TEF IRN", "~180 €"], ["Yurttaşlık sınavı", "~60–80 €"]])}
 <h3>Bunlara para verme</h3>
 <ul><li>İlk ayda "ömür boyu" uygulama fırsatları veya yıllık abonelikler — önce ücretsiz sürümü dene.</li>
 <li>Aynı anda birkaç ücretli uygulama (birbirleriyle örtüşürler).</li>
@@ -357,11 +393,11 @@ ${T(["Sınav", "Ücret"], [["DELF A2", "~130 €"], ["DELF B1", "~140–160 €"
 <h3>Numbers trap</h3>
 <p>70 = soixante-dix (60+10) · 80 = quatre-vingts (4×20) · 90 = quatre-vingt-dix. Belgium &amp; Switzerland: septante, nonante (huitante in parts of Switzerland).</p>`,
     tr: `<p><b>Altın kural:</b> Fransızcayı Fransızca kurallarla oku. Türkçede 1 harf = 1 ses; Fransızcada harf grupları tek ses yapar ve birçok son harf okunmaz. İpuçları Türkçe harflerle; "~" = genizden ünlü. Her sesi duymak için alıştırmalarda 🔊'a dokun.</p>
-<h3>Ünlüler</h3>${T(["Yazım", "Örnek", "Türkçe anahtar"], VOWELS)}
+<h3>Ünlüler</h3>${T(["Yazım", "Örnek", "Türkçe anahtar"], VOWELS_TR)}
 <h3>Genizden ünlüler (asıl yenilik — ilk hafta her gün çalış)</h3>
-<p>Hava burundan geçer; n/m'nin kendisi OKUNMAZ.</p>${T(["Yazım", "Örnek", "Türkçe anahtar"], NASALS)}
+<p>Hava burundan geçer; n/m'nin kendisi OKUNMAZ.</p>${T(["Yazım", "Örnek", "Türkçe anahtar"], NASALS_TR)}
 <p><b>n/m'den sonra ünlü gelirse genizden değildir:</b> un « e~ » / une « ün » · bon « bo~ » / bonne « bon » · fin « fe~ » / fine « fin ». Birçok eril/dişil çift böyle çalışır!</p>
-<h3>Ünsüzler</h3>${T(["Yazım", "Örnek", "Türkçe anahtar"], CONS)}
+<h3>Ünsüzler</h3>${T(["Yazım", "Örnek", "Türkçe anahtar"], CONS_TR)}
 <h3>Okunmayan harfler (en önemlisi)</h3>
 <ul><li>Son ünsüzler genelde okunmaz: petit, grand, vous, nous, trop, beaucoup, nez, prix. Sıklıkla okunanlar: c, r, f, l ("CaReFuL"): lac, mer, neuf, sel — ama -er mastarları hariç: parler = « parlé ».</li>
 <li>Sondaki e okunmaz (le, je, ce hariç): table = « tabl ». Önündeki ünsüzü duyulur yapar: petit « pöti » / petite « pötit ».</li>
@@ -394,7 +430,7 @@ ${T(["Turkish", "French", "Example"], [["-iyor / -ir", "présent", "je mange (yi
 <h3>10) Relative clauses (participle → qui / que / où / dont)</h3>
 ${T(["Turkish", "French"], [["gelen adam", "l'homme <b>qui</b> vient"], ["okuduğum kitap", "le livre <b>que</b> je lis"], ["yaşadığım şehir", "la ville <b>où</b> j'habite"], ["bahsettiğim film", "le film <b>dont</b> je parle"]])}
 <h3>11) Possessives agree with the THING owned</h3><p>annem / babam → <b>ma</b> mère / <b>mon</b> père · annesi → <b>sa</b> mère (his OR her) · kocası → <b>son</b> mari. Before a vowel: mon amie, son école.</p>
-<h3>12) Object pronouns before the verb (like Turkish)</h3><p>Onu görüyorum → Je <b>le</b> vois · Ona veriyorum → Je <b>lui</b> donne · Onu ona veriyorum → Je le lui donne · Onu görmek istiyorum → Je veux le voir · Oraya gidiyorum → J'<b>y</b> vais · Ondan istiyorum → J'<b>en</b> veux.</p>`;
+<h3>12) Object pronouns before the verb (like Turkish)</h3><p>Onu görüyorum → Je <b>le</b> vois · Ona veriyorum → Je <b>lui</b> donne · Onu ona veriyorum → Je le lui donne · Onu görmek istiyorum → Je veux le voir · Oraya gidiyorum → J'<b>y</b> vais · Ondan biraz istiyorum → J'<b>en</b> veux.</p>`;
   const GMAP_TR = `
 <h3>1) Kelime sırası</h3><p>Ben bir elma yiyorum. → Je mange une pomme. (Özne-Yüklem-Nesne)<br>kırmızı bir araba → une voiture rouge (çoğu sıfat isimden SONRA gelir). Önce gelenler: beau, joli, bon, mauvais, petit, grand, jeune, vieux, nouveau, premier — une petite maison.</p>
 <h3>2) Artikeller (asıl yenilik)</h3><p>bir → un / une; çoğul "bazı" = des. Türkçede "the" yok → le / la / l' / les.<br>
@@ -414,7 +450,7 @@ ${T(["Türkçe", "Fransızca", "Örnek"], [["-iyor / -ir", "présent", "je mange
 <h3>10) Sıfat cümlecikleri (ortaç → qui / que / où / dont)</h3>
 ${T(["Türkçe", "Fransızca"], [["gelen adam", "l'homme <b>qui</b> vient"], ["okuduğum kitap", "le livre <b>que</b> je lis"], ["yaşadığım şehir", "la ville <b>où</b> j'habite"], ["bahsettiğim film", "le film <b>dont</b> je parle"]])}
 <h3>11) İyelikler sahip olunan ŞEYE uyar</h3><p>annem / babam → <b>ma</b> mère / <b>mon</b> père · annesi → <b>sa</b> mère (onun: erkek VEYA kadın) · kocası → <b>son</b> mari. Ünlüden önce: mon amie, son école.</p>
-<h3>12) Nesne zamirleri fiilden önce (Türkçedeki gibi)</h3><p>Onu görüyorum → Je <b>le</b> vois · Ona veriyorum → Je <b>lui</b> donne · Onu ona veriyorum → Je le lui donne · Onu görmek istiyorum → Je veux le voir · Oraya gidiyorum → J'<b>y</b> vais · Ondan istiyorum → J'<b>en</b> veux.</p>`;
+<h3>12) Nesne zamirleri fiilden önce (Türkçedeki gibi)</h3><p>Onu görüyorum → Je <b>le</b> vois · Ona veriyorum → Je <b>lui</b> donne · Onu ona veriyorum → Je le lui donne · Onu görmek istiyorum → Je veux le voir · Oraya gidiyorum → J'<b>y</b> vais · Ondan biraz istiyorum → J'<b>en</b> veux.</p>`;
   const GORDER = lang => T([lang === "tr" ? "Seviye" : "Level", lang === "tr" ? "Dilbilgisi sırası" : "Grammar, in the order you need it"], Object.entries(lang === "tr" ? GRAMMAR_ORDER_TR : GRAMMAR_ORDER).map(([k, v]) => [`<b>${k}</b>`, v]));
 
   S.push({
@@ -428,7 +464,7 @@ ${T(["Türkçe", "Fransızca"], [["gelen adam", "l'homme <b>qui</b> vient"], ["o
     id: "loanwords", icon: "🤝",
     t: { en: "Words you already know", tr: "Zaten bildiğin kelimeler", fr: "Les mots que tu connais déjà" },
     res: ["derkunt", "tdk"],
-    en: `<p>Turkish took about <b>5,000 words</b> from French: the TDK dictionary counted 4,977 French-origin words in 2005 — about 72% of all its words of Western origin (Vural &amp; Böler 2008). Flip through the "Words you already know" deck: 140 of them with audio.</p>
+    en: `<p>Turkish took about <b>5,000 words</b> from French: the TDK dictionary counted 4,977 French-origin words in 2005 — about 72% of all its words of Western origin (Vural &amp; Böler 2008). Flip through the "Words you already know" deck: more than 160 of them, with audio.</p>
 <h3>French words hidden in Turkish (* = meaning shifted, see False friends)</h3>
 ${T(["Theme", "Turkish → French"], [
       ["Transport &amp; city", "otobüs (autobus), otomobil, taksi, metro, kamyon (camion), bisiklet (bicyclette), şoför (chauffeur), garaj, bulvar (boulevard), asansör (ascenseur), apartman* (appartement)"],
@@ -441,12 +477,12 @@ ${T(["Theme", "Turkish → French"], [
       ["Health &amp; body", "klinik, ambulans, pansuman (pansement), masaj, egzersiz, terapi, refleks, tendon, anatomi, sendrom, kronik, migren, romatizma, protez (prothèse), ortopedi"]])}
 <p><b>Method:</b> meet a new French word → "Is it in Turkish?" → say it the Turkish way → fix the vowels and drop the silent letters. Often 80% right on the first try.</p>
 <h3>Tricks to guess the French word</h3>
-<ul><li>Turkish <b>-syon</b> = French <b>-tion</b>: televizyon → télévision, rehabilitasyon → réhabilitation.</li>
+<ul><li>Turkish <b>-syon</b> = French <b>-tion / -sion</b>: televizyon → télévision, rehabilitasyon → réhabilitation.</li>
 <li>Turkish <b>ş</b> often = French <b>ch</b>: şans → chance, şömine → cheminée, şampiyon → champion.</li>
 <li>Turkish <b>j</b> = French <b>j/g</b> (same sound!): masaj → massage, garaj → garage.</li></ul>
 <h3>English → French patterns (thousands of words for free)</h3>
 ${T(["English", "French", "Examples"], [["-tion", "-tion", "nation, information, situation (said « -syo~ »)"], ["-ty", "-té", "university → université, quality → qualité"], ["-ous", "-eux / -euse", "famous → fameux, delicious → délicieux"], ["-ic, -ical", "-ique", "music → musique, physical → physique"], ["-ly", "-ment", "rapidly → rapidement, exactly → exactement"], ["-or", "-eur", "actor → acteur, doctor → docteur, colour → couleur"], ["-ive", "-if / -ive", "active → actif, positive → positif"], ["-ize", "-iser", "organize → organiser, realize → réaliser"], ["-ist, -ism", "-iste, -isme", "tourist → touriste, optimism → optimisme"], ["-ance, -ence", "-ance, -ence", "chance, patience, différence"], ["lost s → ^", "", "forest → forêt, hospital → hôpital, feast → fête"], ["s- → é- / es-", "", "student → étudiant, school → école, space → espace"]])}`,
-    tr: `<p>Türkçe Fransızcadan yaklaşık <b>5.000 kelime</b> aldı: TDK sözlüğü 2005'te 4.977 Fransızca kökenli kelime saydı — Batı kökenli kelimelerinin yaklaşık %72'si (Vural ve Böler 2008). "Zaten bildiğin kelimeler" destesine göz at: 140 tanesi sesli.</p>
+    tr: `<p>Türkçe Fransızcadan yaklaşık <b>5.000 kelime</b> aldı: TDK sözlüğü 2005'te 4.977 Fransızca kökenli kelime saydı — Batı kökenli kelimelerinin yaklaşık %72'si (Vural ve Böler 2008). "Zaten bildiğin kelimeler" destesine göz at: 160'tan fazlası, sesli.</p>
 <h3>Türkçede gizli Fransızca kelimeler (* = anlamı kaymış, Yanlış dostlar'a bak)</h3>
 ${T(["Tema", "Türkçe → Fransızca"], [
       ["Ulaşım ve şehir", "otobüs (autobus), otomobil, taksi, metro, kamyon (camion), bisiklet (bicyclette), şoför (chauffeur), garaj, bulvar (boulevard), asansör (ascenseur), apartman* (appartement)"],
@@ -459,7 +495,7 @@ ${T(["Tema", "Türkçe → Fransızca"], [
       ["Sağlık ve vücut", "klinik, ambulans, pansuman (pansement), masaj, egzersiz, terapi, refleks, tendon, anatomi, sendrom, kronik, migren, romatizma, protez (prothèse), ortopedi"]])}
 <p><b>Yöntem:</b> yeni bir Fransızca kelime gör → "Türkçede var mı?" → Türkçe gibi söyle → ünlüleri düzelt ve okunmayan harfleri at. Çoğu zaman ilk denemede %80 doğru.</p>
 <h3>Fransızca kelimeyi tahmin etme taktikleri</h3>
-<ul><li>Türkçe <b>-syon</b> = Fransızca <b>-tion</b>: televizyon → télévision, rehabilitasyon → réhabilitation.</li>
+<ul><li>Türkçe <b>-syon</b> = Fransızca <b>-tion / -sion</b>: televizyon → télévision, rehabilitasyon → réhabilitation.</li>
 <li>Türkçe <b>ş</b> çoğu zaman = Fransızca <b>ch</b>: şans → chance, şömine → cheminée, şampiyon → champion.</li>
 <li>Türkçe <b>j</b> = Fransızca <b>j/g</b> (aynı ses!): masaj → massage, garaj → garage.</li></ul>
 <h3>İngilizce → Fransızca kalıplar (bedava binlerce kelime)</h3>
@@ -496,11 +532,11 @@ ${T(["Fransızca", "anlamı", "dikkat"], FF_EN)}
   S.push({
     id: "survival", icon: "🆘",
     t: { en: "Survival kit & emergency numbers", tr: "Hayatta kalma seti ve acil numaralar", fr: "Kit de survie et numéros d'urgence" },
-    en: `<p>The 40 phrases for day 1 are in the "Survival phrases" deck, with audio. (e) = add -e when the speaker is a woman: enchanté → enchantée, perdu → perdue.</p>
+    en: `<p>The phrases for day 1 are in the "Survival phrases" deck, with audio. (e) = add -e when the speaker is a woman: enchanté → enchantée, perdu → perdue.</p>
 <h3>Emergency numbers in France</h3>
 ${T(["Number", "For"], [["<b>112</b>", "EU emergency number (works everywhere)"], ["<b>15</b>", "Medical emergency (SAMU)"], ["<b>17</b>", "Police"], ["<b>18</b>", "Fire brigade"], ["<b>114</b>", "By text message, if you can't speak or hear"]])}
 <p>Key sentences: « Au secours ! » · « Appelez un médecin / une ambulance ! » · « Je suis malade. J'ai mal ici. » · « Je suis perdue. »</p>`,
-    tr: `<p>İlk gün için 40 ifade "Temel ifadeler" destesinde, sesli. (e) = konuşan kadınsa -e ekle: enchanté → enchantée, perdu → perdue.</p>
+    tr: `<p>İlk gün ifadeleri "Temel ifadeler" destesinde, sesli. (e) = konuşan kadınsa -e ekle: enchanté → enchantée, perdu → perdue.</p>
 <h3>Fransa'da acil numaralar</h3>
 ${T(["Numara", "Ne için"], [["<b>112</b>", "AB acil numarası (her yerde çalışır)"], ["<b>15</b>", "Tıbbi acil (SAMU)"], ["<b>17</b>", "Polis"], ["<b>18</b>", "İtfaiye"], ["<b>114</b>", "Konuşamıyor veya duyamıyorsan SMS ile"]])}
 <p>Anahtar cümleler: « Au secours ! » (İmdat!) · « Appelez un médecin / une ambulance ! » · « Je suis malade. J'ai mal ici. » · « Je suis perdue. » (Kayboldum.)</p>`
@@ -586,10 +622,10 @@ ${T(["Seviye", "Ne yapılır"], [["A1", "Kısa metinleri elle kopyala; dikteler 
     id: "exams", icon: "📝",
     t: { en: "Exams: DELF, DALF, TCF, TEF, DFP Santé", tr: "Sınavlar: DELF, DALF, TCF, TEF, DFP Santé", fr: "Examens : DELF, DALF, TCF, TEF, DFP Santé" },
     res: ["fei-delf", "delfdalfch", "dfp-sante", "tef-irn", "tcf-irn", "tv5-tcf"],
-    en: `${T(["Exam", "What for", "Validity", "Fee (2026)"], [["DELF A1–B2", "Diploma; residence cards; DELF B2 exempts from the university language test", "For life", "~130–200 €"], ["DALF C1/C2", "Advanced diploma", "For life", "~180–220 €"], ["TCF IRN / TEF IRN", "Residence cards and citizenship; 4 skills, same day", "2 years", "~174–200 €"], ["TCF tout public (+ writing)", "University admission (DAP)", "2 years", "varies"], ["DFP Santé B1, B2/C1", "Professional French for physiotherapists, nurses, doctors; accepted for the 10-year card and citizenship", "For life", "varies"]])}
+    en: `${T(["Exam", "What for", "Validity", "Fee (2026)"], [["DELF A1–B2", "Diploma; residence cards; DELF B2 exempts from the university language test", "For life", "~100–200 €"], ["DALF C1/C2", "Advanced diploma", "For life", "~180–220 €"], ["TCF IRN / TEF IRN", "Residence cards and citizenship; 4 skills, same day", "2 years", "~174–200 €"], ["TCF tout public (+ writing)", "University admission (DAP)", "2 years", "varies"], ["DFP Santé B1, B2/C1", "Professional French for physiotherapists, nurses, doctors; accepted for the 10-year card and citizenship", "For life", "varies"]])}
 <p><b>Strategy:</b> TCF/TEF expire after 2 years → take them shortly before you need them. DELF/DALF never expire → collect them as milestones (A2 → B1 → B2). Always check which exact test the institution wants BEFORE paying.</p>
 <p><b>Free preparation:</b> official DELF sample papers (audio + marking grids) on each level page · delfdalf.ch full papers · TEF IRN sample tasks · TV5MONDE TCF simulation · RFI practice · Le Point du FLE directory · Podcast Français Facile DELF A1/A2 · DFP Santé sample papers. Where: universities, Alliances Françaises, approved centres (Carif-Oref search).</p>`,
-    tr: `${T(["Sınav", "Ne için", "Geçerlilik", "Ücret (2026)"], [["DELF A1–B2", "Diploma; oturma kartları; DELF B2 üniversite dil testinden muaf tutar", "Ömür boyu", "~130–200 €"], ["DALF C1/C2", "İleri seviye diploma", "Ömür boyu", "~180–220 €"], ["TCF IRN / TEF IRN", "Oturma kartları ve vatandaşlık; 4 beceri, aynı gün", "2 yıl", "~174–200 €"], ["TCF tout public (+ yazma)", "Üniversite kabulü (DAP)", "2 yıl", "değişir"], ["DFP Santé B1, B2/C1", "Fizyoterapist, hemşire, doktorlar için mesleki Fransızca; 10 yıllık kart ve vatandaşlık için kabul edilir", "Ömür boyu", "değişir"]])}
+    tr: `${T(["Sınav", "Ne için", "Geçerlilik", "Ücret (2026)"], [["DELF A1–B2", "Diploma; oturma kartları; DELF B2 üniversite dil testinden muaf tutar", "Ömür boyu", "~100–200 €"], ["DALF C1/C2", "İleri seviye diploma", "Ömür boyu", "~180–220 €"], ["TCF IRN / TEF IRN", "Oturma kartları ve vatandaşlık; 4 beceri, aynı gün", "2 yıl", "~174–200 €"], ["TCF tout public (+ yazma)", "Üniversite kabulü (DAP)", "2 yıl", "değişir"], ["DFP Santé B1, B2/C1", "Fizyoterapist, hemşire, doktorlar için mesleki Fransızca; 10 yıllık kart ve vatandaşlık için kabul edilir", "Ömür boyu", "değişir"]])}
 <p><b>Strateji:</b> TCF/TEF 2 yıl sonra geçersiz olur → ihtiyacından kısa süre önce gir. DELF/DALF süresizdir → kilometre taşı olarak topla (A2 → B1 → B2). Ödemeden ÖNCE kurumun tam olarak hangi testi istediğini kontrol et.</p>
 <p><b>Ücretsiz hazırlık:</b> her seviye sayfasında resmî DELF örnekleri (ses + puanlama tabloları) · delfdalf.ch tam sınavlar · TEF IRN örnek görevler · TV5MONDE TCF simülasyonu · RFI pratiği · Le Point du FLE rehberi · Podcast Français Facile DELF A1/A2 · DFP Santé örnek sınavları. Nerede: üniversiteler, Alliance Française'ler, onaylı merkezler (Carif-Oref araması).</p>`
   });
