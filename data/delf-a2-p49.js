@@ -87,7 +87,7 @@
         xtr: "Sporcu köyünün karşılama bölümünde çalışacak. Sağlık merkezi ya da bilet kontrolünden söz edilmiyor." },
       { q: "Pourquoi a-t-elle ce poste ?", o: ["Parce qu'elle parle plusieurs langues.", "Parce qu'elle habite près du village.", "Parce qu'elle a déjà travaillé comme volontaire."], a: 0,
         x: "« Comme vous parlez turc, anglais et français, vous allez travailler à l'accueil. »",
-        xtr: "« Comme » burada \"…dığı için\" anlamında: üç dil konuştuğu için bu görevi aldı." },
+        xtr: "« Comme » burada « …dığı için » anlamında: üç dil konuştuğu için bu görevi aldı." },
       { q: "Le 22 juillet, Mme Kılıç travaille…", o: ["de 9 h à 15 h.", "de 7 h à 15 h.", "de 7 h à 13 h."], a: 1,
         x: "« Votre première journée, c'est le 22 juillet, de 7 h à 15 h. »",
         xtr: "İlk iş günü 22 Temmuz, saat 7.00–15.00. Saat 9 ise cumartesi günkü eğitimin başlangıç saati." },

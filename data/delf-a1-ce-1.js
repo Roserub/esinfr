@@ -13,7 +13,7 @@
       { q: "La fête commence à quelle heure ?", o: ["17 h 30", "20 h 30", "19 h 30"], a: 2, x: "« Je fais une petite fête chez moi […] à 19 h 30. »" },
       { q: "Qu'est-ce que vous pouvez apporter ?", o: ["🍰 un dessert", "🎁 un cadeau", "🍕 une pizza"], a: 0, x: "« Tu peux apporter une boisson ou un dessert » et « Pas de cadeau »." },
       { q: "Pour aller chez Claire, vous prenez…", o: ["🚇 le métro", "🚌 le bus", "🚲 le vélo"], a: 1, x: "« Prends le bus 5, arrêt « Mairie ». »" },
-      { q: "Vous devez répondre à Claire avant samedi.", o: ["Vrai", "Faux"], a: 1, x: "Claire écrit : « Réponds-moi avant jeudi. »" }
+      { q: "Vous devez répondre à Claire avant jeudi.", o: ["Vrai", "Faux"], a: 0, x: "Claire écrit : « Réponds-moi avant jeudi. »" }
     ] },
 
   { id: "a1-s01-ce2", level: "A1", sujet: 1, sec: "ce", ex: 2, pts: 6,
@@ -25,7 +25,7 @@
     questions: [
       { q: "La médiathèque est fermée…", o: ["le lundi", "le mardi", "le samedi"], a: 0, x: "« Fermé le dimanche et le lundi. »" },
       { q: "Le mercredi, la médiathèque ouvre à…", o: ["14 h", "10 h", "12 h"], a: 1, x: "« Mercredi et samedi : 10 h – 18 h »." },
-      { q: "L'inscription coûte…", o: ["5 €", "2 €", "0 € : c'est gratuit"], a: 2, x: "« L'inscription est gratuite. »" },
+      { q: "L'inscription coûte…", o: ["5 €", "2 €", "rien"], a: 2, x: "« L'inscription est gratuite. »" },
       { q: "Vous pouvez emprunter combien de livres ?", o: ["2", "3", "5"], a: 2, x: "« Vous pouvez emprunter 5 livres et 2 DVD »." },
       { q: "L'atelier de conversation est le samedi matin.", o: ["Vrai", "Faux"], a: 0, x: "« atelier de conversation en français le samedi à 11 h »." },
       { q: "Pour vous inscrire, vous apportez…", o: ["📷 une photo", "🪪 une pièce d'identité", "💶 de l'argent"], a: 1, x: "« Apportez une pièce d'identité et un justificatif de domicile. »" }
@@ -99,10 +99,10 @@
       body: "Menu de la semaine du 6 au 10 octobre.\nLe mercredi, pas de cantine.\nPain et fruits bio tous les jours.",
       rows: [["Jour", "Entrée", "Plat", "Dessert"], ["Lundi", "Salade de tomates", "Poulet et riz", "Yaourt"], ["Mardi", "Soupe de légumes", "Poisson et pommes de terre", "Pomme"], ["Jeudi", "Carottes râpées", "Pâtes à la bolognaise", "Fromage"], ["Vendredi", "Melon", "Omelette et haricots verts", "Gâteau au chocolat"]] },
     questions: [
-      { q: "Votre fils n'aime pas le poisson. Quel jour il n'aime pas le plat ?", o: ["lundi", "mardi", "jeudi"], a: 1, x: "Mardi : « Poisson et pommes de terre »." },
+      { q: "Votre fils n'aime pas le poisson. Quel jour est-ce qu'il ne va pas aimer le plat ?", o: ["lundi", "mardi", "jeudi"], a: 1, x: "Mardi : « Poisson et pommes de terre »." },
       { q: "Le vendredi, le dessert est…", o: ["🍎 une pomme", "🧀 du fromage", "🍫 un gâteau au chocolat"], a: 2, x: "Vendredi, dessert : « Gâteau au chocolat »." },
       { q: "Les enfants mangent à la cantine le mercredi.", o: ["Vrai", "Faux"], a: 1, x: "« Le mercredi, pas de cantine. »" },
-      { q: "Quel jour il y a de la soupe ?", o: ["mardi", "lundi", "vendredi"], a: 0, x: "Mardi, entrée : « Soupe de légumes »." },
+      { q: "Quel jour est-ce qu'il y a de la soupe ?", o: ["mardi", "lundi", "vendredi"], a: 0, x: "Mardi, entrée : « Soupe de légumes »." },
       { q: "Le jeudi, le plat, c'est…", o: ["🍗 du poulet", "🍝 des pâtes", "🍳 une omelette"], a: 1, x: "Jeudi : « Pâtes à la bolognaise »." }
     ] },
 
@@ -127,10 +127,10 @@
     consigne: "Vous recevez ce SMS de votre voisine. Lisez le message, puis répondez aux questions.",
     help: { tr: "Komşunuzdan bu SMS'i alıyorsunuz. Mesajı okuyun, sonra soruları cevaplayın.", en: "You receive this text message from your neighbour. Read it, then answer the questions." },
     doc: { type: "sms", from: "Mme Garcia (voisine)", to: "Esin",
-      body: "Bonjour Esin, c'est Mme Garcia, votre voisine du 2e étage. Je pars chez ma fille à Marseille demain matin, pour 4 jours.\n\nVous pouvez arroser mes plantes mercredi et samedi, s'il vous plaît ? La clé est chez la gardienne.\n\nLe facteur va aussi apporter un colis jeudi : vous pouvez le prendre ?\n\nJe rentre dimanche soir. Merci mille fois ! 😊" },
+      body: "Bonjour Esin, c'est Mme Garcia, votre voisine du 2e étage. Je pars chez ma fille à Marseille demain matin, pour 5 jours.\n\nVous pouvez arroser mes plantes mercredi et samedi, s'il vous plaît ? La clé est chez la gardienne.\n\nLe facteur va aussi apporter un colis jeudi : vous pouvez le prendre ?\n\nJe rentre dimanche soir. Merci mille fois ! 😊" },
     questions: [
       { q: "Mme Garcia part chez…", o: ["son fils", "sa sœur", "sa fille"], a: 2, x: "« Je pars chez ma fille à Marseille »." },
-      { q: "Elle part pour combien de jours ?", o: ["2 jours", "4 jours", "7 jours"], a: 1, x: "« demain matin, pour 4 jours »." },
+      { q: "Elle part pour combien de jours ?", o: ["2 jours", "5 jours", "7 jours"], a: 1, x: "« demain matin, pour 5 jours »." },
       { q: "Vous allez arroser les plantes…", o: ["mercredi et samedi", "jeudi et dimanche", "tous les jours"], a: 0, x: "« Vous pouvez arroser mes plantes mercredi et samedi »." },
       { q: "La clé est…", o: ["🚪 sous le tapis", "👩 chez la gardienne", "📬 dans la boîte aux lettres"], a: 1, x: "« La clé est chez la gardienne. »" },
       { q: "Le facteur apporte un colis jeudi.", o: ["Vrai", "Faux"], a: 0, x: "« Le facteur va aussi apporter un colis jeudi »." },
@@ -176,7 +176,7 @@
       { q: "Le cours a lieu…", o: ["le dimanche matin", "le samedi matin", "le samedi soir"], a: 1, x: "« Chaque samedi, de 10 h à 13 h »." },
       { q: "Dans ce cours, on prépare…", o: ["des plats de différents pays", "seulement des plats français", "seulement des gâteaux"], a: 0, x: "« on prépare un plat d'un pays différent : […] Maroc, […] Italie, […] Inde »." },
       { q: "Le cours coûte…", o: ["8 €", "13 €", "35 €"], a: 2, x: "« Prix : 35 € le cours. »" },
-      { q: "Vous devez apporter…", o: ["🔪 un couteau", "🥕 des légumes", "un tablier"], a: 2, x: "« Apportez un tablier ! »" },
+      { q: "Vous devez apporter…", o: ["🔪 un grand couteau", "🥕 des légumes frais", "🧑‍🍳 un tablier"], a: 2, x: "« Apportez un tablier ! »" },
       { q: "Il y a 15 personnes dans le groupe.", o: ["Vrai", "Faux"], a: 1, x: "« Groupes de 8 personnes maximum. »" },
       { q: "Pour réserver, vous…", o: ["📞 téléphonez", "💻 allez sur le site", "✉️ envoyez une lettre"], a: 1, x: "« Réservation sur le site : atelier-nadia.fr »." }
     ] },
@@ -289,7 +289,7 @@
   { id: "a1-s05-ce4", level: "A1", sujet: 5, sec: "ce", ex: 4, pts: 7,
     title: "Promotions au supermarché",
     consigne: "Vous lisez cette publicité dans votre boîte aux lettres. Répondez aux questions.",
-    help: { tr: "Posta kutunuzda bu reklamı okuyorsunuz. Soruları cevaplayın.", en: "You read this advertisement from your letterbox. Answer the questions." },
+    help: { tr: "Posta kutunuzda bu reklamı okuyorsunuz. Soruları cevaplayın.", en: "You read this advertisement in your letterbox. Answer the questions." },
     doc: { type: "annonce", title: "Marché Plus – Les promos de la semaine",
       body: "Du mercredi 3 au samedi 6 avril seulement !\n\n🍓 Fraises d'Espagne : 2,50 € la barquette\n🧀 Fromage râpé : 2 paquets achetés = le 3e gratuit\n☕ Café : – 30 %\n🍞 Pain de mie : 1,20 €\n\nNouveau : livraison gratuite à la maison à partir de 60 € d'achats.\n\nLe magasin est ouvert du lundi au samedi de 8 h 30 à 20 h, et le dimanche de 9 h à 12 h 30." },
     questions: [

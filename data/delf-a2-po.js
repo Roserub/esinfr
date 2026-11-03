@@ -37,7 +37,7 @@
     must: [
       {
         c: "Dire où et quand",
-        kw: ["il y a", "l'année dernière", "l'été", "en grèce", "à la mer", "pays", "île", "ile", "ans", "mois"]
+        kw: ["il y a", "l'année dernière", "l'été", "en grèce", "à la mer", "pays", "une île", "une ile", "l'île", "l'ile", "mois"]
       },
       { c: "Dire avec qui", kw: ["avec", "amie", "ami", "amis", "famille", "seule", "seul", "sœur", "soeur", "frère", "frere"] },
       {
@@ -229,7 +229,7 @@
       },
       {
         c: "Confirmer et donner son nom",
-        kw: ["au nom", "nom", "confirmer", "confirmation", "je la prends", "je vais prendre", "d'accord", "merci", "au revoir"]
+        kw: ["au nom", "mon nom", "confirmer", "confirmation", "je la prends", "je vais prendre", "d'accord", "merci", "au revoir"]
       }
     ],
     model: [
@@ -244,7 +244,7 @@
       ["E", "Oui, le parking est gratuit pour nos clients."],
       ["C", "Parfait. Nous allons arriver vers 21 heures. C'est possible ?"],
       ["E", "Pas de problème, la réception est ouverte jusqu'à 23 heures. C'est à quel nom ?"],
-      ["C", "Au nom d'Esin, E-S-I-N. Vous pouvez m'envoyer une confirmation par e-mail ?"],
+      ["C", "Au nom de Yilmaz, Y-I-L-M-A-Z. Vous pouvez m'envoyer une confirmation par e-mail ?"],
       ["E", "Bien sûr. Votre réservation est confirmée. Au revoir, madame !"],
       ["C", "Merci beaucoup, au revoir !"]
     ] },
@@ -488,7 +488,7 @@
     title: "S'inscrire à un club de sport",
     consigne: "Exercice en interaction (3 minutes environ). Vous voulez vous inscrire dans un club d'escalade. Vous allez à l'accueil du club. Vous demandez des informations (horaires, prix, matériel, documents) et vous vous inscrivez. L'examinateur joue le rôle de l'employé du club.",
     help: {
-      tr: "Etkileşimli alıştırma (yaklaşık 3 dakika). Bir tırmanış kulübüne kaydolmak istiyorsunuz. Kulübün danışmasına gidiyorsunuz. Bilgi (saatler, fiyat, malzeme, belgeler) isteyip kaydolursunuz. Sınav görevlisi kulüp çalışanını oynuyor.",
+      tr: "Etkileşimli alıştırma (yaklaşık 3 dakika). Bir tırmanış kulübüne kaydolmak istiyorsunuz. Kulübün danışmasına gidiyorsunuz. Bilgi (saatler, fiyat, malzeme, belgeler) isteyip kaydoluyorsunuz. Sınav görevlisi kulüp çalışanını oynuyor.",
       en: "Interaction (about 3 minutes). You want to join a climbing club. You go to the club's reception. You ask for information (times, price, equipment, documents) and sign up. The examiner plays the club employee."
     },
     scenario: "Vous êtes débutant(e) en escalade. Vous êtes libre le mercredi soir et le samedi.",
@@ -604,7 +604,7 @@
     title: "Demander un service au voisin",
     consigne: "Exercice en interaction (3 minutes environ). Vous partez une semaine en vacances. Vous allez chez votre voisin(e) pour lui demander d'arroser vos plantes et de prendre votre courrier. Vous expliquez ce qu'il faut faire et vous le / la remerciez. L'examinateur joue le rôle du voisin / de la voisine.",
     help: {
-      tr: "Etkileşimli alıştırma (yaklaşık 3 dakika). Bir haftalığına tatile gidiyorsunuz. Komşunuza gidip çiçeklerinizi sulamasını ve postanızı almasını rica ediyorsunuz. Ne yapılması gerektiğini anlatıp teşekkür ediyorsunuz. Sınav görevlisi komşuyu oynuyor.",
+      tr: "Etkileşimli alıştırma (yaklaşık 3 dakika). Bir haftalığına tatile gidiyorsunuz. Komşunuza gidip bitkilerinizi sulamasını ve postanızı almasını rica ediyorsunuz. Ne yapılması gerektiğini anlatıp teşekkür ediyorsunuz. Sınav görevlisi komşuyu oynuyor.",
       en: "Interaction (about 3 minutes). You are going on holiday for a week. You ask your neighbour to water your plants and collect your mail. You explain what to do and thank them. The examiner plays the neighbour."
     },
     scenario: "Vous partez en Turquie du 3 au 10 août. Vous connaissez bien votre voisin, M. Martin.",
@@ -789,7 +789,7 @@
     ],
     model: [
       ["E", "Cabinet du docteur Lefèvre, bonjour."],
-      ["C", "Bonjour madame. Je m'appelle Esin. J'ai un rendez-vous avec le docteur jeudi à 10 heures."],
+      ["C", "Bonjour madame. Je m'appelle Esin Yilmaz. J'ai un rendez-vous avec le docteur jeudi à 10 heures."],
       ["E", "Oui, je vois. Qu'est-ce que je peux faire pour vous ?"],
       [
         "C",
@@ -1038,7 +1038,7 @@
         ]
       }
     ],
-    model: "Un film que j'ai beaucoup aimé, c'est Intouchables. C'est une comédie française. C'est l'histoire de Philippe, un homme riche qui ne peut plus marcher après un accident. Il cherche une personne pour l'aider tous les jours. Il choisit Driss, un jeune homme qui n'a pas de travail. Au début, ils sont très différents, mais ils deviennent de grands amis. Je l'ai vu à la télévision il y a trois ans, avec des collègues kinés, en version originale avec des sous-titres. J'ai beaucoup ri, mais j'ai aussi été émue. J'ai adoré ce film parce qu'il parle d'amitié et de handicap avec beaucoup d'humour. Je le conseille à tout le monde !" },
+    model: "Un film que j'ai beaucoup aimé, c'est Intouchables. C'est une comédie française. C'est l'histoire de Philippe, un homme riche qui ne peut plus marcher après un accident. Il cherche une personne pour l'aider tous les jours. Il choisit Driss, un jeune homme qui n'a pas de travail. Au début, ils sont très différents, mais ils deviennent de grands amis. Je l'ai vu à la télévision il y a trois ans, en Turquie, avec des collègues kinés, en français avec des sous-titres turcs. J'ai beaucoup ri, mais j'ai aussi été émue. J'ai adoré ce film parce qu'il parle d'amitié et de handicap avec beaucoup d'humour. Je le conseille à tout le monde !" },
   { id: "a2-s08-po3", level: "A2", sujet: 8, sec: "po", ex: 3, pts: 9, kind: "dialogue",
     title: "Préparer une fête d'anniversaire",
     consigne: "Exercice en interaction (3 minutes environ). Avec un(e) ami(e), vous organisez une fête surprise pour l'anniversaire d'un autre ami. Vous discutez de la date, du lieu, des invités, de la nourriture et du cadeau. L'examinateur joue le rôle de votre ami(e).",
@@ -1211,7 +1211,7 @@
       ["E", "Oui, madame ? Tout va bien ?"],
       ["C", "Pas vraiment. J'ai commandé un poisson avec des légumes, mais vous m'avez apporté un steak-frites."],
       ["E", "Oh, je suis désolé ! C'est une erreur de la cuisine."],
-      ["C", "Et en plus, le plat est froid. Nous avons attendu quarante minutes."],
+      ["C", "Et en plus, le plat est froid. Nous avons attendu quarante minutes. Vous pouvez changer le plat, s'il vous plaît ?"],
       ["E", "Excusez-nous, madame, il y a beaucoup de monde ce soir. Je vous apporte tout de suite le poisson ?"],
       ["C", "Oui, s'il vous plaît. Mais mon amie a déjà fini son plat… Ça va être long ?"],
       ["E", "Dix minutes maximum, c'est promis."],

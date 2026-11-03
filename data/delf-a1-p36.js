@@ -12,7 +12,7 @@
         x: "Romain dit : « Je viens chez vous mardi 12 mars pour installer votre box internet. »",
         xtr: "« Installer votre box internet » = internet modeminizi kurmak. Televizyon ve telefon mesajda geçmiyor." },
       { q: "Romain vient quel jour ?", o: ["lundi 12 mars", "mardi 16 mars", "mardi 12 mars"], a: 2,
-        x: "« Je viens chez vous mardi 12 mars ». 16, c'est dans l'heure : « entre 14 h et 16 h ».",
+        x: "« Je viens chez vous mardi 12 mars ». 16, c'est une heure :« entre 14 h et 16 h ».",
         xtr: "« Mardi douze mars » = 12 mart salı. 16 tarih değil, saat: « entre 14 h et 16 h »." },
       { q: "Romain arrive…", o: ["entre 14 h et 16 h", "à 12 h", "entre 16 h et 18 h"], a: 0,
         x: "« J'arrive entre 14 h et 16 h. » 12, c'est la date (12 mars).",

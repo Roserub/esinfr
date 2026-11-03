@@ -30,7 +30,7 @@
     questions: [
       { q: "Le plat du jour, c'est…", o: ["🐟 du poisson avec des frites", "🍗 du poulet avec du riz", "🍟 du poulet avec des frites"], a: 2,
         x: "« le plat du jour, c'est du poulet avec des frites ».",
-        xtr: "Günün yemeği tavuk ve patates kızartması. A'da balık, B'de pilav var: ikisi de kayıtta yok. İki kelimeyi birlikte kontrol edin." },
+        xtr: "Günün yemeği tavuk ve patates kızartması. Balık ve pilav kayıtta yok. İki kelimeyi birlikte kontrol edin." },
       { q: "Le plat du jour coûte combien ?", o: ["6 €", "6,50 €", "5,60 €"], a: 1,
         x: "« du poulet avec des frites, à 6 euros 50 ».",
         xtr: "« 6 euros 50 » (six euros cinquante) = 6,50 €. Fransızcada ondalık işareti virgüldür." },
@@ -39,7 +39,7 @@
         xtr: "Restoran 14:00'te kapanıyor. 11 h 45 açılış saatidir; 14 h 45 kayıtta yok." },
       { q: "Au restaurant de l'entreprise, on peut payer…", o: ["💶 en espèces ou par carte bancaire", "🪪 avec le badge ou par carte bancaire", "💶 seulement en espèces"], a: 1,
         x: "« vous pouvez payer avec votre badge ou par carte bancaire, mais pas en espèces ».",
-        xtr: "« en espèces » = nakit. Nakit kabul edilmiyor (« mais pas en espèces »), bu yüzden A ve C yanlış." }
+        xtr: "« en espèces » = nakit. Nakit kabul edilmiyor (« mais pas en espèces »), bu yüzden « en espèces » geçen seçenekler yanlış." }
     ] },
 
   { id: "a1-s24-co3", level: "A1", sujet: 24, sec: "co", ex: 3, pts: 6,
@@ -72,7 +72,7 @@
         audio: [["M", "L'addition, s'il vous plaît !"], ["F", "Voilà, monsieur. Ça fait 23 euros."], ["M", "Je peux payer par carte ?"], ["F", "Oui, bien sûr. Voici la machine."]],
         o: ["📝 commander au restaurant", "💳 payer au restaurant", "🖨️ faire des photocopies", "🪪 recevoir un badge"], a: 1,
         x: "« L'addition, s'il vous plaît ! » « Je peux payer par carte ? » : le client paie.",
-        xtr: "« L'addition » = hesap. Müşteri kartla ödüyor, garson makineyi veriyor (« Voici la machine »). Sipariş yok, bu yüzden A değil." },
+        xtr: "« L'addition » = hesap. Müşteri kartla ödüyor, garson makineyi veriyor (« Voici la machine »). Sipariş yok, bu yüzden « commander » değil." },
       { q: "Dialogue 2 : quelle situation correspond ?",
         audio: [["M", "Sophie, on a la pause à quelle heure, ce matin ?"], ["F", "À 10 h 30."], ["M", "On prend un café ensemble ?"], ["F", "D'accord ! Rendez-vous à la machine à café."]],
         o: ["📞 réserver par téléphone", "🖨️ faire des photocopies", "☕ la pause café au bureau", "💳 payer au restaurant"], a: 2,

@@ -16,15 +16,15 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <a class="skip" href="#main">Skip</a>
+  <a class="skip" href="#main" data-i18n="a11y.skip">Skip</a>
   <header class="topbar">
-    <a class="brand" href="#/" aria-label="Home">
+    <a class="brand" href="#/" aria-label="Home" data-i18n-label="a11y.home">
       <img src="assets/icon.svg" alt="" width="28" height="28">
       <span>Esin <b>FR</b></span>
     </a>
     <div class="topbar-right">
       <a class="icon-btn search-btn" href="#/search" aria-label="Search" data-i18n-label="search.title">🔎</a>
-      <div class="lang-switch" role="group" aria-label="Language">
+      <div class="lang-switch" role="group" aria-label="Language" data-i18n-label="a11y.lang">
         <button data-lang="tr">TR</button><button data-lang="en">EN</button><button data-lang="fr">FR</button>
       </div>
     </div>
@@ -32,7 +32,7 @@
 
   <main id="main" tabindex="-1"></main>
 
-  <nav class="tabbar" aria-label="Main">
+  <nav class="tabbar" aria-label="Main" data-i18n-label="a11y.nav">
     <a href="#/" data-tab="home"><span class="ti">☀︎</span><span data-i18n="tab.home">Home</span></a>
     <a href="#/exam" data-tab="exam"><span class="ti">✪</span><span data-i18n="tab.exam">DELF</span></a>
     <a href="#/games" data-tab="games"><span class="ti">✿</span><span data-i18n="tab.games">Games</span></a>

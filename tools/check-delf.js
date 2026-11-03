@@ -74,6 +74,18 @@ for (const it of D) {
     } else errors.push(`${w}: po kind`);
   }
 }
+/* Guessing must not pay: on the whole site, "Vrai" and "Faux" are each the right answer 40–60 % of the time. */
+if (process.argv.length <= 2) {
+  const vf = [0, 0]; for (const it of D) for (const q of it.questions || []) if (q.o && q.o[0] === "Vrai" && q.o[1] === "Faux") vf[q.a]++;
+  const share = vf[0] / (vf[0] + vf[1] || 1); if (share < 0.4 || share > 0.6) errors.push(`Vrai/Faux balance: ${vf[0]} Vrai vs ${vf[1]} Faux (keep 40–60 %)`);
+}
+/* Keywords are matched like the site does (start of a word; short ones as whole words): each model answer must tick every point. */
+const normK = s => String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[’'`]/g, " ").replace(/[^a-z0-9€ ]+/g, " ").replace(/\s+/g, " ").trim();
+const hasKw = (raw, k) => { const n = normK(k), T = " " + normK(raw) + " "; if (!n) return raw.includes(k); return n.length > 3 ? T.includes(" " + n) : ["", "s", "e", "es", "x"].some(e => T.includes(" " + n + e + " ")); };
+for (const it of D) if (Array.isArray(it.must)) {
+  const model = Array.isArray(it.model) ? it.model.filter(l => l[0] === "C").map(l => l[1]).join(" ") : it.model || "";
+  it.must.forEach((m, i) => { if (Array.isArray(m.kw) && !m.kw.some(k => hasKw(model, k))) errors.push(`${it.id}: model answer does not tick must ${i + 1} (« ${m.c} »)`); });
+}
 for (const [k, v] of Object.entries(sums)) if (Math.abs(v - 25) > 0.01) errors.push(`${k}: points add up to ${v}, not 25`);
 
 const count = {}; for (const it of D) { const k = it.level + " " + it.sec; count[k] = (count[k] || 0) + 1; }

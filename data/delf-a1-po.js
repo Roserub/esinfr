@@ -13,7 +13,7 @@
       { q: "Vous êtes de quelle nationalité ?", m: "Je suis turque." },
       { q: "Où est-ce que vous habitez ?", m: "J'habite en France, dans une petite ville." },
       { q: "Quel est votre métier ?", m: "Je suis kinésithérapeute." },
-      { q: "Vous parlez quelles langues ?", m: "Je parle turc, un peu anglais et un peu français." },
+      { q: "Vous parlez quelles langues ?", m: "Je parle turc, anglais et un peu français." },
       { q: "Qu'est-ce que vous aimez faire le week-end ?", m: "J'aime jouer au handball et me promener." },
       { q: "Pourquoi est-ce que vous apprenez le français ?", m: "J'habite en France et je veux parler avec les gens." }
     ] },
@@ -141,7 +141,7 @@
       { q: "Où habite votre famille ?", m: "Ma famille habite en Turquie." },
       { q: "Vous téléphonez souvent à votre famille ?", m: "Oui, je téléphone à ma mère tous les dimanches." },
       { q: "Vous habitez dans une maison ou dans un appartement ?", m: "J'habite dans un appartement. Il est petit mais joli." },
-      { q: "Il y a combien de pièces ?", m: "Il y a trois pièces : un salon, une chambre et une cuisine." },
+      { q: "Il y a combien de pièces ?", m: "Il y a deux pièces : un salon et une chambre. Il y a aussi une petite cuisine." },
       { q: "Qu'est-ce que vous faites avec votre famille en vacances ?", m: "On mange ensemble et on va à la plage." }
     ] },
   { id: "a1-s02-po2", level: "A1", sujet: 2, sec: "po", ex: 2, pts: 8, kind: "echange",
@@ -929,7 +929,7 @@
     prompts: [
       { q: "Bonjour, comment vous appelez-vous ?", m: "Bonjour, je m'appelle Esin." },
       { q: "Quelle est votre langue maternelle ?", m: "Ma langue maternelle, c'est le turc." },
-      { q: "Vous parlez anglais ?", m: "Oui, je parle un peu anglais." },
+      { q: "Vous parlez anglais ?", m: "Oui, je parle bien anglais." },
       { q: "Vous habitez en France depuis quand ?", m: "J'habite en France depuis un an." },
       { q: "Où est-ce que vous apprenez le français ?", m: "J'apprends le français sur Internet et avec une application." },
       { q: "C'est difficile, le français ?", m: "Oui, c'est difficile, mais j'aime bien. La prononciation est difficile." },

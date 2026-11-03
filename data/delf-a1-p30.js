@@ -251,7 +251,7 @@
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour, monsieur. Je m'appelle Esin." },
       { q: "Vous êtes de quelle nationalité ?", m: "Je suis turque. Je viens d'Istanbul." },
-      { q: "Quel est votre plat préféré ?", m: "Mon plat préféré, ce sont les mantı : ce sont des petits raviolis turcs avec du yaourt." },
+      { q: "Quel est votre plat préféré ?", m: "Mon plat préféré, ce sont les mantı : ce sont de petits raviolis turcs avec du yaourt." },
       { q: "Est-ce que vous faites la cuisine ?", m: "Oui, je fais la cuisine le soir et le week-end. J'aime ça !" },
       { q: "Vous aimez la cuisine française ?", m: "Oui, j'adore le fromage et les crêpes. Mais je préfère la cuisine turque." },
       { q: "Vous aimez les plats épicés ?", m: "Oui, un peu. J'aime le piment rouge, mais pas trop !" },

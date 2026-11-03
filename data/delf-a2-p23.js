@@ -110,8 +110,8 @@
       { q: "Dialogue 1 : quelle est la situation ?",
         audio: [["M", "Claire, je dois présenter notre projet au directeur demain. Je suis stressé. Qu'est-ce que tu me conseilles ?"], ["F", "Prépare quelques notes et répète ce soir devant un ami."], ["M", "Et je mets un costume ?"], ["F", "Non, pas besoin. Une chemise, c'est parfait."]],
         o: ["Proposer son aide", "Demander un conseil", "S'excuser d'un retard", "Accepter une invitation"], a: 1,
-        x: "Thomas demande : « Qu'est-ce que tu me conseilles ? »",
-        xtr: "« Qu'est-ce que tu me conseilles ? » = Bana ne tavsiye edersin? Thomas sunum için tavsiye istiyor; Claire yardım teklif etmiyor, sadece fikir veriyor." },
+        x: "L'homme demande à Claire : « Qu'est-ce que tu me conseilles ? »",
+        xtr: "« Qu'est-ce que tu me conseilles ? » = Bana ne tavsiye edersin? Adam sunum için tavsiye istiyor; Claire yardım teklif etmiyor, sadece fikir veriyor." },
       { q: "Dialogue 2 : quelle est la situation ?",
         audio: [["M", "Julie, on va manger au nouveau restaurant italien à midi. Tu viens avec nous ?"], ["F", "C'est gentil, mais non, je ne peux pas. J'ai un rapport à finir avant 14 h."], ["M", "Dommage ! Tu es sûre ?"], ["F", "Oui, désolée. Bon appétit !"]],
         o: ["Accepter une invitation", "S'excuser d'un retard", "Refuser une proposition", "Demander un conseil"], a: 2,
@@ -120,13 +120,13 @@
       { q: "Dialogue 3 : quelle est la situation ?",
         audio: [["F", "Oh non ! L'imprimante ne marche plus et ma réunion commence dans 10 minutes !"], ["M", "Je peux t'aider ! Tu veux que j'imprime tes documents au premier étage ?"], ["F", "Oh oui, merci, tu es super !"], ["M", "Envoie-moi tes fichiers, je m'en occupe tout de suite."]],
         o: ["S'excuser d'un retard", "Accepter une invitation", "Féliciter un collègue", "Proposer son aide"], a: 3,
-        x: "Youssef dit : « Je peux t'aider ! Tu veux que j'imprime tes documents ? »",
-        xtr: "« Je peux t'aider ! » = Sana yardım edebilirim! Kimse geç kalmadı; Léa bir daveti değil, yardım teklifini kabul ediyor." },
+        x: "L'homme dit : « Je peux t'aider ! Tu veux que j'imprime tes documents ? »",
+        xtr: "« Je peux t'aider ! » = Sana yardım edebilirim! Kimse geç kalmadı; kadın bir daveti değil, yardım teklifini kabul ediyor." },
       { q: "Dialogue 4 : quelle est la situation ?",
         audio: [["M", "Salut Inès ! Alors, c'est vrai ? Tu es la nouvelle cheffe de projet ?"], ["F", "Oui, la directrice me l'a annoncé ce matin."], ["M", "Bravo ! Tu le mérites vraiment, tu travailles tellement bien !"], ["F", "Merci, c'est gentil !"]],
         o: ["Féliciter un collègue", "Refuser une proposition", "Proposer son aide", "Demander un conseil"], a: 0,
-        x: "Hugo dit : « Bravo ! Tu le mérites vraiment. »",
-        xtr: "« Bravo ! Tu le mérites vraiment » = Bravo! Bunu gerçekten hak ediyorsun. Inès proje yöneticisi olmuş, Hugo onu tebrik ediyor." }
+        x: "L'homme dit à Inès : « Bravo ! Tu le mérites vraiment. »",
+        xtr: "« Bravo ! Tu le mérites vraiment » = Bravo! Bunu gerçekten hak ediyorsun. Inès proje yöneticisi olmuş, iş arkadaşı onu tebrik ediyor." }
     ] },
 
   /* ───────────── Compréhension des écrits ───────────── */

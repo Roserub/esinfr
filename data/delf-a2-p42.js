@@ -182,9 +182,9 @@
       { q: "Pour la journée d'essai, Nour ne doit pas…", o: ["💍 porter de bijoux", "👩‍🍳 porter de tablier", "👟 porter de baskets"], a: 0,
         x: "« Attachez vos cheveux et ne portez pas de bijoux. »",
         xtr: "Hijyen nedeniyle takı takmamalı ve saçlarını toplamalı. Önlüğü fırın verecek; ayakkabıdan söz edilmiyor." },
-      { q: "« Nour ne sera pas payée pour la journée d'essai. »", o: ["Vrai", "Faux"], a: 1,
-        x: "Faux : « Bien sûr, cette journée d'essai sera payée. »",
-        xtr: "Yanlış: deneme günü ücretli olacak (« sera payée »)." }
+      { q: "« Nour sera payée pour la journée d'essai. »", o: ["Vrai", "Faux"], a: 0,
+        x: "Vrai : « Bien sûr, cette journée d'essai sera payée. »",
+        xtr: "Doğru: deneme günü ücretli olacak (« sera payée »)." }
     ] },
 
   { id: "a2-s42-ce3", level: "A2", sujet: 42, sec: "ce", ex: 3, pts: 6,

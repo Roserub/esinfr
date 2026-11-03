@@ -16,11 +16,25 @@
 
   /* ── Comparing words ── */
   const NUM = ["zéro", "un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf", "vingt"];
-  const TENS = { 30: "trente", 40: "quarante", 50: "cinquante", 60: "soixante", 70: "soixante-dix", 80: "quatre-vingts", 90: "quatre-vingt-dix", 100: "cent", 1000: "mille" };
+  /* Any whole number in words (21 → vingt et un, 80 → quatre-vingts, 1999 → mille neuf cent quatre-vingt-dix-neuf):
+     the recogniser writes numbers in digits, the sentences sometimes in words, and both must compare equal. */
+  function frNum(n) {
+    if (!(n >= 0) || n > 999999 || n !== Math.floor(n)) return String(n);
+    if (n <= 20) return NUM[n];
+    if (n < 100) {
+      const d = Math.floor(n / 10), u = n % 10;
+      if (d === 7 || d === 9) return (d === 7 ? "soixante" : "quatre-vingt") + (n % 20 === 11 && d === 7 ? " et " : "-") + NUM[10 + u];
+      if (d === 8) return u ? "quatre-vingt-" + NUM[u] : "quatre-vingts";
+      return ["", "", "vingt", "trente", "quarante", "cinquante", "soixante"][d] + (u === 1 ? " et un" : u ? "-" + NUM[u] : "");
+    }
+    if (n < 1000) { const c = Math.floor(n / 100), r = n % 100; return (c > 1 ? NUM[c] + " " : "") + (c > 1 && !r ? "cents" : "cent") + (r ? " " + frNum(r) : ""); }
+    const k = Math.floor(n / 1000), r = n % 1000;
+    return (k > 1 ? frNum(k).replace(/(cent|vingt)s$/, "$1") + " " : "") + "mille" + (r ? " " + frNum(r) : "");
+  }
   const noAcc = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/œ/g, "oe").replace(/æ/g, "ae");
   function tokens(s) {
     s = String(s || "").toLowerCase().replace(/[’`´]/g, "'").replace(/(\d+)\s*h\b/g, "$1 heures").replace(/€/g, " euros ").replace(/%/g, " pour cent ");
-    s = s.replace(/\d+/g, n => { n = +n; return " " + (NUM[n] || TENS[n] || n) + " "; });
+    s = s.replace(/(\d) (?=\d{3}\b)/g, "$1").replace(/\d+/g, n => " " + frNum(+n) + " ");
     s = noAcc(s).replace(/[.,!?;:«»"()…¿¡\[\]/]/g, " ").replace(/-/g, " ").replace(/'/g, "' ");
     return s.split(/\s+/).filter(Boolean).map(w => w === "h" ? "heures" : w);
   }

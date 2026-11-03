@@ -17,7 +17,10 @@
     fw: {}, gram: {}, pace: { hpw: 5, dpw: 5 }, mins: {}, prac: {}, err: [], plan: {}, remind: "19:00", read: {}, talk: {}, delf: {}, games: {}, focus: true, basics: {}, trAll: false });
   let S = load();
   function fill(obj) {
-    const s = Object.assign(DEFAULT(), obj);
+    const s = Object.assign(DEFAULT(), obj && typeof obj === "object" && !Array.isArray(obj) ? obj : {});
+    // A damaged or hand-edited backup must not break the app: every field keeps the type it should have.
+    const d0 = DEFAULT(), kind = v => v === null ? "null" : Array.isArray(v) ? "array" : typeof v;
+    for (const k in d0) if (d0[k] !== null && kind(s[k]) !== kind(d0[k])) s[k] = d0[k];
     s.pace = Object.assign({ hpw: 5, dpw: 5 }, s.pace);
     if (!Array.isArray(s.err)) s.err = [];
     const day = d => d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
@@ -26,8 +29,13 @@
     return s;
   }
   function load() {
-    try { return fill(JSON.parse(localStorage.getItem(KEY) || "{}")); }
-    catch (e) { return DEFAULT(); }
+    let raw = null;
+    try { raw = localStorage.getItem(KEY); return fill(JSON.parse(raw || "{}")); }
+    catch (e) {
+      // Unreadable progress: keep a copy aside before anything overwrites it.
+      try { if (raw) localStorage.setItem(KEY + ".damaged", raw); } catch (err) { /* ignore */ }
+      return DEFAULT();
+    }
   }
   function save() {
     try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { /* private mode: keep in memory */ }
@@ -150,6 +158,8 @@
         .replace(/[\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}\u{1F3FB}-\u{1F3FF}\uFE0F\u200D\u20E3]/gu, " ")
         .replace(/[\u2190-\u21FF\u2600-\u27BF\u2B00-\u2BFF✓✗✔✘•●○◦▶⏹⏸★☆]/gu, " ")
         .replace(/[ıİşŞğĞ]/g, c => TRL[c])
+        .replace(/(?<!\b(?:du|taille|en) )\bM\. (?=\p{Lu})/gu, "monsieur ").replace(/\bMme\b/g, "madame").replace(/\bMlle\b/g, "mademoiselle")
+        .replace(/(\p{Ll})\((e|s|es)\)/gu, "$1")
         .replace(/[*_#<>\[\]{}|`~\\]/g, " ")
         .replace(/\s+([,.])/g, "$1").replace(/([,.])(?:\s*[,.])+/g, "$1")
         .replace(/\s+/g, " ").trim();
@@ -461,7 +471,7 @@
     <h1>${esc(t("lib.title"))}</h1>
     <div class="tracks">${TRACKS.map(k => `<button class="track ${LIB.track === k ? "on" : ""}" data-track="${k}"><span>${TRACK_ICONS[k]}</span><b>${esc(t("track." + k))}</b><small>${counts[k]}</small></button>`).join("")}</div>
     <div class="filters card">
-      <input type="search" id="lib-q" placeholder="${esc(t("lib.search"))}" value="${esc(LIB.q)}" autocomplete="off">
+      <input type="search" id="lib-q" placeholder="${esc(t("lib.search"))}" aria-label="${esc(t("lib.search"))}" value="${esc(LIB.q)}" autocomplete="off">
       <div class="frow"><span class="flabel">${esc(t("lib.level"))}</span>${chip(esc(t("lib.all")), 'data-f="level" data-v=""', !LIB.level)}${LEVELS.filter(l => !isLater(l) || LIB.level === l).map(l => chip(l, `data-f="level" data-v="${l}"`, LIB.level === l)).join("")}</div>
       ${S.focus !== false && !LIB.level ? `<p class="muted small">🎯 ${esc(t("focus.libNote"))}</p>` : ""}
       <div class="frow"><span class="flabel">${esc(t("lib.type"))}</span>${chip(esc(t("lib.all")), 'data-f="type" data-v=""', !LIB.type)}${TYPES.map(k => chip(esc(t("type." + k)), `data-f="type" data-v="${k}"`, LIB.type === k)).join("")}</div>
@@ -511,8 +521,8 @@
     <section class="card">
       <h2>✍️ ${esc(t("cards.mine"))}</h2>
       <form id="add-word" class="add-word">
-        <input name="fr" placeholder="${esc(t("cards.fr"))}" required autocomplete="off" autocapitalize="none">
-        <input name="tr" placeholder="${esc(t("cards.trans"))}" autocomplete="off">
+        <input name="fr" placeholder="${esc(t("cards.fr"))}" aria-label="${esc(t("cards.fr"))}" required autocomplete="off" autocapitalize="none">
+        <input name="tr" placeholder="${esc(t("cards.trans"))}" aria-label="${esc(t("cards.trans"))}" autocomplete="off">
         <button class="btn" type="submit">+ ${esc(t("cards.add"))}</button>
       </form>
       ${S.mine.length ? `<a class="btn small ghost" href="#/cards/mine/list">${esc(t("cards.browse"))} (${S.mine.length})</a>` : `<p class="muted small">${esc(t("cards.empty"))}</p>`}
@@ -1106,7 +1116,7 @@
       ${progressBar(Math.round(EX.i / EX.items.length * 100))}
       <section class="card ex-card">
         <p class="ex-q">${esc(it.prompt)}</p>
-        ${it.say && !(it.sayAfter && !st) ? `<div class="row center"><button class="btn speak-big" data-speak="${esc(it.say)}">🔊 ${esc(t("ex.listen.btn"))}</button><button class="btn ghost speak-big" data-speak="${esc(it.say)}" data-slow="1">🐢</button></div>` : ""}
+        ${it.say && !(it.sayAfter && !st) ? `<div class="row center"><button class="btn speak-big" data-speak="${esc(it.say)}">🔊 ${esc(t("ex.listen.btn"))}</button><button class="btn ghost speak-big" data-speak="${esc(it.say)}" data-slow="1" aria-label="${esc(t("av.slow"))}" title="${esc(t("av.slow"))}">🐢</button></div>` : ""}
         ${it.show ? `<p class="fr-big center">${esc(it.show)}</p>` : ""}
         ${it.sub ? `<p class="muted center">${esc(it.sub)}</p>` : ""}
         ${body}
@@ -1431,6 +1441,10 @@
   function keepY() { const y = window.scrollY; render(); window.scrollTo(0, y); }
   // iOS shows the :active (pressed) style only when the page listens to touches.
   document.addEventListener("touchstart", () => {}, { passive: true });
+  // Another tab saved progress: take it, so the two tabs do not overwrite each other.
+  window.addEventListener("storage", e => { if (e.key === KEY && e.newValue) { S = load(); if (!["practice", "cards", "exam", "games", "adv", "basics"].includes(route().parts[0])) render(); } });
+  // "Skip to content": move focus to the page without touching the address (#main is not a route).
+  const skip = $(".skip"); if (skip) skip.addEventListener("click", e => { e.preventDefault(); main.focus(); });
   window.APP = { get S() { return S; }, save, render: () => render(), t, esc, loc, lang, toast, practised, logMinutes, route, speak, speakBtn, ymd, tts: TTS, playBar, chip, keepY, sessionMinutes };
   render();
 

@@ -12,7 +12,7 @@
       { q: "Nathalie est en vacances…", o: ["🏖️ à la mer", "⛷️ à la montagne", "🌳 à la campagne"], a: 1, x: "« Bonjour des Alpes ! » et « je prends un cours de ski »." },
       { q: "Elle reste à Chamonix…", o: ["un week-end", "un mois", "une semaine"], a: 2, x: "« Je suis à Chamonix pour une semaine »." },
       { q: "Le matin, Nathalie…", o: ["prend un cours de ski", "lit à l'hôtel", "fait les magasins"], a: 0, x: "« Le matin, je prends un cours de ski. »" },
-      { q: "Il fait chaud à Chamonix.", o: ["Vrai", "Faux"], a: 1, x: "« il fait très froid : – 8 °C ce matin ! »" },
+      { q: "Il fait froid à Chamonix.", o: ["Vrai", "Faux"], a: 0, x: "« il fait très froid : – 8 °C ce matin ! »" },
       { q: "Le soir, ils mangent…", o: ["🍕 une pizza", "🫕 de la fondue", "🥞 des crêpes"], a: 1, x: "« Le soir, on mange de la fondue au fromage. »" },
       { q: "Nathalie va vous apporter…", o: ["du chocolat", "une carte", "du fromage"], a: 2, x: "« Je t'apporte du fromage de Savoie. »" }
     ] },
@@ -27,8 +27,8 @@
       { q: "Votre fille a 9 ans. Elle joue…", o: ["le mardi", "le mercredi", "le jeudi"], a: 1, x: "« Enfants (7–12 ans) : mercredi, 14 h – 15 h 30 »." },
       { q: "Les adultes jouent…", o: ["le vendredi soir", "le samedi matin", "le jeudi soir"], a: 2, x: "« Adultes : jeudi, 20 h – 22 h »." },
       { q: "Pour un adulte, le prix est de…", o: ["160 € par an", "120 € par an", "160 € par mois"], a: 0, x: "« 160 € par an (adultes) »." },
-      { q: "Le premier entraînement coûte 10 €.", o: ["Vrai", "Faux"], a: 1, x: "« Le premier entraînement est gratuit ! »" },
-      { q: "Pour l'inscription, il faut apporter…", o: ["⚽ un ballon", "📄 un certificat médical et une photo", "🎓 une carte d'étudiant"], a: 1, x: "« Apportez un certificat médical et une photo. »" },
+      { q: "Le premier entraînement ne coûte rien.", o: ["Vrai", "Faux"], a: 0, x: "« Le premier entraînement est gratuit ! »" },
+      { q: "Pour l'inscription, il faut apporter…", o: ["⚽ un ballon", "📄 un certificat médical", "🎓 une carte d'étudiant"], a: 1, x: "« Apportez un certificat médical et une photo. »" },
       { q: "Les inscriptions sont…", o: ["au gymnase", "à la mairie", "à l'école"], a: 0, x: "« Inscriptions au gymnase Jean-Jaurès »." }
     ] },
 
@@ -87,7 +87,7 @@
       { q: "Le musée est fermé…", o: ["le lundi", "le dimanche", "le mardi"], a: 2, x: "« Ouvert tous les jours sauf le mardi »." },
       { q: "Le vendredi, le musée ferme à…", o: ["18 h", "21 h", "20 h"], a: 1, x: "« Le vendredi : ouvert jusqu'à 21 h. »" },
       { q: "Votre fils a 15 ans. Il paie…", o: ["0 €", "7 €", "12 €"], a: 0, x: "« Moins de 18 ans : gratuit »." },
-      { q: "On peut prendre des photos avec le flash.", o: ["Vrai", "Faux"], a: 1, x: "« Photos sans flash autorisées. »" },
+      { q: "On peut prendre des photos sans flash.", o: ["Vrai", "Faux"], a: 0, x: "« Photos sans flash autorisées. »" },
       { q: "Vous avez un sac à dos. Vous le laissez…", o: ["à la caisse", "au vestiaire", "dans la voiture"], a: 1, x: "« Sacs à dos interdits : vestiaire gratuit à l'entrée. »" },
       { q: "La visite guidée est…", o: ["le dimanche à 10 h", "le vendredi à 21 h", "le samedi à 15 h"], a: 2, x: "« Visite guidée en français le samedi à 15 h »." }
     ] },
@@ -178,7 +178,7 @@
       { q: "Un vélo électrique pour une journée coûte…", o: ["12 €", "20 €", "5 €"], a: 1, x: "« Vélo électrique : 5 € l'heure, 20 € la journée. »" },
       { q: "Vous louez un vélo classique pendant 2 heures. Vous payez…", o: ["3 €", "12 €", "6 €"], a: 2, x: "« Vélo classique : 3 € l'heure » : 2 × 3 = 6 €." },
       { q: "Le siège pour enfant est…", o: ["gratuit", "à 2 €", "à 3 €"], a: 0, x: "« Siège pour enfant : gratuit. »" },
-      { q: "L'agence est ouverte en décembre.", o: ["Vrai", "Faux"], a: 1, x: "« Ouvert […] d'avril à octobre. »" },
+      { q: "L'agence est ouverte en juillet.", o: ["Vrai", "Faux"], a: 0, x: "« Ouvert […] d'avril à octobre. »" },
       { q: "Pour louer un vélo, vous montrez…", o: ["💳 une carte bancaire", "🪪 une pièce d'identité", "🎫 un ticket de bus"], a: 1, x: "« Pour louer un vélo, montrez une pièce d'identité. »" },
       { q: "L'agence est…", o: ["place de la Mairie", "rue de la Gare", "place de la Gare"], a: 2, x: "« Agence : 2, place de la Gare. »" }
     ] },
@@ -299,7 +299,7 @@
       { q: "La cuisson dure…", o: ["10 minutes", "35 minutes", "25 minutes"], a: 2, x: "« Cuisson : 25 minutes. »" },
       { q: "Dans la soupe, il y a…", o: ["🥕 des carottes", "🥔 des pommes de terre", "🍅 des tomates"], a: 0, x: "« 1 oignon, 2 carottes »." },
       { q: "Il faut 1 litre de lait.", o: ["Vrai", "Faux"], a: 1, x: "« 1 litre d'eau »." },
-      { q: "Cette soupe coûte cher.", o: ["Vrai", "Faux"], a: 1, x: "« Une soupe facile, pas chère et délicieuse ! »" },
+      { q: "Cette soupe n'est pas chère.", o: ["Vrai", "Faux"], a: 0, x: "« Une soupe facile, pas chère et délicieuse ! »" },
       { q: "On sert la soupe avec…", o: ["🧀 du fromage", "🍋 du citron et du pain", "🍚 du riz"], a: 1, x: "« Servez avec un peu de jus de citron et du pain. »" }
     ] }
 );

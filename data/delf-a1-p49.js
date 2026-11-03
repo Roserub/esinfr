@@ -131,7 +131,7 @@
     doc: { type: "notice", title: "Crèche Les Petites Étoiles — Informations pour les parents",
       body: "- La crèche est ouverte du lundi au vendredi, de 7 h 30 à 18 h 30.\n- Les enfants arrivent avant 9 h 30.\n- Le repas de midi et le goûter sont donnés par la crèche.\n- Apportez chaque jour des vêtements de rechange et le doudou de votre enfant.\n- Votre enfant est malade (plus de 38,5 °C) ? Il reste à la maison. Appelez la crèche avant 8 h.\n- Une autre personne vient chercher votre enfant ? Donnez son nom à la directrice." },
     questions: [
-      { q: "La crèche est ouverte le samedi.", o: ["Vrai", "Faux"], a: 1,
+      { q: "Vrai ou faux ? La crèche est ouverte le samedi.", o: ["Vrai", "Faux"], a: 1,
         x: "Faux : « La crèche est ouverte du lundi au vendredi ».",
         xtr: "Yanlış: kreş pazartesiden cumaya kadar açık; cumartesi kapalı." },
       { q: "Les enfants doivent arriver…", o: ["avant 8 h", "avant 18 h 30", "avant 9 h 30"], a: 2,
@@ -194,9 +194,9 @@
       { q: "L'entrée du parc coûte…", o: ["2 €", "10 €", "rien"], a: 2,
         x: "« l'entrée est gratuite ».",
         xtr: "« L'entrée est gratuite » = giriş ücretsiz." },
-      { q: "Dans le parc, les vélos sont autorisés.", o: ["Vrai", "Faux"], a: 1,
-        x: "Faux : « Les chiens et les vélos sont interdits. »",
-        xtr: "Yanlış: köpekler ve bisikletler yasak (« interdits »)." },
+      { q: "Vrai ou faux ? Dans le parc, les chiens sont interdits.", o: ["Vrai", "Faux"], a: 0,
+        x: "Vrai : « Les chiens et les vélos sont interdits. »",
+        xtr: "Doğru: parkta köpekler (ve bisikletler) yasak (« interdits »)." },
       { q: "Le samedi à 16 h, il y a…", o: ["🤡 un spectacle de clown", "🎵 un concert", "🍰 un goûter au petit café"], a: 0,
         x: "« Le samedi, à 16 h, un clown fait un spectacle pour les enfants. »",
         xtr: "Cumartesi saat 16.00'da çocuklar için bir palyaço gösterisi var." }

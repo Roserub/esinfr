@@ -27,7 +27,7 @@
         audio: [["M", "Attention, chers nageurs : le bonnet de bain est obligatoire. Le grand bassin va fermer à 19 heures pour un cours de natation. Le petit bassin reste ouvert jusqu'à 20 heures."]],
         o: ["fermer pour un cours de natation.", "ouvrir pour les enfants.", "fermer pour le nettoyage."], a: 0,
         x: "« Le grand bassin va fermer à 19 heures pour un cours de natation. »",
-        xtr: "Büyük havuz 19.00'da bir yüzme dersi için kapanıyor. 20.00'ye kadar açık kalan küçük havuz; temizlikten söz edilmiyor." },
+        xtr: "Büyük havuz 19.00'da bir yüzme dersi için kapanıyor. Küçük havuz ise 20.00'ye kadar açık kalıyor; temizlikten söz edilmiyor." },
       { q: "Annonce 5 (au magasin bio) : aujourd'hui, quel produit est à moitié prix ?",
         audio: [["F", "Chers clients, dans votre magasin bio, la promotion sur les carottes est terminée, mais aujourd'hui, les pommes sont à moitié prix. Pensez à peser vos fruits avant de payer."]],
         o: ["🍎 des pommes", "🥕 des carottes", "🍊 des oranges"], a: 0,

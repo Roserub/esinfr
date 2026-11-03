@@ -13,7 +13,7 @@
       { q: "Sophie part avec son mari et leurs quatre enfants. Ils adorent le théâtre. Quelle annonce leur correspond ?", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D"], a: 2, x: "Annonce C : « 4 chambres, idéal pour les familles nombreuses » et « À 5 minutes du festival de théâtre »." },
       { q: "Karim voyage seul pour un long week-end et veut apprendre un sport nautique. Quelle annonce lui correspond ?", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D"], a: 3, x: "Annonce D : « propose des cours de surf », « minimum 3 nuits »." },
       { q: "Un couple sans voiture veut faire du vélo au bord d'un lac. Quelle annonce lui correspond ?", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D"], a: 1, x: "Annonce B : « vue sur le lac » et « Vélos à disposition »." },
-      { q: "Dans l'annonce B, on peut venir avec un chat.", o: ["Vrai", "Faux"], a: 1, x: "L'annonce B dit : « Pas d'animaux »." }
+      { q: "Dans l'annonce D, le petit-déjeuner est compris dans le prix.", o: ["Vrai", "Faux"], a: 0, x: "L'annonce D dit : « Chambre chez l'habitant, petit-déjeuner compris »." }
     ] },
 
   { id: "a2-s01-ce2", level: "A2", sujet: 1, sec: "ce", ex: 2, pts: 6,
@@ -85,7 +85,7 @@
     questions: [
       { q: "Mme Demir va rester à l'hôtel…", o: ["une nuit.", "deux nuits.", "trois nuits."], a: 1, x: "Arrivée « vendredi 14 mai », départ « dimanche 16 mai » : deux nuits." },
       { q: "Elle peut arriver à l'hôtel…", o: ["dès 11 h.", "à partir de 15 h.", "seulement le soir."], a: 1, x: "« arrivée : vendredi 14 mai, à partir de 15 h »." },
-      { q: "Le petit-déjeuner n'est pas compris dans le prix.", o: ["Vrai", "Faux"], a: 1, x: "« petit-déjeuner compris »." },
+      { q: "On peut prendre le petit-déjeuner jusqu'à 10 h.", o: ["Vrai", "Faux"], a: 0, x: "« petit-déjeuner compris, servi de 7 h à 10 h »." },
       { q: "Combien doit-elle payer à son arrivée ?", o: ["50 €", "186 €", "236 €"], a: 1, x: "« Le prix total est de 236 €. Vous avez déjà payé 50 € » : 236 – 50 = 186 €." },
       { q: "Pour sa voiture, Mme Demir…", o: ["peut utiliser le parking de l'hôtel.", "paie moins cher au parking Saint-Jean.", "doit la laisser à la gare."], a: 1, x: "« vous avez une réduction de 20 % sur ce parking »." },
       { q: "Si elle annule la veille de son arrivée…", o: ["elle perd 50 €.", "elle ne paie rien.", "elle paie 236 €."], a: 0, x: "Il faut prévenir 48 heures avant. « Sinon, les 50 € ne seront pas remboursés »." }
@@ -101,7 +101,7 @@
       { q: "On peut faire des travaux…", o: ["le dimanche matin.", "le samedi à 10 h.", "le mardi à 21 h."], a: 1, x: "« du lundi au samedi, de 9 h à 19 h »." },
       { q: "On jette les bouteilles en verre dans…", o: ["la poubelle jaune.", "la poubelle verte.", "la cave."], a: 1, x: "« les vertes pour le verre »." },
       { q: "Pour se débarrasser d'un vieux canapé, il faut…", o: ["le laisser dans le local.", "appeler la mairie.", "le mettre dans le jardin."], a: 1, x: "« Les gros objets (meubles, frigo) […] appelez la mairie »." },
-      { q: "On peut laisser son vélo dans le hall.", o: ["Vrai", "Faux"], a: 1, x: "« rangez-les dans la cave, pas dans le hall »." },
+      { q: "Il faut ranger les poussettes dans la cave.", o: ["Vrai", "Faux"], a: 0, x: "« Vélos et poussettes : rangez-les dans la cave, pas dans le hall »." },
       { q: "Le samedi, si l'ascenseur est en panne, on…", o: ["appelle M. Lopez.", "appelle le numéro d'urgence du hall.", "attend le lundi."], a: 1, x: "« Le week-end, appelez le numéro d'urgence affiché dans le hall »." }
     ] },
 
@@ -143,7 +143,7 @@
       body: "Monsieur Arslan,\n\nNous avons bien reçu votre message du 3 mars et nous sommes désolés pour ce problème. Vous avez commandé une lampe de bureau bleue le 20 février, mais vous avez reçu une lampe verte, et le colis est arrivé avec une semaine de retard.\n\nNous vous proposons deux solutions :\n– vous gardez la lampe verte et nous vous remboursons 15 € ;\n– ou vous nous renvoyez la lampe verte et nous vous envoyons une lampe bleue.\n\nPour le retour, vous n'avez rien à payer : imprimez l'étiquette jointe à ce courriel et déposez le colis dans un bureau de poste avant le 31 mars. La nouvelle lampe arrivera environ 5 jours après.\n\nPour le retard, nous vous offrons aussi un bon de réduction de 10 % pour votre prochaine commande.\n\nMerci de répondre à ce message pour nous dire quelle solution vous choisissez.\n\nCordialement,\nSarah Blanc, service clients" },
     questions: [
       { q: "Quel était le problème ?", o: ["La lampe était cassée.", "La couleur n'était pas la bonne.", "La lampe n'est jamais arrivée."], a: 1, x: "« vous avez commandé une lampe de bureau bleue […] mais vous avez reçu une lampe verte »." },
-      { q: "Le colis est arrivé à l'heure.", o: ["Vrai", "Faux"], a: 1, x: "« le colis est arrivé avec une semaine de retard »." },
+      { q: "M. Arslan a écrit au magasin le 3 mars.", o: ["Vrai", "Faux"], a: 0, x: "« Nous avons bien reçu votre message du 3 mars »." },
       { q: "S'il garde la lampe verte, M. Arslan…", o: ["reçoit 15 €.", "reçoit une deuxième lampe.", "doit payer 15 €."], a: 0, x: "« vous gardez la lampe verte et nous vous remboursons 15 € »." },
       { q: "Le renvoi de la lampe…", o: ["coûte 10 €.", "est gratuit.", "doit se faire en magasin."], a: 1, x: "« Pour le retour, vous n'avez rien à payer »." },
       { q: "Il doit déposer le colis à la poste…", o: ["avant le 3 mars.", "avant le 20 février.", "avant le 31 mars."], a: 2, x: "« déposez le colis dans un bureau de poste avant le 31 mars »." },
@@ -158,7 +158,7 @@
       body: "Pour votre sécurité et celle des autres, merci de lire ces consignes.\n\n1. Avant votre première séance, prenez rendez-vous avec un coach. Il vous montrera comment utiliser les machines. Ce rendez-vous est gratuit.\n2. Portez toujours des chaussures de sport propres. Il est interdit de s'entraîner pieds nus ou en sandales.\n3. Apportez une serviette et posez-la sur les bancs et les machines.\n4. Après chaque exercice, rangez les poids et nettoyez la machine avec le spray mis à disposition.\n5. Ne soulevez pas de poids lourds seul : demandez de l'aide à un coach.\n6. Buvez régulièrement. Des fontaines d'eau se trouvent à côté des vestiaires.\n7. Si vous avez mal ou si vous vous sentez mal, arrêtez tout de suite et prévenez l'accueil.\n\nLes jeunes de moins de 16 ans ne peuvent pas entrer dans la salle. Les casiers ferment avec un cadenas : apportez le vôtre." },
     questions: [
       { q: "Le rendez-vous avec un coach avant la première séance…", o: ["coûte 10 €.", "est gratuit.", "a lieu après un mois."], a: 1, x: "« Ce rendez-vous est gratuit »." },
-      { q: "On peut faire du sport en sandales.", o: ["Vrai", "Faux"], a: 1, x: "« Il est interdit de s'entraîner pieds nus ou en sandales »." },
+      { q: "Il faut poser une serviette sur les machines.", o: ["Vrai", "Faux"], a: 0, x: "« Apportez une serviette et posez-la sur les bancs et les machines »." },
       { q: "Après un exercice, il faut…", o: ["nettoyer la machine.", "changer de serviette.", "aller aux vestiaires."], a: 0, x: "« nettoyez la machine avec le spray mis à disposition »." },
       { q: "Pour soulever des poids lourds, on…", o: ["attend la fin de la journée.", "demande l'aide d'un coach.", "met des gants."], a: 1, x: "« Ne soulevez pas de poids lourds seul : demandez de l'aide à un coach »." },
       { q: "Une adolescente de 14 ans…", o: ["peut venir avec ses parents.", "ne peut pas entrer.", "doit d'abord voir un coach."], a: 1, x: "« Les jeunes de moins de 16 ans ne peuvent pas entrer dans la salle »." },

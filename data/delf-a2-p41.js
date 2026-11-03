@@ -154,7 +154,7 @@
         xtr: "6 yaşındaki torun için yeni pijama: E ilanı 2–12 yaş çocuk kıyafeti satıyor ve bu ay pijamalarda %20 indirim var." },
       { q: "Votre ami Théo est étudiant. Il n'a pas beaucoup d'argent et il adore le style des années 80.", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D", "Annonce E", "Annonce F", "Aucune annonce"], a: 0,
         x: "Annonce A : « vêtements d'occasion… de 2 à 20 €. Style vintage des années 70 à 90 ».",
-        xtr: "Theo'nun az parası var ve 80'ler tarzını seviyor. A ilanındaki ikinci el dükkânı ucuz ve 70–90 yıllarının tarzında." },
+        xtr: "Théo'nun az parası var ve 80'ler tarzını seviyor. A ilanındaki ikinci el dükkânı ucuz ve 70–90 yıllarının tarzında." },
       { q: "Votre collègue Malik a cinq vieux costumes. Il voudrait les vendre.", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D", "Annonce E", "Annonce F", "Aucune annonce"], a: 6,
         x: "Aucune annonce : l'annonce C loue des costumes, mais elle ne les achète pas.",
         xtr: "Tuzak: C ilanında « costumes » kelimesi var ama orada takım elbise KİRALANIYOR, satın alınmıyor. Malik'in takımlarını alacak ilan yok." }
@@ -179,9 +179,9 @@
       { q: "Pendant la soirée, Clara va…", o: ["préparer la soupe.", "installer une cabine d'essayage.", "apporter les vêtements à la Croix-Rouge."], a: 1,
         x: "« Ma sœur Clara va installer un grand miroir et une « cabine d'essayage » dans ma chambre. »",
         xtr: "Kız kardeşi Clara büyük bir ayna ve bir « deneme kabini » kuracak. Çorbayı Louise hazırlıyor." },
-      { q: "« Les invités doivent apporter un plat salé. »", o: ["Vrai", "Faux"], a: 1,
-        x: "Faux : « Je prépare une soupe et des tartes salées. Si vous voulez, apportez un dessert. »",
-        xtr: "Yanlış: tuzlu yemekleri Louise hazırlıyor. Misafirler isterlerse tatlı getirebilir; bu zorunlu değil." },
+      { q: "« Les invités peuvent apporter un dessert, s'ils le veulent. »", o: ["Vrai", "Faux"], a: 0,
+        x: "Vrai : « Je prépare une soupe et des tartes salées. Si vous voulez, apportez un dessert. »",
+        xtr: "Doğru: tuzlu yemekleri (çorba ve tuzlu tartlar) Louise hazırlıyor; misafirler isterlerse tatlı getirebilir." },
       { q: "Pour répondre à Louise, il faut…", o: ["lui écrire avant samedi.", "lui téléphoner mercredi.", "lui répondre avant mercredi."], a: 2,
         x: "« Répondez-moi avant mercredi, pour savoir combien nous serons ! »",
         xtr: "Çarşambadan ÖNCE cevap vermek gerekiyor. Cumartesi partinin günü; telefondan söz edilmiyor." }
@@ -315,7 +315,7 @@
       { c: "Saluer et expliquer le problème", kw: ["bonjour", "j'ai acheté", "j'ai achete", "trop petit", "trop serré", "trop serre", "taille", "pull", "échanger", "echanger"] },
       { c: "Montrer le ticket et dire quand vous avez acheté", kw: ["ticket", "voilà", "voila", "la semaine dernière", "la semaine derniere", "il y a une semaine", "samedi"] },
       { c: "Demander une autre taille ou une autre couleur", kw: ["taille l", "plus grand", "une autre taille", "autre couleur", "en bleu", "en gris", "en noir", "vous avez"] },
-      { c: "Accepter ou refuser une solution", kw: ["d'accord", "je préfère", "je prefere", "je prends", "un avoir", "commander", "bon d'achat", "non merci", "c'est parfait"] },
+      { c: "Accepter ou refuser une solution", kw: ["d'accord", "je préfère", "je prefere", "je prends", "je le prends", "je la prends", "un avoir", "commander", "bon d'achat", "non merci", "c'est parfait"] },
       { c: "Remercier et prendre congé", kw: ["merci", "au revoir", "bonne journée", "bonne journee"] }
     ],
     model: [

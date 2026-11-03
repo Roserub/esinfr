@@ -57,9 +57,9 @@
       { q: "Où sont les tapis ?", o: ["Au fond de la salle.", "Sous le banc.", "À l'accueil."], a: 0,
         x: "« prenez un tapis au fond de la salle ».",
         xtr: "« au fond de la salle » = salonun arka tarafında. « sous le banc » ayakkabıların yeri." },
-      { q: "Pour le premier exercice, qu'est-ce que vous faites ?", o: ["🙆 debout, les bras en l'air", "😴 allongée, je dors", "🧘 assise, les yeux fermés"], a: 2,
+      { q: "Pour le premier exercice, qu'est-ce que vous faites ?", o: ["🙆 debout, les bras en l'air", "😴 allongée sur le tapis", "🧘 assise, les yeux fermés"], a: 2,
         x: "« on commence : asseyez-vous sur le tapis et fermez les yeux ».",
-        xtr: "« asseyez-vous » = oturun, « fermez les yeux » = gözlerinizi kapatın. Ayakta durmak ya da uyumak istenmiyor." }
+        xtr: "« asseyez-vous » = oturun, « fermez les yeux » = gözlerinizi kapatın. Ayakta durmak ya da uzanmak istenmiyor." }
     ] },
 
   { id: "a1-s23-co4", level: "A1", sujet: 23, sec: "co", ex: 4, pts: 10,
@@ -83,7 +83,7 @@
       { q: "Dialogue 4 : où sont ces personnes ?", o: ["⛸️ à la patinoire", "⚽ au stade", "🎳 au bowling", "🚲 au parc"], a: 2,
         audio: [["F", "Bonsoir, une partie pour deux personnes, s'il vous plaît."], ["M", "D'accord. Vous faites quelle pointure ?"], ["F", "Du 38 et du 42."], ["M", "Voilà vos chaussures. C'est la piste numéro 6, et les boules sont à côté."]],
         x: "« une partie », « Voilà vos chaussures », « la piste numéro 6 », « les boules ».",
-        xtr: "« une partie », « la piste numéro 6 » ve « les boules » bowlingi gösterir. Patenle verilen « patins », burada değil." },
+        xtr: "« une partie », « la piste numéro 6 » ve « les boules » bowlingi gösterir. Buz pateninde ayakkabı değil « patins » verilir." },
       { q: "Dialogue 5 : où sont ces personnes ?", o: ["🖼️ au musée", "📚 à la bibliothèque", "⛸️ à la patinoire", "🎳 au bowling"], a: 0,
         audio: [["M", "Pardon, madame, on peut prendre des photos ?"], ["F", "Oui, mais sans flash, s'il vous plaît."], ["M", "D'accord. Et les tableaux modernes, c'est où ?"], ["F", "Au premier étage, salle 4."]],
         x: "« prendre des photos… sans flash », « les tableaux modernes », « salle 4 ».",
@@ -109,7 +109,7 @@
         xtr: "« Toi » sizsiniz: salata getiriyorsunuz. Tartı Camille yapıyor, içecekleri Paul getiriyor." },
       { q: "Après le repas, les amis vont…", o: ["⚽ jouer au ballon", "🏊 nager dans le lac", "🚲 faire du vélo"], a: 0,
         x: "« Après le repas, on joue au ballon : prends tes baskets ! »",
-        xtr: "Göl sadece buluşma yerini anlatıyor, yüzmek yok. Bisiklet metinde geçmiyor." },
+        xtr: "« on joue au ballon » = top oynuyoruz. Göl sadece buluşma yerini anlatıyor, yüzmek yok. Bisiklet metinde geçmiyor." },
       { q: "S'il pleut, le pique-nique a lieu…", o: ["au parc, près du lac", "chez Camille", "chez Paul"], a: 1,
         x: "« S'il pleut, on mange chez moi, 12, rue des Lilas. » C'est Camille qui écrit.",
         xtr: "« chez moi » = benim evimde; mesajı Camille yazıyor, yani piknik Camille'in evinde olur." }
@@ -182,7 +182,7 @@
         xtr: "14.00 ile 18.00 arası öğleden sonradır. Cumartesi sabahı normal dersler var." },
       { q: "Pour le cours, vous devez apporter…", o: ["👞 des chaussures de ville", "🧁 des gâteaux", "💧 une bouteille d'eau"], a: 2,
         x: "« Apportez des vêtements confortables et une bouteille d'eau. » Les chaussures de ville sont interdites.",
-        xtr: "Sokak ayakkabısı yasak; atıştırmalık okul tarafından ikram ediliyor (« un goûter offert »)." },
+        xtr: "« Apportez… une bouteille d'eau » = bir şişe su getirin. Sokak ayakkabısı yasak; atıştırmalık okul tarafından ikram ediliyor (« un goûter offert »)." },
       { q: "Un adulte paie combien par mois ?", o: ["25 €", "35 €", "0 €"], a: 1,
         x: "« 35 € par mois pour les adultes ». 25 €, c'est pour les enfants.",
         xtr: "Yetişkinler için aylık 35 €; 25 € çocuklar için." }

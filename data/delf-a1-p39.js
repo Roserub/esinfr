@@ -246,7 +246,7 @@
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour, monsieur. Je m'appelle Esin." },
       { q: "Vous venez d'où ?", m: "Je suis turque. Je viens d'Istanbul." },
-      { q: "Vous avez une grande famille ?", m: "Oui, j'ai une grande famille : mes parents, deux frères et beaucoup de cousins." },
+      { q: "Vous avez une grande famille ?", m: "Oui, j'ai une grande famille : mes parents, un frère, une sœur et beaucoup de cousins." },
       { q: "Où habite votre famille ?", m: "Ma famille habite à Istanbul. Je vais en Turquie en été." },
       { q: "Vous aimez les fêtes ?", m: "Oui, j'adore les fêtes ! J'aime la musique et les bons repas." },
       { q: "En Turquie, un mariage, c'est comment ?", m: "C'est une très grande fête. Il y a souvent 300 invités, beaucoup de musique et de danse." },

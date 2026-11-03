@@ -125,7 +125,7 @@ bisous|öpücükler (samimi kapanış)|kisses, love`, [
       Q("Pourquoi Lina fait une fête ?", ["Pour son anniversaire", "Pour son nouveau travail", "Pour Noël"], 0),
       Q("Quel âge va avoir Lina ?", ["Vingt ans", "Vingt-cinq ans", "Trente ans"], 2),
       Q("Qui va apporter le gâteau ?", ["Esin", "Karim, le frère de Lina", "Les amis du yoga"], 1),
-      Q("Qu'est-ce que Lina ne veut pas ?", ["De boisson", "De cadeau", "De musique"], 1),
+      Q("Qu'est-ce que Lina ne veut pas ?", ["Une boisson", "Un cadeau", "De la musique"], 1),
       Q("Quand Esin doit répondre ?", ["Avant jeudi", "Samedi soir", "Dimanche"], 0)
     ]),
 

@@ -185,7 +185,7 @@
       { q: "Sur le lac, on peut…", o: ["🏊 nager", "🎣 pêcher", "🚣 faire du bateau"], a: 2,
         x: "« il y a un grand lac : on peut louer un petit bateau ».",
         xtr: "« Louer un petit bateau » = küçük bir kayık kiralamak. Yüzmek ve balık tutmak yazmıyor." },
-      { q: "Le zoo du parc est payant.", o: ["Vrai", "Faux"], a: 1,
+      { q: "Vrai ou faux ? Le zoo du parc est payant.", o: ["Vrai", "Faux"], a: 1,
         x: "Faux : « Il y a aussi un zoo gratuit ».",
         xtr: "Yanlış: hayvanat bahçesi de ücretsiz (« un zoo gratuit »)." },
       { q: "Le dimanche, les familles…", o: ["font du vélo", "vont au cinéma", "visitent un musée"], a: 0,

@@ -204,10 +204,10 @@
       { q: "Le glacier cherche une personne…", o: ["sportive", "souriante", "qui sait cuisiner"], a: 1,
         x: "« Nous cherchons une personne souriante, qui aime le contact. »",
         xtr: "« Souriante » = güler yüzlü. İnsanlarla iletişimi seven biri aranıyor." },
-      { q: "Il faut parler anglais ou espagnol.", o: ["Vrai", "Faux"], a: 1,
+      { q: "Vrai ou faux ? Il faut parler anglais ou espagnol.", o: ["Vrai", "Faux"], a: 1,
         x: "Faux : « L'anglais ou l'espagnol, c'est un plus ! » Ce n'est pas obligatoire.",
         xtr: "Yanlış: « c'est un plus » = artı bir özellik, zorunlu değil." },
-      { q: "Le glacier peut proposer une chambre.", o: ["Vrai", "Faux"], a: 0,
+      { q: "Vrai ou faux ? Le glacier peut proposer une chambre.", o: ["Vrai", "Faux"], a: 0,
         x: "Vrai : « Une petite chambre est possible, à 200 € par mois. »",
         xtr: "Doğru: ayda 200 €'ya küçük bir oda mümkün." }
     ] },

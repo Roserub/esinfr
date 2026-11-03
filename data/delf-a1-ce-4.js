@@ -26,9 +26,9 @@
     questions: [
       { q: "Vous voulez du pain frais. Vous allez à l'accueil…", o: ["le soir", "le matin", "à midi"], a: 1, x: "« Le pain frais est à l'accueil le matin, de 8 h à 10 h »." },
       { q: "La piscine ferme à…", o: ["19 h", "20 h", "22 h 30"], a: 0, x: "« La piscine est ouverte de 10 h à 19 h. »" },
-      { q: "À la piscine, le short de bain est autorisé.", o: ["Vrai", "Faux"], a: 1, x: "« Le short de bain est interdit : le maillot de bain est obligatoire. »" },
+      { q: "À la piscine, le maillot de bain est obligatoire.", o: ["Vrai", "Faux"], a: 0, x: "« Le short de bain est interdit : le maillot de bain est obligatoire. »" },
       { q: "Après 22 h 30, il faut…", o: ["aller à la piscine", "rouler doucement", "faire silence"], a: 2, x: "« Le soir, silence à partir de 22 h 30. »" },
-      { q: "Dans le camping, les voitures roulent à…", o: ["30 km/h", "10 km/h maximum", "20 km/h"], a: 1, x: "« les voitures roulent doucement : 10 km/h maximum »." },
+      { q: "Dans le camping, les voitures roulent à…", o: ["30 km/h", "10 km/h", "20 km/h"], a: 1, x: "« les voitures roulent doucement : 10 km/h maximum »." },
       { q: "La machine à laver est…", o: ["à côté des douches", "à l'accueil", "près de la piscine"], a: 0, x: "« La machine à laver est à côté des douches »." }
     ] },
 
@@ -229,7 +229,7 @@
       { q: "Le salon est fermé…", o: ["le samedi", "le lundi", "le mercredi"], a: 1, x: "« Ouvert du mardi au samedi » : le lundi, c'est fermé." },
       { q: "Une coupe pour un homme coûte…", o: ["20 €", "32 €", "25 €"], a: 0, x: "« Coupe : […] Homme 20 € »." },
       { q: "Votre fils a 8 ans. Sa coupe coûte…", o: ["20 €", "25 €", "14 €"], a: 2, x: "« Coupe : […] Enfant (– 12 ans) 14 € »." },
-      { q: "Il faut toujours prendre rendez-vous.", o: ["Vrai", "Faux"], a: 1, x: "« Avec ou sans rendez-vous. »" },
+      { q: "On peut aller au salon sans rendez-vous.", o: ["Vrai", "Faux"], a: 0, x: "« Avec ou sans rendez-vous. »" },
       { q: "Pour une coloration, une femme paie…", o: ["35 €", "45 €", "50 €"], a: 2, x: "« Coloration : Femme 50 € »." },
       { q: "Les étudiants ont une réduction…", o: ["le mardi", "le mercredi", "le samedi"], a: 1, x: "« Étudiants : – 20 % le mercredi. »" }
     ] },
@@ -277,7 +277,7 @@
       { q: "L'après-midi, l'école finit à…", o: ["11 h 30", "13 h 30", "16 h 30"], a: 2, x: "« 13 h 30 – 16 h 30 »." },
       { q: "Il n'y a pas d'école…", o: ["le lundi", "le mercredi", "le jeudi"], a: 1, x: "« Pas d'école le mercredi. »" },
       { q: "Pour la cantine, vous inscrivez votre enfant…", o: ["à l'école", "à la mairie", "à la réunion"], a: 1, x: "« La cantine commence le mardi 2 septembre. Inscription à la mairie. »" },
-      { q: "Le premier jour, votre enfant apporte…", o: ["un pique-nique", "un livre et un cahier", "un cartable, une trousse et des mouchoirs"], a: 2, x: "« votre enfant apporte un cartable, une trousse et une boîte de mouchoirs »." }
+      { q: "Le premier jour, votre enfant apporte…", o: ["un pique-nique", "un livre et un cahier", "un cartable et une trousse"], a: 2, x: "« votre enfant apporte un cartable, une trousse et une boîte de mouchoirs »." }
     ] },
 
   { id: "a1-s20-ce3", level: "A1", sujet: 20, sec: "ce", ex: 3, pts: 6,
@@ -292,7 +292,7 @@
       { q: "Le jeudi, le cabinet ferme à…", o: ["18 h", "19 h", "20 h"], a: 2, x: "« Jeudi : Fermé, 14 h – 20 h »." },
       { q: "Le samedi, on peut aller au cabinet…", o: ["le matin", "l'après-midi", "toute la journée"], a: 0, x: "« Samedi : 9 h – 12 h, Fermé » l'après-midi." },
       { q: "On peut venir sans rendez-vous.", o: ["Vrai", "Faux"], a: 1, x: "« Sur rendez-vous uniquement »." },
-      { q: "Vous devez apporter…", o: ["une photo", "votre ordonnance et votre carte Vitale", "un certificat médical"], a: 1, x: "« Apportez votre ordonnance et votre carte Vitale. »" },
+      { q: "Vous devez apporter…", o: ["une photo d'identité et votre passeport", "votre ordonnance et votre carte Vitale", "un certificat médical"], a: 1, x: "« Apportez votre ordonnance et votre carte Vitale. »" },
       { q: "Vous arrivez avec 20 minutes de retard. La séance…", o: ["commence plus tard", "dure 15 minutes", "est annulée"], a: 2, x: "« avec plus de 15 minutes de retard, la séance est annulée »." }
     ] },
 

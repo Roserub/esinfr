@@ -107,7 +107,7 @@
       { q: "Dialogue 1 : quelle est la situation ?",
         audio: [["F", "Bonjour monsieur Lefèvre ! Je pars en vacances samedi, pour deux semaines. Vous pourriez arroser mes plantes ?"], ["M", "Oui, bien sûr, avec plaisir."], ["F", "Super ! Je vous donne la clé ce soir ?"], ["M", "D'accord, je suis là après 19 h."]],
         o: ["Demander un service", "Proposer son aide", "Inviter un voisin à dîner", "Remercier un voisin"], a: 0,
-        x: "Mme Durand demande : « Vous pourriez arroser mes plantes ? »",
+        x: "La voisine demande : « Vous pourriez arroser mes plantes ? »",
         xtr: "« Vous pourriez… ? » koşul kipiyle kibar bir rica: bir iyilik istemek." },
       { q: "Dialogue 2 : quelle est la situation ?",
         audio: [["M", "Oh là là, tous ces cartons ! Vous êtes la nouvelle voisine du quatrième ?"], ["F", "Oui, et l'ascenseur est en panne !"], ["M", "Attendez, je vais vous aider à les monter."], ["F", "C'est gentil ! Vous avez le temps ?"], ["M", "Oui, aucun problème !"]],

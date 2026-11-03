@@ -41,7 +41,7 @@ B|Oui, à 11 h. Je m'appelle Esin.|Evet, saat 11'de. Adım Esin.|Yes, at 11. My 
 A|Ah oui, très bien. Installez-vous ici. Qu'est-ce qu'on fait aujourd'hui ?|Ah evet, çok iyi. Şuraya oturun. Bugün ne yapıyoruz?|Oh yes, very good. Have a seat here. What are we doing today?
 B|Je voudrais une coupe, mais pas trop courte.|Saç kesimi istiyorum ama çok kısa olmasın.|I'd like a cut, but not too short.
 A|D'accord. Je coupe combien ? 5 centimètres ?|Tamam. Ne kadar keseyim? 5 santim mi?|OK. How much shall I cut? 5 centimetres?
-B|Non, 3 centimètres, c'est bien. Je fais du sport, alors je les attache souvent.|Hayır, 3 santim yeterli. Spor yapıyorum, o yüzden saçımı sık sık topluyorum.|No, 3 centimetres is fine. I do sport, so I often tie my hair up.
+B|Non, 3 centimètres, c'est bien. Je fais du sport, alors j'attache souvent mes cheveux.|Hayır, 3 santim yeterli. Spor yapıyorum, o yüzden saçımı sık sık topluyorum.|No, 3 centimetres is fine. I do sport, so I often tie my hair up.
 A|Je comprends. On fait un shampoing avant ?|Anlıyorum. Önce saçınızı yıkayalım mı?|I see. Shall we wash your hair first?
 B|Oui, s'il vous plaît. Mais pas de brushing, je n'ai pas le temps.|Evet, lütfen. Ama fön istemiyorum, vaktim yok.|Yes, please. But no blow-dry, I don't have time.
 A|Pas de problème. L'eau n'est pas trop chaude ?|Sorun değil. Su çok sıcak değil, değil mi?|No problem. The water isn't too hot?
@@ -54,7 +54,7 @@ A|Shampoing et coupe : 35 euros.|Yıkama ve kesim: 35 euro.|Wash and cut: 35 eur
 A|Bonjour madame, qu'est-ce que je vous sers ?|Merhaba hanımefendi, size ne vereyim?|Hello madam, what can I get you?
 B|Bonjour. Je ne connais pas bien les fromages français. Vous pouvez m'aider ?|Merhaba. Fransız peynirlerini pek bilmiyorum. Bana yardım edebilir misiniz?|Hello. I don't know French cheeses very well. Can you help me?
 A|Avec plaisir ! Vous aimez les fromages forts ou doux ?|Memnuniyetle! Sert lezzetli peynirleri mi, hafif olanları mı seversiniz?|With pleasure! Do you like strong or mild cheeses?
-B|Plutôt doux. Chez moi, on mange beaucoup de fromage blanc, comme la feta.|Daha çok hafif. Bizde çok beyaz peynir yenir, feta gibi.|Mild, rather. At home we eat a lot of white cheese, like feta.
+B|Plutôt doux. En Turquie, on mange beaucoup de fromage salé, comme la feta.|Daha çok hafif. Türkiye'de çok tuzlu beyaz peynir yenir, feta gibi.|Mild, rather. In Turkey we eat a lot of salty white cheese, like feta.
 A|Alors goûtez ce comté. Il a 12 mois, il est doux et un peu sucré.|O zaman bu comté'yi tadın. 12 aylık, hafif ve biraz tatlımsı.|Then try this Comté. It's 12 months old, mild and a little sweet.
 B|Mmm, il est très bon ! J'en prends un morceau.|Mmm, çok güzel! Bir parça alayım.|Mmm, it's very good! I'll take a piece.
 A|Un morceau de 200 grammes, ça va ?|200 gramlık bir parça olur mu?|A 200-gram piece, is that OK?

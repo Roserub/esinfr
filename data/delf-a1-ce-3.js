@@ -103,7 +103,7 @@
     questions: [
       { q: "Vous avez une boîte en carton. Vous la mettez dans la poubelle…", o: ["jaune", "grise", "verte"], a: 0, x: "Poubelle jaune : « Papier, carton, plastique »." },
       { q: "La poubelle grise passe…", o: ["le mercredi et le samedi", "le samedi", "le lundi et le jeudi"], a: 2, x: "Poubelle grise : « Lundi et jeudi »." },
-      { q: "Vous sortez la poubelle jaune…", o: ["mercredi soir", "mardi soir, après 19 h", "lundi matin"], a: 1, x: "La poubelle jaune passe le mercredi. « Sortez vos poubelles la veille au soir, après 19 h » : mardi soir." },
+      { q: "Vous sortez la poubelle jaune…", o: ["mercredi soir", "mardi soir", "lundi matin"], a: 1, x: "La poubelle jaune passe le mercredi. « Sortez vos poubelles la veille au soir, après 19 h » : mardi soir." },
       { q: "Les bouteilles en verre vont dans la poubelle jaune.", o: ["Vrai", "Faux"], a: 1, x: "« Le verre (bouteilles, pots) : dans les conteneurs de la rue, pas dans les poubelles. »" },
       { q: "Les jours fériés, les poubelles ne passent pas.", o: ["Vrai", "Faux"], a: 0, x: "« Les jours fériés, pas de ramassage. »" }
     ] },
@@ -148,7 +148,7 @@
     questions: [
       { q: "Vous voulez téléphoner. Vous allez…", o: ["dans le hall", "à l'accueil", "dans la salle de lecture"], a: 0, x: "« Téléphone : pas d'appels dans les salles, seulement dans le hall. »" },
       { q: "Dans la bibliothèque, vous pouvez boire…", o: ["☕ un café", "💧 de l'eau", "🧃 un jus de fruits"], a: 1, x: "« Les boissons sont interdites, mais les bouteilles d'eau sont acceptées. »" },
-      { q: "Vous rendez vos livres après…", o: ["1 semaine", "8 jours", "3 semaines"], a: 2, x: "« Rendez vos livres dans 3 semaines. »" },
+      { q: "Vous devez rendre vos livres dans…", o: ["1 semaine", "8 jours", "3 semaines"], a: 2, x: "« Rendez vos livres dans 3 semaines. »" },
       { q: "Vous rendez un livre en retard : vous payez une amende.", o: ["Vrai", "Faux"], a: 1, x: "« Un retard ? Pas d'amende, mais pas de nouveaux livres pendant une semaine. »" },
       { q: "Pour avoir le code du wifi, vous demandez…", o: ["dans le hall", "à un adulte", "à l'accueil"], a: 2, x: "« Le wifi est gratuit : demandez le code à l'accueil. »" }
     ] },

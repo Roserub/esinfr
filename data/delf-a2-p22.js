@@ -120,8 +120,8 @@
       { q: "Dialogue 2 (dans la rue, à Marseille) : quelle est la situation ?",
         audio: [["F", "Clément, tu connais bien Marseille. Ce soir, on veut manger du poisson. Tu nous conseilles quel restaurant ?"], ["M", "Allez au Vieux-Port, au petit restaurant bleu, à côté des bateaux. C'est très bon et pas cher."], ["F", "Super, merci ! On va réserver."]],
         o: ["Refuser une proposition", "Proposer son aide", "Demander un conseil", "Accepter une invitation"], a: 2,
-        x: "Léa demande : « Tu nous conseilles quel restaurant ? »",
-        xtr: "Léa tavsiye istiyor: « Tu nous conseilles quel restaurant ? » (« conseiller » = tavsiye etmek)." },
+        x: "La jeune femme demande à Clément : « Tu nous conseilles quel restaurant ? »",
+        xtr: "Kadın Clément'ten tavsiye istiyor: « Tu nous conseilles quel restaurant ? » (« conseiller » = tavsiye etmek)." },
       { q: "Dialogue 3 (devant l'appartement) : quelle est la situation ?",
         audio: [["F", "Oh là là, ma valise est vraiment lourde, et il y a beaucoup d'escaliers !"], ["M", "Attends, Julie, je vais t'aider. Donne-la-moi, je la monte."], ["F", "Merci, Karim, c'est gentil !"], ["M", "De rien. Tiens, prends mon sac, il est léger."]],
         o: ["Proposer son aide", "Demander un conseil", "S'excuser d'un retard", "Féliciter quelqu'un"], a: 0,
@@ -130,8 +130,8 @@
       { q: "Dialogue 4 (au petit-déjeuner) : quelle est la situation ?",
         audio: [["M", "Demain, on fait une balade en bateau dans les calanques ? Ça dure 3 heures."], ["F", "Ah non, merci. Je suis toujours malade en bateau. Allez-y sans moi."], ["M", "Dommage ! Et toi, tu vas faire quoi ?"], ["F", "Je vais visiter un musée."]],
         o: ["Accepter une invitation", "Féliciter quelqu'un", "Demander un conseil", "Refuser une proposition"], a: 3,
-        x: "Manon répond : « Ah non, merci… Allez-y sans moi. »",
-        xtr: "Hugo bir tekne gezisi öneriyor, Manon reddediyor: « Ah non, merci. Allez-y sans moi. » Dikkat: teklif var ama kabul edilmiyor." }
+        x: "La femme répond : « Ah non, merci… Allez-y sans moi. »",
+        xtr: "Adam bir tekne gezisi öneriyor, kadın reddediyor: « Ah non, merci. Allez-y sans moi. » Dikkat: teklif var ama kabul edilmiyor." }
     ] },
 
   /* ───────────── Compréhension des écrits ───────────── */

@@ -6,7 +6,7 @@
     help: { tr: "Yaz tatilinizi Fransa'nın bir bölgesinde geçirdiniz. Blogunuza bir yazı yazıyorsunuz. Nereye gittiğinizi, kiminle gittiğinizi, ne yaptığınızı ve neyi sevdiğinizi anlatın. (En az 60 kelime)", en: "You spent your summer holiday in a French region. You write a post on your blog. Say where you went, who with, what you did and what you liked. (60 words minimum)" },
     min: 60,
     must: [
-      { c: "Dire où vous êtes allé(e)", kw: ["je suis allée", "je suis allé", "je suis partie", "je suis parti", "nous sommes allés", "en bretagne", "région", "mer", "montagne", "côte", "village"] },
+      { c: "Dire où vous êtes allé(e)", kw: ["je suis allée", "je suis allé", "je suis partie", "je suis parti", "nous sommes allés", "en bretagne", "région", "la mer", "montagne", "côte", "village"] },
       { c: "Dire avec qui", kw: ["avec", "mon mari", "mon amie", "ma famille", "seule", "seul"] },
       { c: "Raconter vos activités (passé composé)", kw: ["nous avons", "j'ai fait", "j'ai visité", "on a", "visité", "nagé", "fait du", "randonnée", "vélo", "mangé", "loué"] },
       { c: "Donner votre opinion", kw: ["j'ai aimé", "j'ai adoré", "c'était", "super", "magnifique", "génial", "beau", "inoubliable", "préféré", "étaient"] }
@@ -23,7 +23,7 @@
       { c: "Proposer des activités", kw: ["on pourra", "on peut", "on va", "on ira", "visiter", "promenade", "promener", "marché", "musée", "restaurant"] },
       { c: "Donner des informations pratiques", kw: ["adresse", "rue", "métro", "tram", "bus", "gare", "arrêt", "station", "ligne"] }
     ],
-    model: "Coucou Claire,\nQuelle bonne nouvelle ! Bien sûr, je suis libre. Je t'invite à dormir chez moi, j'ai une chambre pour les amis. Le jeudi soir, je vais préparer un dîner turc. Le samedi, on pourra visiter la vieille ville et faire une promenade au bord du lac. Mon adresse : 12 rue Victor-Hugo. Depuis la gare, prends le tram ligne 1, arrêt « Mairie ». J'ai hâte de te voir !\nBises,\nEsin" },
+    model: "Coucou Claire,\nQuelle bonne nouvelle ! Bien sûr, je suis libre. Je t'invite à dormir chez moi, j'ai une chambre pour les amis. Jeudi soir, je vais préparer un dîner turc. Samedi, on pourra visiter la vieille ville et faire une promenade au bord du lac. Mon adresse : 12 rue Victor-Hugo. Depuis la gare, prends le tram ligne 1, arrêt « Mairie ». J'ai hâte de te voir !\nBises,\nEsin" },
 
   { id: "a2-s02-pe1", level: "A2", sujet: 2, sec: "pe", ex: 1, pts: 13, kind: "text",
     title: "Une soirée chez des amis",
@@ -32,7 +32,7 @@
     min: 60,
     must: [
       { c: "Parler des invités", kw: ["invités", "amis", "personnes", "gens", "rencontré", "il y avait", "collègues"] },
-      { c: "Parler du repas", kw: ["mangé", "repas", "plat", "gâteau", "buffet", "boissons", "bu", "préparé", "cuisiné"] },
+      { c: "Parler du repas", kw: ["mangé", "repas", "plat", "gâteau", "buffet", "boissons", "j'ai bu", "nous avons bu", "préparé", "cuisiné"] },
       { c: "Raconter les activités", kw: ["dansé", "joué", "chanté", "musique", "parlé", "karaoké", "discuté"] },
       { c: "Donner vos impressions", kw: ["c'était", "j'ai aimé", "adoré", "super", "sympa", "génial", "géniale", "ambiance", "contente", "amusée"] }
     ],
@@ -69,7 +69,7 @@
     min: 60,
     must: [
       { c: "Vous excuser", kw: ["désolée", "désolé", "pardon", "excuse", "excuses", "je regrette", "pardonner"] },
-      { c: "Expliquer ce qui s'est passé", kw: ["parce que", "car", "j'ai eu", "problème", "malade", "train", "panne", "oublié", "batterie", "accident"] },
+      { c: "Expliquer ce qui s'est passé", kw: ["parce que", "à cause", "j'ai eu", "problème", "malade", "train", "panne", "oublié", "batterie", "accident"] },
       { c: "Expliquer pourquoi vous n'avez pas téléphoné", kw: ["téléphone", "batterie", "appeler", "appelé", "portable", "répondu"] },
       { c: "Proposer de vous voir", kw: ["on pourrait", "tu veux", "je t'invite", "on se voit", "café", "déjeuner", "dîner", "samedi", "dimanche", "bientôt"] }
     ],
@@ -120,7 +120,7 @@
     must: [
       { c: "Accepter l'invitation", kw: ["oui", "j'accepte", "avec plaisir", "d'accord", "je viens", "volontiers", "bien sûr", "merci pour l'invitation"] },
       { c: "Dire pourquoi vous êtes content(e)", kw: ["contente", "content", "ravie", "ravi", "j'adore", "j'aime", "heureuse", "génial", "super"] },
-      { c: "Poser des questions sur l'organisation", kw: ["à quelle heure", "où", "combien", "comment", "départ", "dormir", "refuge", "tente", "est-ce que"] },
+      { c: "Poser des questions sur l'organisation", kw: ["à quelle heure", "où est-ce", "où on", "combien", "comment", "départ", "dormir", "refuge", "tente", "est-ce que"] },
       { c: "Proposer d'apporter quelque chose", kw: ["j'apporte", "apporter", "je peux prendre", "je peux", "gâteau", "pique-nique", "voiture", "boissons"] }
     ],
     model: "Salut Mathieu,\nOui, avec plaisir ! Merci pour l'invitation. J'adore la montagne et je n'ai jamais fait de randonnée dans les Pyrénées, donc je suis ravie. J'ai quelques questions : à quelle heure est le départ samedi ? Où est-ce qu'on va dormir, sous la tente ou dans un refuge ? Combien ça coûte ? Moi, je peux prendre ma voiture et j'apporte un gâteau pour le pique-nique.\nÀ bientôt,\nEsin" },
@@ -145,8 +145,8 @@
     must: [
       { c: "Remercier et féliciter", kw: ["merci", "remercie", "félicitations", "bravo", "gentille invitation"] },
       { c: "Refuser poliment", kw: ["malheureusement", "je ne peux pas", "nous ne pouvons pas", "impossible", "désolée", "désolés", "désolé", "dommage", "je regrette"] },
-      { c: "Expliquer pourquoi", kw: ["parce que", "car", "nous partons", "je pars", "mariage", "voyage", "travail", "déjà"] },
-      { c: "Proposer autre chose", kw: ["je propose", "proposer", "voulez-vous", "est-ce que vous voulez", "venir chez nous", "un autre jour", "thé", "café", "à notre retour"] }
+      { c: "Expliquer pourquoi", kw: ["parce que", "à cause", "nous partons", "je pars", "mariage", "voyage", "travail", "déjà"] },
+      { c: "Proposer autre chose", kw: ["je propose", "proposer", "voulez-vous", "est-ce que vous voulez", "venir chez nous", "un autre jour", "le thé", "café", "à notre retour"] }
     ],
     model: "Chère Madame Roux,\nMerci beaucoup pour votre gentille invitation, et félicitations pour vos 40 ans de mariage ! Malheureusement, nous ne pouvons pas venir le 8 juin, parce que nous partons en Turquie pour le mariage de mon frère. Nous sommes vraiment désolés. Est-ce que vous voulez venir prendre le thé chez nous à notre retour, le dimanche 16 juin ? Je vais préparer des pâtisseries turques.\nBien amicalement,\nEsin" },
 
@@ -158,7 +158,7 @@
     must: [
       { c: "Parler du transport", kw: ["train", "tgv", "voiture", "avion", "bus", "pris", "partie", "parti", "arrivés", "arrivée", "arrivé"] },
       { c: "Parler du logement", kw: ["hôtel", "chambre", "logement", "auberge", "appartement", "dormi", "camping"] },
-      { c: "Raconter les visites", kw: ["visité", "vu", "cathédrale", "musée", "promenés", "promené", "balade", "quartier", "centre"] },
+      { c: "Raconter les visites", kw: ["visité", "j'ai vu", "nous avons vu", "cathédrale", "musée", "promenés", "promené", "balade", "quartier", "centre"] },
       { c: "Dire ce que vous avez préféré", kw: ["préféré", "j'ai adoré", "j'ai aimé", "c'était", "magnifique", "superbe", "super"] }
     ],
     model: "Salut Yann,\nLe week-end dernier, je suis partie trois jours à Strasbourg avec mon mari. Nous avons pris le train vendredi soir et nous sommes arrivés à 22 h. Notre hôtel était petit mais très joli, près de la cathédrale. Samedi, nous avons visité le centre et nous nous sommes promenés en bateau sur la rivière. Ce que j'ai préféré ? La cathédrale, elle est magnifique ! Et la choucroute, bien sûr.\nBises,\nEsin" },
@@ -169,7 +169,7 @@
     min: 60,
     must: [
       { c: "Féliciter votre amie", kw: ["félicitations", "bravo", "fière", "fier", "contente pour toi", "génial", "super"] },
-      { c: "Poser des questions sur le travail", kw: ["quel service", "dans quel", "est-ce que", "quand", "comment", "où", "la nuit", "horaires"] },
+      { c: "Poser des questions sur le travail", kw: ["quel service", "dans quel", "est-ce que", "quand", "comment", "où est-ce", "où tu", "la nuit", "horaires"] },
       { c: "Proposer de fêter ça", kw: ["fêter", "fête", "célébrer", "je t'invite", "on va", "on pourrait", "restaurant", "dîner", "champagne"] },
       { c: "Souhaiter bonne chance", kw: ["bon courage", "bonne chance", "je te souhaite", "réussite"] }
     ],
@@ -181,7 +181,7 @@
     help: { tr: "Büyük bir aile kutlamasına (bir düğün) katıldınız. Bu günü Fransız bir arkadaşınıza anlatın: yer, davetliler, tören ve eğlence, izlenimleriniz. (En az 60 kelime)", en: "You went to a big family celebration (a wedding). Tell a French friend about the day: the place, the guests, the ceremony and the party, and your impressions. (60 words minimum)" },
     min: 60,
     must: [
-      { c: "Décrire le lieu", kw: ["salle", "jardin", "mairie", "village", "ville", "hôtel", "restaurant", "maison", "mer", "turquie"] },
+      { c: "Décrire le lieu", kw: ["salle", "jardin", "mairie", "village", "ville", "hôtel", "restaurant", "maison", "la mer", "turquie"] },
       { c: "Parler des invités", kw: ["invités", "famille", "personnes", "cousins", "tout le monde", "il y avait"] },
       { c: "Raconter la cérémonie et la fête", kw: ["cérémonie", "mariée", "robe", "dansé", "musique", "repas", "mangé", "gâteau", "fête"] },
       { c: "Donner vos impressions", kw: ["émue", "ému", "pleuré", "c'était", "magnifique", "j'ai adoré", "heureuse", "inoubliable", "j'étais"] }
@@ -211,7 +211,7 @@
       { c: "Parler du service et du prix", kw: ["serveur", "serveuse", "service", "accueil", "prix", "euros", "€", "cher", "payé", "addition"] },
       { c: "Donner un conseil", kw: ["je conseille", "je recommande", "je vous recommande", "je vous conseille", "allez-y", "n'hésitez pas", "recommande", "conseille"] }
     ],
-    model: "Samedi soir, je suis allée au restaurant « Le Petit Jardin » avec mon mari pour notre anniversaire de mariage. En entrée, j'ai pris une soupe de légumes, puis un poisson grillé avec des légumes. Le dessert, une tarte au citron, était délicieux ! La serveuse était très gentille et le service rapide. Nous avons payé 35 € par personne, ce n'est pas trop cher. Je vous recommande ce restaurant !" },
+    model: "Samedi soir, je suis allée au restaurant « Le Petit Jardin » avec mon mari pour notre anniversaire de mariage. En entrée, j'ai pris une soupe de légumes, puis un poisson grillé avec du riz. Le dessert, une tarte au citron, était délicieux ! La serveuse était très gentille et le service rapide. Nous avons payé 35 € par personne, ce n'est pas trop cher. Je vous recommande ce restaurant !" },
   { id: "a2-s09-pe2", level: "A2", sujet: 9, sec: "pe", ex: 2, pts: 12, kind: "text",
     title: "Conseiller un ami qui a mal au dos",
     consigne: "Votre ami Antoine vous écrit : « J'ai mal au dos depuis un mois. Je voudrais faire du sport, mais je ne sais pas quoi. Tu es kiné, tu peux me conseiller ? » Vous lui répondez : vous lui conseillez un ou deux sports, vous donnez des conseils pratiques et vous lui proposez votre aide. (60 mots minimum)",

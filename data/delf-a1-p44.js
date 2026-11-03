@@ -199,7 +199,7 @@
       { q: "Pendant le stage, il faut porter…", o: ["des chaussettes", "des chaussures de sport", "un costume de clown"], a: 0,
         x: "« Venez avec des vêtements de sport et des chaussettes. Pas de chaussures sur les tapis ! »",
         xtr: "« Des chaussettes » = çorap. Minderlerin (tapis) üstünde ayakkabı yasak, spor ayakkabısı da." },
-      { q: "Le vendredi 18 avril, les familles peuvent voir un spectacle.", o: ["Vrai", "Faux"], a: 0,
+      { q: "Vrai ou faux ? Le vendredi 18 avril, les familles peuvent voir un spectacle.", o: ["Vrai", "Faux"], a: 0,
         x: "Vrai : « Le vendredi 18 avril, à 17 h : petit spectacle pour les familles. »",
         xtr: "Doğru: 18 Nisan cuma saat 17'de aileler için küçük bir gösteri var." }
     ] },

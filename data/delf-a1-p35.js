@@ -201,9 +201,9 @@
       { q: "Les conseillers parlent…", o: ["allemand", "turc", "italien"], a: 1,
         x: "« Nos conseillers parlent français, anglais, espagnol et turc. »",
         xtr: "Danışmanlar Fransızca, İngilizce, İspanyolca ve Türkçe konuşuyor. Almanca ve İtalyanca listede yok." },
-      { q: "Vrai ou faux ? L'agence est ouverte le samedi.", o: ["Vrai", "Faux"], a: 1,
-        x: "Faux : « Le samedi, l'agence est fermée. »",
-        xtr: "Yanlış: şube cumartesi kapalı (« fermée »). Pazartesiden cumaya, 10.00–18.30 arası açık." }
+      { q: "Vrai ou faux ? L'agence est fermée le samedi.", o: ["Vrai", "Faux"], a: 0,
+        x: "Vrai : « Le samedi, l'agence est fermée. »",
+        xtr: "Doğru: şube cumartesi kapalı (« fermée »). Pazartesiden cumaya, 10.00–18.30 arası açık." }
     ] },
 
   /* ───────── Production écrite ───────── */

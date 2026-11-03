@@ -74,7 +74,7 @@
         <div class="row wrap center"><button class="btn" data-bs="again">↻ ${esc(t("ex.again"))}</button><a class="btn ghost" href="#/basics/${x.id}">${esc(t("bs.back"))}</a><a class="btn ghost" href="#/basics">🧱 ${esc(t("bs.title"))}</a></div></section>`;
     }
     const q = Q.qs[Q.i], g = Q.given;
-    const prompt = q.kind === "listen" ? `<p class="bs-prompt">${esc(t("bs.q.listen"))}</p><div class="row center"><button class="btn speak-big" data-speak="${esc(sayOf(q.it))}">🔊 ${esc(t("ex.listen.btn"))}</button><button class="btn ghost speak-big" data-speak="${esc(sayOf(q.it))}" data-slow="1">🐢</button></div>`
+    const prompt = q.kind === "listen" ? `<p class="bs-prompt">${esc(t("bs.q.listen"))}</p><div class="row center"><button class="btn speak-big" data-speak="${esc(sayOf(q.it))}">🔊 ${esc(t("ex.listen.btn"))}</button><button class="btn ghost speak-big" data-speak="${esc(sayOf(q.it))}" data-slow="1" aria-label="${esc(t("av.slow"))}" title="${esc(t("av.slow"))}">🐢</button></div>`
       : q.kind === "meaning" ? `<p class="bs-prompt">${esc(t("bs.q.meaning"))}</p><p class="bs-big">${esc(mean(q.it))}</p>`
       : `<p class="bs-prompt">${esc(t("bs.q.fr"))}</p><p class="bs-big" lang="fr">${esc(q.it.fr)} <button class="speak" data-speak="${esc(sayOf(q.it))}" aria-label="${esc(t("speak"))}">🔊</button></p>`;
     return back + `<p class="eyebrow">${esc(t("bs.qn", { i: Q.i + 1, n: Q.qs.length }))} · ✓ ${Q.ok}</p>

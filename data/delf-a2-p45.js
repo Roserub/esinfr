@@ -118,7 +118,7 @@
         audio: [["M", "Dis, ça te dirait de visiter l'abbaye de Saint-Florent dimanche ? Il y a un concert de musique ancienne à 16 h."], ["F", "Oh oui, bonne idée ! On y va en voiture ?"], ["M", "Non, à vélo, c'est seulement à 12 kilomètres !"]],
         o: ["Proposer une sortie", "Demander un renseignement", "S'excuser", "Se plaindre"], a: 0,
         x: "L'homme propose : « Ça te dirait de visiter l'abbaye de Saint-Florent dimanche ? »",
-        xtr: "« Ça te dirait de… ? » = \"…ister misin?\": bir geziye davet/öneri kalıbı." },
+        xtr: "« Ça te dirait de… ? » = « …ister misin? »: bir geziye davet/öneri kalıbı." },
       { q: "Dialogue 4 : quelle est la situation ?",
         audio: [["M", "Alors, Lucie, tu as eu les résultats de ton examen de guide-conférencière ?"], ["F", "Oui, je l'ai réussi ! J'ai reçu mon diplôme hier !"], ["M", "Bravo ! Félicitations ! Je suis très fier de toi."]],
         o: ["Remercier quelqu'un", "Proposer une sortie", "Demander un renseignement", "Féliciter quelqu'un"], a: 3,

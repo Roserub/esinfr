@@ -6,7 +6,7 @@
     title: "Le feu d'artifice de Gaëtan",
     consigne: "Vous êtes en France. Vous écoutez ce message sur votre répondeur téléphonique. Lisez les questions, écoutez le document, puis répondez.",
     help: { tr: "Fransa'dasınız. Telefonunuzun telesekreterinde bu mesajı dinliyorsunuz. Soruları okuyun, belgeyi dinleyin, sonra cevaplayın.", en: "You are in France. You listen to this message on your answering machine. Read the questions, listen, then answer." },
-    audio: [["M", "Salut, c'est Gaëtan ! Ce soir, c'est le 14 juillet ! Le feu d'artifice commence à 22 h 30, au bord de la Loire. On se retrouve à 21 h devant la piscine municipale ? Prends une couverture pour s'asseoir dans l'herbe. Moi, j'apporte des boissons fraîches. Et n'oublie pas ton pull : le soir, il fait frais au bord de l'eau ! À ce soir !"]],
+    audio: [["M", "Salut, c'est Gaëtan ! Ce soir, c'est le 14 juillet ! Le feu d'artifice commence à 22 h 30, au bord de la Loire. On se retrouve à 21 h devant la piscine municipale ? Prends une couverture pour nous asseoir dans l'herbe. Moi, j'apporte des boissons fraîches. Et n'oublie pas ton pull : le soir, il fait frais au bord de l'eau ! À ce soir !"]],
     questions: [
       { q: "Le feu d'artifice est…", o: ["🏖️ à la plage", "🏞️ au bord de la Loire", "🏊 à la piscine"], a: 1,
         x: "Gaëtan dit : « Le feu d'artifice commence à 22 h 30, au bord de la Loire. » La piscine, c'est le lieu du rendez-vous.",
@@ -15,7 +15,7 @@
         x: "« On se retrouve à 21 h devant la piscine municipale ? » 22 h 30, c'est le début du feu d'artifice.",
         xtr: "« On se retrouve à 21 h » = saat 21.00'de buluşalım. 22.30 havai fişeğin başlama saati, buluşma saati değil." },
       { q: "Gaëtan vous demande d'apporter…", o: ["des boissons fraîches", "des sandwichs", "une couverture"], a: 2,
-        x: "« Prends une couverture pour s'asseoir dans l'herbe. » Les boissons, c'est Gaëtan : « Moi, j'apporte des boissons fraîches. »",
+        x: "« Prends une couverture pour nous asseoir dans l'herbe. » Les boissons, c'est Gaëtan : « Moi, j'apporte des boissons fraîches. »",
         xtr: "« Prends une couverture » = bir battaniye al (çimlere oturmak için). Soğuk içecekleri Gaëtan getiriyor (« Moi, j'apporte… »); sandviç mesajda yok." },
       { q: "Pourquoi prendre un pull ?", o: ["Il va pleuvoir.", "Le soir, il fait frais au bord de l'eau.", "Gaëtan a froid."], a: 1,
         x: "« n'oublie pas ton pull : le soir, il fait frais au bord de l'eau ! »",
@@ -46,7 +46,7 @@
     title: "Le bal des pompiers",
     consigne: "Vous écoutez cette publicité à la radio. Lisez les questions, écoutez le document, puis répondez.",
     help: { tr: "Radyoda bu reklamı dinliyorsunuz. Soruları okuyun, belgeyi dinleyin, sonra cevaplayın.", en: "You listen to this advertisement on the radio. Read the questions, listen, then answer." },
-    audio: [["N", "Le 13 juillet au soir, venez danser au grand bal des pompiers de Montlouis ! Rendez-vous à la caserne, rue Pasteur, à partir de 20 h. Musique et danse jusqu'à 2 h du matin ! Entrée : 5 €, gratuite pour les enfants de moins de 12 ans. Sur place : sandwichs et frites. À 23 h, concours de danse : le gagnant gagne un dîner pour 2 personnes !"]],
+    audio: [["N", "Le 13 juillet au soir, venez danser au grand bal des pompiers de Montlouis ! Rendez-vous à la caserne, rue Pasteur, à partir de 20 h. Musique et danse jusqu'à 2 h du matin ! Entrée : 5 €, gratuite pour les enfants de moins de 12 ans. Sur place : sandwichs et frites. À 23 h, concours de danse : le gagnant reçoit un dîner pour 2 personnes !"]],
     questions: [
       { q: "Le bal a lieu…", o: ["🚒 à la caserne des pompiers", "🏫 à l'école", "⛪ sur la place de l'église"], a: 0,
         x: "« Rendez-vous à la caserne, rue Pasteur ».",
@@ -61,8 +61,8 @@
         x: "« gratuite pour les enfants de moins de 12 ans ».",
         xtr: "« Gratuite » = ücretsiz. « Moins de 12 ans » = 12 yaşından küçük. İtfaiyeciler ve dansçılar için bedava değil." },
       { q: "Le gagnant du concours gagne…", o: ["🍽️ un dîner pour 2 personnes", "🎟️ 2 places de cinéma", "🍟 des frites"], a: 0,
-        x: "« le gagnant gagne un dîner pour 2 personnes ! » Les frites, on les achète sur place.",
-        xtr: "« Le gagnant gagne un dîner pour deux » = kazanan iki kişilik bir akşam yemeği kazanıyor. Patates kızartması baloda satılıyor, ödül değil." }
+        x: "« le gagnant reçoit un dîner pour 2 personnes ! » Les frites, on les achète sur place.",
+        xtr: "« Le gagnant reçoit un dîner pour deux » = kazanan iki kişilik bir akşam yemeği kazanıyor. Patates kızartması baloda satılıyor, ödül değil." }
     ] },
 
   { id: "a1-s43-co4", level: "A1", sujet: 43, sec: "co", ex: 4, pts: 10,
@@ -201,7 +201,7 @@
       { q: "Après la musique, les gens vont…", o: ["au gymnase de la ville", "au bord de la Loire", "à la mairie"], a: 1,
         x: "« Après, tout le monde va ensemble au bord de la Loire pour regarder le feu d'artifice. »",
         xtr: "Müzikten sonra herkes havai fişek için Loire kıyısına gidiyor. Spor salonu sadece yağmur yağarsa kullanılıyor." },
-      { q: "S'il pleut, il n'y a pas de pique-nique.", o: ["Vrai", "Faux"], a: 1,
+      { q: "Vrai ou faux ? S'il pleut, il n'y a pas de pique-nique.", o: ["Vrai", "Faux"], a: 1,
         x: "Faux : « S'il pleut, le pique-nique a lieu au gymnase. »",
         xtr: "Yanlış: yağmur yağarsa piknik iptal olmuyor, spor salonunda (gymnase) yapılıyor." }
     ] },

@@ -62,13 +62,13 @@
     audio: [],
     questions: [
       { q: "Dialogue 1 : que fait la femme ?", audio: [["M", "Tu veux venir faire du vélo avec nous dimanche matin ? On part à 9 h du parc."], ["F", "Oh oui, avec plaisir ! Ça me fera du bien de bouger."]],
-        o: ["Elle accepte une invitation.", "Elle refuse une invitation.", "Elle propose une sortie.", "Elle demande l'heure."], a: 0, x: "Elle dit : « Oh oui, avec plaisir ! »" },
+        o: ["Elle demande l'heure.", "Elle refuse une invitation.", "Elle propose une sortie.", "Elle accepte une invitation."], a: 3, x: "Elle dit : « Oh oui, avec plaisir ! »" },
       { q: "Dialogue 2 : que fait la femme ?", audio: [["F", "Je n'ai pas compris l'exercice 3. Tu peux m'expliquer, s'il te plaît ?"], ["M", "Oui, regarde, c'est simple."]],
-        o: ["Elle aide son ami.", "Elle demande de l'aide.", "Elle corrige un exercice.", "Elle se plaint du professeur."], a: 1, x: "Elle dit : « Tu peux m'expliquer, s'il te plaît ? »" },
+        o: ["Elle demande de l'aide.", "Elle aide son ami.", "Elle corrige un exercice.", "Elle se plaint du professeur."], a: 0, x: "Elle dit : « Tu peux m'expliquer, s'il te plaît ? »" },
       { q: "Dialogue 3 : que fait l'homme ?", audio: [["M", "Ça fait trois fois cette semaine que l'ascenseur est en panne ! Moi, j'habite au 8e étage. Ce n'est pas possible !"], ["F", "Je comprends, monsieur. Je vais appeler le réparateur."]],
         o: ["Il propose de réparer l'ascenseur.", "Il demande son chemin.", "Il exprime son mécontentement.", "Il remercie la gardienne."], a: 2, x: "Il dit : « Trois fois cette semaine… Ce n'est pas possible ! »" },
       { q: "Dialogue 4 : que fait la femme ?", audio: [["F", "Joyeux anniversaire, Hugo ! Tiens, c'est pour toi. J'espère que ça va te plaire."], ["M", "Oh, merci, c'est trop gentil !"]],
-        o: ["Elle demande un cadeau.", "Elle s'excuse d'être en retard.", "Elle invite Hugo.", "Elle offre un cadeau."], a: 3, x: "Elle dit : « Tiens, c'est pour toi. »" },
+        o: ["Elle demande un cadeau.", "Elle offre un cadeau.", "Elle invite Hugo.", "Elle s'excuse d'être en retard."], a: 1, x: "Elle dit : « Tiens, c'est pour toi. »" },
       { q: "Dialogue 5 : que fait l'homme ?", audio: [["M", "Attention, madame, le sol est mouillé ! Ne marchez pas ici, vous allez tomber."], ["F", "Oh, merci, je n'avais pas vu."]],
         o: ["Il prévient d'un danger.", "Il nettoie le sol.", "Il demande pardon.", "Il demande de l'aide à la dame."], a: 0, x: "Il dit : « Attention… vous allez tomber. »" }
     ] },
@@ -135,7 +135,7 @@
         o: ["Elle se plaint.", "Elle s'excuse.", "Elle demande son chemin.", "Elle se présente."], a: 1, x: "Elle dit : « Oh, pardon, je vous ai marché sur le pied ! »" },
       { q: "Dialogue 4 : que fait l'homme ?", audio: [["M", "Moi, je préfère prendre le train plutôt que l'avion : c'est plus calme, et on voit le paysage."], ["F", "Moi aussi, je suis d'accord."]],
         o: ["Il achète un billet d'avion.", "Il a peur du train.", "Il donne un horaire.", "Il exprime une préférence."], a: 3, x: "Il dit : « Je préfère prendre le train plutôt que l'avion. »" },
-      { q: "Dialogue 5 : que fait la femme ?", audio: [["F", "Mesdames, messieurs, merci d'être venus si nombreux ce soir ! Sans vous, cette fête de quartier n'est pas possible."], ["M", "Bravo !"]],
+      { q: "Dialogue 5 : que fait la femme ?", audio: [["F", "Mesdames, messieurs, merci d'être venus si nombreux ce soir ! Sans vous, cette fête de quartier ne serait pas possible."], ["M", "Bravo !"]],
         o: ["Elle remercie les gens.", "Elle s'excuse auprès des gens.", "Elle annonce la fin de la fête.", "Elle demande de l'argent."], a: 0, x: "Elle dit : « Merci d'être venus si nombreux ce soir ! »" }
     ] },
 
@@ -152,7 +152,7 @@
       { q: "Ce train va à…", o: ["Lyon.", "Marseille.", "Paris."], a: 1, x: "« Ce TGV à destination de Marseille. » Lyon, c'est le prochain arrêt." },
       { q: "Le train arrive à Marseille à…", o: ["13 h 25.", "13 h 50.", "11 h 50."], a: 0, x: "« Nous arriverons à Marseille à 13 h 25. »" },
       { q: "Où se trouve la voiture-bar ?", o: ["En voiture 14.", "En voiture 1.", "En voiture 4."], a: 2, x: "« La voiture-bar se trouve en voiture 4, au milieu du train. »" },
-      { q: "Pourquoi le colis n'a pas été livré ?", o: ["L'adresse était fausse.", "La personne était absente.", "Le colis était trop grand."], a: 1, x: "« Le facteur est passé… mais vous n'étiez pas là. »" },
+      { q: "Pourquoi le colis n'a-t-il pas été livré ?", o: ["L'adresse était fausse.", "La personne était absente.", "Le colis était trop grand."], a: 1, x: "« Le facteur est passé… mais vous n'étiez pas là. »" },
       { q: "On peut aller chercher le colis…", o: ["à partir de demain, 14 h.", "dès ce soir.", "seulement dans 15 jours."], a: 0, x: "« Votre colis vous attend… à partir de demain, 14 h. »" },
       { q: "Il faut apporter…", o: ["le numéro du colis et un justificatif de domicile.", "une facture et une photo.", "l'avis de passage et une pièce d'identité."], a: 2, x: "« Apportez l'avis de passage… et une pièce d'identité. »" }
     ] },
@@ -204,15 +204,15 @@
     audio: [],
     questions: [
       { q: "Dialogue 1 : que fait l'homme ?", audio: [["M", "Tu peux me prêter ta voiture samedi ? Je dois déménager des cartons."], ["F", "Euh… d'accord, mais fais attention."]],
-        o: ["Il emprunte une voiture.", "Il vend sa voiture.", "Il propose de l'aide.", "Il refuse de déménager."], a: 0, x: "Il dit : « Tu peux me prêter ta voiture samedi ? »" },
+        o: ["Il propose de l'aide.", "Il vend sa voiture.", "Il emprunte une voiture.", "Il refuse de déménager."], a: 2, x: "Il dit : « Tu peux me prêter ta voiture samedi ? »" },
       { q: "Dialogue 2 : que fait la femme ?", audio: [["F", "Bon, il est tard, je dois rentrer. Merci pour cette soirée, à bientôt !"], ["M", "Rentre bien !"]],
-        o: ["Elle arrive à une fête.", "Elle prend congé.", "Elle invite son ami.", "Elle demande l'heure."], a: 1, x: "Elle dit : « Je dois rentrer… à bientôt ! »" },
+        o: ["Elle prend congé.", "Elle arrive à une fête.", "Elle invite son ami.", "Elle demande l'heure."], a: 0, x: "Elle dit : « Je dois rentrer… à bientôt ! »" },
       { q: "Dialogue 3 : que fait l'homme ?", audio: [["M", "Bonjour, je m'appelle Ahmed, je suis votre nouveau voisin. J'habite au deuxième étage, à gauche."], ["F", "Bienvenue ! Moi, c'est Martine."]],
-        o: ["Il présente sa famille.", "Il demande son chemin.", "Il se présente.", "Il se plaint du bruit."], a: 2, x: "Il dit : « Je m'appelle Ahmed, je suis votre nouveau voisin. »" },
+        o: ["Il présente sa famille.", "Il se présente.", "Il demande son chemin.", "Il se plaint du bruit."], a: 1, x: "Il dit : « Je m'appelle Ahmed, je suis votre nouveau voisin. »" },
       { q: "Dialogue 4 : que fait la femme ?", audio: [["F", "J'ai peur… Mon fils n'est pas encore rentré de l'école, et il est déjà 18 h. D'habitude, il arrive à 17 h."], ["M", "Tu as appelé ses copains ?"]],
         o: ["Elle est contente.", "Elle se fâche contre son fils.", "Elle donne l'heure.", "Elle exprime son inquiétude."], a: 3, x: "Elle dit : « J'ai peur… Mon fils n'est pas encore rentré. »" },
       { q: "Dialogue 5 : que fait l'homme ?", audio: [["M", "N'oublie pas : demain, tu as rendez-vous chez le dentiste à 9 h. Prends ta carte Vitale."], ["F", "Ah oui, merci de me le rappeler !"]],
-        o: ["Il prend rendez-vous chez le dentiste.", "Il rappelle un rendez-vous.", "Il annule un rendez-vous.", "Il demande la carte Vitale."], a: 1, x: "Il dit : « N'oublie pas : demain, tu as rendez-vous chez le dentiste. »" }
+        o: ["Il rappelle un rendez-vous.", "Il prend rendez-vous chez le dentiste.", "Il annule un rendez-vous.", "Il demande la carte Vitale."], a: 0, x: "Il dit : « N'oublie pas : demain, tu as rendez-vous chez le dentiste. »" }
     ] },
 
   /* ───────────── Sujet 9 ───────────── */
@@ -270,15 +270,15 @@
     audio: [],
     questions: [
       { q: "Dialogue 1 : que fait la femme ?", audio: [["F", "Bonjour, je voudrais un croissant et deux pains au chocolat, s'il vous plaît."], ["M", "Voilà, madame, ça fait 3,90 €."]],
-        o: ["Elle commande à la boulangerie.", "Elle vend des gâteaux.", "Elle se plaint du prix.", "Elle demande la recette."], a: 0, x: "Elle dit : « Je voudrais un croissant et deux pains au chocolat. »" },
+        o: ["Elle vend des gâteaux.", "Elle commande à la boulangerie.", "Elle se plaint du prix.", "Elle demande la recette."], a: 1, x: "Elle dit : « Je voudrais un croissant et deux pains au chocolat. »" },
       { q: "Dialogue 2 : que fait l'homme ?", audio: [["M", "Ta robe est très jolie ! Cette couleur te va vraiment bien."], ["F", "Oh, merci, c'est gentil !"]],
-        o: ["Il achète une robe.", "Il fait un compliment.", "Il critique la couleur.", "Il demande un prix."], a: 1, x: "Il dit : « Ta robe est très jolie ! »" },
+        o: ["Il achète une robe.", "Il critique la couleur.", "Il fait un compliment.", "Il demande un prix."], a: 2, x: "Il dit : « Ta robe est très jolie ! »" },
       { q: "Dialogue 3 : que fait la femme ?", audio: [["F", "Pardon, vous pouvez répéter, s'il vous plaît ? Je n'ai pas bien compris le nom de la rue."], ["M", "Bien sûr : rue de la République."]],
-        o: ["Elle donne une adresse.", "Elle se trompe de rue.", "Elle demande de répéter.", "Elle se plaint du bruit."], a: 2, x: "Elle dit : « Vous pouvez répéter, s'il vous plaît ? »" },
+        o: ["Elle donne une adresse.", "Elle se trompe de rue.", "Elle se plaint du bruit.", "Elle demande de répéter."], a: 3, x: "Elle dit : « Vous pouvez répéter, s'il vous plaît ? »" },
       { q: "Dialogue 4 : que fait la femme ?", audio: [["M", "À mon avis, ce film est nul. L'histoire est trop longue et les acteurs ne sont pas bons."], ["F", "Ah non, je ne suis pas d'accord ! Moi, j'ai adoré."]],
-        o: ["Elle est d'accord avec lui.", "Elle propose un autre film.", "Elle critique les acteurs.", "Elle exprime son désaccord."], a: 3, x: "Elle dit : « Je ne suis pas d'accord ! Moi, j'ai adoré. »" },
+        o: ["Elle exprime son désaccord.", "Elle propose un autre film.", "Elle critique les acteurs.", "Elle est d'accord avec lui."], a: 0, x: "Elle dit : « Je ne suis pas d'accord ! Moi, j'ai adoré. »" },
       { q: "Dialogue 5 : que fait la femme ?", audio: [["F", "Qu'est-ce que tu en penses : je prends le manteau bleu ou le noir ?"], ["M", "Le bleu, sans hésiter !"]],
-        o: ["Elle demande un avis.", "Elle offre un manteau.", "Elle rend un manteau.", "Elle se plaint du prix."], a: 0, x: "Elle dit : « Qu'est-ce que tu en penses ? »" }
+        o: ["Elle rend un manteau.", "Elle offre un manteau.", "Elle demande un avis.", "Elle se plaint du prix."], a: 2, x: "Elle dit : « Qu'est-ce que tu en penses ? »" }
     ] },
 
   /* ───────────── Sujet 10 ───────────── */
@@ -345,15 +345,15 @@
     audio: [],
     questions: [
       { q: "Dialogue 1 : que fait la femme ?", audio: [["F", "J'ai appris que tu t'étais cassé la jambe… Bon rétablissement ! Repose-toi bien."], ["M", "Merci, c'est gentil."]],
-        o: ["Elle souhaite un bon rétablissement.", "Elle se moque de son ami.", "Elle propose une promenade en ville.", "Elle annonce un accident de voiture."], a: 0, x: "Elle dit : « Bon rétablissement ! Repose-toi bien. »" },
+        o: ["Elle annonce un accident de voiture.", "Elle se moque de son ami.", "Elle propose une promenade en ville.", "Elle souhaite un bon rétablissement."], a: 3, x: "Elle dit : « Bon rétablissement ! Repose-toi bien. »" },
       { q: "Dialogue 2 : que fait l'homme ?", audio: [["M", "Mettez d'abord la farine, puis ajoutez les œufs un par un, et mélangez bien."], ["F", "D'accord, comme ça ?"]],
         o: ["Il fait les courses.", "Il donne des instructions.", "Il commande un gâteau au chocolat.", "Il refuse de cuisiner."], a: 1, x: "Il dit : « Mettez d'abord la farine, puis ajoutez les œufs. »" },
       { q: "Dialogue 3 : que fait la femme ?", audio: [["F", "Excusez-moi, la musique est très forte et il est minuit. Mes enfants dorment. Vous pouvez baisser le son, s'il vous plaît ?"], ["M", "Oh, pardon, bien sûr."]],
-        o: ["Elle invite ses voisins à son anniversaire.", "Elle propose de danser.", "Elle demande de faire moins de bruit.", "Elle s'excuse pour ses enfants."], a: 2, x: "Elle dit : « Vous pouvez baisser le son, s'il vous plaît ? »" },
+        o: ["Elle demande de faire moins de bruit.", "Elle propose de danser.", "Elle invite ses voisins à son anniversaire.", "Elle s'excuse pour ses enfants."], a: 0, x: "Elle dit : « Vous pouvez baisser le son, s'il vous plaît ? »" },
       { q: "Dialogue 4 : que fait l'homme ?", audio: [["M", "Je ne sais pas… Je prends le poste à Lyon ou je reste à Lille ? Les deux ont des avantages."], ["F", "Prends ton temps pour réfléchir."]],
-        o: ["Il accepte un poste.", "Il refuse un poste.", "Il déménage à Lyon.", "Il hésite entre deux choix."], a: 3, x: "Il dit : « Je ne sais pas… Je prends le poste à Lyon ou je reste à Lille ? »" },
+        o: ["Il accepte un poste.", "Il refuse un poste.", "Il hésite entre deux choix.", "Il déménage à Lyon."], a: 2, x: "Il dit : « Je ne sais pas… Je prends le poste à Lyon ou je reste à Lille ? »" },
       { q: "Dialogue 5 : que fait l'homme ?", audio: [["F", "Ça te dirait d'échanger ? Je t'apprends le turc, et toi, tu m'aides en français."], ["M", "Avec plaisir, c'est une super idée !"]],
-        o: ["Il refuse la proposition.", "Il accepte la proposition.", "Il apprend le turc seul.", "Il propose un cours payant."], a: 1, x: "Il dit : « Avec plaisir, c'est une super idée ! »" }
+        o: ["Il accepte la proposition.", "Il refuse la proposition.", "Il apprend le turc seul.", "Il propose un cours payant."], a: 0, x: "Il dit : « Avec plaisir, c'est une super idée ! »" }
     ] }
 
 );

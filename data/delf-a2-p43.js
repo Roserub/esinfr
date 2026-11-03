@@ -46,7 +46,7 @@
     help: { tr: "Ulaşım üzerine yerel bir radyo programından üç kısa bölüm dinleyeceksiniz. Soruları okuyun. Bölümleri dinleyin, sonra cevap verin.", en: "You will hear three extracts from a local radio programme about transport. Read the questions, listen, then answer." },
     audio: [
       ["M", "Extrait 1. Bonne nouvelle pour les habitants de la métropole : à partir du 1er janvier, le tram et le bus seront gratuits pour tous les habitants, tous les jours de la semaine. Pour en profiter, il faut demander une carte gratuite sur le site de la métropole ou à l'agence de la gare. Les touristes, eux, devront toujours acheter un ticket."],
-      ["F", "Extrait 2. Vous voulez essayer la trottinette électrique ? Attention aux règles ! Vous devez avoir au moins 14 ans et rouler sur les pistes cyclables, jamais sur le trottoir. La vitesse maximum est de 25 km/h. Le casque n'est pas obligatoire pour les adultes, mais il est fortement conseillé."],
+      ["F", "Extrait 2. Vous voulez essayer la trottinette électrique ? Attention aux règles ! Vous devez avoir au moins 14 ans et rouler sur les pistes cyclables, jamais sur le trottoir. La vitesse maximum est de 25 kilomètres à l'heure. Le casque n'est pas obligatoire pour les adultes, mais il est fortement conseillé."],
       ["M", "Extrait 3. Et pour finir, une idée originale : la boulangerie du quartier des Arceaux livre maintenant son pain en vélo cargo ! Le boulanger, Gilles, fait ses livraisons le mardi et le vendredi matin. Il a déjà 40 clients, surtout des personnes âgées. Pour commander, il suffit de lui téléphoner la veille."]
     ],
     questions: [
@@ -118,7 +118,7 @@
         audio: [["F", "Tu vas encore au travail en voiture ? Avec les bouchons, tu perds une heure par jour !"], ["M", "Oui, je sais, c'est fatigant…"], ["F", "Tu devrais prendre le tram : depuis janvier, il est gratuit, et il y a un arrêt devant ton bureau."], ["M", "Ah bon ? Je ne savais pas !"]],
         o: ["Donner un conseil", "Se plaindre", "Proposer son aide", "S'excuser"], a: 0,
         x: "La femme dit : « Tu devrais prendre le tram. »",
-        xtr: "« Tu devrais + mastar » = \"… yapmalısın\": tavsiye kalıbı. Adam trafikten yorulduğunu söylüyor ama diyaloğun amacı kadının tavsiyesi." },
+        xtr: "« Tu devrais + mastar » = « … yapmalısın »: tavsiye kalıbı. Adam trafikten yorulduğunu söylüyor ama diyaloğun amacı kadının tavsiyesi." },
       { q: "Dialogue 4 : quelle est la situation ?",
         audio: [["M", "Dimanche, on fait une balade en vélo cargo avec les enfants, le long de la rivière. Tu viens avec nous ?"], ["F", "C'est gentil, mais je ne peux pas : je travaille tout le week-end."], ["M", "Dommage ! Une autre fois, alors."]],
         o: ["Proposer son aide", "Donner un conseil", "Demander son chemin", "Refuser une proposition"], a: 3,
@@ -202,7 +202,7 @@
         xtr: "« déverrouiller » = kilidini açmak. Gidondaki (« guidon ») QR kodu okutulur. Aylık abonelik zorunlu değil." },
       { q: "Sans abonnement, un trajet de 10 minutes coûte…", o: ["1 €.", "2,50 €.", "3,50 €."], a: 2,
         x: "« 1 € pour déverrouiller, puis 0,25 € par minute » : 1 € + 10 × 0,25 € = 3,50 €.",
-        xtr: "Kilit açma 1 € + 10 dakika × 0,25 € = 2,50 €. Toplam 3,50 €. 2,50 € sadece dakikaların ücreti; kilit açmayı unutmayın." },
+        xtr: "Kilit açma 1 € + 10 dakika × 0,25 € (2,50 €) = toplam 3,50 €. 2,50 € sadece dakikaların ücreti; kilit açmayı unutmayın." },
       { q: "Dans une zone piétonne, on peut rouler…", o: ["🎧 avec des écouteurs", "🐢 à 10 km/h maximum", "👥 à deux personnes"], a: 1,
         x: "« Dans les zones piétonnes, la vitesse est limitée à 10 km/h. »",
         xtr: "Yaya bölgelerinde hız en fazla 10 km/sa. Kulaklık yasak; « Une seule personne » = scooterda tek kişi." },
