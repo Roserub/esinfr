@@ -254,7 +254,7 @@
       { c: "Parler de vos sentiments (stress, peur, joie)", kw: ["stressé", "stressée", "stresse", "stressee", "peur", "j'avais", "nerveuse", "nerveux", "content", "contente", "fière", "fiere"] },
       { c: "Donner vos impressions ou la suite", kw: ["je pense", "j'espère", "j'espere", "réponse", "reponse", "bien passé", "bien passe", "sympathique", "gentil", "gentille", "la semaine prochaine"] }
     ],
-    model: "Chère Clémence,\nMardi dernier, j'ai passé mon premier entretien en France ! C'était dans un cabinet de kinésithérapie, à Lyon. Je suis arrivée dix minutes en avance, mais j'étais très stressée. La directrice était très gentille. Elle m'a posé beaucoup de questions sur mon expérience avec les sportifs à Istanbul. J'ai parlé lentement et j'ai fait quelques fautes, mais elle a compris. À la fin, j'ai visité le cabinet.\nJe pense que l'entretien s'est bien passé. J'aurai la réponse la semaine prochaine. Croise les doigts pour moi !\nBises,\nEsin" },
+    model: "Chère Clémence,\nMardi dernier, j'ai passé mon premier entretien en France ! C'était dans une salle de sport, à Lyon, pour un poste à l'accueil. Je suis arrivée dix minutes en avance, mais j'étais très stressée. La directrice était très gentille. Elle m'a posé beaucoup de questions sur mon expérience avec les sportifs à Istanbul. J'ai parlé lentement et j'ai fait quelques fautes, mais elle a compris.\nJe pense que l'entretien s'est bien passé. J'aurai la réponse la semaine prochaine. Croise les doigts pour moi !\nBises,\nEsin" },
 
   { id: "a2-s40-pe2", level: "A2", sujet: 40, sec: "pe", ex: 2, pts: 12, kind: "text",
     title: "Postuler au club de handball",
@@ -268,7 +268,7 @@
       { c: "Donner vos disponibilités", kw: ["disponible", "libre", "mercredi", "samedi", "tous les", "après-midi", "apres-midi", "matin"] },
       { c: "Demander un rendez-vous", kw: ["rendez-vous", "rencontrer", "entretien", "vous voir", "est-ce que je peux", "pourriez-vous", "j'aimerais", "je voudrais"] }
     ],
-    model: "Madame,\nJe m'appelle Esin Yılmaz, j'ai 31 ans et je suis turque. Je suis kinésithérapeute et j'ai travaillé pendant six ans avec des équipes de handball à Istanbul. J'ai aussi joué au handball pendant quinze ans.\nVotre annonce m'intéresse beaucoup, parce que j'adore ce sport et j'aime travailler avec les enfants. Je suis disponible le mercredi après-midi et le samedi matin.\nEst-ce que je pourrais vous rencontrer pour un entretien ? Je vous envoie mon CV.\nCordialement,\nEsin Yılmaz" },
+    model: "Madame,\nJe m'appelle Esin Yılmaz, j'ai 30 ans et je suis turque. Je suis kinésithérapeute et j'ai travaillé pendant six ans avec des équipes de handball à Istanbul. J'ai aussi joué au handball pendant quinze ans.\nVotre annonce m'intéresse beaucoup, parce que j'adore ce sport et j'aime travailler avec les enfants. Je suis disponible le mercredi après-midi et le samedi matin.\nEst-ce que je pourrais vous rencontrer pour un entretien ? Je vous envoie mon CV.\nCordialement,\nEsin Yılmaz" },
 
   /* ───────────── Production orale ───────────── */
   { id: "a2-s40-po1", level: "A2", sujet: 40, sec: "po", ex: 1, pts: 8, kind: "entretien",
@@ -276,14 +276,14 @@
     consigne: "Entretien dirigé (1 minute 30 environ, sans préparation). Vous saluez l'examinateur. Vous vous présentez et vous répondez à ses questions (vous, vos études, votre parcours professionnel, vos projets…).",
     help: { tr: "Yönlendirilmiş görüşme (yaklaşık 1,5 dakika, hazırlıksız). Sınav görevlisini selamlayın, kendinizi tanıtın ve sorularına cevap verin. Kısa ve tam cümleler kurun; her soruya 2–3 cümle yeterli.", en: "Guided interview (about 1.5 minutes, no preparation). Greet the examiner, introduce yourself and answer the questions (you, your studies, your career, your plans…)." },
     prompts: [
-      { q: "Bonjour ! Vous pouvez vous présenter ?", m: "Bonjour ! Je m'appelle Esin, j'ai 31 ans. Je suis turque, je viens d'Istanbul, et j'habite en France depuis un an." },
+      { q: "Bonjour ! Vous pouvez vous présenter ?", m: "Bonjour ! Je m'appelle Esin, j'ai 30 ans. Je suis turque, je viens d'Istanbul, et j'habite en France depuis un an." },
       { q: "Qu'est-ce que vous avez étudié ?", m: "J'ai étudié la kinésithérapie à l'université, à Istanbul. Mes études ont duré quatre ans." },
       { q: "Quel a été votre premier travail ?", m: "Mon premier travail, c'était dans un hôpital. Ensuite, j'ai travaillé avec un club de handball pendant six ans." },
       { q: "Qu'est-ce que vous aimiez dans ce travail ?", m: "J'aimais le contact avec les sportifs. Je les aidais à reprendre le sport après une blessure, c'était très motivant." },
-      { q: "Est-ce que vous travaillez en France ?", m: "Pas encore. Je cherche un poste dans un cabinet de kinésithérapie, mais d'abord, je dois améliorer mon français." },
-      { q: "Comment est-ce que vous cherchez du travail ?", m: "Je regarde les offres sur internet, j'envoie mon CV et je parle avec d'autres kinés de mon quartier." },
+      { q: "Est-ce que vous travaillez en France ?", m: "Pas encore. Mon diplôme turc n'est pas reconnu en France. D'abord, je dois améliorer mon français pour entrer en STAPS." },
+      { q: "Comment est-ce que vous cherchez du travail ?", m: "Je cherche un petit travail pour le matin : je regarde les offres sur internet et j'envoie mon CV." },
       { q: "Quelles sont vos qualités pour le travail ?", m: "Je suis patiente, sérieuse et j'aime travailler en équipe. Je suis aussi très ponctuelle !" },
-      { q: "Quels sont vos projets pour l'année prochaine ?", m: "L'année prochaine, je voudrais réussir le DELF et trouver un travail. Plus tard, j'aimerais ouvrir mon propre cabinet." }
+      { q: "Quels sont vos projets pour l'année prochaine ?", m: "L'année prochaine, je voudrais réussir le DELF et entrer en STAPS. Plus tard, j'aimerais ouvrir mon propre cabinet." }
     ] },
 
   { id: "a2-s40-po2", level: "A2", sujet: 40, sec: "po", ex: 2, pts: 8, kind: "monologue",

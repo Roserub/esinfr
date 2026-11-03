@@ -92,10 +92,10 @@
         x: "« je voudrais une jolie coiffure, avec des petites fleurs blanches dans les cheveux » : la femme est chez le coiffeur.",
         xtr: "« Une coiffure » = saç modeli, « les cheveux » = saçlar. Çiçekler saça takılacak, yani kuaförde. Çiçekçi resmi bir tuzak." },
       { q: "Dialogue 5 : où sont ces personnes ?",
-        audio: [["M", "Mettez-vous ici, devant l'arbre. Et souriez !"], ["F", "Comme ça ?"], ["M", "Parfait ! Maintenant, une autre avec toute la famille !"]],
+        audio: [["M", "Bienvenue dans mon studio ! Mettez-vous ici, devant le fond blanc. Et souriez !"], ["F", "Comme ça ?"], ["M", "Parfait ! Maintenant, une autre avec toute la famille !"]],
         o: ["💇 chez le coiffeur", "📸 chez le photographe", "🤵 au magasin de costumes", "🎂 chez le pâtissier"], a: 1,
-        x: "« Mettez-vous ici… Et souriez ! » : c'est le photographe.",
-        xtr: "« Souriez ! » = gülümseyin! « Une autre avec toute la famille » = tüm aileyle bir tane daha: fotoğrafçı." }
+        x: "« Bienvenue dans mon studio ! … Et souriez ! » : ils sont chez le photographe.",
+        xtr: "« mon studio » = stüdyom; « Souriez ! » = gülümseyin! « Une autre avec toute la famille » = tüm aileyle bir tane daha: fotoğrafçı." }
     ] },
 
   /* ───────── Compréhension des écrits ───────── */
@@ -106,9 +106,9 @@
     doc: { type: "email", from: "sophie.marchal@mail.fr", subject: "Cadeau pour Inès et Baptiste",
       body: "Salut !\n\nTu viens au mariage d'Inès et Baptiste le 14 juin ? Moi, oui ! Pour le cadeau, j'ai une idée : un cadeau ensemble, avec tous les amis de la fac. Après le mariage, Inès et Baptiste partent en voyage au Portugal. On peut donner de l'argent pour le voyage. Chaque personne donne 25 €.\n\nJe fais aussi une jolie carte. Tu peux venir chez moi mercredi soir, à 19 h, pour écrire un petit mot ? J'habite 8, rue Monge.\n\nÀ bientôt !\nSophie" },
     questions: [
-      { q: "Pour le cadeau, Sophie propose…", o: ["🛍️ d'acheter une robe", "🎁 un cadeau ensemble", "✈️ un voyage avec Inès"], a: 1,
-        x: "« j'ai une idée : un cadeau ensemble, avec tous les amis de la fac ».",
-        xtr: "« Un cadeau ensemble » = birlikte (ortak) bir hediye. Seyahate yeni evliler gidiyor, Sophie değil; elbise almak da metinde yok." },
+      { q: "Pour le cadeau, Sophie propose…", o: ["🛍️ d'acheter une robe", "👥 de payer à plusieurs", "✈️ de partir avec eux"], a: 1,
+        x: "« un cadeau ensemble, avec tous les amis de la fac […] Chaque personne donne 25 €. »",
+        xtr: "« Un cadeau ensemble » = birlikte (ortak) bir hediye: herkes 25 € veriyor. Seyahate yeni evliler gidiyor, Sophie değil; elbise almak da metinde yok." },
       { q: "Après le mariage, Inès et Baptiste partent…", o: ["en Espagne", "à Beaune", "au Portugal"], a: 2,
         x: "« Inès et Baptiste partent en voyage au Portugal ».",
         xtr: "Yeni evliler Portekiz'e seyahate çıkıyor. İspanya metinde yok." },

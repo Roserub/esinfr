@@ -258,10 +258,10 @@
            ] },
       g: { say: [["F", "Bien sûr, c'est possible. Je dois juste vérifier votre identité. Quelle est votre date de naissance ?"]],
            choices: [
-             { fr: "Je suis née le 14 mars 1999.", tr: "14 Mart 1999'da doğdum.", en: "I was born on 14 March 1999.", ok: true, go: "h" },
-             { fr: "J'ai né le 14 mars 1999.", tr: "14 Mart 1999'da doğdum.", en: "I have born on 14 March 1999.", ok: false,
+             { fr: "Je suis née le 14 mars 1996.", tr: "14 Mart 1996'da doğdum.", en: "I was born on 14 March 1996.", ok: true, go: "h" },
+             { fr: "J'ai né le 14 mars 1996.", tr: "14 Mart 1996'da doğdum.", en: "I have born on 14 March 1996.", ok: false,
                fb: { fr: "« Naître » prend être : « je suis née ». Le verbe de la naissance mérite bien être 👶😉.", tr: "« Naître » être alır: « je suis née ». Doğum fiili être'yi hak ediyor 👶😉.", en: "« Naître » takes être: « je suis née ». The verb of being born deserves être 👶😉." } },
-             { fr: "J'ai 27 ans.", tr: "27 yaşındayım.", en: "I'm 27.", ok: false,
+             { fr: "J'ai 30 ans.", tr: "30 yaşındayım.", en: "I'm 30.", ok: false,
                fb: { fr: "Elle veut la date complète, pas l'âge : « je suis née le… ».", tr: "Yaşınızı değil, tam doğum tarihinizi istiyor: « je suis née le… ».", en: "She wants the full date, not your age: « je suis née le… »." } }
            ] },
       h: { say: [["F", "Merci. Et vous pouvez me confirmer votre adresse e-mail ?"]],

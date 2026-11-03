@@ -12,11 +12,19 @@
   /* Balance where the right answer sits: a fixed, per-question shuffle of 3-option lists (true/false and lettered lists keep their order). */
   const hash = str => { let h = 2166136261; for (const ch of str) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; };
   const PERMS = [[0, 1, 2], [0, 2, 1], [1, 0, 2], [1, 2, 0], [2, 0, 1], [2, 1, 0]];
-  for (const it of D) (it.questions || []).forEach((q, qi) => {
-    if (q.shuffled || q.o.length !== 3 || q.o.some(o => /^(vrai|faux|annonce|document|texte|message|dialogue)\b/i.test(o))) return;
-    const pm = PERMS[hash(it.id + ":" + qi) % 6], o = pm.map(i => q.o[i]);
-    q.a = pm.indexOf(q.a); q.o = o; q.shuffled = true;
-  });
+  // Inside one exercise the right answer never sits in the same place as in the question just before
+  // (a run like B, B, B, B would give the answers away).
+  const USED = {};
+  for (const it of D) { let prev = -1; (it.questions || []).forEach((q, qi) => {
+    if (q.shuffled || q.o.length !== 3 || q.o.some(o => /^(vrai|faux|annonce|document|texte|message|dialogue)\b/i.test(o))) { prev = -1; return; }
+    const h = hash(it.id + ":" + qi), c = USED[it.level] = USED[it.level] || [0, 0, 0];
+    // Among the orders (tried from a fixed, per-question start), keep the one that puts the answer in the
+    // place used least so far, never the place of the previous answer.
+    let pm = null;
+    for (let k = 0; k < 6; k++) { const p = PERMS[(h + k) % 6], at = p.indexOf(q.a); if (at !== prev && (!pm || c[at] < c[pm.indexOf(q.a)])) pm = p; }
+    const o = pm.map(i => q.o[i]);
+    q.a = pm.indexOf(q.a); q.o = o; q.shuffled = true; prev = q.a; c[q.a]++;
+  }); }
   const HAS_TR = {}; for (const it of D) if ((it.questions || []).some(q => q.xtr)) HAS_TR[it.level + "-" + it.sujet] = true;
 
   const A = () => window.APP;

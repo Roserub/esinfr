@@ -158,7 +158,7 @@
         .replace(/[\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}\u{1F3FB}-\u{1F3FF}\uFE0F\u200D\u20E3]/gu, " ")
         .replace(/[\u2190-\u21FF\u2600-\u27BF\u2B00-\u2BFF✓✗✔✘•●○◦▶⏹⏸★☆]/gu, " ")
         .replace(/[ıİşŞğĞ]/g, c => TRL[c])
-        .replace(/(?<!\b(?:du|taille|en) )\bM\. (?=\p{Lu})/gu, "monsieur ").replace(/\bMme\b/g, "madame").replace(/\bMlle\b/g, "mademoiselle")
+        .replace(/(^|[^\p{L}])(du |taille |en )?M\. (?=\p{Lu})/gu, (m, a, b) => b ? m : a + "monsieur ").replace(/\bMme\b/g, "madame").replace(/\bMlle\b/g, "mademoiselle")
         .replace(/(\p{Ll})\((e|s|es)\)/gu, "$1")
         .replace(/[*_#<>\[\]{}|`~\\]/g, " ")
         .replace(/\s+([,.])/g, "$1").replace(/([,.])(?:\s*[,.])+/g, "$1")
@@ -1315,6 +1315,8 @@
     if (window.BASICS_UI) window.BASICS_UI.onHash();
     if (window.EXAM) window.EXAM.onHash();
     if (window.GAMES) window.GAMES.onHash();
+    // Screen readers and keyboards start at the new page, not on the link that was left behind.
+    if (top !== "search") try { main.focus({ preventScroll: true }); } catch (e) {}
     render();
     if (top !== lastTop || !route().params.get("step")) window.scrollTo(0, 0);
     lastTop = top;
@@ -1392,9 +1394,10 @@
       case "reset": if (confirm(t("prog.resetConfirm"))) { const l = S.lang; S = DEFAULT(); S.lang = l; save(); render(); } break;
     }
   });
+  let searchT = 0;
   document.addEventListener("input", e => {
     if (e.target.id === "lib-q") { LIB.q = e.target.value; renderLibList(); }
-    if (e.target.id === "search-q") renderSearch();
+    if (e.target.id === "search-q") { clearTimeout(searchT); searchT = setTimeout(renderSearch, 150); } // no lag while typing on a phone
     if (window.EXAM) window.EXAM.input(e);
   });
   document.addEventListener("change", e => {

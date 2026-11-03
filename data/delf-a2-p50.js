@@ -254,7 +254,7 @@
       { c: "Parler de vos projets avec vos nouveaux amis", kw: ["on va", "nous allons", "je vais", "samedi prochain", "la semaine prochaine", "ensemble", "bientôt", "bientot"] },
       { c: "Donner vos impressions", kw: ["content", "contente", "heureux", "heureuse", "super", "génial", "genial", "sympa", "je ne suis plus seule", "je ne suis plus seul"] }
     ],
-    model: "Coucou Lou,\nVendredi dernier, je suis allée à la soirée des nouveaux arrivants, à la mairie. Il y avait beaucoup de monde et l'ambiance était très sympa ! D'abord, la maire a fait un petit discours. Ensuite, j'ai parlé avec Clémence, une prof de musique, et avec Malik, un infirmier de Toulouse. Nous avons mangé des galettes et nous avons ri toute la soirée. Samedi prochain, on va faire une randonnée ensemble. Je suis tellement contente : je ne suis plus seule ici !\nBises,\nEsin" },
+    model: "Coucou Lou,\nVendredi dernier, je suis allée à la soirée des nouveaux arrivants, à la mairie. Il y avait beaucoup de monde et l'ambiance était très sympa ! D'abord, la maire a fait un petit discours. Ensuite, j'ai parlé avec Clémence, une prof de musique, et avec Malik, un infirmier de Toulouse. Nous avons mangé des galettes et nous avons ri toute la soirée. Samedi prochain, on va faire une randonnée ensemble. Je suis tellement contente : j'ai enfin des amis ici !\nBises,\nEsin" },
 
   { id: "a2-s50-pe2", level: "A2", sujet: 50, sec: "pe", ex: 2, pts: 12, kind: "text",
     title: "Une fête pour mes nouveaux amis",
@@ -303,7 +303,7 @@
       { c: "Proposer plusieurs moyens", kw: ["club", "association", "application", "colocation", "bénévole", "benevole", "sport", "café", "cafe", "soirée", "soiree"] },
       { c: "Donner des conseils", kw: ["il faut", "je conseille", "à mon avis", "a mon avis", "n'ayez pas peur", "vous pouvez", "on peut", "il ne faut pas"] }
     ],
-    model: "Quand je suis arrivée en France, je ne connaissais personne. Le soir, j'étais souvent seule et ma famille me manquait beaucoup. Alors, j'ai décidé de sortir de chez moi ! D'abord, je me suis inscrite dans un club de handball : le sport, c'est parfait pour rencontrer des gens, parce qu'on partage quelque chose. Ensuite, j'ai essayé une application d'échange de langues et j'ai rencontré Clémence, qui est maintenant ma meilleure amie. Je suis aussi allée à la soirée des nouveaux arrivants de la mairie. À mon avis, il faut faire des activités régulières, chaque semaine, avec les mêmes personnes. On peut aussi vivre en colocation ou devenir bénévole. Et surtout, n'ayez pas peur de faire des erreurs en français : les gens sont souvent très gentils !" },
+    model: "Quand je suis arrivée en France, je ne connaissais personne. La journée, mon mari travaillait, j'étais souvent seule et ma famille me manquait beaucoup. Alors, j'ai décidé de sortir de chez moi ! D'abord, je me suis inscrite dans un club de handball : le sport, c'est parfait pour rencontrer des gens, parce qu'on partage quelque chose. Ensuite, j'ai essayé une application d'échange de langues et j'ai rencontré Clémence, qui est maintenant ma meilleure amie. Je suis aussi allée à la soirée des nouveaux arrivants de la mairie. À mon avis, il faut faire des activités régulières, chaque semaine, avec les mêmes personnes. On peut aussi vivre en colocation ou devenir bénévole. Et surtout, n'ayez pas peur de faire des erreurs en français : les gens sont souvent très gentils !" },
 
   { id: "a2-s50-po3", level: "A2", sujet: 50, sec: "po", ex: 3, pts: 9, kind: "dialogue",
     title: "Visite d'une colocation",

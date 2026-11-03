@@ -111,7 +111,7 @@
       { c: "Raconter ce que vous avez fait", kw: ["j'ai visité", "j'ai soigné", "j'ai travaillé", "patients", "soigné", "rencontré", "appris", "découvert", "j'ai commencé"] },
       { c: "Donner vos impressions", kw: ["stressée", "stressé", "contente", "heureuse", "content", "peur", "c'était", "j'étais", "difficile", "fatiguée", "aimer"] }
     ],
-    model: "Chère Marion,\nLundi, j'ai commencé mon nouveau travail dans un centre de rééducation à Toulouse. J'étais un peu stressée le matin ! Mais la directrice m'a bien accueillie et mes collègues sont très sympas. J'ai visité le centre, puis j'ai soigné mes premiers patients : un footballeur et une dame âgée. Le soir, j'étais fatiguée mais très heureuse. Je pense que je vais aimer ce travail !\nBises,\nEsin" },
+    model: "Chère Marion,\nLundi, j'ai commencé mon nouveau travail à l'accueil d'un centre sportif, à Toulouse. J'étais un peu stressée le matin ! Mais la directrice m'a bien accueillie et mes collègues sont très sympas. J'ai visité le centre, puis j'ai accueilli mes premiers clients : un footballeur et une dame âgée. Le soir, j'étais fatiguée mais très heureuse. Je pense que je vais aimer ce travail !\nBises,\nEsin" },
   { id: "a2-s05-pe2", level: "A2", sujet: 5, sec: "pe", ex: 2, pts: 12, kind: "text",
     title: "Accepter un week-end randonnée",
     consigne: "Votre collègue Mathieu vous écrit : « Avec des amis, on organise un week-end de randonnée dans les Pyrénées les 20 et 21 septembre. Tu veux venir avec nous ? » Vous acceptez. Vous dites pourquoi vous êtes content(e), vous posez des questions sur l'organisation et vous proposez d'apporter quelque chose. (60 mots minimum)",
@@ -198,7 +198,7 @@
       { c: "Parler de vos progrès en français", kw: ["français", "cours", "progrès", "je parle", "je comprends", "j'apprends", "langue"] },
       { c: "Parler de vos loisirs", kw: ["sport", "loisirs", "club", "courir", "yoga", "natation", "randonnée", "ski", "week-end"] }
     ],
-    model: "Chère Zeynep,\nQuel plaisir de lire ton message ! Tout va bien ici. Nous habitons maintenant à Grenoble, dans un petit appartement avec une vue sur les montagnes. Depuis janvier, je travaille dans un cabinet de kiné : mes patients sont très gentils. Je prends des cours de français deux fois par semaine et je fais des progrès. Le week-end, je fais du ski ou de la randonnée avec des amis. Et toi ?\nBises,\nEsin" },
+    model: "Chère Zeynep,\nQuel plaisir de lire ton message ! Tout va bien ici. Nous habitons maintenant à Grenoble, dans un petit appartement avec une vue sur les montagnes. Je ne travaille pas encore comme kiné : mon diplôme turc n'est pas reconnu ici. Alors, je travaille le matin dans une salle de sport. Je prends des cours de français deux fois par semaine et je fais des progrès. Le week-end, je fais du ski ou de la randonnée avec des amis. Et toi ?\nBises,\nEsin" },
 
   { id: "a2-s09-pe1", level: "A2", sujet: 9, sec: "pe", ex: 1, pts: 13, kind: "text",
     title: "Un excellent repas au restaurant",
@@ -223,7 +223,7 @@
       { c: "Parler du médecin", kw: ["médecin", "docteur", "consultation", "rendez-vous", "examen"] },
       { c: "Proposer votre aide", kw: ["si tu veux", "je peux", "viens", "ensemble", "avec toi", "je vais te montrer", "cabinet"] }
     ],
-    model: "Salut Antoine,\nJe suis désolée pour ton dos ! D'abord, il faut aller voir ton médecin. Ensuite, je te conseille la natation : c'est le meilleur sport pour le dos. Tu peux aussi faire du yoga ou de la marche. Mais il faut commencer doucement, deux fois par semaine, et il ne faut pas porter de choses lourdes. Si tu veux, viens à mon cabinet mardi : je vais te montrer des exercices.\nBon courage !\nEsin" },
+    model: "Salut Antoine,\nJe suis désolée pour ton dos ! D'abord, il faut aller voir ton médecin. Ensuite, je te conseille la natation : c'est le meilleur sport pour le dos. Tu peux aussi faire du yoga ou de la marche. Mais il faut commencer doucement, deux fois par semaine, et il ne faut pas porter de choses lourdes. Si tu veux, viens chez moi mardi : je vais te montrer des exercices.\nBon courage !\nEsin" },
 
   { id: "a2-s10-pe1", level: "A2", sujet: 10, sec: "pe", ex: 1, pts: 13, kind: "text",
     title: "Une journée catastrophique",
@@ -236,7 +236,7 @@
       { c: "Dire comment la journée s'est terminée", kw: ["soir", "finalement", "enfin", "rentrée", "rentré", "heureusement", "à la fin"] },
       { c: "Exprimer vos sentiments", kw: ["énervée", "énervé", "fatiguée", "fatigué", "triste", "en colère", "horrible", "catastrophe", "quelle journée", "mauvaise"] }
     ],
-    model: "Salut Nico,\nHier, quelle journée horrible ! Le matin, mon réveil n'a pas sonné et je me suis levée à 8 h 30. J'ai raté mon bus et je suis arrivée en retard au cabinet. À midi, il a commencé à pleuvoir et j'ai oublié mon parapluie ! L'après-midi, mon téléphone est tombé par terre et l'écran s'est cassé. Heureusement, le soir, mon mari a préparé un bon dîner.\nBises,\nEsin" },
+    model: "Salut Nico,\nHier, quelle journée horrible ! Le matin, mon réveil n'a pas sonné et je me suis levée à 8 h 30. J'ai raté mon bus et je suis arrivée en retard au travail. À midi, il a commencé à pleuvoir et j'ai oublié mon parapluie ! L'après-midi, mon téléphone est tombé par terre et l'écran s'est cassé. Heureusement, le soir, mon mari a préparé un bon dîner.\nBises,\nEsin" },
   { id: "a2-s10-pe2", level: "A2", sujet: 10, sec: "pe", ex: 2, pts: 12, kind: "text",
     title: "Demander à visiter un appartement",
     consigne: "Vous avez lu cette annonce : « À louer : appartement 2 pièces, centre-ville, 650 € par mois. Contact : M. Laurent. » Vous écrivez un e-mail à M. Laurent : vous vous présentez, vous dites que l'appartement vous intéresse, vous posez des questions et vous demandez un rendez-vous pour le visiter. (60 mots minimum)",
@@ -248,5 +248,5 @@
       { c: "Poser des questions", kw: ["charges", "étage", "ascenseur", "meublé", "disponible", "balcon", "parking", "combien", "quand", "est-ce que"] },
       { c: "Demander une visite", kw: ["visiter", "visite", "rendez-vous", "voir l'appartement", "le voir"] }
     ],
-    model: "Bonjour Monsieur Laurent,\nJ'ai lu votre annonce et votre appartement m'intéresse beaucoup. Je m'appelle Esin Yilmaz, je suis kinésithérapeute et je travaille dans le centre-ville. J'ai quelques questions : est-ce que les charges sont comprises dans le prix ? À quel étage est l'appartement ? Y a-t-il un ascenseur ? Il est disponible à partir de quand ? Est-ce que je peux le visiter samedi matin ?\nCordialement,\nEsin Yilmaz" }
+    model: "Bonjour Monsieur Laurent,\nJ'ai lu votre annonce et votre appartement m'intéresse beaucoup. Je m'appelle Esin Yilmaz, je suis kinésithérapeute et mon école de français est dans le centre-ville. J'ai quelques questions : est-ce que les charges sont comprises dans le prix ? À quel étage est l'appartement ? Y a-t-il un ascenseur ? Il est disponible à partir de quand ? Est-ce que je peux le visiter samedi matin ?\nCordialement,\nEsin Yilmaz" }
 );

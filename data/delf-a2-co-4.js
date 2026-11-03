@@ -278,16 +278,16 @@
     help: { tr: "Beş kısa diyalog dinleyeceksiniz. Her diyalog için soruyu okuyun, dinleyin ve kişinin ne yaptığını seçin.", en: "You will hear five short dialogues. For each one, read the question, listen, then choose what the person is doing." },
     audio: [],
     questions: [
-      { q: "Dialogue 1 : que fait l'homme ?", audio: [["M", "Bonsoir, je voudrais une table pour 4 personnes, samedi soir, vers 20 h."], ["F", "Oui, c'est possible. À quel nom ?"]],
-        o: ["Il commande un plat.", "Il annule une réservation.", "Il demande l'addition.", "Il réserve une table."], a: 3, x: "Il dit : « Je voudrais une table pour 4 personnes, samedi soir. »" },
+      { q: "Dialogue 1 : que fait l'homme ?", audio: [["M", "Bonsoir, j'ai réservé une table pour ce soir, au nom de Martin. Mais ma fille est malade : nous ne pouvons pas venir. Je suis désolé."], ["F", "Ce n'est pas grave, monsieur. Bon rétablissement à votre fille !"]],
+        o: ["Il commande un plat.", "Il annule une réservation.", "Il demande l'addition.", "Il réserve une table."], a: 1, x: "Il dit : « J'ai réservé une table pour ce soir […] nous ne pouvons pas venir. »" },
       { q: "Dialogue 2 : que fait l'homme ?", audio: [["F", "Tu préfères la mer ou la montagne pour les vacances ?"], ["M", "Moi, je préfère la montagne : je n'aime pas la chaleur et j'adore marcher."]],
         o: ["Il exprime sa préférence.", "Il propose un voyage.", "Il refuse de partir.", "Il demande un conseil."], a: 0, x: "Il dit : « Moi, je préfère la montagne. »" },
       { q: "Dialogue 3 : que fait la femme ?", audio: [["F", "Vous avez perdu le match ? Ce n'est pas grave, vous avez bien joué. Vous gagnerez la prochaine fois !"], ["M", "Oui, tu as raison."]],
         o: ["Elle se moque de son ami.", "Elle console son ami.", "Elle raconte un match.", "Elle félicite son ami pour sa victoire."], a: 1, x: "Elle dit : « Ce n'est pas grave, vous avez bien joué. »" },
       { q: "Dialogue 4 : que fait l'homme ?", audio: [["M", "Excusez-moi, combien coûte ce vélo d'appartement ? Il n'y a pas d'étiquette."], ["F", "Il est à 249 €, mais cette semaine, il y a 10 % de réduction."]],
         o: ["Il vend un vélo.", "Il se plaint du prix.", "Il demande le prix.", "Il veut réparer un vélo."], a: 2, x: "Il dit : « Combien coûte ce vélo d'appartement ? »" },
-      { q: "Dialogue 5 : que fait la femme ?", audio: [["F", "Tu pourrais arroser mes plantes pendant mon voyage ? Je pars une semaine."], ["M", "Bien sûr, donne-moi tes clés."]],
-        o: ["Elle demande un service.", "Elle offre des plantes.", "Elle part en voyage avec son voisin.", "Elle remercie son voisin."], a: 0, x: "Elle dit : « Tu pourrais arroser mes plantes pendant mon voyage ? »" }
+      { q: "Dialogue 5 : que fait la femme ?", audio: [["F", "Tu pourrais m'aider à monter mon nouveau canapé samedi ? Il est très lourd et j'habite au cinquième."], ["M", "Bien sûr, je viens à 10 h."]],
+        o: ["Elle demande un service.", "Elle vend son vieux canapé.", "Elle invite son ami à dîner.", "Elle remercie son ami."], a: 0, x: "Elle dit : « Tu pourrais m'aider à monter mon nouveau canapé samedi ? »" }
     ] },
 
   /* ───────────── Sujet 20 ───────────── */

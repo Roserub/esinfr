@@ -281,7 +281,7 @@
     consigne: "Entretien dirigé (1 minute 30 environ, sans préparation). Vous saluez l'examinateur. Vous vous présentez et vous répondez à ses questions (vous, votre travail, vos habitudes, votre téléphone…).",
     help: { tr: "Yönlendirilmiş görüşme (yaklaşık 1,5 dakika, hazırlıksız). Sınav görevlisini selamlayın, kendinizi tanıtın ve sorularına cevap verin: siz, işiniz, alışkanlıklarınız, telefonunuz. Her soruya 2–3 kısa cümle yeterli.", en: "Guided interview (about 1.5 minutes, no preparation). Greet the examiner, introduce yourself and answer the questions (you, your work, habits, phone…)." },
     prompts: [
-      { q: "Bonjour ! Vous pouvez vous présenter ?", m: "Bonjour ! Je m'appelle Esin. Je suis turque, je viens d'Istanbul, et j'habite en France depuis quelques mois." },
+      { q: "Bonjour ! Vous pouvez vous présenter ?", m: "Bonjour ! Je m'appelle Esin. Je suis turque, je viens d'Istanbul, et j'habite en France depuis un an." },
       { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. En Turquie, je travaillais avec une équipe de handball." },
       { q: "Combien de temps est-ce que vous passez sur votre téléphone chaque jour ?", m: "Environ deux heures par jour, je pense. Un peu trop, peut-être !" },
       { q: "Quelles applications est-ce que vous utilisez le plus ?", m: "J'utilise surtout une messagerie pour parler avec ma famille, et une application pour apprendre le français." },

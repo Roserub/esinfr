@@ -48,7 +48,7 @@
     questions: [
       { q: "Extrait 1. Quel spectacle peut-on voir samedi ?",
         audio: [["F", "Voici l'agenda du week-end. Samedi, à 15 h, le cirque des Étoiles présente son nouveau spectacle sous le chapiteau, place du Marché. Dimanche, à partir de 16 h, grand bal gratuit sur la place de la mairie : venez danser !"]],
-        o: ["🎪 un clown et un acrobate", "🎻 un orchestre sur une place", "🎭 des acteurs au théâtre"], a: 0,
+        o: ["🎪 un spectacle de cirque", "🎻 un orchestre sur une place", "🎭 des acteurs au théâtre"], a: 0,
         x: "« Samedi… le cirque des Étoiles présente son nouveau spectacle sous le chapiteau. »",
         xtr: "« le cirque des Étoiles présente son nouveau spectacle sous le chapiteau » (chapiteau = sirk çadırı). Meydandaki müzik ve dans pazar günü." },
       { q: "Extrait 1. Dimanche, à partir de 16 h, on peut…",

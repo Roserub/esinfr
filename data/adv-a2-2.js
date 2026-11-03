@@ -189,7 +189,7 @@
     goal: { fr: "Appelez le service des objets trouvés, décrivez votre téléphone et allez le récupérer.", tr: "Kayıp eşya bürosunu arayın, telefonunuzu tarif edin ve gidip geri alın.", en: "Call the lost-and-found, describe your phone and go and pick it up." },
     start: "a",
     nodes: {
-      a: { scene: { fr: "Vous rentrez chez vous et vous cherchez votre téléphone dans votre sac. Rien ! Votre colocataire Chloé vous regarde.", tr: "Eve dönüyorsunuz ve çantanızda telefonunuzu arıyorsunuz. Yok! Ev arkadaşınız Chloé size bakıyor.", en: "You get home and look for your phone in your bag. Nothing! Your flatmate Chloé looks at you." },
+      a: { scene: { fr: "Vous rentrez chez vous et vous cherchez votre téléphone dans votre sac. Rien ! Votre amie Chloé, venue boire un thé, vous regarde.", tr: "Eve dönüyorsunuz ve çantanızda telefonunuzu arıyorsunuz. Yok! Çay içmeye gelen arkadaşınız Chloé size bakıyor.", en: "You get home and look for your phone in your bag. Nothing! Your friend Chloé, who came over for tea, looks at you." },
            say: [["F2", "Qu'est-ce qui se passe ? Tu as l'air paniquée !"]],
            choices: [
              { fr: "J'ai perdu mon téléphone ! Je crois que je l'ai oublié dans le bus.", tr: "Telefonumu kaybettim! Sanırım otobüste unuttum.", en: "I've lost my phone! I think I left it on the bus.", ok: true, go: "b" },
@@ -202,7 +202,7 @@
            choices: [
              { fr: "Merci, tu me sauves la vie !", tr: "Teşekkürler, hayatımı kurtarıyorsun!", en: "Thanks, you're a lifesaver!", ok: true, go: "c" },
              { fr: "Merci, vous êtes très gentille, madame.", tr: "Teşekkürler, çok naziksiniz hanımefendi.", en: "Thank you, you're very kind, madam.", ok: false,
-               fb: { fr: "Chloé partage votre cuisine, pas besoin de « madame » 😄 ! Avec une coloc, on dit « tu » : « merci, tu es gentille ».", tr: "Chloé mutfağınızı paylaşıyor, « madame »a gerek yok 😄! Ev arkadaşıyla « tu » denir: « merci, tu es gentille ».", en: "Chloé shares your kitchen, no need for « madame » 😄! With a flatmate, use « tu »: « merci, tu es gentille »." } },
+               fb: { fr: "Chloé est votre amie, pas besoin de « madame » 😄 ! Avec une amie, on dit « tu » : « merci, tu es gentille ».", tr: "Chloé arkadaşınız, « madame »a gerek yok 😄! Arkadaşla « tu » denir: « merci, tu es gentille ».", en: "Chloé is your friend, no need for « madame » 😄! With a friend, use « tu »: « merci, tu es gentille »." } },
              { fr: "Merci, j'ai appelé les objets trouvés demain.", tr: "Teşekkürler, kayıp eşyayı yarın aradım.", en: "Thanks, I called the lost-and-found tomorrow.", ok: false,
                fb: { fr: "Le passé et demain, ça ne va pas ensemble 😄. Et puis c'est urgent : « je les appelle tout de suite ! ».", tr: "Geçmiş zaman ile yarın birlikte olmaz 😄. Hem acil: « je les appelle tout de suite ! ».", en: "Past tense and tomorrow don't go together 😄. Besides, it's urgent: « je les appelle tout de suite ! »." } }
            ] },
@@ -308,8 +308,8 @@
              { fr: "Je suis turque, j'habite en France depuis deux mois, et je suis kinésithérapeute.", tr: "Türküm, iki aydır Fransa'da yaşıyorum ve fizyoterapistim.", en: "I'm Turkish, I've been living in France for two months, and I'm a physiotherapist.", ok: true, go: "c" },
              { fr: "Je suis turque et j'habite en France il y a deux mois.", tr: "Türküm ve iki ay önce Fransa'da yaşıyorum.", en: "I'm Turkish and I live in France two months ago.", ok: false,
                fb: { fr: "Vous y habitez encore, donc ça continue : « depuis deux mois ». « Il y a » sert pour une action finie : « je suis arrivée il y a deux mois ».", tr: "Hâlâ orada yaşıyorsunuz, yani devam ediyor: « depuis deux mois ». « Il y a » bitmiş bir eylem içindir: « je suis arrivée il y a deux mois ».", en: "You still live there, so it's ongoing: « depuis deux mois ». « Il y a » is for a finished action: « je suis arrivée il y a deux mois »." } },
-             { fr: "Je suis 24 ans et je suis turque.", tr: "24 yaşındayım ve Türküm.", en: "I am 24 and I'm Turkish.", ok: false,
-               fb: { fr: "Le grand classique 😊 : l'âge, on l'a ! « J'ai 24 ans ». Et ajoutez votre métier, c'est votre atout.", tr: "Klasik tuzak 😊: yaş avoir ile söylenir! « J'ai 24 ans ». Mesleğinizi de ekleyin, o sizin kozunuz.", en: "The great classic 😊: you « have » your age! « J'ai 24 ans ». And mention your job, it's your strength." } }
+             { fr: "Je suis 30 ans et je suis turque.", tr: "30 yaşındayım ve Türküm.", en: "I am 30 and I'm Turkish.", ok: false,
+               fb: { fr: "Le grand classique 😊 : l'âge, on l'a ! « J'ai 30 ans ». Et ajoutez votre métier, c'est votre atout.", tr: "Klasik tuzak 😊: yaş avoir ile söylenir! « J'ai 30 ans ». Mesleğinizi de ekleyin, o sizin kozunuz.", en: "The great classic 😊: you « have » your age! « J'ai 30 ans ». And mention your job, it's your strength." } }
            ] },
       c: { say: [["F", "Kinésithérapeute, c'est intéressant ! Et vous avez de l'expérience avec les enfants ?"]],
            choices: [

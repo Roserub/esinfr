@@ -275,7 +275,7 @@
     consigne: "Entretien dirigé (1 minute 30 environ, sans préparation). Vous saluez l'examinateur. Vous vous présentez et vous répondez à ses questions (vous, votre famille, votre quotidien, vos achats…).",
     help: { tr: "Yönlendirilmiş görüşme (yaklaşık 1,5 dakika, hazırlıksız). Sınav görevlisini selamlayın, kendinizi tanıtın ve sorularına cevap verin. Kısa ve tam cümleler kurun; her soruya 2–3 cümle yeterli.", en: "Guided interview (about 1.5 minutes, no preparation). Greet the examiner, introduce yourself and answer the questions (you, your family, daily life, shopping…)." },
     prompts: [
-      { q: "Bonjour ! Comment vous appelez-vous ? Quel âge avez-vous ?", m: "Bonjour ! Je m'appelle Esin et j'ai 31 ans." },
+      { q: "Bonjour ! Comment vous appelez-vous ? Quel âge avez-vous ?", m: "Bonjour ! Je m'appelle Esin et j'ai 30 ans." },
       { q: "Où est-ce que vous habitez ?", m: "J'habite à Bordeaux, dans un petit appartement près du centre. Avant, j'habitais à Istanbul." },
       { q: "Vous avez de la famille en France ?", m: "Oui, mon mari est ici avec moi. Mes parents et mon frère habitent toujours en Turquie." },
       { q: "Comment est une journée normale pour vous ?", m: "Le matin, je vais à mon cours de français. L'après-midi, je fais du sport, et le soir, je cuisine avec mon mari." },

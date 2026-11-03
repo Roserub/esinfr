@@ -8,7 +8,7 @@
       en: "Guided interview (about 1.5 minutes). Introduce yourself and answer the examiner's questions about your life, activities, past and plans."
     },
     prompts: [
-      { q: "Bonjour. Pouvez-vous vous présenter ?", m: "Bonjour, je m'appelle Esin. Je suis turque et j'habite en France depuis deux ans." },
+      { q: "Bonjour. Pouvez-vous vous présenter ?", m: "Bonjour, je m'appelle Esin. Je suis turque et j'habite en France depuis un an." },
       { q: "Qu'est-ce que vous avez étudié ?", m: "J'ai étudié la kinésithérapie à l'université, en Turquie." },
       { q: "Combien de temps ont duré vos études ?", m: "Mes études ont duré quatre ans." },
       { q: "Est-ce que vous avez aimé l'université ?", m: "Oui, beaucoup. Les cours pratiques étaient très intéressants." },
@@ -156,14 +156,14 @@
     prompts: [
       {
         q: "Qu'est-ce que vous faites comme travail ?",
-        m: "Je suis kinésithérapeute. Je soigne des personnes qui ont mal au dos ou aux jambes."
+        m: "Je suis kinésithérapeute. Mais mon diplôme turc n'est pas encore reconnu en France, alors je ne travaille pas comme kiné ici."
       },
-      { q: "Depuis combien de temps est-ce que vous faites ce métier ?", m: "Je fais ce métier depuis six ans." },
-      { q: "Comment avez-vous trouvé votre travail en France ?", m: "J'ai envoyé mon CV à plusieurs cabinets et j'ai passé un entretien." },
-      { q: "Comment se passe une journée de travail typique ?", m: "Je commence à 8 h 30. Je vois huit ou dix patients par jour." },
-      { q: "Qu'est-ce qui est difficile dans votre métier ?", m: "C'est fatigant et il faut bien expliquer les exercices aux patients." },
+      { q: "Pendant combien de temps est-ce que vous avez fait ce métier ?", m: "J'ai fait ce métier pendant six ans, en Turquie." },
+      { q: "Qu'est-ce que vous faites maintenant, en France ?", m: "J'apprends le français, parce que je voudrais entrer en STAPS, à l'université." },
+      { q: "Comment se passait une journée de travail typique ?", m: "Je commençais à 8 h 30. Je voyais huit ou dix patients par jour." },
+      { q: "Qu'est-ce qui était difficile dans votre métier ?", m: "C'était fatigant et il fallait bien expliquer les exercices aux patients." },
       { q: "Quel était votre premier travail ?", m: "C'était dans un hôpital, en Turquie. J'avais 23 ans et j'étais un peu stressée." },
-      { q: "Quels sont vos projets professionnels ?", m: "Je voudrais travailler avec un club de sport ou ouvrir mon propre cabinet." }
+      { q: "Quels sont vos projets professionnels ?", m: "Après STAPS, je voudrais étudier la kinésithérapie en France, puis travailler avec un club de sport." }
     ] },
   { id: "a2-s02-po2", level: "A2", sujet: 2, sec: "po", ex: 2, pts: 8, kind: "monologue",
     title: "Mon quartier",
@@ -405,7 +405,7 @@
     },
     prompts: [
       { q: "Qu'est-ce que vous allez faire après cet examen ?", m: "Je vais continuer à apprendre le français et je vais préparer le DELF B1." },
-      { q: "Pourquoi est-ce que vous passez le DELF ?", m: "J'en ai besoin pour mon travail et pour ma vie en France." },
+      { q: "Pourquoi est-ce que vous passez le DELF ?", m: "J'en ai besoin pour entrer à l'université, en STAPS, et pour ma vie en France." },
       { q: "Est-ce que vous voulez rester en France ?", m: "Oui, je voudrais rester en France. J'aime la vie ici." },
       { q: "Qu'est-ce que vous ferez l'été prochain ?", m: "L'été prochain, je rentrerai en Turquie pour voir ma famille." },
       { q: "Vous avez un projet sportif ?", m: "Oui, je voudrais jouer en compétition avec mon équipe de handball." },
@@ -543,7 +543,7 @@
       en: "Guided interview (about 1.5 minutes). Introduce yourself and answer the examiner's questions about your life, activities, past and plans."
     },
     prompts: [
-      { q: "Depuis quand est-ce que vous habitez en France ?", m: "J'habite en France depuis deux ans." },
+      { q: "Depuis quand est-ce que vous habitez en France ?", m: "J'habite en France depuis un an." },
       { q: "Pourquoi est-ce que vous êtes venue en France ?", m: "Je suis venue pour le travail et parce que j'aimais la culture française." },
       { q: "Qu'est-ce qui a été difficile au début ?", m: "La langue et les papiers administratifs ! C'était compliqué." },
       { q: "Qu'est-ce qui vous plaît en France ?", m: "J'aime les marchés, le pain et les petits villages." },
@@ -897,7 +897,7 @@
       },
       { c: "Parler d'aujourd'hui", kw: ["aujourd'hui", "maintenant", "je pense", "je me sens", "j'aime"] }
     ],
-    model: "Je suis arrivée en France il y a deux ans, un matin de septembre, à l'aéroport de Paris. J'étais très fatiguée, mais aussi très contente. Il pleuvait et il faisait un peu froid. J'ai pris un taxi pour aller à mon hôtel. Le chauffeur parlait vite et je n'ai rien compris ! L'après-midi, je suis allée dans une boulangerie. Je voulais acheter une baguette, mais j'étais tellement stressée que j'ai dit « merci » au lieu de « bonjour ». La boulangère a souri et elle m'a aidée. Le soir, j'ai mangé un croissant dans ma chambre et j'ai appelé ma mère. Aujourd'hui, quand je pense à ce jour, je ris. Maintenant, je me sens bien ici et je parle beaucoup mieux." },
+    model: "Je suis arrivée en France il y a un an, un matin de septembre, à l'aéroport de Paris. J'étais très fatiguée, mais aussi très contente. Il pleuvait et il faisait un peu froid. J'ai pris un taxi pour aller à mon hôtel. Le chauffeur parlait vite et je n'ai rien compris ! L'après-midi, je suis allée dans une boulangerie. Je voulais acheter une baguette, mais j'étais tellement stressée que j'ai dit « merci » au lieu de « bonjour ». La boulangère a souri et elle m'a aidée. Le soir, j'ai mangé un croissant dans ma chambre et j'ai appelé ma mère. Aujourd'hui, quand je pense à ce jour, je ris. Maintenant, je me sens bien ici et je parle beaucoup mieux." },
   { id: "a2-s07-po3", level: "A2", sujet: 7, sec: "po", ex: 3, pts: 9, kind: "dialogue",
     title: "Louer un vélo",
     consigne: "Exercice en interaction (3 minutes environ). Vous êtes en vacances au bord de la mer. Vous voulez louer un vélo pour la journée. Vous demandez des informations (prix, horaires, casque, balade conseillée) et vous louez un vélo. L'examinateur joue le rôle du loueur.",
@@ -1112,7 +1112,7 @@
         m: "Oui, je dîne plus tôt et je mange plus de fromage qu'avant !"
       },
       { q: "Vous dormez bien ?", m: "En général, oui. Je dors sept heures par nuit." },
-      { q: "Quel conseil est-ce que vous donnez à vos patients ?", m: "Je leur dis de bouger tous les jours, de marcher et de bien dormir." }
+      { q: "Quel conseil est-ce que vous donniez à vos patients, en Turquie ?", m: "Je leur disais de bouger tous les jours, de marcher et de bien dormir." }
     ] },
   { id: "a2-s09-po2", level: "A2", sujet: 9, sec: "po", ex: 2, pts: 8, kind: "monologue",
     title: "Mon logement idéal",
@@ -1302,7 +1302,7 @@
         ]
       }
     ],
-    model: "J'apprends le français depuis deux ans. J'ai commencé en Turquie, avec une application sur mon téléphone, parce que je voulais travailler en France. Aujourd'hui, j'apprends de plusieurs façons. Chaque jour, je révise du vocabulaire avec des cartes pendant quinze minutes. J'écoute aussi la radio française dans la voiture et je regarde des séries avec des sous-titres. Le plus difficile pour moi, c'est la prononciation et les verbes au passé. Mais j'ai fait des progrès : le mois dernier, j'ai parlé au téléphone avec la banque sans aide, et j'étais très fière ! Mes patients m'aident beaucoup aussi : ils corrigent mes erreurs avec gentillesse. Mon objectif, c'est d'avoir le DELF A2, puis le B1 l'année prochaine." },
+    model: "J'apprends le français depuis deux ans. J'ai commencé en Turquie, avec une application sur mon téléphone, parce que je voulais travailler en France. Aujourd'hui, j'apprends de plusieurs façons. Chaque jour, je révise du vocabulaire avec des cartes pendant quinze minutes. J'écoute aussi la radio française dans la voiture et je regarde des séries avec des sous-titres. Le plus difficile pour moi, c'est la prononciation et les verbes au passé. Mais j'ai fait des progrès : le mois dernier, j'ai parlé au téléphone avec la banque sans aide, et j'étais très fière ! Mes voisins m'aident beaucoup aussi : ils corrigent mes erreurs avec gentillesse. Mon objectif, c'est d'avoir le DELF A2, puis le B1 l'année prochaine." },
   { id: "a2-s10-po3", level: "A2", sujet: 10, sec: "po", ex: 3, pts: 9, kind: "dialogue",
     title: "Acheter un abonnement de train",
     consigne: "Exercice en interaction (3 minutes environ). Vous prenez le train tous les jours pour aller travailler dans une autre ville. Vous allez au guichet de la gare pour acheter un abonnement. Vous demandez des informations, vous comparez les prix et vous choisissez. L'examinateur joue le rôle de l'agent de la gare.",

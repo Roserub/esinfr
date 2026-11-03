@@ -278,7 +278,7 @@
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ? Vous pouvez épeler votre prénom ?", m: "Bonjour ! Je m'appelle Esin Yılmaz. Esin : E – S – I – N." },
       { q: "D'où venez-vous ?", m: "Je viens de Turquie, d'Istanbul. C'est une très grande ville, au bord de la mer." },
-      { q: "Quand est-ce que vous êtes arrivée en France ?", m: "Je suis arrivée il y a un an et demi, au printemps. Au début, tout était nouveau pour moi." },
+      { q: "Quand est-ce que vous êtes arrivée en France ?", m: "Je suis arrivée il y a un an, au printemps. Au début, tout était nouveau pour moi." },
       { q: "Qu'est-ce qui a été le plus difficile quand vous êtes arrivée ?", m: "Les papiers ! Il fallait beaucoup de documents pour la préfecture et pour la banque. Heureusement, une amie m'a aidée." },
       { q: "Vous préférez faire vos démarches sur internet ou au guichet ?", m: "Je préfère internet, parce que c'est plus rapide. Mais quand je ne comprends pas, je vais au guichet." },
       { q: "Où est-ce que vous habitez ? Vous êtes locataire ?", m: "J'habite dans un appartement de deux pièces, près du centre. Oui, je suis locataire : je paie un loyer chaque mois." },

@@ -149,9 +149,9 @@
       { q: "Le petit frère de Paul est au lycée. Il a de mauvaises notes en maths.", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D", "Annonce E", "Annonce F", "Aucune annonce"], a: 1,
         x: "Annonce B : « cours particuliers aux lycéens… mathématiques ».",
         xtr: "Paul'ün kardeşi lise öğrencisi ve matematikte notları kötü. B ilanında bir yüksek lisans öğrencisi liselilere özel matematik dersi veriyor." },
-      { q: "Sarah arrive à Rennes fin septembre. Elle ne fume pas et elle aimerait vivre avec d'autres étudiants.", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D", "Annonce E", "Annonce F", "Aucune annonce"], a: 0,
+      { q: "Sarah arrive dans la ville début octobre. Elle ne fume pas et elle aimerait vivre avec d'autres étudiants.", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D", "Annonce E", "Annonce F", "Aucune annonce"], a: 0,
         x: "Annonce A : « une chambre libre… avec trois étudiants », « Non-fumeur », « Libre le 1er octobre ».",
-        xtr: "Sarah sigara içmiyor ve başka öğrencilerle yaşamak istiyor. A ilanındaki ev arkadaşlığı 1 Ekim'de boşalıyor: eylül sonu gelen Sarah için uygun." },
+        xtr: "Sarah sigara içmiyor ve başka öğrencilerle yaşamak istiyor. A ilanındaki ev arkadaşlığı 1 Ekim'de boşalıyor: ekim başında gelen Sarah için uygun." },
       { q: "Kerem en a assez d'attendre le bus. Il voudrait aller à la fac plus librement.", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D", "Annonce E", "Annonce F", "Aucune annonce"], a: 2,
         x: "Annonce C : « Vends vélo de ville… Idéal pour aller à la fac sans prendre le bus ! »",
         xtr: "« en avoir assez » = bıkmak. Kerem otobüs beklemekten bıkmış. C ilanındaki bisiklet tam ona göre." },
@@ -254,7 +254,7 @@
       { c: "Parler du logement", kw: ["chambre", "résidence", "residence", "appartement", "colocation", "studio", "logement", "j'habite"] },
       { c: "Donner vos impressions", kw: ["content", "contente", "heureux", "heureuse", "j'aime", "j'adore", "super", "difficile", "génial", "genial"] }
     ],
-    model: "Salut Lucie,\nMa première semaine à la fac est finie ! Lundi, j'ai eu mon premier cours dans un grand amphi : il y avait 300 étudiants ! Le professeur parlait vite, alors c'était un peu difficile. Mardi, j'ai rencontré Malik et Chloé à la bibliothèque. Ils sont très sympas et on révise ensemble maintenant. J'habite dans une petite chambre à la résidence universitaire, mais elle est claire et calme. Je suis contente, la vie d'étudiante me plaît beaucoup !\nBises,\nEsin" },
+    model: "Salut Lucie,\nMa première semaine à la fac est finie ! Lundi, j'ai eu mon premier cours dans un grand amphi : il y avait 300 étudiants ! Le professeur parlait vite, alors c'était un peu difficile. Mardi, j'ai rencontré Malik et Chloé à la bibliothèque. Ils sont très sympas et on révise ensemble maintenant. J'habite toujours avec mon mari, dans notre appartement : la fac est à vingt minutes en tram. Je suis contente, la vie d'étudiante me plaît beaucoup !\nBises,\nEsin" },
 
   { id: "a2-s27-pe2", level: "A2", sujet: 27, sec: "pe", ex: 2, pts: 12, kind: "text",
     title: "Aider un camarade malade",
@@ -281,7 +281,7 @@
       { q: "Où est-ce que vous habitiez quand vous étiez étudiante ?", m: "J'habitais chez mes parents la première année. Après, j'ai partagé un appartement avec deux amies." },
       { q: "Quelle matière est-ce que vous préfériez ?", m: "Je préférais l'anatomie, parce que c'était passionnant. Mais les examens étaient très difficiles !" },
       { q: "Qu'est-ce que vous faisiez pendant votre temps libre ?", m: "Je jouais au handball avec l'équipe de l'université et je sortais avec mes amis le week-end." },
-      { q: "Est-ce que vous voudriez étudier en France ?", m: "Oui, je voudrais suivre une formation en France, peut-être en kinésithérapie du sport." },
+      { q: "Est-ce que vous voudriez étudier en France ?", m: "Oui, je voudrais entrer en STAPS, et ensuite étudier la kinésithérapie en France." },
       { q: "Comment est-ce que vous apprenez le français ?", m: "Je prends des cours deux fois par semaine, et je regarde des séries françaises avec les sous-titres." }
     ] },
 
@@ -320,7 +320,7 @@
     ],
     model: [
       ["E", "Bonjour, je peux vous aider ?"],
-      ["C", "Bonjour madame. Je m'appelle Esin, je suis en première année de sociologie, dans le groupe de TD du mardi matin."],
+      ["C", "Bonjour madame. Je m'appelle Esin, je suis en première année de STAPS, dans le groupe de TD du mardi matin."],
       ["E", "Oui… Quel est le problème ?"],
       ["C", "J'ai trouvé un petit travail dans une boulangerie, le mardi et le jeudi matin. J'en ai besoin pour payer mon loyer. Est-ce que je pourrais changer de groupe ?"],
       ["E", "Je comprends. Le groupe du mardi après-midi est complet, malheureusement."],

@@ -323,7 +323,7 @@
       ["E", "Bonsoir, bienvenue ! Bien sûr. Qu'est-ce que vous voulez savoir ?"],
       ["C", "Qu'est-ce qu'il y a dans un panier ? Et combien ça coûte ?"],
       ["E", "Il y a des légumes bio de la ferme, ça change chaque semaine. Le grand panier coûte 18 €."],
-      ["C", "C'est un peu grand pour moi, j'habite seule. Il y a un petit panier ?"],
+      ["C", "C'est un peu grand pour nous : nous sommes deux, mon mari et moi. Il y a un petit panier ?"],
       ["E", "Oui, le petit panier coûte 11 €. Il y a cinq ou six légumes."],
       ["C", "Parfait. La distribution, c'est quel jour et à quelle heure ?"],
       ["E", "Tous les jeudis, de 18 h 30 à 19 h 30, ici, à la salle des fêtes."],

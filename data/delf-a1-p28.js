@@ -251,7 +251,7 @@
     help: { tr: "Sınav görevlisini selamlayın (« Bonjour, madame / monsieur »). Size kendiniz, sağlığınız ve alışkanlıklarınız hakkında sorular sorar. Tam cümleyle cevap verin.", en: "Guided interview (about 1 minute, no preparation). Greet the examiner and answer questions about yourself, your health and your habits." },
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour, monsieur. Je m'appelle Esin." },
-      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. Je travaille avec des sportifs." },
+      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. En Turquie, j'ai travaillé avec des sportifs." },
       { q: "Vous faites du sport ?", m: "Oui, je joue au handball et je nage le dimanche." },
       { q: "Vous dormez combien d'heures par nuit ?", m: "Je dors sept ou huit heures. Je vais au lit à 23 heures." },
       { q: "Qu'est-ce que vous mangez le matin ?", m: "Le matin, je mange du pain, du fromage, des olives et je bois du thé." },

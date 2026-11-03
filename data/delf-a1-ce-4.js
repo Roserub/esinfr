@@ -14,7 +14,7 @@
       { q: "Si vous travaillez, Deniz…", o: ["prend un taxi", "prend la navette", "attend à l'aéroport"], a: 1, x: "« Si tu travailles, je prends la navette »." },
       { q: "Deniz veut visiter la vieille ville.", o: ["Vrai", "Faux"], a: 0, x: "« Je veux visiter la vieille ville »." },
       { q: "Deniz arrive à Lyon…", o: ["le mardi 16 avril", "le vendredi 12 avril", "le samedi 13 avril"], a: 1, x: "« J'arrive le vendredi 12 avril »." },
-      { q: "Deniz propose de vous apporter…", o: ["🧀 du fromage et du vin", "🌸 des fleurs de son jardin", "🍬 des loukoums ou du thé"], a: 2, x: "« tu veux quoi d'Istanbul ? Des loukoums ou du thé ? »" }
+      { q: "Deniz vous demande si vous voulez…", o: ["🧀 du fromage et du vin", "🌸 des fleurs de son jardin", "🍬 des loukoums ou du thé"], a: 2, x: "« tu veux quoi d'Istanbul ? Des loukoums ou du thé ? »" }
     ] },
 
   { id: "a1-s16-ce2", level: "A1", sujet: 16, sec: "ce", ex: 2, pts: 6,
@@ -49,34 +49,34 @@
     ] },
 
   { id: "a1-s16-ce4", level: "A1", sujet: 16, sec: "ce", ex: 4, pts: 7,
-    title: "Un vélo d'occasion",
-    consigne: "Vous cherchez un vélo pas cher. Vous lisez cette annonce. Répondez aux questions.",
-    help: { tr: "Ucuz bir bisiklet arıyorsunuz. Bu ilanı okuyorsunuz. Soruları cevaplayın.", en: "You are looking for a cheap bike. You read this ad. Answer the questions." },
-    doc: { type: "annonce", title: "À vendre : vélo de ville",
-      body: "Je vends mon vélo de ville bleu, taille adulte. Il a 3 ans et il est en très bon état. Les freins et les pneus sont neufs.\n\nAvec le vélo : un panier, une lumière et un antivol.\n\nPrix : 150 €. Le casque est en plus : 20 €.\n\nJe pars au Canada le 30 juin, alors je vends vite !\n\nVous pouvez venir voir le vélo le samedi ou le dimanche, à Villeurbanne, près du métro Flachet.\n\nTéléphone : 06 45 12 78 90 (Karim). Pas de SMS, merci." },
+    title: "Des cours de guitare",
+    consigne: "Vous voulez apprendre la guitare. Vous lisez cette annonce. Répondez aux questions.",
+    help: { tr: "Gitar öğrenmek istiyorsunuz. Bu ilanı okuyorsunuz. Soruları cevaplayın.", en: "You want to learn the guitar. You read this ad. Answer the questions." },
+    doc: { type: "annonce", title: "Cours de guitare à la maison",
+      body: "Je m'appelle Hugo et je suis étudiant en musique. Je donne des cours de guitare chez vous, pour les adultes et les enfants (à partir de 8 ans).\n\nLe premier cours est gratuit ! Ensuite, un cours d'une heure coûte 20 €. Avec la carte de 5 cours, c'est 90 €.\n\nVous n'avez pas de guitare ? Je vous prête une guitare pour le premier mois.\n\nJe suis libre le mercredi et le samedi, à Villeurbanne et à Lyon.\n\nEnvoyez-moi un SMS au 06 45 12 78 90 (Hugo). Pendant mes cours, je ne réponds pas au téléphone." },
     questions: [
-      { q: "Le vélo a…", o: ["1 an", "3 ans", "6 ans"], a: 1, x: "« Il a 3 ans et il est en très bon état. »" },
-      { q: "Les pneus du vélo sont neufs.", o: ["Vrai", "Faux"], a: 0, x: "« Les freins et les pneus sont neufs. »" },
-      { q: "Avec le vélo, il y a…", o: ["un casque gratuit", "un siège pour enfant et un casque gratuit", "un panier, une lumière et un antivol"], a: 2, x: "« Avec le vélo : un panier, une lumière et un antivol. »" },
-      { q: "Le vélo et le casque coûtent…", o: ["150 €", "170 €", "20 €"], a: 1, x: "« Prix : 150 €. Le casque est en plus : 20 € » : 150 + 20 = 170 €." },
-      { q: "Karim vend son vélo parce qu'il…", o: ["part au Canada", "achète une voiture", "n'aime pas le vélo"], a: 0, x: "« Je pars au Canada le 30 juin, alors je vends vite ! »" },
-      { q: "Pour acheter le vélo, vous…", o: ["📱 envoyez un SMS", "📧 écrivez un e-mail", "📞 téléphonez à Karim"], a: 2, x: "« Téléphone : 06 45 12 78 90 (Karim). Pas de SMS, merci. »" }
+      { q: "Hugo est…", o: ["professeur au collège", "étudiant en musique", "vendeur de guitares"], a: 1, x: "« Je m'appelle Hugo et je suis étudiant en musique. »" },
+      { q: "Le premier cours est gratuit.", o: ["Vrai", "Faux"], a: 0, x: "« Le premier cours est gratuit ! »" },
+      { q: "Vous n'avez pas de guitare. Hugo…", o: ["vous vend sa guitare", "vous donne une adresse", "vous prête une guitare"], a: 2, x: "« Vous n'avez pas de guitare ? Je vous prête une guitare pour le premier mois. »" },
+      { q: "Avec la carte, 5 cours coûtent…", o: ["20 €", "90 €", "100 €"], a: 1, x: "« Avec la carte de 5 cours, c'est 90 €. »" },
+      { q: "Hugo donne des cours…", o: ["le mercredi et le samedi", "le lundi et le jeudi", "le mardi et le dimanche"], a: 0, x: "« Je suis libre le mercredi et le samedi »." },
+      { q: "Pour prendre un cours, vous…", o: ["📞 téléphonez à Hugo", "📧 écrivez un e-mail", "📱 envoyez un SMS"], a: 2, x: "« Envoyez-moi un SMS au 06 45 12 78 90 (Hugo). Pendant mes cours, je ne réponds pas au téléphone. »" }
     ] },
 
   /* ───────── Sujet 17 ───────── */
   { id: "a1-s17-ce1", level: "A1", sujet: 17, sec: "ce", ex: 1, pts: 6,
-    title: "Carte postale de la mer",
+    title: "Carte postale d'Amsterdam",
     consigne: "Vous recevez cette carte postale d'une amie. Lisez-la, puis répondez aux questions.",
     help: { tr: "Bir arkadaşınızdan bu kartpostalı alıyorsunuz. Okuyun, sonra soruları cevaplayın.", en: "You receive this postcard from a friend. Read it, then answer the questions." },
     doc: { type: "carte", from: "Camille", to: "Esin",
-      body: "Chère Esin,\n\nJe t'écris de Biarritz, au bord de la mer ! Je suis ici avec ma sœur jusqu'à dimanche.\n\nIl fait beau et chaud, mais l'eau est froide : 18 °C ! Le matin, on prend un cours de surf. C'est difficile, je tombe tout le temps ! L'après-midi, on se repose sur la plage et on lit.\n\nLe soir, on mange du poisson au port. Demain, on va visiter un petit village basque.\n\nJe pense à toi. Bises,\nCamille" },
+      body: "Chère Esin,\n\nJe t'écris d'Amsterdam ! Je suis ici avec ma sœur jusqu'à dimanche.\n\nIl ne fait pas chaud : 12 °C, et il pleut un peu. Le matin, on loue des vélos et on fait le tour de la ville. C'est difficile : il y a des vélos partout, j'ai un peu peur ! L'après-midi, on se promène au bord des canaux.\n\nLe soir, on mange des frites dans un petit café. Demain, on va visiter un musée de peinture.\n\nJe pense à toi. Bises,\nCamille" },
     questions: [
       { q: "Camille est en vacances avec…", o: ["sa mère", "sa sœur", "une amie"], a: 1, x: "« Je suis ici avec ma sœur »." },
-      { q: "L'eau de la mer est…", o: ["🥶 froide", "🔥 très chaude", "😊 à 25 °C"], a: 0, x: "« l'eau est froide : 18 °C ! »" },
-      { q: "Le matin, Camille…", o: ["lit sur la plage", "visite un village", "fait du surf"], a: 2, x: "« Le matin, on prend un cours de surf. »" },
-      { q: "Camille surfe très bien.", o: ["Vrai", "Faux"], a: 1, x: "« C'est difficile, je tombe tout le temps ! »" },
-      { q: "Le soir, elles mangent…", o: ["🍕 une pizza", "🐟 du poisson", "🥗 une salade"], a: 1, x: "« Le soir, on mange du poisson au port. »" },
-      { q: "Demain, elles vont…", o: ["visiter un village basque", "rentrer à la maison", "nager à la piscine de l'hôtel"], a: 0, x: "« Demain, on va visiter un petit village basque. »" }
+      { q: "Quel temps fait-il ?", o: ["🌧️ il pleut", "☀️ il fait chaud", "❄️ il neige"], a: 0, x: "« Il ne fait pas chaud : 12 °C, et il pleut un peu. »" },
+      { q: "Le matin, Camille…", o: ["visite un musée", "dort à l'hôtel", "fait du vélo"], a: 2, x: "« Le matin, on loue des vélos et on fait le tour de la ville. »" },
+      { q: "Pour Camille, le vélo à Amsterdam, c'est facile.", o: ["Vrai", "Faux"], a: 1, x: "« C'est difficile : il y a des vélos partout, j'ai un peu peur ! »" },
+      { q: "Le soir, elles mangent…", o: ["🍕 une pizza", "🍟 des frites", "🥗 une salade"], a: 1, x: "« Le soir, on mange des frites dans un petit café. »" },
+      { q: "Demain, elles vont…", o: ["visiter un musée", "rentrer à la maison", "faire du bateau"], a: 0, x: "« Demain, on va visiter un musée de peinture. »" }
     ] },
 
   { id: "a1-s17-ce2", level: "A1", sujet: 17, sec: "ce", ex: 2, pts: 6,
@@ -127,18 +127,18 @@
 
   /* ───────── Sujet 18 ───────── */
   { id: "a1-s18-ce1", level: "A1", sujet: 18, sec: "ce", ex: 1, pts: 6,
-    title: "Un cours de cuisine",
+    title: "Une soirée bowling",
     consigne: "Vous recevez ce SMS d'un collègue. Lisez le message, puis répondez aux questions.",
     help: { tr: "Bir iş arkadaşınızdan bu SMS'i alıyorsunuz. Mesajı okuyun, sonra soruları cevaplayın.", en: "You receive this text message from a colleague. Read it, then answer the questions." },
     doc: { type: "sms", from: "Thomas", to: "Esin",
-      body: "Salut Esin ! C'est Thomas, du bureau. Jeudi soir, je fais un cours de cuisine italienne avec ma femme. On va préparer des pâtes fraîches et un tiramisu. Il reste une place : tu veux venir ? 😊\n\nLe cours est à 18 h 30, à l'atelier « Les Bons Petits Plats », rue Victor-Hugo. Il coûte 35 €, et après, on mange tout ensemble !\n\nPense à prendre un tablier. Réponds-moi avant demain midi, s'il te plaît.\nThomas" },
+      body: "Salut Esin ! C'est Thomas, du travail. Jeudi soir, on fait un bowling avec les collègues. On est déjà 7 : tu veux venir ? 😊\n\nRendez-vous à 19 h au bowling « Le Strike », rue Victor-Hugo. La partie coûte 12 €, avec les chaussures. Après, on mange une pizza tous ensemble !\n\nPense à prendre des chaussettes. Réponds-moi avant demain midi, s'il te plaît.\nThomas" },
     questions: [
-      { q: "Thomas est…", o: ["votre voisin", "votre collègue", "votre cousin"], a: 1, x: "« C'est Thomas, du bureau. »" },
-      { q: "Le cours de cuisine est…", o: ["jeudi soir", "jeudi midi", "demain midi"], a: 0, x: "« Jeudi soir, je fais un cours de cuisine italienne »." },
-      { q: "Au cours, on va préparer…", o: ["🍕 des pizzas et une glace", "🥗 une salade", "🍝 des pâtes et un tiramisu"], a: 2, x: "« On va préparer des pâtes fraîches et un tiramisu. »" },
-      { q: "Le cours coûte…", o: ["30 €", "35 €", "53 €"], a: 1, x: "« Il coûte 35 € »." },
-      { q: "Après le cours, on mange ensemble.", o: ["Vrai", "Faux"], a: 0, x: "« après, on mange tout ensemble ! »" },
-      { q: "Vous devez apporter…", o: ["des pâtes", "un dessert", "un tablier"], a: 2, x: "« Pense à prendre un tablier. »" }
+      { q: "Thomas est…", o: ["votre voisin", "votre collègue", "votre cousin"], a: 1, x: "« C'est Thomas, du travail. »" },
+      { q: "Le bowling, c'est…", o: ["jeudi soir", "jeudi midi", "demain midi"], a: 0, x: "« Jeudi soir, on fait un bowling avec les collègues. »" },
+      { q: "Thomas va au bowling avec…", o: ["👨‍👩‍👧 sa famille", "⚽ son équipe", "👥 les collègues"], a: 2, x: "« on fait un bowling avec les collègues »." },
+      { q: "La partie coûte…", o: ["7 €", "12 €", "19 €"], a: 1, x: "« La partie coûte 12 €, avec les chaussures. »" },
+      { q: "Après le bowling, on mange ensemble.", o: ["Vrai", "Faux"], a: 0, x: "« Après, on mange une pizza tous ensemble ! »" },
+      { q: "Vous devez apporter…", o: ["des chaussures", "une pizza", "des chaussettes"], a: 2, x: "« Pense à prendre des chaussettes. »" }
     ] },
 
   { id: "a1-s18-ce2", level: "A1", sujet: 18, sec: "ce", ex: 2, pts: 6,
@@ -251,18 +251,18 @@
 
   /* ───────── Sujet 20 ───────── */
   { id: "a1-s20-ce1", level: "A1", sujet: 20, sec: "ce", ex: 1, pts: 6,
-    title: "Courir le dimanche",
+    title: "Un après-midi à la patinoire",
     consigne: "Vous recevez ce SMS d'une amie. Lisez le message, puis répondez aux questions.",
     help: { tr: "Bir arkadaşınızdan bu SMS'i alıyorsunuz. Mesajı okuyun, sonra soruları cevaplayın.", en: "You receive this text message from a friend. Read it, then answer the questions." },
     doc: { type: "sms", from: "Yasmine", to: "Esin",
-      body: "Coucou Esin ! Tu veux venir courir avec moi dimanche matin ? 🏃‍♀️ Je cours tous les dimanches autour du lac, 6 km. Je ne cours pas vite, ne t'inquiète pas !\n\nRendez-vous à 9 h devant l'entrée du parc, à côté de la boulangerie. S'il pleut, on va à la piscine.\n\nAprès, on prend le petit-déjeuner chez moi : j'achète des croissants ! Prends une bouteille d'eau et une veste.\nBisous, Yasmine" },
+      body: "Coucou Esin ! Tu veux venir à la patinoire avec moi samedi après-midi ? ⛸️ Je vais avec ma fille Inès, elle a 8 ans. Moi aussi, je patine mal, alors ne t'inquiète pas !\n\nRendez-vous à 14 h devant la patinoire, à côté de la piscine. L'entrée coûte 6 €, et on loue les patins sur place.\n\nAprès, on boit un chocolat chaud au café de la patinoire. Prends des gants et un bonnet !\nBisous, Yasmine" },
     questions: [
-      { q: "Yasmine vous propose de…", o: ["🏊 nager", "🏃 courir", "🚴 faire du vélo"], a: 1, x: "« Tu veux venir courir avec moi dimanche matin ? »" },
-      { q: "Yasmine court…", o: ["9 km", "10 km", "6 km"], a: 2, x: "« Je cours tous les dimanches autour du lac, 6 km. »" },
-      { q: "Le rendez-vous est…", o: ["devant l'entrée du parc", "à la piscine", "chez Yasmine"], a: 0, x: "« Rendez-vous à 9 h devant l'entrée du parc »." },
-      { q: "S'il pleut, vous allez…", o: ["à la boulangerie", "au café", "à la piscine"], a: 2, x: "« S'il pleut, on va à la piscine. »" },
-      { q: "Yasmine court très vite.", o: ["Vrai", "Faux"], a: 1, x: "« Je ne cours pas vite, ne t'inquiète pas ! »" },
-      { q: "Après, vous mangez…", o: ["🥐 des croissants", "🍕 une pizza", "🥗 une salade"], a: 0, x: "« on prend le petit-déjeuner chez moi : j'achète des croissants ! »" }
+      { q: "Yasmine vous propose de…", o: ["🏊 nager", "⛸️ patiner", "🚴 faire du vélo"], a: 1, x: "« Tu veux venir à la patinoire avec moi samedi après-midi ? »" },
+      { q: "Yasmine va à la patinoire avec…", o: ["son mari", "sa sœur", "sa fille"], a: 2, x: "« Je vais avec ma fille Inès, elle a 8 ans. »" },
+      { q: "Le rendez-vous est…", o: ["devant la patinoire", "à la piscine", "chez Yasmine"], a: 0, x: "« Rendez-vous à 14 h devant la patinoire »." },
+      { q: "L'entrée coûte…", o: ["8 €", "14 €", "6 €"], a: 2, x: "« L'entrée coûte 6 € »." },
+      { q: "Yasmine patine très bien.", o: ["Vrai", "Faux"], a: 1, x: "« Moi aussi, je patine mal, alors ne t'inquiète pas ! »" },
+      { q: "Après, vous buvez…", o: ["☕ un chocolat chaud", "🍵 un thé", "🧃 un jus de pomme"], a: 0, x: "« Après, on boit un chocolat chaud au café de la patinoire. »" }
     ] },
 
   { id: "a1-s20-ce2", level: "A1", sujet: 20, sec: "ce", ex: 2, pts: 6,

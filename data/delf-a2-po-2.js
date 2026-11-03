@@ -9,8 +9,8 @@
       en: "Guided interview (about 1.5 minutes). Introduce yourself and answer the examiner's questions about your life, activities, past and plans."
     },
     prompts: [
-      { q: "Bonjour. Pouvez-vous vous présenter ?", m: "Bonjour, je m'appelle Esin. Je suis turque et j'habite en France depuis quelques mois." },
-      { q: "D'où venez-vous exactement ?", m: "Je viens d'une ville au bord de la mer, dans l'ouest de la Turquie." },
+      { q: "Bonjour. Pouvez-vous vous présenter ?", m: "Bonjour, je m'appelle Esin. Je suis turque et j'habite en France depuis un an." },
+      { q: "D'où venez-vous exactement ?", m: "Je viens d'Istanbul, une grande ville au bord de la mer, dans le nord-ouest de la Turquie." },
       { q: "Comment est votre ville ?", m: "C'est une ville assez grande et très animée. Il y a un port et beaucoup de cafés." },
       { q: "Qu'est-ce que vous faisiez le week-end là-bas ?", m: "Je me promenais au bord de la mer et je jouais au volley sur la plage avec mes amis." },
       { q: "Qu'est-ce qui vous manque de votre ville ?", m: "La mer et le soleil me manquent. Et aussi le petit-déjeuner du dimanche avec ma famille." },
@@ -301,7 +301,7 @@
       { q: "Vous habitez près de votre famille ?", m: "Non, ma famille habite dans mon pays. Je les appelle souvent en vidéo." },
       { q: "Qui est la personne la plus proche de vous dans votre famille ?", m: "C'est ma sœur. Nous parlons de tout." },
       { q: "Qu'est-ce que vous faisiez en famille quand vous étiez petite ?", m: "Le dimanche, nous faisions un pique-nique au bord de la mer." },
-      { q: "Quand avez-vous vu votre famille la dernière fois ?", m: "Je l'ai vue il y a trois mois, juste avant mon départ pour la France." },
+      { q: "Quand avez-vous vu votre famille la dernière fois ?", m: "Je l'ai vue il y a un an, juste avant mon départ pour la France." },
       { q: "Quelqu'un de votre famille va venir vous voir en France ?", m: "Oui, mes parents vont venir cet hiver. Je vais leur montrer ma nouvelle ville." },
       { q: "À votre avis, c'est important de vivre près de sa famille ?", m: "C'est important, mais ce n'est pas toujours possible. Avec Internet, c'est plus facile." }
     ] },
@@ -614,7 +614,7 @@
       { c: "Dire ce qui a changé", kw: ["ensuite", "après", "apres", "plus tard", "j'ai découvert", "j'ai decouvert", "j'ai compris", "j'ai choisi", "j'ai commencé", "j'ai commence"] },
       { c: "Parler d'aujourd'hui et de vos projets", kw: ["aujourd'hui", "maintenant", "je voudrais", "projet", "je vais", "en france"] }
     ],
-    model: "Quand j'étais petite, je voulais être vétérinaire. J'avais sept ou huit ans et j'adorais les animaux. Je trouvais les vétérinaires très gentils, parce qu'ils soignaient notre chat. À la maison, je jouais au docteur avec mes peluches : je leur mettais des pansements et je leur donnais des médicaments imaginaires ! Ensuite, au collège, j'ai découvert le sport. J'ai commencé le volley et j'ai compris une chose : je voulais toujours soigner, mais soigner des personnes, et surtout des sportifs. C'est pour ça que j'ai choisi la kinésithérapie. Aujourd'hui, je n'ai pas oublié mon rêve d'enfant : je soigne toujours, mais des humains ! Maintenant, mon projet, c'est de travailler dans ce domaine en France." },
+    model: "Quand j'étais petite, je voulais être vétérinaire. J'avais sept ou huit ans et j'adorais les animaux. Je trouvais les vétérinaires très gentils, parce qu'ils soignaient notre chat. À la maison, je jouais au docteur avec mes peluches : je leur mettais des pansements et je leur donnais des médicaments imaginaires ! Ensuite, au collège, j'ai découvert le sport. J'ai commencé le volley et j'ai compris une chose : je voulais toujours soigner, mais soigner des personnes, et surtout des sportifs. C'est pour ça que j'ai choisi la kinésithérapie. Je n'ai pas oublié mon rêve d'enfant : en Turquie, j'ai soigné des sportifs pendant six ans ! Maintenant, mon projet, c'est d'entrer en STAPS, puis d'étudier la kinésithérapie en France." },
   { id: "a2-s19-po3", level: "A2", sujet: 19, sec: "po", ex: 3, pts: 9, kind: "dialogue",
     title: "Changer un billet de train",
     consigne: "Exercice en interaction (3 minutes environ). Vous êtes au guichet de la gare. Vous voulez changer la date de votre billet de train. Vous expliquez la situation, vous choisissez un nouveau train et vous demandez le prix. L'examinateur joue le rôle de l'employé(e) de la gare.",

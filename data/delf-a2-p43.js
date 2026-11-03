@@ -152,9 +152,9 @@
       { q: "Votre voisin Théo cherche une trottinette électrique neuve pour l'anniversaire de son fils.", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D", "Annonce E", "Annonce F", "Aucune annonce"], a: 6,
         x: "Aucune annonce : la trottinette de l'annonce E n'est pas neuve, elle a été « achetée il y a un an ».",
         xtr: "Tuzak: E ilanında scooter var ama bir yıllık, yani ikinci el. Théo yeni (« neuve ») bir scooter arıyor." },
-      { q: "Votre amie Sarah cherche une trottinette d'occasion, pas trop chère, pour aller au travail : 10 km aller-retour.", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D", "Annonce E", "Annonce F", "Aucune annonce"], a: 4,
-        x: "Annonce E : trottinette d'un an, « 25 km d'autonomie », 220 €.",
-        xtr: "« d'occasion » = ikinci el. E ilanındaki scooter bir yıllık ve 25 km gidebiliyor; Sarah'nın günlük 10 km'si için yeterli." },
+      { q: "Votre amie Sarah cherche une trottinette d'occasion, à 250 € maximum, pour aller au travail : 10 km aller-retour.", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D", "Annonce E", "Annonce F", "Aucune annonce"], a: 4,
+        x: "Annonce E : trottinette d'un an, « 25 km d'autonomie », 220 € (moins de 250 €).",
+        xtr: "« d'occasion » = ikinci el. E ilanındaki scooter bir yıllık, 220 € (250 € bütçenin altında) ve 25 km gidebiliyor; Sarah'nın günlük 10 km'si için yeterli." },
       { q: "Votre ami Hakan a vendu sa voiture. Deux fois par mois, il a besoin d'une voiture pour une journée. Il a son permis depuis 10 ans.", o: ["Annonce A", "Annonce B", "Annonce C", "Annonce D", "Annonce E", "Annonce F", "Aucune annonce"], a: 5,
         x: "Annonce F : « une voiture quand vous en avez besoin, sans l'acheter ! … à la journée (45 €) ».",
         xtr: "Hakan'ın arabası yok ama ayda iki gün arabaya ihtiyacı var. F ilanında günlük araba paylaşımı var ve Hakan'ın ehliyeti 10 yıllık." }

@@ -245,7 +245,7 @@
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour, monsieur. Je m'appelle Esin." },
       { q: "Vous êtes de quelle nationalité ?", m: "Je suis turque. J'habite en France, mais je viens d'Istanbul." },
-      { q: "Quelle est votre profession ?", m: "Je suis kinésithérapeute. Je travaille avec des sportifs." },
+      { q: "Quelle est votre profession ?", m: "Je suis kinésithérapeute. En Turquie, j'ai travaillé avec des sportifs." },
       { q: "Quel est votre sport préféré ?", m: "J'adore le handball ! C'est un sport rapide et très beau." },
       { q: "Vous allez voir des matchs ?", m: "Oui, je vais à la salle avec des amis. Je regarde aussi les matchs à la télévision." },
       { q: "Vous avez une équipe préférée ?", m: "Oui, une équipe d'Istanbul. Et en France, j'aime l'équipe de ma ville." },

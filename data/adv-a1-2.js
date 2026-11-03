@@ -206,11 +206,11 @@
            ] },
       c: { say: [["F", "Super ! Pour commencer, un petit exercice. Quel âge avez-vous ?"]],
            choices: [
-             { fr: "J'ai 25 ans.", tr: "25 yaşındayım.", en: "I'm 25.", ok: true, go: "d" },
-             { fr: "Je suis 25 ans.", tr: "Ben 25 yaşım.", en: "I am 25 years.", ok: false,
-               fb: { fr: "Le piège numéro 1 😄 ! En français, l'âge se dit avec avoir : « j'ai 25 ans ». Tout le monde fait cette erreur au début !", tr: "1 numaralı tuzak 😄! Fransızcada yaş « avoir » (sahip olmak) ile söylenir: « j'ai 25 ans ». Başta herkes bu hatayı yapar!", en: "Trap number 1 😄! In French, age uses avoir: « j'ai 25 ans ». Everyone makes this mistake at first!" } },
-             { fr: "J'ai 25.", tr: "25'im var.", en: "I have 25.", ok: false,
-               fb: { fr: "Il manque un petit mot : « ans ». Sinon, 25 quoi ? 25 chats ? 🐱 Dites « j'ai 25 ans ».", tr: "Küçük bir kelime eksik: « ans » (yıl). Yoksa 25 ne? 25 kedi mi? 🐱 « J'ai 25 ans » deyin.", en: "A little word is missing: « ans ». Otherwise, 25 what? 25 cats? 🐱 Say « j'ai 25 ans »." } }
+             { fr: "J'ai 30 ans.", tr: "30 yaşındayım.", en: "I'm 30.", ok: true, go: "d" },
+             { fr: "Je suis 30 ans.", tr: "Ben 30 yaşım.", en: "I am 30 years.", ok: false,
+               fb: { fr: "Le piège numéro 1 😄 ! En français, l'âge se dit avec avoir : « j'ai 30 ans ». Tout le monde fait cette erreur au début !", tr: "1 numaralı tuzak 😄! Fransızcada yaş « avoir » (sahip olmak) ile söylenir: « j'ai 30 ans ». Başta herkes bu hatayı yapar!", en: "Trap number 1 😄! In French, age uses avoir: « j'ai 30 ans ». Everyone makes this mistake at first!" } },
+             { fr: "J'ai 30.", tr: "30'um var.", en: "I have 30.", ok: false,
+               fb: { fr: "Il manque un petit mot : « ans ». Sinon, 30 quoi ? 30 chats ? 🐱 Dites « j'ai 30 ans ».", tr: "Küçük bir kelime eksik: « ans » (yıl). Yoksa 30 ne? 30 kedi mi? 🐱 « J'ai 30 ans » deyin.", en: "A little word is missing: « ans ». Otherwise, 30 what? 30 cats? 🐱 Say « j'ai 30 ans »." } }
            ] },
       d: { say: [["F", "Et qu'est-ce que vous faites dans la vie ?"]],
            choices: [
