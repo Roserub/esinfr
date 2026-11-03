@@ -97,7 +97,7 @@
   function stopAudio() { A().tts.stop(); }
   function playLines(lines, opts, done) {
     const lv = (opts && opts.lv) || "A1";
-    A().tts.play(lines, { rate: opts && opts.slow ? .68 : lv === "A1" ? .86 : .95, pitch: PITCH }, done);
+    A().tts.play(lines, { rate: opts && opts.slow ? .68 : lv === "A1" ? .86 : .95, pitch: PITCH, glow: opts && opts.glow }, done);
   }
 
   /* ── Run state ── */
@@ -500,7 +500,7 @@
         if (FL.sel === q.a) { FL.ok++; FL.combo++; FL.maxc = Math.max(FL.maxc, FL.combo); } else { FL.combo = 0; if (FL.surv) FL.lives--; }
         stopAudio(); keepScroll(() => {}); return;
       }
-      case "flash-next": FL.i++; if (FL.surv && FL.lives <= 0) FL.i = FL.qs.length; FL.sel = null; A().render(); window.scrollTo(0, 0); { const n = FL.qs[FL.i]; if (n && n.it.sec === "co") setTimeout(() => playLines(n.q.audio, { lv: n.it.level }), 350); } return;
+      case "flash-next": FL.i++; if (FL.surv && FL.lives <= 0) FL.i = FL.qs.length; FL.sel = null; A().render(); window.scrollTo(0, 0); { const n = FL.qs[FL.i]; if (n && n.it.sec === "co") setTimeout(() => playLines(n.q.audio || n.it.audio, { lv: n.it.level, glow: "[data-dx=flash-play]" }), 350); } return;
       case "flash-again": FL = null; A().render(); return;
     }
   }

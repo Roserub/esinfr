@@ -31,6 +31,7 @@ No build step: plain HTML, CSS and JavaScript.
 python3 -m http.server 8000   # then open http://localhost:8000
 node tools/check-data.js      # sanity-check the data files
 node tools/smoke-test.js      # end-to-end test (needs playwright + chromium)
+node tools/audio-check.js     # every audio button + spoken text check, incl. iPhone rules
 ```
 
 - `data/resources.js` — the resource directory (`data/resources-fr.js`: French descriptions)

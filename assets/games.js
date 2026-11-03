@@ -19,7 +19,7 @@
     return g;
   }
   const EX = () => window.EXAM || {};
-  const play = (lines, lv, slow) => { if (EX().playLines) EX().playLines(lines, { lv, slow }); else if (lines && lines[0]) A().speak(lines.map(l => l[1]).join(" ")); };
+  const play = (lines, lv, slow) => { if (EX().playLines) EX().playLines(lines, { lv, slow, glow: "[data-gm=av-play]:not([data-slow])" }); else if (lines && lines[0]) A().speak(lines.map(l => l[1]).join(" ")); };
   const stopAudio = () => { if (EX().stopAudio) EX().stopAudio(); else if ("speechSynthesis" in window) speechSynthesis.cancel(); };
   const confetti = () => { if (EX().confetti) EX().confetti(); };
   function keepScroll(fn) { const y = window.scrollY; fn(); A().render(); window.scrollTo(0, y); }

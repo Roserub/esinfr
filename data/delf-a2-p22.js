@@ -53,7 +53,7 @@
         xtr: "« Il y a beaucoup de voitures » = çok araba var. « Accident » bir tuzak: « pas d'accident » = kaza yok." },
       { q: "Document 1 : quel est le conseil de la radio ?",
         audio: [["M", "C'est samedi, le premier jour des vacances, et la circulation est difficile. Sur l'autoroute A1, entre Lille et Paris, il y a beaucoup de voitures, mais pas d'accident. Notre conseil : demain, partez très tôt, avant 7 h du matin."]],
-        o: ["⏰ partir à 6 h du matin", "🕑 partir à 14 h", "📅 partir samedi"], a: 0,
+        o: ["⏰ partir avant 7 h", "🕑 partir à 14 h", "📅 partir samedi"], a: 0,
         x: "« Demain, partez très tôt, avant 7 h du matin. » Samedi, c'est aujourd'hui.",
         xtr: "Tavsiye: yarın sabah 7'den önce, çok erken yola çıkın. « Samedi » bugünün günü, tavsiye ise « demain » (yarın) için." },
       { q: "Document 2 : combien coûtent les concerts du festival ?",

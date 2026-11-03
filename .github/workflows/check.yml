@@ -28,6 +28,8 @@ jobs:
         run: npm install --no-save playwright@1.48.2 && npx playwright install --with-deps chromium
       - name: Open every screen on phone, iPad and Mac sizes and play every exercise
         run: node tools/smoke-test.js
+      - name: Tap every audio button, check every spoken text is French, replay the main buttons under iPhone rules
+        run: node tools/audio-check.js
 
   links:
     runs-on: ubuntu-latest
