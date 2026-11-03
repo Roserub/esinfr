@@ -99,13 +99,37 @@
       } catch (e) {}
     }
     if (IOS) document.addEventListener("touchend", e => { if (!(e.target.closest && e.target.closest("[data-speak],[data-speakall],[data-dx],[data-gm],[data-bq],[data-bplay]"))) unmute(); }, { passive: true });
-    // Visible feedback: the button that started the sound glows while it plays.
-    let tapped = null, tappedAt = 0, glowing = null;
-    document.addEventListener("click", e => { const b = e.target.closest && e.target.closest("button"); if (b) { tapped = b; tappedAt = Date.now(); } }, true);
-    function glow(on) {
-      if (glowing) { glowing.classList.remove("is-playing"); glowing = null; }
-      if (on && tapped && Date.now() - tappedAt < 400 && tapped.isConnected) { glowing = tapped; glowing.classList.add("is-playing"); }
+    /* iPhone/iPad (and Chrome): speech only works once it has been started from a tap. Speech asked for later,
+       from a timer (the next adventure scene, the next DELF question) or after a cancel, is silently ignored
+       until then, and can block the queue. So, until a voice has really started, every tap first speaks a
+       silent, empty utterance right inside the tap: the engine is unlocked for everything that follows. */
+    let confirmed = false;
+    function unlock() {
+      if (!ok || confirmed) return;
+      try { const u = new SpeechSynthesisUtterance(" "); u.volume = 0; u.lang = "fr-FR"; keepUnlock = u; speechSynthesis.speak(u); } catch (e) {}
     }
+    let keepUnlock = null;
+    for (const ev of ["touchend", "click", "keydown"]) document.addEventListener(ev, unlock, true);
+    // Visible feedback: the button that started the sound glows while it plays. When the screen was redrawn
+    // in between (DELF "Listen", puzzle "Check"…), the same button is found again in the new screen.
+    let tapped = null, tappedAt = 0, tappedSel = "", glowing = null, glowSel = "";
+    const sigOf = b => b.tagName.toLowerCase() + Array.from(b.attributes).filter(a => a.name.startsWith("data-")).map(a => `[${a.name}="${CSS.escape(a.value)}"]`).join("");
+    document.addEventListener("click", e => { const b = e.target.closest && e.target.closest("button"); if (b) { tapped = b; tappedAt = Date.now(); tappedSel = sigOf(b); } }, true);
+    function glow(on, sel) {
+      if (glowing) { glowing.classList.remove("is-playing"); glowing = null; }
+      glowSel = "";
+      if (!on) return;
+      let b = null;
+      if (tapped && Date.now() - tappedAt < 600) b = tapped.isConnected ? tapped : (tappedSel && document.querySelector(tappedSel));
+      if (!b && sel) { b = document.querySelector(sel); glowSel = sel; }
+      if (b) { glowing = b; b.classList.add("is-playing"); }
+    }
+    // Keep the glow when the screen is redrawn while the sound is playing.
+    new MutationObserver(() => {
+      if (!glowing || glowing.isConnected) return;
+      const b = document.querySelector(glowSel || sigOf(glowing)); glowing = null;
+      if (b) { glowing = b; b.classList.add("is-playing"); }
+    }).observe(document.getElementById("main") || document.body, { childList: true, subtree: true });
     let noVoice = false; // a chosen voice that never starts (not installed on the phone): use the default French voice
     const later = (f, ms) => { const id = setTimeout(f, ms); timers.push(id); return id; };
     function chunks(text) {
@@ -116,6 +140,19 @@
         if (last && last.length + x.length < 120) out[out.length - 1] = last + " " + x; else out.push(x);
       }
       return out.flatMap(x => x.length <= 160 ? [x] : x.split(/,\s*/).filter(Boolean));
+    }
+    /* What the voice reads: the French words only. Emoji and symbols are dropped (iOS would read "🍰" as
+       "part de gâteau"), Turkish letters in names and dishes (Aydın, Şahin, mantı) become the closest French
+       spelling so a French voice says them naturally, and notes in brackets or markup are not read. */
+    const TRL = { "ı": "i", "İ": "I", "ş": "ch", "Ş": "Ch", "ğ": "", "Ğ": "" };
+    function clean(text) {
+      return String(text == null ? "" : text)
+        .replace(/[\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}\u{1F3FB}-\u{1F3FF}\uFE0F\u200D\u20E3]/gu, " ")
+        .replace(/[\u2190-\u21FF\u2600-\u27BF\u2B00-\u2BFF✓✗✔✘•●○◦▶⏹⏸★☆]/gu, " ")
+        .replace(/[ıİşŞğĞ]/g, c => TRL[c])
+        .replace(/[*_#<>\[\]{}|`~\\]/g, " ")
+        .replace(/\s+([,.])/g, "$1").replace(/([,.])(?:\s*[,.])+/g, "$1")
+        .replace(/\s+/g, " ").trim();
     }
     let halt = null;
     function stop() {
@@ -128,10 +165,11 @@
     // lines: [[speaker, text], …]; o: { rate, pitch: {speaker: n}, gap, onLine(i) }
     function play(lines, o, done) {
       o = o || {}; done = done || (() => {});
-      const q = []; (lines || []).forEach(([who, text], li) => chunks(text).forEach((c, j, a) => q.push({ who, text: c, line: li, first: j === 0, end: j === a.length - 1 })));
+      const q = []; (lines || []).forEach(([who, text], li) => chunks(clean(text)).forEach((c, j, a) => q.push({ who, text: c, line: li, first: j === 0, end: j === a.length - 1 })));
       if (!q.length) { done(); return; }
       if (!ok) { toast(t("audio.none")); done(); return; }
-      const cancelled = stop(); const id = run; let started = false; glow(true); halt = o.onHalt || null;
+      const fromTap = Date.now() - tappedAt < 1000;
+      const cancelled = stop(); const id = run; let started = false; glow(true, o.glow); halt = o.onHalt || null;
       const end = () => { glow(false); halt = null; if (o.onLine) o.onLine(-1); done(); };
       if (speechSynthesis.paused) speechSynthesis.resume();
       const say = (i, retry) => {
@@ -144,7 +182,7 @@
         let fin = false, mine = false;
         const t0 = Date.now(), est = 1500 + c.text.length * 85 / rate;
         const finish = () => { if (fin || id !== run) return; fin = true; later(() => say(i + 1), c.end ? (o.gap == null ? 450 : o.gap) : 80); };
-        u.onstart = () => { started = mine = true; };
+        u.onstart = () => { started = mine = confirmed = true; };
         u.onend = finish; u.onerror = e => { if (e && (e.error === "interrupted" || e.error === "canceled")) return; finish(); };
         keep.push(u); speechSynthesis.speak(u);
         // A dropped utterance (seen right after cancel on some phones): try once more.
@@ -164,14 +202,14 @@
       };
       // Speaking right after cancel() is dropped by some browsers (iPhone, Chrome): give the engine a breath.
       if (cancelled) later(() => say(0), 150); else say(0);
-      later(() => { if (id === run && !started && !hinted) { hinted = true; toast(t("audio.hint")); } }, 4500);
+      later(() => { if (id !== run || started) return; if (!fromTap && !confirmed) toast(t("audio.tap")); else if (!hinted) { hinted = true; toast(t("audio.hint")); } }, 4500);
     }
     document.addEventListener("visibilitychange", () => { if (document.hidden) stop(); });
-    return { play, stop, ok };
+    return { play, stop, ok, clean, get unlocked() { return confirmed; } };
   })();
   function speak(text, slow) {
     if (!text) return;
-    TTS.play([["F", String(text).replace(/\(.*?\)|\//g, " ")]], { rate: slow ? 0.6 : 0.9 });
+    TTS.play([["F", String(text).replace(/\(.*?\)|\//g, " ")]], { rate: slow ? 0.6 : 0.9, glow: arguments[2] });
   }
   const speakBtn = text => `<button class="speak" data-speak="${esc(text)}" aria-label="${esc(t("speak"))}" title="${esc(t("speak"))}">🔊</button>`;
 
