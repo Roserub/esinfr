@@ -202,7 +202,7 @@ chargé(e)|yoğun|busy`, [
     R("r-handball-france", "A2", "Le handball en France", "Fransa'da hentbol", "Handball in France", `
 En France, le handball est un sport très populaire. Beaucoup d'enfants le découvrent à l'école, pendant les cours d'EPS, et la Fédération française de handball compte plusieurs centaines de milliers de licenciés.
 
-Pourquoi ce succès ? D'abord grâce aux résultats des équipes nationales. L'équipe de France masculine, qu'on appelle « les Experts », a gagné trois fois les Jeux olympiques : en 2008, en 2012 et à Tokyo en 2021. Elle a aussi été six fois championne du monde. L'équipe féminine a été championne olympique à Tokyo, elle aussi, et plusieurs fois championne du monde et d'Europe.
+Pourquoi ce succès ? D'abord grâce aux résultats des équipes nationales. L'équipe de France masculine, qu'on appelle « les Experts », a gagné trois fois les Jeux olympiques : en 2008, en 2012 et à Tokyo en 2021. Elle a aussi été six fois championne du monde. L'équipe féminine a été championne olympique à Tokyo, elle aussi, et trois fois championne du monde (2003, 2017, 2023) et championne d'Europe en 2018.
 
 Le championnat masculin de première division s'appelle la Starligue. Des clubs comme Paris, Montpellier ou Nantes jouent aussi en Ligue des champions. Chez les femmes, des clubs comme Metz ou Brest ont souvent joué les premiers rôles en Europe.
 

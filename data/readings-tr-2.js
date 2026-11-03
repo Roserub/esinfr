@@ -4,9 +4,9 @@
   Object.assign(T, {
     "r-plage": {
       tr: [
-        "Bugün cumartesi ve hava çok sıcak. Chloé ve kardeşi Hugo Marsilya'da oturuyor. Bugün iki kız arkadaşlarıyla plaja gidecekler.",
+        "Bugün cumartesi ve hava çok sıcak. Chloé ve kardeşi Hugo Marsilya'da oturuyor. Bugün iki kız arkadaşla plaja gidecekler.",
         "Chloé çantaya bir havlu, güneş kremi, güneş gözlüğü ve büyük bir şişe su koyuyor. Hugo bir top ve sandviçler alıyor.",
-        "Plajda çok kalabalık var. Su mavi ve biraz soğuk ama Chloé yarım saat yüzüyor. Hugo kızlarla voleybol oynuyor. Öğlen kumun üstünde yemek yiyorlar.",
+        "Plaj çok kalabalık. Su mavi ve biraz soğuk ama Chloé yarım saat yüzüyor. Hugo kızlarla voleybol oynuyor. Öğlen kumun üstünde yemek yiyorlar.",
         "Öğleden sonra güneş çok güçlü. Chloé yine krem sürüyor ve bir şemsiyenin altında uyuyor. Akşam limanda dondurma yemeye gidiyorlar. Yarın evde kalacaklar: yorgunlar!"
       ],
       en: [
@@ -66,8 +66,8 @@
     "r-fete-musique": {
       tr: [
         "21 Haziran, Fransa'da müzik bayramıdır (Fête de la musique). Yazın başlangıcıdır ve günler çok uzundur. Bayram 1982'den beri var. O akşam konserler ücretsizdir ve her yerde müzik vardır: sokaklarda, parklarda, barlarda ve meydanlarda.",
-        "Bu yıl Inès, arkadaşları Yanis ve Camille ile Toulouse'da dışarı çıkacak. Capitole'ün yakınında bir rock grubunu, sonra küçük bir bahçede bir caz orkestrasını dinleyecekler. Camille gitar çalıyor: bir kafenin önünde arkadaşlarıyla şarkı söyleyecek.",
-        "Çok kalabalık ve hava sıcak. İnsanlar dans ediyor, şarkı söylüyor ve gülüyor. Gece yarısı Inès yorgun ama çok mutlu. « Haydi, seneye görüşürüz! (Gelecek yıl bir an önce gelsin!) » diyor."
+        "Bu yıl Inès, arkadaşları Yanis ve Camille ile Toulouse'da dışarı çıkacak. Capitole'un yakınında bir rock grubunu, sonra küçük bir bahçede bir caz orkestrasını dinleyecekler. Camille gitar çalıyor: bir kafenin önünde arkadaşlarıyla şarkı söyleyecek.",
+        "Çok kalabalık ve hava sıcak. İnsanlar dans ediyor, şarkı söylüyor ve gülüyor. Gece yarısı Inès yorgun ama çok mutlu. « Gelecek yılı iple çekiyorum! » diyor."
       ],
       en: [
         "21 June is the Fête de la musique (music festival) in France. It's the start of summer and the days are very long. The festival has existed since 1982. That evening, the concerts are free and there is music everywhere: in the streets, in the parks, in the bars and on the squares.",
@@ -193,7 +193,7 @@
       tr: [
         "14 Temmuz Fransa'nın ulusal bayramıdır. O gün, Fransız Devrimi'nin başında, 14 Temmuz 1789'da Paris'teki bir hapishane olan Bastille'in alınışı anılır. Resmî tatildir: insanların çoğu çalışmaz.",
         "Bu yıl Thomas ve kız arkadaşı Elif 14 Temmuz'u Paris'te geçirdiler. Bir önceki akşam itfaiyecilerin balosuna gittiler: birçok itfaiye merkezinde itfaiyeciler müzikli büyük bir eğlence düzenler. Sabahın ikisine kadar dans ettiler!",
-        "14'ü sabahı Thomas'ın ailesinin evinde askerî geçit törenini televizyondan izlediler. Askerler Champs-Élysées'de yürüdü ve uçaklar gökyüzüne bayrağın renklerini çizdi: mavi, beyaz, kırmızı. Elif bunu etkileyici buldu.",
+        "14 Temmuz sabahı Thomas'ın ailesinin evinde askerî geçit törenini televizyondan izlediler. Askerler Champs-Élysées'de yürüdü ve uçaklar gökyüzüne bayrağın renklerini çizdi: mavi, beyaz, kırmızı. Elif bunu etkileyici buldu.",
         "Öğleden sonra arkadaşlarıyla Champ-de-Mars'ta piknik yaptılar. Zaten çok kalabalıktı, çünkü herkes akşam için iyi bir yer istiyordu. Saat yirmi üçte, büyük ve ücretsiz bir konserin ardından Eyfel Kulesi'nin üzerinde havai fişek gösterisi başladı. Elif Türkiye'deki ailesi için onlarca fotoğraf çekti."
       ],
       en: [
@@ -212,7 +212,7 @@
     },
     "r-fromage": {
       tr: [
-        "Fransa'da binden fazla peynir olduğu sık sık söylenir. İnek, keçi ya da koyun sütünden yapılanlar, yumuşak tatlılar ve çok sert kokulular vardır. Ortalama olarak her Fransız yılda yirmi beş kilodan fazla peynir yiyor!",
+        "Fransa'da binden fazla peynir olduğu sık sık söylenir. İnek, keçi ya da koyun sütünden yapılanlar, tadı hafif olanlar ve çok keskin olanlar vardır. Ortalama olarak her Fransız yılda yirmi beş kilodan fazla peynir yiyor!",
         "Türk öğrenci Deniz eylülde Grenoble'a geldi. Türkiye'de kahvaltıda daha çok beyaz peynir yerdi. Başta Fransa'da bazı peynirlerin kokusunu çok ağır buluyordu.",
         "Bir cumartesi bir peynirciye girdi. Peynirci Mösyö Girard ona üç peynir tattırdı. Önce Jura'dan, inek sütünden bir comté: tadı yumuşak, biraz tatlıydı. Sonra koyun sütünden, güney Fransa'daki doğal mağaralarda olgunlaşan bir roquefort. Deniz onu fazla tuzlu buldu. Son olarak Normandiya'dan kremamsı ve kokulu bir camembert. En sevdiği oydu.",
         "Mösyö Girard ona bir Fransız alışkanlığını da açıkladı: yemekte peynir ana yemekten sonra ve tatlıdan önce, ekmekle servis edilir. « Ve brie'nin ucu asla kesilmez! » diye gülerek ekledi.",

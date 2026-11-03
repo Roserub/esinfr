@@ -88,16 +88,16 @@
     if (n != null) {
       const r = sujetScore(lv, n);
       if (r.co >= 20) award("ear"); if (r.ce >= 20) award("eye"); if (r.pe >= 20) award("pen"); if (r.po >= 20) award("voice");
-      if (r.pass) { award("pass" + lv); if (d.mode === "exam") award("exam"); if (r.tot >= 85) award("three"); }
+      if (r.pass) { award("pass" + lv); if ((RUN ? RUN.mode : d.mode) === "exam") award("exam"); if (r.tot >= 85) award("three"); }
       const p = passedCount(lv); if (p >= 5) award("five"); if (p >= sujets(lv).length && p >= 10) award("all" + lv);
     }
   }
-  function recordSujet(lv, n) {
+  function recordSujet(lv, n, noHist) {
     const r = sujetScore(lv, n); if (!r.complete) return r;
     const d = st(), k = lv + "-" + n, b = d.best[k];
     // Best result: a passed paper beats a failed one, then the higher score.
     if (!b || (r.pass && !b.pass) || (r.pass === !!b.pass && r.tot > b.tot)) d.best[k] = { tot: Math.round(r.tot * 10) / 10, pass: r.pass, d: A().ymd() };
-    d.hist.unshift({ k, tot: Math.round(r.tot * 10) / 10, pass: r.pass, d: A().ymd(), m: d.mode }); d.hist = d.hist.slice(0, 30);
+    if (!noHist) { d.hist.unshift({ k, tot: Math.round(r.tot * 10) / 10, pass: r.pass, d: A().ymd(), m: RUN ? RUN.mode : d.mode }); d.hist = d.hist.slice(0, 30); }
     save(); return r;
   }
 
@@ -266,7 +266,7 @@
       <p class="eyebrow">${ICON[it.sec]} ${esc(t("dx." + it.sec))} · ${esc(t("dx.exN", { n: k + 1, m: secIds.length }))} · ${fmt(it.pts)} pts</p>
       <h1 class="dx-h">${esc(it.title)}</h1>
       <div class="card dx-consigne"><p lang="fr"><b>${esc(it.consigne)}</b></p>
-        ${zen ? `<button class="btn small ghost" data-dx="help">🇹🇷 ${esc(t("dx.help"))}</button>${c.help ? `<p class="muted small">${esc(lang() === "en" ? it.help.en : it.help.tr)}</p>` : ""}` : ""}
+        ${zen ? `<button class="btn small ghost" data-dx="help">${lang() === "en" ? "🇬🇧" : "🇹🇷"} ${esc(t("dx.help"))}</button>${c.help ? `<p class="muted small" lang="${lang() === "en" ? "en" : "tr"}">${esc(lang() === "en" ? it.help.en : it.help.tr)}</p>` : ""}` : ""}
       </div>
       ${RUN.mode === "exam" && Date.now() > (RUN.dl[it.sec] || Infinity) ? `<p class="note">${esc(t("dx.timeUp"))}</p>` : ""}
       ${body}
@@ -379,7 +379,7 @@
     }
     // dialogue (dialogue simulé / interaction)
     const lines = it.model || [];
-    return `<div class="card doc" lang="fr"><p>${esc(it.scenario)}</p><p class="muted small">${esc(t("dx.you", { r: it.you }))} · ${esc(t("dx.them", { r: it.them }))}</p></div>
+    return `<div class="card doc" lang="fr"><p>${esc(it.scenario)}</p><p class="muted small" lang="${lang()}">${[["dx.you", it.you], ["dx.them", it.them]].map(([k, r]) => esc(t(k, { r: "\u0001" })).replace("\u0001", `<span lang="fr">${esc(r)}</span>`)).join(" · ")}</p></div>
       ${it.items && it.items.length ? `<p class="eyebrow">${esc(t("dx.items"))}</p><div class="dx-items">${it.items.map(x => `<div class="dx-item"><span class="e" aria-hidden="true">${esc(x.e || "🛒")}</span><span lang="fr">${esc(x.n)}</span><b>${esc(x.p)}</b></div>`).join("")}</div>` : ""}
       <div class="card"><p class="eyebrow">${esc(t("dx.tick"))}</p>${mustList(it, it.must.map((m, i) => !!c.ticks[i]), !c.checked)}</div>
       <div class="dialogue dx-dlg">${c.line < 0 ? `<button class="btn" data-dx="dlg-next">${esc(t("dx.play"))}</button>` : lines.slice(0, c.line + 1).map((l, i) => {
@@ -397,7 +397,11 @@
   function viewRunEnd() {
     const its = RUN.ids.map(id => BY_ID[id]), lv = RUN.lv;
     const mins = Math.max(1, Math.round((Date.now() - RUN.start) / 60000));
-    if (!RUN.logged) { RUN.logged = true; A().logMinutes(mins); if (RUN.n != null && RUN.kind !== "ex") { const r = recordSujet(lv, RUN.n); if (r.complete && r.pass) setTimeout(confetti, 200); } }
+    if (!RUN.logged) {
+      RUN.logged = true; A().logMinutes(mins);
+      // A paper finished one exercise at a time also counts as done (best score, passed papers), without a history line.
+      if (RUN.n != null) { const r = recordSujet(lv, RUN.n, RUN.kind === "ex"); if (r.complete && r.pass && RUN.kind !== "ex") setTimeout(confetti, 200); checkBadges(lv, RUN.n); }
+    }
     const secs = SECS.filter(s => its.some(x => x.sec === s));
     const r = RUN.n != null ? sujetScore(lv, RUN.n) : null;
     const got = its.reduce((a, x) => a + (RUN.scores[x.id] || 0), 0), max = its.reduce((a, x) => a + x.pts, 0);
@@ -424,7 +428,7 @@
     return pool;
   }
   function viewFlash(lv, surv) {
-    if (!FL || FL.lv !== lv || !!FL.surv !== !!surv) { const pool = shuffle(flashPool(lv)); FL = { lv, surv: !!surv, lives: 3, qs: surv ? pool : pool.slice(0, 10), i: 0, ok: 0, combo: 0, maxc: 0, sel: null, auto: true }; }
+    if (!FL || FL.lv !== lv || !!FL.surv !== !!surv) { const pool = shuffle(flashPool(lv)); FL = { lv, surv: !!surv, lives: 3, qs: surv ? pool : pool.slice(0, 10), i: 0, n: 0, ok: 0, combo: 0, maxc: 0, sel: null, auto: true }; }
     if (surv) return viewSurv(lv);
     const best = st().flash[lv] || 0;
     if (FL.i >= FL.qs.length) {
@@ -452,7 +456,7 @@
     const best = st().surv[lv] || 0, back = `<a class="back" href="#/exam/${lv}">← ${esc(t("dx.title"))}</a>`;
     if (FL.i >= FL.qs.length) {
       const rec = FL.ok > best && FL.ok > 0;
-      if (!FL.saved) { FL.saved = true; if (FL.ok > best) { st().surv[lv] = FL.ok; save(); } if (FL.ok >= 15) award("surv"); A().logMinutes(Math.max(2, Math.round(FL.i / 2))); if (rec) setTimeout(confetti, 200); }
+      if (!FL.saved) { FL.saved = true; if (FL.ok > best) { st().surv[lv] = FL.ok; save(); } if (FL.ok >= 15) award("surv"); A().logMinutes(Math.max(2, Math.round(FL.n / 2))); if (rec) setTimeout(confetti, 200); }
       return back + `<h1>❤️ ${esc(t("dx.surv"))}</h1>
         <section class="card dx-result"><div class="dx-ring" style="--p:${Math.min(100, FL.ok * 5)}"><b>${FL.ok}</b><small>✓</small></div>
         <div><p class="dx-verdict">${esc(t("dx.survEnd", { n: FL.ok }))}</p><p>${rec ? esc(t("dx.flashRec")) : esc(t("dx.survBest", { b: Math.max(best, FL.ok) }))}</p><p class="muted">${esc(t("dx.combo", { n: FL.maxc }))}</p></div></section>
@@ -513,11 +517,12 @@
       case "next": stopAudio(); RUN.i++; A().render(); window.scrollTo(0, 0); { const n = curItem(); if (n && n.sec === "po" && n.kind === "entretien") setTimeout(() => A().speak(n.prompts[0].q), 400); } return;
       case "flash-play": { const { it: fi, q } = FL.qs[FL.i]; playLines(q.audio || fi.audio, { lv: fi.level }); return; }
       case "flash-pick": {
-        const q = FL.qs[FL.i].q; FL.sel = +d.o;
+        if (!FL || FL.sel != null) return;
+        const q = FL.qs[FL.i].q; FL.sel = +d.o; FL.n++;
         if (FL.sel === q.a) { FL.ok++; FL.combo++; FL.maxc = Math.max(FL.maxc, FL.combo); } else { FL.combo = 0; if (FL.surv) FL.lives--; }
         stopAudio(); keepScroll(() => {}); return;
       }
-      case "flash-next": FL.i++; if (FL.surv && FL.lives <= 0) FL.i = FL.qs.length; FL.sel = null; A().render(); window.scrollTo(0, 0); { const n = FL.qs[FL.i]; if (n && n.it.sec === "co") setTimeout(() => playLines(n.q.audio || n.it.audio, { lv: n.it.level, glow: "[data-dx=flash-play]" }), 350); } return;
+      case "flash-next": if (!FL || FL.sel == null) return; FL.i++; if (FL.surv && FL.lives <= 0) FL.i = FL.qs.length; FL.sel = null; A().render(); window.scrollTo(0, 0); { const n = FL.qs[FL.i]; if (n && n.it.sec === "co") setTimeout(() => playLines(n.q.audio || n.it.audio, { lv: n.it.level, glow: "[data-dx=flash-play]" }), 350); } return;
       case "flash-again": FL = null; A().render(); return;
     }
   }

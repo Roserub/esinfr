@@ -75,12 +75,12 @@
       tr: [
         "Üç gündür Esin'in boğazı ağrıyor ve çok öksürüyor. İnternetten bir pratisyen hekimden randevu alıyor.",
         "Doktor onu muayene ediyor. « Ateşiniz var mı? » — « Biraz, dün akşam: 38,2. » Doktor boğazına bakıyor ve ciğerlerini dinliyor. « Ciddi bir şey değil, viral bir anjin (boğaz enfeksiyonu). Antibiyotiğe gerek yok. Bol su için, dinlenin ve ağrınız olursa parasetamol alın. »",
-        "Ona bir reçete ve iki günlük bir iş göremezlik raporu veriyor. Esin muayene ücretini Vitale kartıyla ödüyor: Sağlık Sigortası (Assurance maladie) ücretin büyük bir kısmını geri ödüyor."
+        "Ona bir reçete ve iki günlük bir iş göremezlik raporu veriyor. Esin muayene ücretini ödüyor ve Vitale kartını veriyor: Sağlık Sigortası (Assurance maladie) ücretin büyük bir kısmını geri ödüyor."
       ],
       en: [
         "For three days, Esin has had a sore throat and she has been coughing a lot. She books an appointment online with a general practitioner.",
         "The doctor examines her. « Do you have a fever? » — « A little, last night: 38.2. » The doctor looks at her throat and listens to her lungs. « It's nothing serious, it's viral tonsillitis. No need for antibiotics. Drink lots of water, rest, and take paracetamol if you are in pain. »",
-        "He gives her a prescription and a two-day sick note. Esin pays for the consultation with her Carte Vitale: the national health insurance (Assurance maladie) reimburses a large part of the price."
+        "He gives her a prescription and a two-day sick note. Esin pays for the consultation and hands over her Carte Vitale: the national health insurance (Assurance maladie) reimburses a large part of the price."
       ],
       q: [
         { tr: "Esin ne zamandan beri hasta?", en: "How long has Esin been ill?", o: [["Bir haftadır", "A week"], ["Üç gündür", "Three days"], ["Bir aydır", "A month"]] },
@@ -93,7 +93,7 @@
       tr: [
         "Cumartesi akşamı Esin bir arkadaşıyla hentbol maçı izlemeye gitti. Birinci lig maçıydı ve salon doluydu.",
         "Başta ev sahibi takım çok top kaybetti ve devre arasında üç gol gerideydi. Ama ikinci yarıda kaleci inanılmaz kurtarışlar yaptı ve kanat oyuncuları muhteşem goller attı. Sonunda ev sahibi takım iki gol farkla kazandı.",
-        "Maç sırasında bir oyuncu bileğinden sakatlandı. Esin takımın fizyoterapistini izledi: buz koydu ve bant (strapping) yaptı. Kendi kendine şöyle dedi: « Bir gün o ben olacağım. »"
+        "Maç sırasında bir oyuncu ayak bileğinden sakatlandı. Esin takımın fizyoterapistini izledi: buz koydu ve bant (strapping) yaptı. Kendi kendine şöyle dedi: « Bir gün o ben olacağım. »"
       ],
       en: [
         "On Saturday evening, Esin went to watch a handball match with a friend. It was a first-division match and the arena was full.",
@@ -101,7 +101,7 @@
         "During the match, a player injured his ankle. Esin watched the team's physio: he applied ice and a strapping. She said to herself: « One day, that will be me. »"
       ],
       q: [
-        { tr: "Devre arasında ev sahibi takım…", en: "At half-time, the home team…", o: [["kazanıyordu", "was winning"], ["üç gol geride kaybediyordu", "was losing by three goals"], ["berabere idi", "was level"]] },
+        { tr: "Devre arasında ev sahibi takım…", en: "At half-time, the home team…", o: [["kazanıyordu", "was winning"], ["üç gol gerideydi", "was losing by three goals"], ["berabereydi", "was level"]] },
         { tr: "İkinci yarıda kim çok iyiydi?", en: "Who was very good in the second half?", o: [["Kaleci", "The goalkeeper"], ["Hakem", "The referee"], ["Antrenör", "The coach"]] },
         { tr: "Fizyoterapist ne yaptı?", en: "What did the physio do?", o: [["Masaj", "A massage"], ["Buz ve bant", "Ice and a strapping"], ["İğne", "An injection"]] },
         { tr: "Sonunda Esin ne düşünüyor?", en: "What does Esin think at the end?", o: [["Oynamak istediğini", "That she wants to play"], ["Bir gün bir takımın fizyoterapisti olacağını", "That one day she will be a team's physio"], ["Maçın sıkıcı olduğunu", "That the match was boring"]] }
@@ -144,7 +144,7 @@
     },
     "r-seance": {
       tr: [
-        "24 yaşındaki Thomas, üç hafta önce hentbol oynarken bileğini burktu. Doktoru ona on seans fizyoterapi yazdı.",
+        "24 yaşındaki Thomas, üç hafta önce hentbol oynarken ayak bileğini burktu. Doktoru ona on seans fizyoterapi yazdı.",
         "Seansın başında fizyoterapist ona birkaç soru soruyor: « Bu hafta ağrınız nasıl, 0'dan 10'a kadar? Bilek akşamları hâlâ şişiyor mu? » Thomas ağrının 3'te olduğunu ve şişliğin çok azaldığını söylüyor.",
         "Sonra egzersizlere geçiyorlar. Thomas önce eklem hareket açıklığı üzerinde çalışıyor, sonra bir lastik bantla bileğin etrafındaki kasları güçlendiriyor. Son olarak dengesiz bir platform üzerinde, önce gözler açık sonra kapalı, propriosepsiyon egzersizleri yapıyor. « Yeni bir burkulmayı önlemek için en önemlisi bu », diye açıklıyor fizyoterapist.",
         "Ayrılmadan önce ona evde her gün yapması için üç egzersiz veriyor. « Bunları ciddi şekilde yaparsanız, iki hafta sonra antrenmanlara dönebileceksiniz. »"
@@ -156,7 +156,7 @@
         "Before he leaves, she gives him three exercises to do at home every day. « If you do them seriously, you'll be able to go back to training in two weeks. »"
       ],
       q: [
-        { tr: "Thomas fizyoterapiste neden geliyor?", en: "Why does Thomas come to the physio?", o: [["Bilek burkulması için", "For a sprained ankle"], ["Sırt ağrısı için", "For back pain"], ["Kol kırığı için", "For a broken arm"]] },
+        { tr: "Thomas fizyoterapiste neden geliyor?", en: "Why does Thomas come to the physio?", o: [["Ayak bileği burkulması için", "For a sprained ankle"], ["Sırt ağrısı için", "For back pain"], ["Kol kırığı için", "For a broken arm"]] },
         { tr: "Şişlik nasıl?", en: "How is the swelling?", o: [["Arttı", "It has increased"], ["Çok azaldı", "It has gone down a lot"], ["Değişmedi", "It hasn't changed"]] },
         { tr: "Fizyoterapiste göre tekrarlamayı önlemek için en önemli egzersiz hangisi?", en: "According to the physio, which exercise is most important to avoid a recurrence?", o: [["Esneme", "Stretching"], ["Propriosepsiyon", "Proprioception"], ["Koşu", "Running"]] },
         { tr: "Antrenmanlara ne zaman dönebilecek?", en: "When will he be able to go back to training?", o: [["Yarın", "Tomorrow"], ["İki hafta sonra", "In two weeks"], ["Altı ay sonra", "In six months"]] }

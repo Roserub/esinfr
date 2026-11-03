@@ -34,7 +34,7 @@
 <p class="ex">asansör → ascenseur · kuaför → coiffeur · şoför → chauffeur · randevu → rendez-vous · antrenman → entraînement · rötar → retard · kuzen → cousin · lise → lycée</p>
 <p><b>Tricks to guess the French word:</b></p>
 <ul>
-<li>Turkish <b>-syon</b> = French <b>-tion</b>: televizyon → télévision, organizasyon → organisation, rehabilitasyon → réhabilitation.</li>
+<li>Turkish <b>-syon</b> = French <b>-tion / -sion</b>: televizyon → télévision, organizasyon → organisation, rehabilitasyon → réhabilitation.</li>
 <li>Turkish <b>ş</b> often = French <b>ch</b>: şans → chance, şömine → cheminée, şampiyon → champion.</li>
 <li>Turkish <b>j</b> = French <b>j/g</b> (same sound!): masaj → massage, garaj → garage, bagaj → bagage.</li>
 <li>Turkish <b>ü/ö</b> often = French <b>u/eu</b> spelling: büro → bureau, kuaför → coiffeur, parfüm → parfum.</li>
@@ -45,7 +45,7 @@
 <p class="ex">asansör → ascenseur · kuaför → coiffeur · şoför → chauffeur · randevu → rendez-vous · antrenman → entraînement · rötar → retard · kuzen → cousin · lise → lycée</p>
 <p><b>Fransızca kelimeyi tahmin etme taktikleri:</b></p>
 <ul>
-<li>Türkçe <b>-syon</b> = Fransızca <b>-tion</b>: televizyon → télévision, organizasyon → organisation.</li>
+<li>Türkçe <b>-syon</b> = Fransızca <b>-tion / -sion</b>: televizyon → télévision, organizasyon → organisation.</li>
 <li>Türkçe <b>ş</b> çoğu zaman = Fransızca <b>ch</b>: şans → chance, şömine → cheminée, şampiyon → champion.</li>
 <li>Türkçe <b>j</b> = Fransızca <b>j/g</b> (aynı ses!): masaj → massage, garaj → garage, bagaj → bagage.</li>
 <li>Türkçe <b>ü/ö</b> çoğu zaman = Fransızca <b>u/eu</b> yazımı: büro → bureau, kuaför → coiffeur, parfüm → parfum.</li>

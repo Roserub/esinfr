@@ -149,14 +149,14 @@
         { tr: "Anlatıcı ağustosta nerede kalıyordu?", en: "Where was the narrator living in August?", o: [["Bir otelde", "In a hotel"], ["Bir arkadaşının yanında", "With a friend"], ["Bir öğrenci yurdunda", "In a student residence"]] },
         { tr: "Asıl sorunu neydi?", en: "What was her main problem?", o: [["Kefili yoktu", "She had no guarantor"], ["Fransızca konuşmuyordu", "She didn't speak French"], ["Parası yoktu", "She had no money"]] },
         { tr: "Visale nedir?", en: "What is Visale?", o: [["Bir emlak ajansı", "An estate agency"], ["Bir ilan sitesi", "An ads website"], ["Gençler için ücretsiz bir kefalet", "A free guarantee for young people"]] },
-        { tr: "Ev sahibi cevap vermek için ne kadar bekledi?", en: "How long did the landlady take to answer?", o: [["Bir hafta", "A week"], ["Aynı akşam cevap verdi", "That same evening"], ["Bir ay", "A month"]] },
+        { tr: "Ev sahibi cevap vermek için ne kadar bekledi?", en: "How long did the landlady take to answer?", o: [["Bir hafta", "A week"], ["Aynı akşam", "That same evening"], ["Bir ay", "A month"]] },
         { tr: "Tavsiyesi ne?", en: "What is her advice?", o: [["Dosyayı ev gezmelerinden önce hazırlamak", "Prepare your file before the viewings"], ["Sadece yazın aramak", "Only look in summer"], ["Giriş tespitini yapmamak", "Don't do the check-in inventory"]] }
       ]
     },
     "r-journee-cabinet": {
       tr: [
         "Geçen pazartesi Esin, Nantes'taki bir fizyoterapi muayenehanesinde bir gözlem günü geçirdi. Muayenehane küçüktü: üç fizyoterapist, bir bekleme salonu ve minderler, toplar ve dambıllar olan büyük bir salon.",
-        "Onu karşılayan fizyoterapist Mathieu saat sekizde başlıyordu. İlk hasta yetmiş yaşında bir beydi. Bir aydır diz protezi vardı ve hâlâ bastonla yürüyordu. Sonra sırt ağrısı olan genç bir kadın ve futbolda bileğini burkmuş bir genç geldi.",
+        "Onu karşılayan fizyoterapist Mathieu saat sekizde başlıyordu. İlk hasta yetmiş yaşında bir beydi. Bir aydır diz protezi vardı ve hâlâ bastonla yürüyordu. Sonra sırt ağrısı olan genç bir kadın ve futbolda ayak bileğini burkmuş bir genç geldi.",
         "Her seans yaklaşık otuz dakika sürüyordu. Başta Mathieu sorular soruyor ve ağrıyı kontrol ediyordu. Sonra masaj ya da mobilizasyon yapıyor ve egzersizler gösteriyordu. Sonunda hasta Vitale kartını veriyordu.",
         "Öğlen bir sandviç yediler ve Mathieu Doctolib'deki mesajlara cevap verdi. Öğleden sonra yoğun geçti: dokuz hasta!",
         "Akşam Esin yorgundu ama mutluydu. Şöyle düşündü: « Diplomam tanındığında, bunun gibi bir muayenehanede çalışacağım. »"
