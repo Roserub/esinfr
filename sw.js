@@ -1,6 +1,6 @@
 /* Offline support. Network first (so a new version shows on the very next visit), cache as the offline fallback.
    When a new version activates, open pages are reloaded once so nobody stays on the old one. */
-const CACHE = "esinfr-v13";
+const CACHE = "esinfr-v14";
 const SHELL = [
   "./", "index.html", "manifest.webmanifest", "assets/style.css", "assets/icon.svg", "assets/icon-180.png", "assets/i18n.js", "assets/i18n-exam.js",
   "assets/i18n-games.js", "assets/i18n-voice.js", "assets/voice.js", "assets/exam.js", "assets/games.js", "assets/app.js", "data/resources.js", "data/resources-fr.js",
@@ -16,7 +16,9 @@ const SHELL = [
   "data/decks-delf.js", "data/decks-delf-phrases.js", "data/guide-delf.js", "data/adv-a1-1.js", "data/adv-a1-2.js", "data/adv-a2-1.js", "data/adv-a2-2.js",
   "data/readings-tr-1.js", "data/readings-tr-2.js", "data/readings-tr-3.js", "data/basics.js", "assets/basics.js", "assets/i18n-basics.js",
   "data/readings-a1a2-3.js", "data/readings-a1a2-4.js", "data/dialogues-a1a2-3.js", "data/dialogues-a1a2-4.js", "data/decks-a1a2.js",
-  "data/readings-tr-4.js", "data/readings-tr-5.js", "data/basics-2.js", "data/adv-a1-3.js", "data/adv-a2-3.js"
+  "data/readings-tr-4.js", "data/readings-tr-5.js", "data/basics-2.js", "data/adv-a1-3.js", "data/adv-a2-3.js",
+  "data/readings-a1a2-5.js", "data/readings-a1a2-6.js", "data/dialogues-a1a2-5.js", "data/dialogues-a1a2-6.js", "data/decks-a1a2-2.js",
+  "data/readings-tr-6.js", "data/readings-tr-7.js", "data/basics-3.js", "data/adv-a1-4.js", "data/adv-a2-4.js"
 ];
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL.map(u => new Request(u, { cache: "reload" })))).then(() => self.skipWaiting()));
