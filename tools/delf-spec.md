@@ -27,7 +27,7 @@ Plain JavaScript, no imports, no template literals (`` ` ``), no `${`. Strings i
 |---|---|
 | `id` | `"<level lowercase>-s<2-digit sujet>-<sec><ex>"`, e.g. `"a2-s07-ce3"` |
 | `level` | `"A1"` or `"A2"` |
-| `sujet` | 1 … 50 (21–26: papers adapted from the Turkish-annotated answer-key file; 27–50: original papers, each built around one theme, with a Turkish explanation `xtr` under every answer) |
+| `sujet` | 1 … 100 (21–26: papers adapted from the Turkish-annotated answer-key file; 27+: original papers, each built around one theme, with a Turkish explanation `xtr` under every answer) |
 | `sec` | `"co"` listening · `"ce"` reading · `"pe"` writing · `"po"` speaking |
 | `ex` | exercise number inside the section (1, 2, 3 …) |
 | `pts` | points of the exercise (integers or .5); per sujet and section they add up to 25 |
