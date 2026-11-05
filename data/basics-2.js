@@ -92,10 +92,10 @@ parce que…|çünkü…|because…||Parce que c'est drôle.
           en: "'Où' (with accent) = where; 'ou' (no accent) = or. Same sound! You answer 'pourquoi ?' with 'parce que…'."
         }),
         G("Quel, quelle…", "Hangi…", "Which / what…", `
-quel ?|hangi? ne? (eril)|which? what? (masculine)||Quel jour ?
-quelle ?|hangi? ne? (dişil)|which? what? (feminine)||Quelle heure est-il ?
-quels ?|hangi? (eril çoğul)|which? (masculine plural)||Quels sports ?
-quelles ?|hangi? (dişil çoğul)|which? (feminine plural)||Quelles couleurs ?
+quel ?|hangi? ne? (eril)|which? what? (masculine)|quel, au masculin|Quel jour ?
+quelle ?|hangi? ne? (dişil)|which? what? (feminine)|quelle, au féminin|Quelle heure est-il ?
+quels ?|hangi? (eril çoğul)|which? (masculine plural)|quels, au masculin pluriel|Quels sports ?
+quelles ?|hangi? (dişil çoğul)|which? (feminine plural)|quelles, au féminin pluriel|Quelles couleurs ?
 Quel âge as-tu ?|Kaç yaşındasın?|How old are you?
 Quelle est ton adresse ?|Adresin ne?|What's your address?
 C'est quel numéro ?|Hangi numara?|Which number is it?`, {
@@ -242,7 +242,7 @@ Aujourd'hui, je porte une robe bleue.|Bugün mavi bir elbise giyiyorum.|Today I'
 faire du sport|spor yapmak|to do sport||Je fais du sport.
 faire du vélo|bisiklete binmek|to cycle||Je fais du vélo.
 faire du yoga|yoga yapmak|to do yoga
-faire du footing|koşuya çıkmak|to go jogging
+faire du footing|hafif tempoda koşuya çıkmak (jogging)|to go jogging
 faire de la course à pied|koşu yapmak|to run (as a sport)
 faire de la natation|yüzmek (yüzme sporu)|to swim (as a sport)
 faire de la musculation|ağırlık çalışmak, fitness yapmak|to do weight training
@@ -411,7 +411,7 @@ et|ve|and||du pain et du fromage
 aussi|de, da, ayrıca|also, too||Moi aussi !
 mais|ama, fakat|but||C'est petit mais joli.
 ou|veya, ya da|or||thé ou café ?
-ou bien|ya da|or else
+ou bien|yoksa, ya da (vurgulu)|or else
 pourtant|yine de, oysa|yet, however
 par contre|buna karşılık|on the other hand
 Je parle turc et anglais.|Türkçe ve İngilizce konuşuyorum.|I speak Turkish and English.
@@ -421,12 +421,12 @@ J'aime le sport mais je suis fatiguée.|Sporu seviyorum ama yorgunum.|I like spo
           en: "« Moi aussi ! » (me too) is perfect for reacting fast. To agree with a negative sentence, say « moi non plus » (me neither)."
         }),
         G("Cause et conséquence", "Neden ve sonuç", "Cause & consequence", `
-parce que|çünkü|because||Je reste parce qu'il pleut.
+parce que|çünkü (en yaygın)|because (most common)||Je reste parce qu'il pleut.
 car|çünkü (yazı dilinde)|because, as (more written)
 comme|-dığı için (cümle başında)|as, since||Comme il pleut, je reste.
 donc|bu yüzden, yani|so, therefore||Il pleut, donc je reste.
 alors|o zaman, öyleyse|so, then||Alors, on y va ?
-c'est pour ça que|o yüzden|that's why
+c'est pour ça que|işte o yüzden|that's why
 Je suis fatiguée, donc je rentre.|Yorgunum, bu yüzden eve dönüyorum.|I'm tired, so I'm going home.`, {
           fr: "« Parce que » donne la cause, « donc » donne la conséquence. Et « alors » est partout à l'oral, un peu comme « bon » en début de phrase.",
           tr: "'Parce que' nedeni (çünkü), 'donc' sonucu (bu yüzden) verir. 'Alors' konuşma dilinde her yerde: Türkçedeki 'eee', 'yani', 'o zaman' gibi cümle başında kullanılır. Fransızlar gibi konuşmak için harika bir kelime!",
@@ -434,9 +434,9 @@ Je suis fatiguée, donc je rentre.|Yorgunum, bu yüzden eve dönüyorum.|I'm tir
         }),
         G("Raconter dans l'ordre", "Sırayla anlatmak", "Telling things in order", `
 d'abord|önce, ilk olarak|first||D'abord, je prends un café.
-ensuite|sonra, ardından|next, then||Ensuite, je vais au travail.
-puis|sonra|then
-après|sonra, -den sonra|after, afterwards||Après, je mange.
+ensuite|ardından, daha sonra|next, then||Ensuite, je vais au travail.
+puis|sonra (kısa kelime)|then (short word)
+après|-den sonra, sonrasında|after, afterwards||Après, je mange.
 enfin|son olarak; nihayet|finally, at last||Enfin, je dors !
 finalement|sonunda, en sonunda|in the end
 pendant|sırasında, boyunca|during, for||pendant les vacances

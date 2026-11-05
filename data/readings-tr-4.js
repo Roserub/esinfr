@@ -30,7 +30,7 @@
         "Benim adım Thomas. 35 yaşındayım ve öğretmenim. Haftada üç kez, işten önce parkta koşuyorum.",
         "Saat 6.30'da kalkıyorum. Büyük bir bardak su içiyorum, spor ayakkabılarımı giyiyorum ve çıkıyorum. Park evime beş dakika uzaklıkta. Sabahları park sakin ve hava serin.",
         "Kırk dakika, yaklaşık altı kilometre koşuyorum. Hızlı koşmuyorum: yavaş koşmayı ve iyi nefes almayı tercih ediyorum. Yağmur yağınca da yine koşuyorum! Yağmurun sesini seviyorum.",
-        "Sonra gölün yanında esneme hareketleri yapıyorum. Ördekleri seyrediyorum. Ardından eve dönüyorum, duş alıyorum ve ekmekle birlikte lor peyniri (fromage blanc) ve bir muz yiyorum.",
+        "Sonra gölün yanında esneme hareketleri yapıyorum. Ördekleri seyrediyorum. Ardından eve dönüyorum, duş alıyorum ve ekmekle birlikte fromage blanc (yoğurda benzeyen taze bir peynir) ve bir muz yiyorum.",
         "Koşmak benim kendime ayırdığım zaman. Güne keyifli başlıyorum."
       ],
       en: [
@@ -52,7 +52,7 @@
       tr: [
         "Léa 28 yaşında. Bir ofiste çalışıyor ve sık sık sırtı ağrıyor. Doktoru « Yüzme sırt için çok iyidir! » diyor. Bu yüzden Léa çarşamba akşamları belediye yüzme havuzuna gidiyor.",
         "Giriş 3,50 €. Pahalı değil. Soyunma odasında Léa mayosunu giyiyor, bonesini ve yüzücü gözlüğünü takıyor. Fransa'da birçok havuzda bone zorunludur. Suya girmeden önce duş alıyor.",
-        "Havuzda yavaş yüzücüler için kulvarlar ve hızlı yüzücüler için kulvarlar var. Léa yavaş bir kulvarda yüzüyor. Yirmi boy yüzüyor: onu kurbağalama, onu serbest stil.",
+        "Havuzda yavaş yüzücüler için kulvarlar ve hızlı yüzücüler için kulvarlar var. Léa yavaş bir kulvarda yüzüyor. Yirmi boy yüzüyor: on boy kurbağalama, on boy serbest stil.",
         "Havuzdan sonra Léa rahatlamış oluyor. Artık sırtı ağrımıyor ve çok iyi uyuyor."
       ],
       en: [
@@ -113,7 +113,7 @@
     },
     "r-crepes-mamie": {
       tr: [
-        "Pazar günleri sekiz yaşındaki Lucas büyükannesiyle krep yapıyor. Fransa'da krep ikindi atıştırmalığında (goûter) ya da tatlı olarak yenir. 2 şubatta da Chandeleur var: krep bayramı!",
+        "Pazar günleri sekiz yaşındaki Lucas büyükannesiyle krep yapıyor. Fransa'da krep ikindi atıştırmalığı (goûter) olarak ya da tatlı olarak yenir. 2 şubatta ise Chandeleur kutlanır: krep bayramı!",
         "Yaklaşık on beş krep için gerekenler: 250 gram un, üç yumurta, yarım litre süt, bir tutam tuz ve biraz tereyağı.",
         "Önce Lucas unu büyük bir kaseye koyuyor. Yumurtaları ekliyor ve karıştırıyor. Sonra sütü azar azar döküyor. Hamur pürüzsüz ve topaksız olmalı. Hamur bir saat dinleniyor.",
         "Büyükanne tavayı biraz tereyağıyla ısıtıyor. Bir kepçe hamur döküyor. Bir dakika sonra Lucas krepi havaya atıp çeviriyor… ve krep yere düşüyor! Gülüyorlar. İkinci krep mükemmel. Lucas onu şeker ve limonla yiyor. Nefis!"

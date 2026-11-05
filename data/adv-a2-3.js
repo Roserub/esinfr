@@ -56,7 +56,7 @@
            ] },
       f2: { say: [["M", "Le handball, c'est un sport génial. Vous aimeriez reprendre un jour ?"]],
            choices: [
-             { fr: "Oui, j'aimerais bien reprendre l'année prochaine.", tr: "Evet, gelecek yıl yeniden başlamak isterdim.", en: "Yes, I'd love to start again next year.", ok: true, go: "g" },
+             { fr: "Oui, j'aimerais bien reprendre l'année prochaine.", tr: "Evet, gelecek yıl yeniden başlamak isterim.", en: "Yes, I'd love to start again next year.", ok: true, go: "g" },
              { fr: "Oui, je reprendrais hier.", tr: "Evet, dün yeniden başlardım.", en: "Yes, I would start again yesterday.", ok: false,
                fb: { fr: "Hier, c'est trop tard 😄 ! Parlez du futur : « l'année prochaine ».", tr: "Dün çok geç 😄! Gelecekten bahsedin: « l'année prochaine ».", en: "Yesterday is too late 😄! Talk about the future: « l'année prochaine »." } },
              { fr: "Non, le handball, c'est pour les enfants.", tr: "Hayır, hentbol çocuklar için.", en: "No, handball is for children.", ok: false,
@@ -91,7 +91,7 @@
                fb: { fr: "Une serviette en papier ? Un peu petit pour la table 😄 ! Il parle d'une serviette de bain.", tr: "Kâğıt peçete mi? Masa için biraz küçük 😄! Banyo havlusundan bahsediyor.", en: "A paper napkin? A bit small for the table 😄! He means a bath towel." } },
              { fr: "D'accord, j'apporterai une serviette. Merci et bonne soirée !", tr: "Tamam, bir havlu getireceğim. Teşekkürler, iyi akşamlar!", en: "OK, I'll bring a towel. Thank you and have a nice evening!", ok: true, go: "fin" },
              { fr: "Merci, à la semaine dernière !", tr: "Teşekkürler, geçen haftaya kadar!", en: "Thanks, see you last week!", ok: false,
-               fb: { fr: "Le rendez-vous est dans le futur 😉 : « à la semaine prochaine » ou « à jeudi ».", tr: "Randevu gelecekte 😉: « à la semaine prochaine » ya da « à jeudi ».", en: "The appointment is in the future 😉: « à la semaine prochaine » or « à jeudi »." } }
+               fb: { fr: "Le rendez-vous est dans le futur 😉 : « à bientôt » ou « à la prochaine fois ».", tr: "Randevu gelecekte 😉: « à bientôt » ya da « à la prochaine fois ».", en: "The appointment is in the future 😉: « à bientôt » or « à la prochaine fois »." } }
            ] },
       fin: { end: "win", say: [["M", "Bonne soirée ! Et prenez soin de votre dos !"]],
              scene: { fr: "Vous sortez du cabinet, le dos déjà un peu mieux. Bravo, vous avez tout expliqué en français ! 💆‍♀️🎉", tr: "Muayenehaneden çıkıyorsunuz, beliniz şimdiden biraz daha iyi. Bravo, her şeyi Fransızca anlattınız! 💆‍♀️🎉", en: "You leave the practice, your back already a bit better. Well done, you explained everything in French! 💆‍♀️🎉" } }
@@ -187,7 +187,7 @@
       j: { say: [["M", "Dans trois ou quatre semaines, doucement. Et pourquoi pas avec quelques séances de kiné ?"]],
            choices: [
              { fr: "Bonne idée ! Merci beaucoup, docteur.", tr: "İyi fikir! Çok teşekkürler, doktor bey.", en: "Good idea! Thank you very much, doctor.", ok: true, go: "fin" },
-             { fr: "Je connais bien la rééducation : je suis kiné ! Merci, docteur.", tr: "Rehabilitasyonu iyi bilirim: fizyoterapistim! Teşekkürler, doktor bey.", en: "I know rehab well: I'm a physio! Thank you, doctor.", ok: true, go: "fin" },
+             { fr: "Je connais bien la rééducation : j'étais kiné en Turquie ! Merci, docteur.", tr: "Rehabilitasyonu iyi bilirim: Türkiye'de fizyoterapisttim! Teşekkürler, doktor bey.", en: "I know rehab well: I was a physio in Turkey! Thank you, doctor.", ok: true, go: "fin" },
              { fr: "Merci, docteur ! À demain pour le marathon !", tr: "Teşekkürler doktor bey! Yarın maratonda görüşürüz!", en: "Thanks, doctor! See you tomorrow at the marathon!", ok: false,
                fb: { fr: "Un marathon demain ? Votre cheville dit non 😄🩼 ! Dites simplement merci.", tr: "Yarın maraton mu? Bileğiniz hayır diyor 😄🩼! Sadece teşekkür edin.", en: "A marathon tomorrow? Your ankle says no 😄🩼! Just say thank you." } }
            ] },
@@ -317,9 +317,9 @@
            ] },
       c2: { say: [["F", "Bien sûr. Quelle est votre adresse e-mail ?"]],
            choices: [
-             { fr: "C'est coureuse.heureuse à mail point fr.", tr: "coureuse.heureuse « à » mail nokta fr.", en: "It's coureuse.heureuse « at » mail dot fr (wrong word).", ok: false,
-               fb: { fr: "Le signe @ se dit « arobase » en français 😉 : « coureuse.heureuse arobase mail point fr ».", tr: "@ işareti Fransızcada « arobase » diye okunur 😉: « coureuse.heureuse arobase mail point fr ».", en: "The @ sign is « arobase » in French 😉: « coureuse.heureuse arobase mail point fr »." } },
-             { fr: "C'est coureuse.heureuse arobase mail point fr.", tr: "coureuse.heureuse et işareti mail nokta fr.", en: "It's coureuse.heureuse at mail dot fr.", ok: true, go: "d" },
+             { fr: "C'est coureuse.heureuse à exemple point fr.", tr: "coureuse.heureuse « à » exemple nokta fr.", en: "It's coureuse.heureuse « at » exemple dot fr (wrong word).", ok: false,
+               fb: { fr: "Le signe @ se dit « arobase » en français 😉 : « coureuse.heureuse arobase exemple point fr ».", tr: "@ işareti Fransızcada « arobase » diye okunur 😉: « coureuse.heureuse arobase exemple point fr ».", en: "The @ sign is « arobase » in French 😉: « coureuse.heureuse arobase exemple point fr »." } },
+             { fr: "C'est coureuse.heureuse arobase exemple point fr.", tr: "coureuse.heureuse et işareti exemple nokta fr.", en: "It's coureuse.heureuse at exemple dot fr.", ok: true, go: "d" },
              { fr: "C'est au 12, rue des Lilas.", tr: "Lilas Sokağı 12 numara.", en: "It's 12 rue des Lilas.", ok: false,
                fb: { fr: "Ça, c'est votre adresse postale 🏠. Elle demande l'adresse e-mail 📧 !", tr: "Bu posta adresiniz 🏠. E-posta adresinizi soruyor 📧!", en: "That's your postal address 🏠. She's asking for your email address 📧!" } }
            ] },
@@ -362,7 +362,7 @@
              { fr: "Très bien. Vous pouvez m'envoyer les chaussures aussi ?", tr: "Çok iyi. Ayakkabıları da gönderebilir misiniz?", en: "Great. Can you send me the shoes too?", ok: false,
                fb: { fr: "Remboursée ET les chaussures ? Bien essayé 😄 ! Vous avez choisi le remboursement.", tr: "Hem para iadesi HEM ayakkabılar mı? İyi denemeydi 😄! Para iadesini seçtiniz.", en: "A refund AND the shoes? Nice try 😄! You chose the refund." } }
            ] },
-      h: { say: [["F", "Bien sûr. Vous allez recevoir un e-mail de confirmation. Je peux faire autre chose pour vous ?"]],
+      h: { say: [["F", "C'est noté. Vous allez recevoir un e-mail de confirmation. Je peux faire autre chose pour vous ?"]],
            choices: [
              { fr: "Non, c'est tous. Merci !", tr: "Hayır, hepsi bu (yanlış). Teşekkürler!", en: "No, that's « all » (wrong form). Thanks!", ok: false,
                fb: { fr: "L'expression fixe, c'est « c'est tout » (sans « s ») 😉.", tr: "Kalıp ifade « c'est tout » (« s » olmadan) 😉.", en: "The set phrase is « c'est tout » (no « s ») 😉." } },
@@ -415,10 +415,10 @@
       d: { scene: { fr: "Dans la zone d'échauffement, un homme fait des étirements un peu bizarres. Il vous voit avec votre dossard.", tr: "Isınma alanında bir adam biraz tuhaf esneme hareketleri yapıyor. Sizi göğüs numaranızla görüyor.", en: "In the warm-up area, a man is doing some rather odd stretches. He sees you with your bib." },
            say: [["M", "Excusez-moi, vous avez l'air de vous y connaître. Comment on s'échauffe avant une course ?"]],
            choices: [
-             { fr: "Je suis kiné. Commencez par courir le plus vite possible !", tr: "Fizyoterapistim. En hızlı şekilde koşarak başlayın!", en: "I'm a physio. Start by running as fast as you can!", ok: false,
+             { fr: "Je suis kiné de formation. Commencez par courir le plus vite possible !", tr: "Fizyoterapistim (eğitimim bu). En hızlı şekilde koşarak başlayın!", en: "I'm a trained physio. Start by running as fast as you can!", ok: false,
                fb: { fr: "Une kiné ne dirait jamais ça 😄 ! L'échauffement, c'est doucement d'abord.", tr: "Bir fizyoterapist bunu asla söylemez 😄! Isınma önce yavaş yapılır.", en: "A physio would never say that 😄! A warm-up starts gently." } },
-             { fr: "Je suis kiné. Commencez par trottiner doucement pendant 10 minutes.", tr: "Fizyoterapistim. 10 dakika boyunca yavaşça hafif tempolu koşarak başlayın.", en: "I'm a physio. Start by jogging gently for 10 minutes.", ok: true, go: "e" },
-             { fr: "Je suis kiné. Vous vous échaufferez après la course.", tr: "Fizyoterapistim. Koşudan sonra ısınacaksınız.", en: "I'm a physio. You'll warm up after the race.", ok: false,
+             { fr: "Je suis kiné de formation. Commencez par trottiner doucement pendant 10 minutes.", tr: "Fizyoterapistim (eğitimim bu). 10 dakika boyunca yavaşça hafif tempolu koşarak başlayın.", en: "I'm a trained physio. Start by jogging gently for 10 minutes.", ok: true, go: "e" },
+             { fr: "Je suis kiné de formation. Vous vous échaufferez après la course.", tr: "Fizyoterapistim (eğitimim bu). Koşudan sonra ısınacaksınız.", en: "I'm a trained physio. You'll warm up after the race.", ok: false,
                fb: { fr: "Après la course, il est un peu tard 😄 ! L'échauffement, c'est avant.", tr: "Koşudan sonra biraz geç 😄! Isınma önceden yapılır.", en: "After the race is a bit late 😄! The warm-up comes before." } }
            ] },
       e: { say: [["N", "Le départ sera donné dans cinq minutes ! Les coureurs sont priés de se placer derrière la ligne."], ["M", "Merci pour le conseil ! On y va ?"]],

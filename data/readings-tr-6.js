@@ -44,7 +44,7 @@
       q: [
         { tr: "Malik hangi şehirde oturuyor?", en: "Which city does Malik live in?", o: [["Lyon'da", "In Lyon"], ["Toulouse'da", "In Toulouse"], ["Marsilya'da", "In Marseille"]] },
         { tr: "Madame Roux kim?", en: "Who is Madame Roux?", o: [["Fırıncı", "The baker"], ["Eczacı", "The pharmacist"], ["Öğretmen", "The teacher"]] },
-        { tr: "Pazar ne zaman kuruluyor?", en: "When is there a market?", o: [["Pazartesi ve perşembe", "On Mondays and Thursdays"], ["Çarşamba ve cuma", "On Wednesdays and Fridays"], ["Salı ve cumartesi", "On Tuesdays and Saturdays"]] },
+        { tr: "Semt pazarı ne zaman kuruluyor?", en: "When is there a market?", o: [["Pazartesi ve perşembe", "On Mondays and Thursdays"], ["Çarşamba ve cuma", "On Wednesdays and Fridays"], ["Salı ve cumartesi", "On Tuesdays and Saturdays"]] },
         { tr: "Malik işe nasıl gidiyor?", en: "How does Malik get to work?", o: [["Otobüsle", "By bus"], ["Metroyla", "By metro"], ["Bisikletle", "By bike"]] },
         { tr: "Mahallenin sorunu ne?", en: "What is the problem with the neighbourhood?", o: [["Akşamları gürültülü", "It's noisy in the evening"], ["Hiç dükkânı yok", "It has no shops"], ["Metroya uzak", "It's far from the metro"]] }
       ]

@@ -153,7 +153,7 @@ A|Et vous aimez la France ?|Fransa'yı seviyor musunuz?|And do you like France?
 B|Oui, beaucoup. Mais l'hiver est long !|Evet, çok. Ama kış uzun!|Yes, a lot. But the winter is long!
 A|Ha ha, c'est vrai. Et vous travaillez où ?|Ha ha, doğru. Peki nerede çalışıyorsunuz?|Ha ha, that's true. And where do you work?
 B|Moi, je travaille à l'accueil d'une salle de sport.|Ben bir spor salonunun resepsiyonunda çalışıyorum.|I work at the front desk of a gym.
-A|Ah, c'est bien ! Vous êtes sportive, alors.|Ah, ne güzel! Demek sporcusunuz.|Ah, that's good! So you're sporty.
+A|Ah, c'est bien ! Vous êtes sportive, alors.|Ah, ne güzel! Demek sportif birisiniz.|Ah, that's good! So you're sporty.
 B|Oui, j'adore le sport. Et vous, madame Leroy, vous habitez ici depuis longtemps ?|Evet, sporu çok severim. Ya siz Leroy Hanım, uzun zamandır mı burada oturuyorsunuz?|Yes, I love sport. And you, Mrs Leroy, have you lived here a long time?
 A|Depuis vingt ans ! Si vous avez une question, frappez à ma porte.|Yirmi yıldır! Bir sorunuz olursa kapımı çalın.|For twenty years! If you have a question, knock on my door.
 B|C'est très gentil. Merci beaucoup !|Çok naziksiniz. Çok teşekkürler!|That's very kind. Thank you very much!

@@ -178,12 +178,12 @@ les devoirs (m.)|ödev|the homework
 la faute|hata|the mistake
 le mot|kelime|the word
 la phrase|cümle|the sentence
-Ouvrez votre livre page 12.|Kitabınızı 12. sayfada açın.|Open your book at page 12.
+Ouvrez votre livre page 12.|Kitabınızın 12. sayfasını açın.|Open your book at page 12.
 Écoutez et répétez.|Dinleyin ve tekrar edin.|Listen and repeat.
 Lisez le texte.|Metni okuyun.|Read the text.
 Complétez les phrases.|Cümleleri tamamlayın.|Complete the sentences.
 Cochez la bonne réponse.|Doğru cevabı işaretleyin.|Tick the right answer.
-Travaillez à deux.|İkişerli çalışın.|Work in pairs.
+Travaillez à deux.|İkili çalışın.|Work in pairs.
 Soulignez les verbes.|Fiillerin altını çizin.|Underline the verbs.
 Vrai ou faux ?|Doğru mu, yanlış mı?|True or false?
 C'est correct ?|Doğru mu?|Is that right?
@@ -230,7 +230,7 @@ j'étais fatigué(e)|yorgundum|I was tired
 j'avais faim|açtım|I was hungry
 j'avais dix ans|on yaşındaydım|I was ten years old
 je voulais|istiyordum|I wanted
-je pouvais|-ebiliyordum|I could, I was able to
+je pouvais|yapabiliyordum|I could, I was able to
 je savais|biliyordum|I knew
 je devais partir|gitmem gerekiyordu|I was supposed to leave
 je pensais que…|… diye düşünüyordum|I thought that…

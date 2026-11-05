@@ -29,7 +29,7 @@ la guitare|gitar|the guitar
 le piano|piyano|the piano
 la batterie|davul seti|the drums|Also: the battery.
 le violon|keman|the violin
-jouer de la guitare|gitar çalmak|to play the guitar|jouer de + instrument, jouer à + sport
+jouer du violon|keman çalmak|to play the violin|jouer de + instrument (de + le = du), jouer à + sport
 l'opéra (m.)|opera|the opera
 le ballet|bale|the ballet
 le roman|roman|the novel
@@ -110,7 +110,7 @@ Ne pas déranger|Rahatsız etmeyin|Do not disturb
 Complet|Dolu|Full, no vacancies
 RDC|Zemin kat|Ground floor|= rez-de-chaussée; lift button 0.
 le commissariat|karakol|the police station
-la caserne des pompiers|itfaiye|the fire station
+la caserne des pompiers|itfaiye istasyonu|the fire station
 l'office de tourisme (m.)|turizm danışma bürosu|the tourist office
 les toilettes publiques (f.)|umumi tuvalet|public toilets
 la fontaine à eau|su çeşmesi|the drinking fountain
@@ -274,7 +274,7 @@ la pause déjeuner|öğle arası|the lunch break
 déconnecter|işten kopmak; kafayı dağıtmak|to switch off, unplug
 dire non|hayır demek|to say no
 demander de l'aide|yardım istemek|to ask for help
-être fier de soi|kendisiyle gurur duymak|to be proud of oneself|f. fière
+être fier de soi|kendiyle gurur duymak|to be proud of oneself|f. fière
 se sentir utile|kendini faydalı hissetmek|to feel useful
 être motivé(e)|motive olmak|to be motivated
 la reconnaissance|takdir|recognition, appreciation
@@ -282,7 +282,7 @@ l'ambiance au travail (f.)|iş ortamı|the atmosphere at work
 le télétravail|uzaktan çalışma|working from home
 les heures supplémentaires (f.)|fazla mesai|overtime|Short: « les heures sup ».
 Je suis débordé(e) cette semaine.|Bu hafta başımı kaşıyacak vaktim yok.|I'm swamped this week.
-Je n'en peux plus.|Artık dayanamıyorum.|I can't take it any more.
+Je suis à bout.|Dayanacak gücüm kalmadı.|I'm at the end of my tether.|Synonyme: Je n'en peux plus.
 J'ai besoin de souffler.|Biraz nefes almaya ihtiyacım var.|I need a breather.
 Mon chef me met la pression.|Müdürüm bana baskı yapıyor.|My boss is putting pressure on me.
 Je peux en parler à mon responsable ?|Bunu yöneticimle konuşabilir miyim?|Can I talk to my manager about it?
@@ -373,7 +373,7 @@ se tromper|yanılmak; hata yapmak|to make a mistake, be wrong
 se taire|susmak|to be quiet|Tais-toi ! = Be quiet!
 se moquer de|alay etmek|to make fun of
 s'inquiéter|endişelenmek|to worry
-se plaindre|şikayet etmek|to complain
+se plaindre|şikâyet etmek|to complain
 s'ennuyer|sıkılmak|to be bored
 se servir de|kullanmak|to use|Je me sers de mon téléphone.
 se perdre|kaybolmak|to get lost
@@ -404,7 +404,7 @@ Je m'entends bien avec mes collègues.|İş arkadaşlarımla iyi anlaşıyorum.|
     D("a2-numbers-life", "A2", "Numbers in daily life", "Günlük hayatta sayılar", "Les nombres au quotidien", `
 Quelle est la date aujourd'hui ?|Bugün ayın kaçı?|What's the date today?
 On est le 3 mars.|Bugün 3 Mart.|It's 3 March.|le + number for dates.
-le premier mai|bir Mayıs|the first of May|Only « premier » is ordinal in dates.
+le premier mai|1 Mayıs|the first of May|Only « premier » is ordinal in dates.
 Je suis né(e) le 12 avril 1996.|12 Nisan 1996'da doğdum.|I was born on 12 April 1996.|Say: mille neuf cent quatre-vingt-seize.
 en 2026|2026'da|in 2026|Years take « en »: en deux mille vingt-six.
 C'est le 06 12 34 56 78.|Numaram 06 12 34 56 78.|It's 06 12 34 56 78.|Said in pairs: zéro six, douze, trente-quatre…

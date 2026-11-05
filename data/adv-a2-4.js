@@ -21,7 +21,7 @@
              { fr: "Je crois que j'ai mal dormi. Mon oreiller est trop haut.", tr: "Sanırım kötü uyudum. Yastığım çok yüksek.", en: "I think I slept badly. My pillow is too high.", ok: true, go: "c" },
              { fr: "J'ai dormi mal.", tr: "Kötü uyudum (yanlış sıralama).", en: "I slept badly (wrong word order).", ok: false,
                fb: { fr: "Presque ! Au passé composé, les petits adverbes vont avant le participe : « j'ai mal dormi » 😴.", tr: "Az kaldı! Passé composé'de kısa zarflar ortaçtan önce gelir: « j'ai mal dormi » 😴.", en: "Almost! In the passé composé, short adverbs go before the participle: « j'ai mal dormi » 😴." } },
-             { fr: "Hier, j'ai porté une valise très lourde dans l'escalier.", tr: "Dün merdivende çok ağır bir valiz taşıdım.", en: "Yesterday I carried a very heavy suitcase up the stairs.", ok: true, go: "c" }
+             { fr: "Avant-hier, j'ai porté une valise très lourde dans l'escalier.", tr: "Önceki gün merdivende çok ağır bir valiz taşıdım.", en: "The day before yesterday I carried a very heavy suitcase up the stairs.", ok: true, go: "c" }
            ] },
       c: { say: [["M", "Je vois. Vous avez déjà consulté un ostéopathe ?"]],
            choices: [
@@ -218,7 +218,7 @@
            choices: [
              { fr: "Oui, je prends des courses.", tr: "Evet, alışveriş yapıyorum.", en: "Yes, I do the shopping.", ok: false,
                fb: { fr: "Attention : « les courses » = acheter à manger 🛒 ! Pour apprendre, ce sont « des cours ».", tr: "Dikkat: « les courses » = yiyecek alışverişi 🛒! Öğrenmek için « des cours » denir.", en: "Careful: « les courses » = grocery shopping 🛒! For learning, it's « des cours »." } },
-             { fr: "Oui, j'apprends avec une application et je lis un peu tous les jours.", tr: "Evet, bir uygulamayla öğreniyorum ve her gün biraz okuyorum.", en: "Yes, I learn with an app and I read a bit every day.", ok: true, go: "g" }
+             { fr: "Oui, deux fois par semaine. Et j'apprends aussi avec une application.", tr: "Evet, haftada iki kez. Ayrıca bir uygulamayla da öğreniyorum.", en: "Yes, twice a week. And I also learn with an app.", ok: true, go: "g" }
            ] },
       f2: { say: [["F", "Excellente idée. Nous proposons des ateliers de français pour le travail. Ça vous intéresserait ?"]],
            choices: [
@@ -226,7 +226,7 @@
                fb: { fr: "C'est sûrement vrai 😄 ! Mais « intéressante » = qui intéresse les autres. Ici, dites « je suis très intéressée ».", tr: "Muhtemelen doğru 😄! Ama « intéressante » = başkalarının ilgisini çeken. Burada « je suis très intéressée » deyin.", en: "Probably true 😄! But « intéressante » = interesting to others. Here say « je suis très intéressée »." } },
              { fr: "Oui, beaucoup ! C'est gratuit ?", tr: "Evet, çok! Ücretsiz mi?", en: "Yes, very much! Is it free?", ok: true, go: "g" }
            ] },
-      g: { say: [["F", "Oui, c'est gratuit. Je vais aussi vous inscrire à un atelier CV. Vous avez un CV en français ?"]],
+      g: { say: [["F", "Nos ateliers sont gratuits. Je vais aussi vous inscrire à un atelier CV. Vous avez un CV en français ?"]],
            choices: [
              { fr: "J'en ai un, mais je pense qu'il y a des fautes.", tr: "Bir tane var ama sanırım hatalar var.", en: "I have one, but I think there are some mistakes.", ok: true, go: "h" },
              { fr: "Oui, mon CV fait 15 pages !", tr: "Evet, CV'm 15 sayfa!", en: "Yes, my CV is 15 pages long!", ok: false,
@@ -291,7 +291,7 @@
            choices: [
              { fr: "Voilà, je l'ai envoyée. Vous la recevez ?", tr: "İşte, gönderdim. Size geliyor mu?", en: "There, I've sent it. Are you getting it?", ok: true, go: "d" },
              { fr: "Voilà, je l'ai envoyée à ma mère.", tr: "İşte, anneme gönderdim.", en: "There, I've sent it to my mum.", ok: false,
-               fb: { fr: "Votre maman va être surprise 😄 ! Cliquez sur le lien de l'assistance, pas sur WhatsApp.", tr: "Anneniz şaşıracak 😄! WhatsApp'a değil, yol yardımının linkine tıklayın.", en: "Your mum will be surprised 😄! Click the assistance link, not WhatsApp." } }
+               fb: { fr: "Votre maman va être surprise 😄 ! Cliquez sur le lien de l'assistance : c'est elle qui doit recevoir votre position.", tr: "Anneniz şaşıracak 😄! Yol yardımının linkine tıklayın: konumunuzu onların alması gerekiyor.", en: "Your mum will be surprised 😄! Click the assistance link: they're the ones who need your location." } }
            ] },
       d: { say: [["F", "Parfait, je vous localise. Qu'est-ce qui s'est passé ?"]],
            choices: [

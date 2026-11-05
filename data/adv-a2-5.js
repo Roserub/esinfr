@@ -96,11 +96,11 @@
       a: { scene: { fr: "Il est 16 h 20. Dans la rue, un homme avec un grand sac à dos regarde son plan, l'air perdu.", tr: "Saat 16.20. Sokakta büyük sırt çantalı bir adam şaşkın bir hâlde haritasına bakıyor.", en: "It's 4:20 p.m. In the street, a man with a big rucksack is studying his map, looking lost." },
            say: [["M", "Excusez-moi, madame… Vous parlez anglais ? Je suis un peu perdu."]],
            choices: [
-             { fr: "Oui, un peu. Mais on peut essayer en français, si vous voulez !", tr: "Evet, biraz. Ama isterseniz Fransızca deneyebiliriz!", en: "Yes, a bit. But we can try in French if you like!", ok: true, go: "b" },
+             { fr: "Oui, bien sûr ! Mais on peut essayer en français, si vous voulez !", tr: "Evet, tabii! Ama isterseniz Fransızca deneyebiliriz!", en: "Yes, of course! But we can try in French if you like!", ok: true, go: "b" },
              { fr: "Je ne suis pas perdue, je suis turque.", tr: "Ben kaybolmadım, Türk'üm.", en: "I'm not lost, I'm Turkish.", ok: false,
-               fb: { fr: "C'est LUI qui est perdu, pas vous 😄 ! Répondez à sa question : « oui, un peu… ».", tr: "Kaybolan O, siz değil 😄! Sorusuna cevap verin: « oui, un peu… ».", en: "HE's the one who's lost, not you 😄! Answer his question: « oui, un peu… »." } },
+               fb: { fr: "C'est LUI qui est perdu, pas vous 😄 ! Répondez à sa question : « oui, bien sûr… ».", tr: "Kaybolan O, siz değil 😄! Sorusuna cevap verin: « oui, bien sûr… ».", en: "HE's the one who's lost, not you 😄! Answer his question: « oui, bien sûr… »." } },
              { fr: "Non, je n'ai pas le temps.", tr: "Hayır, vaktim yok.", en: "No, I don't have time.", ok: false,
-               fb: { fr: "Oh, il a l'air si perdu 🥺 ! Vous aussi, un jour, vous étiez nouvelle ici. Aidez-le : « oui, un peu… ».", tr: "Ah, o kadar kaybolmuş görünüyor ki 🥺! Bir zamanlar siz de burada yeniydiniz. Ona yardım edin: « oui, un peu… ».", en: "Oh, he looks so lost 🥺! You were new here once, too. Help him: « oui, un peu… »." } }
+               fb: { fr: "Oh, il a l'air si perdu 🥺 ! Vous aussi, un jour, vous étiez nouvelle ici. Aidez-le : « oui, bien sûr… ».", tr: "Ah, o kadar kaybolmuş görünüyor ki 🥺! Bir zamanlar siz de burada yeniydiniz. Ona yardım edin: « oui, bien sûr… ».", en: "Oh, he looks so lost 🥺! You were new here once, too. Help him: « oui, bien sûr… »." } }
            ] },
       b: { say: [["M", "Oh oui, en français, je veux pratiquer ! J'ai pris le mauvais bus, je crois. Je cherche le musée des Beaux-Arts."]],
            choices: [

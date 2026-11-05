@@ -30,7 +30,7 @@ A|Alors, l'abonnement mensuel, c'est mieux. C'est pour un mois.|O zaman aylık a
 B|C'est combien ?|Ne kadar?|How much is it?
 A|C'est 45 € par mois. Et le bus, le tram, c'est illimité.|Aylık 45 €. Otobüs ve tramvay sınırsız.|It's €45 a month. And the bus and tram are unlimited.
 B|Super ! Et mon employeur paie une partie, non ?|Süper! İşverenim de bir kısmını ödüyor, değil mi?|Great! And my employer pays part of it, right?
-A|Oui, au moins la moitié. Demandez une facture pour votre travail.|Evet, en az yarısını. İşiniz için fatura isteyin.|Yes, at least half. Ask for a receipt for your work.
+A|Oui, au moins la moitié. Demandez une facture pour votre employeur.|Evet, en az yarısını. İşvereniniz için fatura isteyin.|Yes, at least half. Ask for a receipt for your employer.
 B|D'accord. Je voudrais une facture, s'il vous plaît.|Tamam. Fatura istiyorum lütfen.|OK. I'd like a receipt, please.
 A|Pas de problème. Donnez-moi votre carte… Merci. Vous payez par carte bancaire ?|Sorun değil. Kartınızı verin… Teşekkürler. Banka kartıyla mı ödüyorsunuz?|No problem. Give me your card… Thank you. Are you paying by bank card?
 B|Oui. Voilà.|Evet. Buyurun.|Yes. Here you are.
@@ -128,16 +128,16 @@ A|Bien sûr, asseyez-vous ! Il y a de la place.|Tabii, oturun! Yer var.|Of cours
 B|Merci. Je suis un peu fatiguée. Je viens de courir.|Teşekkürler. Biraz yorgunum. Koşudan yeni geldim.|Thanks. I'm a bit tired. I've just been running.
 A|Ah, bravo ! Vous courez souvent ?|Ah, bravo! Sık koşar mısınız?|Ah, well done! Do you run often?
 B|Oui, le samedi matin, ici, dans ce parc. J'adore ce parc.|Evet, cumartesi sabahları, burada, bu parkta. Bu parka bayılıyorum.|Yes, on Saturday mornings, here, in this park. I love this park.
-A|Moi aussi. Je viens tous les jours avec mon chien. Il s'appelle Biscuit.|Ben de. Her gün köpeğimle geliyorum. Adı Bisküvi.|Me too. I come every day with my dog. His name is Biscuit.
+A|Moi aussi. Je viens tous les jours avec mon chien. Il s'appelle Biscuit.|Ben de. Her gün köpeğimle geliyorum. Adı Biscuit.|Me too. I come every day with my dog. His name is Biscuit.
 B|Il est mignon ! Je peux le caresser ?|Çok tatlı! Onu sevebilir miyim?|He's cute! Can I stroke him?
 A|Oui, il est très gentil. Il adore les gens.|Evet, çok uysal. İnsanlara bayılıyor.|Yes, he's very friendly. He loves people.
-B|Bonjour, Biscuit ! Oh, il est doux.|Merhaba Bisküvi! Ah, ne kadar yumuşak.|Hello, Biscuit! Oh, he's soft.
+B|Bonjour, Biscuit ! Oh, il est doux.|Merhaba Biscuit! Ah, ne kadar yumuşak.|Hello, Biscuit! Oh, he's soft.
 A|Vous avez un accent. Vous venez d'où ?|Bir aksanınız var. Nerelisiniz?|You have an accent. Where are you from?
 B|Je suis turque. J'habite en France depuis un an.|Türküm. Bir yıldır Fransa'da yaşıyorum.|I'm Turkish. I've been living in France for a year.
 A|Vous parlez bien français !|Fransızcanız iyi!|You speak French well!
 B|Merci, c'est gentil. J'apprends tous les jours.|Teşekkürler, çok naziksiniz. Her gün öğreniyorum.|Thank you, that's kind. I learn every day.
 A|Alors à samedi prochain, peut-être !|O zaman belki gelecek cumartesi görüşürüz!|Then see you next Saturday, maybe!
-B|Avec plaisir ! Au revoir, madame. Au revoir, Biscuit !|Memnuniyetle! Hoşça kalın hanımefendi. Hoşça kal Bisküvi!|With pleasure! Goodbye, madam. Goodbye, Biscuit!`),
+B|Avec plaisir ! Au revoir, madame. Au revoir, Biscuit !|Memnuniyetle! Hoşça kalın hanımefendi. Hoşça kal Biscuit!|With pleasure! Goodbye, madam. Goodbye, Biscuit!`),
 
     D("d-caisse-auto", "A1", "À la caisse automatique", "Self servis kasada", "At the self-checkout", { A: "Employé", B: "Esin" }, "B", `
 B|Excusez-moi, monsieur. Vous pouvez m'aider ? La machine ne marche pas.|Affedersiniz beyefendi. Bana yardım edebilir misiniz? Makine çalışmıyor.|Excuse me, sir. Can you help me? The machine isn't working.

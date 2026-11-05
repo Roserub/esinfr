@@ -323,7 +323,7 @@
            ] },
       i: { say: [["M", "Au premier étage, salle 12. L'escalier est à droite."]],
            choices: [
-             { fr: "Merci beaucoup, monsieur !", tr: "Çok teşekkürler, beyefendi!", en: "Thank you very much!", ok: true, go: "fin" },
+             { fr: "Merci beaucoup, monsieur !", tr: "Çok teşekkürler, beyefendi!", en: "Thank you very much, sir!", ok: true, go: "fin" },
              { fr: "Merci, bonne visite !", tr: "Teşekkürler, iyi geziler!", en: "Thanks, enjoy your visit!", ok: false,
                fb: { fr: "C'est vous qui visitez, pas lui 😄 ! Dites simplement « merci beaucoup, monsieur ».", tr: "Gezen sizsiniz, o değil 😄! Sadece « merci beaucoup, monsieur » deyin.", en: "You're the visitor, not him 😄! Just say « merci beaucoup, monsieur »." } }
            ] },
@@ -373,7 +373,7 @@
                fb: { fr: "Nager dans le vestiaire ? 🏊😄 Elle demande la ligne d'eau : « dans la ligne 3 ».", tr: "Soyunma odasında yüzmek mi? 🏊😄 Kulvarı soruyor: « dans la ligne 3 ».", en: "Swimming in the changing room? 🏊😄 She's asking which lane: « dans la ligne 3 »." } },
              { fr: "Dans la ligne 6, la ligne rapide !", tr: "6. kulvarda, hızlı kulvarda!", en: "In lane 6, the fast lane!", ok: true, go: "e" }
            ] },
-      e: { scene: { fr: "Elle regarde l'eau avec ses lunettes de soleil.", tr: "Güneş gözlüğüyle suya bakıyor.", en: "She looks into the water with her sunglasses." },
+      e: { scene: { fr: "Elle regarde au fond de l'eau avec attention.", tr: "Dikkatle suyun dibine bakıyor.", en: "She looks carefully at the bottom of the water." },
            say: [["F", "Ah ! Il y a quelque chose au fond. Vous plongez, ou je plonge ?"]],
            choices: [
              { fr: "Vous pouvez plonger, s'il vous plaît ? Je ne plonge pas bien.", tr: "Siz dalabilir misiniz, lütfen? Ben iyi dalamıyorum.", en: "Could you dive, please? I'm not good at diving.", ok: true, go: "f" },
@@ -396,7 +396,7 @@
                fb: { fr: "Regardez bien : c'est une barrette, et votre bracelet est jaune 💛😄 ! Plongez encore une fois.", tr: "İyi bakın: bu bir toka ve sizin bileklik sarı 💛😄! Bir kez daha dalın.", en: "Look closely: it's a hair clip, and your bracelet is yellow 💛😄! Dive one more time." } }
            ] },
       g: { scene: { fr: "Deuxième essai… Voilà le bracelet jaune avec la clé !", tr: "İkinci deneme… İşte anahtarlı sarı bileklik!", en: "Second try… There's the yellow bracelet with the key!" },
-           say: [["F", "Bravo ! C'est bien le numéro 47 ?"]],
+           say: [["F", "Bravo ! Il y a un numéro sur la clé : 47. C'est votre casier ?"]],
            choices: [
              { fr: "Oui, c'est le 47 ! Merci beaucoup !", tr: "Evet, 47! Çok teşekkürler!", en: "Yes, it's 47! Thank you so much!", ok: true, go: "h" },
              { fr: "Oui, il y a 47 personnes.", tr: "Evet, 47 kişi var.", en: "Yes, there are 47 people.", ok: false,
@@ -405,7 +405,7 @@
       h: { scene: { fr: "Vous retournez à l'accueil avec la clé et la barrette rose.", tr: "Anahtar ve pembe tokayla resepsiyona dönüyorsunuz.", en: "You go back to the front desk with the key and the pink hair clip." },
            say: [["M", "Super, vous avez la clé ! Et cette barrette rose ?"]],
            choices: [
-             { fr: "Je la garde, elle est jolie !", tr: "Onu alıyorum, çok güzel!", en: "I'm keeping it, it's pretty!", ok: false,
+             { fr: "Je la garde, elle est jolie !", tr: "Bende kalsın, çok güzel!", en: "I'm keeping it, it's pretty!", ok: false,
                fb: { fr: "Elle est jolie, c'est vrai 😄, mais quelqu'un la cherche peut-être. Donnez-la aux objets trouvés.", tr: "Güzel, doğru 😄, ama belki biri onu arıyor. Kayıp eşya bürosuna verin.", en: "It's pretty, true 😄, but someone might be looking for it. Hand it in to lost property." } },
              { fr: "Elle était dans l'eau. C'est pour les objets trouvés.", tr: "Suyun içindeydi. Kayıp eşya için.", en: "It was in the water. It's for lost property.", ok: true, go: "i" },
              { fr: "Voilà, c'est pour les objets trouvés.", tr: "Buyurun, kayıp eşya için.", en: "Here you go, it's for lost property.", ok: true, go: "i" }
