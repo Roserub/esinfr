@@ -121,10 +121,10 @@ Je peux m'asseoir ?|Oturabilir miyim?|May I sit down?
 Oui, je suis prête.|Evet, hazırım.|Yes, I'm ready.|Man: prêt.
 Excusez-moi, je suis un peu stressée.|Kusura bakmayın, biraz heyecanlıyım.|Sorry, I'm a bit nervous.|Man: stressé.
 Merci beaucoup, Madame. Au revoir et bonne journée !|Çok teşekkür ederim. Hoşça kalın, iyi günler!|Thank you very much. Goodbye and have a nice day!|When you leave the exam room.
-Mon prénom, c'est Elif : E-L-I-F.|Adım Elif: E-L-I-F.|My first name is Elif: E-L-I-F.|Model answer: put in your own name and spell it letter by letter.
-J'ai trente-deux ans.|Otuz iki yaşındayım.|I'm thirty-two.|Example: say your own age. Age with avoir: never « je suis 32 ans ».
-Je viens d'Izmir, en Turquie.|Türkiye'den, İzmir'den geliyorum.|I'm from Izmir, in Turkey.|de + city, en Turquie.
-J'habite à Roubaix, près de Lille, depuis deux ans.|İki yıldır Lille yakınlarında, Roubaix'de oturuyorum.|I've been living in Roubaix, near Lille, for two years.|Present + depuis = still true now.
+Mon prénom, c'est Esin : E-S-I-N.|Adım Esin: E-S-I-N.|My first name is Esin: E-S-I-N.|Model answer: put in your own name and spell it letter by letter.
+J'ai trente ans.|Otuz yaşındayım.|I'm thirty.|Example: say your own age. Age with avoir: never « je suis 30 ans ».
+Je viens d'Istanbul, en Turquie.|Türkiye'den, İstanbul'dan geliyorum.|I'm from Istanbul, in Turkey.|de + city, en Turquie.
+J'habite en France depuis un an.|Bir yıldır Fransa'da oturuyorum.|I've been living in France for a year.|Present + depuis = still true now.
 Je suis mariée.|Evliyim.|I'm married.|Man: marié. Single: célibataire.
 J'ai un fils de cinq ans.|Beş yaşında bir oğlum var.|I have a five-year-old son.
 Je n'ai pas d'enfant.|Çocuğum yok.|I don't have any children.|After pas: de, not un / des.
@@ -133,8 +133,8 @@ Maintenant, je cherche du travail.|Şimdi iş arıyorum.|Now I'm looking for wor
 Je parle turc, anglais et un peu français.|Türkçe, İngilizce ve biraz Fransızca konuşuyorum.|I speak Turkish, English and a little French.|Languages take no capital letter.
 J'apprends le français depuis un an, pour mon travail.|Bir yıldır iş için Fransızca öğreniyorum.|I've been learning French for a year, for my work.
 Le week-end, j'aime me promener et cuisiner.|Hafta sonları gezmeyi ve yemek yapmayı severim.|At weekends I like going for walks and cooking.|aimer + infinitive.
-Je suis arrivée en France en 2024.|2024'te Fransa'ya geldim.|I arrived in France in 2024.|A2. Man: arrivé.
-Avant, j'habitais à Izmir.|Önceden İzmir'de oturuyordum.|Before that, I lived in Izmir.|A2: imparfait for a past situation.
+Je suis arrivée en France il y a un an.|Bir yıl önce Fransa'ya geldim.|I arrived in France a year ago.|A2. Man: arrivé.
+Avant, j'habitais à Istanbul.|Önceden İstanbul'da oturuyordum.|Before that, I lived in Istanbul.|A2: imparfait for a past situation.
 Excusez-moi, je n'ai pas compris.|Affedersiniz, anlamadım.|Sorry, I didn't understand.|Asking again costs no points; silence does.
 Pourriez-vous parler plus lentement, s'il vous plaît ?|Daha yavaş konuşabilir misiniz, lütfen?|Could you speak more slowly, please?
 Qu'est-ce que ça veut dire, « tarif réduit » ?|« Tarif réduit » ne demek?|What does "tarif réduit" mean?|Repeat the word you didn't understand.
@@ -209,7 +209,7 @@ Moi non plus.|Ben de. (olumsuz cümleye cevap)|Me neither.|Reply to a negative: 
 Moi, si !|Ben ise evet!|I do!|Disagree with a negative sentence.
 Moi, non.|Ben ise hayır.|I don't.|Disagree with a positive sentence.
 Je vais vous parler de mon quartier.|Size mahallemden bahsedeceğim.|I'm going to talk to you about my neighbourhood.|Monologue plan: topic, 2–3 ideas + examples, short conclusion (about 2 minutes).
-D'abord, il y a beaucoup de commerces.|Önce, bir sürü dükkân var.|First, there are lots of shops.|First idea.
+D'abord, il y a beaucoup de commerces.|İlk olarak, bir sürü dükkân var.|First, there are lots of shops.|First idea.
 Premièrement,…|Birincisi,…|Firstly,…|Same as D'abord.
 Ensuite, c'est pratique, parce que le métro est à cinq minutes.|Sonra, pratik, çünkü metro beş dakika uzaklıkta.|Next, it's convenient, because the metro is five minutes away.|Second idea + reason.
 En plus,…|Üstelik,…|What's more,…|Adds an idea.

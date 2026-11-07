@@ -44,7 +44,7 @@
              { fr: "Oui, je fais du sport depuis demain.", tr: "Evet, yarından beri spor yapıyorum.", en: "Yes, I've been doing sport since tomorrow.", ok: false,
                fb: { fr: "« Depuis demain », c'est impossible 😄 ! « Depuis » regarde le passé : « depuis un an », « depuis longtemps ».", tr: "« Yarından beri » olmaz 😄! « Depuis » geçmişe bakar: « depuis un an », « depuis longtemps ».", en: "« Since tomorrow » is impossible 😄! « Depuis » looks back: « depuis un an », « depuis longtemps »." } },
              { fr: "Oui, je courais beaucoup, mais j'ai arrêté à cause de la douleur.", tr: "Evet, çok koşuyordum ama ağrı yüzünden bıraktım.", en: "Yes, I used to run a lot, but I stopped because of the pain.", ok: true, go: "f1" },
-             { fr: "Pas vraiment. Avant, je jouais au handball, mais maintenant je n'ai plus le temps.", tr: "Pek sayılmaz. Eskiden hentbol oynardım ama artık vaktim yok.", en: "Not really. I used to play handball, but now I don't have time any more.", ok: true, go: "f2" }
+             { fr: "Oui, je joue au handball, mais en ce moment, j'ai arrêté à cause de mon genou.", tr: "Evet, hentbol oynuyorum ama şu sıralar dizim yüzünden bıraktım.", en: "Yes, I play handball, but at the moment I've stopped because of my knee.", ok: true, go: "f2" }
            ] },
       f1: { say: [["M", "On va vous aider à reprendre la course doucement. D'habitude, vous courez combien de kilomètres ?"]],
            choices: [
@@ -54,11 +54,11 @@
                fb: { fr: "« Je courrai » est au futur. Pour une habitude, on utilise le présent : « je cours » 😉.", tr: "« Je courrai » gelecek zaman. Alışkanlık için şimdiki zaman kullanılır: « je cours » 😉.", en: "« Je courrai » is future tense. For a habit, use the present: « je cours » 😉." } },
              { fr: "D'habitude, je cours 5 ou 6 kilomètres.", tr: "Genelde 5 ya da 6 kilometre koşarım.", en: "Usually I run 5 or 6 kilometres.", ok: true, go: "g" }
            ] },
-      f2: { say: [["M", "Le handball, c'est un sport génial. Vous aimeriez reprendre un jour ?"]],
+      f2: { say: [["M", "Le handball, c'est un sport génial. Vous aimeriez reprendre bientôt ?"]],
            choices: [
-             { fr: "Oui, j'aimerais bien reprendre l'année prochaine.", tr: "Evet, gelecek yıl yeniden başlamak isterim.", en: "Yes, I'd love to start again next year.", ok: true, go: "g" },
+             { fr: "Oui, j'aimerais bien reprendre le mois prochain.", tr: "Evet, gelecek ay yeniden başlamak isterim.", en: "Yes, I'd love to start again next month.", ok: true, go: "g" },
              { fr: "Oui, je reprendrais hier.", tr: "Evet, dün yeniden başlardım.", en: "Yes, I would start again yesterday.", ok: false,
-               fb: { fr: "Hier, c'est trop tard 😄 ! Parlez du futur : « l'année prochaine ».", tr: "Dün çok geç 😄! Gelecekten bahsedin: « l'année prochaine ».", en: "Yesterday is too late 😄! Talk about the future: « l'année prochaine »." } },
+               fb: { fr: "Hier, c'est trop tard 😄 ! Parlez du futur : « le mois prochain ».", tr: "Dün çok geç 😄! Gelecekten bahsedin: « le mois prochain ».", en: "Yesterday is too late 😄! Talk about the future: « le mois prochain »." } },
              { fr: "Non, le handball, c'est pour les enfants.", tr: "Hayır, hentbol çocuklar için.", en: "No, handball is for children.", ok: false,
                fb: { fr: "Vraiment ? Les équipes de France ne sont pas d'accord 🤾😄 ! Dites ce que vous aimeriez faire.", tr: "Gerçekten mi? Fransa millî takımları buna katılmıyor 🤾😄! Ne yapmak istediğinizi söyleyin.", en: "Really? France's national teams wouldn't agree 🤾😄! Say what you'd like to do." } }
            ] },
@@ -320,7 +320,7 @@
              { fr: "C'est coureuse.heureuse à exemple point fr.", tr: "coureuse.heureuse « à » exemple nokta fr.", en: "It's coureuse.heureuse « at » exemple dot fr (wrong word).", ok: false,
                fb: { fr: "Le signe @ se dit « arobase » en français 😉 : « coureuse.heureuse arobase exemple point fr ».", tr: "@ işareti Fransızcada « arobase » diye okunur 😉: « coureuse.heureuse arobase exemple point fr ».", en: "The @ sign is « arobase » in French 😉: « coureuse.heureuse arobase exemple point fr »." } },
              { fr: "C'est coureuse.heureuse arobase exemple point fr.", tr: "coureuse.heureuse et işareti exemple nokta fr.", en: "It's coureuse.heureuse at exemple dot fr.", ok: true, go: "d" },
-             { fr: "C'est au 12, rue des Lilas.", tr: "Lilas Sokağı 12 numara.", en: "It's 12 rue des Lilas.", ok: false,
+             { fr: "C'est au 8, rue des Lilas.", tr: "Lilas Sokağı 8 numara.", en: "It's 8 rue des Lilas.", ok: false,
                fb: { fr: "Ça, c'est votre adresse postale 🏠. Elle demande l'adresse e-mail 📧 !", tr: "Bu posta adresiniz 🏠. E-posta adresinizi soruyor 📧!", en: "That's your postal address 🏠. She's asking for your email address 📧!" } }
            ] },
       d: { say: [["F", "Merci. Je vois que le colis a été livré mardi, à 14 h."]],

@@ -276,13 +276,13 @@
     help: { tr: "Yönlendirilmiş görüşme (yaklaşık 1,5 dakika, hazırlıksız). Sınav görevlisini selamlayın, kendinizi tanıtın ve sorularına cevap verin. Her soruya 2–3 kısa, tam cümle yeterli.", en: "Guided interview (about 1.5 minutes, no preparation). Greet the examiner, introduce yourself and answer the questions (you, your job, sport, your habits…)." },
     prompts: [
       { q: "Bonjour ! Vous pouvez vous présenter ?", m: "Bonjour ! Je m'appelle Esin. Je suis turque et je viens d'Istanbul." },
-      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. J'ai travaillé pendant plusieurs années dans un club de handball professionnel." },
+      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. En Turquie, j'ai travaillé dans un club de handball professionnel. En France, je travaille à l'accueil d'une salle de sport." },
       { q: "Comment était votre travail dans le club ?", m: "C'était passionnant ! Je soignais les joueurs blessés et je les aidais à revenir sur le terrain." },
       { q: "Vous avez beaucoup voyagé avec l'équipe ?", m: "Oui, nous avons joué la Ligue des champions. Je suis allée en Hongrie, au Danemark, en Espagne…" },
       { q: "Quel est votre meilleur souvenir de sport ?", m: "Une victoire à la dernière seconde, à l'extérieur. Les joueurs pleuraient de joie dans le vestiaire !" },
       { q: "Est-ce que vous faites du sport aujourd'hui ?", m: "Oui, je cours deux fois par semaine au bord du fleuve, et je fais un peu de yoga." },
       { q: "Vous regardez des matchs à la télévision ?", m: "Oui, surtout du handball et du volley. J'aime bien aussi aller voir les matchs dans la salle." },
-      { q: "Qu'est-ce que vous voulez faire en France ?", m: "Je voudrais travailler comme kiné du sport, dans un cabinet ou dans un club." }
+      { q: "Qu'est-ce que vous voulez faire en France ?", m: "D'abord, je dois faire reconnaître mon diplôme. Après, je voudrais travailler comme kiné du sport, dans un club." }
     ] },
 
   { id: "a2-s28-po2", level: "A2", sujet: 28, sec: "po", ex: 2, pts: 8, kind: "monologue",
@@ -322,12 +322,12 @@
       ["E", "Bonjour ! Je peux vous aider ?"],
       ["C", "Bonjour ! Je voudrais quatre places pour le match contre Veszprém, mercredi soir. Nous sommes deux adultes et deux enfants."],
       ["E", "Très bien. Quel âge ont les enfants ?"],
-      ["C", "Ma fille a 8 ans et mon fils a 13 ans. Il y a des réductions pour les enfants ?"],
-      ["E", "Oui : c'est gratuit pour votre fille, mais il lui faut un billet. Pour votre fils, il y a 5 € de réduction."],
+      ["C", "Ma nièce a 8 ans et mon neveu a 13 ans. Il y a des réductions pour les enfants ?"],
+      ["E", "Oui : c'est gratuit pour votre nièce, mais il lui faut un billet. Pour votre neveu, il y a 5 € de réduction."],
       ["C", "Super ! Et combien coûtent les places ?"],
       ["E", "35 € en tribune centrale, et 18 € derrière les buts. Mais en tribune centrale, il n'y a plus quatre places côte à côte."],
       ["C", "Ah… Nous voulons être ensemble. Alors je prends quatre places derrière les buts."],
-      ["E", "Parfait. Ça fait 18 € plus 18 €, plus 13 € pour votre fils. Le total est de 49 €."],
+      ["E", "Parfait. Ça fait 18 € plus 18 €, plus 13 € pour votre neveu. Le total est de 49 €."],
       ["C", "Je peux payer par carte ?"],
       ["E", "Oui, bien sûr. Voilà vos billets. L'ouverture des portes est à 19 h 45."],
       ["C", "Merci beaucoup ! Au revoir et bonne journée !"]

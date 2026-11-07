@@ -305,7 +305,7 @@ J'ai mal au ventre|Karnım ağrıyor|I have a stomach ache
 J'ai de la fièvre|Ateşim var|I have a fever
 Je tousse|Öksürüyorum|I'm coughing
 J'ai le nez qui coule|Burnum akıyor|I have a runny nose
-Je suis enrhumée|Nezleyim|I have a cold
+Je suis enrhumée|Nezle oldum|I have a cold
 J'ai des nausées|Midem bulanıyor|I feel sick
 Je suis allergique à…|… alerjim var|I'm allergic to…
 le médecin généraliste|pratisyen hekim / aile hekimi|GP|In France you declare a médecin traitant.
@@ -346,7 +346,7 @@ le ventre|karın|belly
 le dos|sırt|back
 les lombaires|bel (bel omurları)|lower back
 la hanche|kalça|hip
-la fesse|kalça (popo)|buttock
+la fesse|popo, kaba et|buttock
 la cuisse|uyluk|thigh
 le genou|diz|knee
 la jambe|bacak|leg
@@ -517,7 +517,7 @@ c'est pourquoi|bu yüzden|that's why
 par conséquent|sonuç olarak|consequently
 donc|dolayısıyla|so, therefore
 grâce à / à cause de|sayesinde / yüzünden|thanks to / because of
-afin de / pour que|… için / … sın diye|in order to / so that
+afin de / pour que|… için / …-sın diye|in order to / so that
 par exemple / notamment|örneğin / özellikle|for example / notably
 en ce qui concerne|… ile ilgili olarak|regarding
 il convient de|… gerekir, uygun olur|it is appropriate to

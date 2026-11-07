@@ -58,7 +58,7 @@
            choices: [
              { fr: "D'accord : une cuillère 3 fois par jour, après les repas.", tr: "Tamam: günde 3 kez bir kaşık, yemeklerden sonra.", en: "OK: one spoonful 3 times a day, after meals.", ok: true, go: "g" },
              { fr: "Une cuillère avant les repas, c'est ça ?", tr: "Yemeklerden önce bir kaşık, değil mi?", en: "One spoonful before meals, right?", ok: false,
-               fb: { fr: "Pas tout à fait : c'est APRÈS les repas, pas avant.", tr: "Tam değil: yemeklerden SONRA. « Avant » = önce, « après » = sonra.", en: "Not quite: it's AFTER meals. « Avant » = before, « après » = after." } },
+               fb: { fr: "Pas tout à fait : c'est APRÈS les repas (quand vous avez fini de manger), pas avant.", tr: "Tam değil: yemeklerden SONRA. « Avant » = önce, « après » = sonra.", en: "Not quite: it's AFTER meals. « Avant » = before, « après » = after." } },
              { fr: "D'accord, 3 bouteilles par jour.", tr: "Tamam, günde 3 şişe.", en: "OK, 3 bottles a day.", ok: false,
                fb: { fr: "Trois bouteilles 😱 ? Non, juste une cuillère, 3 fois par jour !", tr: "Üç şişe mi 😱? Hayır, sadece bir kaşık, günde 3 kez!", en: "Three bottles 😱? No, just one spoonful, 3 times a day!" } }
            ] },
@@ -214,11 +214,11 @@
            ] },
       d: { say: [["F", "Et qu'est-ce que vous faites dans la vie ?"]],
            choices: [
-             { fr: "Je suis kinésithérapeute.", tr: "Fizyoterapistim.", en: "I'm a physiotherapist.", ok: true, go: "e" },
-             { fr: "Je suis une kinésithérapeute.", tr: "Ben bir fizyoterapistim.", en: "I am a physiotherapist.", ok: false,
-               fb: { fr: "Presque parfait ! Pour un métier, pas de « un » ou « une » : « je suis kinésithérapeute », « je suis professeure ».", tr: "Neredeyse mükemmel! Meslek söylerken « un » ya da « une » kullanılmaz: « je suis kinésithérapeute », « je suis professeure ».", en: "Almost perfect! No « un » or « une » before a job: « je suis kinésithérapeute », « je suis professeure »." } },
+             { fr: "Je suis kinésithérapeute de formation. Je travaille à l'accueil d'une salle de sport.", tr: "Eğitimim fizyoterapi. Bir spor salonunun resepsiyonunda çalışıyorum.", en: "I'm a physiotherapist by training. I work at the front desk of a gym.", ok: true, go: "e" },
+             { fr: "Je suis une kinésithérapeute de formation.", tr: "Ben eğitim olarak bir fizyoterapistim.", en: "I am a physiotherapist by training.", ok: false,
+               fb: { fr: "Presque parfait ! Pour un métier, pas de « un » ou « une » : « je suis kinésithérapeute de formation », « je suis professeure ».", tr: "Neredeyse mükemmel! Meslek söylerken « un » ya da « une » kullanılmaz: « je suis kinésithérapeute de formation », « je suis professeure ».", en: "Almost perfect! No « un » or « une » before a job: « je suis kinésithérapeute de formation », « je suis professeure »." } },
              { fr: "Je fais la vie.", tr: "Hayatı yapıyorum.", en: "I do life.", ok: false,
-               fb: { fr: "Belle philosophie 😄 ! Mais elle demande votre métier : « je suis kinésithérapeute ».", tr: "Güzel bir felsefe 😄! Ama mesleğinizi soruyor: « je suis kinésithérapeute ».", en: "Lovely philosophy 😄! But she's asking about your job: « je suis kinésithérapeute »." } }
+               fb: { fr: "Belle philosophie 😄 ! Mais elle demande votre métier : « je suis kinésithérapeute de formation… ».", tr: "Güzel bir felsefe 😄! Ama mesleğinizi soruyor: « je suis kinésithérapeute de formation… ».", en: "Lovely philosophy 😄! But she's asking about your job: « je suis kinésithérapeute de formation… »." } }
            ] },
       e: { say: [["F", "Oh, kiné ! Et pourquoi vous apprenez le français ?"]],
            choices: [
@@ -333,7 +333,7 @@
              { fr: "Je suis petite.", tr: "Ben küçüğüm.", en: "I'm small.", ok: false,
                fb: { fr: "Mais non, vous êtes parfaite 😄 ! C'est la veste qui est petite : « elle est un peu petite ».", tr: "Yok canım, siz mükemmelsiniz 😄! Küçük olan ceket: « elle est un peu petite ».", en: "No way, you're perfect 😄! The jacket is the small one: « elle est un peu petite »." } },
              { fr: "Ça va bien, merci. Et vous ?", tr: "İyiyim, teşekkürler. Siz?", en: "I'm fine, thanks. And you?", ok: false,
-               fb: { fr: "Ha ! Elle ne demande pas comment vous allez, elle demande si la veste va bien 😄. Dites « elle est un peu petite ».", tr: "Ha! Nasıl olduğunuzu değil, ceketin olup olmadığını soruyor 😄. « Elle est un peu petite » deyin.", en: "Ha! She's not asking how you are, she's asking if the jacket fits 😄. Say « elle est un peu petite »." } }
+               fb: { fr: "Ha ! Elle ne demande pas comment vous allez, elle demande si la veste va bien 😄. Dites « elle est un peu petite ».", tr: "Ha! Nasıl olduğunuzu değil, ceketin size uyup uymadığını soruyor 😄. « Elle est un peu petite » deyin.", en: "Ha! She's not asking how you are, she's asking if the jacket fits 😄. Say « elle est un peu petite »." } }
            ] },
       f: { say: [["F", "Voilà le 40. Alors ?"]],
            choices: [
@@ -417,9 +417,9 @@
            ] },
       d: { say: [["K", "Moi, j'ai un poisson rouge. Il s'appelle Bulle !"], ["F", "Léo, chut ! Et vous, vous travaillez dans le quartier ?"]],
            choices: [
-             { fr: "Pas encore. Je suis kiné, je cherche du travail.", tr: "Henüz değil. Fizyoterapistim, iş arıyorum.", en: "Not yet. I'm a physio, I'm looking for work.", ok: true, go: "e" },
-             { fr: "Pas encore. Je suis physique.", tr: "Henüz değil. Ben fiziğim.", en: "Not yet. I am physics.", ok: false,
-               fb: { fr: "« La physique », c'est la science d'Einstein 🧪 ! Votre métier en français : « kinésithérapeute », ou plus court « kiné ».", tr: "« Physique » = fizik, Einstein'ın alanı 🧪! Mesleğinizin Fransızcası: « kinésithérapeute », kısaca « kiné ».", en: "« Physique » = physics, Einstein's field 🧪! Your job in French: « kinésithérapeute », or just « kiné »." } }
+             { fr: "Non, je travaille à l'accueil d'une salle de sport. Mais je suis kiné de formation.", tr: "Hayır, bir spor salonunun resepsiyonunda çalışıyorum. Ama eğitimim fizyoterapi.", en: "No, I work at the front desk of a gym. But I'm a physio by training.", ok: true, go: "e" },
+             { fr: "Non. Je suis physique de formation.", tr: "Hayır. Ben eğitim olarak fiziğim.", en: "No. I am physics by training.", ok: false,
+               fb: { fr: "« La physique », c'est la science d'Einstein 🧪 ! Votre métier en français : « kinésithérapeute », ou plus court « kiné » : « je suis kiné de formation ».", tr: "« Physique » = fizik, Einstein'ın alanı 🧪! Mesleğinizin Fransızcası: « kinésithérapeute », kısaca « kiné »: « je suis kiné de formation ».", en: "« Physique » = physics, Einstein's field 🧪! Your job in French: « kinésithérapeute », or just « kiné »: « je suis kiné de formation »." } }
            ] },
       e: { say: [["F", "Kiné ? Génial, j'ai toujours mal au dos !"], ["K", "Et moi, je joue au foot !"]],
            choices: [

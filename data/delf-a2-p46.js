@@ -282,7 +282,7 @@
       { q: "Quel était votre métier en Turquie ?", m: "J'étais kinésithérapeute. Je travaillais dans un club de handball." },
       { q: "Quand vous étiez enfant, vous aimiez l'école ?", m: "Oui, j'aimais beaucoup l'école, surtout le sport ! Mais je n'aimais pas les mathématiques." },
       { q: "Qu'est-ce que vous faites le week-end ?", m: "Le samedi, je fais du sport et mes courses. Le dimanche, je déjeune souvent chez ma sœur." },
-      { q: "Quels sont vos projets pour l'année prochaine ?", m: "Je voudrais réussir le DELF et travailler de nouveau comme kinésithérapeute, ici, en France." }
+      { q: "Quels sont vos projets pour l'année prochaine ?", m: "Je voudrais réussir le DELF, puis commencer des études de STAPS. Plus tard, je voudrais travailler de nouveau comme kinésithérapeute, ici, en France." }
     ] },
 
   { id: "a2-s46-po2", level: "A2", sujet: 46, sec: "po", ex: 2, pts: 8, kind: "monologue",

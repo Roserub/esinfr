@@ -6,7 +6,7 @@
     title: "Les portes ouvertes de STAPS",
     consigne: "Vous êtes en France. Vous écoutez ce message sur votre répondeur téléphonique. Lisez les questions, écoutez le document, puis répondez.",
     help: { tr: "Fransa'dasınız. Telefonunuzun telesekreterinde bu mesajı dinliyorsunuz. Soruları okuyun, belgeyi dinleyin, sonra cevaplayın.", en: "You are in France. You listen to this message on your answering machine. Read the questions, listen, then answer." },
-    audio: [["M", "Salut, c'est Lucas ! Tu veux étudier le sport ? Samedi, c'est la journée portes ouvertes de la fac de STAPS, de 10 h à 16 h. Il y a des visites du gymnase et des petits cours. Prends des chaussures de sport ! Moi, je suis étudiant là-bas : rendez-vous à 11 h devant la bibliothèque. Tu prends le tram, ligne B. À samedi !"]],
+    audio: [["M", "Salut, c'est Lucas ! Tu veux étudier le sport ? Samedi, c'est la journée portes ouvertes de la fac de STAPS, de 10 h à 16 h. Il y a des visites du gymnase et de petits cours. Prends des chaussures de sport ! Moi, je suis étudiant là-bas : rendez-vous à 11 h devant la bibliothèque. Tu prends le tram, ligne B. À samedi !"]],
     questions: [
       { q: "Samedi, à la fac de STAPS, il y a…", o: ["⚽ un match de football", "🏫 une journée portes ouvertes", "📝 un examen"], a: 1,
         x: "Lucas dit : « Samedi, c'est la journée portes ouvertes de la fac de STAPS ».",
@@ -103,7 +103,7 @@
     title: "La nouvelle vie d'Aylin",
     consigne: "Vous recevez ce courriel de votre amie Aylin. Lisez le message et répondez aux questions.",
     help: { tr: "Arkadaşınız Aylin'den bu e-postayı alıyorsunuz. Mesajı okuyun ve soruları cevaplayın.", en: "You receive this e-mail from your friend Aylin. Read it and answer the questions." },
-    doc: { type: "email", from: "aylin.kaya@mail.fr", subject: "Ma vie en STAPS !",
+    doc: { type: "email", from: "aylin.kaya@exemple.fr", subject: "Ma vie en STAPS !",
       body: "Salut Esin !\n\nMa nouvelle vie à Poitiers est super ! Je suis en première année de STAPS. Le matin, j'ai des cours à la fac : anatomie, physiologie et psychologie du sport. L'après-midi, je fais du sport : natation le lundi, athlétisme le mercredi et handball le vendredi.\n\nJ'habite dans une petite chambre à la résidence universitaire, à 5 minutes du gymnase. Je mange souvent au restaurant universitaire : un repas coûte 3,30 €.\n\nTu viens me voir en avril ?\nBises,\nAylin" },
     questions: [
       { q: "Aylin est…", o: ["professeure de sport", "étudiante en STAPS", "kinésithérapeute"], a: 1,
@@ -244,7 +244,7 @@
     help: { tr: "Sınav görevlisini selamlayın. Size kendiniz, eğitiminiz ve spor hakkında sorular sorar. Tam cümleyle cevap verin.", en: "Guided interview (about 1 minute, no preparation). Greet the examiner and answer questions about yourself, your studies and sport." },
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour, monsieur. Je m'appelle Esin." },
-      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. En Turquie, j'ai travaillé avec des sportifs." },
+      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je travaille à l'accueil d'une salle de sport. En Turquie, j'ai travaillé comme kinésithérapeute avec des sportifs." },
       { q: "Vous étudiez en ce moment ?", m: "Oui, j'étudie le français. J'ai des cours trois fois par semaine." },
       { q: "Quel sport est-ce que vous faites ?", m: "Je joue au handball. J'adore les sports d'équipe." },
       { q: "Vous faites du sport combien de fois par semaine ?", m: "Je fais du sport deux ou trois fois par semaine, le soir." },

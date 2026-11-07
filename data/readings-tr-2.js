@@ -147,13 +147,13 @@
     },
     "r-premier-hiver": {
       tr: [
-        "Fransa'ya gelmeden önce kışın kolay olacağını düşünüyordum. Büyüdüğüm İzmir'de kış ılıktır. Ama Lille'de çok farklıydı!",
+        "Fransa'ya gelmeden önce kışın kolay olacağını düşünüyordum. Büyüdüğüm İstanbul'da kış daha ılımandır. Ama Lille'de çok farklıydı!",
         "Kasımda neredeyse her gün yağmur yağdı. Gökyüzü griydi ve aralıkta saat on yedi civarında hava kararıyordu. Başta biraz üzgündüm ve hep yorgundum. Bir iş arkadaşım öğlen gün ışığında yürümemi ve spor yapmamı tavsiye etti. Haftada iki kez yeniden koşmaya başladım ve bu bana çok yardımcı oldu.",
         "Çok hoş şeyler de keşfettim. Aralıkta Noel pazarını gezdim ve Grand-Place'taki dönme dolaba bindim. İlk sıcak şarabımı içtim. Ocakta iş arkadaşlarım bir « galette des rois » (Krallar pastası) aldılar: içindeki fève'i (küçük figürü) ben buldum ve tacı ben taktım! 2 Şubat'ta, Chandeleur için, komşularım beni krep yemeye davet ettiler.",
         "Sadece bir kez kar yağdı ve kar iki gün kaldı. Artık iyi bir paltoya, sıcak çoraplara ve bolca sabra ihtiyaç olduğunu biliyorum. Gelecek kış hazır olacağım!"
       ],
       en: [
-        "Before coming to France, I thought winter would be easy. In Izmir, where I grew up, winter is mild. But in Lille, it was very different!",
+        "Before coming to France, I thought winter would be easy. In Istanbul, where I grew up, winter is milder. But in Lille, it was very different!",
         "In November, it rained almost every day. The sky was grey and, in December, it got dark around five p.m. At first, I was a bit sad and always tired. A colleague advised me to walk at lunchtime, in daylight, and to do sport. I started running again twice a week, and it helped me a lot.",
         "I also discovered some very pleasant things. In December, I visited the Christmas market and went up the big wheel on the Grand-Place. I drank my first mulled wine. In January, my colleagues bought a galette des rois (kings' cake): I found the fève (the little charm) and I wore the crown! On 2 February, for Chandeleur (Candlemas), my neighbours invited me to eat crêpes.",
         "It snowed only once, and the snow stayed for two days. Now I know you need a good coat, warm socks and lots of patience. Next winter, I'll be ready!"

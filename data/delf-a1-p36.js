@@ -245,7 +245,7 @@
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour, madame. Je m'appelle Esin." },
       { q: "Vous êtes de quelle nationalité ?", m: "Je suis turque. Je viens d'Istanbul." },
-      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. Maintenant, j'apprends le français." },
+      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je travaille à l'accueil d'une salle de sport. Maintenant, j'apprends le français." },
       { q: "Vous appelez souvent votre famille ?", m: "Oui, j'appelle mes parents en vidéo tous les dimanches." },
       { q: "Quelles applis est-ce que vous utilisez ?", m: "J'utilise une appli pour apprendre le français et une appli pour les bus." },
       { q: "Vous regardez des films sur internet ?", m: "Oui, le soir, je regarde des films en français avec les sous-titres." },

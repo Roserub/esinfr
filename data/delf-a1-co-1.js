@@ -184,8 +184,8 @@
   /* ───────── Sujet 4 ───────── */
   { id: "a1-s04-co1", level: "A1", sujet: 4, sec: "co", ex: 1, pts: 6,
     title: "Une sortie scolaire",
-    consigne: "Vous êtes la maman de Deniz. Vous écoutez un message sur votre répondeur. Lisez les questions, écoutez le document puis répondez.",
-    help: { tr: "Deniz'in annesisiniz. Telesekreterinizdeki bir mesajı dinliyorsunuz. Soruları okuyun, kaydı dinleyin ve cevaplayın.", en: "You are Deniz's mother. You hear a message on your answering machine. Read the questions, listen, then answer." },
+    consigne: "Votre amie Fatma, la maman de Deniz, vous fait écouter un message sur son répondeur. Lisez les questions, écoutez le document puis répondez.",
+    help: { tr: "Deniz'in annesi olan arkadaşınız Fatma, telesekreterindeki bir mesajı size dinletiyor. Soruları okuyun, kaydı dinleyin ve cevaplayın.", en: "Your friend Fatma, Deniz's mother, plays you a message from her answering machine. Read the questions, listen, then answer." },
     audio: [["F", "Bonjour, ici madame Lefèvre, la maîtresse de Deniz. Jeudi, la classe va visiter la ferme de Saint-Pierre. Le bus part de l'école à 8 h 15. Le retour est à 16 h 30. Votre enfant doit apporter un pique-nique et des bottes. La sortie coûte 5 €. Merci et bonne journée."]],
     questions: [
       { q: "Jeudi, la classe va…", o: ["🐄 à la ferme", "🏛️ au musée", "🏊 à la piscine"], a: 0, x: "« Jeudi, la classe va visiter la ferme de Saint-Pierre. »" },

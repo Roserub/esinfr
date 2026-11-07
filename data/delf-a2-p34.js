@@ -283,7 +283,7 @@
     help: { tr: "Yönlendirilmiş görüşme (yaklaşık 1,5 dakika, hazırlıksız). Sınav görevlisini selamlayın, kendinizi tanıtın ve sorularına cevap verin: siz, hayatınız, yolculuklarınız, planlarınız. Her soruya 2–3 kısa cümle yeterli.", en: "Guided interview (about 1.5 minutes, no preparation). Greet the examiner, introduce yourself and answer the questions (you, your life, trips, plans…)." },
     prompts: [
       { q: "Bonjour ! Vous pouvez vous présenter, s'il vous plaît ?", m: "Bonjour ! Je m'appelle Esin, j'ai 30 ans. Je suis turque, je viens d'Istanbul." },
-      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. Avant, je travaillais dans un club de handball à Istanbul." },
+      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. Avant, je travaillais dans un club de handball à Istanbul. En France, je travaille à l'accueil d'une salle de sport." },
       { q: "Est-ce que vous aimez voyager ?", m: "Oui, beaucoup ! J'aime découvrir de nouvelles villes et goûter la cuisine des autres pays." },
       { q: "Quel est le dernier voyage que vous avez fait ?", m: "Cet été, je suis allée à Lyon pour trois jours avec une amie. Nous avons visité la vieille ville et nous avons très bien mangé." },
       { q: "Vous préférez voyager seule ou avec des amis ?", m: "Je préfère voyager avec des amis, parce que c'est plus amusant et on partage les dépenses." },

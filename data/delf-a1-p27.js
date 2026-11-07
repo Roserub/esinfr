@@ -97,7 +97,7 @@
         x: "« Le plat du jour », « Les lasagnes… Et un yaourt », « 3,30 € » : c'est le restaurant universitaire.",
         xtr: "« Le plat du jour » = günün yemeği; tavuk-pilav ya da lazanya seçiliyor ve kartla 3,30 € ödeniyor: üniversite yemekhanesi." },
       { q: "Dialogue 4 : où sont ces personnes ?",
-        audio: [["M", "Allez, on commence ! Faites 3 tours de terrain en courant."], ["M2", "Monsieur, je joue sans baskets ? J'ai oublié mes chaussures."], ["M", "Non, désolé ! Regarde, il y a des baskets dans l'armoire, à côté des ballons."]],
+        audio: [["M", "Allez, on commence ! Faites 3 tours de terrain en courant."], ["M2", "Monsieur, je peux jouer sans baskets ? J'ai oublié mes chaussures."], ["M", "Non, désolé ! Regarde, il y a des baskets dans l'armoire, à côté des ballons."]],
         o: ["🛏️ dans une chambre de la résidence", "🏀 au gymnase", "🍽️ au restaurant universitaire", "📚 à la bibliothèque"], a: 1,
         x: "« Faites 3 tours de terrain en courant », « baskets », « ballons » : ils sont au gymnase.",
         xtr: "« Trois tours de terrain » = sahada üç tur, « baskets » = spor ayakkabısı, « ballons » = toplar: spor salonu." },
@@ -192,7 +192,7 @@
     consigne: "Vous lisez cette annonce sur le panneau d'information de l'université. Lisez le document et répondez aux questions.",
     help: { tr: "Üniversitenin duyuru panosunda bu ilanı okuyorsunuz. Belgeyi okuyun ve soruları cevaplayın.", en: "You read this ad on the university notice board. Read it and answer the questions." },
     doc: { type: "annonce", title: "Association Bienvenue sur le campus — Café des langues",
-      body: "Vous êtes étudiant étranger ? Vous voulez parler français avec des étudiants français ?\n\nVenez au café des langues, tous les mercredis, de 18 h à 20 h, à la cafétéria du bâtiment D.\n\nC'est simple : 30 minutes en français, puis 30 minutes dans votre langue ! On parle anglais, espagnol, arabe, turc, chinois…\n\nC'est gratuit pour les étudiants. Une boisson chaude : 1 €.\n\nVous voulez nous aider ? Nous cherchons des étudiants pour faire des gâteaux.\n\nContact : bienvenue.campus@mail.fr" },
+      body: "Vous êtes étudiant étranger ? Vous voulez parler français avec des étudiants français ?\n\nVenez au café des langues, tous les mercredis, de 18 h à 20 h, à la cafétéria du bâtiment D.\n\nC'est simple : 30 minutes en français, puis 30 minutes dans votre langue ! On parle anglais, espagnol, arabe, turc, chinois…\n\nC'est gratuit pour les étudiants. Une boisson chaude : 1 €.\n\nVous voulez nous aider ? Nous cherchons des étudiants pour faire des gâteaux.\n\nContact : bienvenue.campus@exemple.fr" },
     questions: [
       { q: "Le café des langues est pour…", o: ["les professeurs de français", "les étudiants étrangers", "les touristes"], a: 1,
         x: "« Vous êtes étudiant étranger ? Vous voulez parler français avec des étudiants français ? »",
@@ -252,7 +252,7 @@
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour, madame. Je m'appelle Esin." },
       { q: "Vous êtes de quelle nationalité ?", m: "Je suis turque. Je viens d'Istanbul." },
-      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. J'aime beaucoup mon métier." },
+      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je travaille à l'accueil d'une salle de sport. En Turquie, j'ai travaillé comme kinésithérapeute." },
       { q: "Où est-ce que vous apprenez le français ?", m: "J'apprends le français dans une école de langues, près du centre-ville." },
       { q: "Vous avez cours quels jours ?", m: "J'ai cours le lundi, le mercredi et le vendredi, le matin." },
       { q: "Comment est-ce que vous allez à vos cours ?", m: "Je vais à mes cours en bus. C'est à 20 minutes de chez moi." },

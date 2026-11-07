@@ -24,7 +24,7 @@
     doc: { type: "affiche", title: "Handball Club de Villeurbanne – Inscriptions",
       body: "Venez jouer au handball avec nous !\n\nEnfants (7–12 ans) : mercredi, 14 h – 15 h 30\nAdolescents (13–17 ans) : mardi et vendredi, 18 h – 19 h 30\nAdultes : jeudi, 20 h – 22 h (équipe femmes et équipe hommes)\n\nPrix : 120 € par an (enfants), 160 € par an (adultes).\nLe premier entraînement est gratuit !\n\nInscriptions au gymnase Jean-Jaurès, samedi 6 septembre, de 10 h à 17 h.\nApportez un certificat médical et une photo." },
     questions: [
-      { q: "Votre fille a 9 ans. Elle joue…", o: ["le mardi", "le mercredi", "le jeudi"], a: 1, x: "« Enfants (7–12 ans) : mercredi, 14 h – 15 h 30 »." },
+      { q: "Votre nièce a 9 ans. Elle joue…", o: ["le mardi", "le mercredi", "le jeudi"], a: 1, x: "« Enfants (7–12 ans) : mercredi, 14 h – 15 h 30 »." },
       { q: "Les adultes jouent…", o: ["le vendredi soir", "le samedi matin", "le jeudi soir"], a: 2, x: "« Adultes : jeudi, 20 h – 22 h »." },
       { q: "Pour un adulte, le prix est de…", o: ["160 € par an", "120 € par an", "160 € par mois"], a: 0, x: "« 160 € par an (adultes) »." },
       { q: "Le premier entraînement ne coûte rien.", o: ["Vrai", "Faux"], a: 0, x: "« Le premier entraînement est gratuit ! »" },
@@ -52,14 +52,14 @@
     consigne: "Vous cherchez un petit travail. Vous lisez cette annonce. Répondez aux questions.",
     help: { tr: "Küçük bir iş arıyorsunuz. Bu ilanı okuyorsunuz. Soruları cevaplayın.", en: "You are looking for a small job. You read this ad. Answer the questions." },
     doc: { type: "annonce", title: "Cherche baby-sitter",
-      body: "Famille avec deux enfants (Léo, 4 ans, et Inès, 7 ans) cherche une baby-sitter sérieuse.\n\nLundi, mardi et jeudi, de 16 h 30 à 19 h : aller chercher les enfants à l'école, donner le goûter, aider Inès pour les devoirs et jouer.\n\nNous habitons à 5 minutes de l'école, près du métro Croix-Rousse.\n\n12 € de l'heure. Expérience avec les enfants obligatoire. Vous parlez anglais ? C'est un plus !\n\nContact par e-mail : famille.durand@mail.fr" },
+      body: "Famille avec deux enfants (Léo, 4 ans, et Inès, 7 ans) cherche une baby-sitter sérieuse.\n\nLundi, mardi et jeudi, de 16 h 30 à 19 h : aller chercher les enfants à l'école, donner le goûter, aider Inès pour les devoirs et jouer.\n\nNous habitons à 5 minutes de l'école, près du métro Croix-Rousse.\n\n12 € de l'heure. Expérience avec les enfants obligatoire. Vous parlez anglais ? C'est un plus !\n\nContact par e-mail : famille.durand@exemple.fr" },
     questions: [
       { q: "La famille a…", o: ["un enfant", "deux enfants", "trois enfants"], a: 1, x: "« Famille avec deux enfants (Léo, 4 ans, et Inès, 7 ans) »." },
       { q: "La baby-sitter travaille…", o: ["3 jours par semaine", "5 jours par semaine", "le week-end"], a: 0, x: "« Lundi, mardi et jeudi » : 3 jours." },
       { q: "La baby-sitter doit…", o: ["faire le ménage", "préparer le dîner", "aider Inès pour les devoirs"], a: 2, x: "« aider Inès pour les devoirs et jouer »." },
       { q: "Le salaire est de…", o: ["16 € de l'heure", "12 € de l'heure", "19 € par jour"], a: 1, x: "« 12 € de l'heure. »" },
       { q: "Il faut avoir de l'expérience avec les enfants.", o: ["Vrai", "Faux"], a: 0, x: "« Expérience avec les enfants obligatoire. »" },
-      { q: "Pour répondre, vous…", o: ["📞 téléphonez", "🏫 allez à l'école", "📧 écrivez un e-mail"], a: 2, x: "« Contact par e-mail : famille.durand@mail.fr »." }
+      { q: "Pour répondre, vous…", o: ["📞 téléphonez", "🏫 allez à l'école", "📧 écrivez un e-mail"], a: 2, x: "« Contact par e-mail : famille.durand@exemple.fr »." }
     ] },
 
   /* ───────── Sujet 7 ───────── */
@@ -86,7 +86,7 @@
     questions: [
       { q: "Le musée est fermé…", o: ["le lundi", "le dimanche", "le mardi"], a: 2, x: "« Ouvert tous les jours sauf le mardi »." },
       { q: "Le vendredi, le musée ferme à…", o: ["18 h", "21 h", "20 h"], a: 1, x: "« Le vendredi : ouvert jusqu'à 21 h. »" },
-      { q: "Votre fils a 15 ans. Il paie…", o: ["0 €", "7 €", "12 €"], a: 0, x: "« Moins de 18 ans : gratuit »." },
+      { q: "Votre neveu a 15 ans. Il paie…", o: ["0 €", "7 €", "12 €"], a: 0, x: "« Moins de 18 ans : gratuit »." },
       { q: "On peut prendre des photos sans flash.", o: ["Vrai", "Faux"], a: 0, x: "« Photos sans flash autorisées. »" },
       { q: "Vous avez un sac à dos. Vous le laissez…", o: ["à la caisse", "au vestiaire", "dans la voiture"], a: 1, x: "« Sacs à dos interdits : vestiaire gratuit à l'entrée. »" },
       { q: "La visite guidée est…", o: ["le dimanche à 10 h", "le vendredi à 21 h", "le samedi à 15 h"], a: 2, x: "« Visite guidée en français le samedi à 15 h »." }
@@ -189,14 +189,14 @@
     consigne: "Vous recevez cette carte postale d'une collègue. Lisez-la, puis répondez aux questions.",
     help: { tr: "Bir iş arkadaşınızdan bu kartpostalı alıyorsunuz. Okuyun, sonra soruları cevaplayın.", en: "You receive this postcard from a colleague. Read it, then answer the questions." },
     doc: { type: "carte", from: "Élodie", to: "Esin",
-      body: "Chère Esin,\n\nMerci pour tes conseils : Istanbul, c'est magnifique ! Je suis ici avec mon amie Laure pour 5 jours.\n\nAujourd'hui, on visite Sainte-Sophie et le Grand Bazar. Demain, on va prendre le bateau sur le Bosphore. Je mange des simits tous les matins et je bois beaucoup de thé ! 🍵\n\nLe problème : je ne parle pas turc. Tu peux m'apprendre quelques mots ?\n\nÀ mardi, au bureau !\nÉlodie" },
+      body: "Chère Esin,\n\nMerci pour tes conseils : Istanbul, c'est magnifique ! Je suis ici avec mon amie Laure pour 5 jours.\n\nAujourd'hui, on visite Sainte-Sophie et le Grand Bazar. Demain, on va prendre le bateau sur le Bosphore. Je mange des simits tous les matins et je bois beaucoup de thé ! 🍵\n\nLe problème : je ne parle pas turc. Tu peux m'apprendre quelques mots ?\n\nÀ mardi, au travail !\nÉlodie" },
     questions: [
       { q: "Élodie est à Istanbul…", o: ["avec son mari", "seule", "avec une amie"], a: 2, x: "« Je suis ici avec mon amie Laure »." },
       { q: "Elle reste à Istanbul…", o: ["5 jours", "3 jours", "une semaine"], a: 0, x: "« pour 5 jours »." },
       { q: "Demain, Élodie va…", o: ["✈️ prendre l'avion", "⛴️ prendre le bateau", "🛍️ visiter le Grand Bazar"], a: 1, x: "« Demain, on va prendre le bateau sur le Bosphore. » Le Grand Bazar, c'est aujourd'hui." },
       { q: "Le matin, Élodie mange…", o: ["des crêpes", "du fromage", "des simits"], a: 2, x: "« Je mange des simits tous les matins »." },
       { q: "Élodie parle bien turc.", o: ["Vrai", "Faux"], a: 1, x: "« je ne parle pas turc »." },
-      { q: "Élodie et Esin vont se voir…", o: ["mardi, au bureau", "samedi, au café", "lundi, à la gare"], a: 0, x: "« À mardi, au bureau ! »" }
+      { q: "Élodie et Esin vont se voir…", o: ["mardi, au travail", "samedi, au café", "lundi, à la gare"], a: 0, x: "« À mardi, au travail ! »" }
     ] },
 
   { id: "a1-s09-ce2", level: "A1", sujet: 9, sec: "ce", ex: 2, pts: 6,
@@ -224,7 +224,7 @@
     questions: [
       { q: "Le samedi, l'accueil est ouvert…", o: ["l'après-midi", "le matin", "toute la journée"], a: 1, x: "Accueil, samedi : « 9 h – 12 h »." },
       { q: "Pour un passeport, il faut…", o: ["prendre rendez-vous", "venir le samedi", "venir l'après-midi"], a: 0, x: "« Passeports et cartes d'identité : seulement sur rendez-vous. »" },
-      { q: "Vous voulez inscrire votre fils à l'école. Vous venez…", o: ["mardi à 10 h", "samedi à 11 h", "jeudi à 15 h"], a: 2, x: "Inscriptions à l'école : « 13 h 30 – 17 h » du lundi au vendredi, « fermé » le samedi." },
+      { q: "Votre voisine veut inscrire son fils à l'école. Elle vient…", o: ["mardi à 10 h", "samedi à 11 h", "jeudi à 15 h"], a: 2, x: "Inscriptions à l'école : « 13 h 30 – 17 h » du lundi au vendredi, « fermé » le samedi." },
       { q: "La mairie est ouverte le dimanche.", o: ["Vrai", "Faux"], a: 1, x: "« La mairie est fermée le dimanche. »" },
       { q: "Du lundi au vendredi, l'état civil ferme à…", o: ["16 h 30", "17 h", "12 h"], a: 0, x: "État civil : « 8 h 30 – 16 h 30 »." }
     ] },
@@ -247,10 +247,10 @@
   /* ───────── Sujet 10 ───────── */
   { id: "a1-s10-ce1", level: "A1", sujet: 10, sec: "ce", ex: 1, pts: 6,
     title: "Chercher un enfant à l'école",
-    consigne: "Vous recevez ce SMS de la maman d'un ami de votre fils. Lisez le message, puis répondez aux questions.",
-    help: { tr: "Oğlunuzun bir arkadaşının annesinden bu SMS'i alıyorsunuz. Mesajı okuyun, sonra soruları cevaplayın.", en: "You receive this text message from the mother of your son's friend. Read it, then answer the questions." },
+    consigne: "Vous recevez ce SMS d'une amie, la maman du petit Deniz. Lisez le message, puis répondez aux questions.",
+    help: { tr: "Küçük Deniz'in annesi olan bir arkadaşınızdan bu SMS'i alıyorsunuz. Mesajı okuyun, sonra soruları cevaplayın.", en: "You receive this text message from a friend, little Deniz's mother. Read it, then answer the questions." },
     doc: { type: "sms", from: "Fatma", to: "Esin",
-      body: "Bonjour Esin, c'est Fatma, la maman de Deniz. Je suis chez le médecin avec mon bébé : il a de la fièvre 🤒.\n\nTu peux aller chercher Deniz à l'école avec ton fils, à 16 h 30 ? Je téléphone à la maîtresse. Deniz peut prendre le goûter chez toi ?\n\nJe passe le chercher vers 18 h 30. Il a son vélo à l'école : il peut le laisser là-bas.\n\nMerci beaucoup !!" },
+      body: "Bonjour Esin, c'est Fatma, la maman de Deniz. Je suis chez le médecin avec mon bébé : il a de la fièvre 🤒.\n\nTu peux aller chercher Deniz à l'école à 16 h 30 ? Je téléphone à la maîtresse. Deniz peut prendre le goûter chez toi ?\n\nJe passe le chercher vers 18 h 30. Il a son vélo à l'école : il peut le laisser là-bas.\n\nMerci beaucoup !!" },
     questions: [
       { q: "En ce moment, Fatma est…", o: ["au travail", "chez le médecin", "à l'école"], a: 1, x: "« Je suis chez le médecin avec mon bébé »." },
       { q: "Qui est malade ?", o: ["le bébé de Fatma", "Deniz", "Fatma"], a: 0, x: "« mon bébé : il a de la fièvre »." },

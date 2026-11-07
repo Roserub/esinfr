@@ -277,7 +277,7 @@
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ? Vous pouvez épeler votre prénom ?", m: "Bonjour ! Je m'appelle Esin. Esin : E – S – I – N." },
       { q: "D'où venez-vous ?", m: "Je viens de Turquie. Je suis née à Istanbul." },
-      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. Avant, je travaillais avec des sportifs, surtout des joueurs de handball." },
+      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. En Turquie, je travaillais avec des joueurs de handball. Ici, je travaille à l'accueil d'une salle de sport." },
       { q: "Est-ce que vous aimez cuisiner ?", m: "Oui, beaucoup ! Le week-end, je cuisine des plats turcs pour mes amis. Je fais souvent des dolmas." },
       { q: "Où est-ce que vous faites vos courses ?", m: "Je vais au supermarché pendant la semaine, mais le samedi, j'aime aller au marché. Les légumes sont meilleurs." },
       { q: "Quelle spécialité française est-ce que vous préférez ?", m: "J'adore le fromage, surtout le comté. J'aime aussi beaucoup la tarte Tatin." },

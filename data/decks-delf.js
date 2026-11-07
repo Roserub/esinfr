@@ -661,7 +661,7 @@ le week-end prochain|gelecek hafta sonu|next weekend
 il y a deux jours|iki gün önce|two days ago|il y a + time = ago, with a past tense: Je suis arrivée en France il y a deux ans.
 dans trois jours|üç gün sonra (bugünden itibaren)|in three days' time|dans + time = in (future): Le train part dans dix minutes.
 depuis 2023 / depuis deux ans|2023'ten beri / iki yıldır|since 2023 / for two years|With the PRESENT tense, as in Turkish: J'habite à Lille depuis deux ans.
-pendant deux heures|iki saat boyunca|for two hours|A finished period: J'ai travaillé pendant cinq ans à Izmir.
+pendant deux heures|iki saat boyunca|for two hours|A finished period: J'ai travaillé pendant cinq ans à Istanbul.
 en 2024 / en deux heures|2024'te / iki saatte (sürede)|in 2024 / in two hours (time taken)
 maintenant|şimdi|now
 en ce moment|şu anda, bu aralar|at the moment

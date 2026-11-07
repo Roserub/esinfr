@@ -53,7 +53,7 @@
     consigne: "Vous cherchez une chambre. Vous lisez cette annonce sur internet. Répondez aux questions.",
     help: { tr: "Bir oda arıyorsunuz. İnternette bu ilanı okuyorsunuz. Soruları cevaplayın.", en: "You are looking for a room. You read this ad on the internet. Answer the questions." },
     doc: { type: "annonce", title: "Chambre à louer chez l'habitant",
-      body: "Je loue une chambre meublée de 12 m² dans ma maison, à Talence, à 10 minutes du tram.\n\nDans la chambre, il y a un lit, un bureau et une armoire. La cuisine et la salle de bains sont à partager avec moi et mon chat.\n\nLoyer : 420 € par mois, tout compris (eau, électricité, internet).\nPour une personne seule, non-fumeur. Libre le 1er octobre.\n\nVisite possible le mercredi soir ou le dimanche.\nÉcrivez-moi : anne.morel@mail.fr\nAnne, 58 ans" },
+      body: "Je loue une chambre meublée de 12 m² dans ma maison, à Talence, à 10 minutes du tram.\n\nDans la chambre, il y a un lit, un bureau et une armoire. La cuisine et la salle de bains sont à partager avec moi et mon chat.\n\nLoyer : 420 € par mois, tout compris (eau, électricité, internet).\nPour une personne seule, non-fumeur. Libre le 1er octobre.\n\nVisite possible le mercredi soir ou le dimanche.\nÉcrivez-moi : anne.morel@exemple.fr\nAnne, 58 ans" },
     questions: [
       { q: "Dans la chambre, il y a…", o: ["une cuisine et un lit", "un lit, un bureau et une armoire", "une salle de bains et un bureau"], a: 1, x: "« Dans la chambre, il y a un lit, un bureau et une armoire. »" },
       { q: "Internet est compris dans le loyer.", o: ["Vrai", "Faux"], a: 0, x: "« Loyer : 420 € par mois, tout compris (eau, électricité, internet). »" },
@@ -226,7 +226,7 @@
       { q: "Vous êtes à Belle-Île. Vous voulez être à Quiberon avant midi. Vous prenez le bateau de…", o: ["16 h 15", "19 h 30", "10 h 30"], a: 2, x: "Départ Belle-Île « 10 h 30 », arrivée Quiberon « 11 h 15 »." },
       { q: "Pour un adulte, l'aller-retour coûte…", o: ["36 €", "22 €", "18 €"], a: 0, x: "« Aller-retour : 36 € (adulte) »." },
       { q: "Vous êtes adulte et vous prenez votre vélo. Vous payez en tout…", o: ["36 €", "54 €", "18 €"], a: 1, x: "« 36 € (adulte) » + « Vélo : 18 € » = 54 €." },
-      { q: "Votre fils a 2 ans. Son billet coûte 22 €.", o: ["Vrai", "Faux"], a: 1, x: "« gratuit pour les moins de 4 ans »." },
+      { q: "Votre neveu a 2 ans. Son billet coûte 22 €.", o: ["Vrai", "Faux"], a: 1, x: "« gratuit pour les moins de 4 ans »." },
       { q: "Vous devez arriver 20 minutes avant le départ.", o: ["Vrai", "Faux"], a: 0, x: "« Arrivez 20 minutes avant le départ. »" }
     ] },
 
@@ -303,6 +303,6 @@
       { q: "Pour utiliser les appareils, il faut payer.", o: ["Vrai", "Faux"], a: 1, x: "« C'est gratuit et c'est ouvert tous les jours »." },
       { q: "Le coach est là…", o: ["le mardi et le jeudi", "tous les jours, de 8 h à 21 h", "le samedi"], a: 0, x: "« Le mardi et le jeudi, à 18 h, un coach de la ville donne des conseils. »" },
       { q: "Rachid fait du sport…", o: ["le soir, après le travail", "le matin, avant le travail", "le week-end"], a: 1, x: "« Je viens ici le matin, avant le travail. »" },
-      { q: "Votre fils a 16 ans. Il peut utiliser les appareils.", o: ["Vrai", "Faux"], a: 0, x: "« Les appareils sont pour les personnes de plus de 14 ans. » 16 ans, c'est plus de 14 ans." }
+      { q: "Votre neveu a 16 ans. Il peut utiliser les appareils.", o: ["Vrai", "Faux"], a: 0, x: "« Les appareils sont pour les personnes de plus de 14 ans. » 16 ans, c'est plus de 14 ans." }
     ] }
 );

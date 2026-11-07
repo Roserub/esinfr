@@ -158,7 +158,7 @@
   { id: "a1-s46-ce3", level: "A1", sujet: 46, sec: "ce", ex: 3, pts: 6,
     title: "Le planning de la terrasse",
     consigne: "Vous êtes serveur ou serveuse au Café de la Plage cet été. Vous lisez le planning de la semaine. Lisez le document et répondez aux questions.",
-    help: { tr: "Bu yaz « Café de la Plage »da garsonsunuz. Haftanın çalışma planını okuyorsunuz. Belgeyi okuyun ve soruları cevaplayın.", en: "You are a waiter or waitress at the Café de la Plage this summer. You read the week's schedule. Read it and answer the questions." },
+    help: { tr: "Bu yaz Café de la Plage'da garsonsunuz. Haftanın çalışma planını okuyorsunuz. Belgeyi okuyun ve soruları cevaplayın.", en: "You are a waiter or waitress at the Café de la Plage this summer. You read the week's schedule. Read it and answer the questions." },
     doc: { type: "horaires", title: "Café de la Plage — Planning de la terrasse",
       body: "Réunion d'équipe : mercredi à 15 h 30. Tout le monde vient !\nRepas du personnel : 11 h 30 (équipe du matin) et 18 h 30 (équipe du soir).",
       rows: [["Prénom", "Jours de travail", "Horaires"],
@@ -190,7 +190,7 @@
     consigne: "Vous cherchez un job d'été. Vous lisez cette annonce sur internet. Lisez le document et répondez aux questions.",
     help: { tr: "Bir yaz işi arıyorsunuz. İnternette bu ilanı okuyorsunuz. Belgeyi okuyun ve soruları cevaplayın.", en: "You are looking for a summer job. You read this advertisement online. Read it and answer the questions." },
     doc: { type: "annonce", title: "Job d'été : vendeur / vendeuse de glaces",
-      body: "Le glacier « La Banquise », à Arcachon, cherche un vendeur ou une vendeuse pour l'été, du 1er juillet au 31 août.\n\nVous servez les glaces et les boissons, vous parlez avec les clients et vous nettoyez la boutique.\nHoraires : de 14 h à 22 h, 5 jours par semaine.\nSalaire : 1 800 € par mois.\n\nNous cherchons une personne souriante, qui aime le contact. L'anglais ou l'espagnol, c'est un plus !\nUne petite chambre est possible, à 200 € par mois.\n\nEnvoyez votre CV à : labanquise.glaces@mail.fr" },
+      body: "Le glacier « La Banquise », à Arcachon, cherche un vendeur ou une vendeuse pour l'été, du 1er juillet au 31 août.\n\nVous servez les glaces et les boissons, vous parlez avec les clients et vous nettoyez la boutique.\nHoraires : de 14 h à 22 h, 5 jours par semaine.\nSalaire : 1 800 € par mois.\n\nNous cherchons une personne souriante, qui aime le contact. L'anglais ou l'espagnol, c'est un plus !\nUne petite chambre est possible, à 200 € par mois.\n\nEnvoyez votre CV à : labanquise.glaces@exemple.fr" },
     questions: [
       { q: "Le job dure…", o: ["1 mois", "2 mois", "toute l'année"], a: 1,
         x: "« du 1er juillet au 31 août » : juillet et août, c'est 2 mois.",
@@ -255,7 +255,7 @@
       { q: "Vous êtes de quelle nationalité ?", m: "Je suis turque. Je viens d'Istanbul." },
       { q: "Qu'est-ce que vous faites comme travail ?", m: "Je suis kinésithérapeute. En Turquie, j'ai travaillé avec des sportifs." },
       { q: "Vous aimez votre travail ?", m: "Oui, j'adore mon travail. J'aime aider les gens." },
-      { q: "Vous travaillez en France ?", m: "Oui, un peu : je travaille à l'accueil d'une salle de sport, le matin." },
+      { q: "Vous travaillez en France ?", m: "Oui : je travaille à l'accueil d'une salle de sport, le matin." },
       { q: "Vous aimez travailler avec des enfants ?", m: "Oui, les enfants sont drôles. Mais c'est fatigant !" },
       { q: "Qu'est-ce que vous faites en été ?", m: "En été, je vais en Turquie chez mes parents et je vais à la plage." },
       { q: "Vous parlez quelles langues ?", m: "Je parle turc, anglais et un peu français." }
@@ -293,7 +293,7 @@
     ],
     model: [
       ["E", "Bonjour ! Asseyez-vous. Comment vous appelez-vous ?"],
-      ["C", "Bonjour, monsieur. Je m'appelle Esin. Je suis turque et j'habite à Bordeaux."],
+      ["C", "Bonjour, monsieur. Je m'appelle Esin. Je suis turque et j'habite à Lyon."],
       ["E", "Enchanté. Vous êtes libre quand, cet été ?"],
       ["C", "Je suis libre en juillet et en août."],
       ["E", "Parfait. Vous parlez anglais ?"],

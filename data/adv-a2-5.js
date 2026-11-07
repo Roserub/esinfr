@@ -320,7 +320,7 @@
            ] },
       f: { say: [["K", "Merci… Et toi, tu joues au handball ?"]],
            choices: [
-             { fr: "Non, mais j'ai travaillé avec une équipe de handball en Turquie, comme kiné !", tr: "Hayır, ama Türkiye'de bir hentbol takımıyla fizyoterapist olarak çalıştım!", en: "No, but I worked with a handball team in Turkey, as a physio!", ok: true, go: "g" },
+             { fr: "Oui ! Et j'ai aussi travaillé avec une équipe de handball en Turquie, comme kiné !", tr: "Evet! Ayrıca Türkiye'de bir hentbol takımıyla fizyoterapist olarak çalıştım!", en: "Yes! And I also worked with a handball team in Turkey, as a physio!", ok: true, go: "g" },
              { fr: "Non, je joue le handball.", tr: "Hayır, hentbolu çalıyorum.", en: "No, I play handball. (wrong preposition)", ok: false,
                fb: { fr: "« Non » puis « je joue » ? 🤔 Et pour un sport, on dit « jouer AU handball » (« jouer DE » = un instrument 🎸).", tr: "Önce « non » sonra « je joue » mu? 🤔 Ayrıca spor için « jouer AU handball » denir (« jouer DE » = bir enstrüman 🎸).", en: "« No » and then « I play »? 🤔 And for a sport it's « jouer AU handball » (« jouer DE » = an instrument 🎸)." } }
            ] },

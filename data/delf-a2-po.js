@@ -159,7 +159,7 @@
         m: "Je suis kinésithérapeute. Mais mon diplôme turc n'est pas encore reconnu en France, alors je ne travaille pas comme kiné ici."
       },
       { q: "Pendant combien de temps est-ce que vous avez fait ce métier ?", m: "J'ai fait ce métier pendant six ans, en Turquie." },
-      { q: "Qu'est-ce que vous faites maintenant, en France ?", m: "J'apprends le français, parce que je voudrais entrer en STAPS, à l'université." },
+      { q: "Qu'est-ce que vous faites maintenant, en France ?", m: "Je travaille à l'accueil d'une salle de sport et j'apprends le français, parce que je voudrais entrer en STAPS, à l'université." },
       { q: "Comment se passait une journée de travail typique ?", m: "Je commençais à 8 h 30. Je voyais huit ou dix patients par jour." },
       { q: "Qu'est-ce qui était difficile dans votre métier ?", m: "C'était fatigant et il fallait bien expliquer les exercices aux patients." },
       { q: "Quel était votre premier travail ?", m: "C'était dans un hôpital, en Turquie. J'avais 23 ans et j'étais un peu stressée." },
@@ -244,7 +244,7 @@
       ["E", "Oui, le parking est gratuit pour nos clients."],
       ["C", "Parfait. Nous allons arriver vers 21 heures. C'est possible ?"],
       ["E", "Pas de problème, la réception est ouverte jusqu'à 23 heures. C'est à quel nom ?"],
-      ["C", "Au nom de Yilmaz, Y-I-L-M-A-Z. Vous pouvez m'envoyer une confirmation par e-mail ?"],
+      ["C", "Au nom de Yılmaz, Y-I-L-M-A-Z. Vous pouvez m'envoyer une confirmation par e-mail ?"],
       ["E", "Bien sûr. Votre réservation est confirmée. Au revoir, madame !"],
       ["C", "Merci beaucoup, au revoir !"]
     ] },
@@ -544,7 +544,7 @@
     },
     prompts: [
       { q: "Depuis quand est-ce que vous habitez en France ?", m: "J'habite en France depuis un an." },
-      { q: "Pourquoi est-ce que vous êtes venue en France ?", m: "Je suis venue pour le travail et parce que j'aimais la culture française." },
+      { q: "Pourquoi est-ce que vous êtes venue en France ?", m: "Je suis venue avec mon mari, et aussi parce que j'aimais la culture française." },
       { q: "Qu'est-ce qui a été difficile au début ?", m: "La langue et les papiers administratifs ! C'était compliqué." },
       { q: "Qu'est-ce qui vous plaît en France ?", m: "J'aime les marchés, le pain et les petits villages." },
       { q: "Qu'est-ce qui vous manque de la Turquie ?", m: "Ma famille me manque, et aussi la cuisine de ma mère." },
@@ -789,7 +789,7 @@
     ],
     model: [
       ["E", "Cabinet du docteur Lefèvre, bonjour."],
-      ["C", "Bonjour madame. Je m'appelle Esin Yilmaz. J'ai un rendez-vous avec le docteur jeudi à 10 heures."],
+      ["C", "Bonjour madame. Je m'appelle Esin Yılmaz. J'ai un rendez-vous avec le docteur jeudi à 10 heures."],
       ["E", "Oui, je vois. Qu'est-ce que je peux faire pour vous ?"],
       [
         "C",
@@ -1160,7 +1160,7 @@
         kw: ["je voudrais", "j'aimerais", "idéal", "ideal", "parce que", "rêve", "reve", "le plus important"]
       }
     ],
-    model: "Mon logement idéal, c'est une maison au bord de la mer, près d'une petite ville. Dans cette maison, il y a trois chambres : une pour moi, une pour les invités et une pour faire du yoga. Il y a aussi une grande cuisine ouverte sur le salon, parce que j'adore cuisiner pour mes amis. Le plus important pour moi, c'est un jardin avec des arbres et une terrasse pour manger dehors en été. Aujourd'hui, j'habite dans un petit appartement en ville, au troisième étage, sans balcon. Quand j'étais enfant, notre appartement en Turquie avait un grand balcon et on voyait la mer. C'est peut-être pour ça que je rêve de la mer ! J'aimerais avoir cette maison dans dix ans." },
+    model: "Mon logement idéal, c'est une maison au bord de la mer, près d'une petite ville. Dans cette maison, il y a trois chambres : une pour mon mari et moi, une pour les invités et une pour faire du yoga. Il y a aussi une grande cuisine ouverte sur le salon, parce que j'adore cuisiner pour mes amis. Le plus important pour moi, c'est un jardin avec des arbres et une terrasse pour manger dehors en été. Aujourd'hui, j'habite dans un petit appartement en ville, au troisième étage, sans balcon. Quand j'étais enfant, notre appartement en Turquie avait un grand balcon et on voyait la mer. C'est peut-être pour ça que je rêve de la mer ! J'aimerais avoir cette maison dans dix ans." },
   { id: "a2-s09-po3", level: "A2", sujet: 9, sec: "po", ex: 3, pts: 9, kind: "dialogue",
     title: "Un problème au restaurant",
     consigne: "Exercice en interaction (3 minutes environ). Vous êtes au restaurant. Votre plat arrive froid et ce n'est pas le plat que vous avez commandé. Vous appelez le serveur, vous expliquez le problème poliment et vous trouvez une solution ensemble. L'examinateur joue le rôle du serveur.",
@@ -1337,7 +1337,7 @@
       ["E", "Vous avez moins de 27 ans ? Il y a des réductions pour les jeunes."],
       ["C", "Non, j'ai plus de 27 ans."],
       ["E", "Alors je vous conseille l'abonnement mensuel. Vous voyagez tous les jours ?"],
-      ["C", "Du lundi au vendredi. Mais quelquefois, je travaille à la maison le mercredi."],
+      ["C", "Du lundi au vendredi. Mais quelquefois, je ne travaille pas le mercredi."],
       ["E", "L'abonnement mensuel coûte 98 euros. Vous pouvez prendre tous les trains entre les deux villes."],
       ["C", "Et un billet aller-retour normal, c'est combien ?"],
       ["E", "16 euros."],

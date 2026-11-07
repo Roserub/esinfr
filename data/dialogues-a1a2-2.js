@@ -39,7 +39,7 @@ A|Je vous en prie. Bonne journée !|Rica ederim. İyi günler!|You're welcome. H
 
     D("d-famille", "A1", "Parler de sa famille avec une collègue", "Bir iş arkadaşıyla aileden bahsetmek", "Talking about your family with a colleague", { A: "Sophie", B: "Esin" }, "B", `
 A|Esin, c'est qui sur la photo ?|Esin, fotoğraftaki kim?|Esin, who's in the photo?
-B|C'est ma famille, à Izmir. Là, c'est mon père et ma mère.|Bu benim ailem, İzmir'de. Şurada babam ve annem.|That's my family, in Izmir. There, that's my dad and my mum.
+B|C'est ma famille, à Istanbul. Là, c'est mon père et ma mère.|Bu benim ailem, İstanbul'da. Şurada babam ve annem.|That's my family, in Istanbul. There, that's my dad and my mum.
 A|Ils ont l'air jeunes ! Et la fille à côté ?|Genç görünüyorlar! Ya yanlarındaki kız?|They look young! And the girl next to them?
 B|C'est ma sœur, Elif. Elle a 19 ans. Elle est étudiante.|Bu kız kardeşim Elif. 19 yaşında. Öğrenci.|That's my sister, Elif. She's 19. She's a student.
 A|Elle étudie quoi ?|Ne okuyor?|What does she study?
@@ -61,7 +61,7 @@ B|Une margherita, taille moyenne, avec des champignons en plus.|Bir margarita, o
 A|Une margherita moyenne avec champignons. Et avec ça ?|Orta boy mantarlı margarita. Yanına başka?|A medium margherita with mushrooms. Anything else?
 B|Une bouteille d'eau gazeuse. C'est combien en tout ?|Bir şişe maden suyu. Toplam ne kadar?|A bottle of sparkling water. How much is it altogether?
 A|Ça fait 14 euros 50. C'est à quelle adresse ?|14 euro 50 tutuyor. Adres neresi?|That's 14 euros 50. What's the address?
-B|12, rue Victor-Hugo, au troisième étage. Le code de la porte, c'est 4721.|Victor-Hugo Sokağı 12, üçüncü kat. Kapı şifresi 4721.|12 rue Victor-Hugo, third floor. The door code is 4721.
+B|8, rue des Lilas, au troisième étage. Le code de la porte, c'est 4512B.|Rue des Lilas 8 numara, üçüncü kat. Kapı şifresi 4512B.|8 rue des Lilas, third floor. The door code is 4512B.
 A|Parfait. Vous allez être livrée dans 30 minutes environ.|Mükemmel. Yaklaşık 30 dakika içinde teslim edilecek.|Perfect. It'll be delivered in about 30 minutes.
 B|Super. Je peux payer en espèces ?|Süper. Nakit ödeyebilir miyim?|Great. Can I pay in cash?
 A|Oui, bien sûr. Le livreur a de la monnaie. Bonne soirée !|Evet, tabii. Kuryenin bozuk parası var. İyi akşamlar!|Yes, of course. The delivery driver has change. Have a nice evening!`),
@@ -117,7 +117,7 @@ A|Merci, Esin. Tu es une vraie amie.|Teşekkürler Esin. Gerçek bir dostsun.|Th
     D("d-bibliotheque", "A2", "S'inscrire à la bibliothèque", "Kütüphaneye üye olmak", "Joining the library", { A: "Bibliothécaire", B: "Esin" }, "B", `
 B|Bonjour. Je voudrais m'inscrire à la bibliothèque, s'il vous plaît.|Merhaba. Kütüphaneye üye olmak istiyorum, lütfen.|Hello. I'd like to join the library, please.
 A|Bien sûr. Vous habitez dans la commune ?|Tabii. Bu belediye sınırları içinde mi oturuyorsunuz?|Of course. Do you live in the town?
-B|Oui, depuis deux mois. J'ai apporté un justificatif de domicile.|Evet, iki aydır. İkametgâh belgesi getirdim.|Yes, for two months. I've brought proof of address.
+B|Oui, depuis un an. J'ai apporté un justificatif de domicile.|Evet, bir yıldır. İkametgâh belgesi getirdim.|Yes, for a year. I've brought proof of address.
 A|Parfait. L'inscription est gratuite pour les habitants. Vous pourrez emprunter 10 documents pendant 3 semaines.|Mükemmel. Üyelik burada oturanlar için ücretsiz. 3 haftalığına 10 materyal ödünç alabileceksiniz.|Perfect. Membership is free for residents. You'll be able to borrow 10 items for 3 weeks.
 B|Super. Est-ce que vous avez des livres pour apprendre le français ?|Süper. Fransızca öğrenmek için kitaplarınız var mı?|Great. Do you have books for learning French?
 A|Oui, au premier étage, il y a un espace « Français langue étrangère », avec des romans en français facile.|Evet, birinci katta "Yabancı dil olarak Fransızca" bölümü var, kolay Fransızcayla yazılmış romanlarla birlikte.|Yes, on the first floor there's a "French as a foreign language" area, with novels in easy French.
@@ -125,7 +125,7 @@ B|C'est exactement ce que je cherchais ! Et vous avez des livres en turc ?|Tam d
 A|Quelques-uns, oui. Et si un livre n'est pas là, vous pouvez le réserver en ligne.|Birkaç tane, evet. Bir kitap burada yoksa internetten ayırtabilirsiniz.|A few, yes. And if a book isn't here, you can reserve it online.
 B|D'accord. Je pourrais aussi utiliser les ordinateurs ?|Tamam. Bilgisayarları da kullanabilir miyim?|OK. Could I use the computers too?
 A|Oui, avec votre carte, vous avez droit à 2 heures par jour. Le wifi est gratuit aussi.|Evet, kartınızla günde 2 saat hakkınız var. Wifi de ücretsiz.|Yes, with your card you get 2 hours a day. The wifi is free too.
-B|Génial. À Izmir, j'allais souvent à la bibliothèque pour réviser mes examens.|Harika. İzmir'de sınavlarıma çalışmak için sık sık kütüphaneye giderdim.|Brilliant. In Izmir I often went to the library to study for my exams.
+B|Génial. À Istanbul, j'allais souvent à la bibliothèque pour réviser mes examens.|Harika. İstanbul'da sınavlarıma çalışmak için sık sık kütüphaneye giderdim.|Brilliant. In Istanbul I often went to the library to study for my exams.
 A|Alors vous allez vous sentir chez vous ici ! Remplissez juste ce formulaire, et voilà votre carte.|O zaman burada kendinizi evinizde hissedeceksiniz! Sadece bu formu doldurun, işte kartınız.|Then you'll feel at home here! Just fill in this form, and here's your card.
 B|Merci beaucoup. Vous êtes ouverts le dimanche ?|Çok teşekkürler. Pazar günleri açık mısınız?|Thank you very much. Are you open on Sundays?
 A|Oui, de 14 h à 18 h. Bonne lecture !|Evet, 14'ten 18'e kadar. İyi okumalar!|Yes, from 2 to 6 pm. Happy reading!`),

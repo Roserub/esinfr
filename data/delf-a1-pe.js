@@ -90,7 +90,7 @@
       { c: "Dire où sont les clés", kw: ["clé", "clés", "clef", "clefs"] },
       { c: "Remercier et prendre congé", kw: ["merci", "cordialement", "bonne journée", "à bientôt", "bonne soirée"] }
     ],
-    model: "Bonjour Madame Petit,\nJe pars en vacances en Turquie du 3 au 10 août. Est-ce que vous pouvez arroser mes plantes le mardi et le vendredi ? Pouvez-vous aussi prendre mon courrier dans la boîte aux lettres ? Les clés sont chez le gardien. Merci beaucoup !\nBonne journée,\nEsin Yilmaz" },
+    model: "Bonjour Madame Petit,\nJe pars en vacances en Turquie du 3 au 10 août. Est-ce que vous pouvez arroser mes plantes le mardi et le vendredi ? Pouvez-vous aussi prendre mon courrier dans la boîte aux lettres ? Les clés sont chez le gardien. Merci beaucoup !\nBonne journée,\nEsin Yılmaz" },
 
   { id: "a1-s04-pe1", level: "A1", sujet: 4, sec: "pe", ex: 1, pts: 10, kind: "form",
     title: "Inscription au cours de français",
@@ -154,8 +154,8 @@
 
   { id: "a1-s06-pe1", level: "A1", sujet: 6, sec: "pe", ex: 1, pts: 10, kind: "form",
     title: "Inscription en colonie de vacances",
-    consigne: "Votre fils va partir en colonie de vacances cet été. Complétez la fiche d'inscription.",
-    help: { tr: "Oğlunuz bu yaz tatil kampına gidecek. Kayıt formunu doldurun.", en: "Your son is going to a holiday camp this summer. Fill in the registration form." },
+    consigne: "Deniz, le fils de votre amie Fatma, va partir en colonie de vacances cet été. Fatma vous demande de l'aider. Complétez la fiche d'inscription.",
+    help: { tr: "Arkadaşınız Fatma'nın oğlu Deniz bu yaz tatil kampına gidecek. Fatma sizden yardım istiyor. Kayıt formunu doldurun.", en: "Deniz, your friend Fatma's son, is going to a holiday camp this summer. Fatma asks you to help her. Fill in the registration form." },
     context: "Centre de vacances Les Petits Explorateurs — Fiche d'inscription, été 2027.",
     fields: [
       { l: "Nom de l'enfant", k: "text" },
@@ -240,7 +240,7 @@
       { c: "Parler de vos loisirs", kw: ["j'aime", "j'adore", "sport", "loisirs", "lire", "cuisine", "musique", "yoga", "je cours"] },
       { c: "Dire quelle langue vous cherchez", kw: ["apprendre", "parler", "langue", "échange", "je cherche", "français", "pratiquer", "partenaire"] }
     ],
-    model: "Bonjour à tous !\nJe m'appelle Esin, j'ai 30 ans et je suis turque. J'habite à Montpellier depuis un an. Je suis kinésithérapeute. J'adore le sport : je cours et je fais du yoga. J'aime aussi la cuisine. Je cherche un partenaire pour parler français. Moi, je peux vous aider en turc ou en anglais !" },
+    model: "Bonjour à tous !\nJe m'appelle Esin, j'ai 30 ans et je suis turque. J'habite à Lyon depuis un an. En Turquie, je suis kinésithérapeute ; en France, je travaille à l'accueil d'une salle de sport. J'adore le sport : je cours et je fais du yoga. J'aime aussi la cuisine. Je cherche un partenaire pour parler français. Moi, je peux vous aider en turc ou en anglais !" },
 
   { id: "a1-s09-pe1", level: "A1", sujet: 9, sec: "pe", ex: 1, pts: 10, kind: "form",
     title: "Participer au concours photo",
@@ -261,8 +261,8 @@
     ] },
   { id: "a1-s09-pe2", level: "A1", sujet: 9, sec: "pe", ex: 2, pts: 15, kind: "text",
     title: "Un mot pour la baby-sitter",
-    consigne: "Ce soir, vous sortez. Chloé, une baby-sitter, garde votre fils Deniz (6 ans). Vous lui laissez un petit mot. Vous parlez du dîner, de l'heure du coucher, de votre sortie et vous donnez votre numéro de téléphone. (40 mots minimum)",
-    help: { tr: "Bu akşam dışarı çıkıyorsunuz. Bebek bakıcısı Chloé oğlunuz Deniz'e (6 yaşında) bakacak. Ona kısa bir not bırakın. Akşam yemeğinden, yatma saatinden, nereye gittiğinizden bahsedin ve telefon numaranızı verin. (En az 40 kelime)", en: "Tonight you are going out. Chloé, a babysitter, is looking after your son Deniz (6). Leave her a short note. Talk about dinner, bedtime, your evening out, and give your phone number. (40 words minimum)" },
+    consigne: "Ce soir, Deniz (6 ans), le fils de votre amie Fatma, dort chez vous. Vous sortez avec votre mari. Chloé, une baby-sitter, garde Deniz. Vous lui laissez un petit mot. Vous parlez du dîner, de l'heure du coucher, de votre sortie et vous donnez votre numéro de téléphone. (40 mots minimum)",
+    help: { tr: "Bu akşam arkadaşınız Fatma'nın oğlu Deniz (6 yaşında) sizde kalıyor. Eşinizle dışarı çıkıyorsunuz. Bebek bakıcısı Chloé, Deniz'e bakacak. Ona kısa bir not bırakın. Akşam yemeğinden, yatma saatinden, nereye gittiğinizden bahsedin ve telefon numaranızı verin. (En az 40 kelime)", en: "Tonight Deniz (6), your friend Fatma's son, is staying at your home. You are going out with your husband. Chloé, a babysitter, is looking after Deniz. Leave her a short note. Talk about dinner, bedtime, your evening out, and give your phone number. (40 words minimum)" },
     min: 40,
     must: [
       { c: "Parler du dîner", kw: ["repas", "dîner", "mange", "manger", "frigo", "réfrigérateur", "soupe", "pâtes"] },
@@ -301,5 +301,5 @@
       { c: "Présenter le programme", kw: ["programme", "on va", "danser", "manger", "musique", "gâteau", "barbecue", "jeux", "karaoké"] },
       { c: "Demander une réponse", kw: ["répondez", "réponse", "dites-moi", "vous venez", "confirmer", "avant"] }
     ],
-    model: "Bonjour à tous,\nJe vais avoir 31 ans ! Je vous invite à ma fête d'anniversaire samedi 14 juin, à 19 h, chez moi, 8 rue des Lilas. Au programme : un grand barbecue dans le jardin, de la musique turque et un gros gâteau au chocolat ! Vous venez ? Répondez-moi avant mercredi, s'il vous plaît.\nBises,\nEsin" }
+    model: "Bonjour à tous,\nJe vais avoir 31 ans ! Je vous invite à ma fête d'anniversaire samedi 13 juin, à 19 h, chez moi, 8 rue des Lilas. Au programme : un grand dîner turc, de la musique et un gros gâteau au chocolat ! Vous venez ? Répondez-moi avant mercredi, s'il vous plaît.\nBises,\nEsin" }
 );

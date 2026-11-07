@@ -98,7 +98,7 @@ actuel(le)|güncel, aktüel|current|English "actual" = réel
 l'agenda|ajanda|diary, planner|English "agenda" = l'ordre du jour
 sympathique (sympa)|sempatik|nice, likeable|English "sympathetic" ≠ sympa
 actuellement|şu anda|currently|actually = en fait
-éventuellement|muhtemelen, belki|possibly|eventually = finalement
+éventuellement|belki, gerekirse|possibly|eventually = finalement
 la librairie|kitapçı|bookshop|library = la bibliothèque
 assister à|katılmak (bir etkinliğe)|to attend|to assist = aider
 attendre|beklemek|to wait|to attend = assister à

@@ -59,11 +59,11 @@
            ] },
       f: { say: [["M", "Oui, si l'appartement est en bon état, je vous la rends dans un délai d'un mois. Et vous travaillez en ce moment ?"]],
            choices: [
-             { fr: "Pas encore. Je suis kinésithérapeute, mais j'attends l'équivalence de mon diplôme.", tr: "Henüz değil. Fizyoterapistim ama diplomamın denkliğini bekliyorum.", en: "Not yet. I'm a physiotherapist, but I'm waiting for my degree to be recognised.", ok: true, go: "g" },
-             { fr: "Pas encore. Je suis une kinésithérapeute.", tr: "Henüz değil. Ben bir fizyoterapistim.", en: "Not yet. I am a physiotherapist.", ok: false,
-               fb: { fr: "Pour un métier, pas d'article : « je suis kinésithérapeute », comme « je suis médecin ».", tr: "Meslek söylerken artikel kullanılmaz: « je suis kinésithérapeute », tıpkı « je suis médecin » gibi.", en: "No article with a job: « je suis kinésithérapeute », like « je suis médecin »." } },
+             { fr: "Oui, je travaille à l'accueil d'une salle de sport. Je suis kinésithérapeute de formation, mais j'attends l'équivalence de mon diplôme.", tr: "Evet, bir spor salonunun resepsiyonunda çalışıyorum. Eğitimim fizyoterapi ama diplomamın denkliğini bekliyorum.", en: "Yes, I work at the front desk of a gym. I'm a physiotherapist by training, but I'm waiting for my degree to be recognised.", ok: true, go: "g" },
+             { fr: "Oui, à l'accueil d'une salle de sport. Je suis une kinésithérapeute de formation.", tr: "Evet, bir spor salonunun resepsiyonunda. Ben eğitim olarak bir fizyoterapistim.", en: "Yes, at the front desk of a gym. I am a physiotherapist by training.", ok: false,
+               fb: { fr: "Pour un métier, pas d'article : « je suis kinésithérapeute de formation », comme « je suis médecin ».", tr: "Meslek söylerken artikel kullanılmaz: « je suis kinésithérapeute de formation », tıpkı « je suis médecin » gibi.", en: "No article with a job: « je suis kinésithérapeute de formation », like « je suis médecin »." } },
              { fr: "Non, je ne travaille jamais.", tr: "Hayır, ben hiç çalışmam.", en: "No, I never work.", ok: false,
-               fb: { fr: "Oups, on dirait que vous détestez le travail 😄 ! Dites « pas encore » ou « pas pour le moment ».", tr: "Eyvah, işten nefret ediyormuşsunuz gibi oldu 😄! « Pas encore » ya da « pas pour le moment » deyin.", en: "Oops, it sounds like you hate working 😄! Say « pas encore » or « pas pour le moment »." } }
+               fb: { fr: "Oups, on dirait que vous détestez le travail 😄 ! Et c'est faux : vous travaillez à l'accueil d'une salle de sport. Dites-le : « oui, je travaille à l'accueil… ».", tr: "Eyvah, işten nefret ediyormuşsunuz gibi oldu 😄! Üstelik doğru değil: bir spor salonunun resepsiyonunda çalışıyorsunuz. Bunu söyleyin: « oui, je travaille à l'accueil… ».", en: "Oops, it sounds like you hate working 😄! And it's not true: you work at a gym's front desk. Say so: « oui, je travaille à l'accueil… »." } }
            ] },
       g: { say: [["M", "D'accord. Alors il me faut un garant. Vous connaissez quelqu'un en France ?"]],
            choices: [
@@ -238,7 +238,7 @@
              { fr: "Oui, bien sûr. Mais est-ce que je pourrai encore payer ce week-end ?", tr: "Evet, tabii. Ama bu hafta sonu yine de ödeme yapabilecek miyim?", en: "Yes, of course. But will I still be able to pay this weekend?", ok: true, go: "f" },
              { fr: "Pardon, qu'est-ce que ça veut dire, « faire opposition » ?", tr: "Pardon, « faire opposition » ne demek?", en: "Sorry, what does « faire opposition » mean?", ok: true, go: "opposition" },
              { fr: "Non, attendez ! Je vais secouer le distributeur.", tr: "Hayır, bekleyin! ATM'yi sallayacağım.", en: "No, wait! I'll shake the cash machine.", ok: false,
-               fb: { fr: "Le distributeur ne va pas tousser votre carte 😄. Acceptez l'opposition, c'est plus sûr.", tr: "ATM kartınızı öksürüp geri vermeyecek 😄. Bloke ettirmeyi kabul edin, daha güvenli.", en: "The machine won't cough up your card 😄. Accept the block, it's safer." } }
+               fb: { fr: "Le distributeur ne va pas vous rendre votre carte comme ça 😄. Acceptez l'opposition, c'est plus sûr.", tr: "ATM kartınızı öyle kolay kolay geri vermeyecek 😄. Bloke ettirmeyi kabul edin, daha güvenli.", en: "The machine won't cough up your card 😄. Accept the block, it's safer." } }
            ] },
       opposition: { say: [["F", "Bonne question ! Faire opposition, c'est bloquer la carte : plus personne ne pourra l'utiliser. Je la bloque ?"]],
            choices: [
@@ -266,8 +266,8 @@
            ] },
       h: { say: [["F", "Merci. Et vous pouvez me confirmer votre adresse e-mail ?"]],
            choices: [
-             { fr: "Oui : c'est mon prénom, point, mon nom, arobase gmail point com.", tr: "Evet: adım, nokta, soyadım, et işareti gmail nokta com.", en: "Yes: it's my first name, dot, my surname, at gmail dot com.", ok: true, go: "i" },
-             { fr: "Oui : c'est mon prénom, point, mon nom, at gmail point com.", tr: "Evet: adım, nokta, soyadım, « at » gmail nokta com.", en: "Yes: it's my first name, dot, my surname, at gmail dot com.", ok: false,
+             { fr: "Oui : c'est mon prénom, point, mon nom, arobase exemple point fr.", tr: "Evet: adım, nokta, soyadım, et işareti exemple nokta fr.", en: "Yes: it's my first name, dot, my surname, at exemple dot fr.", ok: true, go: "i" },
+             { fr: "Oui : c'est mon prénom, point, mon nom, at exemple point fr.", tr: "Evet: adım, nokta, soyadım, « at » exemple nokta fr.", en: "Yes: it's my first name, dot, my surname, at exemple dot fr.", ok: false,
                fb: { fr: "En France, « @ » se dit « arobase ». « At », c'est l'anglais… ou le cheval en turc 🐎😄 !", tr: "Fransa'da « @ » işaretine « arobase » denir. « At » İngilizce… ya da Türkçede at 🐎😄!", en: "In France, « @ » is « arobase ». « At » is English… or « horse » in Turkish 🐎😄!" } },
              { fr: "Bien sûr, et voilà aussi mon mot de passe : soleil123.", tr: "Tabii, işte şifrem de: soleil123.", en: "Sure, and here's my password too: soleil123.", ok: false,
                fb: { fr: "Stop 🔐 ! On ne donne jamais son mot de passe, même à sa banque. L'adresse e-mail suffit.", tr: "Dur 🔐! Şifre kimseye verilmez, bankaya bile. E-posta adresi yeterli.", en: "Stop 🔐! Never give your password, not even to your bank. The email address is enough." } }
@@ -308,11 +308,11 @@
       b: { scene: { fr: "L'agent vous donne un ticket. Après 40 minutes d'attente, c'est votre tour au guichet 4.", tr: "Görevli size bir sıra numarası veriyor. 40 dakika bekledikten sonra sıra 4 numaralı gişede size geliyor.", en: "The officer gives you a ticket. After a 40-minute wait, it's your turn at counter 4." },
            say: [["N", "Le numéro 112 est attendu au guichet 4."], ["F", "Bonjour madame, asseyez-vous. C'est une première demande ?"]],
            choices: [
-             { fr: "Oui, c'est ma première demande. Je suis arrivée en France il y a quatre mois.", tr: "Evet, ilk başvurum. Dört ay önce Fransa'ya geldim.", en: "Yes, it's my first application. I arrived in France four months ago.", ok: true, go: "c" },
-             { fr: "Oui. J'ai arrivé en France il y a quatre mois.", tr: "Evet. Dört ay önce Fransa'ya geldim.", en: "Yes. I have arrived in France four months ago.", ok: false,
+             { fr: "Oui, c'est ma première demande. Je suis arrivée en France il y a un an.", tr: "Evet, ilk başvurum. Bir yıl önce Fransa'ya geldim.", en: "Yes, it's my first application. I arrived in France a year ago.", ok: true, go: "c" },
+             { fr: "Oui. J'ai arrivé en France il y a un an.", tr: "Evet. Bir yıl önce Fransa'ya geldim.", en: "Yes. I have arrived in France a year ago.", ok: false,
                fb: { fr: "« Arriver » prend être : « je suis arrivée » (avec un e). C'est un des verbes de la « maison d'être » 🏠.", tr: "« Arriver » être alır: « je suis arrivée » (sonunda e ile). « Être'nin evi » 🏠 denen fiillerden biri.", en: "« Arriver » takes être: « je suis arrivée » (with an e). It's one of the « house of être » verbs 🏠." } },
-             { fr: "Oui. Je suis en France il y a quatre mois.", tr: "Evet. Dört ay önce Fransa'dayım.", en: "Yes. I am in France four months ago.", ok: false,
-               fb: { fr: "Deux bonnes solutions : « je suis en France depuis quatre mois » ou « je suis arrivée il y a quatre mois ».", tr: "İki doğru seçenek var: « je suis en France depuis quatre mois » (dört aydır) ya da « je suis arrivée il y a quatre mois » (dört ay önce geldim).", en: "Two correct options: « je suis en France depuis quatre mois » or « je suis arrivée il y a quatre mois »." } }
+             { fr: "Oui. Je suis en France il y a un an.", tr: "Evet. Bir yıl önce Fransa'dayım.", en: "Yes. I am in France a year ago.", ok: false,
+               fb: { fr: "Deux bonnes solutions : « je suis en France depuis un an » ou « je suis arrivée il y a un an ».", tr: "İki doğru seçenek var: « je suis en France depuis un an » (bir yıldır) ya da « je suis arrivée il y a un an » (bir yıl önce geldim).", en: "Two correct options: « je suis en France depuis un an » or « je suis arrivée il y a un an »." } }
            ] },
       c: { say: [["F", "Très bien. Vous avez votre passeport et votre visa ?"]],
            choices: [

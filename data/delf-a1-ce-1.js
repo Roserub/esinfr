@@ -87,19 +87,19 @@
       { q: "Dans la piscine, il faut porter…", o: ["un tee-shirt", "un bonnet de bain", "un short de bain"], a: 1, x: "« Le bonnet de bain est obligatoire. » et « Le short de bain est interdit »." },
       { q: "Avant d'aller dans l'eau, vous devez…", o: ["🍎 manger", "📱 téléphoner", "🚿 prendre une douche"], a: 2, x: "« Prenez une douche avant d'aller dans l'eau. »" },
       { q: "Vous pouvez manger au bord du bassin.", o: ["Vrai", "Faux"], a: 1, x: "« Il est interdit de manger au bord du bassin. »" },
-      { q: "Votre fils a 8 ans. Il peut venir…", o: ["avec un adulte", "seul", "avec un ami de 12 ans"], a: 0, x: "« Les enfants de moins de 10 ans viennent avec un adulte. »" },
-      { q: "Vous venez avec votre fille de 8 ans. Vous payez en tout…", o: ["3,50 €", "7 €", "5,50 €"], a: 2, x: "« 3,50 € (adulte), 2 € (enfant) » : 3,50 + 2 = 5,50 €." }
+      { q: "Votre neveu a 8 ans. Il peut venir…", o: ["avec un adulte", "seul", "avec un ami de 12 ans"], a: 0, x: "« Les enfants de moins de 10 ans viennent avec un adulte. »" },
+      { q: "Vous venez avec votre nièce de 8 ans. Vous payez en tout…", o: ["3,50 €", "7 €", "5,50 €"], a: 2, x: "« 3,50 € (adulte), 2 € (enfant) » : 3,50 + 2 = 5,50 €." }
     ] },
 
   { id: "a1-s02-ce3", level: "A1", sujet: 2, sec: "ce", ex: 3, pts: 6,
     title: "Menu de la cantine",
-    consigne: "Votre fils mange à la cantine. Vous lisez le menu de la semaine. Répondez aux questions.",
-    help: { tr: "Oğlunuz okul yemekhanesinde yemek yiyor. Haftanın menüsünü okuyorsunuz. Soruları cevaplayın.", en: "Your son eats at the school canteen. You read the menu of the week. Answer the questions." },
+    consigne: "Le fils de votre voisine mange à la cantine. Vous lisez le menu de la semaine. Répondez aux questions.",
+    help: { tr: "Komşunuzun oğlu okul yemekhanesinde yemek yiyor. Haftanın menüsünü okuyorsunuz. Soruları cevaplayın.", en: "Your neighbour's son eats at the school canteen. You read the menu of the week. Answer the questions." },
     doc: { type: "menu", title: "Restaurant scolaire – École Jean-Moulin",
       body: "Menu de la semaine du 6 au 10 octobre.\nLe mercredi, pas de cantine.\nPain et fruits bio tous les jours.",
       rows: [["Jour", "Entrée", "Plat", "Dessert"], ["Lundi", "Salade de tomates", "Poulet et riz", "Yaourt"], ["Mardi", "Soupe de légumes", "Poisson et pommes de terre", "Pomme"], ["Jeudi", "Carottes râpées", "Pâtes à la bolognaise", "Fromage"], ["Vendredi", "Melon", "Omelette et haricots verts", "Gâteau au chocolat"]] },
     questions: [
-      { q: "Votre fils n'aime pas le poisson. Quel jour est-ce qu'il ne va pas aimer le plat ?", o: ["lundi", "mardi", "jeudi"], a: 1, x: "Mardi : « Poisson et pommes de terre »." },
+      { q: "Le petit garçon n'aime pas le poisson. Quel jour est-ce qu'il ne va pas aimer le plat ?", o: ["lundi", "mardi", "jeudi"], a: 1, x: "Mardi : « Poisson et pommes de terre »." },
       { q: "Le vendredi, le dessert est…", o: ["🍎 une pomme", "🧀 du fromage", "🍫 un gâteau au chocolat"], a: 2, x: "Vendredi, dessert : « Gâteau au chocolat »." },
       { q: "Les enfants mangent à la cantine le mercredi.", o: ["Vrai", "Faux"], a: 1, x: "« Le mercredi, pas de cantine. »" },
       { q: "Quel jour est-ce qu'il y a de la soupe ?", o: ["mardi", "lundi", "vendredi"], a: 0, x: "Mardi, entrée : « Soupe de légumes »." },
@@ -279,7 +279,7 @@
       body: "Tarif normal : 9 €. Tarif réduit (étudiants, moins de 14 ans) : 6 €.\nLe lundi : 5 € pour tous !\nVO = version originale avec sous-titres en français.",
       rows: [["Film", "Genre", "Durée", "Séances"], ["Le Roi des neiges", "Dessin animé", "1 h 25", "14 h · 16 h"], ["Paris, mon amour", "Comédie", "1 h 50", "18 h 15 · 20 h 45"], ["La Nuit noire (VO)", "Film policier", "2 h 05", "21 h"], ["Les Montagnes", "Documentaire", "1 h 30", "18 h"]] },
     questions: [
-      { q: "Vous allez au cinéma avec vos enfants l'après-midi. Vous regardez…", o: ["La Nuit noire", "Le Roi des neiges", "Les Montagnes"], a: 1, x: "« Le Roi des neiges » : dessin animé, à 14 h et à 16 h." },
+      { q: "Vous allez au cinéma avec les enfants de votre amie l'après-midi. Vous regardez…", o: ["La Nuit noire", "Le Roi des neiges", "Les Montagnes"], a: 1, x: "« Le Roi des neiges » : dessin animé, à 14 h et à 16 h." },
       { q: "Le film le plus long, c'est…", o: ["Paris, mon amour", "Les Montagnes", "La Nuit noire"], a: 2, x: "« La Nuit noire » dure « 2 h 05 »." },
       { q: "« Paris, mon amour », c'est…", o: ["🕵️ un film policier", "🏔️ un documentaire", "😂 une comédie"], a: 2, x: "« Paris, mon amour : Comédie »." },
       { q: "Le lundi, une place coûte…", o: ["5 €", "6 €", "9 €"], a: 0, x: "« Le lundi : 5 € pour tous ! »" },

@@ -11,8 +11,8 @@
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour ! Je m'appelle Esin." },
       { q: "Comment ça s'écrit ?", m: "E, S, I, N. Esin." },
       { q: "Vous êtes de quelle nationalité ?", m: "Je suis turque." },
-      { q: "Où est-ce que vous habitez ?", m: "J'habite en France, dans une petite ville." },
-      { q: "Quel est votre métier ?", m: "Je suis kinésithérapeute." },
+      { q: "Où est-ce que vous habitez ?", m: "J'habite en France, à Lyon." },
+      { q: "Quel est votre métier ?", m: "Je suis kinésithérapeute. En France, je travaille à l'accueil d'une salle de sport." },
       { q: "Vous parlez quelles langues ?", m: "Je parle turc, anglais et un peu français." },
       { q: "Qu'est-ce que vous aimez faire le week-end ?", m: "J'aime jouer au handball et me promener." },
       { q: "Pourquoi est-ce que vous apprenez le français ?", m: "J'habite en France et je veux parler avec les gens." }
@@ -804,7 +804,7 @@
       { q: "Vous habitez où ?", m: "J'habite dans le centre-ville, près de la gare." },
       { q: "Vous habitez seule ?", m: "Non, j'habite avec mon mari." },
       { q: "Comment est votre appartement ?", m: "Il est petit et clair. Il y a un balcon." },
-      { q: "Vous habitez à quel étage ?", m: "J'habite au deuxième étage. Il n'y a pas d'ascenseur." },
+      { q: "Vous habitez à quel étage ?", m: "J'habite au troisième étage. Il n'y a pas d'ascenseur." },
       { q: "Qu'est-ce qu'il y a dans votre quartier ?", m: "Il y a une boulangerie, une pharmacie et un parc." },
       { q: "Vous aimez votre quartier ?", m: "Oui, il est calme et les voisins sont gentils." },
       { q: "Quelle est votre pièce préférée ?", m: "C'est le salon. Je lis sur le canapé." }

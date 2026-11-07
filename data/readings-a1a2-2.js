@@ -132,13 +132,13 @@ bisous|öpücükler (samimi kapanış)|kisses, love`, [
     R("r-petit-dejeuner-fr", "A1", "Le petit-déjeuner", "Kahvaltı", "Breakfast", `
 En Turquie, Esin mange un grand petit-déjeuner : du fromage, des olives, des tomates, des concombres, des œufs et du thé. En France, c'est très différent.
 
-Le matin, Paul, son colocataire, mange des tartines : du pain avec du beurre et de la confiture. Il boit un grand café dans un bol. Il trempe parfois sa tartine dans le café ! Les enfants boivent souvent un chocolat chaud et mangent des céréales.
+Le matin, Paul, son voisin, mange des tartines : du pain avec du beurre et de la confiture. Il boit un grand café dans un bol. Il trempe parfois sa tartine dans le café ! Les enfants boivent souvent un chocolat chaud et mangent des céréales.
 
 Le croissant, c'est plutôt pour le week-end. Le dimanche matin, Paul va à la boulangerie et il achète des croissants et des pains au chocolat.
 
 Aujourd'hui, Esin prépare un petit-déjeuner turc pour Paul. Il goûte le menemen et il dit : « C'est génial ! Demain, on recommence ? »`, `
 le petit-déjeuner|kahvaltı|breakfast
-le colocataire|ev arkadaşı|flatmate
+le voisin|komşu|neighbour
 la tartine|üzerine bir şey sürülmüş ekmek dilimi|slice of bread with spread
 la confiture|reçel|jam
 le bol|kâse|bowl

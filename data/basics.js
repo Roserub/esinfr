@@ -87,9 +87,9 @@ une apostrophe|kesme işareti (')|an apostrophe (')
 arobase|@ işareti|at sign (@)
 point|nokta (.)|dot (.)
 tout attaché|bitişik, boşluksuz|all one word, no space`, {
-          fr: "Pour une adresse e-mail : « esin point demir arobase gmail point com ». Prenez votre temps, c'est normal de demander de répéter.",
-          tr: "E-posta adresi söylerken: 'esin point demir arobase gmail point com'. Acele etmeyin; tekrar istemek tamamen normal.",
-          en: "For an e-mail address: 'esin point demir arobase gmail point com'. Take your time; asking someone to repeat is completely normal."
+          fr: "Pour une adresse e-mail : « esin point yilmaz arobase exemple point fr ». Prenez votre temps, c'est normal de demander de répéter.",
+          tr: "E-posta adresi söylerken: 'esin point yilmaz arobase exemple point fr'. Acele etmeyin; tekrar istemek tamamen normal.",
+          en: "For an e-mail address: 'esin point yilmaz arobase exemple point fr'. Take your time; asking someone to repeat is completely normal."
         })
       ] },
 
@@ -380,7 +380,7 @@ le 14 juillet|14 Temmuz (Fransa'nın milli bayramı)|14 July (French national da
 le 29 octobre|29 Ekim (Cumhuriyet Bayramı)|29 October (Turkish Republic Day)|le vingt-neuf octobre
 le 25 décembre|25 Aralık (Noel)|25 December (Christmas)|le vingt-cinq décembre
 le 2 novembre 2026|2 Kasım 2026|2 November 2026|le deux novembre deux mille vingt-six
-Quelle est la date aujourd'hui ?|Bugün ayın kaçı?|What's the date today?
+Quelle est la date aujourd'hui ?|Bugün ayın kaçı? (standart)|What's the date today? (standard)
 On est le combien aujourd'hui ?|Bugün ayın kaçı? (günlük dil)|What's the date today? (casual)
 Nous sommes le 3 mars.|Bugün 3 Mart.|It's the 3rd of March.|Nous sommes le trois mars.
 Mon anniversaire, c'est le 12 avril.|Doğum günüm 12 Nisan'da.|My birthday is on 12 April.|Mon anniversaire, c'est le douze avril.`, {
@@ -421,7 +421,7 @@ bientôt|yakında|soon`)
       },
       groups: [
         G("Demander l'heure", "Saati sormak", "Asking the time", `
-Quelle heure est-il ?|Saat kaç?|What time is it?
+Quelle heure est-il ?|Saat kaç? (standart)|What time is it? (standard)
 Il est quelle heure ?|Saat kaç? (günlük dil)|What time is it? (casual)
 Vous avez l'heure, s'il vous plaît ?|Saatiniz var mı, lütfen?|Do you have the time, please?
 À quelle heure ?|Saat kaçta?|At what time?
@@ -452,17 +452,17 @@ une heure|bir saat|an hour
 un quart d'heure|çeyrek saat|a quarter of an hour
 une demi-heure|yarım saat|half an hour
 à l'heure|zamanında|on time
-en retard|geç (kalmış)|late
-en avance|erken (gelmiş)|early
-tôt|erken|early
-tard|geç|late
+en retard|geç (kalmış), rötarlı|late (behind schedule)
+en avance|erken (gelmiş), vaktinden önce|early (ahead of time)
+tôt|erken (günün erken saati)|early (in the day)
+tard|geç (günün geç saati)|late (in the day)
 vers 18 h|saat 18 civarı|around 6 p.m.|vers dix-huit heures`),
         G("Phrases utiles", "Faydalı cümleler", "Useful phrases", `
 Je suis en retard, désolée !|Geç kaldım, özür dilerim!|I'm late, sorry!
 Le cours commence à 9 h.|Ders saat 9'da başlıyor.|The class starts at 9.|Le cours commence à neuf heures.
-Le magasin est ouvert de 9 h à 19 h.|Mağaza 9'dan 19'a kadar açık.|The shop is open from 9 to 7.|Le magasin est ouvert de neuf heures à dix-neuf heures.
+Le magasin est ouvert de 9 h à 19 h.|Mağaza 9'dan 19'a kadar açık.|The shop is open from 9 a.m. to 7 p.m.|Le magasin est ouvert de neuf heures à dix-neuf heures.
 Je me lève à 7 h.|Saat 7'de kalkarım.|I get up at 7.|Je me lève à sept heures.
-On se voit à 15 h ?|Saat 15'te görüşelim mi?|Shall we meet at 3?|On se voit à quinze heures ?
+On se voit à 15 h ?|Saat 15'te görüşelim mi?|Shall we meet at 3 p.m.?|On se voit à quinze heures ?
 Ça dure une heure.|Bir saat sürüyor.|It lasts an hour.
 J'ai rendez-vous à 10 h 30.|Saat 10.30'da randevum var.|I have an appointment at 10:30.|J'ai rendez-vous à dix heures trente.`)
       ] },
@@ -509,10 +509,10 @@ s'il vous plaît|lütfen (siz)|please (polite)
 s'il te plaît|lütfen (sen)|please (informal)
 Merci !|Teşekkürler!|Thank you!
 Merci beaucoup !|Çok teşekkürler!|Thank you very much!
-De rien.|Bir şey değil.|You're welcome.
+De rien.|Bir şey değil. (günlük)|You're welcome. (everyday)
 Je vous en prie.|Rica ederim.|You're welcome. (polite)
-Pardon !|Pardon!|Sorry! / Excuse me!
-Excusez-moi.|Affedersiniz.|Excuse me.
+Pardon !|Pardon! (kısa)|Sorry! / Pardon? (short)
+Excusez-moi.|Affedersiniz. (kibar, birine seslenirken)|Excuse me. (polite, to get attention)
 Désolée.|Üzgünüm, özür dilerim. (kadın)|I'm sorry. (said by a woman)
 Avec plaisir !|Memnuniyetle!|With pleasure!`),
         G("Se présenter", "Kendini tanıtmak", "Introducing yourself", `
@@ -526,7 +526,7 @@ Je suis turque.|Türküm. (kadın)|I'm Turkish. (woman)
 J'habite en France.|Fransa'da yaşıyorum.|I live in France.
 J'habite à Lyon.|Lyon'da oturuyorum.|I live in Lyon.
 J'étais kinésithérapeute du sport.|Spor fizyoterapistiydim.|I was a sports physiotherapist.
-Enchantée !|Memnun oldum! (kadın)|Nice to meet you! (said by a woman)
+Enchantée !|Memnun oldum! (tek kelime, kadın)|Nice to meet you! (one word, said by a woman)
 Ravie de vous rencontrer.|Sizinle tanıştığıma çok sevindim. (kadın)|Delighted to meet you. (woman)
 Je vous présente Claire.|Size Claire'i tanıştırayım.|Let me introduce Claire.`, {
           fr: "Pour l'âge, on utilise « avoir » : « J'ai 30 ans » (littéralement : j'ai 30 années). Une femme écrit « Enchantée » et « turque » avec un « e ».",
@@ -536,7 +536,7 @@ Je vous présente Claire.|Size Claire'i tanıştırayım.|Let me introduce Clair
         G("Comment ça va ?", "Nasılsınız?", "How are you?", `
 Comment allez-vous ?|Nasılsınız?|How are you? (polite)
 Comment ça va ?|Nasılsın? / Nasıl gidiyor?|How's it going?
-Ça va ?|İyi misin?|You OK? / How are you?
+Ça va ?|İyi misin? (çok kısa)|You OK? / All good? (very short)
 Ça va bien, merci.|İyiyim, teşekkürler.|I'm fine, thanks.
 Très bien, et vous ?|Çok iyiyim, ya siz?|Very well, and you?
 Et toi ?|Ya sen?|And you? (casual)
@@ -566,7 +566,7 @@ Comment on dit « kitchen » en français ?|Fransızcada 'kitchen' nasıl denir?
 Comment ça se prononce ?|Bu nasıl okunur?|How do you pronounce it?
 Vous pouvez l'écrire, s'il vous plaît ?|Yazabilir misiniz, lütfen?|Could you write it down, please?
 Je ne sais pas.|Bilmiyorum.|I don't know.
-J'ai compris !|Anladım!|I understand! / Got it!
+J'ai compris !|Anladım!|Got it! / I've understood!
 Je ne connais pas ce mot.|Bu kelimeyi bilmiyorum.|I don't know this word.
 Je parle un peu français.|Biraz Fransızca konuşuyorum.|I speak a little French.
 Je suis débutante.|Yeni başlıyorum. (kadın)|I'm a beginner. (woman)
@@ -602,13 +602,13 @@ Attendez, s'il vous plaît.|Bekleyin, lütfen.|Wait, please.
 Ce n'est pas grave.|Önemli değil.|It doesn't matter. / No problem.`),
         G("Les mots interrogatifs", "Soru kelimeleri", "Question words", `
 qui ?|kim?|who?||Qui est-ce ?
-quoi ?|ne?|what?||C'est quoi ?
+quoi ?|ne? (cümle sonunda)|what? (at the end)||C'est quoi ?
 où ?|nerede? nereye?|where?||Où est la gare ?
-quand ?|ne zaman?|when?||Quand est le cours ?
+quand ?|ne zaman?|when?||C'est quand, le cours ?
 comment ?|nasıl?|how?||Comment ça va ?
 pourquoi ?|neden?|why?||Pourquoi pas ?
 combien ?|kaç? ne kadar?|how much? how many?||Combien ça coûte ?
-quel / quelle ?|hangi?|which? what?||Quelle heure est-il ?
+quel / quelle ?|hangi? (+ isim)|which? (+ noun)||Quelle heure est-il ?
 qu'est-ce que ?|ne? (cümle başında)|what? (at the start)||Qu'est-ce que vous voulez ?
 est-ce que ?|... mı? (evet/hayır sorusu)|turns a sentence into a yes/no question||Est-ce que vous parlez anglais ?`, {
           fr: "La façon la plus simple de poser une question : gardez la phrase normale et montez la voix à la fin. « Vous parlez anglais ? »",
@@ -792,7 +792,7 @@ un enfant|bir çocuk|a child
 un garçon|bir erkek çocuk|a boy
 une fille|bir kız çocuk|a girl
 un ami / une amie|bir arkadaş, dost|a friend
-un copain / une copine|arkadaş; erkek / kız arkadaş|friend; boyfriend / girlfriend
+un copain / une copine|arkadaş (günlük); sevgili|mate (casual); boyfriend / girlfriend
 le voisin / la voisine|komşu|neighbour
 le / la collègue|iş arkadaşı|colleague`),
         G("La situation familiale", "Medeni durum", "Family situation", `
@@ -1027,10 +1027,10 @@ une étoile|yıldız|a star
 un cœur|kalp|a heart`),
         G("Tailles et aspects", "Boyut ve görünüş", "Size & appearance", `
 grand / grande|büyük; uzun boylu|big; tall|grand, grande
-petit / petite|küçük; kısa boylu|small; short|petit, petite
-long / longue|uzun|long|long, longue
-court / courte|kısa|short|court, courte
-gros / grosse|kalın, iri, şişman|big, fat|gros, grosse
+petit / petite|küçük; kısa boylu|small; short (person)|petit, petite
+long / longue|uzun (uzunluk)|long (length)|long, longue
+court / courte|kısa (uzunluk)|short (length)|court, courte
+gros / grosse|kalın, iri, şişman|fat, thick, bulky|gros, grosse
 mince|ince, zayıf|thin, slim
 large|geniş|wide
 étroit / étroite|dar|narrow|étroit, étroite
@@ -1184,7 +1184,7 @@ C'est à cinq minutes à pied.|Yürüyerek beş dakika.|It's a five-minute walk.
       },
       groups: [
         G("Je suis…", "Ben … ım", "I am…", `
-content / contente|memnun|happy, pleased|content, contente
+content / contente|memnun|pleased, glad|content, contente
 heureux / heureuse|mutlu|happy|heureux, heureuse
 triste|üzgün|sad
 fatigué / fatiguée|yorgun|tired|fatigué, fatiguée
@@ -1230,14 +1230,14 @@ nouveau / nouvelle|yeni|new|nouveau, nouvelle
 vieux / vieille|yaşlı, eski|old|vieux, vieille
 jeune|genç|young
 cher / chère|pahalı; sevgili|expensive; dear|cher, chère
-gentil / gentille|kibar, nazik|kind, nice|gentil, gentille
-sympa|sevimli, cana yakın|nice, friendly
+gentil / gentille|kibar, nazik|kind|gentil, gentille
+sympa|sevimli, cana yakın (günlük)|friendly, nice (casual)
 intéressant / intéressante|ilginç|interesting|intéressant, intéressante`),
         G("Mots qui rassurent", "Rahatlatan sözler", "Comforting words", `
 Ce n'est pas grave.|Önemli değil.|It's not a big deal.
 Pas de panique !|Panik yok!|Don't panic!
 Tout va bien.|Her şey yolunda.|Everything's fine.
-Doucement.|Yavaş yavaş, sakin.|Gently, slowly.
+Doucement.|Yavaş, nazikçe.|Gently, easy.
 Respire.|Nefes al.|Breathe.
 Petit à petit.|Azar azar, adım adım.|Little by little.
 Courage !|Cesaret! Haydi!|Hang in there!

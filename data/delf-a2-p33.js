@@ -278,12 +278,12 @@
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour ! Je m'appelle Esin. Je suis turque, d'Istanbul." },
       { q: "Vous avez des frères et sœurs ?", m: "Oui, j'ai un frère. Il s'appelle Emre et il habite à Ankara avec sa femme." },
-      { q: "Quel est votre métier ?", m: "Je suis kinésithérapeute. J'aide les gens qui ont mal au dos ou aux genoux." },
+      { q: "Quel est votre métier ?", m: "Je suis kinésithérapeute, mais mon diplôme n'est pas encore reconnu en France. Pour le moment, je travaille à l'accueil d'une salle de sport." },
       { q: "Quand vous étiez enfant, vous aviez un animal ?", m: "Oui, nous avions un chat, Pamuk. Il était tout blanc et il dormait toujours sur le canapé." },
       { q: "À Istanbul, il y a beaucoup de chats dans les rues, non ?", m: "Oui, c'est vrai ! Les habitants leur donnent à manger et de l'eau. Les chats font partie de la ville." },
       { q: "Qu'est-ce que vous faites le dimanche ?", m: "Le dimanche, je dors un peu plus, puis je fais du sport ou je me promène au parc." },
       { q: "Est-ce que vous préférez les chiens ou les chats ?", m: "Je préfère les chats, parce qu'ils sont indépendants. Mais j'aime aussi jouer avec le chien de ma voisine." },
-      { q: "Plus tard, est-ce que vous voudriez avoir un animal ?", m: "Oui, quand j'aurai un appartement plus grand, je vais adopter un chat dans un refuge." }
+      { q: "Plus tard, est-ce que vous voudriez avoir un animal ?", m: "Oui, quand j'aurai un appartement plus grand, j'adopterai un chat dans un refuge." }
     ] },
 
   { id: "a2-s33-po2", level: "A2", sujet: 33, sec: "po", ex: 2, pts: 8, kind: "monologue",

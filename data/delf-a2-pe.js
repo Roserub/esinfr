@@ -61,7 +61,7 @@
       { c: "Parler d'un problème", kw: ["problème", "cassé", "malheureusement", "perdu", "pluie", "ascenseur", "panne", "oublié"] },
       { c: "Décrire le nouveau logement", kw: ["appartement", "maison", "nouvel", "nouveau", "nouvelle", "pièces", "balcon", "grand", "lumineux", "quartier"] }
     ],
-    model: "Salut Hugo,\nLe 3 mai, nous avons enfin déménagé ! Mes collègues Karim et Lucie nous ont aidés toute la journée. Nous avons loué un camion et nous avons porté les cartons et les meubles. Malheureusement, l'ascenseur était en panne et nous habitons au cinquième étage ! Le soir, nous étions très fatigués. Mais le nouvel appartement est super : il est grand, lumineux et il a un balcon.\nÀ bientôt,\nEsin" },
+    model: "Salut Hugo,\nLe 3 mai, nous avons enfin déménagé ! Mes collègues Karim et Lucie nous ont aidés toute la journée. Nous avons loué un camion et nous avons porté les cartons et les meubles. Malheureusement, l'ascenseur était en panne et nous habitons au troisième étage ! Le soir, nous étions très fatigués. Mais le nouvel appartement est super : il est grand, lumineux et il a un balcon.\nÀ bientôt,\nEsin" },
   { id: "a2-s03-pe2", level: "A2", sujet: 3, sec: "pe", ex: 2, pts: 12, kind: "text",
     title: "S'excuser après une absence",
     consigne: "Votre amie Pauline vous a écrit : « Je t'ai attendue samedi soir à ma fête… Tu n'es pas venue et tu n'as pas répondu au téléphone. Qu'est-ce qui s'est passé ? » Vous lui répondez : vous vous excusez, vous expliquez pourquoi vous n'êtes pas venu(e) et vous proposez de la voir bientôt. (60 mots minimum)",
@@ -98,7 +98,7 @@
       { c: "Dire pourquoi vous êtes intéressé(e)", kw: ["intéressée", "intéressé", "j'aimerais", "je voudrais", "annonce", "pour me détendre", "j'aime"] },
       { c: "Poser des questions (horaires, prix…)", kw: ["horaires", "heure", "jours", "prix", "combien", "coûte", "tarif", "niveau", "débutante", "débutant", "matériel", "tapis", "est-ce que"] }
     ],
-    model: "Bonjour,\nJe m'appelle Esin Yilmaz, je suis kinésithérapeute et j'habite près de votre club. J'ai vu votre annonce et je suis très intéressée par vos cours de yoga. Je voudrais savoir quels sont les horaires des cours du soir. Combien coûte l'inscription pour l'année ? Je suis débutante : est-ce qu'il y a des cours pour mon niveau ? Est-ce que je dois apporter mon tapis ?\nCordialement,\nEsin Yilmaz" },
+    model: "Bonjour,\nJe m'appelle Esin Yılmaz, je suis kinésithérapeute de formation et j'habite près de votre club. J'ai vu votre annonce et je suis très intéressée par vos cours de yoga. Je voudrais savoir quels sont les horaires des cours du soir. Combien coûte l'inscription pour l'année ? Je suis débutante : est-ce qu'il y a des cours pour mon niveau ? Est-ce que je dois apporter mon tapis ?\nCordialement,\nEsin Yılmaz" },
 
   { id: "a2-s05-pe1", level: "A2", sujet: 5, sec: "pe", ex: 1, pts: 13, kind: "text",
     title: "Mon premier jour de travail",
@@ -111,7 +111,7 @@
       { c: "Raconter ce que vous avez fait", kw: ["j'ai visité", "j'ai soigné", "j'ai travaillé", "patients", "soigné", "rencontré", "appris", "découvert", "j'ai commencé"] },
       { c: "Donner vos impressions", kw: ["stressée", "stressé", "contente", "heureuse", "content", "peur", "c'était", "j'étais", "difficile", "fatiguée", "aimer"] }
     ],
-    model: "Chère Marion,\nLundi, j'ai commencé mon nouveau travail à l'accueil d'un centre sportif, à Toulouse. J'étais un peu stressée le matin ! Mais la directrice m'a bien accueillie et mes collègues sont très sympas. J'ai visité le centre, puis j'ai accueilli mes premiers clients : un footballeur et une dame âgée. Le soir, j'étais fatiguée mais très heureuse. Je pense que je vais aimer ce travail !\nBises,\nEsin" },
+    model: "Chère Marion,\nLundi, j'ai commencé mon nouveau travail à l'accueil d'un centre sportif, à Lyon. J'étais un peu stressée le matin ! Mais la directrice m'a bien accueillie et mes collègues sont très sympas. J'ai visité le centre, puis j'ai accueilli mes premiers clients : un footballeur et une dame âgée. Le soir, j'étais fatiguée mais très heureuse. Je pense que je vais aimer ce travail !\nBises,\nEsin" },
   { id: "a2-s05-pe2", level: "A2", sujet: 5, sec: "pe", ex: 2, pts: 12, kind: "text",
     title: "Accepter un week-end randonnée",
     consigne: "Votre collègue Mathieu vous écrit : « Avec des amis, on organise un week-end de randonnée dans les Pyrénées les 20 et 21 septembre. Tu veux venir avec nous ? » Vous acceptez. Vous dites pourquoi vous êtes content(e), vous posez des questions sur l'organisation et vous proposez d'apporter quelque chose. (60 mots minimum)",
@@ -198,7 +198,7 @@
       { c: "Parler de vos progrès en français", kw: ["français", "cours", "progrès", "je parle", "je comprends", "j'apprends", "langue"] },
       { c: "Parler de vos loisirs", kw: ["sport", "loisirs", "club", "courir", "yoga", "natation", "randonnée", "ski", "week-end"] }
     ],
-    model: "Chère Zeynep,\nQuel plaisir de lire ton message ! Tout va bien ici. Nous habitons maintenant à Grenoble, dans un petit appartement avec une vue sur les montagnes. Je ne travaille pas encore comme kiné : mon diplôme turc n'est pas reconnu ici. Alors, je travaille le matin dans une salle de sport. Je prends des cours de français deux fois par semaine et je fais des progrès. Le week-end, je fais du ski ou de la randonnée avec des amis. Et toi ?\nBises,\nEsin" },
+    model: "Chère Zeynep,\nQuel plaisir de lire ton message ! Tout va bien ici. Nous habitons maintenant à Lyon, dans un petit appartement près du Rhône. Je ne travaille pas encore comme kiné : mon diplôme turc n'est pas reconnu ici. Alors, je travaille à l'accueil d'une salle de sport. Je prends des cours de français deux fois par semaine et je fais des progrès. Le week-end, je fais du ski ou de la randonnée avec des amis. Et toi ?\nBises,\nEsin" },
 
   { id: "a2-s09-pe1", level: "A2", sujet: 9, sec: "pe", ex: 1, pts: 13, kind: "text",
     title: "Un excellent repas au restaurant",
@@ -248,5 +248,5 @@
       { c: "Poser des questions", kw: ["charges", "étage", "ascenseur", "meublé", "disponible", "balcon", "parking", "combien", "quand", "est-ce que"] },
       { c: "Demander une visite", kw: ["visiter", "visite", "rendez-vous", "voir l'appartement", "le voir"] }
     ],
-    model: "Bonjour Monsieur Laurent,\nJ'ai lu votre annonce et votre appartement m'intéresse beaucoup. Je m'appelle Esin Yilmaz, je suis kinésithérapeute et mon école de français est dans le centre-ville. J'ai quelques questions : est-ce que les charges sont comprises dans le prix ? À quel étage est l'appartement ? Y a-t-il un ascenseur ? Il est disponible à partir de quand ? Est-ce que je peux le visiter samedi matin ?\nCordialement,\nEsin Yilmaz" }
+    model: "Bonjour Monsieur Laurent,\nJ'ai lu votre annonce et votre appartement m'intéresse beaucoup. Je m'appelle Esin Yılmaz, je travaille à l'accueil d'une salle de sport et mon école de français est dans le centre-ville. J'ai quelques questions : est-ce que les charges sont comprises dans le prix ? À quel étage est l'appartement ? Y a-t-il un ascenseur ? Il est disponible à partir de quand ? Est-ce que je peux le visiter samedi matin ?\nCordialement,\nEsin Yılmaz" }
 );

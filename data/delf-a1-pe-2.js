@@ -29,7 +29,7 @@
       { c: "Dire quand vous allez la rendre", kw: ["rendre", "rends", "rapporter", "rapporte", "ce soir", "demain", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche", "après-midi"] },
       { c: "Remercier", kw: ["merci", "remercie"] }
     ],
-    model: "Bonjour Monsieur Garcia,\nJe m'appelle Esin, je suis votre nouvelle voisine, au deuxième étage. Je voudrais accrocher des étagères dans ma chambre, mais je n'ai pas de perceuse. Est-ce que vous pouvez me prêter votre perceuse samedi matin ? Je vais la rendre samedi soir. Merci beaucoup !\nBonne journée,\nEsin (appartement 4)" },
+    model: "Bonjour Monsieur Garcia,\nJe m'appelle Esin, je suis votre nouvelle voisine, au troisième étage. Je voudrais accrocher des étagères dans ma chambre, mais je n'ai pas de perceuse. Est-ce que vous pouvez me prêter votre perceuse samedi matin ? Je vais la rendre samedi soir. Merci beaucoup !\nBonne journée,\nEsin (appartement 4)" },
 
   { id: "a1-s12-pe1", level: "A1", sujet: 12, sec: "pe", ex: 1, pts: 10, kind: "form",
     title: "Atelier de pâtisserie",
@@ -122,7 +122,7 @@
       { c: "Parler de ce que vous aimez manger", kw: ["j'aime", "j'adore", "je mange", "je ne mange pas", "je n'aime pas", "manger", "légumes", "legumes", "poisson", "viande", "végétarien", "végétarienne", "allergique"] },
       { c: "Poser une question", kw: ["?", "est-ce que", "est-ce qu'"] }
     ],
-    model: "Bonjour Madame, bonjour Monsieur,\nJe m'appelle Esin, je suis turque et je suis kinésithérapeute. Je vais arriver à la gare de Montpellier le dimanche 6 décembre, à 17 heures. J'adore les légumes, le poisson et les fruits, mais je ne mange pas de viande. Est-ce qu'il y a un bus entre la gare et votre maison ?\nÀ bientôt,\nEsin" },
+    model: "Bonjour Madame, bonjour Monsieur,\nJe m'appelle Esin, j'ai 30 ans et je suis turque. J'habite à Lyon. Je vais arriver à la gare de Montpellier le dimanche 6 décembre, à 17 heures. J'adore les légumes, le poisson et les fruits, mais je ne mange pas de viande. Est-ce qu'il y a un bus entre la gare et votre maison ?\nÀ bientôt,\nEsin" },
 
   { id: "a1-s15-pe1", level: "A1", sujet: 15, sec: "pe", ex: 1, pts: 10, kind: "form",
     title: "Réserver une place au vide-grenier",
@@ -182,7 +182,7 @@
       { c: "Donner votre niveau", kw: ["niveau", "débutant", "débutante", "debutant", "debutante", "km", "kilomètres", "kilometres", "minutes", "lentement", "vite", "moyen", "tranquille"] },
       { c: "Donner votre contact", kw: ["téléphone", "telephone", "06", "07", "appelez", "écrivez", "ecrivez", "e-mail", "mail", "@", "contact", "sms", "message"] }
     ],
-    model: "Cherche partenaire de course !\nBonjour, je m'appelle Esin, je suis kiné et j'habite dans le quartier. J'aime courir, mais seule, c'est difficile ! Je voudrais courir au parc de la Colombière le mardi soir et le samedi matin. Mon niveau est moyen : je cours 8 kilomètres en 50 minutes. Écrivez-moi au 06 12 34 56 78 !" },
+    model: "Cherche partenaire de course !\nBonjour, je m'appelle Esin, j'ai 30 ans et j'habite dans le quartier. J'aime courir, mais seule, c'est difficile ! Je voudrais courir au parc de la Colombière le mardi soir et le samedi matin. Mon niveau est moyen : je cours 8 kilomètres en 50 minutes. Écrivez-moi au 06 12 34 56 78 !" },
 
   { id: "a1-s17-pe1", level: "A1", sujet: 17, sec: "pe", ex: 1, pts: 10, kind: "form",
     title: "Louer un vélo",
@@ -274,7 +274,7 @@
       { c: "Parler des collègues", kw: ["collègues", "collègue", "collegue", "équipe", "equipe", "chef", "cheffe", "patron", "patronne"] },
       { c: "Dire ce que vous aimez", kw: ["j'aime", "j'adore", "intéressant", "interessant", "contente", "content", "super", "génial", "genial"] }
     ],
-    model: "Salut Inès,\nJ'ai un nouveau travail ! Je travaille à l'accueil d'une salle de sport à Nantes, du lundi au vendredi, de 8 heures à 13 heures. Mes collègues sont très sympas et ma cheffe est gentille. J'aime beaucoup mon travail : je parle avec les sportifs et je pratique mon français. Je suis contente !\nBisous,\nEsin" },
+    model: "Salut Inès,\nJ'ai un nouveau travail ! Je travaille à l'accueil d'une salle de sport à Lyon, du lundi au vendredi, de 8 heures à 13 heures. Mes collègues sont très sympas et ma cheffe est gentille. J'aime beaucoup mon travail : je parle avec les sportifs et je pratique mon français. Je suis contente !\nBisous,\nEsin" },
 
   { id: "a1-s20-pe1", level: "A1", sujet: 20, sec: "pe", ex: 1, pts: 10, kind: "form",
     title: "Inscription à une course solidaire",

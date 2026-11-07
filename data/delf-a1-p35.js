@@ -6,7 +6,7 @@
     title: "Votre carte est arrivée",
     consigne: "Vous habitez en France. Vous écoutez ce message sur votre répondeur téléphonique. Lisez les questions, écoutez le document, puis répondez.",
     help: { tr: "Fransa'da yaşıyorsunuz. Telefonunuzun telesekreterinde bu mesajı dinliyorsunuz. Soruları okuyun, belgeyi dinleyin, sonra cevaplayın.", en: "You live in France. You listen to this message on your answering machine. Read the questions, listen, then answer." },
-    audio: [["M", "Bonjour, madame Kaya. Ici Julien Marchand, de la Banque du Parc, agence de la place Royale. Votre nouvelle carte bancaire est arrivée ! Vous pouvez venir la chercher à partir de jeudi. L'agence est ouverte du mardi au samedi, de 9 h à 17 h. N'oubliez pas votre passeport. Pas besoin de photo. Votre code secret arrive par la poste, dans une lettre. Bonne journée !"]],
+    audio: [["M", "Bonjour, madame Yılmaz. Ici Julien Marchand, de la Banque du Parc, agence de la place Royale. Votre nouvelle carte bancaire est arrivée ! Vous pouvez venir la chercher à partir de jeudi. L'agence est ouverte du mardi au samedi, de 9 h à 17 h. N'oubliez pas votre passeport. Pas besoin de photo. Votre code secret arrive par la poste, dans une lettre. Bonne journée !"]],
     questions: [
       { q: "Qu'est-ce qui est arrivé à la banque ?", o: ["📖 un chéquier", "💳 une carte bancaire", "🛂 un passeport"], a: 1,
         x: "M. Marchand dit : « Votre nouvelle carte bancaire est arrivée ! » Le passeport, c'est le document à apporter.",
@@ -209,8 +209,8 @@
   /* ───────── Production écrite ───────── */
   { id: "a1-s35-pe1", level: "A1", sujet: 35, sec: "pe", ex: 1, pts: 10, kind: "form",
     title: "Ouvrir un compte bancaire",
-    consigne: "Vous habitez en France depuis un mois. Vous voulez ouvrir un compte à la Banque du Parc. Vous remplissez ce formulaire.",
-    help: { tr: "Bir aydır Fransa'da yaşıyorsunuz. Banque du Parc'ta hesap açmak istiyorsunuz. Bu formu doldurun. İpucu: tarih GG/AA/YYYY; milliyet küçük harfle (kadın için « turque »); « Pourquoi » sorusuna « Pour + mastar » ile cevap verin.", en: "You have lived in France for a month. You want to open an account at the Banque du Parc. Fill in this form." },
+    consigne: "Vous habitez en France depuis un an. Vous voulez ouvrir un compte dans une nouvelle banque, la Banque du Parc. Vous remplissez ce formulaire.",
+    help: { tr: "Bir yıldır Fransa'da yaşıyorsunuz. Yeni bir bankada, Banque du Parc'ta hesap açmak istiyorsunuz. Bu formu doldurun. İpucu: tarih GG/AA/YYYY; milliyet küçük harfle (kadın için « turque »); « Pourquoi » sorusuna « Pour + mastar » ile cevap verin.", en: "You have lived in France for a year. You want to open an account at a new bank, the Banque du Parc. Fill in this form." },
     context: "Banque du Parc — Agence de la place Royale — Demande d'ouverture de compte.",
     fields: [
       { l: "Nom", k: "text" },
@@ -227,8 +227,8 @@
 
   { id: "a1-s35-pe2", level: "A1", sujet: 35, sec: "pe", ex: 2, pts: 15, kind: "text",
     title: "Tu viens avec moi à la banque ?",
-    consigne: "Vous habitez à Nantes depuis 2 semaines. Vous voulez ouvrir un compte à la banque, mais les mots de la banque sont difficiles pour vous. Vous écrivez un message à votre ami français Paul. Vous lui demandez de venir avec vous à la banque, vous proposez un jour et une heure, et vous le remerciez. (40 mots minimum)",
-    help: { tr: "2 haftadır Nantes'ta yaşıyorsunuz. Bankada hesap açmak istiyorsunuz ama banka kelimeleri size zor geliyor. Fransız arkadaşınız Paul'e bir mesaj yazın: sizinle bankaya gelmesini isteyin, bir gün ve saat önerin ve ona teşekkür edin. Arkadaşa « tu » kullanın. (En az 40 kelime)", en: "You have lived in Nantes for 2 weeks. You want to open a bank account, but bank words are difficult for you. Write a message to your French friend Paul: ask him to come with you to the bank, suggest a day and a time, and thank him. (40 words minimum)" },
+    consigne: "Vous habitez maintenant à Nantes. Vous voulez ouvrir un compte à la banque, mais les mots de la banque sont difficiles pour vous. Vous écrivez un message à votre ami français Paul. Vous lui demandez de venir avec vous à la banque, vous proposez un jour et une heure, et vous le remerciez. (40 mots minimum)",
+    help: { tr: "Artık Nantes'ta yaşıyorsunuz. Bankada hesap açmak istiyorsunuz ama banka kelimeleri size zor geliyor. Fransız arkadaşınız Paul'e bir mesaj yazın: sizinle bankaya gelmesini isteyin, bir gün ve saat önerin ve ona teşekkür edin. Arkadaşa « tu » kullanın. (En az 40 kelime)", en: "You now live in Nantes. You want to open a bank account, but bank words are difficult for you. Write a message to your French friend Paul: ask him to come with you to the bank, suggest a day and a time, and thank him. (40 words minimum)" },
     min: 40,
     must: [
       { c: "Saluer Paul", kw: ["bonjour", "salut", "coucou", "cher", "hello"] },
@@ -248,7 +248,7 @@
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour, monsieur. Je m'appelle Esin." },
       { q: "D'où venez-vous ?", m: "Je viens de Turquie, d'Istanbul." },
       { q: "Où habitez-vous en France ?", m: "J'habite dans un petit appartement, près du centre-ville." },
-      { q: "Quelle est votre profession ?", m: "Je suis kinésithérapeute. J'aime beaucoup mon travail." },
+      { q: "Quelle est votre profession ?", m: "Je travaille à l'accueil d'une salle de sport. J'aime beaucoup mon travail." },
       { q: "Vous payez avec une carte ou en espèces ?", m: "Je paie souvent avec ma carte. C'est pratique." },
       { q: "Vous allez souvent à la poste ?", m: "Non, pas souvent. J'envoie des cadeaux à ma famille, en Turquie, pour les anniversaires." },
       { q: "Vous écrivez des cartes postales ?", m: "Oui, quand je voyage, j'écris des cartes postales à mes parents." },

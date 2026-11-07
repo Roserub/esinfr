@@ -4,8 +4,8 @@
   /* ───────── Compréhension de l'oral ───────── */
   { id: "a1-s49-co1", level: "A1", sujet: 49, sec: "co", ex: 1, pts: 4,
     title: "Message de la crèche",
-    consigne: "Vous êtes en France. Votre fils Théo va à la crèche. Vous écoutez ce message sur votre répondeur téléphonique. Lisez les questions, écoutez le document, puis répondez.",
-    help: { tr: "Fransa'dasınız. Oğlunuz Théo kreşe gidiyor. Telesekreterinizde bu mesajı dinliyorsunuz. Soruları okuyun, belgeyi dinleyin, sonra cevaplayın.", en: "You are in France. Your son Théo goes to nursery. You listen to this message on your answering machine. Read the questions, listen, then answer." },
+    consigne: "Vous êtes en France. Vous gardez Théo, le fils de votre amie. Il va à la crèche. Vous écoutez ce message sur votre répondeur téléphonique. Lisez les questions, écoutez le document, puis répondez.",
+    help: { tr: "Fransa'dasınız. Arkadaşınızın oğlu Théo'ya bakıyorsunuz. Théo kreşe gidiyor. Telesekreterinizde bu mesajı dinliyorsunuz. Soruları okuyun, belgeyi dinleyin, sonra cevaplayın.", en: "You are in France. You look after Théo, your friend's son. He goes to nursery. You listen to this message on your answering machine. Read the questions, listen, then answer." },
     audio: [["F", "Bonjour, c'est Sophie, de la crèche Les Petits Loups. Vendredi, c'est la journée photo à la crèche ! Le photographe arrive à 10 h. Est-ce que vous pouvez habiller Théo avec un joli pull ? Attention : vendredi, la crèche ferme à 16 h 30, pas à 18 h. Et merci d'apporter un paquet de couches. Bonne journée !"]],
     questions: [
       { q: "Vendredi, à la crèche, il y a…", o: ["📸 un photographe", "🎂 un anniversaire", "🎭 un spectacle"], a: 0,
@@ -105,8 +105,8 @@
   /* ───────── Compréhension des écrits ───────── */
   { id: "a1-s49-ce1", level: "A1", sujet: 49, sec: "ce", ex: 1, pts: 6,
     title: "Un goûter chez Aurélie",
-    consigne: "Votre fils Emre a 6 ans. Vous recevez ce courriel de votre amie Aurélie. Lisez le document puis répondez aux questions.",
-    help: { tr: "Oğlunuz Emre 6 yaşında. Arkadaşınız Aurélie'den bu e-postayı alıyorsunuz. Belgeyi okuyun, sonra soruları cevaplayın.", en: "Your son Emre is 6. You receive this e-mail from your friend Aurélie. Read it and answer the questions." },
+    consigne: "Votre neveu Emre a 6 ans. Il passe la semaine chez vous. Vous recevez ce courriel de votre amie Aurélie. Lisez le document puis répondez aux questions.",
+    help: { tr: "Yeğeniniz Emre 6 yaşında ve bu hafta sizde kalıyor. Arkadaşınız Aurélie'den bu e-postayı alıyorsunuz. Belgeyi okuyun, sonra soruları cevaplayın.", en: "Your nephew Emre is 6 and is staying with you this week. You receive this e-mail from your friend Aurélie. Read it and answer the questions." },
     doc: { type: "email", from: "Aurélie", subject: "Mercredi après-midi ?",
       body: "Coucou !\n\nMercredi, je ne travaille pas l'après-midi. Tu viens à la maison avec Emre ? Mes enfants, Zoé et Noah, sont très contents !\n\nOn fait un goûter à 16 h : je prépare des crêpes et une salade de fruits. Après, on va au jardin des Plantes, à pied (10 minutes). Emre peut apporter son ballon et sa casquette.\n\nMon adresse : 15 rue Crébillon, 2e étage, code 4590.\n\nRéponds-moi vite !\nAurélie" },
     questions: [
@@ -126,8 +126,8 @@
 
   { id: "a1-s49-ce2", level: "A1", sujet: 49, sec: "ce", ex: 2, pts: 6,
     title: "Informations pour les parents",
-    consigne: "Votre fille va bientôt aller à la crèche. Vous lisez cette affiche dans l'entrée. Lisez le document puis répondez aux questions.",
-    help: { tr: "Kızınız yakında kreşe başlayacak. Girişteki bu afişi okuyorsunuz. Belgeyi okuyun, sonra soruları cevaplayın.", en: "Your daughter will soon start nursery. You read this poster in the entrance. Read it and answer the questions." },
+    consigne: "Votre sœur habite en France. Sa fille va bientôt aller à la crèche. Vous lisez cette affiche dans l'entrée avec votre sœur. Lisez le document puis répondez aux questions.",
+    help: { tr: "Kız kardeşiniz Fransa'da yaşıyor. Kızı yakında kreşe başlayacak. Girişteki bu afişi kız kardeşinizle okuyorsunuz. Belgeyi okuyun, sonra soruları cevaplayın.", en: "Your sister lives in France. Her daughter will soon start nursery. You read this poster in the entrance with your sister. Read it and answer the questions." },
     doc: { type: "notice", title: "Crèche Les Petites Étoiles — Informations pour les parents",
       body: "- La crèche est ouverte du lundi au vendredi, de 7 h 30 à 18 h 30.\n- Les enfants arrivent avant 9 h 30.\n- Le repas de midi et le goûter sont donnés par la crèche.\n- Apportez chaque jour des vêtements de rechange et le doudou de votre enfant.\n- Votre enfant est malade (plus de 38,5 °C) ? Il reste à la maison. Appelez la crèche avant 8 h.\n- Une autre personne vient chercher votre enfant ? Donnez son nom à la directrice." },
     questions: [
@@ -140,18 +140,18 @@
       { q: "Chaque jour, les parents apportent…", o: ["🧸 le doudou et des vêtements", "🥪 le repas de midi et le goûter", "🍪 le goûter"], a: 0,
         x: "« Apportez chaque jour des vêtements de rechange et le doudou de votre enfant. »",
         xtr: "« Doudou » = çocuğun sevdiği bez oyuncak; « vêtements de rechange » = yedek kıyafet. Öğle yemeği ve atıştırmalığı kreş veriyor." },
-      { q: "Votre enfant a 39 °C. Vous…", o: ["l'emmenez à la crèche avant 9 h 30", "téléphonez à la crèche avant 8 h", "donnez votre nom à la directrice"], a: 1,
+      { q: "L'enfant a 39 °C. Les parents…", o: ["l'emmènent à la crèche avant 9 h 30", "téléphonent à la crèche avant 8 h", "donnent leur nom à la directrice"], a: 1,
         x: "« Votre enfant est malade (plus de 38,5 °C) ? Il reste à la maison. Appelez la crèche avant 8 h. »",
-        xtr: "39 °C, 38,5'ten fazla: çocuk evde kalır ve kreşi saat 8'den önce ararsınız." },
-      { q: "Votre voisine vient chercher votre enfant. Vous donnez son nom…", o: ["au médecin", "à la cuisinière", "à la directrice"], a: 2,
+        xtr: "39 °C, 38,5'ten fazla: çocuk evde kalır ve anne babası kreşi saat 8'den önce arar." },
+      { q: "Une voisine vient chercher l'enfant. Les parents donnent son nom…", o: ["au médecin", "à la cuisinière", "à la directrice"], a: 2,
         x: "« Une autre personne vient chercher votre enfant ? Donnez son nom à la directrice. »",
-        xtr: "Çocuğu başka biri alacaksa, o kişinin adını müdüre (« la directrice ») veriyorsunuz." }
+        xtr: "Çocuğu başka biri alacaksa, anne baba o kişinin adını müdüre (« la directrice ») veriyor." }
     ] },
 
   { id: "a1-s49-ce3", level: "A1", sujet: 49, sec: "ce", ex: 3, pts: 6,
     title: "Le programme de la fête de l'école",
-    consigne: "Votre fils est à l'école Jules-Verne. Vous recevez le programme de la fête de l'école. Lisez le document puis répondez aux questions.",
-    help: { tr: "Oğlunuz Jules-Verne okulunda. Okul şenliğinin programını alıyorsunuz. Belgeyi okuyun, sonra soruları cevaplayın.", en: "Your son goes to Jules-Verne school. You receive the school fair programme. Read it and answer the questions." },
+    consigne: "Votre neveu est à l'école Jules-Verne. Vous recevez le programme de la fête de l'école. Lisez le document puis répondez aux questions.",
+    help: { tr: "Yeğeniniz Jules-Verne okulunda. Okul şenliğinin programını alıyorsunuz. Belgeyi okuyun, sonra soruları cevaplayın.", en: "Your nephew goes to Jules-Verne school. You receive the school fair programme. Read it and answer the questions." },
     doc: { type: "programme", title: "Fête de l'école Jules-Verne — samedi 20 juin",
       body: "Tickets de jeux : 1 € le ticket, 5 € les 6 tickets.\nS'il pleut, le spectacle a lieu dans la salle de sport.",
       rows: [["Heure", "Activité", "Lieu"],

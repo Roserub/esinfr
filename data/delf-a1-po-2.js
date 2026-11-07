@@ -10,7 +10,7 @@
     prompts: [
       { q: "Bonjour. Quel est votre prénom ?", m: "Bonjour ! Je m'appelle Esin." },
       { q: "Vous habitez en France depuis combien de temps ?", m: "J'habite en France depuis un an." },
-      { q: "Vous habitez dans quelle ville ?", m: "J'habite dans une petite ville. C'est calme et joli." },
+      { q: "Vous habitez dans quelle ville ?", m: "J'habite à Lyon. C'est une très belle ville." },
       { q: "Vous aimez la vie en France ?", m: "Oui, j'aime bien. Les gens sont gentils." },
       { q: "Qu'est-ce que vous aimez en France ?", m: "J'aime le pain, les marchés et les petites rues." },
       { q: "Qu'est-ce qui est difficile pour vous ?", m: "La langue est difficile. Je parle encore lentement." },
@@ -536,7 +536,7 @@
     },
     prompts: [
       { q: "Bonjour. Vous pouvez épeler votre prénom ?", m: "Bonjour. Je m'appelle Esin : E, S, I, N." },
-      { q: "Vous êtes étudiante ?", m: "Oui, j'apprends le français dans une école de langues." },
+      { q: "Vous êtes étudiante ?", m: "Non, je travaille à l'accueil d'une salle de sport. Mais j'apprends le français dans une école de langues." },
       { q: "Vous avez un diplôme ?", m: "Oui, j'ai un diplôme de kinésithérapeute, en Turquie." },
       { q: "Vous aimez apprendre ?", m: "Oui, j'aime beaucoup apprendre de nouvelles choses." },
       { q: "Vous étudiez le français combien d'heures par semaine ?", m: "J'étudie le français cinq heures par semaine." },

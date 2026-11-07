@@ -278,7 +278,7 @@
       { q: "Bonjour ! Comment vous appelez-vous ? Quel âge avez-vous ?", m: "Bonjour ! Je m'appelle Esin et j'ai 30 ans." },
       { q: "Où est-ce que vous habitez ?", m: "J'habite à Bordeaux, dans un petit appartement près du centre. Avant, j'habitais à Istanbul." },
       { q: "Vous avez de la famille en France ?", m: "Oui, mon mari est ici avec moi. Mes parents et mon frère habitent toujours en Turquie." },
-      { q: "Comment est une journée normale pour vous ?", m: "Le matin, je vais à mon cours de français. L'après-midi, je fais du sport, et le soir, je cuisine avec mon mari." },
+      { q: "Comment est une journée normale pour vous ?", m: "Le matin, je vais à mon cours de français. L'après-midi, je travaille à l'accueil d'une salle de sport, et le soir, je cuisine avec mon mari." },
       { q: "Vous aimez faire du shopping ?", m: "Pas beaucoup ! Je préfère acheter peu de vêtements, mais des vêtements de bonne qualité." },
       { q: "Où est-ce que vous achetez vos vêtements ?", m: "J'achète surtout mes vêtements dans les magasins de sport, parce que je fais beaucoup de sport. Parfois, je vais aussi dans une friperie." },
       { q: "Qu'est-ce que vous portez d'habitude ?", m: "D'habitude, je porte un jean, un pull et des baskets. C'est simple et confortable." },

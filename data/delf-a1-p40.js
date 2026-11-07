@@ -103,7 +103,7 @@
     title: "Le vernissage de Paulo",
     consigne: "Vous recevez ce courriel de votre ami Paulo. Lisez le message et répondez aux questions.",
     help: { tr: "Arkadaşınız Paulo'dan bu e-postayı alıyorsunuz. Mesajı okuyun ve soruları cevaplayın.", en: "You receive this e-mail from your friend Paulo. Read it and answer the questions." },
-    doc: { type: "email", from: "paulo.ferreira@mail.fr", subject: "Mes tableaux au café !",
+    doc: { type: "email", from: "paulo.ferreira@exemple.fr", subject: "Mes tableaux au café !",
       body: "Salut !\n\nTu sais, je fais de la peinture le soir, après le travail. Et j'ai une grande nouvelle : j'expose mes tableaux ! C'est au café « La Palette », 5, place du Marché, du 2 au 20 avril.\n\nLe vendredi 2 avril, à 18 h 30, il y a un petit apéritif pour la première soirée : c'est le vernissage. Tu viens ? Tu peux venir avec ta sœur.\n\nIl y a 15 tableaux : des paysages de la mer et des portraits de mon chat, Gribouille !\n\nÀ vendredi, j'espère !\nPaulo" },
     questions: [
       { q: "Paulo fait de la peinture…", o: ["le matin", "le week-end", "le soir"], a: 2,
@@ -244,7 +244,7 @@
     help: { tr: "Sınav görevlisini selamlayın. Size kendiniz, boş zaman etkinlikleriniz ve gezmeleriniz hakkında sorular sorar. Tam cümleyle cevap verin.", en: "Guided interview (about 1 minute, no preparation). Greet the examiner and answer questions about yourself, your hobbies and your outings." },
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour, madame. Je m'appelle Esin." },
-      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. Maintenant, j'apprends le français." },
+      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je travaille à l'accueil d'une salle de sport. Maintenant, j'apprends le français." },
       { q: "Vous aimez les musées ?", m: "Oui, j'aime beaucoup les musées, surtout les musées de peinture." },
       { q: "Il y a un musée près de chez vous ?", m: "Oui, il y a un petit musée dans le centre-ville. Il est à 10 minutes à pied." },
       { q: "À Istanbul, quel musée est-ce que vous aimez ?", m: "J'aime le palais de Topkapı. Il est très grand et très beau." },

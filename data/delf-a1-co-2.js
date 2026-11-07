@@ -6,7 +6,7 @@
     title: "Le cours de français",
     consigne: "Vous écoutez un message sur votre répondeur. Lisez les questions, écoutez le document puis répondez.",
     help: { tr: "Telesekreterinizdeki bir mesajı dinliyorsunuz. Soruları okuyun, kaydı dinleyin ve cevaplayın.", en: "You hear a message on your answering machine. Read the questions, listen to the recording, then answer." },
-    audio: [["F", "Bonjour, madame Kaya. Ici l'association Bienvenue, pour le cours de français. Votre cours commence lundi prochain, à 9 h 30, salle 12, au 1er étage. Le cours est le lundi et le jeudi matin. Apportez une photo d'identité et un cahier, s'il vous plaît. Le cours est gratuit. À lundi !"]],
+    audio: [["F", "Bonjour, madame Yilmaz. Ici l'association Bienvenue, pour le cours de français. Votre cours commence lundi prochain, à 9 h 30, salle 12, au 1er étage. Le cours est le lundi et le jeudi matin. Apportez une photo d'identité et un cahier, s'il vous plaît. Le cours est gratuit. À lundi !"]],
     questions: [
       { q: "Le cours commence quel jour ?", o: ["lundi", "mardi", "jeudi"], a: 0, x: "« Votre cours commence lundi prochain, à 9 h 30 »." },
       { q: "Le cours est dans quelle salle ?", o: ["salle 1", "salle 12", "salle 9"], a: 1, x: "« salle 12, au 1er étage ». 1, c'est l'étage." },
@@ -126,7 +126,7 @@
     title: "Un message d'un collègue",
     consigne: "Vous écoutez un message sur votre téléphone. Lisez les questions, écoutez le document puis répondez.",
     help: { tr: "Telefonunuzdaki bir mesajı dinliyorsunuz. Soruları okuyun, kaydı dinleyin ve cevaplayın.", en: "You hear a message on your phone. Read the questions, listen to the recording, then answer." },
-    audio: [["M", "Salut Esin, c'est Thomas, du bureau. Attention, la réunion de demain n'est pas à 9 h, elle est à 14 h. Elle est dans la salle 5, au 4e étage. Tu peux apporter ton ordinateur ? Et après la réunion, on prend un verre avec l'équipe pour l'anniversaire de Sophie. À demain !"]],
+    audio: [["M", "Salut Esin, c'est Thomas, du travail. Attention, la réunion de demain n'est pas à 9 h, elle est à 14 h. Elle est dans la salle 5, au 4e étage. Tu peux apporter ton ordinateur ? Et après la réunion, on prend un verre avec l'équipe pour l'anniversaire de Sophie. À demain !"]],
     questions: [
       { q: "La réunion est à quelle heure ?", o: ["9 h", "14 h", "4 h"], a: 1, x: "« la réunion de demain n'est pas à 9 h, elle est à 14 h »." },
       { q: "La réunion est dans la salle…", o: ["4", "14", "5"], a: 2, x: "« Elle est dans la salle 5, au 4e étage. » 4, c'est l'étage." },

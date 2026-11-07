@@ -279,7 +279,7 @@
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ? Vous pouvez épeler votre prénom ?", m: "Bonjour ! Je m'appelle Esin. E – S – I – N." },
       { q: "D'où venez-vous ?", m: "Je suis turque. Je viens d'Istanbul, une très grande ville." },
-      { q: "Qu'est-ce que vous faites dans la vie ?", m: "J'étais kinésithérapeute pour des sportifs en Turquie. Maintenant, j'apprends le français pour travailler en France." },
+      { q: "Qu'est-ce que vous faites dans la vie ?", m: "J'étais kinésithérapeute pour des sportifs en Turquie. Maintenant, je travaille à l'accueil d'une salle de sport et j'apprends le français pour travailler en France." },
       { q: "Comment est-ce que vous vous sentez avant un examen ?", m: "Je suis un peu stressée, c'est normal. Mais je respire lentement et je pense aux choses positives." },
       { q: "Combien d'heures est-ce que vous dormez par nuit ?", m: "Je dors sept ou huit heures. Je me couche vers 23 heures et je me lève à 7 heures." },
       { q: "Qu'est-ce que vous faites pour vous détendre ?", m: "Je fais du sport, surtout du handball avec une équipe. Et j'aime marcher au bord de l'eau." },
