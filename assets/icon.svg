@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#4f7f6a"/>
+  <path d="M352 120c-70 6-118 52-124 120 62-4 112-48 124-120z" fill="#dfece5"/>
+  <path d="M228 240c10-40 40-78 84-98" stroke="#4f7f6a" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <text x="256" y="400" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="190" font-weight="700" fill="#fffdf9">Fr</text>
+</svg>
