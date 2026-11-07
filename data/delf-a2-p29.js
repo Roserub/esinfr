@@ -268,7 +268,7 @@
       { c: "Parler du médecin traitant", kw: ["médecin traitant", "medecin traitant", "médecin", "medecin", "docteur", "généraliste", "generaliste"] },
       { c: "Donner un conseil", kw: ["je te conseille", "tu dois", "il faut", "n'oublie pas", "conseil", "le plus vite possible", "tout de suite"] }
     ],
-    model: "Salut Emre,\nFélicitations pour ton nouveau travail ! Je vais t'aider. D'abord, quand tu vas arriver, ton entreprise va t'inscrire à l'Assurance maladie, et tu vas recevoir ta carte Vitale. Elle est très importante : tu dois la donner chez le médecin et à la pharmacie. Ensuite, il faut une mutuelle, parce que l'Assurance maladie ne rembourse pas tout. Souvent, l'employeur la propose. Enfin, choisis vite un médecin traitant près de chez toi. Je te conseille aussi d'apporter tes ordonnances de Turquie.\nÀ bientôt,\nEsin" },
+    model: "Salut Emre,\nFélicitations pour ton nouveau travail ! Je vais t'aider. D'abord, quand tu arriveras, ton entreprise va t'inscrire à l'Assurance maladie, et tu vas recevoir ta carte Vitale. Elle est très importante : tu dois la donner chez le médecin et à la pharmacie. Ensuite, il faut une mutuelle, parce que l'Assurance maladie ne rembourse pas tout. Souvent, l'employeur la propose. Enfin, choisis vite un médecin traitant près de chez toi. Je te conseille aussi d'apporter tes ordonnances de Turquie.\nÀ bientôt,\nEsin" },
 
   /* ───────────── Production orale ───────────── */
   { id: "a2-s29-po1", level: "A2", sujet: 29, sec: "po", ex: 1, pts: 8, kind: "entretien",

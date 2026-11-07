@@ -189,7 +189,7 @@
     "r-train-de-nuit": {
       tr: [
         "Geçen şubatta Aurélie ve kardeşi Paul, Alplerde Briançon'a kayak yapmaya gittiler. Uçağa da arabaya da binmediler: gece trenini seçtiler. «Uzun zamandır denemek istiyordum. Hem dünya için daha iyi» diye açıklıyor Aurélie.",
-        "Tren akşam Paris'teki Austerlitz garından kalktı. Aurélie ve Paul altı kişilik bir kompartımanda iki kuşet ayırtmışlardı. Kompartımanı bir aileyle paylaştılar: anne, baba ve onlar da dağa giden iki çocukları.",
+        "Tren akşam Paris'teki Austerlitz garından kalktı. Aurélie ve Paul altı kişilik bir kompartımanda iki kuşet ayırtmışlardı. Kompartımanı, onlar gibi dağa giden bir aileyle paylaştılar: anne, baba ve iki çocukları.",
         "Uyumadan önce sandviçlerini yediler ve çocuklarla kâğıt oynadılar. Sonra kondüktör biletleri kontrol etmeye geldi. Saat 23 civarında herkes ışığı kapattı ve yattı.",
         "Paul çok iyi uyudu ama Aurélie biraz daha az: tren gürültü yapıyordu ve kuşet dardı. Sabah perdeyi açtı ve karla kaplı dağları gördü. «Büyüleyiciydi. Az uyuduğumu hemen unuttum!» diye anlatıyor.",
         "Sabah vardılar ve öğleden önce pistlerdeydiler. Aurélie'ye göre gece treninin büyük avantajı zaman kazandırması: uyurken yolculuk ediyorsunuz. Gelecek yıl yine gece trenine binecekler ama bu sefer Aurélie bir göz bandı getirecek!"

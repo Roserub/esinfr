@@ -76,7 +76,7 @@
         "Karima küçükken denizden uzakta yaşıyordu ve şehrinde yüzme havuzu yoktu. Hiç yüzmeyi öğrenmedi. Uzun süre bu bir sorun değildi. Ama geçen yaz, Bretanya'daki tatilde, arkadaşları yüzerken o kumsalda yalnız kaldı. Üzgündü ve biraz utanıyordu.",
         "Eylülde, 30 yaşında, Karima belediye havuzunda yetişkinlere yönelik bir kursa kaydoldu. İlk gün çok korkuyordu. Grupta, hepsi yeni başlayan altı kişi vardı. Yüzme hocası Thomas çok sakin ve sabırlıydı. «Burada kimse kimseyle dalga geçmez» dedi.",
         "İlk seanslarda Karima aslında hiç yüzmedi. Başını suyun altına sokmayı, suyun içine nefes vermeyi ve sırtüstü suyun üstünde kalmayı öğrendi. Zordu, çünkü batmaktan korkuyordu. Thomas ona bir yüzme tahtası ve sakin nefes almak için tavsiyeler verdi.",
-        "Üç ay sonra havuzun ilk boyunu, yirmi beş metreyi, durmadan yüzdü. Bütün grup alkışladı! O akşam annesini arayıp anlattı. Annesi çok duygulandı.",
+        "Üç ay sonra ilk havuz boyunu, yirmi beş metreyi, durmadan yüzdü. Bütün grup alkışladı! O akşam annesini arayıp anlattı. Annesi çok duygulandı.",
         "Artık Karima haftada iki kez havuza gidiyor. Kurbağalama ve serbest stil öğreniyor. Gelecek yaz Bretanya'ya geri dönecek ve bu sefer arkadaşlarıyla denizde yüzecek. «Öğrenmenin yaşı yok» diyor."
       ],
       en: [
@@ -97,7 +97,7 @@
     "r-jo-paris-2024": {
       tr: [
         "26 Temmuz - 11 Ağustos 2024 tarihleri arasında Paris Yaz Olimpiyat Oyunları'na ev sahipliği yaptı. Bu üçüncü seferdi: şehir Oyunları daha önce 1900'de ve tam yüz yıl önce, 1924'te düzenlemişti. Ardından 28 Ağustos - 8 Eylül arasında Paralimpik Oyunlar yapıldı.",
-        "Açılış töreni çok farklıydı. İlk kez bir stadyumda değil, Seine Nehri üzerinde yapıldı. Sporcular yağmur altında teknelerle geçit yaptı! Sonunda olimpiyat kazanı yandı. Büyük bir balonun altına asılıydı ve her akşam Tuileries Bahçesi'nin üzerinde gökyüzüne yükseliyordu.",
+        "Açılış töreni çok farklıydı. İlk kez bir stadyumda değil, Seine Nehri üzerinde yapıldı. Sporcular yağmur altında teknelerle geçit töreni yaptı! Sonunda olimpiyat kazanı yandı. Büyük bir balonun altına asılıydı ve her akşam Tuileries Bahçesi'nin üzerinde gökyüzüne yükseliyordu.",
         "Birçok müsabaka ünlü anıtların önünde yapıldı. Plaj voleybolu Eyfel Kulesi'nin dibinde oynandı; eskrim Grand Palais'de, binicilik ise Versay Sarayı'nın bahçelerinde yapıldı. Sörf ise Paris'ten çok uzakta yapıldı: Fransız Polinezyası'ndaki Tahiti'de!",
         "Fransızlar çok sayıda madalya kazandı. Yüzücü Léon Marchand Oyunların yıldızı oldu: bireysel dalda dört altın madalya kazandı. Judocu Teddy Riner da bir kez daha altın kazandı. Ülkenin her yerinde insanlar müsabakaları televizyonda ya da dev ekranlarda izliyordu.",
         "22 yaşındaki üniversite öğrencisi Camille Oyunlar sırasında gönüllüydü. Bir stadyumun yakınında seyircileri karşılıyor ve yerlerini bulmalarına yardım ediyordu. «Bütün gün yürüyordum ama atmosfer inanılmazdı. Bu yazı asla unutmayacağım!» diyor."
@@ -114,7 +114,7 @@
         { tr: "Açılış töreni nerede yapıldı?", en: "Where did the opening ceremony take place?", o: [["Seine Nehri üzerinde", "On the Seine"], ["Stade de France'ta", "At the Stade de France"], ["Versay'da", "At Versailles"]] },
         { tr: "Sörf müsabakası nerede yapıldı?", en: "Where did the surfing event take place?", o: [["Bretanya'da", "In Brittany"], ["Biarritz'te", "In Biarritz"], ["Tahiti'de", "In Tahiti"]] },
         { tr: "Léon Marchand kaç bireysel altın madalya kazandı?", en: "How many individual gold medals did Léon Marchand win?", o: [["İki", "Two"], ["Üç", "Three"], ["Dört", "Four"]] },
-        { tr: "Camille Oyunlar sırasında ne yapıyordu?", en: "What was Camille doing during the Games?", o: [["Dondurma satıyordu", "She was selling ice creams"], ["Sporcuları çekiyordu", "She was filming the athletes"], ["Seyircileri karşılıyordu", "She was welcoming the public"]] }
+        { tr: "Camille Oyunlar sırasında ne yapıyordu?", en: "What was Camille doing during the Games?", o: [["Dondurma satıyordu", "She was selling ice creams"], ["Sporcuları filme alıyordu", "She was filming the athletes"], ["Seyircileri karşılıyordu", "She was welcoming the public"]] }
       ]
     },
     "r-premier-jour-travail": {

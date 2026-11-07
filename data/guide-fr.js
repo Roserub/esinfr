@@ -424,7 +424,7 @@ ${T(["Étape", "Niveau demandé"], [["Première carte de séjour pluriannuelle",
 <h3>4) La mairie et la médiathèque</h3>
 <p>Mairie / CCAS : demande les « cours de français pour adultes » et les « ateliers de conversation ». Médiathèque : manuels de FLE, lectures graduées, BD, DVD sous-titrés. Demande : « Avez-vous des ressources pour apprendre le français ? »</p>
 <h3>5) Des financements pour les cours ou les examens</h3>
-<p>France Travail (si tu es inscrite comme demandeuse d'emploi : demande à ton conseiller) · le CPF si tu travailles en France (par ex. le TEF IRN ; participation forfaitaire d'environ 150 € par utilisation).</p>
+<p>France Travail (si tu es inscrite comme demandeuse d'emploi : demande à ton conseiller) · le CPF si tu travailles en France (par ex. le TEF IRN ; participation forfaitaire d'environ 100 € par utilisation).</p>
 <h3>6) Pour comparer : le payant</h3>
 <p>Français intensif à l'université ≈ 6,50 € de l'heure (1 560 € le semestre) · Alliance Française. Le plan gratuit + un tuteur en ligne pas cher couvre l'essentiel de ce qu'ils proposent.</p>`;
 

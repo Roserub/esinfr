@@ -150,7 +150,7 @@ B|D'accord. Je peux mettre combien de linge ?|Tamam. Ne kadar çamaşır koyabil
 A|Celle-ci, c'est 8 kilos. Votre sac rentre sans problème.|Bu 8 kiloluk. Torbanız rahatça sığar.|This one takes 8 kilos. Your bag will fit with no problem.
 B|Et la lessive ? Je n'en ai pas apporté.|Deterjan ne olacak? Yanımda getirmedim.|And the detergent? I didn't bring any.
 A|Pas de souci, ici, la lessive est automatique. Elle est comprise dans le prix.|Dert etmeyin, burada deterjan otomatik. Fiyata dahil.|No worries, the detergent is automatic here. It's included in the price.
-B|Super. Je paie où ?|Süper. Nereye ödüyorum?|Great. Where do I pay?
+B|Super. Je paie où ?|Süper. Nerede ödüyorum?|Great. Where do I pay?
 A|À la borne, là-bas. Vous tapez le numéro de la machine, et vous payez par carte ou en pièces.|Şuradaki ödeme makinesinde. Makinenin numarasını tuşlayıp kartla ya da bozuk parayla ödüyorsunuz.|At the pay station over there. You key in the machine number and pay by card or with coins.
 B|C'est combien ?|Ne kadar?|How much is it?
 A|5 € pour le lavage. Et le séchoir, c'est 1 € les dix minutes.|Yıkama 5 €. Kurutma makinesi de on dakikası 1 €.|5 € for the wash. And the dryer is 1 € for ten minutes.

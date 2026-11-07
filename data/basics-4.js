@@ -305,7 +305,7 @@ Qui est à l'appareil ?|Kiminle görüşüyorum?|Who's speaking?
 C'est de la part de qui ?|Kim arıyor diyeyim?|Who's calling, please?
 Je voudrais parler à Madame Martin.|Martin Hanım'la görüşmek istiyorum.|I'd like to speak to Mrs Martin.
 Ne quittez pas.|Ayrılmayın, hatta kalın.|Please hold.
-Je vous le passe.|Size bağlıyorum (onu).|I'll put him through.
+Je vous le passe.|Size bağlıyorum (onu, erkek).|I'll put him through.
 Je vous la passe.|Size bağlıyorum (onu, kadın).|I'll put her through.
 Elle n'est pas là pour le moment.|Şu anda burada değil.|She's not here at the moment.
 La ligne est occupée.|Hat meşgul.|The line is busy.
@@ -321,7 +321,7 @@ un message|mesaj|a message
 laisser un message|mesaj bırakmak|to leave a message||Je peux laisser un message ?
 la messagerie|sesli mesaj kutusu|voicemail
 rappeler|geri aramak|to call back||Je rappelle plus tard.
-Vous pouvez lui demander de me rappeler ?|Beni geri aramasını söyleyebilir misiniz?|Can you ask him to call me back?
+Vous pouvez lui demander de me rappeler ?|Ona beni geri aramasını söyleyebilir misiniz?|Can you ask him / her to call me back?
 Mon numéro, c'est le 06 12 34 56 78.|Numaram 06 12 34 56 78.|My number is 06 12 34 56 78.|Mon numéro, c'est le zéro six, douze, trente-quatre, cinquante-six, soixante-dix-huit.
 un appel manqué|cevapsız arama|a missed call
 un texto|kısa mesaj, SMS|a text message||Je t'envoie un texto.
@@ -422,7 +422,7 @@ le rond-point|göbek, döner kavşak|roundabout
 le passage piéton|yaya geçidi|pedestrian crossing
 le trottoir|kaldırım|pavement
 le pont|köprü|bridge
-l'avenue|bulvar, cadde|avenue
+l'avenue|geniş cadde|avenue
 le boulevard|bulvar|boulevard
 l'angle de la rue|sokağın köşesi|the corner of the street
 le panneau|tabela|road sign

@@ -359,7 +359,7 @@
              { fr: "J'adore ! Je m'inscris.", tr: "Bayıldım! Kaydoluyorum.", en: "I love it! I'll sign up.", ok: true, go: "i1" },
              { fr: "C'est super, mais je vais réfléchir.", tr: "Harika, ama biraz düşüneceğim.", en: "It's great, but I'll think about it.", ok: true, go: "i2" },
              { fr: "Je suis très yoga !", tr: "Ben çok yogayım!", en: "I'm very yoga!", ok: false,
-               fb: { fr: "Joli, mais ce n'est pas du français 🧘‍♀️😄. Dites « j'adore ! » ou « c'est super, mais je vais réfléchir ».", tr: "Hoş, ama Fransızca değil 🧘‍♀️😄. « J'adore ! » ya da « c'est super, mais je vais réfléchir » deyin.", en: "Cute, but it's not French 🧘‍♀️😄. Say « j'adore ! » or « c'est super, mais je vais réfléchir »." } }
+               fb: { fr: "Joli, mais ce n'est pas une réponse claire 🧘‍♀️😄. Dites « j'adore ! » ou « c'est super, mais je vais réfléchir ».", tr: "Hoş, ama net bir cevap değil 🧘‍♀️😄. « J'adore ! » ya da « c'est super, mais je vais réfléchir » deyin.", en: "Cute, but it's not a clear answer 🧘‍♀️😄. Say « j'adore ! » or « c'est super, mais je vais réfléchir »." } }
            ] },
       i1: { say: [["F", "Génial ! Il y a un cours le mardi et le jeudi à 19 h. Vous préférez quel jour ?"]],
            choices: [

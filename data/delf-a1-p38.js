@@ -224,9 +224,9 @@
     ] },
 
   { id: "a1-s38-pe2", level: "A1", sujet: 38, sec: "pe", ex: 2, pts: 15, kind: "text",
-    title: "Kiné pour les Lionnes",
-    consigne: "Le samedi, vous aidez une équipe de handball : vous êtes kinésithérapeute bénévole. Vous écrivez un courriel à votre amie française Camille. Vous parlez de l'équipe, vous dites ce que vous faites avec les joueuses, et vous invitez Camille au prochain match (jour et heure). (40 mots minimum)",
-    help: { tr: "Cumartesileri bir hentbol takımına gönüllü fizyoterapist olarak yardım ediyorsunuz. Fransız arkadaşınız Camille'e bir e-posta yazın: takımdan bahsedin, oyuncularla ne yaptığınızı söyleyin ve Camille'i bir sonraki maça davet edin (gün ve saat). Arkadaşa « tu » kullanın. (En az 40 kelime)", en: "On Saturdays you help a handball team as a volunteer physiotherapist. Write an e-mail to your French friend Camille: talk about the team, say what you do with the players, and invite Camille to the next match (day and time). (40 words minimum)" },
+    title: "Avec la kiné des Lionnes",
+    consigne: "Le samedi, vous êtes bénévole dans une équipe de handball : vous aidez la kinésithérapeute de l'équipe. Vous écrivez un courriel à votre amie française Camille. Vous parlez de l'équipe, vous dites ce que vous faites avec les joueuses, et vous invitez Camille au prochain match (jour et heure). (40 mots minimum)",
+    help: { tr: "Cumartesileri bir hentbol takımında gönüllüsünüz: takımın fizyoterapistine yardım ediyorsunuz. Fransız arkadaşınız Camille'e bir e-posta yazın: takımdan bahsedin, oyuncularla ne yaptığınızı söyleyin ve Camille'i bir sonraki maça davet edin (gün ve saat). Arkadaşa « tu » kullanın. (En az 40 kelime)", en: "On Saturdays you are a volunteer with a handball team: you help the team's physiotherapist. Write an e-mail to your French friend Camille: talk about the team, say what you do with the players, and invite Camille to the next match (day and time). (40 words minimum)" },
     min: 40,
     must: [
       { c: "Saluer Camille", kw: ["bonjour", "salut", "coucou", "chère", "chere", "hello"] },
@@ -235,7 +235,7 @@
       { c: "Inviter Camille au match", kw: ["tu viens", "je t'invite", "viens", "match"] },
       { c: "Donner le jour et l'heure", kw: ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche", "heure", "heures", "h30", "18 h", "20 h", "18h", "20h", "16 h", "16h"] }
     ],
-    model: "Coucou Camille,\nMaintenant, le samedi, je suis kiné bénévole pour les Lionnes, une équipe de handball ! Les joueuses sont très sympas. Avant le match, je fais des massages. Après, je donne des exercices et de la glace. Samedi prochain, il y a un grand match à 20 h 30. Tu viens avec moi ?\nBises,\nEsin" },
+    model: "Coucou Camille,\nMaintenant, le samedi, je suis bénévole pour les Lionnes, une équipe de handball ! J'aide Mélodie, la kiné de l'équipe. Les joueuses sont très sympas. Avant le match, on fait des massages. Après, on donne des exercices et de la glace. Samedi prochain, il y a un grand match à 20 h 30. Tu viens avec moi ?\nBises,\nEsin" },
 
   /* ───────── Production orale ───────── */
   { id: "a1-s38-po1", level: "A1", sujet: 38, sec: "po", ex: 1, pts: 8, kind: "entretien",
@@ -245,7 +245,7 @@
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour, monsieur. Je m'appelle Esin." },
       { q: "Vous êtes de quelle nationalité ?", m: "Je suis turque. J'habite en France, mais je viens d'Istanbul." },
-      { q: "Quelle est votre profession ?", m: "Je suis kinésithérapeute. En Turquie, j'ai travaillé avec des sportifs." },
+      { q: "Quelle est votre profession ?", m: "Je travaille à l'accueil d'une salle de sport. En Turquie, j'ai travaillé comme kinésithérapeute avec des sportifs." },
       { q: "Quel est votre sport préféré ?", m: "J'adore le handball ! C'est un sport rapide et très beau." },
       { q: "Vous allez voir des matchs ?", m: "Oui, je vais à la salle avec des amis. Je regarde aussi les matchs à la télévision." },
       { q: "Vous avez une équipe préférée ?", m: "Oui, une équipe d'Istanbul. Et en France, j'aime l'équipe de ma ville." },

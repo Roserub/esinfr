@@ -276,7 +276,7 @@
     help: { tr: "Yönlendirilmiş görüşme (yaklaşık 1,5 dakika, hazırlıksız). Sınav görevlisini selamlayın, kendinizi tanıtın ve sorularına cevap verin. Kısa ve tam cümleler kurun; her soruya 2–3 cümle yeterli.", en: "Guided interview (about 1.5 minutes, no preparation). Greet the examiner, introduce yourself and answer the questions (you, activities, sport, holidays…)." },
     prompts: [
       { q: "Bonjour ! Vous pouvez vous présenter ?", m: "Bonjour ! Je m'appelle Esin, j'ai trente ans. Je suis turque, d'Istanbul, et j'habite en France depuis un an." },
-      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. En Turquie, je travaillais avec des sportifs, surtout des joueurs de handball." },
+      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. En Turquie, je travaillais avec des joueurs de handball. Ici, je travaille à l'accueil d'une salle de sport." },
       { q: "Vous aimez l'hiver ?", m: "Oui, j'aime bien l'hiver, surtout quand il neige. Mais je n'aime pas quand il pleut et qu'il fait gris." },
       { q: "Est-ce que vous avez déjà fait du ski ?", m: "Oui, une fois, à Uludağ, en Turquie. Je suis tombée souvent, mais c'était très amusant !" },
       { q: "Quel sport est-ce que vous pratiquez ?", m: "Je joue au handball le mardi soir et je cours le dimanche matin, au bord de la rivière." },

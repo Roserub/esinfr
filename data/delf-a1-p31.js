@@ -236,7 +236,7 @@
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour, monsieur. Je m'appelle Esin." },
       { q: "Vous venez d'où ?", m: "Je viens de Turquie, d'Istanbul." },
-      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. En ce moment, j'apprends le français." },
+      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je travaille à l'accueil d'une salle de sport. En ce moment, j'apprends le français." },
       { q: "Vous savez faire du vélo ?", m: "Oui, je sais faire du vélo. J'aime beaucoup ça." },
       { q: "Comment est-ce que vous allez au cours de français ?", m: "Je vais au cours à pied ou en bus. C'est à 15 minutes." },
       { q: "Il y a des pistes cyclables dans votre ville ?", m: "Oui, il y a des pistes cyclables près du parc et le long de la rivière." },

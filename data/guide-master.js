@@ -675,7 +675,7 @@ ${T(["Adım", "Gereken seviye"], [["İlk çok yıllık oturma kartı", "A2 (konu
 <h3>4) Town hall &amp; public library</h3>
 <p>Mairie / CCAS: ask for « cours de français pour adultes » and « ateliers de conversation ». Médiathèque: FLE textbooks, graded readers, comics, DVDs with subtitles. Ask: « Avez-vous des ressources pour apprendre le français ? »</p>
 <h3>5) Money that can pay for courses or exams</h3>
-<p>France Travail (registered jobseekers: ask your adviser) · CPF if you work in France (e.g. TEF IRN; ~150 € flat contribution per use).</p>
+<p>France Travail (registered jobseekers: ask your adviser) · CPF if you work in France (e.g. TEF IRN; ~100 € flat contribution per use).</p>
 <h3>6) For comparison — paid</h3>
 <p>University intensive French ≈ 6.50 €/hour (1,560 € per semester) · Alliance Française. The free plan + a cheap online tutor covers most of what they offer.</p>`,
     tr: `<h3>1) OFII — Contrat d'intégration républicaine (CIR) · ücretsiz, devlet destekli · hedef A2</h3>
@@ -687,7 +687,7 @@ ${T(["Adım", "Gereken seviye"], [["İlk çok yıllık oturma kartı", "A2 (konu
 <h3>4) Belediye ve halk kütüphanesi</h3>
 <p>Mairie / CCAS: « cours de français pour adultes » ve « ateliers de conversation » sor. Médiathèque: FLE ders kitapları, seviyeli kitaplar, çizgi romanlar, altyazılı DVD'ler. Sor: « Avez-vous des ressources pour apprendre le français ? »</p>
 <h3>5) Kursları veya sınavları ödeyebilecek kaynaklar</h3>
-<p>France Travail (kayıtlı iş arayanlar: danışmanına sor) · Fransa'da çalışıyorsan CPF (ör. TEF IRN; kullanım başına ~150 € sabit katkı).</p>
+<p>France Travail (kayıtlı iş arayanlar: danışmanına sor) · Fransa'da çalışıyorsan CPF (ör. TEF IRN; kullanım başına ~100 € sabit katkı).</p>
 <h3>6) Karşılaştırma için — ücretli</h3>
 <p>Üniversite yoğun Fransızca ≈ saati 6,50 € (dönem başı 1.560 €) · Alliance Française. Ücretsiz plan + ucuz bir çevrimiçi eğitmen sundukları şeylerin çoğunu karşılar.</p>`
   });

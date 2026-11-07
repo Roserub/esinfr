@@ -40,7 +40,7 @@ le tarif étudiant|öğrenci fiyatı|the student rate
 je voudrais m'inscrire|kayıt olmak istiyorum|I'd like to sign up
 Vous avez votre badge ?|Giriş kartınız var mı?|Do you have your access card?
 Le cours commence à 18 h 30.|Ders 18.30'da başlıyor.|The class starts at 6:30 pm.
-Les vestiaires sont au fond à gauche.|Soyunma odaları sonda, solda.|The changing rooms are at the back on the left.
+Les vestiaires sont au fond à gauche.|Soyunma odaları dipte, solda.|The changing rooms are at the back on the left.
 Bonne séance !|İyi antrenmanlar!|Have a good workout!
 Le cours est complet.|Ders dolu.|The class is full.`),
 
@@ -294,7 +294,7 @@ Sur une échelle de 0 à 10…|0'dan 10'a kadar bir ölçekte…|On a scale from
 C'est une douleur forte ou légère ?|Ağrı şiddetli mi hafif mi?|Is the pain strong or mild?
 Qu'est-ce qui s'est passé ?|Ne oldu?|What happened?
 Je suis tombé(e) pendant le match.|Maçta düştüm.|I fell during the match.
-Je me suis tordu la cheville.|Bileğimi burktum.|I twisted my ankle.
+Je me suis tordu la cheville.|Ayak bileğimi burktum.|I twisted my ankle.
 J'ai mal au genou.|Dizim ağrıyor.|My knee hurts.|à + le = au: au dos, au genou
 J'ai mal à l'épaule.|Omzum ağrıyor.|My shoulder hurts.
 Allongez-vous sur le dos.|Sırtüstü uzanın.|Lie down on your back.
@@ -317,7 +317,7 @@ la glace|buz|ice|Mettez de la glace 15 minutes.
 l'ordonnance (f.)|reçete|the prescription
 la séance de kiné|fizik tedavi seansı|the physio session|kiné = kinésithérapeute
 les exercices à la maison (m.)|ev egzersizleri|home exercises
-On se revoit jeudi.|Perşembe görüşürüz.|See you again on Thursday.
+On se revoit jeudi.|Perşembe günü tekrar görüşürüz.|See you again on Thursday.
 Ça va mieux qu'avant ?|Eskisinden daha iyi mi?|Is it better than before?`),
 
     D("a2-nutrition", "A2", "Nutrition & healthy eating", "Beslenme ve sağlıklı yemek", "La nutrition et l'alimentation saine", `
@@ -421,7 +421,7 @@ Tu as passé un bon week-end ?|Hafta sonun iyi geçti mi?|Did you have a good we
 Ça fait longtemps !|Uzun zaman oldu!|Long time no see!
 Ça me fait plaisir.|Beni mutlu ediyor.|I'm happy about it, my pleasure.
 Ce n'est pas grave.|Önemli değil.|It doesn't matter.
-J'espère que ça va mieux.|Umarım daha iyidir.|I hope it's better.
+J'espère que ça va mieux.|Umarım durumun daha iyidir.|I hope it's better.
 Bonne continuation !|Kolay gelsin, devamı güzel olsun!|All the best (with what you're doing)!
 À la prochaine !|Bir dahaki sefere!|See you next time!`)
   );

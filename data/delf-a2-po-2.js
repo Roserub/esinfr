@@ -11,7 +11,7 @@
     prompts: [
       { q: "Bonjour. Pouvez-vous vous présenter ?", m: "Bonjour, je m'appelle Esin. Je suis turque et j'habite en France depuis un an." },
       { q: "D'où venez-vous exactement ?", m: "Je viens d'Istanbul, une grande ville au bord de la mer, dans le nord-ouest de la Turquie." },
-      { q: "Comment est votre ville ?", m: "C'est une ville assez grande et très animée. Il y a un port et beaucoup de cafés." },
+      { q: "Comment est votre ville ?", m: "C'est une très grande ville, très animée. Il y a la mer, des ports et beaucoup de cafés." },
       { q: "Qu'est-ce que vous faisiez le week-end là-bas ?", m: "Je me promenais au bord de la mer et je jouais au volley sur la plage avec mes amis." },
       { q: "Qu'est-ce qui vous manque de votre ville ?", m: "La mer et le soleil me manquent. Et aussi le petit-déjeuner du dimanche avec ma famille." },
       { q: "Quelle est la différence avec votre ville en France ?", m: "Ici, c'est plus calme et il pleut plus souvent ! Mais les transports sont très pratiques." },
@@ -110,7 +110,7 @@
       { c: "Comparer", kw: ["plus", "moins", "différent", "different", "différente", "differente", "par contre", "mais", "comme"] },
       { c: "Donner votre avis", kw: ["je préfère", "je prefere", "j'aime", "me manque", "parce que", "difficile", "plus calme", "content", "contente"] }
     ],
-    model: "Avant, en Turquie, je me levais à 6 heures et demie. Je prenais un grand petit-déjeuner avec du fromage, des olives et du thé. Ensuite, j'allais au travail en voiture et je rentrais vers 19 heures. Le soir, je dînais souvent chez mes parents. Maintenant, en France, ma journée est différente. Je me lève un peu plus tard, à 7 heures, et je mange seulement une tartine avec un café. Le matin, je vais au cours de français en bus, et l'après-midi, je cherche du travail ou je fais du sport. Le soir, je dîne plus tôt et j'appelle ma famille. Ma vie est plus calme, mais ma famille me manque. Par contre, j'aime bien mon nouveau rythme." },
+    model: "Avant, en Turquie, je me levais à 6 heures et demie. Je prenais un grand petit-déjeuner avec du fromage, des olives et du thé. Ensuite, j'allais au travail en voiture et je rentrais vers 19 heures. Le soir, je dînais souvent chez mes parents. Maintenant, en France, ma journée est différente. Je me lève un peu plus tard, à 7 heures, et je mange seulement une tartine avec un café. Le matin, je vais au cours de français en bus, et l'après-midi, je travaille à l'accueil d'une salle de sport. Le soir, je dîne plus tôt et j'appelle ma famille. Ma vie est plus calme, mais ma famille me manque. Par contre, j'aime bien mon nouveau rythme." },
   { id: "a2-s12-po3", level: "A2", sujet: 12, sec: "po", ex: 3, pts: 9, kind: "dialogue",
     title: "Un sac oublié dans le bus",
     consigne: "Exercice en interaction (3 minutes environ). Vous avez oublié votre sac dans le bus. Vous allez au service des objets trouvés de la compagnie de bus. Vous expliquez ce qui s'est passé, vous décrivez votre sac et vous laissez vos coordonnées. L'examinateur joue le rôle de l'employé(e).",
@@ -444,7 +444,7 @@
       { q: "Vous habitez dans une maison ou dans un appartement ?", m: "J'habite dans un petit appartement, au troisième étage." },
       { q: "Comment avez-vous trouvé votre logement ?", m: "Je l'ai trouvé sur Internet. J'ai visité quatre appartements avant de choisir." },
       { q: "Quelle est votre pièce préférée ? Pourquoi ?", m: "C'est le salon, parce qu'il est très lumineux. J'y lis et j'y fais du yoga." },
-      { q: "Qui fait le ménage chez vous ?", m: "C'est moi ! Je fais le ménage le samedi matin, avec de la musique." },
+      { q: "Qui fait le ménage chez vous ?", m: "Mon mari et moi. Moi, je fais le ménage le samedi matin, avec de la musique." },
       { q: "Comment était votre logement dans votre pays ?", m: "C'était un appartement plus grand, avec un balcon. Je pouvais voir la mer." },
       { q: "Qu'est-ce que vous voudriez changer chez vous ?", m: "Je voudrais acheter un canapé plus confortable et quelques plantes." },
       { q: "Vous invitez souvent des amis chez vous ?", m: "Pas encore souvent, mais samedi prochain, je vais inviter deux amies à dîner." }
@@ -489,7 +489,7 @@
     ],
     model: [
       ["E", "Agence du Centre, bonjour !"],
-      ["C", "Bonjour monsieur. Je m'appelle Esin Yilmaz. Je suis locataire d'un appartement de votre agence, rue des Lilas."],
+      ["C", "Bonjour monsieur. Je m'appelle Esin Yılmaz. Je suis locataire d'un appartement de votre agence, rue des Lilas."],
       ["E", "Bonjour madame. Qu'est-ce qui se passe ?"],
       ["C", "Le chauffage ne marche plus depuis deux jours. Il fait seulement 15 degrés dans le salon."],
       ["E", "Ah, c'est embêtant. Vous avez essayé d'éteindre et de rallumer la chaudière ?"],

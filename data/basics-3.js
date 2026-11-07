@@ -30,17 +30,17 @@ Pas du tout !|Hiç de değil!|Not at all!`, {
           en: "The verb sits in the middle: ne + verb + pas. Before a vowel, 'ne' becomes 'n'': je n'aime pas, ce n'est pas."
         }),
         G("Jamais, plus, rien, personne", "Asla, artık, hiçbir şey, hiç kimse", "Never, no longer, nothing, nobody", `
-ne… jamais|asla, hiç|never|ne, jamais|Je ne fume jamais.
+ne… jamais|asla, hiç (fiille)|never (with a verb)|ne, jamais|Je ne fume jamais.
 ne… plus|artık… değil|not any more, no longer|ne, plus|Je ne fume plus.
-ne… rien|hiçbir şey|nothing|ne, rien|Je ne vois rien.
-ne… personne|hiç kimse|nobody|ne, personne|Je ne connais personne.
+ne… rien|hiçbir şey (fiille)|nothing (with a verb)|ne, rien|Je ne vois rien.
+ne… personne|hiç kimse (fiille)|nobody (with a verb)|ne, personne|Je ne connais personne.
 Il ne pleut jamais ici.|Burada hiç yağmur yağmaz.|It never rains here.
 Elle n'habite plus à Paris.|Artık Paris'te oturmuyor.|She doesn't live in Paris any more.
 Je ne comprends rien.|Hiçbir şey anlamıyorum.|I don't understand anything.
 Personne ne répond.|Kimse cevap vermiyor.|Nobody is answering.
-Jamais !|Asla!|Never!
-Rien.|Hiçbir şey.|Nothing.
-Personne.|Hiç kimse.|Nobody.
+Jamais !|Asla! (tek kelimelik cevap)|Never! (one-word answer)
+Rien.|Hiçbir şey. (tek kelimelik cevap)|Nothing. (one-word answer)
+Personne.|Hiç kimse. (tek kelimelik cevap)|Nobody. (one-word answer)
 De rien !|Rica ederim! Bir şey değil!|You're welcome! (literally 'of nothing')`, {
           fr: "« Jamais », « plus », « rien », « personne » prennent la place de « pas ». On ne dit pas « ne pas jamais » : juste « ne… jamais ».",
           tr: "Müjde: Türkçede de çift olumsuzluk var! 'Hiç kimse gelmedi', 'hiçbir şey görmüyorum' deriz; Fransızca da aynı: 'je ne vois rien'. İngilizcede bu yanlış ama Türkçe kulağınıza çok doğal gelecek. Dikkat: 'jamais, plus, rien, personne' 'pas'ın yerini alır, ikisi birden kullanılmaz.",
@@ -111,8 +111,8 @@ notre|bizim (tekil isim)|our (singular noun)||notre appartement
 nos|bizim (çoğul isim)|our (plural noun)||nos voisins
 votre|sizin (tekil isim)|your (formal or plural, singular noun)||votre nom
 vos|sizin (çoğul isim)|your (formal or plural, plural noun)||vos papiers
-leur|onların (tekil isim)|their (singular noun)||leur maison
-leurs|onların (çoğul isim)|their (plural noun)||leurs enfants
+leur|onların (tekil isim)|their (singular noun)|leur, au singulier|leur maison
+leurs|onların (çoğul isim)|their (plural noun)|leurs, au pluriel|leurs enfants
 Votre nom, s'il vous plaît ?|Adınız, lütfen?|Your name, please?
 Ce sont nos amis.|Bunlar bizim arkadaşlarımız.|These are our friends.`, {
           fr: "Ici, plus de masculin ou féminin : seulement singulier ou pluriel. « Votre » est très utile avec « vous » de politesse : votre nom, votre adresse.",
@@ -219,8 +219,8 @@ elle|o (kadın veya dişil şey)|she, it||Elle est sympa.
 on|biz (konuşma dili), insanlar|we (spoken), people, one||On y va !
 nous|biz|we||Nous sommes amis.
 vous|siz (resmi tekil veya çoğul)|you (formal or plural)||Vous êtes prête ?
-ils|onlar (erkekler veya karışık grup)|they (masculine or mixed)||Ils jouent au handball.
-elles|onlar (sadece kadınlar)|they (all female)||Elles courent.`, {
+ils|onlar (erkekler veya karışık grup)|they (masculine or mixed)|ils, au pluriel|Ils jouent au handball.
+elles|onlar (sadece kadınlar)|they (all female)|elles, au pluriel|Elles courent.`, {
           fr: "« Il » et « elle » servent aussi pour les choses : la table → elle, le vélo → il. Un groupe de neuf filles et un garçon ? C'est « ils » !",
           tr: "Türkçede 'o' herkes ve her şey için tek kelime; Fransızca ise ayırır: il (erkek / eril şey), elle (kadın / dişil şey). Masa bile 'elle' olur: la table → elle! Ve dokuz kız bir erkek varsa grup 'ils' olur, Fransız dilbilgisi biraz eski kafalı.",
           en: "'Il' and 'elle' also mean 'it': la table → elle, le vélo → il. A group of nine girls and one boy? That's 'ils'!"
@@ -237,7 +237,7 @@ vouvoyer|'siz' diye hitap etmek|to say 'vous' to someone`, {
         }),
         G("On = nous", "On = biz", "On = we", `
 On mange ensemble ?|Birlikte yiyelim mi?|Shall we eat together?
-On va au cinéma ce soir.|Bu akşam sinemaya gidiyoruz.|We're going to the cinema tonight.
+On va au cinéma ce soir.|Bu akşam sinemaya gidiyoruz. (konuşma dili)|We're going to the cinema tonight. (spoken)
 Nous allons au cinéma ce soir.|Bu akşam sinemaya gidiyoruz. (resmi, yazı dili)|We're going to the cinema tonight. (formal, written)
 On parle français ici.|Burada Fransızca konuşulur.|French is spoken here.
 On ne sait jamais.|Belli olmaz.|You never know.`, {

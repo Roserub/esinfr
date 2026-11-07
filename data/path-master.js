@@ -59,8 +59,8 @@
       "Global Storybooks 1–2. seviyeler: aynı hikâye Fransızca ve Türkçe, sesli. Fransızcayı oku, sadece takılınca Türkçeye bak.",
       ["globalstory", "storyweaver"]),
     S("a1-tandem", "One tandem chat a week", "Haftada bir tandem sohbeti", "Un échange tandem par semaine",
-      "Find a French speaker who wants to learn Turkish or English. 15 minutes in French, 15 in Turkish. Text chat counts too.",
-      "Türkçe veya İngilizce öğrenmek isteyen bir Fransız bul. 15 dakika Fransızca, 15 dakika Türkçe. Yazışmak da sayılır.",
+      "Find a French speaker who wants to learn Turkish or English. 15 minutes in French, 15 in Turkish or English. Text chat counts too.",
+      "Türkçe veya İngilizce öğrenmek isteyen bir Fransız bul. 15 dakika Fransızca, 15 dakika Türkçe veya İngilizce. Yazışmak da sayılır.",
       ["tandem", "hellotalk", "mylangex"], { kind: "speak", practice: "speak" })
   ]);
   more("a1-questions", ["kwiziq"], { practice: "mistakes" });
@@ -159,7 +159,7 @@
     "a1-listen": "Un court dialogue A1 de Podcast Français Facile, avec la transcription. Écoute-le deux fois.",
     "a1-lt": "Continue Language Transfer 10 à 15 minutes par jour jusqu'à la fin du cours. Il construit tes réflexes de phrase.",
     "a1-stories": "Global Storybooks niveaux 1–2 : la même histoire en français et en turc, avec l'audio. Lis le français, regarde le turc seulement quand tu bloques.",
-    "a1-tandem": "Trouve un francophone qui veut apprendre le turc ou l'anglais. 15 minutes en français, 15 en turc. Écrire compte aussi.",
+    "a1-tandem": "Trouve un francophone qui veut apprendre le turc ou l'anglais. 15 minutes en français, 15 en turc ou en anglais. Écrire compte aussi.",
     "a1-mission": "Achète du pain ou un café uniquement en français. Si on te répond en anglais, souris et continue en français. C'est une victoire.",
     "a1-check": "Essaie les parties écoute et lecture d'un sujet officiel du DELF A1. Pas pour réussir : juste pour voir le chemin parcouru.",
     "a2-pc": "Le passé de tous les jours, comme le -dı turc. Regarde une explication en turc, puis fais des exercices Kwiziq.",

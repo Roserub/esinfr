@@ -75,7 +75,7 @@
     audio: [],
     questions: [
       { q: "Dialogue 1 : où sont ces personnes ?",
-        audio: [["F", "Monsieur, s'il vous plaît ! Ma fille a mal au pied. Elle a touché une méduse !"], ["M", "Asseyez-vous ici, mademoiselle. Je regarde… Je mets de l'eau de mer. Ça va aller !"]],
+        audio: [["F", "Monsieur, s'il vous plaît ! Ma fille a mal au pied. Elle a touché une méduse !"], ["M", "Viens ici, ma grande, assieds-toi. Je regarde… Je mets de l'eau de mer. Ça va aller !"]],
         o: ["⛵ au club de voile", "🛟 au poste du maître-nageur", "💊 à la pharmacie", "⛺ à l'accueil du camping"], a: 1,
         x: "« Elle a touché une méduse ! » « Je mets de l'eau de mer » : c'est le maître-nageur, à la plage.",
         xtr: "« méduse » = denizanası. Adam hemen deniz suyu sürüyor: plajdaki cankurtaran kulübesi. Eczanede deniz suyu kullanılmaz." },
@@ -248,7 +248,7 @@
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour, madame. Je m'appelle Esin." },
       { q: "Vous êtes de quelle nationalité ?", m: "Je suis turque. Je viens d'Istanbul." },
-      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. J'aime beaucoup mon travail." },
+      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je travaille à l'accueil d'une salle de sport. J'aime beaucoup mon travail." },
       { q: "Vous aimez la mer ou la montagne ?", m: "J'aime les deux, mais je préfère la mer." },
       { q: "Vous savez nager ?", m: "Oui, je sais nager. Je nage bien !" },
       { q: "En été, où est-ce que vous allez en vacances ?", m: "En général, je vais en Turquie, chez mes parents, ou au bord de la mer, à Bodrum." },

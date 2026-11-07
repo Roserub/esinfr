@@ -283,7 +283,7 @@
       { q: "Parlez-moi de votre meilleur ami ou de votre meilleure amie en France.", m: "Ma meilleure amie s'appelle Clémence. Elle est drôle et très patiente : elle corrige mon français !" },
       { q: "Qu'est-ce que vous faites ensemble ?", m: "On va au café, on joue à des jeux de société et, le dimanche, on court au parc." },
       { q: "Vos amis de Turquie vous manquent ?", m: "Oui, beaucoup. On s'appelle souvent en vidéo, et ils viennent me voir l'été prochain." },
-      { q: "Qu'est-ce que vous allez faire après le DELF ?", m: "Je vais faire une grande fête avec mes amis ! Ensuite, je voudrais travailler comme kinésithérapeute en France." }
+      { q: "Qu'est-ce que vous allez faire après le DELF ?", m: "Je vais faire une grande fête avec mes amis ! Ensuite, je voudrais faire des études de STAPS et, plus tard, travailler de nouveau comme kinésithérapeute en France." }
     ] },
 
   { id: "a2-s50-po2", level: "A2", sujet: 50, sec: "po", ex: 2, pts: 8, kind: "monologue",
@@ -321,7 +321,7 @@
     ],
     model: [
       ["E", "Bonjour, entre ! Moi, c'est Baptiste. Tu viens pour la chambre ?"],
-      ["C", "Bonjour Baptiste ! Oui, je m'appelle Esin. Je suis turque, je suis arrivée il y a un mois et j'apprends le français."],
+      ["C", "Bonjour Baptiste ! Oui, je m'appelle Esin. Je suis turque, je suis en France depuis un an, mais je viens d'arriver dans cette ville. J'apprends le français."],
       ["E", "Bienvenue ! Voilà la chambre. Elle fait 12 m², avec un lit et un bureau."],
       ["C", "Elle est très claire, j'aime bien ! Le loyer est de combien ?"],
       ["E", "400 € par mois, plus 30 € de charges pour l'électricité et internet."],

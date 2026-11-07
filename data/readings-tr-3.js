@@ -115,13 +115,13 @@
     "r-petit-dejeuner-fr": {
       tr: [
         "Türkiye'de Esin büyük bir kahvaltı yapar: peynir, zeytin, domates, salatalık, yumurta ve çay. Fransa'da durum çok farklı.",
-        "Sabahları ev arkadaşı Paul tartine yer: tereyağlı ve reçelli ekmek. Büyük bir kâsede kahve içer. Bazen tartinesini kahveye bandırır! Çocuklar genellikle sıcak çikolata içer ve mısır gevreği yer.",
+        "Sabahları komşusu Paul tartine yer: tereyağlı ve reçelli ekmek. Büyük bir kâsede kahve içer. Bazen tartinesini kahveye bandırır! Çocuklar genellikle sıcak çikolata içer ve mısır gevreği yer.",
         "Kruvasan daha çok hafta sonu içindir. Pazar sabahları Paul fırına gider ve kruvasan ve çikolatalı ekmek (pain au chocolat) alır.",
         "Bugün Esin Paul için bir Türk kahvaltısı hazırlıyor. Paul menemeni tadıyor ve diyor ki: « Harika! Yarın yine yapalım mı? »"
       ],
       en: [
         "In Turkey, Esin has a big breakfast: cheese, olives, tomatoes, cucumbers, eggs and tea. In France, it's very different.",
-        "In the morning, Paul, her flatmate, eats tartines: bread with butter and jam. He drinks a big coffee from a bowl. Sometimes he dips his tartine in the coffee! Children often drink a hot chocolate and eat cereal.",
+        "In the morning, Paul, her neighbour, eats tartines: bread with butter and jam. He drinks a big coffee from a bowl. Sometimes he dips his tartine in the coffee! Children often drink a hot chocolate and eat cereal.",
         "Croissants are more for the weekend. On Sunday mornings, Paul goes to the bakery and buys croissants and pains au chocolat.",
         "Today, Esin is making a Turkish breakfast for Paul. He tastes the menemen and says: « It's great! Shall we do it again tomorrow? »"
       ],
@@ -179,13 +179,13 @@
     "r-handball-france": {
       tr: [
         "Fransa'da hentbol çok popüler bir spordur. Birçok çocuk onu okulda, beden eğitimi (EPS) derslerinde keşfeder ve Fransa Hentbol Federasyonu'nun birkaç yüz bin lisanslı sporcusu vardır.",
-        "Bu başarının sebebi ne? Önce milli takımların sonuçları sayesinde. « Les Experts » (Uzmanlar) diye adlandırılan Fransa erkek milli takımı Olimpiyat Oyunlarını üç kez kazandı: 2008'de, 2012'de ve 2021'de Tokyo'da. Ayrıca altı kez dünya şampiyonu oldu. Kadın takımı da Tokyo'da olimpiyat şampiyonu oldu ve birkaç kez dünya ve Avrupa şampiyonu oldu.",
+        "Bu başarının sebebi ne? Önce milli takımların sonuçları sayesinde. « Les Experts » (Uzmanlar) diye adlandırılan Fransa erkek milli takımı Olimpiyat Oyunlarını üç kez kazandı: 2008'de, 2012'de ve 2021'de Tokyo'da. Ayrıca altı kez dünya şampiyonu oldu. Kadın takımı da Tokyo'da olimpiyat şampiyonu oldu; ayrıca üç kez dünya şampiyonu (2003, 2017, 2023) ve 2018'de Avrupa şampiyonu oldu.",
         "Erkekler birinci liginin adı Starligue'dir. Paris, Montpellier ya da Nantes gibi kulüpler Şampiyonlar Ligi'nde de oynuyor. Kadınlarda Metz ya da Brest gibi kulüpler Avrupa'da sık sık başrol oynadı.",
         "Yirmi iki yaşındaki Aïcha hentbola on yaşında Normandiya'da küçük bir kulüpte başladı. « Başta arkadaşlarım için geliyordum. Sonra ortama ve takım ruhuna bayıldım. » Bugün hâlâ oynuyor ve gelecek sezon 13 yaş altı takımını çalıştıracak."
       ],
       en: [
         "In France, handball is a very popular sport. Many children discover it at school, in PE (EPS) lessons, and the French Handball Federation has several hundred thousand registered players.",
-        "Why this success? First of all thanks to the results of the national teams. The French men's team, known as « les Experts » (the Experts), has won the Olympic Games three times: in 2008, in 2012 and in Tokyo in 2021. It has also been world champion six times. The women's team also became Olympic champion in Tokyo, and has been world and European champion several times.",
+        "Why this success? First of all thanks to the results of the national teams. The French men's team, known as « les Experts » (the Experts), has won the Olympic Games three times: in 2008, in 2012 and in Tokyo in 2021. It has also been world champion six times. The women's team also became Olympic champion in Tokyo, as well as world champion three times (2003, 2017, 2023) and European champion in 2018.",
         "The men's first-division championship is called the Starligue. Clubs such as Paris, Montpellier or Nantes also play in the Champions League. In the women's game, clubs such as Metz or Brest have often been among the top teams in Europe.",
         "Aïcha, twenty-two, started handball at the age of ten in a small club in Normandy. « At first, I came for my friends. Then I loved the atmosphere and the team spirit. » Today she still plays and next season she will coach the under-13s."
       ],

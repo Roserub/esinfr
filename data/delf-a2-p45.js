@@ -277,7 +277,7 @@
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour ! Je m'appelle Esin. Je suis turque et j'habite en France depuis un an." },
       { q: "De quelle ville êtes-vous ?", m: "Je suis d'Istanbul. C'est une ville très ancienne, entre l'Europe et l'Asie." },
-      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. Je travaillais avec des sportifs, surtout des joueurs de handball." },
+      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. En Turquie, je travaillais avec des sportifs, surtout des joueurs de handball. Ici, je travaille à l'accueil d'une salle de sport." },
       { q: "Qu'est-ce qu'il y a d'intéressant à visiter dans la ville où vous habitez maintenant ?", m: "Il y a une vieille ville avec de jolies maisons à colombages, une cathédrale et un grand parc au bord de la rivière." },
       { q: "Est-ce que vous aimez visiter les musées et les monuments ?", m: "Oui, j'aime beaucoup ça, surtout avec un guide. On apprend des histoires amusantes." },
       { q: "Est-ce que vous avez déjà visité un château en France ?", m: "Oui, l'été dernier, j'ai visité le château de Chambord. C'était immense ! Je suis montée sur les toits." },

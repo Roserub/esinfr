@@ -245,7 +245,7 @@
   { id: "a2-s21-pe1", level: "A2", sujet: 21, sec: "pe", ex: 1, pts: 13, kind: "text",
     title: "Raconter mon déménagement",
     consigne: "Vous avez déménagé le mois dernier. Vous écrivez un courriel à votre ami(e) français(e) Camille pour lui raconter votre déménagement : quand, avec qui, comment cela s'est passé. Vous décrivez aussi votre nouveau logement et vous donnez vos impressions. (60 mots minimum)",
-    help: { tr: "Geçen ay taşındınız. Fransız arkadaşınız Camille'e taşınmanızı anlatan bir e-posta yazın: ne zaman, kiminle, nasıl geçti. Yeni evinizi de anlatın ve izlenimlerinizi paylaşın. « tu » kullanın; olaylar için passé composé, tarif için imparfait. (En az 60 kelime)", en: "You moved house last month. Write an e-mail to your French friend Camille about the move: when, who with, how it went. Also describe your new home and give your impressions. (60 words minimum)" },
+    help: { tr: "Geçen ay taşındınız. Fransız arkadaşınız Camille'e taşınmanızı anlatan bir e-posta yazın: ne zaman, kiminle, nasıl geçti. Yeni evinizi de anlatın ve izlenimlerinizi paylaşın. « tu » kullanın; olaylar için passé composé, betimleme için imparfait. (En az 60 kelime)", en: "You moved house last month. Write an e-mail to your French friend Camille about the move: when, who with, how it went. Also describe your new home and give your impressions. (60 words minimum)" },
     min: 60,
     must: [
       { c: "Saluer Camille et signer", kw: ["salut", "chère", "chere", "cher", "bonjour", "coucou", "bises", "bisous", "à bientôt", "a bientot"] },

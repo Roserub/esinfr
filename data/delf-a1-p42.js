@@ -105,7 +105,7 @@
     title: "Nina décore sa chambre",
     consigne: "Vous recevez ce courriel de votre amie Nina. Lisez le message et répondez aux questions.",
     help: { tr: "Arkadaşınız Nina'dan bu e-postayı alıyorsunuz. Mesajı okuyun ve soruları cevaplayın.", en: "You receive this e-mail from your friend Nina. Read it and answer the questions." },
-    doc: { type: "email", from: "nina.rossi@mail.fr", subject: "Ma chambre en bleu !",
+    doc: { type: "email", from: "nina.rossi@exemple.fr", subject: "Ma chambre en bleu !",
       body: "Coucou !\n\nJe décore ma chambre ! Les murs sont blancs, mais je veux du bleu clair. Samedi, je vais peindre les murs. Tu viens m'aider ? On commence à 9 h. Mets de vieux vêtements !\n\nJ'ai aussi un nouveau bureau et une lampe jaune. Mon vieux lit va chez mon cousin Adrien.\n\nL'après-midi, on va au marché aux puces de la place Saint-Pierre : je cherche un petit miroir et des plantes.\n\nÀ midi, je fais des crêpes pour toi !\nBisous,\nNina" },
     questions: [
       { q: "Nina veut des murs…", o: ["⚪ blancs", "🔵 bleu clair", "🟡 jaunes"], a: 1,

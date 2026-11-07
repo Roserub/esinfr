@@ -245,7 +245,7 @@
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour, madame. Je m'appelle Esin." },
       { q: "Vous habitez où ?", m: "J'habite en France, à Lyon. Mais je viens d'Istanbul, en Turquie." },
-      { q: "Quelle est votre profession ?", m: "Je suis kinésithérapeute du sport." },
+      { q: "Quelle est votre profession ?", m: "Je suis kinésithérapeute du sport, mais en France, je travaille à l'accueil d'une salle de sport." },
       { q: "Vous aimez l'hiver ?", m: "Oui, j'aime l'hiver, mais je n'aime pas le froid !" },
       { q: "Il neige à Istanbul ?", m: "Oui, il neige un peu en janvier ou en février. C'est très joli." },
       { q: "Vous savez skier ?", m: "Non, je ne sais pas skier. Je voudrais apprendre !" },

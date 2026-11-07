@@ -54,7 +54,7 @@ A|Shampoing et coupe : 35 euros.|Yıkama ve kesim: 35 euro.|Wash and cut: 35 eur
 A|Bonjour madame, qu'est-ce que je vous sers ?|Merhaba hanımefendi, size ne vereyim?|Hello madam, what can I get you?
 B|Bonjour. Je ne connais pas bien les fromages français. Vous pouvez m'aider ?|Merhaba. Fransız peynirlerini pek bilmiyorum. Bana yardım edebilir misiniz?|Hello. I don't know French cheeses very well. Can you help me?
 A|Avec plaisir ! Vous aimez les fromages forts ou doux ?|Memnuniyetle! Sert lezzetli peynirleri mi, hafif olanları mı seversiniz?|With pleasure! Do you like strong or mild cheeses?
-B|Plutôt doux. En Turquie, on mange beaucoup de fromage salé, comme la feta.|Daha çok hafif. Türkiye'de çok tuzlu beyaz peynir yenir, feta gibi.|Mild, rather. In Turkey we eat a lot of salty white cheese, like feta.
+B|Plutôt doux. En Turquie, on mange beaucoup de fromage salé, comme la feta.|Daha çok hafif. Türkiye'de tuzlu peynir çok yenir, feta gibi.|Mild, rather. In Turkey we eat a lot of salty white cheese, like feta.
 A|Alors goûtez ce comté. Il a 12 mois, il est doux et un peu sucré.|O zaman bu comté'yi tadın. 12 aylık, hafif ve biraz tatlımsı.|Then try this Comté. It's 12 months old, mild and a little sweet.
 B|Mmm, il est très bon ! J'en prends un morceau.|Mmm, çok güzel! Bir parça alayım.|Mmm, it's very good! I'll take a piece.
 A|Un morceau de 200 grammes, ça va ?|200 gramlık bir parça olur mu?|A 200-gram piece, is that OK?
@@ -115,9 +115,9 @@ B|Bonsoir ! Je m'appelle Esin. Je vous ai envoyé un mail pour un cours d'essai.
 A|Ah oui, bienvenue ! Vous avez déjà joué au handball ?|Ah evet, hoş geldiniz! Daha önce hentbol oynadınız mı?|Oh yes, welcome! Have you played handball before?
 B|Oui, j'ai joué pendant dix ans en Turquie. J'étais ailière gauche.|Evet, Türkiye'de on yıl oynadım. Sol kanat oynuyordum.|Yes, I played for ten years in Turkey. I was a left winger.
 A|Super ! Et pourquoi vous avez arrêté ?|Süper! Peki neden bıraktınız?|Great! And why did you stop?
-B|Je n'ai pas vraiment arrêté, mais je suis arrivée en France il y a deux mois. Je ne connaissais personne ici.|Aslında bırakmadım ama iki ay önce Fransa'ya geldim. Burada kimseyi tanımıyordum.|I didn't really stop, but I arrived in France two months ago. I didn't know anyone here.
+B|Je n'ai pas vraiment arrêté, mais je suis arrivée en France il y a un an. Je ne connaissais personne ici.|Aslında bırakmadım ama bir yıl önce Fransa'ya geldim. Burada kimseyi tanımıyordum.|I didn't really stop, but I arrived in France a year ago. I didn't know anyone here.
 A|Je comprends. Ce soir, on va faire un échauffement, des exercices de passes et un petit match.|Anlıyorum. Bu akşam ısınma, pas çalışmaları ve küçük bir maç yapacağız.|I understand. Tonight we're going to do a warm-up, passing drills and a short match.
-B|Parfait. Je pourrais aussi aider pour l'échauffement, si vous voulez. Je suis kiné.|Mükemmel. İsterseniz ısınmaya da yardım edebilirim. Fizyoterapistim.|Perfect. I could also help with the warm-up, if you like. I'm a physio.
+B|Parfait. Je pourrais aussi aider pour l'échauffement, si vous voulez. J'étais kiné du sport en Turquie.|Mükemmel. İsterseniz ısınmaya da yardım edebilirim. Türkiye'de spor fizyoterapistiydim.|Perfect. I could also help with the warm-up, if you like. I was a sports physio in Turkey.
 A|Ah, ce serait génial ! Les filles se blessent souvent aux chevilles.|Ah, harika olur! Kızlar sık sık ayak bileklerini sakatlıyor.|Oh, that would be great! The girls often injure their ankles.
 B|Et après l'essai, comment ça se passe pour l'inscription ?|Denemeden sonra kayıt nasıl oluyor?|And after the trial, how does signing up work?
 A|Il faudra un certificat médical et la cotisation : 180 euros pour l'année.|Sağlık raporu ve aidat gerekecek: yıllık 180 euro.|You'll need a medical certificate and the membership fee: 180 euros for the year.

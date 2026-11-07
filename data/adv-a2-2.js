@@ -7,7 +7,7 @@
     goal: { fr: "Votre train est annulé : comprenez l'annonce, allez au guichet et trouvez une solution.", tr: "Treniniz iptal oldu: anonsu anlayın, gişeye gidin ve bir çözüm bulun.", en: "Your train is cancelled: understand the announcement, go to the counter and find a solution." },
     start: "a",
     nodes: {
-      a: { scene: { fr: "Vous êtes à la gare. Vous attendez le TGV de 14 h 12 pour Lyon. Une annonce commence.", tr: "Gardasınız. Lyon'a giden 14.12 hızlı trenini bekliyorsunuz. Bir anons başlıyor.", en: "You're at the station, waiting for the 14:12 TGV to Lyon. An announcement starts." },
+      a: { scene: { fr: "Vous êtes à la gare. Vous attendez le TGV de 14 h 12 pour Lyon, à côté d'une dame. Une annonce commence.", tr: "Gardasınız. Bir kadının yanında, Lyon'a giden 14.12 hızlı trenini bekliyorsunuz. Bir anons başlıyor.", en: "You're at the station, waiting for the 14:12 TGV to Lyon next to a woman. An announcement starts." },
            say: [["N", "Mesdames et messieurs, en raison d'un mouvement de grève, le TGV de 14 h 12 à destination de Lyon est supprimé. Merci de vous présenter au guichet."]],
            choices: [
              { fr: "Pardon madame, le train pour Lyon est en retard ou il est annulé ?", tr: "Affedersiniz hanımefendi, Lyon treni rötarlı mı, yoksa iptal mi oldu?", en: "Excuse me, madam, is the Lyon train late or cancelled?", ok: true, go: "b" },
@@ -144,7 +144,7 @@
            ] },
       f: { say: [["M", "Bon, rien de cassé. C'est une entorse légère. Vous savez ce qu'il faut faire, dans ce cas ?"]],
            choices: [
-             { fr: "Oui, je suis kinésithérapeute : de la glace, du repos et la jambe en hauteur.", tr: "Evet, ben fizyoterapistim: buz, dinlenme ve bacağı yukarıda tutmak.", en: "Yes, I'm a physiotherapist: ice, rest and keeping the leg up.", ok: true, go: "g1" },
+             { fr: "Oui, je suis kinésithérapeute de formation : de la glace, du repos et la jambe en hauteur.", tr: "Evet, eğitimim fizyoterapi: buz, dinlenme ve bacağı yukarıda tutmak.", en: "Yes, I'm a physiotherapist by training: ice, rest and keeping the leg up.", ok: true, go: "g1" },
              { fr: "Non, pas vraiment. Qu'est-ce que je dois faire ?", tr: "Hayır, pek değil. Ne yapmam gerekiyor?", en: "No, not really. What should I do?", ok: true, go: "g2" },
              { fr: "Oui, je connais ce qu'il faut faire.", tr: "Evet, ne yapmak gerektiğini biliyorum.", en: "Yes, I know what to do.", ok: false,
                fb: { fr: "Devant « ce que / ce qu'il faut », on utilise savoir : « je sais ce qu'il faut faire ». Connaître, c'est pour une personne ou un lieu.", tr: "« Ce que / ce qu'il faut » önünde savoir kullanılır: « je sais ce qu'il faut faire ». Connaître bir kişi ya da yer içindir.", en: "Before « ce que / ce qu'il faut », use savoir: « je sais ce qu'il faut faire ». Connaître is for a person or a place." } }
@@ -266,7 +266,7 @@
              { fr: "D'accord, j'oublierai ma pièce d'identité.", tr: "Tamam, kimliğimi unutacağım.", en: "OK, I'll forget my ID.", ok: false,
                fb: { fr: "Elle a dit « n'oubliez pas » = pensez à la prendre 😄. Dites « je viendrai avec mon passeport ».", tr: "« N'oubliez pas » dedi = getirmeyi unutmayın 😄. « Je viendrai avec mon passeport » deyin.", en: "She said « n'oubliez pas » = remember to bring it 😄. Say « je viendrai avec mon passeport »." } }
            ] },
-      i: { scene: { fr: "Le lendemain matin, vous arrivez à l'agence, place de la Gare.", tr: "Ertesi sabah Gar Meydanı'ndaki büroya varıyorsunuz.", en: "The next morning, you arrive at the office on Station Square." },
+      i: { scene: { fr: "Le lendemain matin, à 9 h, vous arrivez à l'agence, place de la Gare.", tr: "Ertesi sabah saat 9'da Gar Meydanı'ndaki büroya varıyorsunuz.", en: "The next morning at 9, you arrive at the office on Station Square." },
            say: [["M", "Bonjour madame, c'est pour quoi ?"]],
            choices: [
              { fr: "Bonjour, je viens chercher mon téléphone. J'ai appelé hier.", tr: "Merhaba, telefonumu almaya geldim. Dün aradım.", en: "Hello, I've come to collect my phone. I called yesterday.", ok: true, go: "j" },
@@ -305,9 +305,9 @@
            ] },
       b: { say: [["F", "Alors, présentez-vous en quelques mots."]],
            choices: [
-             { fr: "Je suis turque, j'habite en France depuis deux mois, et je suis kinésithérapeute.", tr: "Türküm, iki aydır Fransa'da yaşıyorum ve fizyoterapistim.", en: "I'm Turkish, I've been living in France for two months, and I'm a physiotherapist.", ok: true, go: "c" },
-             { fr: "Je suis turque et j'habite en France il y a deux mois.", tr: "Türküm ve iki ay önce Fransa'da yaşıyorum.", en: "I'm Turkish and I live in France two months ago.", ok: false,
-               fb: { fr: "Vous y habitez encore, donc ça continue : « depuis deux mois ». « Il y a » sert pour une action finie : « je suis arrivée il y a deux mois ».", tr: "Hâlâ orada yaşıyorsunuz, yani devam ediyor: « depuis deux mois ». « Il y a » bitmiş bir eylem içindir: « je suis arrivée il y a deux mois ».", en: "You still live there, so it's ongoing: « depuis deux mois ». « Il y a » is for a finished action: « je suis arrivée il y a deux mois »." } },
+             { fr: "Je suis turque, j'habite en France depuis un an, et je suis kinésithérapeute de formation.", tr: "Türküm, bir yıldır Fransa'da yaşıyorum ve eğitimim fizyoterapi.", en: "I'm Turkish, I've been living in France for a year, and I'm a physiotherapist by training.", ok: true, go: "c" },
+             { fr: "Je suis turque et j'habite en France il y a un an.", tr: "Türküm ve bir yıl önce Fransa'da yaşıyorum.", en: "I'm Turkish and I live in France a year ago.", ok: false,
+               fb: { fr: "Vous y habitez encore, donc ça continue : « depuis un an ». « Il y a » sert pour une action finie : « je suis arrivée il y a un an ».", tr: "Hâlâ orada yaşıyorsunuz, yani devam ediyor: « depuis un an ». « Il y a » bitmiş bir eylem içindir: « je suis arrivée il y a un an ».", en: "You still live there, so it's ongoing: « depuis un an ». « Il y a » is for a finished action: « je suis arrivée il y a un an »." } },
              { fr: "Je suis 30 ans et je suis turque.", tr: "30 yaşındayım ve Türküm.", en: "I am 30 and I'm Turkish.", ok: false,
                fb: { fr: "Le grand classique 😊 : l'âge, on l'a ! « J'ai 30 ans ». Et ajoutez votre métier, c'est votre atout.", tr: "Klasik tuzak 😊: yaş avoir ile söylenir! « J'ai 30 ans ». Mesleğinizi de ekleyin, o sizin kozunuz.", en: "The great classic 😊: you « have » your age! « J'ai 30 ans ». And mention your job, it's your strength." } }
            ] },
@@ -360,7 +360,7 @@
            ] },
       h: { say: [["F", "Une question importante : vous avez le BAFA ? C'est le diplôme des animateurs, en France."]],
            choices: [
-             { fr: "Non, pas encore. Mais je connais bien les premiers secours, grâce à mon métier.", tr: "Hayır, henüz değil. Ama mesleğim sayesinde ilk yardımı iyi biliyorum.", en: "No, not yet. But I know first aid well, thanks to my job.", ok: true, go: "i" },
+             { fr: "Non, pas encore. Mais je connais bien les premiers secours, grâce à ma formation de kiné.", tr: "Hayır, henüz değil. Ama fizyoterapi eğitimim sayesinde ilk yardımı iyi biliyorum.", en: "No, not yet. But I know first aid well, thanks to my physio training.", ok: true, go: "i" },
              { fr: "Oui, oui, bien sûr, je l'ai !", tr: "Evet evet, tabii ki var!", en: "Yes, yes, of course I have it!", ok: false,
                fb: { fr: "Vous ne saviez pas ce que c'était il y a 10 secondes 😄 ! Mieux vaut être honnête et parler de vos atouts.", tr: "10 saniye önce ne olduğunu bilmiyordunuz 😄! Dürüst olup güçlü yönlerinizden bahsetmek daha iyi.", en: "You didn't know what it was 10 seconds ago 😄! Better to be honest and mention your strengths." } },
              { fr: "Non, mais je sais bien les premiers secours.", tr: "Hayır, ama ilk yardımı iyi biliyorum.", en: "No, but I know first aid well.", ok: false,
@@ -442,7 +442,7 @@
            ] },
       f: { say: [["F2", "Super idée ! Mais c'est cher… environ 300 euros."]],
            choices: [
-             { fr: "On pourrait demander 15 euros à chaque invité. À 20, ça fait 300 !", tr: "Her davetliden 15 euro isteyebiliriz. 20 kişiyle 300 eder!", en: "We could ask each guest for 15 euros. With 20 people, that's 300!", ok: true, go: "g" },
+             { fr: "On pourrait demander 15 euros à chaque invité. Si on est 20, ça fait 300 !", tr: "Her davetliden 15 euro isteyebiliriz. 20 kişi olursak 300 eder!", en: "We could ask each guest for 15 euros. If there are 20 of us, that's 300!", ok: true, go: "g" },
              { fr: "Pas de problème, je paie tout ! Je suis millionnaire.", tr: "Sorun değil, hepsini ben öderim! Milyonerim.", en: "No problem, I'll pay for everything! I'm a millionaire.", ok: false,
                fb: { fr: "Inès : « Depuis quand ? » 😄 Proposez plutôt que chaque invité participe un peu.", tr: "Inès: « Ne zamandan beri? » 😄 Her davetlinin biraz katkı yapmasını önerin.", en: "Inès: « Since when? » 😄 Suggest that each guest chips in a little." } },
              { fr: "C'est cher ? Alors on lui offre une photo de l'appareil.", tr: "Pahalı mı? O zaman ona makinenin bir fotoğrafını verelim.", en: "Expensive? Then let's give him a photo of the camera.", ok: false,

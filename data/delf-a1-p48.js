@@ -170,7 +170,7 @@
       { q: "Il faut réserver avant le…", o: ["31 décembre", "25 décembre", "27 décembre"], a: 2,
         x: "« Réservation obligatoire avant le 27 décembre ».",
         xtr: "« Réservation obligatoire » = rezervasyon zorunlu, 27 Aralık'tan önce. 31 Aralık yemeğin günü." },
-      { q: "Votre fille a 8 ans. Son menu coûte…", o: ["25 €", "65 €", "12 €"], a: 0,
+      { q: "Votre nièce a 8 ans. Son menu coûte…", o: ["25 €", "65 €", "12 €"], a: 0,
         x: "« Menu enfant (moins de 12 ans) : 25 € ».",
         xtr: "8 yaşındaki çocuk 12 yaşından küçük, yani çocuk menüsü: 25 €. 12 fiyat değil, yaş sınırı." },
       { q: "Ce soir-là, on peut danser jusqu'à…", o: ["minuit", "2 h du matin", "20 h"], a: 1,

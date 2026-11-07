@@ -165,7 +165,7 @@ la pente|yokuş, eğim|slope`, [
     ]),
 
     R("r-premier-hiver", "A2", "Mon premier hiver en France", "Fransa'daki ilk kışım", "My first winter in France", `
-Avant d'arriver en France, je pensais que l'hiver serait facile. À Izmir, où j'ai grandi, l'hiver est doux. Mais à Lille, c'était très différent !
+Avant d'arriver en France, je pensais que l'hiver serait facile. À Istanbul, où j'ai grandi, l'hiver est plus doux. Mais à Lille, c'était très différent !
 
 En novembre, il a plu presque tous les jours. Le ciel était gris et, en décembre, il faisait nuit vers dix-sept heures. Au début, j'étais un peu triste et toujours fatiguée. Une collègue m'a conseillé de marcher à midi, à la lumière du jour, et de faire du sport. J'ai recommencé à courir deux fois par semaine, et ça m'a beaucoup aidée.
 
@@ -180,7 +180,7 @@ le vin chaud|sıcak şarap|mulled wine
 la galette des rois|Krallar pastası (Ocak)|kings' cake
 la fève|pastanın içindeki küçük figür|charm hidden in the cake
 le manteau|palto, mont|coat`, [
-      Q("Où Esin a-t-elle grandi ?", ["À Istanbul", "À Izmir", "À Ankara"], 1),
+      Q("Où Esin a-t-elle grandi ?", ["À Istanbul", "À Izmir", "À Ankara"], 0),
       Q("En décembre, à Lille, il faisait nuit vers…", ["17 h", "15 h", "20 h"], 0),
       Q("Qu'est-ce qui l'a aidée quand elle était triste ?", ["Dormir beaucoup", "Regarder la télévision", "Marcher à midi et courir"], 2),
       Q("Qu'est-ce qu'elle a trouvé dans la galette des rois ?", ["Une pièce", "La fève", "Une bague"], 1),

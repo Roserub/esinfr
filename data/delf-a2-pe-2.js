@@ -3,7 +3,7 @@
   { id: "a2-s11-pe1", level: "A2", sujet: 11, sec: "pe", ex: 1, pts: 13, kind: "text",
     title: "Une journée au parc d'attractions",
     consigne: "Dimanche dernier, vous avez passé une journée dans un parc d'attractions. Vous écrivez un e-mail à un ami pour raconter cette journée : avec qui vous êtes allé(e), les attractions, le repas et vos impressions. (60 mots minimum)",
-    help: { tr: "Geçen pazar bir eğlence parkında bir gün geçirdiniz. Bir arkadaşınıza bu günü anlatan bir e-posta yazın: kiminle gittiniz, oyuncaklar/etkinlikler, yemek ve izlenimleriniz. (En az 60 kelime)", en: "Last Sunday you spent a day at a theme park. Write an e-mail to a friend about the day: who you went with, the rides, the meal and your impressions. (60 words minimum)" },
+    help: { tr: "Geçen pazar bir eğlence parkında bir gün geçirdiniz. Bir arkadaşınıza bu günü anlatan bir e-posta yazın: kiminle gittiniz, hangi oyuncaklara bindiniz, yemek ve izlenimleriniz. (En az 60 kelime)", en: "Last Sunday you spent a day at a theme park. Write an e-mail to a friend about the day: who you went with, the rides, the meal and your impressions. (60 words minimum)" },
     min: 60,
     must: [
       { c: "Dire avec qui et comment vous êtes allé(e)", kw: ["avec", "mon mari", "nos amis", "en voiture", "en train", "je suis allée", "je suis allé", "nous sommes partis", "nous sommes allés"] },
@@ -15,7 +15,7 @@
   { id: "a2-s11-pe2", level: "A2", sujet: 11, sec: "pe", ex: 2, pts: 12, kind: "text",
     title: "Répondre à une crémaillère",
     consigne: "Votre collègue Léa vous écrit : « Ça y est, j'ai enfin mon nouvel appartement ! Je fais une petite fête pour la crémaillère samedi 14, à partir de 19 h. Tu viens ? » Vous lui répondez : vous acceptez l'invitation, vous la félicitez, vous proposez d'apporter quelque chose et vous posez une question pratique. (60 mots minimum)",
-    help: { tr: "İş arkadaşınız Léa size yazıyor: « Sonunda yeni dairemi aldım! 14'ü cumartesi saat 19'dan itibaren ev için küçük bir parti (ev hayırlısı) yapıyorum. Geliyor musun? » Ona cevap verin: daveti kabul edin, onu tebrik edin, bir şey getirmeyi önerin ve pratik bir soru sorun. (En az 60 kelime)", en: "Your colleague Léa writes: « That's it, I finally have my new flat! I'm having a small housewarming party on Saturday 14th from 7 pm. Are you coming? » Reply: accept the invitation, congratulate her, offer to bring something and ask a practical question. (60 words minimum)" },
+    help: { tr: "İş arkadaşınız Léa size yazıyor: « Sonunda yeni dairemi aldım! 14'ü cumartesi saat 19'dan itibaren küçük bir yeni ev partisi yapıyorum. Geliyor musun? » Ona cevap verin: daveti kabul edin, onu tebrik edin, bir şey getirmeyi önerin ve pratik bir soru sorun. (En az 60 kelime)", en: "Your colleague Léa writes: « That's it, I finally have my new flat! I'm having a small housewarming party on Saturday 14th from 7 pm. Are you coming? » Reply: accept the invitation, congratulate her, offer to bring something and ask a practical question. (60 words minimum)" },
     min: 60,
     must: [
       { c: "Accepter l'invitation", kw: ["je viendrai", "je viens", "avec plaisir", "bien sûr", "j'accepte", "oui"] },
@@ -73,7 +73,7 @@
       { c: "Promettre de faire attention", kw: ["la prochaine fois", "je ferai attention", "nous ferons attention", "je vous préviendrai", "prévenir", "promets", "arrêterons", "plus jamais"] },
       { c: "Utiliser des formules de politesse", kw: ["monsieur", "bonsoir", "bonjour", "cordialement", "bonne soirée"] }
     ],
-    model: "Bonsoir Monsieur Garnier,\nJe suis vraiment désolée pour samedi soir. C'était l'anniversaire de mon mari et nous avions des amis à la maison. Nous avons écouté de la musique et nous n'avons pas regardé l'heure. Je vous prie d'excuser ce bruit, surtout pour vos enfants. La prochaine fois, je vous préviendrai avant et nous arrêterons la musique à 23 heures. Je vais aussi apporter un petit gâteau à vos enfants.\nCordialement,\nEsin Yilmaz" },
+    model: "Bonsoir Monsieur Garnier,\nJe suis vraiment désolée pour samedi soir. C'était l'anniversaire de mon mari et nous avions des amis à la maison. Nous avons écouté de la musique et nous n'avons pas regardé l'heure. Je vous prie d'excuser ce bruit, surtout pour vos enfants. La prochaine fois, je vous préviendrai avant et nous arrêterons la musique à 23 heures. Je vais aussi apporter un petit gâteau à vos enfants.\nCordialement,\nEsin Yılmaz" },
 
   { id: "a2-s14-pe1", level: "A2", sujet: 14, sec: "pe", ex: 1, pts: 13, kind: "text",
     title: "Mon premier match de rugby",
@@ -197,7 +197,7 @@
       { c: "Expliquer le problème", kw: ["cassées", "cassé", "abîmé", "malheureusement", "problème"] },
       { c: "Demander une solution", kw: ["pourriez-vous", "je voudrais", "remboursée", "remboursé", "remboursement", "échanger", "échange", "nouvelles assiettes"] }
     ],
-    model: "Madame, Monsieur,\nLe 28 février, j'ai commandé sur votre site six assiettes bleues (commande numéro 45812). J'ai bien reçu le colis le 3 mars, mais malheureusement, deux assiettes étaient cassées. Le carton était aussi abîmé. Je vous envoie des photos avec ce message. Pourriez-vous m'envoyer deux nouvelles assiettes ? Si ce n'est pas possible, je voudrais être remboursée. Je vous remercie par avance.\nCordialement,\nEsin Yilmaz" },
+    model: "Madame, Monsieur,\nLe 28 février, j'ai commandé sur votre site six assiettes bleues (commande numéro 45812). J'ai bien reçu le colis le 3 mars, mais malheureusement, deux assiettes étaient cassées. Le carton était aussi abîmé. Je vous envoie des photos avec ce message. Pourriez-vous m'envoyer deux nouvelles assiettes ? Si ce n'est pas possible, je voudrais être remboursée. Je vous remercie par avance.\nCordialement,\nEsin Yılmaz" },
 
   { id: "a2-s19-pe1", level: "A2", sujet: 19, sec: "pe", ex: 1, pts: 13, kind: "text",
     title: "La visite d'un château",
@@ -222,7 +222,7 @@
       { c: "Proposer un jour et un lieu", kw: ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche", "café", "médiathèque", "on pourrait"] },
       { c: "Terminer le message poliment", kw: ["à bientôt", "bonne journée", "cordialement", "votre réponse", "bises", "merci"] }
     ],
-    model: "Bonjour Hugo,\nJe m'appelle Esin, j'ai 30 ans et je suis turque. J'habite en France depuis un an et je suis kinésithérapeute. Votre annonce m'intéresse beaucoup : je voudrais pratiquer le français à l'oral, parce que je parle encore lentement. Et moi, je peux vous aider en turc avec plaisir ! Est-ce que vous êtes libre le mercredi soir ? On pourrait se retrouver au café de la gare vers 18 h 30.\nÀ bientôt,\nEsin" },
+    model: "Bonjour Hugo,\nJe m'appelle Esin, j'ai 30 ans et je suis turque. J'habite en France depuis un an et je suis kinésithérapeute de formation. Votre annonce m'intéresse beaucoup : je voudrais pratiquer le français à l'oral, parce que je parle encore lentement. Et moi, je peux vous aider en turc avec plaisir ! Est-ce que vous êtes libre le mercredi soir ? On pourrait se retrouver au café de la gare vers 18 h 30.\nÀ bientôt,\nEsin" },
 
   { id: "a2-s20-pe1", level: "A2", sujet: 20, sec: "pe", ex: 1, pts: 13, kind: "text",
     title: "La visite de mes parents",

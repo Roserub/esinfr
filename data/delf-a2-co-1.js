@@ -79,13 +79,13 @@
     help: { tr: "Havalimanında bir anons ve telesekreterinizde bir mesaj dinleyeceksiniz. Soruları okuyun, kayıtları dinleyin ve cevaplayın.", en: "You will hear an announcement at the airport and a message on your answering machine. Read the questions, listen, then answer." },
     audio: [
       ["N", "Document 1. Les passagers du vol AF 1530 à destination d'Istanbul sont priés de se présenter à la porte 24, et non à la porte 18 comme indiqué sur leur carte d'embarquement. L'embarquement commencera à 14 h 10. Nous rappelons que chaque passager peut prendre un seul bagage en cabine."],
-      ["F", "Document 2. Bonjour, ici la pharmacie des Tilleuls. Ce message est pour madame Yilmaz. Les médicaments que vous avez commandés mardi sont arrivés. Vous pouvez venir les chercher à partir de demain matin, 9 h. N'oubliez pas votre ordonnance et votre carte Vitale. Nous sommes ouverts jusqu'à 19 h 30. Bonne journée !"]
+      ["F", "Document 2. Bonjour, ici la pharmacie des Tilleuls. Ce message est pour madame Yılmaz. Les médicaments que vous avez commandés mardi sont arrivés. Vous pouvez venir les chercher à partir de demain matin, 9 h. N'oubliez pas votre ordonnance et votre carte Vitale. Nous sommes ouverts jusqu'à 19 h 30. Bonne journée !"]
     ],
     questions: [
       { q: "Les passagers pour Istanbul doivent aller…", o: ["à la porte 18.", "à la porte 24.", "à la porte 14."], a: 1, x: "« Les passagers… sont priés de se présenter à la porte 24, et non à la porte 18. »" },
       { q: "L'embarquement commence à…", o: ["14 h 10.", "15 h 30.", "18 h."], a: 0, x: "« L'embarquement commencera à 14 h 10. »" },
       { q: "Dans l'avion, chaque passager peut prendre…", o: ["deux bagages en cabine.", "aucun bagage en cabine.", "un seul bagage en cabine."], a: 2, x: "« Chaque passager peut prendre un seul bagage en cabine. »" },
-      { q: "Madame Yilmaz peut aller chercher ses médicaments…", o: ["aujourd'hui.", "demain matin.", "mardi."], a: 1, x: "« Vous pouvez venir les chercher à partir de demain matin, 9 h. » Mardi, c'est le jour de la commande." },
+      { q: "Madame Yılmaz peut aller chercher ses médicaments…", o: ["aujourd'hui.", "demain matin.", "mardi."], a: 1, x: "« Vous pouvez venir les chercher à partir de demain matin, 9 h. » Mardi, c'est le jour de la commande." },
       { q: "Qu'est-ce qu'elle doit apporter ?", o: ["📄 ordonnance et carte Vitale", "💳 sa carte bancaire", "🪪 son passeport"], a: 0, x: "« N'oubliez pas votre ordonnance et votre carte Vitale. »" },
       { q: "La pharmacie ferme à…", o: ["19 h.", "19 h 30.", "20 h."], a: 1, x: "« Nous sommes ouverts jusqu'à 19 h 30. »" }
     ] },

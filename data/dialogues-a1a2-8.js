@@ -58,8 +58,8 @@ B|Ha ha ! Envoie-moi des photos. Et rapporte-moi des simit d'Istanbul !|Ha ha! B
     D("d-demande-conge", "A2", "Demander un congé à sa responsable", "Müdiresinden izin istemek", "Asking your manager for time off", { A: "Sophie", B: "Esin" }, "B", `
 B|Sophie, tu as cinq minutes ? Je voudrais te parler de mes congés.|Sophie, beş dakikan var mı? İzinlerim hakkında seninle konuşmak istiyorum.|Sophie, do you have five minutes? I'd like to talk to you about my time off.
 A|Bien sûr, Esin. Assieds-toi. Je t'écoute.|Tabii Esin. Otur. Seni dinliyorum.|Of course, Esin. Sit down. I'm listening.
-B|J'aimerais rentrer en Turquie pour voir ma famille. Est-ce que je pourrais prendre deux semaines en avril ?|Ailemi görmek için Türkiye'ye gitmek istiyorum. Nisan'da iki hafta izin alabilir miyim?|I'd like to go back to Turkey to see my family. Could I take two weeks in April?
-A|En avril… Quelles dates exactement ?|Nisan'da… Tam olarak hangi tarihler?|In April… Which dates exactly?
+B|J'aimerais rentrer en Turquie pour voir ma famille. Est-ce que je pourrais prendre deux semaines en avril ?|Ailemi görmek için Türkiye'ye gitmek istiyorum. Nisanda iki hafta izin alabilir miyim?|I'd like to go back to Turkey to see my family. Could I take two weeks in April?
+A|En avril… Quelles dates exactement ?|Nisanda… Tam olarak hangi tarihler?|In April… Which dates exactly?
 B|Du 6 au 19 avril, si c'est possible.|Mümkünse 6-19 Nisan arası.|From the 6th to the 19th of April, if possible.
 A|Hmm, il y a déjà Karim en congé la première semaine. Je ne peux pas laisser l'accueil avec une seule personne.|Hmm, ilk hafta Karim zaten izinde. Resepsiyonu tek kişiyle bırakamam.|Hmm, Karim is already off the first week. I can't leave the front desk with only one person.
 B|Je comprends. Et si je partais une semaine plus tard, du 13 au 26 avril ?|Anlıyorum. Peki bir hafta sonra, 13-26 Nisan arası gitsem?|I understand. And what if I left a week later, from the 13th to the 26th of April?
@@ -93,7 +93,7 @@ B|Merci beaucoup pour votre temps. Au revoir, monsieur.|Zaman ayırdığınız i
     D("d-plainte-resto", "A2", "Se plaindre poliment au restaurant", "Restoranda kibarca şikâyet etmek", "Complaining politely at a restaurant", { A: "Serveur", B: "Esin" }, "B", `
 A|Tout se passe bien, madame ?|Her şey yolunda mı hanımefendi?|Is everything all right, madam?
 B|Excusez-moi, il y a un petit problème. J'avais commandé le poisson, mais on m'a apporté le poulet.|Affedersiniz, küçük bir sorun var. Balık sipariş etmiştim ama bana tavuk getirildi.|Excuse me, there's a small problem. I had ordered the fish, but I was brought the chicken.
-A|Oh, je suis vraiment désolé ! Je vérifie… Oui, vous avez raison. C'est une erreur de la cuisine.|Ah, gerçekten çok özür dilerim! Kontrol ediyorum… Evet, haklısınız. Mutfağın hatası.|Oh, I'm really sorry! Let me check… Yes, you're right. It's a mistake from the kitchen.
+A|Oh, je suis vraiment désolé ! Je vérifie… Oui, vous avez raison. C'est une erreur de la cuisine.|Ah, gerçekten çok özür dilerim! Kontrol ediyorum… Evet, haklısınız. Mutfağın hatası.|Oh, I'm really sorry! Let me check… Yes, you're right. The kitchen made a mistake.
 B|Ce n'est pas grave, mais je préférerais vraiment le poisson.|Önemli değil ama gerçekten balığı tercih ederim.|It's not a big deal, but I'd really prefer the fish.
 A|Bien sûr. Je demande tout de suite à la cuisine de le préparer. Il faut compter dix minutes.|Tabii. Hemen mutfağa hazırlatıyorum. On dakika kadar sürer.|Of course. I'll ask the kitchen to make it right away. It'll take about ten minutes.
 B|D'accord, merci. Et mon amie a un autre souci : ses frites sont froides.|Tamam, teşekkürler. Arkadaşımın da başka bir sorunu var: patates kızartması soğuk.|OK, thank you. And my friend has another problem: her chips are cold.
@@ -143,7 +143,7 @@ A|C'est noté. Vous recevrez le lien aujourd'hui. Bonne chance pour le test !|No
 
     D("d-semi-marathon", "A2", "S'inscrire à un semi-marathon", "Yarı maratona kaydolmak", "Signing up for a half marathon", { A: "Organisatrice", B: "Esin" }, "B", `
 A|Association Courir Ensemble, bonjour !|Courir Ensemble Derneği, merhaba!|Courir Ensemble running association, hello!
-B|Bonjour. J'ai vu l'affiche du semi-marathon de mars. Je voudrais avoir quelques informations, s'il vous plaît.|Merhaba. Mart'taki yarı maratonun afişini gördüm. Biraz bilgi almak istiyorum lütfen.|Hello. I saw the poster for the half marathon in March. I'd like some information, please.
+B|Bonjour. J'ai vu l'affiche du semi-marathon de mars. Je voudrais avoir quelques informations, s'il vous plaît.|Merhaba. Marttaki yarı maratonun afişini gördüm. Biraz bilgi almak istiyorum lütfen.|Hello. I saw the poster for the half marathon in March. I'd like some information, please.
 A|Bien sûr. C'est 21 kilomètres. Vous avez déjà couru cette distance ?|Tabii. 21 kilometre. Bu mesafeyi daha önce koştunuz mu?|Of course. It's 21 kilometres. Have you run that distance before?
 B|Non, jamais. Je cours le samedi matin, environ dix kilomètres. Vous pensez que c'est possible ?|Hayır, hiç. Cumartesi sabahları koşuyorum, yaklaşık on kilometre. Sizce mümkün mü?|No, never. I run on Saturday mornings, about ten kilometres. Do you think it's possible?
 A|Oui, vous avez quatre mois pour vous préparer. Il faudra courir trois fois par semaine et augmenter petit à petit.|Evet, hazırlanmak için dört ayınız var. Haftada üç kez koşup yavaş yavaş artırmanız gerekecek.|Yes, you have four months to prepare. You'll need to run three times a week and build up little by little.

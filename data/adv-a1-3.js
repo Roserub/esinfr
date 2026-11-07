@@ -136,7 +136,7 @@
              { fr: "Merci ! Je mets de l'essence où ?", tr: "Teşekkürler! Benzini nereye koyuyorum?", en: "Thanks! Where do I put the petrol?", ok: false,
                fb: { fr: "Pas d'essence, c'est électrique ⚡😄 ! Vous pouvez demander : « le 3, c'est le plus fort ? »", tr: "Benzin yok, elektrikli ⚡😄! Şunu sorabilirsiniz: « le 3, c'est le plus fort ? »", en: "No petrol, it's electric ⚡😄! You could ask: « le 3, c'est le plus fort ? »" } },
              { fr: "Merci ! La batterie est vide ?", tr: "Teşekkürler! Batarya boş mu?", en: "Thanks! Is the battery empty?", ok: false,
-               fb: { fr: "Il a dit « pleine » : c'est le contraire de « vide » 🔋. Pas de problème, vous pouvez partir !", tr: "« Pleine » (dolu) dedi: « vide »nin (boş) tersi 🔋. Sorun yok, yola çıkabilirsiniz!", en: "He said « pleine » (full): the opposite of « vide » (empty) 🔋. No problem, you can go!" } }
+               fb: { fr: "Il a dit « pleine » : c'est le contraire de « vide » 🔋. Demandez plutôt : « le 3, c'est le plus fort ? »", tr: "« Pleine » (dolu) dedi: « vide »nin (boş) tersi 🔋. Bunun yerine sorun: « le 3, c'est le plus fort ? »", en: "He said « pleine » (full): the opposite of « vide » (empty) 🔋. Ask instead: « le 3, c'est le plus fort ? »" } }
            ] },
       d2: { say: [["M", "Très bien. Vous voulez un vélo avec un panier ?"]],
            choices: [

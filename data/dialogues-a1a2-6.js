@@ -29,7 +29,7 @@ A|Bonjour, madame Yılmaz. Alors, parlez-moi un peu de votre parcours.|Merhaba Y
 B|Bonjour. J'ai fait des études de kinésithérapie en Turquie, à Istanbul.|Merhaba. Türkiye'de, İstanbul'da fizyoterapi okudum.|Hello. I studied physiotherapy in Turkey, in Istanbul.
 A|Très bien. Et vous avez travaillé comme kiné ?|Çok iyi. Fizyoterapist olarak çalıştınız mı?|Very good. And did you work as a physio?
 B|Oui, j'ai travaillé avec une équipe de handball. Je soignais les blessures des joueuses et des joueurs.|Evet, bir hentbol takımıyla çalıştım. Oyuncuların sakatlıklarını tedavi ediyordum.|Yes, I worked with a handball team. I treated the players' injuries.
-A|C'est une belle expérience ! Et depuis votre arrivée en France ?|Çok güzel bir deneyim! Peki Fransa'ya geldiğinizden beri?|That's great experience! And since you arrived in France?
+A|C'est une belle expérience ! Et depuis votre arrivée en France ?|Çok güzel bir deneyim! Peki Fransa'ya geldiğinizden beri?|That's a great experience! And since you arrived in France?
 B|Je suis arrivée il y a un an. Maintenant, je travaille à l'accueil d'une salle de sport.|Bir yıl önce geldim. Şu an bir spor salonunun resepsiyonunda çalışıyorum.|I arrived a year ago. Now I work at the front desk of a gym.
 A|Votre diplôme de kiné est reconnu en France ?|Fizyoterapi diplomanız Fransa'da tanınıyor mu?|Is your physio diploma recognised in France?
 B|Non, pas encore. Pour l'instant, je ne peux pas travailler comme kiné ici.|Hayır, henüz değil. Şimdilik burada fizyoterapist olarak çalışamıyorum.|No, not yet. For now, I can't work as a physio here.
@@ -138,7 +138,7 @@ B|D'accord. Je dois être honnête : j'étais kiné en Turquie, mais ici, je ne 
 A|Ah bon ? Mais vous pouvez me donner un conseil ?|Öyle mi? Ama bir tavsiye verebilir misiniz?|Oh really? But can you give me some advice?
 B|Un conseil simple, oui : aujourd'hui, ne faites pas d'exercices pour les jambes.|Basit bir tavsiye, evet: bugün bacak egzersizi yapmayın.|Some simple advice, yes: today, don't do any leg exercises.
 A|Même pas un peu de vélo ?|Biraz bisiklet bile mi?|Not even a bit of cycling?
-B|Non, il vaut mieux vous reposer. Si votre genou est encore gonflé demain, allez voir un médecin.|Hayır, dinlenmeniz daha iyi olur. Diziniz yarın hâlâ şişse bir doktora gidin.|No, it's better to rest. If your knee is still swollen tomorrow, go and see a doctor.
+B|Non, il vaut mieux vous reposer. Si votre genou est encore gonflé demain, allez voir un médecin.|Hayır, dinlenmeniz daha iyi olur. Diziniz yarın hâlâ şişkinse bir doktora gidin.|No, it's better to rest. If your knee is still swollen tomorrow, go and see a doctor.
 A|Un médecin ? C'est grave, vous pensez ?|Doktor mu? Ciddi mi sizce?|A doctor? Do you think it's serious?
 B|Je ne sais pas, et c'est pour ça qu'il faut un examen. Le médecin pourra vous envoyer chez un kiné si c'est nécessaire.|Bilmiyorum, işte bu yüzden muayene gerekiyor. Gerekirse doktor sizi bir fizyoterapiste yönlendirebilir.|I don't know, and that's why you need an examination. The doctor can send you to a physio if necessary.
 A|D'accord. Je ne voulais pas exagérer, mais vous avez raison.|Tamam. Abartmak istemiyordum ama haklısınız.|OK. I didn't want to make a fuss, but you're right.

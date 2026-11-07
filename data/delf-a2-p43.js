@@ -276,7 +276,7 @@
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ? Vous pouvez épeler votre prénom ?", m: "Bonjour ! Je m'appelle Esin. Esin : E – S – I – N." },
       { q: "D'où venez-vous ?", m: "Je viens de Turquie, d'Istanbul. C'est une très grande ville, avec beaucoup de circulation !" },
-      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. En Turquie, je travaillais avec des sportifs, surtout des joueurs de handball." },
+      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. En Turquie, je travaillais avec des sportifs, surtout des joueurs de handball. En France, je travaille à l'accueil d'une salle de sport." },
       { q: "Comment est-ce que vous venez au cours de français ?", m: "Je viens en tram. C'est rapide et il y a un arrêt près de chez moi. Le trajet dure vingt minutes." },
       { q: "Est-ce que vous avez une voiture ? Pourquoi ?", m: "Non, je n'ai pas de voiture en France. En ville, ce n'est pas utile, et le parking coûte cher." },
       { q: "Est-ce que vous faites du vélo ?", m: "Oui, j'aime bien faire du vélo le week-end, au bord de la rivière. C'est bon pour la santé !" },

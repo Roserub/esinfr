@@ -140,7 +140,7 @@
       { q: "À l'accueil, on vous donne…", o: ["🩱 un maillot de bain", "📱 un casier pour le téléphone", "💧 une bouteille d'eau"], a: 2,
         x: "« une bouteille d'eau est offerte à l'accueil ».",
         xtr: "« Offerte » = ikram ediliyor, bedava. Mayo zorunlu ama onu siz getiriyorsunuz; dolaplar (« casiers ») telefonlar için, afişte resepsiyonda verildiği yazmıyor." },
-      { q: "Vrai ou faux ? Votre fils a 8 ans. Il peut entrer au hammam.", o: ["Vrai", "Faux"], a: 1,
+      { q: "Vrai ou faux ? Votre neveu a 8 ans. Il peut entrer au hammam.", o: ["Vrai", "Faux"], a: 1,
         x: "Faux : « Interdit aux enfants de moins de 12 ans. »",
         xtr: "Yanlış: 12 yaşından küçük çocuklara yasak (« interdit aux enfants de moins de 12 ans »). 8 yaşındaki çocuk giremez." }
     ] },
@@ -186,7 +186,7 @@
       { q: "Combien d'employés travaillent chez Pixelo ?", o: ["3", "20", "40"], a: 2,
         x: "« une salle de sieste pour ses 40 employés ». 3, ce sont les fauteuils ; 20, ce sont les minutes.",
         xtr: "Pixelo'da 40 çalışan var. 3 koltuk sayısı, 20 ise uyku süresi (dakika)." },
-      { q: "Dans la salle, il y a…", o: ["🛏️ des grands lits", "🛋️ des fauteuils", "📺 une télévision"], a: 1,
+      { q: "Dans la salle, il y a…", o: ["🛏️ de grands lits", "🛋️ des fauteuils", "📺 une télévision"], a: 1,
         x: "« il y a 3 fauteuils, des couvertures et de la musique douce ».",
         xtr: "« Des fauteuils et des couvertures » = koltuklar ve battaniyeler. Yatak ve televizyon yok; yumuşak müzik var." },
       { q: "Les employés peuvent dormir…", o: ["20 minutes", "1 heure", "2 heures"], a: 0,
@@ -240,7 +240,7 @@
     help: { tr: "Sınav görevlisini selamlayın. Size kendiniz, sağlığınız ve dinlenme anlarınız hakkında sorular sorar. Tam cümleyle cevap verin; anlamazsanız: « Pardon, vous pouvez répéter, s'il vous plaît ? »", en: "Guided interview (about 1 minute, no preparation). Greet the examiner and answer questions about yourself, your health and how you relax." },
     prompts: [
       { q: "Bonjour ! Comment vous appelez-vous ?", m: "Bonjour, madame. Je m'appelle Esin." },
-      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. Je fais des massages et j'aide les sportifs." },
+      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je travaille à l'accueil d'une salle de sport. En Turquie, j'ai travaillé comme kinésithérapeute avec des sportifs." },
       { q: "Vous dormez combien d'heures par nuit ?", m: "Je dors sept heures par nuit. Je me couche à 23 heures." },
       { q: "Est-ce que vous faites la sieste ?", m: "Le week-end, oui ! Je fais une petite sieste après le déjeuner." },
       { q: "Qu'est-ce que vous faites quand vous êtes stressée ?", m: "Je marche dans le parc ou je fais du sport. Après, je suis calme." },

@@ -179,7 +179,7 @@
                fb: { fr: "Vous êtes déjà dans le métro 😄 ! Il veut sortir : laissez-le passer.", tr: "Zaten metrodasınız 😄! O inmek istiyor: ona yol verin.", en: "You're already on the metro 😄! He wants to get off: let him through." } }
            ] },
       i: { say: [["N", "Prochain arrêt : Bellevue."]],
-           scene: { fr: "C'est votre arrêt ! Mais trois personnes sont devant la porte.", tr: "Bu sizin durağınız! Ama kapının önünde üç kişi var.", en: "It's your stop! But three people are standing in front of the door." },
+           scene: { fr: "Quelques arrêts plus tard, c'est votre arrêt ! Mais trois personnes sont devant la porte.", tr: "Birkaç durak sonra sıra sizin durağınızda! Ama kapının önünde üç kişi var.", en: "A few stops later, it's your stop! But three people are standing in front of the door." },
            choices: [
              { fr: "Pardon, je descends !", tr: "Pardon, iniyorum!", en: "Excuse me, I'm getting off!", ok: true, go: "fin" },
              { fr: "Pardon, je monte !", tr: "Pardon, biniyorum!", en: "Excuse me, I'm getting on!", ok: false,
@@ -251,7 +251,7 @@
            ] },
       f: { say: [["M", "Oui, c'est ça ! Vous n'êtes pas d'ici ?"]],
            choices: [
-             { fr: "Non, je suis turque. J'habite ici depuis 2 semaines.", tr: "Hayır, Türk'üm. 2 haftadır burada yaşıyorum.", en: "No, I'm Turkish. I've been living here for 2 weeks.", ok: true, go: "g" },
+             { fr: "Non, je suis turque. J'habite en France depuis un an.", tr: "Hayır, Türk'üm. Bir yıldır Fransa'da yaşıyorum.", en: "No, I'm Turkish. I've been living in France for a year.", ok: true, go: "g" },
              { fr: "Non, je viens de Turquie.", tr: "Hayır, Türkiye'den geliyorum.", en: "No, I come from Turkey.", ok: true, go: "g" },
              { fr: "Non, je suis Turquie.", tr: "Hayır, ben Türkiye'yim.", en: "No, I am Turkey.", ok: false,
                fb: { fr: "Vous êtes un pays entier 🇹🇷😄 ? On dit « je suis turque » ou « je viens de Turquie ».", tr: "Koca bir ülke misiniz 🇹🇷😄? « Je suis turque » ya da « je viens de Turquie » denir.", en: "You're a whole country 🇹🇷😄? Say « je suis turque » or « je viens de Turquie »." } }
@@ -405,7 +405,7 @@
              { fr: "Je suis ailière gauche.", tr: "Sol kanadım.", en: "I'm a left winger.", ok: true, go: "d" },
              { fr: "Je suis gardienne de but.", tr: "Kaleciyim.", en: "I'm a goalkeeper.", ok: true, go: "d2" },
              { fr: "Je travaille à la poste.", tr: "Postanede çalışıyorum.", en: "I work at the post office.", ok: false,
-               fb: { fr: "« La poste » = PTT 📮😄 ! Ici, « poste » = votre place dans l'équipe : ailière, gardienne…", tr: "« La poste » = PTT 📮😄! Burada « poste » = takımdaki yeriniz: kanat, kaleci…", en: "« La poste » = the post office 📮😄! Here « poste » = your position on the team: winger, goalkeeper…" } }
+               fb: { fr: "« La poste » = le bureau de poste 📮😄 ! Ici, « poste » = votre place dans l'équipe : ailière, gardienne…", tr: "« La poste » = PTT 📮😄! Burada « poste » = takımdaki yeriniz: kanat, kaleci…", en: "« La poste » = the post office 📮😄! Here « poste » = your position on the team: winger, goalkeeper…" } }
            ] },
       d: { say: [["F", "Parfait, on cherche une ailière ! Vous êtes rapide ?"]],
            choices: [
@@ -417,21 +417,21 @@
            ] },
       d2: { say: [["F", "Une gardienne ! Super ! Notre gardienne a mal au genou en ce moment."]],
            choices: [
-             { fr: "Oh ! Je suis kinésithérapeute. Je peux regarder son genou.", tr: "Aa! Fizyoterapistim. Dizine bakabilirim.", en: "Oh! I'm a physiotherapist. I can look at her knee.", ok: true, go: "e" },
+             { fr: "Oh ! J'étais kinésithérapeute en Turquie. Je peux regarder son genou.", tr: "Aa! Türkiye'de fizyoterapisttim. Dizine bakabilirim.", en: "Oh! I was a physiotherapist in Turkey. I can look at her knee.", ok: true, go: "e" },
              { fr: "Oh ! Je suis kinésithérapie.", tr: "Aa! Ben fizyoterapiyim.", en: "Oh! I am physiotherapy.", ok: false,
                fb: { fr: "Presque ! La « kinésithérapie », c'est le métier ; la personne, c'est « kinésithérapeute » (ou « kiné »).", tr: "Neredeyse! « Kinésithérapie » meslek/alan; kişi ise « kinésithérapeute » (ya da kısaca « kiné »).", en: "Almost! « Kinésithérapie » is the field; the person is a « kinésithérapeute » (or « kiné »)." } },
              { fr: "Oh ! Elle a mal à la genou ?", tr: "Aa! Dizi mi ağrıyor?", en: "Oh! Her knee hurts?", ok: false,
-               fb: { fr: "« Genou » est masculin : le genou → « au genou ». Et dites-lui que vous êtes kiné, c'est utile ici 😉 !", tr: "« Genou » eril: le genou → « au genou ». Bir de kiné olduğunuzu söyleyin, burada çok işe yarar 😉!", en: "« Genou » is masculine: le genou → « au genou ». And tell her you're a physio, it's useful here 😉!" } }
+               fb: { fr: "« Genou » est masculin : le genou → « au genou ». Et dites-lui que vous étiez kiné en Turquie, c'est utile ici 😉 !", tr: "« Genou » eril: le genou → « au genou ». Bir de Türkiye'de kiné olduğunuzu söyleyin, burada çok işe yarar 😉!", en: "« Genou » is masculine: le genou → « au genou ». And tell her you were a physio in Turkey, it's useful here 😉!" } }
            ] },
       e: { say: [["F", "Génial ! Moi, c'est Sophie, l'entraîneuse. Vous habitez ici depuis quand ?"]],
            choices: [
-             { fr: "Enchantée, Sophie ! J'habite ici depuis 2 semaines.", tr: "Memnun oldum Sophie! 2 haftadır burada yaşıyorum.", en: "Nice to meet you, Sophie! I've been living here for 2 weeks.", ok: true, go: "f" },
-             { fr: "Enchantée ! J'habite ici pour 2 semaines.", tr: "Memnun oldum! 2 haftalığına burada yaşıyorum.", en: "Nice to meet you! I'm living here for 2 weeks (then leaving).", ok: false,
-               fb: { fr: "« Pour 2 semaines » = vous partez dans 2 semaines 😮 ! Sophie va être triste. Dites « depuis 2 semaines ».", tr: "« Pour 2 semaines » = 2 hafta sonra gidiyorum demek 😮! Sophie üzülecek. « Depuis 2 semaines » deyin.", en: "« Pour 2 semaines » = you're leaving in 2 weeks 😮! Sophie will be sad. Say « depuis 2 semaines »." } },
-             { fr: "Enchantée ! Je suis habite ici depuis 2 semaines.", tr: "Memnun oldum! Ben yaşıyorum burada 2 haftadır.", en: "Nice to meet you! I am live here for 2 weeks.", ok: false,
+             { fr: "Enchantée, Sophie ! J'habite ici depuis un an.", tr: "Memnun oldum Sophie! Bir yıldır burada yaşıyorum.", en: "Nice to meet you, Sophie! I've been living here for a year.", ok: true, go: "f" },
+             { fr: "Enchantée ! J'habite ici pour un an.", tr: "Memnun oldum! Bir yıllığına burada yaşıyorum.", en: "Nice to meet you! I'm living here for a year (then leaving).", ok: false,
+               fb: { fr: "« Pour un an » = vous partez dans un an 😮 ! Sophie va être triste. Dites « depuis un an ».", tr: "« Pour un an » = bir yıl sonra gidiyorum demek 😮! Sophie üzülecek. « Depuis un an » deyin.", en: "« Pour un an » = you're leaving after a year 😮! Sophie will be sad. Say « depuis un an »." } },
+             { fr: "Enchantée ! Je suis habite ici depuis un an.", tr: "Memnun oldum! Ben yaşıyorum burada bir yıldır.", en: "Nice to meet you! I am live here for a year.", ok: false,
                fb: { fr: "Un verbe suffit ! Pas « je suis habite », mais « j'habite ».", tr: "Tek fiil yeterli! « Je suis habite » değil, « j'habite ».", en: "One verb is enough! Not « je suis habite », just « j'habite »." } }
            ] },
-      f: { say: [["F", "Bienvenue en France, alors ! Vous avez des questions ?"]],
+      f: { say: [["F", "Bienvenue au club, alors ! Vous avez des questions ?"]],
            choices: [
              { fr: "Oui ! Les entraînements, c'est quand ?", tr: "Evet! Antrenmanlar ne zaman?", en: "Yes! When is training?", ok: true, go: "g" },
              { fr: "Oui ! Le train, c'est quand ?", tr: "Evet! Tren ne zaman?", en: "Yes! When is the train?", ok: false,

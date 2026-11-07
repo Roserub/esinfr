@@ -278,7 +278,7 @@
       { q: "Bonjour ! Vous pouvez vous présenter ?", m: "Bonjour ! Je m'appelle Esin, j'ai trente ans et je suis turque. Je viens d'Istanbul." },
       { q: "Depuis combien de temps est-ce que vous êtes en France ?", m: "Je suis en France depuis un an. Avant, j'ai toujours habité à Istanbul." },
       { q: "Quel était votre métier en Turquie ?", m: "J'étais kinésithérapeute dans un club de sport. Je soignais les joueurs de handball." },
-      { q: "Comment se passe une journée normale pour vous ?", m: "Le matin, je vais au cours de français. L'après-midi, je fais mes devoirs et je vais à la salle de sport." },
+      { q: "Comment se passe une journée normale pour vous ?", m: "Le matin, je vais au cours de français. L'après-midi, je travaille à l'accueil d'une salle de sport, et après, je fais mes devoirs." },
       { q: "Le matin, comment est-ce que vous vous informez ?", m: "J'écoute la radio française pendant le petit-déjeuner. C'est difficile, mais je comprends un peu plus chaque jour." },
       { q: "Est-ce que vous lisez des journaux ou des magazines ?", m: "Je lis parfois le journal gratuit dans le tram. Et j'aime beaucoup les magazines de sport." },
       { q: "Qu'est-ce que vous aimez faire le soir ?", m: "Le soir, je téléphone à ma famille ou je regarde une série. Le jeudi, je joue au handball avec une équipe de femmes." },

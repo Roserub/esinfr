@@ -64,9 +64,9 @@
   /* ───────── Sujet 17 ───────── */
   { id: "a1-s17-co1", level: "A1", sujet: 17, sec: "co", ex: 1, pts: 6,
     title: "La rentrée de Deniz",
-    consigne: "Vous écoutez un message sur votre répondeur. Lisez les questions, écoutez le document puis répondez.",
-    help: { tr: "Telesekreterinizdeki bir mesajı dinliyorsunuz. Soruları okuyun, kaydı dinleyin ve cevaplayın.", en: "You hear a message on your answering machine. Read the questions, listen to the recording, then answer." },
-    audio: [["F", "Bonjour, madame Yilmaz. Ici l'école Jules-Ferry. C'est pour la rentrée de votre fils, Deniz. Attention, l'école ne commence pas lundi : elle commence mardi 2 septembre, à 8 h 30. Deniz est dans la classe de madame Petit. Il a besoin d'une trousse, de 2 cahiers et d'un cartable. La cantine coûte 3,20 € par jour. Bonne journée !"]],
+    consigne: "Vous aidez votre amie Fatma avec son fils, Deniz. Vous écoutez un message sur votre répondeur. Lisez les questions, écoutez le document puis répondez.",
+    help: { tr: "Arkadaşınız Fatma'ya oğlu Deniz konusunda yardım ediyorsunuz. Telesekreterinizdeki bir mesajı dinliyorsunuz. Soruları okuyun, kaydı dinleyin ve cevaplayın.", en: "You help your friend Fatma with her son, Deniz. You hear a message on your answering machine. Read the questions, listen to the recording, then answer." },
+    audio: [["F", "Bonjour, madame Yilmaz. Ici l'école Jules-Ferry. Madame Demir, la maman de Deniz, nous a donné votre numéro. C'est pour la rentrée de Deniz. Attention, l'école ne commence pas lundi : elle commence mardi 2 septembre, à 8 h 30. Deniz est dans la classe de madame Petit. Il a besoin d'une trousse, de 2 cahiers et d'un cartable. La cantine coûte 3,20 € par jour. Bonne journée !"]],
     questions: [
       { q: "L'école commence quel jour ?", o: ["lundi", "mardi", "jeudi"], a: 1, x: "« l'école ne commence pas lundi : elle commence mardi 2 septembre »." },
       { q: "L'école commence à quelle heure ?", o: ["8 h 30", "8 h", "9 h 30"], a: 0, x: "« elle commence mardi 2 septembre, à 8 h 30 »." },
@@ -186,7 +186,7 @@
     title: "Une réservation au camping",
     consigne: "Vous écoutez un message sur votre répondeur. Lisez les questions, écoutez le document puis répondez.",
     help: { tr: "Telesekreterinizdeki bir mesajı dinliyorsunuz. Soruları okuyun, kaydı dinleyin ve cevaplayın.", en: "You hear a message on your answering machine. Read the questions, listen to the recording, then answer." },
-    audio: [["F", "Bonjour, monsieur Demir. Ici le camping Les Pins, à Arcachon. C'est pour votre réservation du 12 au 19 juillet. Votre emplacement est le numéro 24, près de la piscine. L'accueil est ouvert de 8 h à 20 h. Si vous arrivez après 20 h, appelez le gardien. Attention : au camping, les barbecues sont interdits. À bientôt !"]],
+    audio: [["F", "Bonjour, madame Yilmaz. Ici le camping Les Pins, à Arcachon. C'est pour votre réservation du 12 au 19 juillet. Votre emplacement est le numéro 24, près de la piscine. L'accueil est ouvert de 8 h à 20 h. Si vous arrivez après 20 h, appelez le gardien. Attention : au camping, les barbecues sont interdits. À bientôt !"]],
     questions: [
       { q: "La réservation est…", o: ["du 2 au 9 juillet", "du 12 au 19 juin", "du 12 au 19 juillet"], a: 2, x: "« votre réservation du 12 au 19 juillet »." },
       { q: "L'emplacement est près…", o: ["🏊 de la piscine", "🏖️ de la plage", "🏠 de l'accueil"], a: 0, x: "« Votre emplacement est le numéro 24, près de la piscine. »" },
@@ -246,12 +246,12 @@
     title: "Une visite à la ferme",
     consigne: "Vous écoutez un message sur votre répondeur. Lisez les questions, écoutez le document puis répondez.",
     help: { tr: "Telesekreterinizdeki bir mesajı dinliyorsunuz. Soruları okuyun, kaydı dinleyin ve cevaplayın.", en: "You hear a message on your answering machine. Read the questions, listen to the recording, then answer." },
-    audio: [["M", "Bonjour, ici la ferme du Moulin. C'est pour votre visite de mercredi avec vos 2 enfants. La visite commence à 10 h et finit à 12 h. Les enfants vont donner à manger aux chèvres et aux lapins. Ils vont aussi faire du fromage ! Prenez des bottes, s'il vous plaît. C'est 6 € par enfant, et c'est gratuit pour les parents. À mercredi !"]],
+    audio: [["M", "Bonjour, ici la ferme du Moulin. C'est pour votre visite de mercredi avec 2 enfants. La visite commence à 10 h et finit à 12 h. Les enfants vont donner à manger aux chèvres et aux lapins. Ils vont aussi faire du fromage ! Prenez des bottes, s'il vous plaît. C'est 6 € par enfant, et c'est gratuit pour les adultes. À mercredi !"]],
     questions: [
       { q: "La visite finit à…", o: ["10 h", "12 h", "14 h"], a: 1, x: "« La visite commence à 10 h et finit à 12 h. »" },
       { q: "Les enfants vont donner à manger…", o: ["🐄 aux vaches et aux poules", "🐔 aux poules", "🐐 aux chèvres et aux lapins"], a: 2, x: "« Les enfants vont donner à manger aux chèvres et aux lapins. »" },
       { q: "Qu'est-ce que les enfants vont faire aussi ?", o: ["🧀 du fromage", "🍞 du pain", "🍦 de la glace"], a: 0, x: "« Ils vont aussi faire du fromage ! »" },
-      { q: "Pour vous, le parent, la visite coûte…", o: ["6 €, comme un enfant", "12 €", "rien, c'est gratuit"], a: 2, x: "« C'est 6 € par enfant, et c'est gratuit pour les parents. »" }
+      { q: "Pour vous, l'adulte, la visite coûte…", o: ["6 €, comme un enfant", "12 €", "rien, c'est gratuit"], a: 2, x: "« C'est 6 € par enfant, et c'est gratuit pour les adultes. »" }
     ] },
 
   { id: "a1-s20-co2", level: "A1", sujet: 20, sec: "co", ex: 2, pts: 6,

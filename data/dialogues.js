@@ -19,11 +19,11 @@ B|Merci, vous aussi. Au revoir !|Teşekkürler, size de. Hoşça kalın!|Thanks,
 
     D("d-presentation", "A1", "Se présenter à une voisine", "Bir komşuyla tanışmak", "Meeting a neighbour", { A: "Claire", B: "Esin" }, "B", `
 A|Bonjour ! Vous êtes la nouvelle voisine ?|Merhaba! Yeni komşu siz misiniz?|Hello! Are you the new neighbour?
-B|Oui, bonjour ! Je m'appelle Esin. J'habite au deuxième étage.|Evet, merhaba! Adım Esin. İkinci katta oturuyorum.|Yes, hello! My name is Esin. I live on the second floor.
+B|Oui, bonjour ! Je m'appelle Esin. J'habite au troisième étage.|Evet, merhaba! Adım Esin. Üçüncü katta oturuyorum.|Yes, hello! My name is Esin. I live on the third floor.
 A|Enchantée, moi c'est Claire. Vous venez d'où ?|Memnun oldum, ben Claire. Nerelisiniz?|Nice to meet you, I'm Claire. Where are you from?
 B|Je viens de Turquie. J'apprends le français.|Türkiye'den geliyorum. Fransızca öğreniyorum.|I'm from Turkey. I'm learning French.
 A|Vous parlez déjà bien ! Vous travaillez ici ?|Şimdiden iyi konuşuyorsunuz! Burada mı çalışıyorsunuz?|You already speak well! Do you work here?
-B|Pas encore. Je suis kinésithérapeute, mais mon diplôme est turc.|Henüz değil. Fizyoterapistim ama diplomam Türkiye'den.|Not yet. I'm a physiotherapist, but my degree is Turkish.
+B|Oui, à l'accueil d'une salle de sport. Je suis kinésithérapeute, mais mon diplôme est turc.|Evet, bir spor salonunun resepsiyonunda. Fizyoterapistim ama diplomam Türkiye'den.|Yes, at the front desk of a gym. I'm a physiotherapist, but my degree is Turkish.
 A|Ah, c'est super ! Si vous avez besoin de quelque chose, je suis au premier.|Ah, harika! Bir şeye ihtiyacınız olursa ben birinci kattayım.|Oh, great! If you need anything, I'm on the first floor.
 B|Merci beaucoup, c'est très gentil !|Çok teşekkürler, çok naziksiniz!|Thank you very much, that's very kind!`),
 

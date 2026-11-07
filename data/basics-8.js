@@ -256,8 +256,8 @@ téléphoner à|-i (telefonla) aramak|to phone||Téléphone à ta mère !
 répondre à|-e cevap vermek|to answer, to reply to||Je réponds à un mail.
 demander à|-e sormak|to ask (someone)||Demande au coach !
 s'intéresser à|-e ilgi duymak|to be interested in||Je m'intéresse au sport.
-commencer à + infinitif|-meye başlamak|to start to||Je commence à comprendre.
-apprendre à + infinitif|-meyi öğrenmek|to learn to||Il apprend à nager.
+commencer à + infinitif|-meye başlamak|to start to|commencer à|Je commence à comprendre.
+apprendre à + infinitif|-meyi öğrenmek|to learn to|apprendre à|Il apprend à nager.
 aider quelqu'un à|birine -mede yardım etmek|to help someone to||Tu m'aides à porter le sac ?`, {
           fr: "N'oubliez pas : à + le = au, à + les = aux. On demande AU coach, on téléphone AUX parents. Attention : « téléphoner à quelqu'un », mais « appeler quelqu'un » (sans à).",
           tr: "Unutmayın: à + le = au, à + les = aux. On demande AU coach (koça sorulur), on téléphone AUX parents. Dikkat: Türkçede 'birini aramak' deriz (-i hâli), Fransızcada 'téléphoner À quelqu'un' denir. Ama 'appeler quelqu'un' (birini aramak) edatsızdır: j'appelle Sophie.",
@@ -270,9 +270,9 @@ avoir peur de|-den korkmak|to be afraid of||Il a peur des chiens.
 parler de|-den bahsetmek|to talk about||On parle de quoi ?
 s'occuper de|ilgilenmek, bakmak|to take care of, to deal with||Je m'occupe des inscriptions.
 rêver de|-in hayalini kurmak|to dream of||Elle rêve de voyager.
-arrêter de + infinitif|-meyi bırakmak|to stop||Il a arrêté de fumer.
-essayer de + infinitif|-meye çalışmak|to try to||J'essaie de parler français.
-oublier de + infinitif|-meyi unutmak|to forget to||N'oublie pas de boire de l'eau !
+arrêter de + infinitif|-meyi bırakmak|to stop|arrêter de|Il a arrêté de fumer.
+essayer de + infinitif|-meye çalışmak|to try to|essayer de|J'essaie de parler français.
+oublier de + infinitif|-meyi unutmak|to forget to|oublier de|N'oublie pas de boire de l'eau !
 se souvenir de|hatırlamak|to remember||Tu te souviens de moi ?`, {
           fr: "De + le = du, de + les = des, et devant une voyelle « de » devient « d' » : j'ai besoin d'aide, j'ai envie d'un café.",
           tr: "De + le = du, de + les = des; ünlüden önce 'de' → 'd'' olur: j'ai besoin d'aide (yardıma ihtiyacım var). Türkçe ipucu: 'korkmak' ve 'bahsetmek' Türkçede de '-den' alır: köpeklerDEN korkmak = avoir peur DES chiens, bir şeyDEN bahsetmek = parler DE quelque chose. Tesadüf değil, kolay hatırlanır!",
@@ -299,8 +299,8 @@ chercher ses clés|anahtarlarını aramak|to look for your keys
 attendre le bus|otobüsü beklemek|to wait for the bus
 payer le café|kahvenin parasını ödemek|to pay for the coffee
 demander l'addition|hesabı istemek|to ask for the bill
-aimer + infinitif|-meyi sevmek|to like doing||J'aime courir.
-vouloir + infinitif|-mek istemek|to want to||Je veux partir.`, {
+aimer + infinitif|-meyi sevmek|to like doing|aimer|J'aime courir.
+vouloir + infinitif|-mek istemek|to want to|vouloir|Je veux partir.`, {
           fr: "En anglais on dit « listen to », « look for », « wait for », mais en français : écouter, chercher, attendre, sans préposition. On ne dit pas « attendre pour le bus » !",
           tr: "İngilizcede 'listen TO', 'look FOR', 'wait FOR' denir ama Fransızcada écouter, chercher, attendre edatsız kullanılır. 'Attendre pour le bus' yanlış, doğrusu 'attendre le bus'! İngilizcenizi biraz unutun, burada Türkçe daha yakın: otobüsü beklemek = attendre le bus.",
           en: "English says 'listen to', 'look for', 'wait for', but French says écouter, chercher, attendre with no preposition. Never « attendre pour le bus »!"

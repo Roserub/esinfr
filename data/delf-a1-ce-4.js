@@ -87,7 +87,7 @@
       body: "Danse pour tous, de 6 à 77 ans !\n\nSalsa (adultes) : lundi, 19 h – 20 h 30\nHip-hop (8–14 ans) : mercredi, 15 h – 16 h\nDanse orientale (adultes) : jeudi, 18 h 30 – 19 h 30\nDanse classique (6–10 ans) : samedi, 10 h – 11 h\n\nCours d'essai gratuit pendant la semaine du 8 septembre.\nPrix : 25 € par mois. Couples : 40 € par mois.\n\nPas besoin de partenaire pour la salsa !\n\n12, rue des Lilas – 04 78 22 10 35" },
     questions: [
       { q: "Le cours de salsa est…", o: ["le lundi soir", "le jeudi soir", "le samedi matin"], a: 0, x: "« Salsa (adultes) : lundi, 19 h – 20 h 30 »." },
-      { q: "Votre fils a 11 ans. Il peut faire…", o: ["de la salsa", "de la danse classique", "du hip-hop"], a: 2, x: "« Hip-hop (8–14 ans) ». La danse classique, c'est pour les 6–10 ans." },
+      { q: "Votre neveu a 11 ans. Il peut faire…", o: ["de la salsa", "de la danse classique", "du hip-hop"], a: 2, x: "« Hip-hop (8–14 ans) ». La danse classique, c'est pour les 6–10 ans." },
       { q: "Le cours de danse orientale dure…", o: ["30 minutes", "1 heure", "1 h 30"], a: 1, x: "« Danse orientale (adultes) : jeudi, 18 h 30 – 19 h 30 » : 1 heure." },
       { q: "Pour un couple, le prix est de…", o: ["25 € par mois", "50 € par mois", "40 € par mois"], a: 2, x: "« Couples : 40 € par mois. »" },
       { q: "Pour la salsa, il faut venir avec un partenaire.", o: ["Vrai", "Faux"], a: 1, x: "« Pas besoin de partenaire pour la salsa ! »" },
@@ -104,7 +104,7 @@
     questions: [
       { q: "Le samedi, le marché ferme à…", o: ["21 h", "22 h", "20 h"], a: 1, x: "« Le vendredi et le samedi : jusqu'à 22 h. »" },
       { q: "Le Père Noël arrive…", o: ["le dimanche à 16 h", "le mercredi à 15 h", "le samedi à 14 h"], a: 0, x: "« Dimanche : Arrivée du Père Noël, 16 h »." },
-      { q: "Votre fille veut faire des biscuits. Vous venez…", o: ["le vendredi", "le dimanche", "le mercredi"], a: 2, x: "« Mercredi : Atelier biscuits de Noël (enfants), 15 h »." },
+      { q: "Votre nièce veut faire des biscuits. Vous venez…", o: ["le vendredi", "le dimanche", "le mercredi"], a: 2, x: "« Mercredi : Atelier biscuits de Noël (enfants), 15 h »." },
       { q: "Pour entrer dans le marché, il faut payer.", o: ["Vrai", "Faux"], a: 1, x: "« Entrée libre. »" },
       { q: "Le concert de chorale est…", o: ["le samedi", "le dimanche", "le vendredi"], a: 2, x: "« Vendredi : Concert de chorale, 19 h »." },
       { q: "La patinoire coûte…", o: ["5 € avec les patins", "11 €", "rien, c'est gratuit"], a: 0, x: "« Patinoire (5 € avec les patins) »." }
@@ -169,7 +169,7 @@
       { q: "Le samedi, la dernière entrée est à…", o: ["19 h", "18 h", "17 h"], a: 1, x: "Samedi : « 10 h – 19 h » et « Dernière entrée : 1 heure avant la fermeture » : 18 h." },
       { q: "Vous avez 30 ans. Vous payez…", o: ["0 €", "5 €", "9 €"], a: 2, x: "« Adulte : 9 € »." },
       { q: "L'atelier pour les enfants est le mercredi.", o: ["Vrai", "Faux"], a: 0, x: "« Atelier « Le corps humain » pour les enfants : mercredi à 14 h »." },
-      { q: "Votre fils a 12 ans. L'entrée est…", o: ["à 5 €", "gratuite", "à 9 €"], a: 1, x: "« Moins de 26 ans : gratuit »." }
+      { q: "Votre neveu a 12 ans. L'entrée est…", o: ["à 5 €", "gratuite", "à 9 €"], a: 1, x: "« Moins de 26 ans : gratuit »." }
     ] },
 
   { id: "a1-s18-ce4", level: "A1", sujet: 18, sec: "ce", ex: 4, pts: 7,
@@ -193,13 +193,13 @@
     consigne: "Vous recevez ce courriel d'une amie. Lisez le document, puis répondez aux questions.",
     help: { tr: "Bir arkadaşınızdan bu e-postayı alıyorsunuz. Belgeyi okuyun, sonra soruları cevaplayın.", en: "You receive this e-mail from a friend. Read the document, then answer the questions." },
     doc: { type: "email", from: "Léa", to: "Esin", subject: "Ma crémaillère",
-      body: "Bonjour Esin,\n\nJ'habite dans mon nouvel appartement depuis un mois et je fais une petite fête : la crémaillère ! C'est samedi 22 novembre, à partir de 19 h.\n\nL'adresse : 8, place Carnot, 2e étage, porte à gauche. Le code de la porte, c'est 4521B.\n\nJe prépare des salades et des gâteaux. Tu peux apporter quelque chose à boire ? Ton mari et tes enfants sont aussi invités, bien sûr !\n\nDis-moi avant mercredi si tu viens.\n\nBisous,\nLéa" },
+      body: "Bonjour Esin,\n\nJ'habite dans mon nouvel appartement depuis un mois et je fais une petite fête : la crémaillère ! C'est samedi 22 novembre, à partir de 19 h.\n\nL'adresse : 8, place Carnot, 2e étage, porte à gauche. Le code de la porte, c'est 4521B.\n\nJe prépare des salades et des gâteaux. Tu peux apporter quelque chose à boire ? Ton mari est aussi invité, bien sûr !\n\nDis-moi avant mercredi si tu viens.\n\nBisous,\nLéa" },
     questions: [
       { q: "Léa fait une fête pour…", o: ["son anniversaire de mariage", "son nouvel appartement", "son nouveau travail"], a: 1, x: "« J'habite dans mon nouvel appartement depuis un mois et je fais une petite fête »." },
       { q: "La fête commence…", o: ["samedi à 19 h", "mercredi à 19 h", "samedi à 22 h"], a: 0, x: "« C'est samedi 22 novembre, à partir de 19 h. »" },
       { q: "Léa habite…", o: ["au 4e étage", "au rez-de-chaussée", "au 2e étage"], a: 2, x: "« 8, place Carnot, 2e étage »." },
       { q: "Léa vous demande d'apporter…", o: ["🥗 une salade", "🧃 quelque chose à boire", "🎂 un gâteau"], a: 1, x: "« Tu peux apporter quelque chose à boire ? »" },
-      { q: "Votre famille peut venir aussi.", o: ["Vrai", "Faux"], a: 0, x: "« Ton mari et tes enfants sont aussi invités »." },
+      { q: "Votre mari peut venir aussi.", o: ["Vrai", "Faux"], a: 0, x: "« Ton mari est aussi invité »" },
       { q: "Vous répondez à Léa avant…", o: ["samedi", "dimanche", "mercredi"], a: 2, x: "« Dis-moi avant mercredi si tu viens. »" }
     ] },
 
@@ -228,7 +228,7 @@
     questions: [
       { q: "Le salon est fermé…", o: ["le samedi", "le lundi", "le mercredi"], a: 1, x: "« Ouvert du mardi au samedi » : le lundi, c'est fermé." },
       { q: "Une coupe pour un homme coûte…", o: ["20 €", "32 €", "25 €"], a: 0, x: "« Coupe : […] Homme 20 € »." },
-      { q: "Votre fils a 8 ans. Sa coupe coûte…", o: ["20 €", "25 €", "14 €"], a: 2, x: "« Coupe : […] Enfant (– 12 ans) 14 € »." },
+      { q: "Votre neveu a 8 ans. Sa coupe coûte…", o: ["20 €", "25 €", "14 €"], a: 2, x: "« Coupe : […] Enfant (– 12 ans) 14 € »." },
       { q: "On peut aller au salon sans rendez-vous.", o: ["Vrai", "Faux"], a: 0, x: "« Avec ou sans rendez-vous. »" },
       { q: "Pour une coloration, une femme paie…", o: ["35 €", "45 €", "50 €"], a: 2, x: "« Coloration : Femme 50 € »." },
       { q: "Les étudiants ont une réduction…", o: ["le mardi", "le mercredi", "le samedi"], a: 1, x: "« Étudiants : – 20 % le mercredi. »" }
@@ -239,14 +239,14 @@
     consigne: "Vous lisez cette annonce sur un site Internet. Répondez aux questions.",
     help: { tr: "Bir internet sitesinde bu ilanı okuyorsunuz. Soruları cevaplayın.", en: "You read this ad on a website. Answer the questions." },
     doc: { type: "annonce", title: "Cherche partenaire de tennis",
-      body: "Bonjour ! Je m'appelle Marc, j'ai 34 ans. J'habite à Grenoble depuis un mois et je cherche un ou une partenaire pour jouer au tennis. Je joue depuis cinq ans : je ne suis pas débutant, mais je ne suis pas un champion !\n\nJe suis libre le mardi soir après 19 h et le dimanche matin. Je joue au club du parc Paul-Mistral. Pour vous, le court est gratuit : je suis membre du club.\n\nAprès le match, on peut boire un verre et parler français ou anglais.\n\nÉcrivez-moi : marc.tennis@mail.fr" },
+      body: "Bonjour ! Je m'appelle Marc, j'ai 34 ans. J'habite à Grenoble depuis un mois et je cherche un ou une partenaire pour jouer au tennis. Je joue depuis cinq ans : je ne suis pas débutant, mais je ne suis pas un champion !\n\nJe suis libre le mardi soir après 19 h et le dimanche matin. Je joue au club du parc Paul-Mistral. Pour vous, le court est gratuit : je suis membre du club.\n\nAprès le match, on peut boire un verre et parler français ou anglais.\n\nÉcrivez-moi : marc.tennis@exemple.fr" },
     questions: [
       { q: "Marc cherche quelqu'un pour…", o: ["🎾 jouer au tennis", "🏃 courir", "🗣️ apprendre l'anglais"], a: 0, x: "« je cherche un ou une partenaire pour jouer au tennis »." },
       { q: "Marc joue au tennis…", o: ["depuis un mois", "depuis cinq ans", "depuis 34 ans"], a: 1, x: "« Je joue depuis cinq ans »." },
       { q: "Marc est libre…", o: ["le mardi matin et le dimanche soir", "le dimanche soir", "le mardi soir et le dimanche matin"], a: 2, x: "« Je suis libre le mardi soir après 19 h et le dimanche matin. »" },
       { q: "Vous devez payer le court de tennis.", o: ["Vrai", "Faux"], a: 1, x: "« Pour vous, le court est gratuit »." },
       { q: "Après le match, Marc propose de…", o: ["boire un verre", "manger au restaurant", "jouer encore"], a: 0, x: "« Après le match, on peut boire un verre »." },
-      { q: "Pour contacter Marc, vous…", o: ["📞 téléphonez", "🏟️ allez au club", "📧 écrivez un e-mail"], a: 2, x: "« Écrivez-moi : marc.tennis@mail.fr »." }
+      { q: "Pour contacter Marc, vous…", o: ["📞 téléphonez", "🏟️ allez au club", "📧 écrivez un e-mail"], a: 2, x: "« Écrivez-moi : marc.tennis@exemple.fr »." }
     ] },
 
   /* ───────── Sujet 20 ───────── */
@@ -267,8 +267,8 @@
 
   { id: "a1-s20-ce2", level: "A1", sujet: 20, sec: "ce", ex: 2, pts: 6,
     title: "La rentrée des classes",
-    consigne: "Votre enfant entre à l'école. Vous lisez ce mot de la directrice. Répondez aux questions.",
-    help: { tr: "Çocuğunuz okula başlıyor. Okul müdiresinin bu notunu okuyorsunuz. Soruları cevaplayın.", en: "Your child is starting school. You read this note from the head teacher. Answer the questions." },
+    consigne: "Le fils de votre amie entre à l'école. Vous lisez avec elle ce mot de la directrice. Répondez aux questions.",
+    help: { tr: "Arkadaşınızın oğlu okula başlıyor. Okul müdiresinin bu notunu onunla birlikte okuyorsunuz. Soruları cevaplayın.", en: "Your friend's son is starting school. You read this note from the head teacher with her. Answer the questions." },
     doc: { type: "notice", title: "École élémentaire Jules-Ferry – La rentrée",
       body: "Chers parents,\n\nLa rentrée est le lundi 1er septembre, à 8 h 30. Le premier jour, les parents peuvent entrer dans la cour avec les enfants.\n\nHoraires de l'école : 8 h 30 – 11 h 30 et 13 h 30 – 16 h 30. Pas d'école le mercredi.\n\nLa cantine commence le mardi 2 septembre. Inscription à la mairie.\n\nLe premier jour, votre enfant apporte un cartable, une trousse et une boîte de mouchoirs.\n\nRéunion parents-enseignants : jeudi 11 septembre à 18 h.\n\nLa directrice, Mme Benali" },
     questions: [
@@ -276,8 +276,8 @@
       { q: "Le premier jour, les parents peuvent entrer dans la cour.", o: ["Vrai", "Faux"], a: 0, x: "« Le premier jour, les parents peuvent entrer dans la cour avec les enfants. »" },
       { q: "L'après-midi, l'école finit à…", o: ["11 h 30", "13 h 30", "16 h 30"], a: 2, x: "« 13 h 30 – 16 h 30 »." },
       { q: "Il n'y a pas d'école…", o: ["le lundi", "le mercredi", "le jeudi"], a: 1, x: "« Pas d'école le mercredi. »" },
-      { q: "Pour la cantine, vous inscrivez votre enfant…", o: ["à l'école", "à la mairie", "à la réunion"], a: 1, x: "« La cantine commence le mardi 2 septembre. Inscription à la mairie. »" },
-      { q: "Le premier jour, votre enfant apporte…", o: ["un pique-nique", "un livre et un cahier", "un cartable et une trousse"], a: 2, x: "« votre enfant apporte un cartable, une trousse et une boîte de mouchoirs »." }
+      { q: "Pour la cantine, on inscrit l'enfant…", o: ["à l'école", "à la mairie", "à la réunion"], a: 1, x: "« La cantine commence le mardi 2 septembre. Inscription à la mairie. »" },
+      { q: "Le premier jour, l'enfant apporte…", o: ["un pique-nique", "un livre et un cahier", "un cartable et une trousse"], a: 2, x: "« votre enfant apporte un cartable, une trousse et une boîte de mouchoirs »." }
     ] },
 
   { id: "a1-s20-ce3", level: "A1", sujet: 20, sec: "ce", ex: 3, pts: 6,

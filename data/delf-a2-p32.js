@@ -282,7 +282,7 @@
     help: { tr: "Yönlendirilmiş görüşme (yaklaşık 1,5 dakika, hazırlıksız). Sınav görevlisini selamlayın, kendinizi tanıtın ve sorularına cevap verin: siz, işiniz, alışkanlıklarınız, telefonunuz. Her soruya 2–3 kısa cümle yeterli.", en: "Guided interview (about 1.5 minutes, no preparation). Greet the examiner, introduce yourself and answer the questions (you, your work, habits, phone…)." },
     prompts: [
       { q: "Bonjour ! Vous pouvez vous présenter ?", m: "Bonjour ! Je m'appelle Esin. Je suis turque, je viens d'Istanbul, et j'habite en France depuis un an." },
-      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. En Turquie, je travaillais avec une équipe de handball." },
+      { q: "Qu'est-ce que vous faites dans la vie ?", m: "Je suis kinésithérapeute. En Turquie, je travaillais avec une équipe de handball. Ici, je travaille à l'accueil d'une salle de sport." },
       { q: "Combien de temps est-ce que vous passez sur votre téléphone chaque jour ?", m: "Environ deux heures par jour, je pense. Un peu trop, peut-être !" },
       { q: "Quelles applications est-ce que vous utilisez le plus ?", m: "J'utilise surtout une messagerie pour parler avec ma famille, et une application pour apprendre le français." },
       { q: "Est-ce que vous aimez les réseaux sociaux ?", m: "Oui, un peu. Je regarde des photos de mes amis et des vidéos de sport. Mais je ne publie pas beaucoup." },
