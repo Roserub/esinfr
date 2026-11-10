@@ -164,7 +164,7 @@
       for (let k = 0; k < 5 && order.map(i => q.toks[i]).join(" ") === q.fr; k++) order = shuffle(order);
       return Object.assign({}, q, { order });
     });
-    ORD = { lv, qs, i: 0, picked: [], checked: false, ok: 0, start: Date.now() };
+    ORD = { lv, qs, i: 0, picked: [], checked: false, ok: 0, start: Date.now() }; fx("reset");
   }
   function viewOrd(lv) {
     if (!ORD || ORD.lv !== lv) newOrd(lv);
@@ -175,6 +175,7 @@
       if (!ORD.saved) { ORD.saved = true; if (ORD.ok > best) { st().ord[lv] = ORD.ok; save(); } setTimeout(() => ORD && ORD.ok > best && ORD.ok >= 6 ? fx("big", "🧩", "Record !") : fx("done", ORD && ORD.ok >= 6), 200); A().practised(); A().logMinutes(Math.max(2, Math.round((Date.now() - ORD.start) / 60000))); }
       return head + `<section class="card dx-result"><div class="dx-ring" style="--p:${Math.round(ORD.ok / ORD.qs.length * 100)}"><b>${ORD.ok}</b><small>/${ORD.qs.length}</small></div>
         <div><p class="dx-verdict">${esc(t(ORD.ok >= 6 ? "ex.end.great" : ORD.ok >= 4 ? "ex.end.good" : "ex.end.soft"))}</p><p class="muted">${esc(t("gm.ordBest", { n: Math.max(best, ORD.ok) }))}</p></div></section>
+        <section class="card center ex-end">${A().recap({ key: "ord" + ORD.start, ok: ORD.ok, n: ORD.qs.length, start: ORD.start })}</section>
         <div class="row wrap"><button class="btn" data-gm="ord-again">↻ ${esc(t("av.again"))}</button><a class="btn ghost" href="#/games">${esc(t("gm.title"))}</a></div>`;
     }
     const q = ORD.qs[ORD.i], given = ORD.picked.map(i => q.toks[i]).join(" "), right = given === q.fr;
@@ -187,8 +188,8 @@
         <div class="row center"><button class="btn ghost small" data-gm="ord-play">🔊 ${esc(t("ex.listen.btn"))}</button></div>
         <div class="ord-line ${ORD.checked ? (right ? "ok" : "bad") : ""}" aria-label="${esc(t("gm.ordAnswer"))}">${ORD.picked.length ? ORD.picked.map((i, p) => `<button class="tok on" data-gm="ord-un" data-p="${p}" lang="fr" ${ORD.checked ? "disabled" : ""}>${esc(q.toks[i])}</button>`).join("") : `<span class="muted small">${esc(t("gm.ordEmpty"))}</span>`}</div>
         <div class="ord-bank">${bank.map(i => `<button class="tok" data-gm="ord-pick" data-i="${i}" lang="fr">${esc(q.toks[i])}</button>`).join("")}</div>
-        <div aria-live="polite">${ORD.checked ? `<div class="fb ${right ? "ok" : "bad"}"><p><b>${right ? "✓ " + esc(t("ex.right")) : "✗ " + esc(t("ex.wrong"))}</b></p>${right ? "" : `<p class="fr-mid" lang="fr">${esc(q.fr)}</p>`}
-          <button class="btn" data-gm="ord-next">${esc(t(ORD.i + 1 < ORD.qs.length ? "ex.next" : "ex.finish"))} →</button></div>`
+        <div aria-live="polite">${ORD.checked ? `<div class="fb sheet ${right ? "ok" : "bad"}">${A().sheetHead(right, ORD.i)}${right ? "" : `<p><b>${esc(t("ex.wrong"))}</b></p><p class="fr-mid" lang="fr">${esc(q.fr)}</p>`}
+          <button class="btn sheet-go" data-gm="ord-next">${esc(t(ORD.i + 1 < ORD.qs.length ? "fx.continue" : "ex.finish"))}</button></div><div class="sheet-space"></div>`
           : `<div class="row wrap center">${ORD.picked.length ? `<button class="btn ghost" data-gm="ord-clear">↺ ${esc(t("gm.ordClear"))}</button>` : ""}<button class="btn" data-gm="ord-check" ${bank.length ? "disabled" : ""}>${esc(t("ex.check"))}</button></div>`}</div>
       </section>`;
   }

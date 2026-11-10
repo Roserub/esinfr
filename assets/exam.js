@@ -431,7 +431,7 @@
     return pool;
   }
   function viewFlash(lv, surv) {
-    if (!FL || FL.lv !== lv || !!FL.surv !== !!surv) { const pool = shuffle(flashPool(lv)); FL = { lv, surv: !!surv, lives: 3, qs: surv ? pool : pool.slice(0, 10), i: 0, n: 0, ok: 0, combo: 0, maxc: 0, sel: null, auto: true }; }
+    if (!FL || FL.lv !== lv || !!FL.surv !== !!surv) { const pool = shuffle(flashPool(lv)); FL = { lv, surv: !!surv, lives: 3, qs: surv ? pool : pool.slice(0, 10), i: 0, n: 0, ok: 0, combo: 0, maxc: 0, sel: null, auto: true, start: Date.now() }; fx("reset"); }
     if (surv) return viewSurv(lv);
     const best = st().flash[lv] || 0;
     if (FL.i >= FL.qs.length) {
@@ -440,6 +440,7 @@
       return `<a class="back" href="#/exam/${lv}">← ${esc(t("dx.title"))}</a><h1>⚡ ${esc(t("dx.flash"))}</h1>
         <section class="card dx-result"><div class="dx-ring" style="--p:${FL.ok * 10}"><b>${FL.ok}</b><small>/10</small></div>
         <div><p class="dx-verdict">${esc(t("dx.flashEnd", { n: FL.ok }))}</p><p>${rec ? esc(t("dx.flashRec")) : esc(t("dx.flashBest", { b: Math.max(best, FL.ok) }))}</p><p class="muted">${esc(t("dx.combo", { n: FL.maxc }))}</p></div></section>
+        <section class="card center ex-end">${A().recap({ key: "fl" + FL.start, ok: FL.ok, n: FL.n, start: FL.start, combo: FL.maxc })}</section>
         <div class="row wrap"><button class="btn" data-dx="flash-again">${esc(t("dx.again"))}</button><a class="btn ghost" href="#/exam/${lv}">${esc(t("dx.title"))}</a></div>`;
     }
     const { it, q } = FL.qs[FL.i], answered = FL.sel != null;
@@ -450,7 +451,7 @@
       ${it.sec === "ce" ? docHtml(it.doc) : `<div class="card dx-audio"><span class="dx-wave" aria-hidden="true">🎧</span><button class="btn small" data-dx="flash-play">▶ ${esc(t("dx.listen"))}</button></div>`}
       <p class="dx-fq" lang="fr"><b>${esc(q.q)}</b></p>
       <div class="opts dx-opts">${q.o.map((o, oi) => `<button class="opt ${answered ? (oi === q.a ? "right" : FL.sel === oi ? "wrong" : "") : ""}" data-dx="flash-pick" data-o="${oi}" ${answered ? "disabled" : ""} lang="fr">${esc(o)}</button>`).join("")}</div>
-      ${answered ? `<p class="dx-x" lang="fr">${FL.sel === q.a ? "✓" : "→"} ${esc(q.x)}</p>${xtr(q)}<button class="btn" data-dx="flash-next">${FL.i + 1 < FL.qs.length ? esc(t("dx.nextLine")) : esc(t("dx.finish"))}</button>` : ""}`;
+      ${answered ? `<div class="fb sheet ${FL.sel === q.a ? "ok" : "bad"}" role="status">${A().sheetHead(FL.sel === q.a, FL.n)}<p class="dx-x" lang="fr">${esc(q.x)}</p>${xtr(q)}<button class="btn sheet-go" data-dx="flash-next">${FL.i + 1 < FL.qs.length ? esc(t("dx.nextLine")) : esc(t("dx.finish"))}</button></div><div class="sheet-space"></div>` : ""}`;
   }
 
   /* ── Survival: questions until 3 mistakes ── */
@@ -463,6 +464,7 @@
       return back + `<h1>❤️ ${esc(t("dx.surv"))}</h1>
         <section class="card dx-result"><div class="dx-ring" style="--p:${Math.min(100, FL.ok * 5)}"><b>${FL.ok}</b><small>✓</small></div>
         <div><p class="dx-verdict">${esc(t("dx.survEnd", { n: FL.ok }))}</p><p>${rec ? esc(t("dx.flashRec")) : esc(t("dx.survBest", { b: Math.max(best, FL.ok) }))}</p><p class="muted">${esc(t("dx.combo", { n: FL.maxc }))}</p></div></section>
+        <section class="card center ex-end">${A().recap({ key: "fl" + FL.start, ok: FL.ok, n: FL.n, start: FL.start, combo: FL.maxc })}</section>
         <div class="row wrap"><button class="btn" data-dx="flash-again">${esc(t("dx.again"))}</button><a class="btn ghost" href="#/exam/${lv}">${esc(t("dx.title"))}</a></div>`;
     }
     const { it, q } = FL.qs[FL.i], answered = FL.sel != null, over = answered && FL.lives <= 0;
@@ -472,7 +474,7 @@
       ${it.sec === "ce" ? docHtml(it.doc) : `<div class="card dx-audio"><span class="dx-wave" aria-hidden="true">🎧</span><button class="btn small" data-dx="flash-play">▶ ${esc(t("dx.listen"))}</button></div>`}
       <p class="dx-fq" lang="fr"><b>${esc(q.q)}</b></p>
       <div class="opts dx-opts">${q.o.map((o, oi) => `<button class="opt ${answered ? (oi === q.a ? "right" : FL.sel === oi ? "wrong" : "") : ""}" data-dx="flash-pick" data-o="${oi}" ${answered ? "disabled" : ""} lang="fr">${esc(o)}</button>`).join("")}</div>
-      ${answered ? `<p class="dx-x" lang="fr">${FL.sel === q.a ? "✓" : "→"} ${esc(q.x)}</p>${xtr(q)}<button class="btn" data-dx="flash-next">${over || FL.i + 1 >= FL.qs.length ? esc(t("dx.finish")) : esc(t("dx.nextLine"))}</button>` : ""}`;
+      ${answered ? `<div class="fb sheet ${FL.sel === q.a ? "ok" : "bad"}" role="status">${A().sheetHead(FL.sel === q.a, FL.n)}<p class="dx-x" lang="fr">${esc(q.x)}</p>${xtr(q)}<button class="btn sheet-go" data-dx="flash-next">${over || FL.i + 1 >= FL.qs.length ? esc(t("dx.finish")) : esc(t("dx.nextLine"))}</button></div><div class="sheet-space"></div>` : ""}`;
   }
 
   /* ── Events ── */
@@ -490,7 +492,7 @@
         if (qi == null) c.plays++; else c.qplays[qi] = (c.qplays[qi] || 0) + 1;
         keepScroll(() => {}); playLines(lines, { lv: it.level, slow: c.slow }); return;
       }
-      case "pick": c.sel[+d.q] = +d.o; keepScroll(() => {}); return;
+      case "pick": c.sel[+d.q] = +d.o; fx("tick"); keepScroll(() => {}); return;
       case "check": {
         c.checked = true; stopAudio();
         const ok = it.questions.filter((q, qi) => c.sel[qi] === q.a).length;
