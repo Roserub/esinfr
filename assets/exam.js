@@ -68,9 +68,11 @@
     const d = st(); if (d.badges[id]) return;
     d.badges[id] = A().ymd(); save();
     const b = BADGES.find(x => x[0] === id);
-    setTimeout(() => { A().toast(t("dx.newBadge", { b: b[1] + " " + t("dx.b." + id) })); confetti(); }, 300);
+    setTimeout(() => { A().toast(t("dx.newBadge", { b: b[1] + " " + t("dx.b." + id) })); if (window.FX) window.FX.big(b[1]); else confetti(); }, 300);
   }
+  const fx = (m, a, b) => { try { if (window.FX && window.FX[m]) window.FX[m](a, b); } catch (e) { /* effects are optional */ } };
   function confetti() {
+    if (window.FX) return window.FX.confetti();
     if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const box = document.createElement("div"); box.className = "confetti"; box.setAttribute("aria-hidden", "true");
     const colors = ["#3f6f5a", "#e39a72", "#e2bb5c", "#3d5f92", "#c96b8b", "#7fb59b"];
@@ -400,7 +402,8 @@
     if (!RUN.logged) {
       RUN.logged = true; A().logMinutes(mins);
       // A paper finished one exercise at a time also counts as done (best score, passed papers), without a history line.
-      if (RUN.n != null) { const r = recordSujet(lv, RUN.n, RUN.kind === "ex"); if (r.complete && r.pass && RUN.kind !== "ex") setTimeout(confetti, 200); checkBadges(lv, RUN.n); }
+      if (RUN.n != null) { const r = recordSujet(lv, RUN.n, RUN.kind === "ex"); if (r.complete && r.pass && RUN.kind !== "ex") setTimeout(() => fx("big", "🎉", "Réussi !"), 200); else setTimeout(() => fx("done"), 150); checkBadges(lv, RUN.n); }
+      else setTimeout(() => fx("done"), 150);
     }
     const secs = SECS.filter(s => its.some(x => x.sec === s));
     const r = RUN.n != null ? sujetScore(lv, RUN.n) : null;
@@ -433,7 +436,7 @@
     const best = st().flash[lv] || 0;
     if (FL.i >= FL.qs.length) {
       const rec = FL.ok > best && FL.ok > 0;
-      if (!FL.saved) { FL.saved = true; if (FL.ok > best) { st().flash[lv] = FL.ok; save(); } if (FL.ok === 10) award("flash"); A().logMinutes(3); if (rec) setTimeout(confetti, 200); }
+      if (!FL.saved) { FL.saved = true; if (FL.ok > best) { st().flash[lv] = FL.ok; save(); } if (FL.ok === 10) award("flash"); A().logMinutes(3); setTimeout(() => rec ? fx("big", "⚡", "Record !") : fx("done", FL.ok >= 8), 200); }
       return `<a class="back" href="#/exam/${lv}">← ${esc(t("dx.title"))}</a><h1>⚡ ${esc(t("dx.flash"))}</h1>
         <section class="card dx-result"><div class="dx-ring" style="--p:${FL.ok * 10}"><b>${FL.ok}</b><small>/10</small></div>
         <div><p class="dx-verdict">${esc(t("dx.flashEnd", { n: FL.ok }))}</p><p>${rec ? esc(t("dx.flashRec")) : esc(t("dx.flashBest", { b: Math.max(best, FL.ok) }))}</p><p class="muted">${esc(t("dx.combo", { n: FL.maxc }))}</p></div></section>
@@ -456,7 +459,7 @@
     const best = st().surv[lv] || 0, back = `<a class="back" href="#/exam/${lv}">← ${esc(t("dx.title"))}</a>`;
     if (FL.i >= FL.qs.length) {
       const rec = FL.ok > best && FL.ok > 0;
-      if (!FL.saved) { FL.saved = true; if (FL.ok > best) { st().surv[lv] = FL.ok; save(); } if (FL.ok >= 15) award("surv"); A().logMinutes(Math.max(2, Math.round(FL.n / 2))); if (rec) setTimeout(confetti, 200); }
+      if (!FL.saved) { FL.saved = true; if (FL.ok > best) { st().surv[lv] = FL.ok; save(); } if (FL.ok >= 15) award("surv"); A().logMinutes(Math.max(2, Math.round(FL.n / 2))); setTimeout(() => rec ? fx("big", "❤️", "Record !") : fx("done"), 200); }
       return back + `<h1>❤️ ${esc(t("dx.surv"))}</h1>
         <section class="card dx-result"><div class="dx-ring" style="--p:${Math.min(100, FL.ok * 5)}"><b>${FL.ok}</b><small>✓</small></div>
         <div><p class="dx-verdict">${esc(t("dx.survEnd", { n: FL.ok }))}</p><p>${rec ? esc(t("dx.flashRec")) : esc(t("dx.survBest", { b: Math.max(best, FL.ok) }))}</p><p class="muted">${esc(t("dx.combo", { n: FL.maxc }))}</p></div></section>
@@ -491,21 +494,22 @@
       case "check": {
         c.checked = true; stopAudio();
         const ok = it.questions.filter((q, qi) => c.sel[qi] === q.a).length;
-        saveScore(it, it.pts * ok / it.questions.length); keepScroll(() => {}); return;
+        saveScore(it, it.pts * ok / it.questions.length); keepScroll(() => {}); checked(ok / it.questions.length); return;
       }
       case "checkform": {
         $$("[data-dxf]").forEach(x => { c.fields[+x.dataset.dxf] = x.value; });
         c.checked = true; const ok = it.fields.filter((f, i) => FIELD_OK[f.k](c.fields[i] || "")).length;
-        saveScore(it, it.pts * ok / it.fields.length); keepScroll(() => {}); return;
+        saveScore(it, it.pts * ok / it.fields.length); keepScroll(() => {}); checked(ok / it.fields.length); return;
       }
       case "checktext": { const x = document.getElementById("dx-text"); if (x) c.text = x.value; c.checked = true; keepScroll(() => {}); return; }
       case "checkpo": c.checked = true; stopAudio(); keepScroll(() => {}); return;
       case "self": c.self = +d.v; saveScore(it, it.sec === "pe" ? textScore(it, c) : poScore(it, c)); keepScroll(() => {}); return;
-      case "tick": c.ticks[+d.i] = !c.ticks[+d.i]; keepScroll(() => {}); return;
+      case "tick": c.ticks[+d.i] = !c.ticks[+d.i]; fx(c.ticks[+d.i] ? "match" : "tick"); keepScroll(() => {}); return;
       case "example": c.used[+d.i] = 1; keepScroll(() => {}); A().speak(it.prompts[+d.i].m); return;
       case "answered": {
         c.ok[+d.i] = 1; c.pi = +d.i + 1;
-        if (c.pi >= it.prompts.length) { saveScore(it, poScore(it, c)); keepScroll(() => {}); return; }
+        if (c.pi >= it.prompts.length) { saveScore(it, poScore(it, c)); keepScroll(() => {}); fx("done"); return; }
+        fx("good", { praise: false });
         keepScroll(() => {}); if (it.kind === "entretien") A().speak(it.prompts[c.pi].q); return;
       }
       case "countdown": return countdown(+d.s);
@@ -520,13 +524,15 @@
         if (!FL || FL.sel != null) return;
         const q = FL.qs[FL.i].q; FL.sel = +d.o; FL.n++;
         if (FL.sel === q.a) { FL.ok++; FL.combo++; FL.maxc = Math.max(FL.maxc, FL.combo); } else { FL.combo = 0; if (FL.surv) FL.lives--; }
-        stopAudio(); keepScroll(() => {}); return;
+        stopAudio(); keepScroll(() => {}); fx(FL.sel === q.a ? "good" : "soft", { from: `[data-dx="flash-pick"][data-o="${FL.sel}"]` }); return;
       }
       case "flash-next": if (!FL || FL.sel == null) return; FL.i++; if (FL.surv && FL.lives <= 0) FL.i = FL.qs.length; FL.sel = null; A().render(); window.scrollTo(0, 0); { const n = FL.qs[FL.i]; if (n && n.it.sec === "co") setTimeout(() => playLines(n.q.audio || n.it.audio, { lv: n.it.level, glow: "[data-dx=flash-play]" }), 350); } return;
       case "flash-again": FL = null; A().render(); return;
     }
   }
   const $$ = s => Array.from(document.querySelectorAll(s));
+  // After "Check": all right → chime + bounce; half or more → a smaller chime; less → the soft sound.
+  function checked(r) { if (r >= 1) fx("good", { pop: ".dx-q.ok, .opt.right, label.good" }); else if (r >= 0.5) fx("good", { praise: false, pop: ".dx-q.ok" }); else fx("soft"); }
   let CD = null;
   function countdown(s) {
     clearInterval(CD); const end = Date.now() + s * 1000;

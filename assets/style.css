@@ -714,3 +714,21 @@ button:active { transform: scale(.96); }
 
 /* Focus is moved to the page on each navigation (screen readers start at the new content); no ring needed there. */
 #main:focus { outline: none; }
+/* Success effects (assets/fx.js) */
+.fx-layer { position: fixed; inset: 0; pointer-events: none; z-index: 101; overflow: hidden; }
+.fx-dot, .fx-star { position: absolute; width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 50%; animation: fx-fly .8s cubic-bezier(.2,.7,.3,1) forwards; }
+.fx-star { width: auto; height: auto; margin: -9px 0 0 -6px; font-size: 15px; line-height: 1; border-radius: 0; }
+@keyframes fx-fly { 0% { transform: translate(0, 0) scale(.4); opacity: 1; } 70% { opacity: 1; } 100% { transform: translate(var(--dx), var(--dy)) scale(1); opacity: 0; } }
+.fx-word { position: absolute; transform: translate(-50%, -50%); font-size: 1.15rem; font-weight: 800; color: var(--accent); white-space: nowrap;
+  text-shadow: 0 1px 0 var(--bg, #fff), 0 0 10px var(--bg, #fff); animation: fx-rise 1.2s ease-out forwards; }
+@keyframes fx-rise { 0% { opacity: 0; transform: translate(-50%, -30%) scale(.7); } 15% { opacity: 1; transform: translate(-50%, -60%) scale(1.08); } 100% { opacity: 0; transform: translate(-50%, -190%) scale(1); } }
+.fx-center { display: grid; place-items: center; }
+.fx-banner { display: grid; justify-items: center; gap: 6px; animation: fx-banner 1.8s ease-out forwards; }
+.fx-emo { font-size: 4.5rem; line-height: 1; filter: drop-shadow(0 6px 14px rgba(0,0,0,.18)); }
+.fx-banner b { font-size: 1.4rem; color: var(--accent); background: var(--surface, #fff); padding: 4px 14px; border-radius: 999px; box-shadow: 0 4px 16px rgba(0,0,0,.12); }
+@keyframes fx-banner { 0% { opacity: 0; transform: scale(.3) rotate(-12deg); } 18% { opacity: 1; transform: scale(1.15) rotate(4deg); } 30% { transform: scale(1) rotate(0); } 80% { opacity: 1; } 100% { opacity: 0; transform: scale(1.05) translateY(-30px); } }
+.fx-pop { animation: fx-pop .5s cubic-bezier(.3,1.6,.5,1); }
+.opt.fx-pop, .mem.fx-pop, .fb.ok.fx-pop { box-shadow: 0 0 0 3px var(--accent-soft), 0 0 18px var(--accent-soft); }
+@keyframes fx-pop { 0% { transform: scale(1); } 35% { transform: scale(1.06); } 100% { transform: scale(1); } }
+.icon-btn.fx-toggle.off { opacity: .55; }
+@media (prefers-reduced-motion: reduce) { .fx-pop { animation: none; } }
