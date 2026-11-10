@@ -45,6 +45,9 @@
   /* ───────── Adventures ───────── */
   let AV = null; // { id, log: [{node}|{me, bad}], mistakes, wrong: {}, fb: idx|null, help, pending }
   const curNode = () => { const a = ADV_BY_ID[AV.id]; for (let i = AV.log.length - 1; i >= 0; i--) if (AV.log[i].node) return a.nodes[AV.log[i].node]; return null; };
+  /* Options are shown in a fresh random order at every step, so the right answer is never "always the first one".
+     The order stays fixed while she stays on the same step (retries, help toggle). */
+  const advOrder = n => { if (!AV.order || AV.order.length !== n.choices.length) AV.order = shuffle(n.choices.map((_, i) => i)); return AV.order; };
   const advStars = m => m <= 1 ? 3 : m <= 3 ? 2 : 1;
   function viewAdvList() {
     const g = st();
@@ -61,7 +64,7 @@
   const sceneHtml = (sc, help) => sc ? `<p class="av-scene"><span lang="fr">${esc(sc.fr)}</span>${help ? `<br><small class="muted">${esc(helpText(sc))}</small>` : ""}</p>` : "";
   function viewAdv(id) {
     const a = ADV_BY_ID[id]; if (!a) return viewAdvList();
-    if (!AV || AV.id !== id) { AV = { id, log: [{ node: a.start }], mistakes: 0, wrong: {}, fb: null, help: false, pending: null, start: Date.now() }; setTimeout(() => { if (!AV || AV.id !== id) return; const n = curNode(); if (n) play(n.say, a.level); }, 400); }
+    if (!AV || AV.id !== id) { AV = { id, log: [{ node: a.start }], mistakes: 0, wrong: {}, fb: null, help: false, pending: null, order: null, start: Date.now() }; setTimeout(() => { if (!AV || AV.id !== id) return; const n = curNode(); if (n) play(n.say, a.level); }, 400); }
     const n = curNode(), lastNodeIdx = AV.log.map(x => !!x.node).lastIndexOf(true);
     const hist = AV.log.slice(0, lastNodeIdx).map(x => x.node ? sceneHtml(a.nodes[x.node].scene, false) + sayHtml(a.nodes[x.node].say, a.level, false) : `<div class="av-me ${x.bad ? "bad" : ""}"><p class="bubble" lang="fr">${esc(x.me)}</p></div>`).join("");
     let now = sceneHtml(n.scene, AV.help) + sayHtml(n.say, a.level, true);
@@ -77,7 +80,7 @@
     } else {
       const fbC = AV.fb != null ? n.choices[AV.fb] : null;
       now += `<p class="av-you">${esc(t("av.you"))}</p>
-        <div class="opts av-opts">${n.choices.map((c, i) => `<button class="opt ${AV.wrong[i] ? "wrong" : ""}" data-gm="av-pick" data-i="${i}" ${AV.wrong[i] || AV.pending ? "disabled" : ""}><span><span lang="fr">${esc(c.fr)}</span>${AV.help ? `<small class="muted av-tr">${esc(helpText(c))}</small>` : ""}</span></button>`).join("")}</div>
+        <div class="opts av-opts">${advOrder(n).map(i => [n.choices[i], i]).map(([c, i]) => `<button class="opt ${AV.wrong[i] ? "wrong" : ""}" data-gm="av-pick" data-i="${i}" ${AV.wrong[i] || AV.pending ? "disabled" : ""}><span><span lang="fr">${esc(c.fr)}</span>${AV.help ? `<small class="muted av-tr">${esc(helpText(c))}</small>` : ""}</span></button>`).join("")}</div>
         <div aria-live="polite">${fbC ? `<div class="fb bad av-fb"><p lang="fr">${esc(fbC.fb.fr)}</p>${lang() !== "fr" ? `<p class="muted small">${esc(fbC.fb[lang()] || fbC.fb.en)}</p>` : `<p class="muted small">${esc(fbC.fb.tr)}</p>`}
           ${AV.pending ? `<button class="btn" data-gm="av-go">${esc(t("av.continue"))} →</button>` : `<p class="small">${esc(t("av.retry"))}</p>`}</div>` : ""}</div>
         <button class="chip ${AV.help ? "on" : ""}" aria-pressed="${AV.help}" data-gm="av-help">🌐 ${esc(t("av.help"))}</button>`;
@@ -91,7 +94,7 @@
   }
   function advGo(go) {
     const a = ADV_BY_ID[AV.id];
-    AV.log.push({ node: go }); AV.wrong = {}; AV.fb = null; AV.pending = null;
+    AV.log.push({ node: go }); AV.wrong = {}; AV.fb = null; AV.pending = null; AV.order = null;
     A().render();
     const el = document.getElementById("av-now");
     if (el) el.scrollIntoView({ block: "start", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });

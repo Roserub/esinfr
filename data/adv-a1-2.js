@@ -43,13 +43,13 @@
            choices: [
              { fr: "Les pastilles, s'il vous plaît.", tr: "Pastiller, lütfen.", en: "The lozenges, please.", ok: true, go: "f1" },
              { fr: "Le sirop, s'il vous plaît.", tr: "Şurup, lütfen.", en: "The syrup, please.", ok: true, go: "f2" },
-             { fr: "Je préfère le chocolat.", tr: "Ben çikolatayı tercih ederim.", en: "I prefer chocolate.", ok: false,
+             { fr: "Je préfère le chocolat, s'il vous plaît.", tr: "Çikolatayı tercih ederim, lütfen.", en: "I prefer the chocolate, please.", ok: false,
                fb: { fr: "Nous aussi 🍫 ! Mais aujourd'hui, c'est pastilles ou sirop. Choisissez un des deux !", tr: "Biz de 🍫! Ama bugün seçenekler pastil ya da şurup. İkisinden birini seçin!", en: "Same here 🍫! But today it's lozenges or syrup. Pick one!" } }
            ] },
       f1: { say: [["M", "Alors : une pastille toutes les 2 heures. Maximum 6 pastilles par jour."]],
            choices: [
              { fr: "D'accord : une pastille toutes les 2 heures, 6 maximum.", tr: "Tamam: iki saatte bir pastil, en fazla 6 tane.", en: "OK: one lozenge every 2 hours, 6 max.", ok: true, go: "g" },
-             { fr: "Donc 6 pastilles toutes les 2 heures ?", tr: "Yani iki saatte bir 6 pastil mi?", en: "So 6 lozenges every 2 hours?", ok: false,
+             { fr: "Donc 6 pastilles toutes les 2 heures, c'est ça ?", tr: "Yani her 2 saatte bir 6 pastil, öyle mi?", en: "So 6 lozenges every 2 hours, is that right?", ok: false,
                fb: { fr: "Oh là, ça fait beaucoup de pastilles 😅 ! C'est UNE pastille toutes les 2 heures, et 6 maximum par jour.", tr: "Aman, bu çok fazla pastil 😅! İki saatte BİR pastil, günde en fazla 6 tane.", en: "Whoa, that's a lot of lozenges 😅! It's ONE lozenge every 2 hours, and 6 max a day." } },
              { fr: "D'accord, je mange les 6 maintenant.", tr: "Tamam, 6'sını da şimdi yiyorum.", en: "OK, I'll eat all 6 now.", ok: false,
                fb: { fr: "Non, non 😄 ! Une seule à la fois, toutes les 2 heures. Et on ne la mange pas : on la suce doucement, comme un bonbon 🍬.", tr: "Yok yok 😄! Her seferinde sadece bir tane, iki saatte bir. Hem çiğnenmez: şeker gibi yavaş yavaş emilir 🍬.", en: "No, no 😄! Just one at a time, every 2 hours. And you don't chew it: you suck it slowly, like a sweet 🍬." } }
@@ -57,7 +57,7 @@
       f2: { say: [["M", "Alors : une cuillère de sirop 3 fois par jour, après les repas."]],
            choices: [
              { fr: "D'accord : une cuillère 3 fois par jour, après les repas.", tr: "Tamam: günde 3 kez bir kaşık, yemeklerden sonra.", en: "OK: one spoonful 3 times a day, after meals.", ok: true, go: "g" },
-             { fr: "Une cuillère avant les repas, c'est ça ?", tr: "Yemeklerden önce bir kaşık, değil mi?", en: "One spoonful before meals, right?", ok: false,
+             { fr: "D'accord : une cuillère 3 fois par jour, avant les repas.", tr: "Tamam: günde 3 kez bir kaşık, yemeklerden önce.", en: "OK: one spoonful 3 times a day, before meals.", ok: false,
                fb: { fr: "Pas tout à fait : c'est APRÈS les repas (quand vous avez fini de manger), pas avant.", tr: "Tam değil: yemeklerden SONRA. « Avant » = önce, « après » = sonra.", en: "Not quite: it's AFTER meals. « Avant » = before, « après » = after." } },
              { fr: "D'accord, 3 bouteilles par jour.", tr: "Tamam, günde 3 şişe.", en: "OK, 3 bottles a day.", ok: false,
                fb: { fr: "Trois bouteilles 😱 ? Non, juste une cuillère, 3 fois par jour !", tr: "Üç şişe mi 😱? Hayır, sadece bir kaşık, günde 3 kez!", en: "Three bottles 😱? No, just one spoonful, 3 times a day!" } }
@@ -74,13 +74,13 @@
            choices: [
              { fr: "Je peux payer par carte ?", tr: "Kartla ödeyebilir miyim?", en: "Can I pay by card?", ok: true, go: "i" },
              { fr: "Voilà 10 €.", tr: "Buyurun, 10 €.", en: "Here's 10 €.", ok: true, go: "i" },
-             { fr: "Ça fait combien ?", tr: "Ne kadar tutuyor?", en: "How much is it?", ok: false,
+             { fr: "Pardon, ça fait combien, s'il vous plaît ?", tr: "Pardon, ne kadar tutuyor, lütfen?", en: "Sorry, how much is it, please?", ok: false,
                fb: { fr: "Il vient de le dire 😊 : 6,80 €, « six euros quatre-vingts ». Vous pouvez payer !", tr: "Az önce söyledi 😊: 6,80 €, « six euros quatre-vingts ». Ödeyebilirsiniz!", en: "He just said it 😊: 6.80 €, « six euros quatre-vingts ». You can pay now!" } }
            ] },
       i: { say: [["M", "Voilà ! Buvez du thé chaud avec du miel et reposez-vous bien. Bonne journée !"]],
            choices: [
              { fr: "Merci beaucoup, bonne journée !", tr: "Çok teşekkürler, iyi günler!", en: "Thank you very much, have a nice day!", ok: true, go: "fin" },
-             { fr: "Merci, bonne nuit !", tr: "Teşekkürler, iyi geceler!", en: "Thanks, good night!", ok: false,
+             { fr: "Merci beaucoup, bonne nuit !", tr: "Çok teşekkürler, iyi geceler!", en: "Thank you very much, good night!", ok: false,
                fb: { fr: "Il est 11 h du matin 🌞 ! « Bonne nuit », c'est pour aller dormir. Dites « bonne journée ».", tr: "Saat sabahın 11'i 🌞! « Bonne nuit » yatmadan önce söylenir. « Bonne journée » deyin.", en: "It's 11 a.m. 🌞! « Bonne nuit » is for bedtime. Say « bonne journée »." } },
              { fr: "De rien !", tr: "Rica ederim!", en: "You're welcome!", ok: false,
                fb: { fr: "« De rien », c'est la réponse à « merci ». Ici, c'est vous qui dites « merci » 😊.", tr: "« De rien », « merci »ye verilen cevaptır. Burada teşekkür eden sizsiniz 😊.", en: "« De rien » is the answer to « merci ». Here, you're the one saying thank you 😊." } }
@@ -129,7 +129,7 @@
            choices: [
              { fr: "À 12 h, s'il vous plaît.", tr: "Saat 12'de, lütfen.", en: "At 12, please.", ok: true, go: "e" },
              { fr: "À 13 h 30, s'il vous plaît.", tr: "13.30'da, lütfen.", en: "At 1:30, please.", ok: true, go: "e" },
-             { fr: "Oui, je préfère.", tr: "Evet, tercih ederim.", en: "Yes, I prefer.", ok: false,
+             { fr: "Oui, je préfère, s'il vous plaît.", tr: "Evet, tercih ederim, lütfen.", en: "Yes, I prefer, please.", ok: false,
                fb: { fr: "« Oui »… mais quelle heure 🤔 ? Choisissez : « à 12 h » ou « à 13 h 30 ».", tr: "« Evet »… ama hangi saat 🤔? Seçin: « à 12 h » mı, « à 13 h 30 » mu?", en: "« Yes »… but which time 🤔? Choose: « à 12 h » or « à 13 h 30 »." } }
            ] },
       e: { say: [["M", "Très bien. Vous êtes combien de personnes ?"]],
@@ -142,15 +142,15 @@
       f: { say: [["M", "C'est noté. C'est à quel nom ?"]],
            choices: [
              { fr: "Au nom de Çelik. C'est le nom de mon amie.", tr: "Çelik adına. Arkadaşımın soyadı.", en: "Under the name Çelik. It's my friend's name.", ok: true, go: "g" },
-             { fr: "Le nom ? Oui, j'ai un nom.", tr: "İsim mi? Evet, bir ismim var.", en: "A name? Yes, I have a name.", ok: false,
+             { fr: "Le nom ? Oui, j'ai un nom, c'est bien noté.", tr: "İsim mi? Evet, bir ismim var, not edildi.", en: "The name? Yes, I have a name, it's noted.", ok: false,
                fb: { fr: "Bonne nouvelle 😄 ! Mais il veut savoir lequel : « au nom de Çelik ».", tr: "Ne güzel 😄! Ama hangisi olduğunu bilmek istiyor: « au nom de Çelik ».", en: "Good news 😄! But he wants to know which one: « au nom de Çelik »." } },
-             { fr: "C'est à côté de la gare.", tr: "Garın yanında.", en: "It's next to the station.", ok: false,
+             { fr: "C'est à côté de la gare, rue de la Paix.", tr: "Garın yanında, Paix sokağında.", en: "It's next to the station, rue de la Paix.", ok: false,
                fb: { fr: "« À quel nom », pas « où » 😊 ! Il veut un nom pour la réservation : « au nom de Çelik ».", tr: "« Hangi isimle » diyor, « nerede » değil 😊! Rezervasyon için bir isim istiyor: « au nom de Çelik ».", en: "« Under what name », not « where » 😊! He needs a name for the booking: « au nom de Çelik »." } }
            ] },
       g: { say: [["M", "Çelik… Vous pouvez épeler, s'il vous plaît ?"]],
            choices: [
              { fr: "Oui : C cédille, E, L, I, K.", tr: "Evet: Ç, E, L, İ, K.", en: "Yes: C cedilla, E, L, I, K.", ok: true, go: "h" },
-             { fr: "Oui : S, E, L, I, K.", tr: "Evet: S, E, L, İ, K.", en: "Yes: S, E, L, I, K.", ok: false,
+             { fr: "Oui : S, E, L, I, K. Merci !", tr: "Evet: S, E, L, I, K. Teşekkürler!", en: "Yes: S, E, L, I, K. Thanks!", ok: false,
                fb: { fr: "Presque ! Avec « S », il va écrire « Selik ». Bonne nouvelle : le « ç » existe en français, il s'appelle « C cédille » 😊.", tr: "Çok yakın! « S » derseniz « Selik » yazar. İyi haber: « ç » Fransızcada da var, adı « C cédille » 😊.", en: "Close! With « S », he'll write « Selik ». Good news: « ç » exists in French too, it's called « C cédille » 😊." } },
              { fr: "Non merci.", tr: "Hayır, teşekkürler.", en: "No, thanks.", ok: false,
                fb: { fr: "« Épeler » = dire les lettres une par une. Sans vous, il ne peut pas écrire 😊 ! Dites : C cédille, E, L, I, K.", tr: "« Épeler » = harf harf söylemek. Siz olmadan yazamaz 😊! Şöyle deyin: C cédille, E, L, I, K.", en: "« Épeler » = to spell, letter by letter. He can't write it without you 😊! Say: C cédille, E, L, I, K." } }
@@ -214,8 +214,8 @@
            ] },
       d: { say: [["F", "Et qu'est-ce que vous faites dans la vie ?"]],
            choices: [
-             { fr: "Je suis kinésithérapeute de formation. Je travaille à l'accueil d'une salle de sport.", tr: "Eğitimim fizyoterapi. Bir spor salonunun resepsiyonunda çalışıyorum.", en: "I'm a physiotherapist by training. I work at the front desk of a gym.", ok: true, go: "e" },
-             { fr: "Je suis une kinésithérapeute de formation.", tr: "Ben eğitim olarak bir fizyoterapistim.", en: "I am a physiotherapist by training.", ok: false,
+             { fr: "Je suis kiné de formation. Je travaille dans une salle de sport.", tr: "Eğitimim fizyoterapist. Bir spor salonunda çalışıyorum.", en: "I trained as a physio. I work at a gym.", ok: true, go: "e" },
+             { fr: "Je suis une kinésithérapeute de formation. Je travaille dans le sport.", tr: "Ben eğitim olarak bir fizyoterapistim. Spor alanında çalışıyorum.", en: "I am a physiotherapist by training. I work in sport.", ok: false,
                fb: { fr: "Presque parfait ! Pour un métier, pas de « un » ou « une » : « je suis kinésithérapeute de formation », « je suis professeure ».", tr: "Neredeyse mükemmel! Meslek söylerken « un » ya da « une » kullanılmaz: « je suis kinésithérapeute de formation », « je suis professeure ».", en: "Almost perfect! No « un » or « une » before a job: « je suis kinésithérapeute de formation », « je suis professeure »." } },
              { fr: "Je fais la vie.", tr: "Hayatı yapıyorum.", en: "I do life.", ok: false,
                fb: { fr: "Belle philosophie 😄 ! Mais elle demande votre métier : « je suis kinésithérapeute de formation… ».", tr: "Güzel bir felsefe 😄! Ama mesleğinizi soruyor: « je suis kinésithérapeute de formation… ».", en: "Lovely philosophy 😄! But she's asking about your job: « je suis kinésithérapeute de formation… »." } }
@@ -246,7 +246,7 @@
       g: { say: [["M2", "On se tutoie ? Tu habites où ?"]],
            choices: [
              { fr: "Oui, bien sûr ! J'habite près de l'école. Et toi ?", tr: "Evet, tabii! Okulun yakınında oturuyorum. Ya sen?", en: "Sure! I live near the school. And you?", ok: true, go: "h" },
-             { fr: "Oui ! J'habite près de l'école. Et vous ?", tr: "Evet! Okulun yakınında oturuyorum. Ya siz?", en: "Yes! I live near the school. And you (formal)?", ok: false,
+             { fr: "Oui, bien sûr ! J'habite près de l'école. Et vous ?", tr: "Evet, tabii ki! Okulun yakınında oturuyorum. Ya siz?", en: "Yes, of course! I live near the school. And you?", ok: false,
                fb: { fr: "Vous dites « oui » au « tu »… puis vous dites « vous » 😄. Avec Lukas, maintenant, c'est « et toi ? ».", tr: "« Tu »ya evet dediniz… sonra « vous » dediniz 😄. Artık Lukas'la « et toi ? » (ya sen?).", en: "You said yes to « tu »… then used « vous » 😄. With Lukas, it's « et toi ? » now." } },
              { fr: "Non, non, je ne tue pas !", tr: "Hayır hayır, ben kimseyi öldürmem!", en: "No, no, I don't kill!", ok: false,
                fb: { fr: "😄 « Tutoyer », ce n'est pas « tuer » ! « On se tutoie ? » = on se dit « tu » ? Répondez « oui, bien sûr ! ».", tr: "😄 « Tutoyer », « tuer » (öldürmek) değil! « On se tutoie ? » = birbirimize « sen » diyelim mi? « Oui, bien sûr ! » deyin.", en: "😄 « Tutoyer » isn't « tuer » (to kill)! « On se tutoie ? » = shall we say « tu » to each other? Answer « oui, bien sûr ! »." } }
@@ -268,7 +268,7 @@
       i2: { say: [["M2", "Bien sûr ! On regarde ensemble. Page 12… voilà !"]],
            choices: [
              { fr: "Merci Lukas, tu es sympa !", tr: "Sağ ol Lukas, çok iyisin!", en: "Thanks Lukas, you're nice!", ok: true, go: "j" },
-             { fr: "Merci Lukas, vous êtes sympa !", tr: "Teşekkürler Lukas, çok iyisiniz!", en: "Thank you Lukas, you're nice (formal)!", ok: false,
+             { fr: "Merci Lukas, vous êtes sympa !", tr: "Teşekkürler Lukas, çok iyisiniz!", en: "Thank you Lukas, you're nice!", ok: false,
                fb: { fr: "Avec Lukas, c'est « tu » maintenant 😉 : « merci Lukas, tu es sympa ! ».", tr: "Lukas'la artık « tu » diyorsunuz 😉: « merci Lukas, tu es sympa ! ».", en: "You're on « tu » terms with Lukas now 😉: « merci Lukas, tu es sympa ! »." } }
            ] },
       j: { scene: { fr: "Deux heures plus tard…", tr: "İki saat sonra…", en: "Two hours later…" },
@@ -276,7 +276,7 @@
            choices: [
              { fr: "Merci madame, à jeudi !", tr: "Teşekkürler hocam, perşembe görüşürüz!", en: "Thank you, see you on Thursday!", ok: true, go: "fin" },
              { fr: "Au revoir madame ! Salut Lukas, à jeudi !", tr: "Hoşça kalın hocam! Görüşürüz Lukas, perşembeye!", en: "Goodbye! Bye Lukas, see you Thursday!", ok: true, go: "fin" },
-             { fr: "Je suis finie !", tr: "Ben bittim!", en: "I'm finished!", ok: false,
+             { fr: "Je suis finie ! Merci madame, à jeudi !", tr: "Ben bittim! Teşekkürler hocam, perşembe görüşürüz!", en: "I'm finished! Thank you, madam, see you Thursday!", ok: false,
                fb: { fr: "Oups ! « Je suis finie » veut dire « c'est la fin pour moi » 😵. C'est le cours qui est fini, pas vous ! Dites « merci, à jeudi ! ».", tr: "Eyvah! « Je suis finie » = « benim için her şey bitti » demek 😵. Biten ders, siz değilsiniz! « Merci, à jeudi ! » deyin.", en: "Oops! « Je suis finie » means « I'm done for » 😵. It's the class that's finished, not you! Say « merci, à jeudi ! »." } }
            ] },
       fin: { end: "win", say: [["F", "À jeudi ! Et bravo pour votre premier cours !"], ["M2", "Salut, à jeudi !"]],
@@ -300,13 +300,13 @@
            say: [["F", "Vous cherchez quelque chose ?"]],
            choices: [
              { fr: "Oui, je cherche une veste, s'il vous plaît.", tr: "Evet, bir ceket arıyorum, lütfen.", en: "Yes, I'm looking for a jacket, please.", ok: true, go: "b" },
-             { fr: "Oui, je cherche la vendeuse.", tr: "Evet, satıcıyı arıyorum.", en: "Yes, I'm looking for the shop assistant.", ok: false,
+             { fr: "Oui, je cherche la vendeuse, s'il vous plaît.", tr: "Evet, satıcıyı arıyorum, lütfen.", en: "Yes, I'm looking for the shop assistant, please.", ok: false,
                fb: { fr: "La vendeuse, c'est elle 😄 ! Dites ce que vous cherchez : « une veste ».", tr: "Satıcı zaten o 😄! Ne aradığınızı söyleyin: « une veste ».", en: "She IS the shop assistant 😄! Say what you're looking for: « une veste »." } }
            ] },
       b: { say: [["F", "Les vestes sont ici. Vous faites quelle taille ?"]],
            choices: [
              { fr: "Je fais du 38, je pense.", tr: "Sanırım 38 giyiyorum.", en: "I'm a size 38, I think.", ok: true, go: "c" },
-             { fr: "Je fais 1 mètre 65.", tr: "Boyum 1 metre 65.", en: "I'm 1 metre 65.", ok: false,
+             { fr: "Je fais 1 mètre 65, je pense.", tr: "Sanırım 1 metre 65'im.", en: "I'm 1.65 m tall, I think.", ok: false,
                fb: { fr: "Ça, c'est votre hauteur 📏 ! Ici, « taille » = la taille du vêtement : 36, 38, 40… ou S, M, L.", tr: "Bu sizin boyunuz 📏! Burada « taille » = beden: 36, 38, 40… ya da S, M, L.", en: "That's your height 📏! Here, « taille » = clothing size: 36, 38, 40… or S, M, L." } },
              { fr: "Je suis 38.", tr: "Ben 38'im.", en: "I am 38.", ok: false,
                fb: { fr: "Presque ! Pour les vêtements, on dit « je fais du 38 ».", tr: "Çok yakın! Kıyafet bedeni için « je fais du 38 » denir.", en: "Close! For clothes, say « je fais du 38 »." } }
@@ -323,16 +323,16 @@
              { fr: "Oui ! Où sont les cabines d'essayage ?", tr: "Evet! Deneme kabinleri nerede?", en: "Yes! Where are the fitting rooms?", ok: true, go: "e" },
              { fr: "Oui, je peux la goûter ?", tr: "Evet, tadına bakabilir miyim?", en: "Yes, can I taste it?", ok: false,
                fb: { fr: "« Goûter », c'est pour la nourriture 😋 ! Une veste, on l'essaie : « je peux l'essayer ? ».", tr: "« Goûter » yemekler için 😋! Ceket denenir: « je peux l'essayer ? ».", en: "« Goûter » is for food 😋! A jacket, you try on: « je peux l'essayer ? »." } },
-             { fr: "Oui ! Où sont les toilettes ?", tr: "Evet! Tuvalet nerede?", en: "Yes! Where's the toilet?", ok: false,
+             { fr: "Oui ! Où sont les toilettes pour l'essayer ?", tr: "Evet! Denemek için tuvaletler nerede?", en: "Yes! Where are the toilets to try it on?", ok: false,
                fb: { fr: "Les toilettes, c'est pour autre chose 🚽 ! Pour essayer un vêtement : « la cabine d'essayage ».", tr: "Tuvalet başka işler için 🚽! Kıyafet denemek için: « la cabine d'essayage » (deneme kabini).", en: "The toilet is for something else 🚽! To try on clothes: « la cabine d'essayage »." } }
            ] },
       e: { scene: { fr: "Dans la cabine : la veste est un peu petite aux bras.", tr: "Kabinde: ceketin kolları biraz dar.", en: "In the fitting room: the jacket is a bit tight in the arms." },
            say: [["F", "Alors, ça va ?"]],
            choices: [
-             { fr: "Elle est un peu petite. Vous avez la taille au-dessus ?", tr: "Biraz küçük. Bir üst bedeni var mı?", en: "It's a bit small. Do you have the next size up?", ok: true, go: "f" },
+             { fr: "Elle est un peu petite. Vous avez du 40 ?", tr: "Biraz küçük. 40 bedeniniz var mı?", en: "It's a bit small. Do you have a 40?", ok: true, go: "f" },
              { fr: "Je suis petite.", tr: "Ben küçüğüm.", en: "I'm small.", ok: false,
                fb: { fr: "Mais non, vous êtes parfaite 😄 ! C'est la veste qui est petite : « elle est un peu petite ».", tr: "Yok canım, siz mükemmelsiniz 😄! Küçük olan ceket: « elle est un peu petite ».", en: "No way, you're perfect 😄! The jacket is the small one: « elle est un peu petite »." } },
-             { fr: "Ça va bien, merci. Et vous ?", tr: "İyiyim, teşekkürler. Siz?", en: "I'm fine, thanks. And you?", ok: false,
+             { fr: "Ça va bien, merci. Et vous, madame ?", tr: "İyiyim, teşekkürler. Ya siz hanımefendi?", en: "I'm fine, thanks. And you, madam?", ok: false,
                fb: { fr: "Ha ! Elle ne demande pas comment vous allez, elle demande si la veste va bien 😄. Dites « elle est un peu petite ».", tr: "Ha! Nasıl olduğunuzu değil, ceketin size uyup uymadığını soruyor 😄. « Elle est un peu petite » deyin.", en: "Ha! She's not asking how you are, she's asking if the jacket fits 😄. Say « elle est un peu petite »." } }
            ] },
       f: { say: [["F", "Voilà le 40. Alors ?"]],
@@ -365,13 +365,13 @@
       i: { say: [["F", "Voilà votre veste et votre ticket de caisse."]],
            choices: [
              { fr: "Merci. Je peux l'échanger, si elle ne va pas ?", tr: "Teşekkürler. Olmazsa değiştirebilir miyim?", en: "Thanks. Can I exchange it if it doesn't fit?", ok: true, go: "j" },
-             { fr: "Merci. C'est un ticket de métro ?", tr: "Teşekkürler. Bu metro bileti mi?", en: "Thanks. Is this a metro ticket?", ok: false,
+             { fr: "Merci. C'est un ticket de métro pour rentrer ?", tr: "Teşekkürler. Eve dönmek için metro bileti mi?", en: "Thanks. Is it a metro ticket to get home?", ok: false,
                fb: { fr: "😄 Non, c'est le ticket de caisse : la preuve de votre achat. Gardez-le, c'est important pour un échange !", tr: "😄 Hayır, bu kasa fişi: alışverişinizin kanıtı. Saklayın, değişim için önemli!", en: "😄 No, it's the receipt: proof of your purchase. Keep it, it matters for an exchange!" } }
            ] },
       j: { say: [["F", "Oui, vous avez 30 jours pour l'échanger, avec le ticket."]],
            choices: [
              { fr: "Parfait : 30 jours, avec le ticket. Merci, au revoir !", tr: "Harika: 30 gün, fişle. Teşekkürler, hoşça kalın!", en: "Perfect: 30 days, with the receipt. Thanks, goodbye!", ok: true, go: "fin" },
-             { fr: "D'accord, 13 jours avec le ticket.", tr: "Tamam, fişle 13 gün.", en: "OK, 13 days with the receipt.", ok: false,
+             { fr: "D'accord, 13 jours avec le ticket. Merci, au revoir !", tr: "Tamam, fişle 13 gün. Teşekkürler, hoşça kalın!", en: "OK, 13 days with the receipt. Thanks, goodbye!", ok: false,
                fb: { fr: "« Trente » (30) et « treize » (13), ça se ressemble ! Ici, c'est 30 jours : « trente ».", tr: "« Trente » (30) ile « treize » (13) birbirine benziyor! Burada 30 gün: « trente ».", en: "« Trente » (30) and « treize » (13) sound alike! Here it's 30 days: « trente »." } },
              { fr: "D'accord, je jette le ticket.", tr: "Tamam, fişi atıyorum.", en: "OK, I'll throw the receipt away.", ok: false,
                fb: { fr: "Non, non, gardez-le 😄 ! Elle a dit « avec le ticket » : sans ticket, pas d'échange.", tr: "Yok yok, saklayın 😄! « Fişle » dedi: fiş yoksa değişim de yok.", en: "No, no, keep it 😄! She said « with the receipt »: no receipt, no exchange." } }
@@ -389,7 +389,7 @@
            say: [["F", "Bonjour ! Vous êtes la nouvelle voisine ?"]],
            choices: [
              { fr: "Oui, bonjour ! C'est moi. J'habite au troisième étage.", tr: "Evet, merhaba! Benim. Üçüncü katta oturuyorum.", en: "Yes, hello! That's me. I live on the third floor.", ok: true, go: "b" },
-             { fr: "Oui, je suis nouvelle voisine.", tr: "Evet, yeni komşuyum.", en: "Yes, I am new neighbour.", ok: false,
+             { fr: "Oui, bonjour ! Je suis nouvelle voisine, au troisième.", tr: "Evet, merhaba! Yeni komşuyum, üçüncü katta.", en: "Yes, hello! I'm new neighbour, on the third floor.", ok: false,
                fb: { fr: "Presque ! En turc, pas d'article… mais en français, il faut « la » : « je suis la nouvelle voisine ».", tr: "Çok yakın! Türkçede artikel yok… ama Fransızcada « la » gerekiyor: « je suis la nouvelle voisine ».", en: "Close! Turkish has no articles… but French needs « la »: « je suis la nouvelle voisine »." } },
              { fr: "Oui, bonjour ! J'habite à la troisième étagère.", tr: "Evet, merhaba! Üçüncü rafta oturuyorum.", en: "Yes, hello! I live on the third shelf.", ok: false,
                fb: { fr: "😄 Une étagère, c'est pour les livres ! Dans un immeuble, on dit « étage » : « au troisième étage ».", tr: "😄 « Étagère » kitaplık rafıdır! Apartmanda « étage » (kat) denir: « au troisième étage ».", en: "😄 « Étagère » is a bookshelf! In a building, it's « étage » (floor): « au troisième étage »." } }
@@ -397,35 +397,35 @@
       b: { say: [["F", "Enchantée ! Moi, c'est Martine, j'habite en face. Et voici mon petit-fils, Léo."], ["K", "Bonjour madame !"]],
            choices: [
              { fr: "Enchantée, Martine ! Bonjour Léo, tu as quel âge ?", tr: "Memnun oldum Martine! Merhaba Léo, kaç yaşındasın?", en: "Nice to meet you, Martine! Hi Léo, how old are you?", ok: true, go: "c" },
-             { fr: "Enchantée ! Léo, c'est votre fils ?", tr: "Memnun oldum! Léo sizin oğlunuz mu?", en: "Nice to meet you! Is Léo your son?", ok: false, go: "b2",
+             { fr: "Enchantée, Martine ! Léo, c'est votre fils ?", tr: "Memnun oldum Martine! Léo oğlunuz mu?", en: "Nice to meet you, Martine! Is Léo your son?", ok: false, go: "b2",
                fb: { fr: "Elle a dit « petit-fils » : Léo est son petit-fils 👵. Mais regardez : Martine adore votre question !", tr: "« Petit-fils » dedi: Léo onun torunu 👵. Ama bakın: Martine sorunuza bayıldı!", en: "She said « petit-fils »: Léo is her grandson 👵. But look: Martine loves your question!" } },
-             { fr: "Bonjour Léo, vous allez bien ?", tr: "Merhaba Léo, nasılsınız?", en: "Hello Léo, how are you (formal)?", ok: false,
+             { fr: "Enchantée ! Bonjour Léo, vous allez bien ?", tr: "Memnun oldum! Merhaba Léo, nasılsınız?", en: "Nice to meet you! Hello Léo, how are you?", ok: false,
                fb: { fr: "C'est très poli… mais Léo est un petit garçon 😄 ! Avec un enfant, on dit « tu ».", tr: "Çok kibar… ama Léo küçük bir çocuk 😄! Çocuğa « tu » (sen) denir.", en: "Very polite… but Léo is a little boy 😄! With a child, use « tu »." } }
            ] },
       b2: { say: [["F", "Ha ha ! Merci, c'est gentil ! Mais non, je suis sa grand-mère !"]],
            choices: [
              { fr: "Oh pardon ! Vous êtes très jeune ! Léo, tu as quel âge ?", tr: "Ah pardon! Çok gençsiniz! Léo, kaç yaşındasın?", en: "Oh sorry! You look so young! Léo, how old are you?", ok: true, go: "c" },
-             { fr: "Ah, vous êtes vieille !", tr: "Ah, siz yaşlısınız!", en: "Oh, you're old!", ok: false,
+             { fr: "Oh pardon ! Ah, vous êtes vieille, alors !", tr: "Ah pardon! Demek yaşlısınız!", en: "Oh sorry! Ah, so you're old!", ok: false,
                fb: { fr: "Aïe 🙈 ! Même si c'est vrai, on ne dit pas ça ! Dites plutôt « vous êtes très jeune ! » : Martine va adorer.", tr: "Ah 🙈! Doğru olsa bile böyle söylenmez! « Vous êtes très jeune ! » (çok gençsiniz) deyin: Martine bayılacak.", en: "Ouch 🙈! Even if it's true, we don't say that! Try « vous êtes très jeune ! »: Martine will love it." } }
            ] },
       c: { say: [["K", "J'ai 6 ans ! Et toi, tu as un chat ?"]],
            choices: [
              { fr: "Non, je n'ai pas de chat. Et toi ?", tr: "Hayır, kedim yok. Ya senin?", en: "No, I don't have a cat. What about you?", ok: true, go: "d" },
              { fr: "Non, mais j'adore les chats !", tr: "Hayır, ama kedilere bayılırım!", en: "No, but I love cats!", ok: true, go: "d" },
-             { fr: "Non, je ne suis pas un chat.", tr: "Hayır, ben kedi değilim.", en: "No, I'm not a cat.", ok: false,
+             { fr: "Non, je ne suis pas un chat. Et toi ?", tr: "Hayır, ben kedi değilim. Ya sen?", en: "No, I'm not a cat. And you?", ok: false,
                fb: { fr: "Miaou 🐱 ? Léo demande si vous AVEZ un chat : « non, je n'ai pas de chat ».", tr: "Miyav 🐱? Léo kediniz OLUP olmadığını soruyor: « non, je n'ai pas de chat ».", en: "Meow 🐱? Léo is asking if you HAVE a cat: « non, je n'ai pas de chat »." } }
            ] },
       d: { say: [["K", "Moi, j'ai un poisson rouge. Il s'appelle Bulle !"], ["F", "Léo, chut ! Et vous, vous travaillez dans le quartier ?"]],
            choices: [
              { fr: "Non, je travaille à l'accueil d'une salle de sport. Mais je suis kiné de formation.", tr: "Hayır, bir spor salonunun resepsiyonunda çalışıyorum. Ama eğitimim fizyoterapi.", en: "No, I work at the front desk of a gym. But I'm a physio by training.", ok: true, go: "e" },
-             { fr: "Non. Je suis physique de formation.", tr: "Hayır. Ben eğitim olarak fiziğim.", en: "No. I am physics by training.", ok: false,
+             { fr: "Non, je travaille dans une salle de sport. Je suis physique de formation.", tr: "Hayır, bir spor salonunda çalışıyorum. Eğitimim fizik.", en: "No, I work at a gym. I trained as physics.", ok: false,
                fb: { fr: "« La physique », c'est la science d'Einstein 🧪 ! Votre métier en français : « kinésithérapeute », ou plus court « kiné » : « je suis kiné de formation ».", tr: "« Physique » = fizik, Einstein'ın alanı 🧪! Mesleğinizin Fransızcası: « kinésithérapeute », kısaca « kiné »: « je suis kiné de formation ».", en: "« Physique » = physics, Einstein's field 🧪! Your job in French: « kinésithérapeute », or just « kiné »: « je suis kiné de formation »." } }
            ] },
       e: { say: [["F", "Kiné ? Génial, j'ai toujours mal au dos !"], ["K", "Et moi, je joue au foot !"]],
            choices: [
              { fr: "Super, Léo ! Moi, je joue au handball.", tr: "Süper Léo! Ben de hentbol oynuyorum.", en: "Great, Léo! I play handball.", ok: true, go: "f" },
              { fr: "Moi, je fais du handball !", tr: "Ben de hentbol oynuyorum!", en: "I do handball!", ok: true, go: "f" },
-             { fr: "Moi, je joue du handball !", tr: "Ben de hentbol çalıyorum!", en: "I play the handball (like an instrument)!", ok: false,
+             { fr: "Super, Léo ! Moi, je joue du handball.", tr: "Süper Léo! Ben hentbol çalıyorum.", en: "Great, Léo! I play handball.", ok: false,
                fb: { fr: "« Jouer du », c'est pour la musique 🎸 : jouer du piano. Pour un sport : « jouer au handball » ou « faire du handball ».", tr: "« Jouer du » müzik aletleri için 🎸: piyano çalmak gibi. Spor için: « jouer au handball » ya da « faire du handball ».", en: "« Jouer du » is for music 🎸: playing the piano. For a sport: « jouer au handball » or « faire du handball »." } }
            ] },
       f: { say: [["F", "Oh, une sportive ! Au fait, samedi prochain, c'est la fête des voisins, dans la cour. Vous venez ?"]],
@@ -438,28 +438,28 @@
       f2: { say: [["F", "C'est une petite fête entre voisins : chacun apporte quelque chose à manger ou à boire. C'est très sympa !"]],
            choices: [
              { fr: "Ah, c'est génial ! Je viens avec plaisir. C'est à quelle heure ?", tr: "Ah, harika! Memnuniyetle gelirim. Saat kaçta?", en: "Oh, that's great! I'd love to come. What time is it?", ok: true, go: "g" },
-             { fr: "Super ! J'apporte mon sac poubelle ?", tr: "Süper! Çöp torbamı da getireyim mi?", en: "Great! Shall I bring my rubbish bag?", ok: false,
+             { fr: "Ah, c'est génial ! J'apporte mon sac poubelle ?", tr: "Ah, harika! Çöp poşetimi getireyim mi?", en: "Oh, great! Shall I bring my rubbish bag?", ok: false,
                fb: { fr: "😄 Le sac poubelle, c'est pour le local poubelles ! À la fête, on apporte à manger ou à boire.", tr: "😄 Çöp torbasının yeri çöp odası! Şenliğe yiyecek ya da içecek götürülür.", en: "😄 The rubbish bag goes to the bin room! For the party, you bring food or drinks." } }
            ] },
       g: { say: [["F", "À 19 h, dans la cour. Vous pouvez apporter un plat ou un dessert ?"]],
            choices: [
              { fr: "Oui, je vais apporter un dessert turc : du baklava !", tr: "Evet, bir Türk tatlısı getireceğim: baklava!", en: "Yes, I'll bring a Turkish dessert: baklava!", ok: true, go: "h" },
              { fr: "Oui, je vais faire un börek au fromage !", tr: "Evet, peynirli börek yapacağım!", en: "Yes, I'll make a cheese börek!", ok: true, go: "h" },
-             { fr: "Oui, je vais apporter un désert.", tr: "Evet, bir çöl getireceğim.", en: "Yes, I'll bring a desert.", ok: false,
+             { fr: "Oui, je vais apporter un désert turc : du baklava !", tr: "Evet, Türk çölü getireceğim: baklava!", en: "Yes, I'll bring a Turkish desert: baklava!", ok: false,
                fb: { fr: "Un désert 🏜️, c'est le Sahara : trop grand pour la cour ! Avec « ss », c'est « un dessert » 🍰.", tr: "« Désert » 🏜️ çöl demek, Sahra gibi: avluya sığmaz! « ss » ile « un dessert » 🍰 (tatlı).", en: "« Désert » 🏜️ is the Sahara: too big for the courtyard! With « ss », it's « un dessert » 🍰." } }
            ] },
       h: { say: [["F", "Miam ! Léo, tu entends ?"], ["K", "Youpi ! Et tu vas jouer au ballon avec moi à la fête ?"]],
            choices: [
              { fr: "Oui, bien sûr ! Je vais jouer avec toi.", tr: "Evet, tabii! Seninle oynayacağım.", en: "Yes, of course! I'll play with you.", ok: true, go: "i" },
-             { fr: "Oui, je vais jouer le ballon.", tr: "Evet, topu oynayacağım.", en: "Yes, I'll play the ball.", ok: false,
+             { fr: "Oui, bien sûr ! Je vais jouer le ballon.", tr: "Evet, tabii ki! Topu çalacağım.", en: "Yes, of course! I'm going to play the ball.", ok: false,
                fb: { fr: "Presque ! Comme pour le handball, on dit « jouer au ballon », avec « au ». Léo attend votre réponse ⚽ !", tr: "Çok yakın! Hentboldaki gibi « jouer au ballon » (« au » ile) denir. Léo cevabınızı bekliyor ⚽!", en: "Close! Like with handball, it's « jouer au ballon », with « au ». Léo is waiting ⚽!" } }
            ] },
       i: { say: [["F", "Allez, à samedi ! Et bienvenue dans l'immeuble !"]],
            choices: [
              { fr: "Merci beaucoup, c'est très gentil ! À samedi !", tr: "Çok teşekkürler, çok naziksiniz! Cumartesi görüşürüz!", en: "Thank you so much, that's very kind! See you Saturday!", ok: true, go: "fin" },
-             { fr: "Bien trouvée !", tr: "Hoş bulduk!", en: "Well found! (Turkish « hoş bulduk »)", ok: false,
-               fb: { fr: "Ha, c'est « hoş bulduk » traduit mot à mot 😄 ! Joli, mais ça n'existe pas en français. Après « bienvenue », dites simplement « merci ! ».", tr: "Ha, bu « hoş bulduk »un kelimesi kelimesine çevirisi 😄! Çok tatlı ama Fransızcada böyle bir şey yok. « Bienvenue »ye sadece « merci ! » denir.", en: "Ha, that's Turkish « hoş bulduk » word for word 😄! Cute, but it doesn't exist in French. After « bienvenue », just say « merci ! »." } },
-             { fr: "De rien, à samedi !", tr: "Rica ederim, cumartesi görüşürüz!", en: "You're welcome, see you Saturday!", ok: false,
+             { fr: "Bien trouvée ! Merci, à samedi !", tr: "Hoş bulduk! Teşekkürler, cumartesi görüşürüz!", en: "Well found! Thanks, see you Saturday!", ok: false,
+               fb: { fr: "Ha, « bien trouvée », c'est « hoş bulduk » traduit mot à mot 😄 ! Joli, mais ça n'existe pas en français. Après « bienvenue », dites simplement « merci ! ».", tr: "Ha, « bien trouvée », « hoş bulduk »un kelimesi kelimesine çevirisi 😄! Hoş ama Fransızcada yok. « Bienvenue »dan sonra sadece « merci ! » deyin.", en: "Ha, « bien trouvée » is Turkish « hoş bulduk » translated word for word 😄! Cute, but it doesn't exist in French. After « bienvenue », just say « merci ! »." } },
+             { fr: "De rien, c'est très gentil ! À samedi !", tr: "Rica ederim, çok naziksiniz! Cumartesi görüşürüz!", en: "You're welcome, that's very kind! See you Saturday!", ok: false,
                fb: { fr: "« De rien » répond à « merci ». Après « bienvenue », on dit « merci ! ».", tr: "« De rien », « merci »ye cevaptır. « Bienvenue »den sonra « merci ! » denir.", en: "« De rien » answers « merci ». After « bienvenue », say « merci ! »." } }
            ] },
       fin: { end: "win", say: [["F", "À samedi !"], ["K", "Au revoir ! À samedi !"]],
