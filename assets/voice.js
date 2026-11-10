@@ -212,6 +212,8 @@
       p.last = res; if (!p.best || res.score >= p.best.score) p.best = res;
       p.st = "done";
       if (cfg.onResult) cfg.onResult(res, p.best);
+      // A good pronunciation gets the success chime (a weaker try gets no sound at all: no pressure).
+      if (window.FX && cfg.target && res.score >= (cfg.pass || 0.75)) setTimeout(() => window.FX.good({ from: `.vc[data-vcid="${CSS.escape(id)}"] .vc-score` }), 30);
       paint(id, ".vc-next, [data-vc=start]");
     };
     try { r.start(); } catch (e) { me.err = "other"; r.onend(); }

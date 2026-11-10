@@ -67,6 +67,8 @@
     clearTimeout(toast._t); toast._t = setTimeout(() => el.classList.remove("show"), 1800);
   }
   function practised() { S.days[ymd()] = 1; save(); }
+  // Success sounds & effects (assets/fx.js). Missing FX never breaks anything.
+  const fx = (m, a, b) => { try { if (window.FX && window.FX[m]) window.FX[m](a, b); } catch (e) { /* effects are optional */ } };
 
   /* Text-to-speech engine shared by every page (cards, readings, dialogues, DELF, adventures).
      Robust on iPhone/iPad/Mac/Android: long texts are cut into sentences (some voices stop after ~15 s),
@@ -552,7 +554,7 @@
     const d = deckId === "due" ? { name: { en: t("home.review"), tr: t("home.review"), fr: t("home.review") } } : deckById(deckId);
     if (!SESSION.queue.length) {
       const fin = SESSION.total > 0;
-      if (fin) logMinutes(sessionMinutes(SESSION.start));
+      if (fin) { logMinutes(sessionMinutes(SESSION.start)); const big = SESSION.total >= 5; setTimeout(() => fx("done", big), 120); }
       SESSION = null;
       return `<a class="back" href="#/cards">← ${esc(t("cards.back"))}</a>
         <section class="card center"><p class="big">🌿</p><p>${esc(fin ? t("cards.finished") : t("home.cardsNone"))}</p>
@@ -861,6 +863,7 @@
 
   let EX = null;
   function startEx(kind) {
+    fx("reset");
     let items = [];
     if (kind === "review") items = S.err.slice(-10).reverse().map(e => Object.assign({}, e.item, { fromErr: e.id, k: e.k }));
     else {
@@ -889,6 +892,7 @@
       if (!ok && it.mode === "text") diff = wordDiff(it.answer, given);
     }
     EX.state = { ok, accent, given, diff };
+    if (it.t !== "speak") fx(ok ? "good" : "soft"); // the voice panel already celebrated a good pronunciation
     const d = ymd(); const p = S.prac[d] || { n: 0, ok: 0 }; p.n++; if (ok) p.ok++; S.prac[d] = p;
     if (ok) { EX.ok++; if (it.fromErr) S.err = S.err.filter(e => e.id !== it.fromErr); }
     else if (!it.fromErr && it.t !== "speak") {
@@ -959,8 +963,10 @@
     const r = READINGS.find(x => x.id === RD.id); if (!r || RD.ans[qi] !== undefined) return;
     RD.ans[qi] = oi;
     const d = ymd(), p = S.prac[d] || { n: 0, ok: 0 }; p.n++; if (oi === r.qs[qi].a) p.ok++; S.prac[d] = p;
+    fx(oi === r.qs[qi].a ? "good" : "soft", { from: `[data-rq="${qi}:${oi}"]` });
     if (Object.keys(RD.ans).length === r.qs.length) {
       const score = r.qs.filter((q, i) => RD.ans[i] === q.a).length, prev = S.read[r.id];
+      setTimeout(() => fx("done", score === r.qs.length), 650);
       S.read[r.id] = { score: Math.max(score, prev ? prev.score : 0), total: r.qs.length, d };
       logMinutes(sessionMinutes(RD.start));
     }
@@ -1082,8 +1088,8 @@
     const title = kind === "review" ? t("ex.review") : t("ex." + kind);
     if (!EX.items.length) return back + `<section class="card center"><p class="big">🌿</p><p>${esc(t("ex.noErr"))}</p></section>`;
     if (EX.i >= EX.items.length) {
-      if (!EX.logged) { EX.logged = true; logMinutes(sessionMinutes(EX.start)); }
       const r = EX.ok / EX.items.length;
+      if (!EX.logged) { EX.logged = true; logMinutes(sessionMinutes(EX.start)); setTimeout(() => fx("done", r >= 0.8), 120); }
       return back + `<section class="card center ex-end">
         <p class="big">${r >= 0.8 ? "🌟" : r >= 0.5 ? "🌿" : "🌱"}</p>
         <h2>${EX.ok} / ${EX.items.length}</h2>
@@ -1347,22 +1353,28 @@
     if (d.bs && window.BASICS_UI) { window.BASICS_UI.click(el, d, e); return; }
     if (d.reveal !== undefined) { TK.shown[d.reveal] = 1; const l = DIALOGUES.find(x => x.id === TK.id).lines[+d.reveal]; const y = window.scrollY; render(); window.scrollTo(0, y); speak(l.fr); return; }
     if (d.ins) { const i = $("#ex-in"); if (i) { const a = i.selectionStart ?? i.value.length, b = i.selectionEnd ?? a; i.value = i.value.slice(0, a) + d.ins + i.value.slice(b); i.focus(); i.setSelectionRange(a + d.ins.length, a + d.ins.length); } return; }
-    if (d.addmin) { logMinutes(+d.addmin); toast(t("toast.logged", { m: d.addmin })); render(); return; }
+    if (d.addmin) { logMinutes(+d.addmin); toast(t("toast.logged", { m: d.addmin })); fx("done"); render(); return; }
     if (d.delerr) { S.err = S.err.filter(x => x.id !== d.delerr); save(); render(); return; }
     if (d.open) { if (!S.res[d.open]) { S.res[d.open] = Date.now(); practised(); save(); } return; }
     if (d.fav) { S.fav[d.fav] ? delete S.fav[d.fav] : (S.fav[d.fav] = 1); save(); el.classList.toggle("on"); el.textContent = S.fav[d.fav] ? "♥" : "♡"; el.setAttribute("aria-pressed", !!S.fav[d.fav]); return; }
     if (d.done) {
-      if (S.res[d.done]) delete S.res[d.done]; else { S.res[d.done] = Date.now(); practised(); toast(t("toast.done")); }
+      if (S.res[d.done]) delete S.res[d.done]; else { S.res[d.done] = Date.now(); practised(); toast(t("toast.done")); fx("done"); }
       save(); const card = el.closest(".res"); card.classList.toggle("is-done", !!S.res[d.done]);
       el.classList.toggle("on", !!S.res[d.done]); el.textContent = (S.res[d.done] ? "✓ " : "") + t("lib.done"); return;
     }
     if (d.step) {
-      if (S.steps[d.step]) delete S.steps[d.step]; else { S.steps[d.step] = Date.now(); practised(); toast(t("toast.done")); }
+      if (S.steps[d.step]) delete S.steps[d.step];
+      else {
+        S.steps[d.step] = Date.now(); practised(); toast(t("toast.done"));
+        // The last step of a level gets the big celebration.
+        const lv = PATH.find(l => l.steps.some(x => x.id === d.step));
+        if (lv && lv.steps.every(x => S.steps[x.id])) fx("level", "Niveau " + lv.id + " ✓"); else fx("done");
+      }
       save(); const open = S.steps[d.step] ? null : d.step; const lvId = route().parts[1];
       render(); if (open) { const x = document.getElementById("step-" + open); if (x) x.open = true; }
       void lvId; return;
     }
-    if (d.setlevel) { S.level = d.setlevel; S.welcomed = true; save(); if (d.go) location.hash = "#/path/" + d.setlevel; else render(); return; }
+    if (d.setlevel) { S.level = d.setlevel; S.welcomed = true; save(); fx("big", "🧭", d.setlevel); if (d.go) location.hash = "#/path/" + d.setlevel; else render(); return; }
     if (d.feel) {
       $$(".feel-btn").forEach(b => b.classList.toggle("on", b === el));
       $("#feel-out").innerHTML = feelSuggestions(d.feel); return;
@@ -1372,23 +1384,25 @@
     if (d.toggle) { LIB[d.toggle] = !LIB[d.toggle]; render(); return; }
     if (d.grade) {
       const c = SESSION.queue.shift(); grade(c, d.grade);
+      // "Again" is not a mistake, just a card that comes back: a neutral sound only.
+      if (d.grade === "again") fx("flip"); else fx("good", { praise: d.grade === "easy", from: `[data-grade="${d.grade}"]` });
       if (d.grade === "again") SESSION.queue.push(c); else SESSION.done++;
       SESSION.flipped = false; render(); return;
     }
     if (d.delword !== undefined) { const c = S.mine[+d.delword]; if (c) { delete S.cards[c.id]; S.mine.splice(+d.delword, 1); save(); render(); } return; }
     switch (d.action) {
-      case "flip": SESSION.flipped = true; render(); break;
+      case "flip": SESSION.flipped = true; fx("flip"); render(); break;
       case "ex-next": exNext(); break;
       case "stop-speak": SEQ++; TTS.stop(); break;
       case "pl-slow": SLOW = !SLOW; if (PL) { const k = PL.key; TTS.stop(); speakAll(k); } keepY(); break;
       case "tr-all": S.trAll = !S.trAll; save(); keepY(); break;
       case "rd-again": RD = null; render(); break;
       case "dg-role": TK.role = !TK.role; TK.shown = {}; render(); break;
-      case "dg-done": { const id = TK.id; if (S.talk[id]) delete S.talk[id]; else { S.talk[id] = ymd(); practised(); toast(t("toast.done")); } save(); render(); break; }
+      case "dg-done": { const id = TK.id; if (S.talk[id]) delete S.talk[id]; else { S.talk[id] = ymd(); practised(); toast(t("toast.done")); fx("done"); } save(); render(); break; }
       case "ex-again": startEx(EX ? EX.kind : route().parts[1]); render(); { const it = EX.items[0]; if (it && it.say && !it.sayAfter && it.t !== "speak") speak(it.say); } break;
       case "err-clear": if (confirm(t("ex.clearConfirm"))) { S.err = []; save(); render(); } break;
       case "ics": downloadIcs(); break;
-      case "practised": practised(); toast(t("toast.done")); render(); break;
+      case "practised": practised(); toast(t("toast.done")); fx("done"); render(); break;
       case "dismiss-welcome": S.welcomed = true; save(); render(); break;
       case "lib-reset": LIB = LIB0(); render(); break;
       case "export": exportData(); break;
@@ -1411,11 +1425,11 @@
     if (e.target.id === "focus-adv") { S.focus = !e.target.checked; save(); render(); }
     const d = e.target.dataset || {};
     if (d.set) { S.pace[d.set] = +e.target.value; save(); render(); }
-    if (d.fw) { if (e.target.checked) S.fw[d.fw] = 1; else delete S.fw[d.fw]; save(); render(); }
-    if (d.gram) { if (e.target.checked) S.gram[d.gram] = 1; else delete S.gram[d.gram]; save(); const sm = e.target.closest("details"); if (sm) { const n = $$("input[data-gram]", sm).filter(x => x.checked).length; $("summary .muted", sm).textContent = n + "/" + $$("input[data-gram]", sm).length; } }
+    if (d.fw) { if (e.target.checked) { S.fw[d.fw] = 1; fx("match"); } else delete S.fw[d.fw]; save(); render(); }
+    if (d.gram) { if (e.target.checked) { S.gram[d.gram] = 1; fx("match"); } else delete S.gram[d.gram]; save(); const sm = e.target.closest("details"); if (sm) { const n = $$("input[data-gram]", sm).filter(x => x.checked).length; $("summary .muted", sm).textContent = n + "/" + $$("input[data-gram]", sm).length; } }
     if (d.plan) {
       const wk = weekKey(), [day, k] = d.plan.split(":"); S.plan[wk] = S.plan[wk] || {};
-      if (e.target.checked) { S.plan[wk][planKey(day, k)] = 1; practised(); toast(t("toast.done")); } else delete S.plan[wk][planKey(day, k)];
+      if (e.target.checked) { S.plan[wk][planKey(day, k)] = 1; practised(); toast(t("toast.done")); fx("done"); } else delete S.plan[wk][planKey(day, k)];
       save(); render();
     }
     if (e.target.id === "import-file" && e.target.files[0]) {

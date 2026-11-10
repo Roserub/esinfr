@@ -21,7 +21,7 @@
   const EX = () => window.EXAM || {};
   const play = (lines, lv, slow) => { if (EX().playLines) EX().playLines(lines, { lv, slow, glow: "[data-gm=av-play]:not([data-slow])" }); else if (lines && lines[0]) A().speak(lines.map(l => l[1]).join(" ")); };
   const stopAudio = () => { if (EX().stopAudio) EX().stopAudio(); else if ("speechSynthesis" in window) speechSynthesis.cancel(); };
-  const confetti = () => { if (EX().confetti) EX().confetti(); };
+  const fx = (m, a, b) => { try { if (window.FX && window.FX[m]) window.FX[m](a, b); } catch (e) { /* effects are optional */ } };
   function keepScroll(fn) { const y = window.scrollY; fn(); A().render(); window.scrollTo(0, y); }
   const starStr = n => `<span class="stars" role="img" aria-label="${n}/3">${"★".repeat(n)}<span class="off">${"★".repeat(3 - n)}</span></span>`;
   const lvChips = (base, lv) => `<div class="row wrap dx-switch" role="group" aria-label="${esc(t("dx.level"))}">${LVS.map(l => `<a class="chip ${l === lv ? "on" : ""}" href="${base}/${l}" aria-current="${l === lv}">${l}</a>`).join("")}</div>`;
@@ -67,7 +67,7 @@
     let now = sceneHtml(n.scene, AV.help) + sayHtml(n.say, a.level, true);
     if (n.end) {
       const stars = advStars(AV.mistakes), prev = st().adv[id] || 0;
-      if (!AV.saved) { AV.saved = true; if (stars > prev) { st().adv[id] = stars; save(); } A().practised(); A().logMinutes(Math.max(2, Math.round((Date.now() - AV.start) / 60000))); setTimeout(confetti, 300); }
+      if (!AV.saved) { AV.saved = true; if (stars > prev) { st().adv[id] = stars; save(); } A().practised(); A().logMinutes(Math.max(2, Math.round((Date.now() - AV.start) / 60000))); setTimeout(() => fx("big", stars === 3 ? "🏆" : "🎉", "★".repeat(stars)), 300); }
       const next = ADVS.find(x => x.level === a.level && !st().adv[x.id]) || ADVS.find(x => !st().adv[x.id]);
       now += `<section class="card av-end" role="status"><p class="big" aria-hidden="true">🎉</p><h2>${esc(t("av.win"))}</h2>${starStr(stars)}
         <p>${esc(t(AV.mistakes ? "av.mistakes" : "av.perfect", { n: AV.mistakes }))}</p>
@@ -116,7 +116,7 @@
     if (!MEM || MEM.lv !== lv) newMem(lv);
     const pairs = MEM.tiles.length / 2, found = Object.keys(MEM.done).length / 2, best = st().mem[lv];
     const end = found === pairs;
-    if (end && !MEM.saved) { MEM.saved = true; if (!best || MEM.moves < best) { st().mem[lv] = MEM.moves; save(); if (best) setTimeout(confetti, 200); } A().practised(); A().logMinutes(3); }
+    if (end && !MEM.saved) { MEM.saved = true; const rec = !best || MEM.moves < best; if (rec) { st().mem[lv] = MEM.moves; save(); } setTimeout(() => rec && best ? fx("big", "🌟", "Record !") : fx("done", true), 450); A().practised(); A().logMinutes(3); }
     return `${back("#/games", t("gm.title"))}
       <h1>🃏 ${esc(t("gm.mem"))}</h1>
       ${lvChips("#/games/memory", lv)}
@@ -132,11 +132,12 @@
   function memPick(i) {
     if (MEM.lock || MEM.done[i] || MEM.open.includes(i)) return;
     const x = MEM.tiles[i]; MEM.open.push(i);
+    if (MEM.open.length === 1 || MEM.tiles[MEM.open[0]].k !== x.k) fx("flip");
     if (x.fr) A().speak(x.text);
     if (MEM.open.length === 2) {
       MEM.moves++;
       const [a, b] = MEM.open;
-      if (MEM.tiles[a].k === MEM.tiles[b].k) { MEM.done[a] = MEM.done[b] = 1; MEM.open = []; }
+      if (MEM.tiles[a].k === MEM.tiles[b].k) { MEM.done[a] = MEM.done[b] = 1; MEM.open = []; fx("match", { pop: `[data-gm=mem][data-i="${a}"], [data-gm=mem][data-i="${b}"]`, from: `[data-gm=mem][data-i="${b}"]` }); }
       else { const m = MEM; MEM.lock = true; setTimeout(() => { if (MEM !== m) return; MEM.open = []; MEM.lock = false; if (location.hash.startsWith("#/games/memory")) keepScroll(() => {}); }, 1100); }
     }
     keepScroll(() => {});
@@ -171,7 +172,7 @@
     const head = `${back("#/games", t("gm.title"))}<h1>🧩 ${esc(t("gm.ord"))}</h1>${lvChips("#/games/order", lv)}`;
     if (!ORD.qs.length) return head + `<p class="muted">…</p>`;
     if (ORD.i >= ORD.qs.length) {
-      if (!ORD.saved) { ORD.saved = true; if (ORD.ok > best) { st().ord[lv] = ORD.ok; save(); if (ORD.ok >= 6) setTimeout(confetti, 200); } A().practised(); A().logMinutes(Math.max(2, Math.round((Date.now() - ORD.start) / 60000))); }
+      if (!ORD.saved) { ORD.saved = true; if (ORD.ok > best) { st().ord[lv] = ORD.ok; save(); } setTimeout(() => ORD && ORD.ok > best && ORD.ok >= 6 ? fx("big", "🧩", "Record !") : fx("done", ORD && ORD.ok >= 6), 200); A().practised(); A().logMinutes(Math.max(2, Math.round((Date.now() - ORD.start) / 60000))); }
       return head + `<section class="card dx-result"><div class="dx-ring" style="--p:${Math.round(ORD.ok / ORD.qs.length * 100)}"><b>${ORD.ok}</b><small>/${ORD.qs.length}</small></div>
         <div><p class="dx-verdict">${esc(t(ORD.ok >= 6 ? "ex.end.great" : ORD.ok >= 4 ? "ex.end.good" : "ex.end.soft"))}</p><p class="muted">${esc(t("gm.ordBest", { n: Math.max(best, ORD.ok) }))}</p></div></section>
         <div class="row wrap"><button class="btn" data-gm="ord-again">↻ ${esc(t("av.again"))}</button><a class="btn ghost" href="#/games">${esc(t("gm.title"))}</a></div>`;
@@ -207,8 +208,8 @@
       case "av-help": AV.help = !AV.help; keepScroll(() => {}); return;
       case "av-pick": {
         const n = curNode(), c = n.choices[+d.i]; stopAudio();
-        if (c.ok) { AV.log.push({ me: c.fr }); advGo(c.go); return; }
-        AV.mistakes++; AV.wrong[+d.i] = 1; AV.fb = +d.i;
+        if (c.ok) { fx("good", { from: `[data-gm=av-pick][data-i="${d.i}"]` }); AV.log.push({ me: c.fr }); advGo(c.go); return; }
+        fx("soft"); AV.mistakes++; AV.wrong[+d.i] = 1; AV.fb = +d.i;
         if (c.go) AV.pending = { go: c.go, me: c.fr };
         keepScroll(() => {}); return;
       }
@@ -216,13 +217,14 @@
       case "av-again": { const id = AV.id; AV = null; stopAudio(); A().render(); window.scrollTo(0, 0); void id; return; }
       case "mem": memPick(+d.i); return;
       case "mem-again": MEM = null; A().render(); return;
-      case "ord-pick": if (!ORD.checked && !ORD.picked.includes(+d.i)) { ORD.picked.push(+d.i); keepScroll(() => {}); } return;
+      case "ord-pick": if (!ORD.checked && !ORD.picked.includes(+d.i)) { ORD.picked.push(+d.i); fx("tick"); keepScroll(() => {}); } return;
       case "ord-un": ORD.picked.splice(+d.p, 1); keepScroll(() => {}); return;
       case "ord-clear": ORD.picked = []; keepScroll(() => {}); return;
       case "ord-play": A().speak(ORD.qs[ORD.i].fr); return;
       case "ord-check": {
         const q = ORD.qs[ORD.i]; if (ORD.checked || ORD.picked.length < q.toks.length) return; ORD.checked = true;
-        if (ORD.picked.map(i => q.toks[i]).join(" ") === q.fr) ORD.ok++;
+        const right = ORD.picked.map(i => q.toks[i]).join(" ") === q.fr; if (right) ORD.ok++;
+        fx(right ? "good" : "soft", { from: "[data-gm=ord-check]" });
         A().speak(q.fr); keepScroll(() => {}); return;
       }
       case "ord-next": ORD.i++; ORD.picked = []; ORD.checked = false; A().render(); window.scrollTo(0, 0); return;

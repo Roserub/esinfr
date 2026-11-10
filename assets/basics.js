@@ -108,6 +108,7 @@
         if (!Q || Q.given != null) return;
         const q = Q.qs[Q.i]; Q.given = +d.i;
         const ok = q.opts[Q.given] === q.answer; if (ok) Q.ok++;
+        if (window.FX) window.FX[ok ? "good" : "soft"]({ from: `[data-bs="ans"][data-i="${Q.given}"]` });
         const S = A().S, day = A().ymd(), p = S.prac[day] || { n: 0, ok: 0 }; p.n++; if (ok) p.ok++; S.prac[day] = p;
         A().save(); A().keepY();
         if (q.kind !== "listen") A().speak(sayOf(q.it));
@@ -120,6 +121,7 @@
           const s = st(), prev = s[Q.id];
           s[Q.id] = { best: Math.max(Q.ok, prev ? prev.best : 0), n: Q.qs.length, d: A().ymd() };
           A().logMinutes(A().sessionMinutes(Q.start)); A().practised(); A().save();
+          if (window.FX) { const great = Q.ok / Q.qs.length >= 0.8; setTimeout(() => window.FX.done(great), 120); }
         }
         A().render(); window.scrollTo(0, 0);
         const q = Q.qs[Q.i]; if (q && q.kind === "listen") A().speak(sayOf(q.it));

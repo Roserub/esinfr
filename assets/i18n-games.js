@@ -2,6 +2,7 @@
 (function () {
   const L = {
     tr: {
+      "fx.sound": "Başarı sesleri (aç/kapat)",
       "dx.trKey": "Türkçe cevap anahtarı ve açıklamalar",
       "a11y.skip": "İçeriğe geç", "a11y.home": "Ana sayfa", "a11y.lang": "Dil", "a11y.nav": "Ana menü", "tab.home": "Bugün", "tab.exam": "DELF", "tab.games": "Oyunlar", "tab.practice": "Pratik", "tab.path": "Yol", "tab.cards": "Kartlar", "tab.more": "Diğer",
       "audio.none": "Bu tarayıcı sesli okuma yapamıyor. Safari veya Chrome ile aç.", "audio.hint": "Ses yok mu? Sesi aç ve iPhone'un sessiz modunu kapat (yandaki düğme).", "audio.tap": "Dinlemek için 🔊 düğmesine dokun.",
@@ -25,6 +26,7 @@
       "dx.b.surv": "Dayanıklı", "dx.bd.surv": "Hayatta kalma modunda 15 doğru."
     },
     en: {
+      "fx.sound": "Success sounds (on/off)",
       "dx.trKey": "Turkish answer key and explanations",
       "a11y.skip": "Skip to content", "a11y.home": "Home", "a11y.lang": "Language", "a11y.nav": "Main menu", "tab.home": "Today", "tab.exam": "DELF", "tab.games": "Games", "tab.practice": "Practice", "tab.path": "Path", "tab.cards": "Cards", "tab.more": "More",
       "audio.none": "This browser can't read aloud. Open the site in Safari or Chrome.", "audio.hint": "No sound? Turn the volume up and switch off the iPhone's silent mode (side switch).", "audio.tap": "Tap 🔊 to listen.",
@@ -48,6 +50,7 @@
       "dx.b.surv": "Survivor", "dx.bd.surv": "15 right in survival mode."
     },
     fr: {
+      "fx.sound": "Sons de réussite (activer/couper)",
       "dx.trKey": "Corrigé et explications en turc",
       "a11y.skip": "Aller au contenu", "a11y.home": "Accueil", "a11y.lang": "Langue", "a11y.nav": "Menu principal", "tab.home": "Accueil", "tab.exam": "DELF", "tab.games": "Jeux", "tab.practice": "Pratique", "tab.path": "Parcours", "tab.cards": "Cartes", "tab.more": "Plus",
       "audio.none": "Ce navigateur ne sait pas lire à voix haute. Ouvre le site dans Safari ou Chrome.", "audio.hint": "Pas de son ? Monte le volume et désactive le mode silencieux de l'iPhone (bouton sur le côté).", "audio.tap": "Touche 🔊 pour écouter.",
