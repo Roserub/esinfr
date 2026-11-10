@@ -64,6 +64,7 @@
       const wrong = uniq(shuffle(same).concat(shuffle(other)), key).filter(o => key(o) !== key(it) && !clash(o)).slice(0, 3);
       return { kind, it, opts: shuffle([it].concat(wrong)).map(key), answer: key(it) };
     });
+    if (window.FX) window.FX.reset();
     return { id: x.id, qs, i: 0, ok: 0, given: null, start: Date.now() };
   }
   function viewQuiz(x) {
@@ -73,6 +74,7 @@
       const r = Q.ok / Q.qs.length;
       return back + `<section class="card center ex-end"><p class="big">${r >= 0.8 ? "🌟" : r >= 0.5 ? "🌿" : "🌱"}</p><h2>${Q.ok} / ${Q.qs.length}</h2>
         <p>${esc(t(r >= 0.8 ? "ex.end.great" : r >= 0.5 ? "ex.end.good" : "ex.end.soft"))}</p>
+        ${A().recap({ key: "bs" + Q.start, ok: Q.ok, n: Q.qs.length, start: Q.start })}
         <div class="row wrap center"><button class="btn" data-bs="again">↻ ${esc(t("ex.again"))}</button><a class="btn ghost" href="#/basics/${x.id}">${esc(t("bs.back"))}</a><a class="btn ghost" href="#/basics">🧱 ${esc(t("bs.title"))}</a></div></section>`;
     }
     const q = Q.qs[Q.i], g = Q.given;
@@ -82,10 +84,10 @@
     return back + `<p class="eyebrow">${esc(t("bs.qn", { i: Q.i + 1, n: Q.qs.length }))} · ✓ ${Q.ok}</p>
       <section class="card bs-q">${prompt}
         <div class="opts">${q.opts.map((o, oi) => `<button class="opt ${g != null ? (o === q.answer ? "ok" : oi === g ? "bad" : "") : ""}" data-bs="ans" data-i="${oi}" ${g != null ? "disabled" : ""} ${q.kind !== "fr" ? 'lang="fr"' : ""}>${esc(o)}</button>`).join("")}</div>
-        ${g != null ? `<div class="fb ${q.opts[g] === q.answer ? "ok" : "bad"}" role="status"><p><b>${q.opts[g] === q.answer ? "✓ " + esc(t("ex.right")) : "✗ " + esc(t("ex.wrong"))}</b></p>
+        ${g != null ? `<div class="fb sheet ${q.opts[g] === q.answer ? "ok" : "bad"}" role="status">${A().sheetHead(q.opts[g] === q.answer, Q.i)}${q.opts[g] === q.answer ? "" : `<p><b>${esc(t("ex.wrong"))}</b></p>`}
           <p class="fr-mid"><span lang="fr">${esc(q.it.fr)}</span> · ${esc(mean(q.it))} <button class="speak" data-speak="${esc(sayOf(q.it))}" aria-label="${esc(t("speak"))}">🔊</button></p>
           ${q.it.ex ? `<p class="muted small" lang="fr">${esc(q.it.ex)}</p>` : ""}
-          <button class="btn" data-bs="next" id="bs-next">${esc(t("ex.next"))} →</button></div>` : ""}
+          <button class="btn sheet-go" data-bs="next" id="bs-next">${esc(t(Q.i + 1 < Q.qs.length ? "fx.continue" : "ex.finish"))}</button></div><div class="sheet-space"></div>` : ""}
       </section>`;
   }
 

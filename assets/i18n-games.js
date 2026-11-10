@@ -2,6 +2,7 @@
 (function () {
   const L = {
     tr: {
+      "fx.almost": "Neredeyse! Sorun değil 🙂", "fx.continue": "Devam", "fx.recap": "Ders tamam! 🎉", "fx.acc": "Doğruluk", "fx.time": "Süre", "fx.combo": "En iyi seri", "fx.total": "Toplam: {n} XP ✨",
       "fx.sound": "Başarı sesleri (aç/kapat)",
       "dx.trKey": "Türkçe cevap anahtarı ve açıklamalar",
       "a11y.skip": "İçeriğe geç", "a11y.home": "Ana sayfa", "a11y.lang": "Dil", "a11y.nav": "Ana menü", "tab.home": "Bugün", "tab.exam": "DELF", "tab.games": "Oyunlar", "tab.practice": "Pratik", "tab.path": "Yol", "tab.cards": "Kartlar", "tab.more": "Diğer",
@@ -26,6 +27,7 @@
       "dx.b.surv": "Dayanıklı", "dx.bd.surv": "Hayatta kalma modunda 15 doğru."
     },
     en: {
+      "fx.almost": "Almost! No worries 🙂", "fx.continue": "Continue", "fx.recap": "Lesson complete! 🎉", "fx.acc": "Accuracy", "fx.time": "Time", "fx.combo": "Best run", "fx.total": "Total: {n} XP ✨",
       "fx.sound": "Success sounds (on/off)",
       "dx.trKey": "Turkish answer key and explanations",
       "a11y.skip": "Skip to content", "a11y.home": "Home", "a11y.lang": "Language", "a11y.nav": "Main menu", "tab.home": "Today", "tab.exam": "DELF", "tab.games": "Games", "tab.practice": "Practice", "tab.path": "Path", "tab.cards": "Cards", "tab.more": "More",
@@ -50,6 +52,7 @@
       "dx.b.surv": "Survivor", "dx.bd.surv": "15 right in survival mode."
     },
     fr: {
+      "fx.almost": "Presque ! Pas grave 🙂", "fx.continue": "Continuer", "fx.recap": "Leçon terminée ! 🎉", "fx.acc": "Précision", "fx.time": "Temps", "fx.combo": "Meilleure série", "fx.total": "Total : {n} XP ✨",
       "fx.sound": "Sons de réussite (activer/couper)",
       "dx.trKey": "Corrigé et explications en turc",
       "a11y.skip": "Aller au contenu", "a11y.home": "Accueil", "a11y.lang": "Langue", "a11y.nav": "Menu principal", "tab.home": "Accueil", "tab.exam": "DELF", "tab.games": "Jeux", "tab.practice": "Pratique", "tab.path": "Parcours", "tab.cards": "Cartes", "tab.more": "Plus",

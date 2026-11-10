@@ -14,7 +14,7 @@
 
   /* ───────── State ───────── */
   const DEFAULT = () => ({ v: 1, lang: null, level: null, steps: {}, res: {}, fav: {}, cards: {}, days: {}, mine: [], newPerSession: 10, lib: {}, welcomed: false,
-    fw: {}, gram: {}, pace: { hpw: 5, dpw: 5 }, mins: {}, prac: {}, err: [], plan: {}, remind: "19:00", read: {}, talk: {}, delf: {}, games: {}, focus: true, basics: {}, trAll: false });
+    xp: 0, fw: {}, gram: {}, pace: { hpw: 5, dpw: 5 }, mins: {}, prac: {}, err: [], plan: {}, remind: "19:00", read: {}, talk: {}, delf: {}, games: {}, focus: true, basics: {}, trAll: false });
   let S = load();
   function fill(obj) {
     const s = Object.assign(DEFAULT(), obj && typeof obj === "object" && !Array.isArray(obj) ? obj : {});
@@ -69,6 +69,29 @@
   function practised() { S.days[ymd()] = 1; save(); }
   // Success sounds & effects (assets/fx.js). Missing FX never breaks anything.
   const fx = (m, a, b) => { try { if (window.FX && window.FX[m]) window.FX[m](a, b); } catch (e) { /* effects are optional */ } };
+  /* End-of-lesson recap: XP earned, accuracy, time, best run. XP only goes up (10 per right answer, +5 for finishing,
+     +20 for a perfect lesson); nothing is ever lost, there is no daily goal to miss. */
+  const RECAP = {};
+  // Header of the bottom feedback sheet: a French praise word, or a kind "almost".
+  const sheetHead = (ok, i) => `<p class="sheet-head"><span class="sheet-ic" aria-hidden="true">${ok ? "✓" : "💡"}</span><span ${ok ? 'lang="fr"' : ""}>${esc(ok ? (window.FX ? window.FX.word(i) : t("ex.right")) : t("fx.almost"))}</span></p>`;
+  function recap(o) {
+    let r = RECAP[o.key], fresh = false;
+    if (!r) {
+      const perfect = o.n > 0 && o.ok === o.n;
+      r = RECAP[o.key] = { xp: o.ok * 10 + 5 + (perfect ? 20 : 0), secs: Math.max(1, Math.round((Date.now() - o.start) / 1000)), combo: Math.max(o.combo || 0, window.FX ? window.FX.best : 0) };
+      S.xp = (S.xp || 0) + r.xp; save(); fresh = true;
+      const ratio = o.n ? o.ok / o.n : 1;
+      setTimeout(() => fx("finale", ratio), 150); setTimeout(() => fx("countUp"), 450);
+    }
+    const acc = o.n ? Math.round(o.ok / o.n * 100) : 100, mm = Math.floor(r.secs / 60) + ":" + String(r.secs % 60).padStart(2, "0");
+    const tile = (cls, ic, label, val, suf, pre) => `<div class="rc-tile ${cls}"><span class="rc-l">${ic} ${esc(label)}</span><b>${pre || ""}<span ${fresh ? `data-count="${val}" data-suf="${suf || ""}"` : ""}>${fresh ? 0 : val}${fresh ? "" : suf || ""}</span></b></div>`;
+    return `<p class="rc-title">${esc(t("fx.recap"))}</p><div class="recap">
+      ${tile("rc-xp", "⚡", "XP", r.xp, "", "+")}
+      ${o.n && acc >= 50 ? tile("rc-acc", "🎯", t("fx.acc"), acc, "%") : ""}
+      <div class="rc-tile rc-time"><span class="rc-l">⏱ ${esc(t("fx.time"))}</span><b>${mm}</b></div>
+      ${r.combo >= 2 ? tile("rc-combo", "🔗", t("fx.combo"), r.combo) : ""}
+    </div><p class="muted small center rc-total">${esc(t("fx.total", { n: S.xp }))}</p>`;
+  }
 
   /* Text-to-speech engine shared by every page (cards, readings, dialogues, DELF, adventures).
      Robust on iPhone/iPad/Mac/Android: long texts are cut into sentences (some voices stop after ~15 s),
@@ -545,7 +568,8 @@
       const fresh = d.cards.filter(c => !S.cards[c.id]).slice(0, S.newPerSession);
       cards = due.concat(fresh);
     }
-    SESSION = { deckId, queue: cards.slice(), done: 0, total: cards.length, flipped: false, start: Date.now() };
+    SESSION = { deckId, queue: cards.slice(), done: 0, total: cards.length, flipped: false, start: Date.now(), graded: 0, good: 0 };
+    fx("reset");
     return SESSION;
   }
   function viewStudy(deckId) {
@@ -555,9 +579,10 @@
     if (!SESSION.queue.length) {
       const fin = SESSION.total > 0;
       if (fin) { logMinutes(sessionMinutes(SESSION.start)); const big = SESSION.total >= 5; setTimeout(() => fx("done", big), 120); }
+      const rc = fin ? recap({ key: "cd" + SESSION.start, ok: SESSION.good, n: SESSION.graded, start: SESSION.start }) : "";
       SESSION = null;
       return `<a class="back" href="#/cards">← ${esc(t("cards.back"))}</a>
-        <section class="card center"><p class="big">🌿</p><p>${esc(fin ? t("cards.finished") : t("home.cardsNone"))}</p>
+        <section class="card center ex-end"><p class="big">${fin ? "🌟" : "🌿"}</p><p>${esc(fin ? t("cards.finished") : t("home.cardsNone"))}</p>${rc}
         <a class="btn" href="#/cards">${esc(t("cards.back"))}</a></section>`;
     }
     const c = SESSION.queue[0];
@@ -1094,6 +1119,7 @@
         <p class="big">${r >= 0.8 ? "🌟" : r >= 0.5 ? "🌿" : "🌱"}</p>
         <h2>${EX.ok} / ${EX.items.length}</h2>
         <p>${esc(t(r >= 0.8 ? "ex.end.great" : r >= 0.5 ? "ex.end.good" : "ex.end.soft"))}</p>
+        ${recap({ key: "ex" + EX.start, ok: EX.ok, n: EX.items.length, start: EX.start })}
         <div class="row wrap center"><button class="btn" data-action="ex-again">↻ ${esc(t("ex.again"))}</button><a class="btn ghost" href="#/practice">${esc(t("ex.other"))}</a>
         ${S.err.length ? `<a class="btn ghost" href="#/practice/notebook">📓 ${esc(t("ex.notebook"))}</a>` : ""}</div>
       </section>`;
@@ -1115,14 +1141,14 @@
       body = st ? "" : window.VOICE.view({ id: "ex-" + EX.start + "-" + EX.i, target: it.answer, onNext: best => exAnswer(best.heard) }) +
         `<div class="row center"><button class="btn small ghost" data-ans="✓">${esc(t("ex.speak.self"))}</button></div>`;
     }
-    const fb = st ? `<div class="fb ${st.ok ? "ok" : "bad"}" role="status">
-        <p><b>${st.ok ? "✓ " + esc(t(st.accent ? "ex.accent" : "ex.right")) : "✗ " + esc(t("ex.wrong"))}</b></p>
+    const fb = st ? `<div class="fb sheet ${st.ok ? "ok" : "bad"}" role="status">${sheetHead(st.ok, EX.i)}
+        ${st.ok && !st.accent ? "" : `<p><b>${st.ok ? esc(t("ex.accent")) : esc(t("ex.wrong"))}</b></p>`}
         ${!st.ok || st.accent || it.t !== "choice" || k === "listen" ? `<p class="fr-mid">${it.reveal ? it.reveal : esc(it.al || it.answer)} ${it.say ? speakBtn(it.say) : ""}</p>` : ""}
         ${st.diff ? `<p class="diff">${st.diff}</p>` : ""}
         ${it.t === "speak" && st.given && st.given !== "✓" ? `<p class="muted small">${esc(t("ex.speak.heard"))}: « ${esc(st.given)} »</p>${window.VOICE.compareHtml(it.answer, st.given)}` : ""}
         ${it.explain ? `<p class="muted small">${esc(it.explain)}</p>` : ""}
-        <button class="btn" id="ex-next" data-action="ex-next">${esc(t(EX.i + 1 < EX.items.length ? "ex.next" : "ex.finish"))} →</button>
-      </div>` : "";
+        <button class="btn sheet-go" id="ex-next" data-action="ex-next">${esc(t(EX.i + 1 < EX.items.length ? "fx.continue" : "ex.finish"))}</button>
+      </div><div class="sheet-space"></div>` : "";
     return back + `<div class="row between"><h1 class="h-ex">${EX_ICON[k] || "📓"} ${esc(title)}</h1><span class="muted small">${EX.i + 1}/${EX.items.length}</span></div>
       ${progressBar(Math.round(EX.i / EX.items.length * 100))}
       <section class="card ex-card">
@@ -1383,7 +1409,7 @@
     if (d.f) { LIB[d.f] = d.v; render(); return; }
     if (d.toggle) { LIB[d.toggle] = !LIB[d.toggle]; render(); return; }
     if (d.grade) {
-      const c = SESSION.queue.shift(); grade(c, d.grade);
+      const c = SESSION.queue.shift(); grade(c, d.grade); SESSION.graded++; if (d.grade !== "again") SESSION.good++;
       // "Again" is not a mistake, just a card that comes back: a neutral sound only.
       if (d.grade === "again") fx("flip"); else fx("good", { praise: d.grade === "easy", from: `[data-grade="${d.grade}"]` });
       if (d.grade === "again") SESSION.queue.push(c); else SESSION.done++;
@@ -1467,7 +1493,7 @@
   window.addEventListener("storage", e => { if (e.key === KEY && e.newValue) { S = load(); if (!["practice", "cards", "exam", "games", "adv", "basics"].includes(route().parts[0])) render(); } });
   // "Skip to content": move focus to the page without touching the address (#main is not a route).
   const skip = $(".skip"); if (skip) skip.addEventListener("click", e => { e.preventDefault(); main.focus(); });
-  window.APP = { get S() { return S; }, save, render: () => render(), t, esc, loc, lang, toast, practised, logMinutes, route, speak, speakBtn, ymd, tts: TTS, playBar, chip, keepY, sessionMinutes };
+  window.APP = { get S() { return S; }, save, render: () => render(), t, esc, loc, lang, toast, practised, logMinutes, route, speak, speakBtn, ymd, tts: TTS, playBar, chip, keepY, sessionMinutes, recap, sheetHead };
   render();
 
   if ("serviceWorker" in navigator && location.protocol === "https:") {
