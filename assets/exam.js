@@ -469,7 +469,7 @@
     const best = st().flash[lv] || 0;
     if (FL.i >= FL.qs.length) {
       const rec = FL.ok > best && FL.ok > 0;
-      if (!FL.saved) { FL.saved = true; if (FL.ok > best) { st().flash[lv] = FL.ok; save(); } if (FL.ok === 10) award("flash"); A().logMinutes(3); setTimeout(() => rec ? fx("big", "⚡", "Record !") : fx("done", FL.ok >= 8), 200); }
+      if (!FL.saved) { FL.saved = true; if (FL.ok > best) { st().flash[lv] = FL.ok; save(); } if (FL.ok === 10) award("flash"); A().logMinutes(3); const great = FL.ok >= 8; setTimeout(() => rec ? fx("big", "⚡", "Record !") : fx("done", great), 200); }
       return `<a class="back" href="#/exam/${lv}">← ${esc(t("dx.title"))}</a><h1>⚡ ${esc(t("dx.flash"))}</h1>
         <section class="card dx-result"><div class="dx-ring" style="--p:${FL.ok * 10}"><b>${FL.ok}</b><small>/10</small></div>
         <div><p class="dx-verdict">${esc(t("dx.flashEnd", { n: FL.ok }))}</p><p>${rec ? esc(t("dx.flashRec")) : esc(t("dx.flashBest", { b: Math.max(best, FL.ok) }))}</p><p class="muted">${esc(t("dx.combo", { n: FL.maxc }))}</p></div></section>
