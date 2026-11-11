@@ -61,10 +61,10 @@
   const isLater = lv => S.focus !== false && ADV.includes(lv);
   const laterBox = (inner, open) => inner ? `<details class="later card" ${open ? "open" : ""}><summary><h2>⏳ ${esc(t("focus.later"))}</h2> <span class="muted small">${esc(t("focus.laterSub"))}</span></summary>${inner}</details>` : "";
 
-  function toast(msg) {
+  function toast(msg, ms) {
     const el = $("#toast");
     el.textContent = msg; el.classList.add("show");
-    clearTimeout(toast._t); toast._t = setTimeout(() => el.classList.remove("show"), 1800);
+    clearTimeout(toast._t); toast._t = setTimeout(() => el.classList.remove("show"), ms || 1800);
   }
   function practised() { S.days[ymd()] = 1; save(); }
   // Success sounds & effects (assets/fx.js). Missing FX never breaks anything.
@@ -116,22 +116,53 @@
       V = { F, M };
     }
     if (ok) { pick(); if (speechSynthesis.addEventListener) speechSynthesis.addEventListener("voiceschanged", pick); else speechSynthesis.onvoiceschanged = pick; }
-    // iPhone/iPad: one short silent sound at the very first touch puts the page in the "playback" audio
-    // session, so the voice is heard even when the side switch is on silent. It is played ONCE, at the first
-    // touch, never together with speech: an <audio> starting at the same moment as a voice silences the voice on iOS.
+    /* iPhone/iPad in silent mode (side switch, often turned on together with "Do Not Disturb"): Safari puts the
+       page in the "ambient" audio session, which the switch mutes, so the voice and the success sounds vanish.
+       Two fixes, both needing a tap: (1) navigator.audioSession.type = "playback" (Safari 16.4+), set again at
+       every tap because iOS can reset it; (2) a silent <audio> loop that keeps the page in the "playback"
+       session (a one-shot blank sound is not enough: iOS drops back to "ambient" as soon as it ends).
+       The loop is started inside the tap, BEFORE any speech: an <audio> starting at the same moment as a voice
+       silences that voice on iOS, so play() waits a breath when the loop has only just started.
+       It is paused when the page is hidden and after a quiet minute, so other apps' music is not held. */
     const IOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (/Macintosh/.test(navigator.userAgent) && "ontouchend" in document);
-    let blank = null;
+    const session = () => { try { if (navigator.audioSession && navigator.audioSession.type !== "playback") navigator.audioSession.type = "playback"; } catch (e) {} };
+    session();
+    let blank = null, blankAt = 0, lastSound = 0;
+    function blankWav() {
+      const n = 4000, b = new Uint8Array(44 + n), dv = new DataView(b.buffer), w = (o, x) => { for (let i = 0; i < x.length; i++) b[o + i] = x.charCodeAt(i); };
+      w(0, "RIFF"); dv.setUint32(4, 36 + n, true); w(8, "WAVEfmt "); dv.setUint32(16, 16, true); dv.setUint16(20, 1, true); dv.setUint16(22, 1, true);
+      dv.setUint32(24, 8000, true); dv.setUint32(28, 8000, true); dv.setUint16(32, 1, true); dv.setUint16(34, 8, true); w(36, "data"); dv.setUint32(40, n, true); b.fill(128, 44);
+      return URL.createObjectURL(new Blob([b], { type: "audio/wav" }));
+    }
     function unmute() {
-      if (!IOS || blank) return;
+      session();
+      if (!IOS) return;
+      lastSound = Date.now();
       try {
-        const n = 1600, b = new Uint8Array(44 + n), dv = new DataView(b.buffer), w = (o, x) => { for (let i = 0; i < x.length; i++) b[o + i] = x.charCodeAt(i); };
-        w(0, "RIFF"); dv.setUint32(4, 36 + n, true); w(8, "WAVEfmt "); dv.setUint32(16, 16, true); dv.setUint16(20, 1, true); dv.setUint16(22, 1, true);
-        dv.setUint32(24, 8000, true); dv.setUint32(28, 8000, true); dv.setUint16(32, 1, true); dv.setUint16(34, 8, true); w(36, "data"); dv.setUint32(40, n, true); b.fill(128, 44);
-        blank = new Audio(URL.createObjectURL(new Blob([b], { type: "audio/wav" }))); blank.setAttribute("playsinline", "");
-        const p = blank.play(); if (p && p.catch) p.catch(() => {});
+        if (!blank) {
+          blank = new Audio(blankWav()); blank.loop = true; blank.preload = "auto";
+          blank.setAttribute("playsinline", ""); blank.setAttribute("x-webkit-airplay", "deny"); blank.disableRemotePlayback = true;
+        }
+        if (!blank.paused) return;
+        blankAt = Date.now();
+        const p = blank.play(); if (p && p.catch) p.catch(() => { blankAt = 0; });
       } catch (e) {}
     }
-    if (IOS) document.addEventListener("touchend", e => { if (!(e.target.closest && e.target.closest("[data-speak],[data-speakall],[data-dx],[data-gm],[data-bq],[data-bplay]"))) unmute(); }, { passive: true });
+    function rest() { try { if (blank && !blank.paused) blank.pause(); } catch (e) {} }
+    if (IOS) {
+      document.addEventListener("touchend", unmute, { capture: true, passive: true });
+      document.addEventListener("visibilitychange", () => { if (document.hidden) rest(); });
+      setInterval(() => { if (blank && !blank.paused && Date.now() - lastSound > 60000 && !(ok && speechSynthesis.speaking)) rest(); }, 15000);
+    } else document.addEventListener("pointerdown", session, { capture: true, passive: true });
+    // How long play() should wait so the voice does not start together with a loop that just started.
+    const settle = () => { const d = Date.now() - blankAt; return blankAt && d < 350 ? 350 - d : 0; };
+    // One gentle, one-time tip on iPhone: Do Not Disturb itself does not mute sound, the side switch does.
+    let tipped = false;
+    function tip() {
+      if (!IOS || tipped) return; tipped = true;
+      try { if (localStorage.getItem("esinfr.iosTip")) return; localStorage.setItem("esinfr.iosTip", "1"); } catch (e) { return; }
+      setTimeout(() => toast(t("audio.ios"), 7000), 1500);
+    }
     /* iPhone/iPad (and Chrome): speech only works once it has been started from a tap. Speech asked for later,
        from a timer (the next adventure scene, the next DELF question) or after a cancel, is silently ignored
        until then, and can block the queue. So, until a voice has really started, every tap first speaks a
@@ -204,6 +235,7 @@
       if (!q.length) { done(); return; }
       if (!ok) { toast(t("audio.none")); done(); return; }
       const fromTap = Date.now() - tappedAt < 1000;
+      lastSound = Date.now();
       const cancelled = stop(); const id = run; let started = false; glow(true, o.glow); halt = o.onHalt || null;
       const end = () => { glow(false); halt = null; if (o.onLine) o.onLine(-1); done(); };
       if (speechSynthesis.paused) speechSynthesis.resume();
@@ -217,7 +249,7 @@
         let fin = false, mine = false;
         const t0 = Date.now(), est = 1500 + c.text.length * 85 / rate;
         const finish = () => { if (fin || id !== run) return; fin = true; later(() => say(i + 1), c.end ? (o.gap == null ? 450 : o.gap) : 80); };
-        u.onstart = () => { started = mine = confirmed = true; };
+        u.onstart = () => { started = mine = confirmed = true; lastSound = Date.now(); tip(); };
         u.onend = finish; u.onerror = e => { if (e && (e.error === "interrupted" || e.error === "canceled")) return; finish(); };
         keep.push(u); speechSynthesis.speak(u);
         // A dropped utterance (seen right after cancel on some phones): try once more.
@@ -236,11 +268,12 @@
         later(watch, est);
       };
       // Speaking right after cancel() is dropped by some browsers (iPhone, Chrome): give the engine a breath.
-      if (cancelled) later(() => say(0), 150); else say(0);
+      const wait = Math.max(cancelled ? 150 : 0, settle());
+      if (wait) later(() => say(0), wait); else say(0);
       later(() => { if (id !== run || started) return; if (!fromTap && !confirmed) toast(t("audio.tap")); else if (!hinted) { hinted = true; toast(t("audio.hint")); } }, 4500);
     }
     document.addEventListener("visibilitychange", () => { if (document.hidden) stop(); });
-    return { play, stop, ok, clean, get unlocked() { return confirmed; } };
+    return { play, stop, ok, clean, unmute, get unlocked() { return confirmed; } };
   })();
   function speak(text, slow) {
     if (!text) return;
