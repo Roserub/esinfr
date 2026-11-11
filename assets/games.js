@@ -3,6 +3,11 @@
 (function () {
   "use strict";
   const ADVS = window.ADVENTURES || [];
+  /* After an answer the mouse is still over the same spot, which would light up whatever option is drawn there next.
+     Hover effects stay off until the mouse really moves. */
+  document.addEventListener("click", e => { if (e.target.closest && e.target.closest(".opt, .mem, .tok")) document.documentElement.classList.add("no-hover"); }, true);
+  let hx = null, hy = null;
+  document.addEventListener("mousemove", e => { if (hx !== null && Math.abs(e.clientX - hx) + Math.abs(e.clientY - hy) > 6) document.documentElement.classList.remove("no-hover"); hx = e.clientX; hy = e.clientY; }, { passive: true });
   const ADV_BY_ID = Object.fromEntries(ADVS.map(a => [a.id, a]));
   const LVS = ["A1", "A2"];
   const AVATAR = { N: "📢", F: "👩", M: "👨", F2: "👩‍🦰", M2: "🧔", K: "🧒" };
