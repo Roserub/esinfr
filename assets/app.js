@@ -56,6 +56,7 @@
   const ymd = d => { d = d || new Date(); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); };
   const today = () => Math.floor((Date.now() - new Date().getTimezoneOffset() * 60000) / 86400000);
   const levelIdx = lv => LEVELS.indexOf(lv);
+  const roman = n => { let r = ""; for (const [v, l] of [[1000, "M"], [900, "CM"], [500, "D"], [400, "CD"], [100, "C"], [90, "XC"], [50, "L"], [40, "XL"], [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"]]) while (n >= v) { r += l; n -= v; } return r; };
   const curLevel = () => S.level || "A0";
   const ADV = ["B1", "B2", "C1", "C2"];
   const isLater = lv => S.focus !== false && ADV.includes(lv);
@@ -73,7 +74,7 @@
      +20 for a perfect lesson); nothing is ever lost, there is no daily goal to miss. */
   const RECAP = {};
   // Header of the bottom feedback sheet: a French praise word, or a kind "almost".
-  const sheetHead = (ok, i) => `<p class="sheet-head"><span class="sheet-ic" aria-hidden="true">${ok ? "✓" : "💡"}</span><span ${ok ? 'lang="fr"' : ""}>${esc(ok ? (window.FX ? window.FX.word(i) : t("ex.right")) : t("fx.almost"))}</span></p>`;
+  const sheetHead = (ok, i) => `<p class="sheet-head"><span class="sheet-ic" aria-hidden="true">${window.IC ? window.IC(ok ? "circle-check" : "lightbulb") : ok ? "✓" : "💡"}</span><span ${ok ? 'lang="fr"' : ""}>${esc(ok ? (window.FX ? window.FX.word(i) : t("ex.right")) : t("fx.almost"))}</span></p>`;
   function recap(o) {
     let r = RECAP[o.key], fresh = false;
     if (!r) {
@@ -375,20 +376,39 @@
     const dayNames = { tr: ["Pt", "Sa", "Ça", "Pe", "Cu", "Ct", "Pz"], en: ["M", "T", "W", "T", "F", "S", "S"], fr: ["L", "M", "M", "J", "V", "S", "D"] }[lang()];
     const practisedToday = !!S.days[ymd()];
 
+    const loc_ = { tr: "tr-TR", en: "en-GB", fr: "fr-FR" }[lang()];
+    let dateTxt = ""; try { dateTxt = now.toLocaleDateString(loc_, { weekday: "long", day: "numeric", month: "long" }); } catch (e) { dateTxt = ymd(); }
+    dateTxt = dateTxt.charAt(0).toLocaleUpperCase(loc_) + dateTxt.slice(1);
+    const dayN = Math.max(1, Object.keys(S.days).length + (practisedToday ? 0 : 1));
+    const goalLv = "A2"; // Esin's goal (see dx.homeTitle); the line below the card shows A1 too
+    const goal = window.EXAM && window.EXAM.goal ? window.EXAM.goal(goalLv) : null;
+    const goalPct = ns ? levelProgress(ns.level.id).pct : 100;
     return `
     <section class="hero">
-      <h1>${esc(hello)} Esin <span aria-hidden="true">${h < 18 ? "☀︎" : "☾"}</span></h1>
-      <p class="muted">${esc(t("home.sub"))}</p>
+      <p class="kicker">${esc(dateTxt)} · ${esc(t("home.day", { n: dayN }))}</p>
+      <h1>${esc(hello)} <em>Esin</em></h1>
+      <p class="muted hero-sub">${esc(t("home.sub").replace(/\s*Doucement\s*🌿\s*$/, ""))}</p>
     </section>
 
     ${quickGrid()}
+
+    <section class="goal">
+      <div class="goal-top"><span class="kicker">${esc(t("home.goal"))} · DELF ${goalLv}</span>${goal && goal.total ? `<a class="goal-n" href="#/exam/${goalLv}" aria-label="DELF ${goalLv}: ${goal.passed}/${goal.total}">${goal.passed} / ${goal.total}</a>` : ""}</div>
+      <h2 class="goal-t">${ns ? esc(t("home.resume", { s: loc(ns.step.t) })) : esc(t("dx.homeTitle"))}</h2>
+      ${ns ? `<p class="muted small goal-d">${ns.level.id} · ${esc(loc(ns.step.do))}</p>` : ""}
+      ${progressBar(goalPct)}
+      <div class="goal-act">
+        <a class="btn" href="${ns ? `#/path/${ns.level.id}?step=${ns.step.id}` : "#/exam"}">${esc(t("home.continue"))}</a>
+        <a class="btn link" href="#/placement">${esc(t("home.start"))}</a>
+      </div>
+      ${goal && goal.total ? `<a class="goal-x" href="#/exam">${esc(t("home.allExams"))} · A1 ${window.EXAM.goal("A1").passed}/${window.EXAM.goal("A1").total} · A2 ${window.EXAM.goal("A2").passed}/${window.EXAM.goal("A2").total} →</a>` : ""}
+    </section>
 
     ${!S.welcomed ? `<section class="card welcome">
       <p>${esc(t("home.welcome"))}</p>
       <div class="row wrap"><a class="btn" href="#/guide/start">🧭 ${esc(t("home.startHere"))}</a><a class="btn ghost" href="#/placement">${esc(t("home.start"))}</a><button class="btn ghost" data-action="dismiss-welcome">OK</button></div>
     </section>` : ""}
 
-    ${window.EXAM ? window.EXAM.homeCard() : ""}
     ${window.GAMES ? window.GAMES.homeCard() : ""}
 
     ${todayPlanCard()}
@@ -402,14 +422,6 @@
       </div>
       <div id="feel-out"></div>
     </section>
-
-    ${ns ? `<section class="card next">
-      <p class="eyebrow">${esc(t("home.next"))} · ${ns.level.id}</p>
-      <h2>${esc(loc(ns.step.t))}</h2>
-      <p>${esc(loc(ns.step.do))}</p>
-      ${progressBar(levelProgress(ns.level.id).pct)}
-      <a class="btn" href="#/path/${ns.level.id}?step=${ns.step.id}">${esc(t("home.continue"))} →</a>
-    </section>` : ""}
 
     <section class="grid2">
       <div class="card">
@@ -462,12 +474,14 @@
         <b>${l.id}</b><span>${p.done}/${p.total}</span><i style="--p:${p.pct}%"></i></a>`;
     }).join("");
     const p = levelProgress(lv.id);
+    const curId = (lv.steps.find(x => !S.steps[x.id]) || {}).id;
+    const ic = (n, f) => window.IC ? window.IC(n) : f;
     const steps = lv.steps.map((s, i) => {
-      const done = !!S.steps[s.id];
+      const done = !!S.steps[s.id], cur = s.id === curId;
       const deck = s.deck && DECKS.find(d => d.id === s.deck);
       const guide = s.guide && GUIDE.find(g => g.id === s.guide);
-      return `<details class="step ${done ? "is-done" : ""}" id="step-${s.id}" ${openStep === s.id ? "open" : ""}>
-        <summary><span class="num">${done ? "✓" : i + 1}</span><span class="st-title">${esc(loc(s.t))}</span>${s.kind ? `<span class="kind">${{ speak: "🗣️", write: "✍️", life: "🥖", exam: "📝" }[s.kind] || ""}</span>` : ""}</summary>
+      return `<details class="step ${done ? "is-done" : ""} ${cur ? "is-cur" : ""}" id="step-${s.id}" ${openStep === s.id ? "open" : ""}>
+        <summary><span class="num" aria-hidden="true">${done ? ic("check", "✓") : cur ? ic("play", "▶") : i + 1}</span><span class="st-main"><span class="st-k">${esc(t("path.step"))} ${roman(i + 1)}</span><span class="st-title">${esc(loc(s.t))}</span></span>${s.kind ? `<span class="kind">${{ speak: "🗣️", write: "✍️", life: "🥖", exam: "📝" }[s.kind] || ""}</span>` : ""}</summary>
         <div class="step-body">
           <p>${esc(loc(s.do))}</p>
           <div class="step-links">
@@ -481,6 +495,7 @@
       </details>`;
     }).join("");
     return `
+    <p class="kicker">${esc(t("path.sub", { lv: lv.id, d: p.done, n: p.total }))}</p>
     <h1>${esc(t("path.title"))}</h1>
     <nav class="lv-tabs" aria-label="Levels">${tabs}</nav>
     ${isLater(lv.id) ? `<p class="note">⏳ ${esc(t("focus.laterSub"))}</p>` : ""}
@@ -620,14 +635,16 @@
     }
     const c = SESSION.queue[0];
     const trans = lang() === "en" ? [c.en, c.tr] : [c.tr, c.en];
-    return `<a class="back" href="#/cards">← ${esc(t("cards.back"))}</a>
-      <h1 class="h-study">${esc(loc(d.name))} · ${SESSION.done}/${SESSION.total}</h1>
+    const long = c.fr.length > 26 ? (c.fr.length > 60 ? " xlong" : " long") : "";
+    return `<div class="fl-top"><a class="fl-back" href="#/cards" aria-label="${esc(t("cards.back"))}" title="${esc(t("cards.back"))}">${window.IC ? window.IC("chevron-left") : "←"}</a>
+        <h1 class="h-study">${esc(loc(d.name))}</h1><span class="fl-count">${SESSION.done}/${SESSION.total}</span></div>
       ${progressBar(SESSION.total ? Math.round(SESSION.done / SESSION.total * 100) : 0)}
+      <div class="flash-stack">
       <section class="flash ${SESSION.flipped ? "flipped" : ""}">
-        <p class="fr-big">${esc(c.fr)}</p>
+        <p class="fr-big${long}" lang="fr">${esc(c.fr)}</p>
+        ${SESSION.flipped ? `<div class="answer"><i class="fl-rule" aria-hidden="true"></i><p class="tr-big">${esc(trans[0] || "")}</p>${trans[1] ? `<p class="muted">${esc(trans[1])}</p>` : ""}${c.note ? `<p class="note">${esc(c.note)}</p>` : ""}</div>` : ""}
         ${speakBtn(c.fr)}
-        ${SESSION.flipped ? `<div class="answer"><p class="tr-big">${esc(trans[0] || "")}</p>${trans[1] ? `<p class="muted">${esc(trans[1])}</p>` : ""}${c.note ? `<p class="note">${esc(c.note)}</p>` : ""}</div>` : ""}
-      </section>
+      </section></div>
       ${SESSION.flipped ? `<div class="grade">
           <button class="btn again" data-grade="again">${esc(t("cards.again"))}</button>
           <button class="btn good" data-grade="good">${esc(t("cards.good"))}</button>
@@ -1182,10 +1199,11 @@
         ${it.explain ? `<p class="muted small">${esc(it.explain)}</p>` : ""}
         <button class="btn sheet-go" id="ex-next" data-action="ex-next">${esc(t(EX.i + 1 < EX.items.length ? "fx.continue" : "ex.finish"))}</button>
       </div><div class="sheet-space"></div>` : "";
-    return back + `<div class="row between"><h1 class="h-ex">${EX_ICON[k] || "📓"} ${esc(title)}</h1><span class="muted small">${EX.i + 1}/${EX.items.length}</span></div>
-      ${progressBar(Math.round(EX.i / EX.items.length * 100))}
-      <section class="card ex-card">
-        <p class="ex-q">${esc(it.prompt)}</p>
+    return `<div class="ex-top"><a class="ex-close" href="#/practice" aria-label="${esc(t("ex.close"))}" title="${esc(t("ex.close"))}">${window.IC ? window.IC("x") : "✕"}</a>
+        ${progressBar(Math.round(EX.i / EX.items.length * 100))}<span class="ex-count">${EX.i + 1}/${EX.items.length}</span></div>
+      <p class="kicker">${EX_ICON[k] || "📓"} ${esc(title)}</p>
+      <section class="ex-card">
+        <h1 class="ex-q">${esc(it.prompt)}</h1>
         ${it.say && !(it.sayAfter && !st) ? `<div class="row center"><button class="btn speak-big" data-speak="${esc(it.say)}">🔊 ${esc(t("ex.listen.btn"))}</button><button class="btn ghost speak-big" data-speak="${esc(it.say)}" data-slow="1" aria-label="${esc(t("av.slow"))}" title="${esc(t("av.slow"))}">🐢</button></div>` : ""}
         ${it.show ? `<p class="fr-big center">${esc(it.show)}</p>` : ""}
         ${it.sub ? `<p class="muted center">${esc(it.sub)}</p>` : ""}
@@ -1343,7 +1361,7 @@
     $$("[data-i18n-label]").forEach(el => { el.setAttribute("aria-label", t(el.dataset.i18nLabel)); });
     const { parts, params } = route();
     const top = parts[0] || "home";
-    const tab = { home: "home", path: "path", practice: "practice", read: "practice", talk: "practice", basics: "practice", library: "more", cards: "cards", more: "more", guide: "more", placement: "more", progress: "more", plan: "home", search: "more", exam: "exam", adv: "games", games: "games" }[top] || "home";
+    const tab = { home: "home", path: "path", practice: "practice", read: "practice", talk: "practice", basics: "practice", library: "more", cards: "cards", more: "more", guide: "more", placement: "more", progress: "more", plan: "home", search: "more", exam: "home", adv: "home", games: "home" }[top] || "home";
     $$(".tabbar a").forEach(a => a.classList.toggle("on", a.dataset.tab === tab));
     let html;
     switch (top) {
