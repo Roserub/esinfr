@@ -1,0 +1,37 @@
+name: Live site check
+
+on:
+  workflow_run:
+    workflows: ["pages build and deployment"]
+    types: [completed]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 7 * * *"   # every morning: is the site still opening on iPhone?
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 20
+      - name: Install Playwright with WebKit and Chromium
+        run: npm install --no-save playwright@1.48.2 && npx playwright install --with-deps webkit chromium
+      - name: Wait for GitHub Pages to serve the new version
+        if: github.event_name == 'workflow_run'
+        run: sleep 60
+      - name: Open the live site like Esin (iPhone, iPad, Mac), splash on
+        run: node tools/live-check.js
+      - name: Same check on this branch's files (Safari engine)
+        if: github.event_name == 'pull_request'
+        run: |
+          npx --yes http-server@14.1.1 -p 8080 -s . &
+          sleep 3
+          node tools/live-check.js http://localhost:8080/
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: live-shots
+          path: live-shots/
