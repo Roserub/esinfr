@@ -1,9 +1,9 @@
 /* Offline support. Network first (so a new version shows on the very next visit), cache as the offline fallback.
    When a new version activates, open pages are reloaded once so nobody stays on the old one. */
-const CACHE = "esinfr-v22";
+const CACHE = "esinfr-v23";
 const SHELL = [
   "./", "index.html", "manifest.webmanifest", "assets/style.css", "assets/icon.svg",
-  "assets/icons.js", "assets/i18n-da.js", "assets/logo.svg", "assets/favicon.svg", "assets/icon-48.png", "assets/icon-maskable-512.png", "assets/icon-192.png", "assets/icon-512.png",
+  "assets/fonts/cormorant-garamond-latin-500-italic.woff2", "assets/fonts/cormorant-garamond-latin-500-normal.woff2", "assets/fonts/cormorant-garamond-latin-ext-500-italic.woff2", "assets/fonts/cormorant-garamond-latin-ext-500-normal.woff2", "assets/icons.js", "assets/i18n-da.js", "assets/logo.svg", "assets/favicon.svg", "assets/icon-48.png", "assets/icon-maskable-512.png", "assets/icon-192.png", "assets/icon-512.png",
   "assets/fonts/cormorant-garamond-latin-400-italic.woff2", "assets/fonts/cormorant-garamond-latin-400-normal.woff2", "assets/fonts/cormorant-garamond-latin-600-italic.woff2", "assets/fonts/cormorant-garamond-latin-600-normal.woff2", "assets/fonts/cormorant-garamond-latin-ext-400-italic.woff2", "assets/fonts/cormorant-garamond-latin-ext-400-normal.woff2", "assets/fonts/cormorant-garamond-latin-ext-600-italic.woff2", "assets/fonts/cormorant-garamond-latin-ext-600-normal.woff2", "assets/fonts/lora-latin-400-italic.woff2", "assets/fonts/lora-latin-400-normal.woff2", "assets/fonts/lora-latin-600-italic.woff2", "assets/fonts/lora-latin-600-normal.woff2", "assets/fonts/lora-latin-ext-400-italic.woff2", "assets/fonts/lora-latin-ext-400-normal.woff2", "assets/fonts/lora-latin-ext-600-italic.woff2", "assets/fonts/lora-latin-ext-600-normal.woff2",
    "assets/icon-180.png", "assets/i18n.js", "assets/i18n-exam.js",
   "assets/i18n-games.js", "assets/i18n-voice.js", "assets/fx.js", "assets/voice.js", "assets/exam.js", "assets/games.js", "assets/app.js", "data/resources.js", "data/resources-fr.js",

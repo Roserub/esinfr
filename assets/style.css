@@ -12,6 +12,10 @@
 @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/cormorant-garamond-latin-400-normal.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 400; font-display: swap; src: url(fonts/cormorant-garamond-latin-ext-400-italic.woff2) format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
 @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 400; font-display: swap; src: url(fonts/cormorant-garamond-latin-400-italic.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/cormorant-garamond-latin-ext-500-normal.woff2) format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/cormorant-garamond-latin-500-normal.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 500; font-display: swap; src: url(fonts/cormorant-garamond-latin-ext-500-italic.woff2) format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 500; font-display: swap; src: url(fonts/cormorant-garamond-latin-500-italic.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/cormorant-garamond-latin-ext-600-normal.woff2) format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
 @font-face { font-family: "Cormorant Garamond"; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/cormorant-garamond-latin-600-normal.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 @font-face { font-family: "Cormorant Garamond"; font-style: italic; font-weight: 600; font-display: swap; src: url(fonts/cormorant-garamond-latin-ext-600-italic.woff2) format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
@@ -1210,3 +1214,29 @@ body { font-feature-settings: "lnum" 1; }
 }
 @media (max-width: 359px) { .brand-name { display: none; } }
 @media (min-width: 1000px) { .tabbar { grid-template-columns: 1fr; } .tabbar a { height: 76px; } .fb.sheet { border-left: 1px solid var(--rule); } }
+
+/* ── Readability pass (2026-11-11): sharper, easier text while keeping the Doucement look ──
+   Cormorant is thin with a small x-height: big titles move from 400 to 500, it is no longer used under ~17px,
+   body text is a size up, secondary text a little darker, and the Mac's thinning "antialiased" smoothing is off. */
+:root { --ink3: #3F525E; --muted: #3F525E; }
+body { font-size: 17px; -webkit-font-smoothing: auto; -moz-osx-font-smoothing: auto; }
+h1, .hero h1, .ex-q, .big, .dx-num, .ex-end h2, .flash .fr-big, .phrase .fr-big, .ex-card .fr-big.center, .vc-live, .guide h1, .dx-h { font-weight: 500; }
+h1, h2, h3, .btn, .goal-t, .st-title, .res-name, .fr-big, .tile, .guide-item { letter-spacing: .005em; }
+h2 { font-size: 1.42rem; }
+.small, .muted.small { font-size: .9rem; }
+.kicker, .eyebrow, .flabel, .rc-l, .bubble .who, .sms-from { font-size: .78rem; letter-spacing: .1em; }
+.btn { font-size: 1.14rem; }
+.btn.small { font-size: 1.05rem; }
+.st-k { font-family: var(--f-body); font-size: .78rem; letter-spacing: .06em; }
+.st-title { font-size: 1.36rem; }
+.quick-i b { font-size: 1.08rem; }
+.lang-switch button { font-family: var(--f-body); font-weight: 600; font-size: .78rem; }
+.ex-count, .fl-count, .goal-n { font-weight: 600; }
+.tabbar a { font-size: .72rem; }
+.back { font-size: 1.12rem; font-weight: 600; }
+.goal-x, .goal-d { font-size: .88rem; }
+.tr-big { font-size: 1.3rem; }
+.badge { font-size: .75rem; }
+.opt { font-size: 1.08rem; }
+.ex-tile small, .av-tile small, .av-home small, .dx-tile small, .read-tile small { font-size: .84rem; line-height: 1.4; }
+@media (max-width: 430px) { .lang-switch button { font-size: .74rem; } }
