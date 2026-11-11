@@ -351,7 +351,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visibl
 .opts.two .opt { justify-content: center; font-size: 1.15rem; font-weight: 600; }
 .opt kbd { font: inherit; font-size: .7rem; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 0 5px; flex: none; }
 @media (hover: none) { .opt kbd { display: none; } }
-.opt:not([disabled]):hover { border-color: var(--accent); }
+/* hover only with a real mouse: on a phone/iPad the tapped spot stays "hovered" and lit the option at the same place on the next question */
+@media (hover: hover) and (pointer: fine) { html:not(.no-hover) .opt:not([disabled]):hover { border-color: var(--accent); } }
 .opt.ok { background: var(--accent-soft); border-color: var(--accent); }
 .opt.bad { background: var(--warm-soft); border-color: var(--warm); }
 .opt[disabled] { cursor: default; }
@@ -595,7 +596,8 @@ details.card > summary h2 { display: inline; }
 .mem.up { background: var(--surface); color: var(--text); border-color: var(--blue); }
 .mem.up.fr { font-weight: 700; }
 .mem.ok { background: var(--accent-soft); border-color: var(--accent); color: var(--text); cursor: default; }
-.mem:not([disabled]):hover { border-color: var(--accent); }
+/* hover only with a real mouse: on a phone/iPad the tapped spot stays "hovered" and lit the option at the same place on the next question */
+@media (hover: hover) and (pointer: fine) { html:not(.no-hover) .mem:not([disabled]):hover { border-color: var(--accent); } }
 .mem:active { transform: scale(.97); }
 .ord-line { min-height: 56px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 10px; margin: 12px 0; border: 2px dashed var(--line); border-radius: 14px; }
 .ord-line.ok { border-style: solid; border-color: var(--accent); background: var(--accent-soft); }
@@ -603,7 +605,8 @@ details.card > summary h2 { display: inline; }
 .ord-bank { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 8px 0 12px; }
 .tok { font: inherit; font-size: 1.05rem; padding: 8px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--text); cursor: pointer; box-shadow: var(--shadow); }
 .tok.on { background: var(--blue-soft); border-color: transparent; box-shadow: none; }
-.tok:not([disabled]):hover { border-color: var(--accent); }
+/* hover only with a real mouse: on a phone/iPad the tapped spot stays "hovered" and lit the option at the same place on the next question */
+@media (hover: hover) and (pointer: fine) { html:not(.no-hover) .tok:not([disabled]):hover { border-color: var(--accent); } }
 .dx-hearts { font-size: 1.2rem; letter-spacing: 2px; }
 .dx-games { margin-top: 4px; }
 @media (min-width: 760px) { .dx-games { grid-template-columns: repeat(2, 1fr); } }
