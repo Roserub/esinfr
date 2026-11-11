@@ -27,7 +27,9 @@ const SHELL = [
   "data/readings-a1a2-9.js", "data/readings-a1a2-10.js", "data/readings-a1a2-11.js", "data/readings-a1a2-12.js", "data/readings-a1a2-13.js", "data/readings-a1a2-14.js", "data/readings-a1a2-15.js", "data/readings-a1a2-16.js", "data/dialogues-a1a2-9.js", "data/dialogues-a1a2-10.js", "data/dialogues-a1a2-11.js", "data/dialogues-a1a2-12.js", "data/dialogues-a1a2-13.js", "data/dialogues-a1a2-14.js", "data/dialogues-a1a2-15.js", "data/decks-a1a2-4.js", "data/decks-a1a2-5.js", "data/decks-a1a2-6.js", "data/decks-a1a2-7.js", "data/decks-a1a2-8.js", "data/readings-tr-10.js", "data/readings-tr-11.js", "data/readings-tr-12.js", "data/readings-tr-13.js", "data/readings-tr-14.js", "data/readings-tr-15.js", "data/readings-tr-16.js", "data/readings-tr-17.js", "data/basics-5.js", "data/basics-6.js", "data/basics-7.js", "data/basics-8.js", "data/adv-a1-6.js", "data/adv-a2-6.js", "data/adv-a1-7.js", "data/adv-a2-7.js", "data/adv-mix-8.js"
 ];
 self.addEventListener("install", e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL.map(u => new Request(u, { cache: "reload" })))).then(() => self.skipWaiting()));
+  /* one file at a time, retried, so one hiccup from GitHub Pages (503) doesn't throw the whole offline copy away */
+  const one = async (c, u, n) => { try { const r = await fetch(new Request(u, { cache: "reload" })); if (r.ok) return c.put(u, r); } catch (err) { /* retry */ } if (n > 0) { await new Promise(r => setTimeout(r, 1000)); return one(c, u, n - 1); } };
+  e.waitUntil(caches.open(CACHE).then(async c => { for (let i = 0; i < SHELL.length; i += 8) await Promise.all(SHELL.slice(i, i + 8).map(u => one(c, u, 2))); }).then(() => self.skipWaiting()));
 });
 self.addEventListener("activate", e => {
   e.waitUntil((async () => {
