@@ -13,7 +13,7 @@ const server = http.createServer((req, res) => {
   res.writeHead(200, { "Content-Type": TYPES[path.extname(f)] || "application/octet-stream" }); fs.createReadStream(f).pipe(res);
 });
 
-const ROUTES = ["#/", "#/path", "#/path/A0", "#/path/A2", "#/path/B1", "#/practice", "#/library", "#/cards", "#/cards/survival", "#/cards/falsefriends/list",
+const ROUTES = ["#/", "#/session", "#/cards/today", "#/path", "#/path/A0", "#/path/A2", "#/path/B1", "#/practice", "#/library", "#/cards", "#/cards/survival", "#/cards/falsefriends/list",
   "#/more", "#/plan", "#/search?q=rendez", "#/placement", "#/progress", "#/practice/notebook", "#/read", "#/read/r-seance", "#/talk", "#/talk/d-kine", "#/path/C1",
   "#/exam", "#/exam/A2", "#/exam/A1/s/1", "#/exam/A2/sec/po", "#/exam/A1/sec/co",
   "#/exam/A1/s/20", "#/exam/A2/s/20", "#/exam/A1/s/50", "#/exam/A2/s/50", "#/exam/A2/survie", "#/games", "#/games/memory/A1", "#/games/order/A2", "#/adv", "#/adv/av-cafe", "#/adv/av-train",
@@ -39,7 +39,7 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
         await page.waitForTimeout(30);
         const over = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
         if (over > 1) problems.push(`${name} ${lang} ${r}: horizontal overflow ${over}px`);
-        const raw = await page.evaluate(() => (document.querySelector("#main").innerText.match(/\b(ex|plan|pace|lib|path|home|search|ics|fw|drill|tense|prog|guide|rd|dg|cards|dx|focus|vc)\.[a-zA-Z.]+/g) || []).join(" "));
+        const raw = await page.evaluate(() => (document.querySelector("#main").innerText.match(/\b(ex|plan|pace|lib|path|home|search|ics|fw|drill|tense|prog|guide|rd|dg|cards|dx|focus|vc|ss|bk)\.[a-zA-Z.]+/g) || []).join(" "));
         if (raw) problems.push(`${name} ${lang} ${r}: untranslated key ${raw}`);
         if (lang === "fr" && r.startsWith("#/guide/") && await page.evaluate(() => document.querySelector("#main").innerText.includes(window.I18N.fr["guide.inEnglish"]))) problems.push(`${name} fr ${r}: guide page not in French`);
       }
@@ -79,9 +79,28 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
     await page.evaluate(() => { location.hash = "#/practice/notebook"; });
     if (!(await page.$("[data-delerr]"))) problems.push(`${name}: notebook is empty after wrong answers`);
     // Weekly plan: tick today's first task, it must be saved.
-    await page.evaluate(() => { location.hash = "#/"; });
-    const box = await page.$(".plan-list input");
+    await page.evaluate(() => { location.hash = "#/plan"; });
+    const box = await page.$(".plan-day.today .plan-list input");
     if (box) { await box.click(); await page.waitForTimeout(50); const saved = await page.evaluate(() => Object.keys(JSON.parse(localStorage.getItem("esinfr.v1")).plan).length); if (!saved) problems.push(`${name}: plan tick not saved`); }
+    // Today's session: 3-4 steps; finishing today's cards ticks the first one; the bar on the step page leads back.
+    await page.evaluate(() => { location.hash = "#/session"; });
+    const steps = await page.$$(".sess-step");
+    if (steps.length < 3) problems.push(`${name}: today's session has ${steps.length} steps`);
+    await page.click('.sess-step a[data-sess="cards"]');
+    await page.waitForSelector(".sess-back", { timeout: 3000 }).catch(() => {});
+    if (!(await page.$(".sess-back"))) problems.push(`${name}: no way back to the session from today's cards`);
+    for (let k = 0; k < 60 && await page.$("[data-action=flip], .grade"); k++) { if (await page.$("[data-action=flip]")) await page.click("[data-action=flip]"); await page.click("[data-grade=good]"); }
+    await page.evaluate(() => { location.hash = "#/session"; });
+    if (!(await page.$(".sess-step.is-done"))) problems.push(`${name}: cards step not ticked after today's cards`);
+    // Typed cards: the right answer typed without accents, in capitals, counts as right.
+    await page.evaluate(() => { const s = JSON.parse(localStorage.getItem("esinfr.v1")); s.typeMode = true; localStorage.setItem("esinfr.v1", JSON.stringify(s)); location.hash = "#/cards/survival"; location.reload(); });
+    await page.waitForSelector("#type-in");
+    const fr = await page.evaluate(() => window.DECKS.find(d => d.id === "survival").cards.find(c => !JSON.parse(localStorage.getItem("esinfr.v1")).cards[c.id]).fr);
+    await page.fill("#type-in", fr.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase());
+    await page.press("#type-in", "Enter");
+    if (!(await page.$(".type-fb.exact"))) problems.push(`${name}: typed answer "${fr}" without accents not accepted`);
+    await page.evaluate(() => { const s = JSON.parse(localStorage.getItem("esinfr.v1")); s.typeMode = false; localStorage.setItem("esinfr.v1", JSON.stringify(s)); location.hash = "#/"; location.reload(); });
+    await page.waitForSelector(".sess-home");
     // Library filters.
     await page.evaluate(() => { location.hash = "#/library"; });
     await page.click("[data-toggle=star]");
@@ -111,10 +130,10 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
           for (let k = 0; k < nf; k++) { const tag = await page.$eval(`#dx-f${k}`, e => e.tagName + ":" + e.type); if (tag.startsWith("SELECT")) await page.selectOption(`#dx-f${k}`, { index: 1 }); else await page.fill(`#dx-f${k}`, tag.endsWith("date") ? "2026-11-01" : "Martin 0612345678 esin@exemple.fr"); }
           await page.click("[data-dx=checkform]");
         }
-        if (await page.$("#dx-text")) { await page.fill("#dx-text", "Bonjour, je suis désolée, je ne peux pas venir samedi. Merci beaucoup pour l'invitation. On se voit dimanche ? Bises."); await page.click("[data-dx=checktext]"); await page.click("[data-dx=self][data-v='1']"); }
+        if (await page.$("#dx-text")) { await page.fill("#dx-text", "Bonjour, je suis désolée, je ne peux pas venir samedi. Merci beaucoup pour l'invitation. On se voit dimanche ? Bises."); await page.click("[data-dx=checktext]"); for (let i = 0; i < 4; i++) await page.click(`[data-dx=rub][data-i='${i}'][data-v='1']`); }
         while (await page.$("[data-dx=answered]")) await page.click("[data-dx=answered]");
         if (await page.$("[data-dx=dlg-next]")) await page.click("[data-dx=dlg-next]");
-        if (await page.$("[data-dx=checkpo]")) { if (await page.$("[data-dx=tick]")) await page.click("[data-dx=tick]"); await page.click("[data-dx=checkpo]"); await page.click("[data-dx=self][data-v='2']"); }
+        if (await page.$("[data-dx=checkpo]")) { if (await page.$("[data-dx=tick]")) await page.click("[data-dx=tick]"); await page.click("[data-dx=checkpo]"); for (let i = 0; i < 4; i++) await page.click(`[data-dx=rub][data-i='${i}'][data-v='2']`); }
         if (await page.$("[data-dx=next]")) await page.click("[data-dx=next]"); else break;
       }
       if (!(await page.$(".dx-result .dx-ring"))) problems.push(`${name}: DELF ${lv} paper ${sj} did not reach the score screen`);

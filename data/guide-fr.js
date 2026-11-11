@@ -25,7 +25,8 @@
 
   const FR = {};
 
-  FR.start = `<p><b>N'essaie pas de tout utiliser.</b> Avec ces 12 ressources (toutes gratuites ou avec une bonne offre gratuite), tu peux atteindre le B1. Tout le reste de la bibliothèque est un complément.</p>
+  FR.start = `<p class="note">🌿 <b>Ton cours principal, c'est ce site :</b> ouvre <a href="#/session">Ta séance du jour</a> chaque jour (environ 15 minutes, choisies pour toi). La liste ci-dessous est facultative : ajoute au maximum une ressource extérieure, seulement si tu veux plus.</p>
+<p><b>N'essaie pas de tout utiliser.</b> Avec ces 12 ressources (toutes gratuites ou avec une bonne offre gratuite), tu peux atteindre le B1. Tout le reste de la bibliothèque est un complément.</p>
 <ol>
 <li><b>Language Transfer</b> : cours audio, tu construis des phrases dès la première minute (semaines 1 à 4).</li>
 <li><b>Français interactif + Tex's French Grammar</b> : ton manuel universitaire gratuit.</li>

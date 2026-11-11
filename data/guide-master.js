@@ -172,7 +172,8 @@
     t: { en: "Start here: the core kit", tr: "Buradan başla: temel set", fr: "Commencer ici : le kit de base" },
     res: ["langtransfer", "fi-texas", "tv5", "voisins12bis", "duolingo", "anki", "aliceayel", "supereasy", "globalstory", "pointdufle", "wordref", "glosbe", "bonpatron", "langcorrect", "tandem", "hellotalk", "aykut", "sp-cir"],
     widget: "firstweek",
-    en: `<p><b>Don't try to use everything.</b> With just these 12 (all free or with a useful free tier) you can get to B1. Everything else in the library is support.</p>
+    en: `<p class="note">🌿 <b>Your main course is this site:</b> open <a href="#/session">Today's session</a> every day (about 15 minutes, chosen for you). The list below is optional: add one outside resource at most, only if you want more.</p>
+<p><b>Don't try to use everything.</b> With just these 12 (all free or with a useful free tier) you can get to B1. Everything else in the library is support.</p>
 <ol>
 <li><b>Language Transfer</b> — audio course, build sentences from minute one (weeks 1–4).</li>
 <li><b>Français interactif + Tex's French Grammar</b> — your free university textbook.</li>
@@ -189,7 +190,8 @@
 </ol>
 <p><b>Turkish safety net:</b> when an English explanation doesn't click, watch the same point in Turkish with Aykut Yavuz.<br>
 <b>The biggest free lever:</b> if eligible, the OFII integration contract (CIR) includes free French training up to A2.</p>`,
-    tr: `<p><b>Her şeyi kullanmaya çalışma.</b> Sadece bu 12 kaynakla (hepsi ücretsiz veya işe yarar ücretsiz sürümlü) B1'e ulaşabilirsin. Kütüphanedeki geri kalan her şey destek.</p>
+    tr: `<p class="note">🌿 <b>Ana kursun bu site:</b> her gün <a href="#/session">Bugünün seansı</a>'nı aç (yaklaşık 15 dakika, senin için seçilir). Aşağıdaki liste isteğe bağlı: daha fazlasını istersen en fazla bir dış kaynak ekle.</p>
+<p><b>Her şeyi kullanmaya çalışma.</b> Sadece bu 12 kaynakla (hepsi ücretsiz veya işe yarar ücretsiz sürümlü) B1'e ulaşabilirsin. Kütüphanedeki geri kalan her şey destek.</p>
 <ol>
 <li><b>Language Transfer</b> — ilk dakikadan cümle kurduran sesli kurs (1–4. haftalar).</li>
 <li><b>Français interactif + Tex's French Grammar</b> — ücretsiz üniversite ders kitabın.</li>

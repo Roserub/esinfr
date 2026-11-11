@@ -14,7 +14,8 @@
 
   /* ───────── State ───────── */
   const DEFAULT = () => ({ v: 1, lang: null, level: null, steps: {}, res: {}, fav: {}, cards: {}, days: {}, mine: [], newPerSession: 10, lib: {}, welcomed: false,
-    xp: 0, fw: {}, gram: {}, pace: { hpw: 5, dpw: 5 }, mins: {}, prac: {}, err: [], plan: {}, remind: "19:00", read: {}, talk: {}, delf: {}, games: {}, focus: true, basics: {}, trAll: false });
+    xp: 0, fw: {}, gram: {}, pace: { hpw: 5, dpw: 5 }, mins: {}, prac: {}, err: [], plan: {}, remind: "19:00", read: {}, talk: {}, delf: {}, games: {}, focus: true, basics: {}, trAll: false,
+    sess: {}, typeMode: false, lastBackup: "", backupNag: "" });
   let S = load();
   function fill(obj) {
     const s = Object.assign(DEFAULT(), obj && typeof obj === "object" && !Array.isArray(obj) ? obj : {});
@@ -48,7 +49,7 @@
   const lang = () => S.lang || "tr";
   function t(key, vars) {
     let s = (I18N[lang()] && I18N[lang()][key]) || I18N.en[key] || key;
-    if (vars) for (const k in vars) s = s.replace("{" + k + "}", vars[k]);
+    if (vars) for (const k in vars) s = s.split("{" + k + "}").join(vars[k]);
     return s;
   }
   const loc = o => (o ? (o[lang()] || o.en || "") : "");
@@ -299,7 +300,9 @@
     else if (g === "good") st.b = Math.min(st.b + 1, 6);
     else st.b = Math.min(st.b + 2, 6);
     st.due = today() + (g === "again" ? 0 : INTERVALS[st.b]);
-    S.cards[card.id] = st; practised(); save();
+    S.cards[card.id] = st;
+    if (g !== "again" && S.sess && S.sess.d === ymd()) S.sess.cardsN = (S.sess.cardsN || 0) + 1;
+    practised(); save();
   }
   const DUE_CAP = 30; // a calm session: older cards first, the rest simply waits for tomorrow
   const totalDue = () => allDecks().reduce((n, d) => n + deckStats(d).due, 0);
@@ -363,8 +366,6 @@
   function viewHome() {
     const h = new Date().getHours();
     const hello = h < 12 ? t("hello.morning") : h < 18 ? t("hello.day") : t("hello.evening");
-    const ns = nextStep();
-    const due = totalDue();
     const phrasePool = ["survival", "daily", "calm"].flatMap(id => (DECKS.find(d => d.id === id) || { cards: [] }).cards);
     const phrase = phrasePool[today() % phrasePool.length];
     const monthDays = Object.keys(S.days).filter(d => d.startsWith(ymd().slice(0, 7))).length;
@@ -380,9 +381,6 @@
     let dateTxt = ""; try { dateTxt = now.toLocaleDateString(loc_, { weekday: "long", day: "numeric", month: "long" }); } catch (e) { dateTxt = ymd(); }
     dateTxt = dateTxt.charAt(0).toLocaleUpperCase(loc_) + dateTxt.slice(1);
     const dayN = Math.max(1, Object.keys(S.days).length + (practisedToday ? 0 : 1));
-    const goalLv = "A2"; // Esin's goal (see dx.homeTitle); the line below the card shows A1 too
-    const goal = window.EXAM && window.EXAM.goal ? window.EXAM.goal(goalLv) : null;
-    const goalPct = ns ? levelProgress(ns.level.id).pct : 100;
     return `
     <section class="hero">
       <p class="kicker">${esc(dateTxt)} · ${esc(t("home.day", { n: dayN }))}</p>
@@ -390,28 +388,16 @@
       <p class="muted hero-sub">${esc(t("home.sub").replace(/\s*Doucement\s*🌿\s*$/, ""))}</p>
     </section>
 
-    ${quickGrid()}
-
-    <section class="goal">
-      <div class="goal-top"><span class="kicker">${esc(t("home.goal"))} · DELF ${goalLv}</span>${goal && goal.total ? `<a class="goal-n" href="#/exam/${goalLv}" aria-label="DELF ${goalLv}: ${goal.passed}/${goal.total}">${goal.passed} / ${goal.total}</a>` : ""}</div>
-      <h2 class="goal-t">${ns ? esc(t("home.resume", { s: loc(ns.step.t) })) : esc(t("dx.homeTitle"))}</h2>
-      ${ns ? `<p class="muted small goal-d">${ns.level.id} · ${esc(loc(ns.step.do))}</p>` : ""}
-      ${progressBar(goalPct)}
-      <div class="goal-act">
-        <a class="btn" href="${ns ? `#/path/${ns.level.id}?step=${ns.step.id}` : "#/exam"}">${esc(t("home.continue"))}</a>
-        <a class="btn link" href="#/placement">${esc(t("home.start"))}</a>
-      </div>
-      ${goal && goal.total ? `<a class="goal-x" href="#/exam">${esc(t("home.allExams"))} · A1 ${window.EXAM.goal("A1").passed}/${window.EXAM.goal("A1").total} · A2 ${window.EXAM.goal("A2").passed}/${window.EXAM.goal("A2").total} →</a>` : ""}
-    </section>
+    ${sessionCard()}
 
     ${!S.welcomed ? `<section class="card welcome">
       <p>${esc(t("home.welcome"))}</p>
-      <div class="row wrap"><a class="btn" href="#/guide/start">🧭 ${esc(t("home.startHere"))}</a><a class="btn ghost" href="#/placement">${esc(t("home.start"))}</a><button class="btn ghost" data-action="dismiss-welcome">OK</button></div>
+      <div class="row wrap"><a class="btn ghost" href="#/placement">${esc(t("home.start"))}</a><button class="btn ghost" data-action="dismiss-welcome">OK</button></div>
     </section>` : ""}
 
-    ${window.GAMES ? window.GAMES.homeCard() : ""}
+    ${backupCard()}
 
-    ${todayPlanCard()}
+    ${quickGrid()}
 
     <section class="card">
       <h2>${esc(t("home.feel"))}</h2>
@@ -423,17 +409,11 @@
       <div id="feel-out"></div>
     </section>
 
-    <section class="grid2">
-      <div class="card">
-        <p class="eyebrow">${esc(t("home.cards"))}</p>
-        ${due ? `<p class="big">${due}</p>${due > DUE_CAP ? `<p class="muted small">${esc(t("cards.capped", { n: DUE_CAP }))}</p>` : ""}<a class="btn" href="#/cards/due">${esc(t("home.review"))}</a>` : `<p class="muted">${esc(t("home.cardsNone"))}</p><a class="btn ghost" href="#/cards">${esc(t("nav.cards"))}</a>`}
-      </div>
-      <div class="card phrase">
+    <section class="card phrase">
         <p class="eyebrow">${esc(t("home.phrase"))}</p>
         <p class="fr-big">${esc(phrase.fr)} ${speakBtn(phrase.fr)}</p>
         <p class="muted">${esc(lang() === "en" ? phrase.en : phrase.tr)}${lang() === "fr" ? " · " + esc(phrase.en) : ""}</p>
         ${phrase.note ? `<p class="note">${esc(phrase.note)}</p>` : ""}
-      </div>
     </section>
 
     <section class="card">
@@ -488,6 +468,9 @@
             ${guide ? `<a class="btn small ghost" href="#/guide/${guide.id}">${guide.icon} ${esc(t("path.guide"))}: ${esc(loc(guide.t))}</a>` : ""}
             ${deck ? `<a class="btn small ghost" href="#/cards/${deck.id}">🃏 ${esc(t("path.deck"))}: ${esc(loc(deck.name))} (${deck.cards.length})</a>` : ""}
             ${s.practice ? `<a class="btn small ghost" href="#/practice/${s.practice}">${EX_ICON[s.practice]} ${esc(t("path.practice"))}: ${esc(t("ex." + s.practice))}</a>` : ""}
+            ${s.session ? `<a class="btn small" href="#/session">🌿 ${esc(t("ss.title"))}</a>` : ""}
+            ${(s.basics || []).map(id => (window.BASICS || []).find(x => x.id === id)).filter(Boolean).map(x => `<a class="btn small ghost" href="#/basics/${x.id}">${x.emoji} ${esc(t("path.basics"))}: <span lang="fr">${esc(x.t.fr)}</span></a>`).join("")}
+            ${(s.adv || []).map(id => (window.ADVENTURES || []).find(x => x.id === id)).filter(Boolean).map(x => `<a class="btn small ghost" href="#/adv/${x.id}">${x.emoji} ${esc(t("path.adv"))}: <span lang="fr">${esc(x.t.fr)}</span></a>`).join("")}
           </div>
           ${s.res.map(id => RES_BY_ID[id]).filter(Boolean).map(r => resCard(r, false)).join("")}
           <button class="btn ${done ? "ghost" : ""}" data-step="${s.id}">${done ? esc(t("path.undo")) : "✓ " + esc(t("path.markDone"))}</button>
@@ -586,11 +569,14 @@
     return `
     <h1>${esc(t("cards.title"))}</h1>
     <p class="muted">${esc(t("cards.sub"))}</p>
-    ${totalDue() ? `<a class="btn" href="#/cards/due">${esc(t("home.review"))} · ${totalDue()}</a>` : ""}
+    <div class="row wrap"><a class="btn" href="#/cards/today">🌿 ${esc(t("cards.todayBtn"))}${todayCards().length ? " · " + todayCards().length : ""}</a>${totalDue() ? `<a class="btn ghost" href="#/cards/due">${esc(t("home.review"))} · ${totalDue()}</a>` : ""}</div>
+    ${!f && coreDeck() ? `<p class="eyebrow">${esc(t("cards.next"))}</p>${deckCard(coreDeck())}<p class="muted small">${esc(t("cards.nextSub"))}</p>` : ""}
+    <details class="all-decks" ${f ? "open" : ""}><summary><h2>${esc(t("cards.allDecks", { n: decks.filter(d => !isLater(d.level)).length }))}</h2></summary>
     ${delfN ? `<nav class="row wrap decks-filter" aria-label="${esc(t("cards.filter"))}">${fchip("", esc(t("lib.all")))}${fchip("delf", "🎓 " + esc(t("cards.delf", { n: delfN })))}${lvs.map(l => fchip(l, l)).join("")}</nav>` : ""}
     ${!f && delfN ? `<a class="card deck-delf" href="#/cards?f=delf"><span aria-hidden="true">🎓</span><span><b>${esc(t("cards.delf", { n: delfN }))}</b><small class="muted">${esc(t("cards.delfSub"))}</small></span><span aria-hidden="true">→</span></a>` : ""}
     <div class="decks">${decks.filter(d => !isLater(d.level)).map(deckCard).join("")}</div>
     ${!f || f === "delf" ? laterBox(decks.filter(d => isLater(d.level)).length ? `<div class="decks">${decks.filter(d => isLater(d.level)).map(deckCard).join("")}</div>` : "") : ""}
+    </details>
     <section class="card">
       <h2>✍️ ${esc(t("cards.mine"))}</h2>
       <form id="add-word" class="add-word">
@@ -610,6 +596,7 @@
     let cards;
     if (deckId === "due") cards = allDecks().flatMap(d => d.cards.filter(c => S.cards[c.id] && S.cards[c.id].due <= now))
       .sort((a, b) => S.cards[a.id].due - S.cards[b.id].due).slice(0, DUE_CAP);
+    else if (deckId === "today") cards = todayCards();
     else {
       const d = deckById(deckId); if (!d) return null;
       const due = d.cards.filter(c => S.cards[c.id] && S.cards[c.id].due <= now);
@@ -623,29 +610,38 @@
   function viewStudy(deckId) {
     if (!SESSION || SESSION.deckId !== deckId) startSession(deckId);
     if (!SESSION) return `<p>?</p>`;
-    const d = deckId === "due" ? { name: { en: t("home.review"), tr: t("home.review"), fr: t("home.review") } } : deckById(deckId);
+    const d = deckId === "due" ? { name: { en: t("home.review"), tr: t("home.review"), fr: t("home.review") } } : deckId === "today" ? { name: { en: t("ss.cardsT"), tr: t("ss.cardsT"), fr: t("ss.cardsT") } } : deckById(deckId);
+    const backTo = deckId === "today" ? "#/session" : "#/cards";
     if (!SESSION.queue.length) {
       const fin = SESSION.total > 0;
       if (fin) { logMinutes(sessionMinutes(SESSION.start)); const big = SESSION.total >= 5; setTimeout(() => fx("done", big), 120); }
       const rc = fin ? recap({ key: "cd" + SESSION.start, ok: SESSION.good, n: SESSION.graded, start: SESSION.start }) : "";
       SESSION = null;
-      return `<a class="back" href="#/cards">← ${esc(t("cards.back"))}</a>
+      return `<a class="back" href="${backTo}">← ${esc(t(deckId === "today" ? "ss.back" : "cards.back"))}</a>
         <section class="card center ex-end"><p class="big">${fin ? "🌟" : "🌿"}</p><p>${esc(fin ? t("cards.finished") : t("home.cardsNone"))}</p>${rc}
-        <a class="btn" href="#/cards">${esc(t("cards.back"))}</a></section>`;
+        <a class="btn" href="${backTo}">${esc(t(deckId === "today" ? "ss.back" : "cards.back"))}</a></section>`;
     }
     const c = SESSION.queue[0];
     const trans = lang() === "en" ? [c.en, c.tr] : [c.tr, c.en];
     const long = c.fr.length > 26 ? (c.fr.length > 60 ? " xlong" : " long") : "";
-    return `<div class="fl-top"><a class="fl-back" href="#/cards" aria-label="${esc(t("cards.back"))}" title="${esc(t("cards.back"))}">${window.IC ? window.IC("chevron-left") : "←"}</a>
+    // Writing mode: she sees the meaning and types the French (recall and spelling, not only recognition).
+    const typing = S.typeMode && trans[0], ty = SESSION.typed;
+    const front = typing && !SESSION.flipped
+      ? `<p class="tr-big">${esc(trans[0])}</p>${trans[1] ? `<p class="muted">${esc(trans[1])}</p>` : ""}
+        <form id="type-form" class="type-form"><input id="type-in" lang="fr" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" aria-label="${esc(t("cards.typeHere"))}" placeholder="${esc(t("cards.typeHere"))}"><button class="btn" type="submit">${esc(t("cards.typeCheck"))}</button></form>`
+      : `<p class="fr-big${long}" lang="fr">${esc(c.fr)}</p>
+        ${ty ? `<p class="type-fb ${ty.ok}">${esc(t("cards.type." + ty.ok))}${ty.ok !== "exact" && ty.given ? ` <span class="muted">· ${esc(t("cards.youTyped"))} <span lang="fr">${esc(ty.given)}</span></span>` : ""}</p>` : ""}
+        ${SESSION.flipped ? `<div class="answer"><i class="fl-rule" aria-hidden="true"></i><p class="tr-big">${esc(trans[0] || "")}</p>${trans[1] ? `<p class="muted">${esc(trans[1])}</p>` : ""}${c.note ? `<p class="note">${esc(c.note)}</p>` : ""}</div>` : ""}
+        ${speakBtn(c.fr)}`;
+    return `<div class="fl-top"><a class="fl-back" href="${backTo}" aria-label="${esc(t("cards.back"))}" title="${esc(t("cards.back"))}">${window.IC ? window.IC("chevron-left") : "←"}</a>
         <h1 class="h-study">${esc(loc(d.name))}</h1><span class="fl-count">${SESSION.done}/${SESSION.total}</span></div>
       ${progressBar(SESSION.total ? Math.round(SESSION.done / SESSION.total * 100) : 0)}
+      <div class="row wrap type-switch">${chip("✍️ " + esc(t("cards.typeMode")), 'data-action="type-mode"', S.typeMode)}</div>
       <div class="flash-stack">
       <section class="flash ${SESSION.flipped ? "flipped" : ""}">
-        <p class="fr-big${long}" lang="fr">${esc(c.fr)}</p>
-        ${SESSION.flipped ? `<div class="answer"><i class="fl-rule" aria-hidden="true"></i><p class="tr-big">${esc(trans[0] || "")}</p>${trans[1] ? `<p class="muted">${esc(trans[1])}</p>` : ""}${c.note ? `<p class="note">${esc(c.note)}</p>` : ""}</div>` : ""}
-        ${speakBtn(c.fr)}
+        ${front}
       </section></div>
-      ${SESSION.flipped ? `<div class="grade">
+      ${typing && !SESSION.flipped ? `<button class="btn ghost wide" data-action="flip">${esc(t("cards.typeSkip"))}</button>` : SESSION.flipped ? `<div class="grade">
           <button class="btn again" data-grade="again">${esc(t("cards.again"))}</button>
           <button class="btn good" data-grade="good">${esc(t("cards.good"))}</button>
           <button class="btn easy" data-grade="easy">${esc(t("cards.easy"))}</button>
@@ -1168,7 +1164,7 @@
     if (!EX.items.length) return back + `<section class="card center"><p class="big">🌿</p><p>${esc(t("ex.noErr"))}</p></section>`;
     if (EX.i >= EX.items.length) {
       const r = EX.ok / EX.items.length;
-      if (!EX.logged) { EX.logged = true; logMinutes(sessionMinutes(EX.start)); setTimeout(() => fx("done", r >= 0.8), 120); }
+      if (!EX.logged) { EX.logged = true; logMinutes(sessionMinutes(EX.start)); if (S.sess && (S.sess.steps || []).some(x => x.k === "practice" && x.id === kind)) sessMark("practice"); setTimeout(() => fx("done", r >= 0.8), 120); }
       return back + `<section class="card center ex-end">
         <p class="big">${r >= 0.8 ? "🌟" : r >= 0.5 ? "🌿" : "🌱"}</p>
         <h2>${EX.ok} / ${EX.items.length}</h2>
@@ -1222,17 +1218,18 @@
   const weekKey = () => ymd(weekStart());
   function planFor(day) {
     const days = PLAN_DAYS[S.pace.dpw] || PLAN_DAYS[5];
-    if (!days.includes(day)) return null;
+    // The very first day is never a rest day.
+    const td = (new Date().getDay() + 6) % 7, firstDay = !Object.keys(S.days).length && day === td;
+    if (!days.includes(day) && !firstDay) return null;
     const wk = Math.round(weekStart().getTime() / 604800000), n = days.indexOf(day) + wk * days.length;
     const M = Math.max(15, Math.round((S.pace.hpw || 5) * 60 / days.length / 5) * 5);
-    const lv = curLevel(), ns = nextStep();
+    const lv = curLevel();
     const kinds = PRACTICE_BY_LEVEL[lv] || PRACTICE_BY_LEVEL.A2;
-    const tasks = [{ k: "cards", m: 10, icon: "🃏", label: t("plan.cards"), href: "#/cards" + (totalDue() ? "/due" : "") }];
-    let left = M - 10;
-    if (ns && left >= 15) { const m = Math.min(30, Math.max(15, left - 15)); tasks.push({ k: "course", m, icon: "↟", label: t("plan.course") + " · " + loc(ns.step.t), href: `#/path/${ns.level.id}?step=${ns.step.id}` }); left -= m; }
+    // The heart of every study day is the guided session (cards, Basics, a real-life text, DELF); the rest is optional extra time.
+    const tasks = [{ k: "session", m: 15, icon: "🌿", label: t("ss.title"), href: "#/session" }];
+    let left = M - 15;
     const lvRes = f => { const a = resForLevel(lv, f); return a.length ? a[(wk * 7 + day * 13) % a.length] : null; };
-    const exam = ["A1", "A2"].includes(lv) && window.EXAM && window.EXAM.count;
-    const rot = levelIdx(lv) < 1 ? ["practice", "listen", "speak", "practice"] : exam ? ["delf", "listen", "practice", "read", "delf", "speak", "write"] : ["listen", "practice", "read", "speak", "write", "practice"];
+    const rot = levelIdx(lv) < 1 ? ["practice", "listen", "speak", "practice"] : ["listen", "practice", "speak", "write", "read", "practice"];
     for (let j = 0; left >= 10 && j < 4; j++) {
       const kind = rot[(n + j) % rot.length];
       if (tasks.some(x => x.k === kind)) continue;
@@ -1248,7 +1245,7 @@
     return tasks;
   }
   const planKey = (day, k) => day + "-" + k;
-  const planDone = (day, k) => !!((S.plan[weekKey()] || {})[planKey(day, k)]);
+  const planDone = (day, k) => !!((S.plan[weekKey()] || {})[planKey(day, k)]) || (k === "session" && day === (new Date().getDay() + 6) % 7 && S.sess && S.sess.d === ymd() && ssComplete());
   function planList(day, tasks) {
     return `<ul class="plan-list">${tasks.map(x => {
       const done = planDone(day, x.k), ext = /^https?:/.test(x.href);
@@ -1258,16 +1255,162 @@
   }
   function restDay() {
     const r = RES_BY_ID.lyricstraining;
-    return `<p class="muted">🌿 ${esc(t("plan.rest"))}${r ? ` <a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.name)} ↗</a>` : ""}</p>`;
+    return `<p class="muted">🌿 ${esc(t("plan.rest"))}${r ? ` <a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.name)} ↗</a>` : ""}</p><p class="muted small">${esc(t("plan.restSession"))} <a href="#/session">${esc(t("ss.title"))} →</a></p>`;
   }
-  function todayPlanCard() {
-    const day = (new Date().getDay() + 6) % 7, tasks = planFor(day);
-    const done = tasks ? tasks.filter(x => planDone(day, x.k)).length : 0;
-    return `<section class="card">
-      <div class="row between"><p class="eyebrow">${esc(t("plan.today"))}${tasks ? ` · ${done}/${tasks.length}` : ""}</p><a class="small" href="#/plan">${esc(t("plan.week"))} →</a></div>
-      ${tasks ? planList(day, tasks) + (done === tasks.length ? `<p class="ok-msg">${esc(t("plan.allDone"))}</p>` : "") : restDay()}
+  /* ───────── Today's session: one guided ~15-minute route through the site's own content ─────────
+     Cards (due + a few new from the core vocabulary), the next Basics topic, one real-life text
+     (adventure, reading or dialogue, in turn) and one DELF exercise. Chosen once per day, kept in S.sess,
+     each step ticks itself when the matching item is finished. */
+  const CORE_DECKS = ["survival", "numbers", "daily", "verbs", "food", "delf-identity", "delf-family", "delf-calendar", "delf-city", "delf-transport",
+    "delf-shopping", "delf-restaurant", "delf-housing", "delf-health", "delf-leisure", "delf-weather", "delf-clothes", "delf-school", "a1-routine", "a1-questions",
+    "delf-ph-speak-intro", "delf-ph-write-open", "delf-ph-speak-questions", "delf-ph-write-invite", "delf-work", "delf-services", "delf-feelings", "delf-time",
+    "delf-connectors", "a2-passe-compose", "a2-imparfait", "healthbasic", "body", "lifefr", "falsefriends", "delf-ph-write-past", "delf-ph-write-thanks",
+    "delf-ph-speak-opinion", "delf-ph-speak-roleplay", "a2-physio-talk", "a2-smalltalk", "a2-polite"];
+  const SS_NEW = 7, SS_DUE = 15;
+  const coreDeck = () => CORE_DECKS.map(id => DECKS.find(d => d.id === id)).find(d => d && d.cards.some(c => !S.cards[c.id])) || null;
+  function todayCards() {
+    const now = today();
+    const due = allDecks().flatMap(d => d.cards.filter(c => S.cards[c.id] && S.cards[c.id].due <= now)).sort((a, b) => S.cards[a.id].due - S.cards[b.id].due).slice(0, SS_DUE);
+    const d = coreDeck(), fresh = d ? d.cards.filter(c => !S.cards[c.id]).slice(0, SS_NEW) : [];
+    return due.concat(fresh);
+  }
+  /* Typed answer check: accents, case, punctuation and an elided article do not count; 1–2 typos are "almost". */
+  function typedMatch(answer, given) {
+    const n = x => String(x || "").toLowerCase().replace(/\([^)]*\)/g, " ").replace(/[’`]/g, "'").normalize("NFD").replace(/[̀-ͯ]/g, "")
+      .replace(/[^a-z0-9' ]+/g, " ").replace(/\s+/g, " ").trim();
+    const a = n(answer), g = n(given);
+    if (!g) return "no";
+    const alts = [a].concat(String(answer).split(/\s*[\/;]\s*/).map(n)).filter(Boolean);
+    if (alts.includes(g)) return "exact";
+    const dist = (x, y) => { const m = []; for (let i = 0; i <= x.length; i++) { m[i] = [i]; for (let j = 1; j <= y.length; j++) m[i][j] = i ? Math.min(m[i - 1][j] + 1, m[i][j - 1] + 1, m[i - 1][j - 1] + (x[i - 1] === y[j - 1] ? 0 : 1)) : j; } return m[x.length][y.length]; };
+    return alts.some(x => dist(x, g) <= Math.max(1, Math.min(3, Math.round(x.length / 8)))) ? "close" : "no";
+  }
+  const ssLevel = () => ["A0", "A1"].includes(curLevel()) ? "A1" : "A2";
+  const advDone = () => ((S.games || {}).adv || {});
+  function ssPickUse(kind, skip) {
+    const lv = ssLevel(), notSkipped = x => !(skip || []).includes(x.id);
+    const pools = { adv: [window.ADVENTURES || [], x => advDone()[x.id]], read: [READINGS, x => S.read[x.id]], talk: [DIALOGUES, x => S.talk[x.id]] };
+    const [arr, done] = pools[kind];
+    const lvs = lv === "A1" ? ["A1", "A2"] : ["A2", "A1"];
+    for (const l of lvs) { const x = arr.find(y => y.level === l && !done(y) && notSkipped(y)); if (x) return x; }
+    return null;
+  }
+  function buildSession() {
+    const d = ymd();
+    // Kept for the whole day, unless the level changed before anything was done (placement, "this is my level").
+    if (S.sess && S.sess.d === d && Array.isArray(S.sess.steps) && (S.sess.lv === curLevel() || S.sess.cardsN || Object.keys(S.sess.done || {}).length)) return S.sess;
+    const n = Object.keys(S.days).length + (S.days[d] ? 0 : 1), steps = [];
+    const cards = todayCards();
+    steps.push({ k: "cards", target: cards.length });
+    const B = window.BASICS || [], topic = B.find(x => !(S.basics || {})[x.id]);
+    if (topic) steps.push({ k: "basics", id: topic.id });
+    const order = ["adv", "read", "talk"], start = n % 3;
+    for (let j = 0; j < 3; j++) { const kind = order[(start + j) % 3], x = ssPickUse(kind); if (x) { steps.push({ k: "use", kind, id: x.id }); break; } }
+    if (curLevel() === "A0") { const ex = ["sounds", "numbers", "speak"][n % 3]; steps.push({ k: "practice", id: ex }); }
+    else if (window.EXAM && window.EXAM.nextEx) { const x = window.EXAM.nextEx(ssLevel(), n); if (x) steps.push({ k: "delf", id: x.id, lv: x.level, n: x.sujet, sec: x.sec }); }
+    S.sess = { d, lv: curLevel(), steps, cardsN: 0, done: {}, skip: (S.sess && S.sess.skip) || [] };
+    save();
+    return S.sess;
+  }
+  function ssDone(st) {
+    if (S.sess.done[st.k]) return true;
+    switch (st.k) {
+      case "cards": return (S.sess.cardsN || 0) >= Math.max(1, st.target) || !st.target;
+      case "basics": return !!(S.basics || {})[st.id];
+      case "use": return st.kind === "adv" ? !!advDone()[st.id] : st.kind === "read" ? !!S.read[st.id] : !!S.talk[st.id];
+      case "delf": return !!(((S.delf || {}).ex || {})[st.id]);
+      default: return false;
+    }
+  }
+  const ssCount = () => { const s = buildSession(); return { done: s.steps.filter(ssDone).length, total: s.steps.length }; };
+  const ssComplete = () => { const c = ssCount(); return c.done === c.total; };
+  function sessTick(k) { buildSession(); S.sess.done[k] = !S.sess.done[k]; if (S.sess.done[k]) practised(); save(); }
+  function sessMark(k) { if (S.sess && S.sess.d === ymd()) { S.sess.done[k] = true; save(); } }
+  function sessSwap(k) {
+    const s = buildSession(), st = s.steps.find(x => x.k === k); if (!st || k !== "use") return;
+    s.skip = (s.skip || []).concat(st.id).slice(-60);
+    const order = ["adv", "read", "talk"], i = order.indexOf(st.kind);
+    for (let j = 1; j <= 3; j++) { const kind = order[(i + j) % 3], x = ssPickUse(kind, s.skip); if (x) { st.kind = kind; st.id = x.id; break; } }
+    save();
+  }
+  /* What a step looks like: icon, label, the item's name, minutes and where it goes. */
+  function ssInfo(st) {
+    const B = window.BASICS || [];
+    switch (st.k) {
+      case "cards": { const d = coreDeck(); return { ic: "🃏", label: t("ss.cards"), name: st.target ? t("ss.cardsN", { n: st.target }) + (d ? " · " + loc(d.name) : "") : t("home.cardsNone"), m: 4, href: "#/cards/today" }; }
+      case "basics": { const x = B.find(y => y.id === st.id) || {}; return { ic: x.emoji || "🧱", label: t("ss.basics"), name: (x.t || {}).fr || "", sub: loc(x.t || {}), m: 4, href: "#/basics/" + st.id }; }
+      case "use": {
+        if (st.kind === "adv") { const x = (window.ADVENTURES || []).find(y => y.id === st.id) || { t: {} }; return { ic: x.emoji || "🧭", label: t("ss.adv"), name: x.t.fr, sub: loc(x.t), m: 5, href: "#/adv/" + st.id }; }
+        const x = (st.kind === "read" ? READINGS : DIALOGUES).find(y => y.id === st.id) || { t: {} };
+        return { ic: st.kind === "read" ? "📖" : "💬", label: t(st.kind === "read" ? "ss.read" : "ss.talk"), name: x.t.fr, sub: loc(x.t), m: 5, href: (st.kind === "read" ? "#/read/" : "#/talk/") + st.id };
+      }
+      case "delf": return { ic: "🎓", label: t("ss.delf", { lv: st.lv }), name: t("dx." + st.sec) + " · " + t("dx.sujet", { n: st.n }), m: st.sec === "pe" ? 12 : 5, action: "sess-delf" };
+      case "practice": return { ic: EX_ICON[st.id] || "🎯", label: t("ss.practice"), name: t("ex." + st.id), m: 3, href: "#/practice/" + st.id };
+    }
+    return { ic: "•", label: "", name: "", m: 0, href: "#/" };
+  }
+  function viewSession() {
+    const s = buildSession(), c = ssCount(), all = c.done === c.total;
+    const next = s.steps.find(x => !ssDone(x));
+    const mins = s.steps.reduce((a, x) => a + ssInfo(x).m, 0);
+    if (all && !s.cheered) { s.cheered = true; save(); setTimeout(() => fx("big", "🌿", t("ss.doneShort")), 200); }
+    return `<h1>${esc(t("ss.title"))}</h1>
+      <p class="muted">${esc(t("ss.sub", { m: mins }))}</p>
+      ${progressBar(Math.round(c.done / c.total * 100), t("ss.title"))}
+      <ol class="sess-steps">${s.steps.map((st, i) => {
+        const inf = ssInfo(st), done = ssDone(st), isNext = next === st;
+        const go = inf.action ? `<button class="btn small ${isNext ? "" : "ghost"}" data-action="${inf.action}">${esc(t(done ? "ss.again" : "ss.go"))}</button>`
+          : `<a class="btn small ${isNext ? "" : "ghost"}" href="${inf.href}" data-sess="${st.k}">${esc(t(done ? "ss.again" : "ss.go"))}</a>`;
+        return `<li class="card sess-step ${done ? "is-done" : ""} ${isNext ? "is-next" : ""}">
+          <div class="row between"><p class="eyebrow">${i + 1} · ${esc(inf.label)} · ~${inf.m}′</p><span aria-hidden="true">${done ? "✓" : inf.ic}</span></div>
+          <p class="sess-name" ${st.k === "basics" || st.k === "use" ? 'lang="fr"' : ""}><b>${esc(inf.name || "")}</b>${inf.sub ? ` <span class="muted small">· ${esc(inf.sub)}</span>` : ""}</p>
+          <div class="row wrap">${go}
+            ${st.k === "use" && !done ? `<button class="btn small link" data-action="sess-swap" data-k="use">${esc(t("ss.swap"))}</button>` : ""}
+            <button class="btn small link" data-action="sess-tick" data-k="${st.k}" aria-pressed="${!!s.done[st.k]}">${esc(t(s.done[st.k] ? "ss.untick" : "ss.tick"))}</button></div>
+        </li>`;
+      }).join("")}</ol>
+      ${all ? `<section class="card center"><p class="big">🌿</p><h2>${esc(t("ss.done"))}</h2><p class="muted">${esc(t("ss.doneSub"))}</p>
+        <div class="row wrap center"><a class="btn ghost" href="#/games">🎲 ${esc(t("gm.title"))}</a><a class="btn ghost" href="#/">${esc(t("nav.home"))}</a></div></section>`
+        : `<p class="muted small">${esc(t("ss.tired"))}</p>`}
+      <details class="card"><summary><b>${esc(t("ss.howH"))}</b></summary><p class="muted small">${esc(t("ss.how"))}</p>
+        <p class="small"><a href="#/plan">${esc(t("plan.title"))} →</a> · <a href="#/path">${esc(t("path.title"))} →</a></p></details>`;
+  }
+  /* Small bar on the page of a session step, to come back to the list in one tap. */
+  function sessBanner(top) {
+    if (top === "session" || !S.sess || S.sess.d !== ymd() || !S.sess.cur) return "";
+    const st = (S.sess.steps || []).find(x => x.k === S.sess.cur); if (!st) return "";
+    const inf = ssInfo(st), h = location.hash;
+    const here = inf.href ? h.indexOf(inf.href) === 0 : st.k === "delf" && h === "#/exam/run";
+    if (!here) return "";
+    const c = ssCount();
+    return `<a class="sess-back ${ssDone(st) ? "is-done" : ""}" href="#/session">${ssDone(st) ? "✓ " : "← "}${esc(t("ss.back"))} · ${c.done}/${c.total}</a>`;
+  }
+  function sessionCard() {
+    const s = buildSession(), c = ssCount(), all = c.done === c.total;
+    const goal = window.EXAM && window.EXAM.goal ? window.EXAM.goal("A2") : null;
+    return `<section class="goal sess-home">
+      <div class="goal-top"><span class="kicker">${esc(t("ss.kicker"))}</span><span class="goal-n">${c.done} / ${c.total}</span></div>
+      <h2 class="goal-t">${esc(t(all ? "ss.done" : "ss.title"))}</h2>
+      <ul class="sess-mini">${s.steps.map(st => { const inf = ssInfo(st), done = ssDone(st); return `<li class="${done ? "is-done" : ""}"><span aria-hidden="true">${done ? "✓" : inf.ic}</span> ${esc(inf.label)}${inf.name ? ` · <span ${st.k === "basics" || st.k === "use" ? 'lang="fr"' : ""}>${esc(inf.name)}</span>` : ""}</li>`; }).join("")}</ul>
+      ${progressBar(Math.round(c.done / c.total * 100), t("ss.title"))}
+      <div class="goal-act"><a class="btn" href="#/session">${esc(t(all ? "ss.see" : c.done ? "home.continue" : "ss.start"))}</a></div>
+      ${goal && goal.total ? `<a class="goal-x" href="#/exam">${esc(t("ss.goal", { p: Math.min(goal.passed, window.EXAM.target || 8), n: window.EXAM.target || 8 }))} →</a>` : ""}
     </section>`;
   }
+  /* Progress lives only in this browser: Safari may wipe it after 7 days without a visit unless the site is on
+     the home screen. Ask for persistent storage and, now and then, suggest a backup file. */
+  const standalone = () => { try { return matchMedia("(display-mode: standalone)").matches || navigator.standalone === true; } catch (e) { return false; } };
+  function backupCard() {
+    const progress = Object.keys(S.days).length;
+    if (progress < 3) return "";
+    const last = S.lastBackup || "", nag = S.backupNag || "";
+    const ago = d => d ? Math.round((Date.parse(ymd()) - Date.parse(d)) / 86400000) : 999;
+    if (ago(last) < 14 || ago(nag) < 7) return "";
+    return `<section class="card backup-nag"><p>💾 ${esc(t(standalone() ? "bk.msg" : "bk.msgSafari"))}</p>
+      <div class="row wrap"><button class="btn small" data-action="export">${esc(t("bk.save"))}</button><button class="btn small ghost" data-action="backup-later">${esc(t("bk.later"))}</button></div></section>`;
+  }
+  try { if (navigator.storage && navigator.storage.persist) navigator.storage.persisted().then(p => { if (!p) navigator.storage.persist(); }).catch(() => {}); } catch (e) { /* optional */ }
+
   function viewPlan() {
     const names = { tr: ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar"], en: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], fr: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"] }[lang()];
     const td = (new Date().getDay() + 6) % 7;
@@ -1335,7 +1478,7 @@
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(a.href), 2000);
   }
-  const exportData = () => downloadFile(JSON.stringify(S, null, 1), "esin-fr-backup-" + ymd() + ".json", "application/json");
+  const exportData = () => { S.lastBackup = ymd(); save(); downloadFile(JSON.stringify(S, null, 1), "esin-fr-backup-" + ymd() + ".json", "application/json"); };
   function importData(text) {
     try {
       const obj = JSON.parse(text);
@@ -1365,7 +1508,7 @@
     $$("[data-i18n-label]").forEach(el => { el.setAttribute("aria-label", t(el.dataset.i18nLabel)); });
     const { parts, params } = route();
     const top = parts[0] || "home";
-    const tab = { home: "home", path: "path", practice: "practice", read: "practice", talk: "practice", basics: "practice", library: "more", cards: "cards", more: "more", guide: "more", placement: "more", progress: "more", plan: "home", search: "more", exam: "home", adv: "home", games: "home" }[top] || "home";
+    const tab = { home: "home", path: "path", practice: "practice", read: "practice", talk: "practice", basics: "practice", library: "more", cards: "cards", more: "more", guide: "more", placement: "more", progress: "more", plan: "home", session: "home", search: "more", exam: "home", adv: "home", games: "home" }[top] || "home";
     $$(".tabbar a").forEach(a => a.classList.toggle("on", a.dataset.tab === tab));
     let html;
     switch (top) {
@@ -1379,6 +1522,7 @@
       case "progress": html = viewProgress(); break;
       case "practice": html = parts[1] ? viewExercise(parts[1]) : viewPractice(); break;
       case "plan": html = viewPlan(); break;
+      case "session": html = viewSession(); break;
       case "search": html = viewSearch(params.get("q")); break;
       case "read": html = parts[1] ? viewReading(parts[1]) : viewReadings(); break;
       case "talk": html = parts[1] ? viewDialogue(parts[1]) : viewDialogues(); break;
@@ -1387,7 +1531,7 @@
       case "adv": case "games": html = window.GAMES ? window.GAMES.view(parts) : viewHome(); break;
       default: html = viewHome();
     }
-    main.innerHTML = `<div class="view ${raw !== lastRendered ? "anim" : ""}">${html}</div>`;
+    main.innerHTML = `<div class="view ${raw !== lastRendered ? "anim" : ""}">${sessBanner(top)}${html}</div>`;
     lastRendered = raw;
     paintPL();
     if (top === "library") { renderLibList(); }
@@ -1416,6 +1560,8 @@
 
   /* ───────── Events (delegated) ───────── */
   document.addEventListener("click", e => {
+    const ss = e.target.closest("a[data-sess]");
+    if (ss && S.sess) { S.sess.cur = ss.dataset.sess; save(); }
     const el = e.target.closest("button, a[data-open], [data-lang], [data-bs]");
     if (!el) return;
     const d = el.dataset;
@@ -1468,10 +1614,17 @@
       // "Again" is not a mistake, just a card that comes back: a neutral sound only.
       if (d.grade === "again") fx("flip"); else fx("good", { praise: d.grade === "easy", from: `[data-grade="${d.grade}"]` });
       if (d.grade === "again") SESSION.queue.push(c); else SESSION.done++;
-      SESSION.flipped = false; render(); return;
+      SESSION.flipped = false; SESSION.typed = null; render();
+      if (S.typeMode) { const i = $("#type-in"); if (i) try { i.focus({ preventScroll: true }); } catch (e) {} }
+      return;
     }
     if (d.delword !== undefined) { const c = S.mine[+d.delword]; if (c) { delete S.cards[c.id]; S.mine.splice(+d.delword, 1); save(); render(); } return; }
     switch (d.action) {
+      case "type-mode": S.typeMode = !S.typeMode; save(); if (SESSION) { SESSION.flipped = false; SESSION.typed = null; } render(); break;
+      case "sess-swap": sessSwap(d.k); render(); break;
+      case "sess-tick": sessTick(d.k); render(); break;
+      case "sess-delf": { const st = (S.sess.steps || []).find(x => x.k === "delf"); S.sess.cur = "delf"; save(); if (st && window.EXAM) window.EXAM.start([st.id], "ex", st.lv, st.n); break; }
+      case "backup-later": S.backupNag = ymd(); save(); render(); break;
       case "flip": SESSION.flipped = true; fx("flip"); render(); fx("toNext", ".grade", { delay: 120 }); break;
       case "ex-next": exNext(); break;
       case "stop-speak": SEQ++; TTS.stop(); break;
@@ -1518,6 +1671,12 @@
     }
   });
   document.addEventListener("submit", e => {
+    if (e.target.id === "type-form") {
+      e.preventDefault(); if (!SESSION || !SESSION.queue[0]) return;
+      const given = $("#type-in").value;
+      SESSION.typed = { given: given.trim(), ok: typedMatch(SESSION.queue[0].fr, given) };
+      SESSION.flipped = true; fx(SESSION.typed.ok === "no" ? "flip" : "tick"); render(); fx("toNext", ".grade", { delay: 120 }); return;
+    }
     if (e.target.id === "ex-form") { e.preventDefault(); const v = $("#ex-in").value; if (v.trim()) exAnswer(v); return; }
     if (e.target.id === "add-word") {
       e.preventDefault();

@@ -1421,3 +1421,23 @@ html.scrolled .topbar { border-bottom-color: var(--rule); box-shadow: 0 6px 18px
   .welcome .row.wrap > .btn:first-child { flex: 1 1 100%; justify-content: center; }
   .welcome .row.wrap > .btn:not(:first-child) { flex: 1 1 auto; justify-content: center; }
 }
+/* Today's session, typed cards, DELF self-check, backup reminder */
+.sess-steps { list-style: none; padding: 0; margin: 14px 0; display: flex; flex-direction: column; gap: 10px; }
+.sess-step { margin: 0; }
+.sess-step.is-next { border-color: var(--a); }
+.sess-step.is-done { opacity: .72; }
+.sess-name { margin: 2px 0 8px; }
+.sess-mini { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 3px; font-size: .92rem; }
+.sess-mini .is-done { color: var(--a700); text-decoration: line-through; text-decoration-color: var(--a300); }
+.sess-back { display: block; margin: 0 0 12px; padding: 8px 12px; border: 1px solid var(--a300); border-radius: var(--radius); color: var(--a800); text-decoration: none; font-size: .92rem; }
+.sess-back.is-done { border-color: var(--a); background: var(--a100); }
+.type-switch { justify-content: flex-end; margin: 6px 0; }
+.type-form { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 12px; width: 100%; }
+.type-form input { flex: 1 1 200px; min-width: 0; font-size: 1.1rem; padding: 10px 12px; }
+.type-fb { margin: 6px 0 0; font-size: .95rem; }
+.type-fb.exact { color: var(--a800); }
+.all-decks > summary, .dx-all > summary { cursor: pointer; }
+.all-decks > summary h2, .dx-all > summary h2 { display: inline; }
+.dx-official { display: flex; flex-direction: column; gap: 4px; text-decoration: none; }
+.dx-rub-row { margin: 8px 0; }
+.dx-rub-row p { margin: 0 0 4px; }

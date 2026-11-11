@@ -62,6 +62,21 @@
   const stars = r => !r || !r.pass ? 0 : r.tot >= 85 ? 3 : r.tot >= 70 ? 2 : 1;
   const starStr = n => `<span class="stars" role="img" aria-label="${n}/3">${"★".repeat(n)}<span class="off">${"★".repeat(3 - n)}</span></span>`;
   const passedCount = lv => sujets(lv).filter(n => (st().best[lv + "-" + n] || {}).pass).length;
+  /* A realistic goal: about eight passed mock papers before the real exam, not all of them. */
+  const TARGET = 8;
+  /* The one paper to do next: a started one first, then papers with a Turkish answer key, then the others. */
+  function recommended(lv) {
+    const d = st(), sj = sujets(lv), started = n => items(lv, n).some(x => d.ex[x.id]);
+    const open = sj.filter(n => !sujetScore(lv, n).complete);
+    return open.find(started) || open.find(n => HAS_TR[lv + "-" + n]) || open[0] || sj.find(n => !(d.best[lv + "-" + n] || {}).pass) || sj[0];
+  }
+  /* One exercise for today's session, from the recommended paper; the skill changes from day to day. */
+  function nextEx(lv, n) {
+    const d = st(), sj = recommended(lv); if (sj == null) return null;
+    const its = items(lv, sj).filter(x => !d.ex[x.id]); if (!its.length) return null;
+    const order = ["co", "ce", "po", "pe"], first = order[(n || 0) % 4];
+    return its.find(x => x.sec === first) || its[0];
+  }
 
   /* ── Badges & confetti ── */
   function award(id) {
@@ -166,16 +181,23 @@
         ${LVS.map(l => `<a class="chip ${l === lv ? "on" : ""}" href="#/exam/${l}" aria-current="${l === lv}">DELF ${l}</a>`).join("")}
       </div>
       ${modeChips()}
-      <section class="card">
-        <h2>${esc(t("dx.full"))}</h2>
-        <p class="muted small">${esc(t("dx.fullSub", { n: sj.length }))} · ${esc(t("dx.passedN", { d: passedCount(lv), n: sj.length }))}</p>
+      ${(() => { const rn = recommended(lv), rr = sujetScore(lv, rn), its = items(lv, rn), done = its.filter(x => d.ex[x.id]).length;
+        return `<section class="card dx-next"><p class="eyebrow">${esc(t("dx.next"))}</p>
+          <h2>DELF ${lv} · ${esc(t("dx.sujet", { n: rn }))}${HAS_TR[lv + "-" + rn] ? ` <span class="dx-trmark" title="${esc(t("dx.trKey"))}">TR ✓</span>` : ""}</h2>
+          <p class="muted small">${esc(t("dx.nextSub", { d: done, n: its.length }))}</p>
+          <div class="row wrap"><a class="btn" href="#/exam/${lv}/s/${rn}">${esc(t(done ? "dx.resume" : "dx.start"))} →</a></div>
+          <p class="muted small">${esc(t("dx.goalLine", { p: Math.min(passedCount(lv), TARGET), n: TARGET }))}</p></section>`; })()}
+      ${fei ? `<a class="card dx-official" href="${esc(fei.url)}" target="_blank" rel="noopener"><b>🎧 ${esc(t("dx.official"))} ↗</b><small class="muted">${esc(t("dx.officialWhy"))}</small></a>` : ""}
+      <details class="card dx-all">
+        <summary><h2>${esc(t("dx.full"))}</h2> <span class="muted small">${esc(t("dx.passedN", { d: passedCount(lv), n: sj.length }))}</span></summary>
+        <p class="muted small">${esc(t("dx.fullSub", { n: sj.length }))}</p>
         <div class="dx-grid">${sj.map(n => {
           const r = sujetScore(lv, n), b = d.best[lv + "-" + n], dots = SECS.map(s => `<i class="${r[s] == null ? "" : r[s] >= 12.5 ? "ok" : "low"}"></i>`).join("");
           return `<a class="dx-tile ${b && b.pass ? "pass" : ""}" href="#/exam/${lv}/s/${n}" aria-label="${esc(t("dx.sujet", { n }))}${b ? " · " + fmt(b.tot) + "/100" : ""}">
             <span class="dx-num">${n}</span>${HAS_TR[lv + "-" + n] ? `<span class="dx-trmark" title="${esc(t("dx.trKey"))}">TR ✓</span>` : ""}${starStr(stars(b && { pass: b.pass, tot: b.tot }))}
             <small>${b ? fmt(b.tot) + "/100" : esc(t("dx.todo"))}</small><span class="dx-dots" aria-hidden="true">${dots}</span></a>`;
         }).join("")}</div>
-      </section>
+      </details>
       <section class="card">
         <h2>${esc(t("dx.oneSkill"))}</h2>
         <div class="ex-grid">${SECS.map(s => `<a class="card ex-tile" href="#/exam/${lv}/sec/${s}"><span class="ex-ic">${ICON[s]}</span><b>${esc(t("dx." + s))}</b><small lang="fr">${esc(t("dx." + s + "F"))}</small><small>${esc(t("dx.exDone", { d: secDone(s).split("/")[0], n: secDone(s).split("/")[1] }))}</small></a>`).join("")}</div>
@@ -272,7 +294,7 @@
       </div>
       ${RUN.mode === "exam" && Date.now() > (RUN.dl[it.sec] || Infinity) ? `<p class="note">${esc(t("dx.timeUp"))}</p>` : ""}
       ${body}
-      ${scored ? `<div class="dx-after"><p class="dx-score">${esc(t("dx.points", { p: fmt(RUN.scores[it.id]), m: fmt(it.pts) }))}</p>
+      ${scored ? `<div class="dx-after"><p class="dx-score">${it.sec === "pe" || it.sec === "po" ? "≈ " : ""}${esc(t("dx.points", { p: fmt(RUN.scores[it.id]), m: fmt(it.pts) }))}</p>
         <button class="btn" data-dx="next">${RUN.i + 1 < RUN.ids.length ? esc(t("dx.next")) + " →" : esc(t("dx.finish")) + " 🎯"}</button></div>` : ""}`;
   }
   function timeLeft(sec) {
@@ -338,7 +360,15 @@
   function mustList(it, flags, manual) {
     return `<ul class="dx-must" id="dx-must">${it.must.map((m, i) => `<li class="${flags[i] ? "ok" : ""}">${manual ? `<button class="tick ${flags[i] ? "on" : ""}" data-dx="tick" data-i="${i}" aria-pressed="${!!flags[i]}">${flags[i] ? "✓" : "○"}</button>` : `<span aria-hidden="true">${flags[i] ? "✓" : "○"}</span>`} <span lang="fr">${esc(m.c)}</span></li>`).join("")}</ul>`;
   }
-  const selfBtns = (c, po) => `<p><b>${esc(t(po ? "dx.selfPo" : "dx.self"))}</b></p><div class="row wrap dx-self">${[0, 1, 2].map(i => `<button class="chip ${c.self === i ? "on" : ""}" aria-pressed="${c.self === i}" data-dx="self" data-v="${i}">${esc(t("dx.self" + i))}</button>`).join("")}</div>`;
+  /* Self-check on the four criteria of the real DELF marking grid (task, vocabulary, grammar, coherence or
+     pronunciation), each "no / partly / yes", compared with the model. It carries most of the score: keywords
+     found in the text only show what is covered, they cannot make a text good. */
+  const RUB_N = 4;
+  const rubDone = c => c.rub && Object.keys(c.rub).length >= RUB_N;
+  const rubVal = c => rubDone(c) ? Object.values(c.rub).reduce((a, b) => a + b, 0) / (2 * RUB_N) : null;
+  const selfBtns = (c, po) => `<div class="card dx-rub"><p><b>${esc(t(po ? "dx.selfPo" : "dx.self"))}</b></p>
+    ${[0, 1, 2, 3].map(i => `<div class="dx-rub-row"><p class="small">${esc(t((po ? "dx.rubPo" : "dx.rub") + i))}</p><div class="row wrap dx-self">${[0, 1, 2].map(v => `<button class="chip ${c.rub && c.rub[i] === v ? "on" : ""}" aria-pressed="${!!(c.rub && c.rub[i] === v)}" data-dx="rub" data-i="${i}" data-v="${v}">${esc(t("dx.rubv" + v))}</button>`).join("")}</div></div>`).join("")}
+    ${rubDone(c) ? `<p class="muted small">${esc(t("dx.estimated"))}</p>` : ""}</div>`;
   function runText(it, c) {
     const n = words(c.text), flags = covered(it, c.text);
     return `<label class="sr-only" for="dx-text">${esc(it.title)}</label>
@@ -347,12 +377,14 @@
       <div class="card"><p class="eyebrow">${esc(t("dx.must"))}</p>${mustList(it, flags, false)}</div>
       ${!c.checked ? `<button class="btn" data-dx="checktext">${esc(t("dx.correct"))}</button>` : `
         <div class="card dx-model"><p class="eyebrow">${esc(t("dx.model"))} ${A().speakBtn(it.model)}</p>${para(it.model)}</div>
-        ${selfBtns(c, false)}`}`;
+        ${selfBtns(c, false)}
+        ${(c.text || "").trim() ? `<p class="small"><button class="btn small ghost" data-dx="bp">✍️ ${esc(t("dx.bp"))} ↗</button></p>` : ""}`}`;
   }
   function textScore(it, c) {
     const f = covered(it, c.text), must = f.filter(Boolean).length / f.length, len = Math.min(1, words(c.text) / it.min);
     // The self-assessment counts in proportion to the length written: an empty page cannot earn points.
-    return it.pts * (.45 * must + .2 * len + .35 * [.3, .7, 1][c.self] * len);
+    const rub = rubVal(c) != null ? rubVal(c) : c.self != null ? [.3, .7, 1][c.self] : 0;
+    return it.pts * (.15 * must + .15 * len + .7 * rub * len);
   }
 
   function runPO(it, c) {
@@ -393,7 +425,8 @@
   function poScore(it, c) {
     if (it.kind === "entretien" || it.kind === "echange") return it.pts * it.prompts.reduce((a, p, i) => a + (c.ok[i] ? (c.used[i] ? .5 : 1) : 0), 0) / it.prompts.length;
     const tick = it.must.filter((m, i) => c.ticks[i]).length / it.must.length;
-    return it.pts * (.6 * tick + .4 * [.3, .7, 1][c.self]);
+    const rub = rubVal(c) != null ? rubVal(c) : c.self != null ? [.3, .7, 1][c.self] : 0;
+    return it.pts * (.3 * tick + .7 * rub);
   }
 
   function viewRunEnd() {
@@ -506,6 +539,12 @@
       case "checktext": { const x = document.getElementById("dx-text"); if (x) c.text = x.value; c.checked = true; keepScroll(() => {}); return; }
       case "checkpo": c.checked = true; stopAudio(); keepScroll(() => {}); return;
       case "self": c.self = +d.v; saveScore(it, it.sec === "pe" ? textScore(it, c) : poScore(it, c)); keepScroll(() => {}); return;
+      case "rub": c.rub = c.rub || {}; c.rub[+d.i] = +d.v; if (rubDone(c)) saveScore(it, it.sec === "pe" ? textScore(it, c) : poScore(it, c)); keepScroll(() => {}); return;
+      case "bp": {
+        const r = (window.RESOURCES || []).find(x => x.id === "bonpatron"), txt = c.text || "";
+        try { if (navigator.clipboard) navigator.clipboard.writeText(txt).then(() => A().toast(t("dx.bpCopied"))).catch(() => {}); } catch (e) { /* optional */ }
+        if (r) window.open(r.url, "_blank", "noopener"); return;
+      }
       case "tick": c.ticks[+d.i] = !c.ticks[+d.i]; fx(c.ticks[+d.i] ? "match" : "tick"); keepScroll(() => {}); return;
       case "example": c.used[+d.i] = 1; keepScroll(() => {}); A().speak(it.prompts[+d.i].m); return;
       case "answered": {
@@ -568,7 +607,7 @@
 
   window.EXAM = {
     view, click, input, onHash, count: D.length, start: startRun, playLines, stopAudio, confetti,
-    goal: lv => ({ passed: passedCount(lv), total: sujets(lv).length }),
+    goal: lv => ({ passed: passedCount(lv), total: sujets(lv).length }), target: TARGET, nextEx, recommended,
     homeCard() {
       if (!D.length) return "";
       return `<section class="card dx-home"><p class="eyebrow">🎓 DELF</p><h2>${esc(t("dx.homeTitle"))}</h2>
