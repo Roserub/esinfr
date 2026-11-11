@@ -11,14 +11,14 @@ on:
 
 jobs:
   live:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
         with:
           node-version: 20
       - name: Install Playwright with WebKit and Chromium
-        run: npm install --no-save playwright@1.48.2 && npx playwright install --with-deps webkit chromium
+        run: npm install --no-save playwright@1.56.1 && npx playwright install --with-deps webkit chromium
       - name: Wait for GitHub Pages to serve the new version
         if: github.event_name == 'workflow_run'
         run: sleep 60
