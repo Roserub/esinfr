@@ -1441,3 +1441,7 @@ html.scrolled .topbar { border-bottom-color: var(--rule); box-shadow: 0 6px 18px
 .dx-official { display: flex; flex-direction: column; gap: 4px; text-decoration: none; }
 .dx-rub-row { margin: 8px 0; }
 .dx-rub-row p { margin: 0 0 4px; }
+/* Longer splash (Corentin: "trop courte"): the name settles later, paw prints walk in one after the other */
+#splash .sp-paw1 { animation-delay: .7s; }
+#splash .sp-paw2 { animation-delay: 1.15s; }
+#splash .sp-name { animation-delay: .5s; animation-duration: .7s; }
