@@ -124,13 +124,13 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
     await page.evaluate(() => { location.hash = "#/exam/A1/flash"; });
     for (let i = 0; i < 10; i++) { await page.click("[data-dx=flash-pick]"); await page.click("[data-dx=flash-next]"); }
     if (!(await page.$(".dx-result"))) problems.push(`${name}: quick challenge did not end`);
-    // Every main section is one tap away: bottom bar has DELF and Games, Today has the quick grid.
+    // Every main section is one tap away: the five-tab bar (Doucement design), and the 3x3 grid on Today holds DELF, games and the rest.
     await page.evaluate(() => { location.hash = "#/"; });
     await page.waitForSelector(".quick");
     const tabs = await page.$$eval(".tabbar a", as => as.map(a => a.dataset.tab));
-    for (const tb of ["home", "exam", "games", "practice", "cards", "more"]) if (!tabs.includes(tb)) problems.push(`${name}: no ${tb} button in the bottom bar`);
+    for (const tb of ["home", "path", "practice", "cards", "more"]) if (!tabs.includes(tb)) problems.push(`${name}: no ${tb} button in the bottom bar`);
     const quick = await page.$$eval(".quick a", as => as.map(a => a.getAttribute("href")));
-    for (const h of ["#/exam", "#/adv", "#/games", "#/read", "#/talk", "#/library"]) if (!quick.includes(h)) problems.push(`${name}: quick grid misses ${h}`);
+    for (const h of ["#/basics", "#/exam", "#/adv", "#/games", "#/practice", "#/read", "#/talk", "#/cards", "#/library"]) if (!quick.includes(h)) problems.push(`${name}: quick grid misses ${h}`);
     // Tab labels are never cut off, in any language.
     for (const lg of ["tr", "en", "fr"]) {
       await page.click(`.lang-switch [data-lang=${lg}]`);
@@ -143,8 +143,15 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
     if (delfDecks < 20) problems.push(`${name}: DELF deck filter shows ${delfDecks} decks`);
     await page.evaluate(() => { location.hash = "#/exam"; });
     if (!(await page.$('.dx-study a[href="#/cards?f=delf"]'))) problems.push(`${name}: no DELF decks link on the DELF tab`);
-    await page.click('.tabbar a[data-tab="games"]'); await page.waitForSelector(".gm-adv-tile");
-    if (!(await page.$('.tabbar a[data-tab="games"].on'))) problems.push(`${name}: games tab not highlighted`);
+    await page.evaluate(() => { location.hash = "#/"; }); await page.click('.quick a[href="#/games"]'); await page.waitForSelector(".gm-adv-tile");
+    if (!(await page.$('.tabbar a[data-tab="home"].on'))) problems.push(`${name}: home tab not highlighted on games`);
+    // Interface emojis are drawn as Lucide icons (tab bar, home grid, listen buttons); the logo is the Moody cat.
+    await page.evaluate(() => { location.hash = "#/"; }); await page.waitForTimeout(50);
+    if ((await page.$$(".tabbar .ic")).length !== 5) problems.push(`${name}: tab bar icons missing`);
+    if ((await page.$$(".quick .ic")).length !== 9) problems.push(`${name}: home grid icons missing`);
+    if (!(await page.$('.brand img[src="assets/logo.svg"]'))) problems.push(`${name}: Moody logo missing in the header`);
+    await page.evaluate(() => { location.hash = "#/read/r-cafe"; }); await page.waitForTimeout(50);
+    if (await page.$$eval(".speak", bs => bs.some(b => /\u{1F50A}/u.test(b.textContent)))) problems.push(`${name}: a listen button still shows an emoji`);
     // Survival: always pick the first option until the three lives are gone.
     await page.evaluate(() => { location.hash = "#/exam/A2/survie"; });
     for (let i = 0; i < 400 && !(await page.$(".dx-result")); i++) { await page.click("[data-dx=flash-pick]"); await page.click("[data-dx=flash-next]"); }

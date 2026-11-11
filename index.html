@@ -3,28 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Esin FR · Doucement</title>
-  <meta name="description" content="A calm, free path to learn French from zero to C2, made for a Turkish speaker.">
-  <meta name="theme-color" content="#f6f1e9" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#1d1f24" media="(prefers-color-scheme: dark)">
+  <title>Doucement · French for Esin</title>
+  <meta name="description" content="Doucement: a calm, free path to learn French, made for a Turkish speaker.">
+  <meta name="theme-color" content="#F2F8FB">
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Esin FR">
+  <meta name="apple-mobile-web-app-title" content="Doucement">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/icon-48.png" type="image/png" sizes="48x48">
   <link rel="apple-touch-icon" href="assets/icon-180.png">
+  <link rel="preload" href="assets/fonts/lora-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <a class="skip" href="#main" data-i18n="a11y.skip">Skip</a>
   <header class="topbar">
     <a class="brand" href="#/" aria-label="Home" data-i18n-label="a11y.home">
-      <img src="assets/icon.svg" alt="" width="28" height="28">
-      <span>Esin <b>FR</b></span>
+      <img src="assets/logo.svg" alt="" width="40" height="40">
+      <span class="brand-name">Doucement</span>
     </a>
     <div class="topbar-right">
       <button class="icon-btn fx-toggle" data-fxtoggle aria-pressed="true" aria-label="Sounds" data-i18n-label="fx.sound">🔔</button>
-      <a class="icon-btn search-btn" href="#/search" aria-label="Search" data-i18n-label="search.title">🔎</a>
+      <a class="icon-btn search-btn" href="#/search" aria-label="Search" data-i18n-label="search.title"><span data-ic="search"></span></a>
       <div class="lang-switch" role="group" aria-label="Language" data-i18n-label="a11y.lang">
         <button data-lang="tr">TR</button><button data-lang="en">EN</button><button data-lang="fr">FR</button>
       </div>
@@ -34,13 +38,11 @@
   <main id="main" tabindex="-1"></main>
 
   <nav class="tabbar" aria-label="Main" data-i18n-label="a11y.nav">
-    <a href="#/" data-tab="home"><span class="ti">☀︎</span><span data-i18n="tab.home">Home</span></a>
-    <a href="#/exam" data-tab="exam"><span class="ti">✪</span><span data-i18n="tab.exam">DELF</span></a>
-    <a href="#/games" data-tab="games"><span class="ti">✿</span><span data-i18n="tab.games">Games</span></a>
-    <a href="#/practice" data-tab="practice"><span class="ti">◎</span><span data-i18n="tab.practice">Practice</span></a>
-    <a href="#/path" data-tab="path"><span class="ti">↟</span><span data-i18n="tab.path">Path</span></a>
-    <a href="#/cards" data-tab="cards"><span class="ti">◫</span><span data-i18n="tab.cards">Cards</span></a>
-    <a href="#/more" data-tab="more"><span class="ti">⋯</span><span data-i18n="tab.more">More</span></a>
+    <a href="#/" data-tab="home"><span class="ti" data-ic="house"></span><span data-i18n="tab.home">Home</span></a>
+    <a href="#/path" data-tab="path"><span class="ti" data-ic="map"></span><span data-i18n="tab.path">Path</span></a>
+    <a href="#/practice" data-tab="practice"><span class="ti" data-ic="pen-line"></span><span data-i18n="tab.practice">Practice</span></a>
+    <a href="#/cards" data-tab="cards"><span class="ti" data-ic="layers"></span><span data-i18n="tab.cards">Cards</span></a>
+    <a href="#/more" data-tab="more"><span class="ti" data-ic="ellipsis"></span><span data-i18n="tab.more">More</span></a>
   </nav>
 
   <div id="toast" role="status" aria-live="polite"></div>
@@ -267,11 +269,13 @@
   <script src="data/adv-a1-7.js"></script>
   <script src="data/adv-a2-7.js"></script>
   <script src="data/adv-mix-8.js"></script>
+  <script src="assets/icons.js"></script>
   <script src="assets/i18n.js"></script>
   <script src="assets/i18n-exam.js"></script>
   <script src="assets/i18n-games.js"></script>
   <script src="assets/i18n-voice.js"></script>
   <script src="assets/i18n-basics.js"></script>
+  <script src="assets/i18n-da.js"></script>
   <script src="assets/fx.js"></script>
   <script src="assets/voice.js"></script>
   <script src="assets/exam.js"></script>

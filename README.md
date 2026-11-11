@@ -1,8 +1,10 @@
-# Esin FR · Doucement
+# Doucement · French for Esin
 
 A calm, free platform to learn French from zero (A0) to mastery (C2), made for a Turkish speaker who also speaks English.
 
 **Live site:** https://roserub.github.io/esinfr/
+
+**Design:** the « Doucement » art direction — light blue-tinted ground, colour used as a line (borders, bars, selection) rather than flat fills, outlined buttons, hairline rules, Cormorant Garamond titles and Lora text (self-hosted in `assets/fonts`, so it works offline), Lucide icons (`assets/icons.js`, built by `tools/build-icons.js`; interface emojis are swapped for icons as the page renders). Logo: « Moody », the family cat drawn with the initials C·E·M (`assets/logo.svg`, app icons `assets/icon-*.png`, maskable icon for Android).
 
 ## What's inside
 

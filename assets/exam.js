@@ -75,7 +75,7 @@
     if (window.FX) return window.FX.confetti();
     if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const box = document.createElement("div"); box.className = "confetti"; box.setAttribute("aria-hidden", "true");
-    const colors = ["#3f6f5a", "#e39a72", "#e2bb5c", "#3d5f92", "#c96b8b", "#7fb59b"];
+    const colors = ["#1EB9FA", "#0A73A0", "#9EDFFD", "#C5952F", "#0D97D1", "#CDEEFE"];
     for (let i = 0; i < 70; i++) {
       const p = document.createElement("i");
       p.style.left = Math.random() * 100 + "%"; p.style.background = colors[i % colors.length];
@@ -568,6 +568,7 @@
 
   window.EXAM = {
     view, click, input, onHash, count: D.length, start: startRun, playLines, stopAudio, confetti,
+    goal: lv => ({ passed: passedCount(lv), total: sujets(lv).length }),
     homeCard() {
       if (!D.length) return "";
       return `<section class="card dx-home"><p class="eyebrow">🎓 DELF</p><h2>${esc(t("dx.homeTitle"))}</h2>

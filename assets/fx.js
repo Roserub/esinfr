@@ -110,7 +110,7 @@
     if (Date.now() - pAt < 2500 && (px || py)) return [px, py];
     return [innerWidth / 2, innerHeight * 0.45];
   }
-  const COLORS = ["#3f6f5a", "#e39a72", "#e2bb5c", "#3d5f92", "#c96b8b", "#7fb59b"];
+  const COLORS = ["#1EB9FA", "#0A73A0", "#9EDFFD", "#C5952F", "#0D97D1", "#CDEEFE"]; // Doucement palette
   function layer(cls, ms) {
     const box = document.createElement("div"); box.className = "fx-layer " + (cls || ""); box.setAttribute("aria-hidden", "true");
     document.body.appendChild(box); setTimeout(() => box.remove(), ms); return box;
