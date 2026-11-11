@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: 20
       - name: Install Playwright with Chromium
-        run: npm install --no-save playwright@1.48.2 && npx playwright install --with-deps chromium
+        run: npm install --no-save playwright@1.48.2 && (npx playwright install --with-deps chromium || npx playwright install chromium)
       - name: Open every screen on phone, iPad and Mac sizes and play every exercise
         run: node tools/smoke-test.js
       - name: Tap every audio button, check every spoken text is French, replay the main buttons under iPhone rules

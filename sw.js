@@ -1,6 +1,6 @@
 /* Offline support. Network first (so a new version shows on the very next visit), cache as the offline fallback.
    When a new version activates, open pages are reloaded once so nobody stays on the old one. */
-const CACHE = "esinfr-v27";
+const CACHE = "esinfr-v29";
 const SHELL = [
   "./", "index.html", "manifest.webmanifest", "assets/style.css", "assets/icon.svg",
   "assets/fonts/cormorant-garamond-latin-500-italic.woff2", "assets/fonts/cormorant-garamond-latin-500-normal.woff2", "assets/fonts/cormorant-garamond-latin-ext-500-italic.woff2", "assets/fonts/cormorant-garamond-latin-ext-500-normal.woff2", "assets/icons.js", "assets/i18n-da.js", "assets/i18n-session.js", "assets/logo.svg", "assets/favicon.svg", "assets/icon-48.png", "assets/icon-maskable-512.png", "assets/icon-192.png", "assets/icon-512.png",
@@ -27,7 +27,9 @@ const SHELL = [
   "data/readings-a1a2-9.js", "data/readings-a1a2-10.js", "data/readings-a1a2-11.js", "data/readings-a1a2-12.js", "data/readings-a1a2-13.js", "data/readings-a1a2-14.js", "data/readings-a1a2-15.js", "data/readings-a1a2-16.js", "data/dialogues-a1a2-9.js", "data/dialogues-a1a2-10.js", "data/dialogues-a1a2-11.js", "data/dialogues-a1a2-12.js", "data/dialogues-a1a2-13.js", "data/dialogues-a1a2-14.js", "data/dialogues-a1a2-15.js", "data/decks-a1a2-4.js", "data/decks-a1a2-5.js", "data/decks-a1a2-6.js", "data/decks-a1a2-7.js", "data/decks-a1a2-8.js", "data/readings-tr-10.js", "data/readings-tr-11.js", "data/readings-tr-12.js", "data/readings-tr-13.js", "data/readings-tr-14.js", "data/readings-tr-15.js", "data/readings-tr-16.js", "data/readings-tr-17.js", "data/basics-5.js", "data/basics-6.js", "data/basics-7.js", "data/basics-8.js", "data/adv-a1-6.js", "data/adv-a2-6.js", "data/adv-a1-7.js", "data/adv-a2-7.js", "data/adv-mix-8.js"
 ];
 self.addEventListener("install", e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL.map(u => new Request(u, { cache: "reload" })))).then(() => self.skipWaiting()));
+  /* one file at a time, retried, so one hiccup from GitHub Pages (503) doesn't throw the whole offline copy away */
+  const one = async (c, u, n) => { try { const r = await fetch(new Request(u, { cache: "reload" })); if (r.ok) return c.put(u, r); } catch (err) { /* retry */ } if (n > 0) { await new Promise(r => setTimeout(r, 1000)); return one(c, u, n - 1); } };
+  e.waitUntil(caches.open(CACHE).then(async c => { for (let i = 0; i < SHELL.length; i += 8) await Promise.all(SHELL.slice(i, i + 8).map(u => one(c, u, 2))); }).then(() => self.skipWaiting()));
 });
 self.addEventListener("activate", e => {
   e.waitUntil((async () => {
@@ -43,10 +45,14 @@ self.addEventListener("activate", e => {
 self.addEventListener("fetch", e => {
   const url = new URL(e.request.url);
   if (e.request.method !== "GET" || url.origin !== location.origin) return;
-  const fresh = cache => fetch(e.request, { cache: "no-cache" }).then(res => { if (res.ok) cache.put(e.request, res.clone()); return res; });
+  /* a 5xx from GitHub Pages is usually gone a second later: try once more before giving up */
+  const get = () => fetch(e.request, { cache: "no-cache" });
+  const fresh = cache => get().then(res => res.status >= 500 ? new Promise(r => setTimeout(r, 800)).then(get).catch(() => res) : res)
+    .then(res => { if (res.ok) cache.put(e.request, res.clone()); return res; });
   if (e.request.mode === "navigate") {
     e.respondWith(caches.open(CACHE).then(async cache => {
-      const net = fresh(cache);
+      /* GitHub Pages sometimes answers 503 for a moment: show the saved copy instead of an error page */
+      const net = fresh(cache).then(async res => res.ok ? res : ((await cache.match(e.request, { ignoreSearch: true })) || (await cache.match("index.html")) || res));
       const slow = new Promise(r => setTimeout(r, 4000)).then(() => cache.match("index.html"));
       try { return (await Promise.race([net, slow.then(r => r || net)])) || net; }
       catch (err) { return (await cache.match(e.request, { ignoreSearch: true })) || cache.match("index.html"); }
