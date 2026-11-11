@@ -87,6 +87,7 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
     const steps = await page.$$(".sess-step");
     if (steps.length < 3) problems.push(`${name}: today's session has ${steps.length} steps`);
     await page.click('.sess-step a[data-sess="cards"]');
+    await page.waitForSelector(".sess-back", { timeout: 3000 }).catch(() => {});
     if (!(await page.$(".sess-back"))) problems.push(`${name}: no way back to the session from today's cards`);
     for (let k = 0; k < 60 && await page.$("[data-action=flip], .grade"); k++) { if (await page.$("[data-action=flip]")) await page.click("[data-action=flip]"); await page.click("[data-grade=good]"); }
     await page.evaluate(() => { location.hash = "#/session"; });
