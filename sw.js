@@ -1,6 +1,6 @@
 /* Offline support. Network first (so a new version shows on the very next visit), cache as the offline fallback.
    When a new version activates, open pages are reloaded once so nobody stays on the old one. */
-const CACHE = "esinfr-v27";
+const CACHE = "esinfr-v28";
 const SHELL = [
   "./", "index.html", "manifest.webmanifest", "assets/style.css", "assets/icon.svg",
   "assets/fonts/cormorant-garamond-latin-500-italic.woff2", "assets/fonts/cormorant-garamond-latin-500-normal.woff2", "assets/fonts/cormorant-garamond-latin-ext-500-italic.woff2", "assets/fonts/cormorant-garamond-latin-ext-500-normal.woff2", "assets/icons.js", "assets/i18n-da.js", "assets/i18n-session.js", "assets/logo.svg", "assets/favicon.svg", "assets/icon-48.png", "assets/icon-maskable-512.png", "assets/icon-192.png", "assets/icon-512.png",
@@ -43,10 +43,14 @@ self.addEventListener("activate", e => {
 self.addEventListener("fetch", e => {
   const url = new URL(e.request.url);
   if (e.request.method !== "GET" || url.origin !== location.origin) return;
-  const fresh = cache => fetch(e.request, { cache: "no-cache" }).then(res => { if (res.ok) cache.put(e.request, res.clone()); return res; });
+  /* a 5xx from GitHub Pages is usually gone a second later: try once more before giving up */
+  const get = () => fetch(e.request, { cache: "no-cache" });
+  const fresh = cache => get().then(res => res.status >= 500 ? new Promise(r => setTimeout(r, 800)).then(get).catch(() => res) : res)
+    .then(res => { if (res.ok) cache.put(e.request, res.clone()); return res; });
   if (e.request.mode === "navigate") {
     e.respondWith(caches.open(CACHE).then(async cache => {
-      const net = fresh(cache);
+      /* GitHub Pages sometimes answers 503 for a moment: show the saved copy instead of an error page */
+      const net = fresh(cache).then(async res => res.ok ? res : ((await cache.match(e.request, { ignoreSearch: true })) || (await cache.match("index.html")) || res));
       const slow = new Promise(r => setTimeout(r, 4000)).then(() => cache.match("index.html"));
       try { return (await Promise.race([net, slow.then(r => r || net)])) || net; }
       catch (err) { return (await cache.match(e.request, { ignoreSearch: true })) || cache.match("index.html"); }

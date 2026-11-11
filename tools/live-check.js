@@ -20,6 +20,7 @@ fs.mkdirSync("live-shots", { recursive: true });
     await ctx.addInitScript(() => { try { Object.defineProperty(Navigator.prototype, "webdriver", { get: () => false }); } catch (e) {} });
     const page = await ctx.newPage();
     page.on("pageerror", e => problems.push(`${name}: page error ${e.message}`));
+    page.on("response", r => { if (r.status() >= 400) problems.push(`${name}: HTTP ${r.status()} ${r.url()}`); });
     page.on("console", m => { if (m.type() === "error") problems.push(`${name}: console ${m.text()}`); });
     for (const visit of ["first", "second"]) {
       if (visit === "second") await page.evaluate(() => sessionStorage.clear());
