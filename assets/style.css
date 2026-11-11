@@ -984,7 +984,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--a600); }
 .ex-card > .row.center { justify-content: flex-start; }
 .opts { gap: 10px; }
 .opt { min-height: 56px; padding: 10px 16px; gap: 14px; border-radius: var(--radius); border: 1px solid rgba(20, 35, 45, .16); background: transparent; box-shadow: none; font-family: var(--f-body); font-size: 1.06rem; color: var(--ink); transition: background-color .15s, border-color .15s; }
-.opt:not([disabled]):hover { border-color: var(--a300); background: var(--a100); }
+@media (hover: hover) and (pointer: fine) { html:not(.no-hover) .opt:not([disabled]):hover { border-color: var(--a300); background: var(--a100); } }
 .opt:not([disabled]):active { transform: none; box-shadow: none; border-color: var(--a700); }
 .opt kbd { display: inline-grid !important; place-items: center; width: 26px; height: 26px; padding: 0; border: 1px solid rgba(20, 35, 45, .16); border-radius: var(--r-btn); font-family: var(--f-head); font-size: .95rem; color: var(--a700); font-variant-numeric: tabular-nums; }
 .opt.sel { border-color: var(--a600); background: var(--a100); box-shadow: none; }
@@ -1160,12 +1160,12 @@ input:focus, select:focus, textarea:focus { border-color: var(--a600); }
 .mem { border: 1px solid var(--rule2); background: var(--surface-2); border-radius: var(--radius); color: var(--ink3); }
 .mem.up { border-color: var(--a600); background: var(--surface); }
 .mem.ok { border-color: var(--a); background: var(--a100); }
-.mem:not([disabled]):hover { border-color: var(--a300); }
+@media (hover: hover) and (pointer: fine) { html:not(.no-hover) .mem:not([disabled]):hover { border-color: var(--a300); } }
 .ord-line { border: 1px dashed var(--a300); border-radius: var(--radius); }
 .ord-line.ok { border-color: var(--a); background: var(--a100); }
 .tok { border-radius: var(--r-btn); box-shadow: none; border-color: var(--rule2); background: var(--surface); font-family: var(--f-body); }
 .tok.on { background: var(--a200); }
-.tok:not([disabled]):hover { border-color: var(--a300); background: var(--a100); }
+@media (hover: hover) and (pointer: fine) { html:not(.no-hover) .tok:not([disabled]):hover { border-color: var(--a300); background: var(--a100); } }
 
 /* Voice panel */
 .vc { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); }
