@@ -215,6 +215,8 @@
       // A good pronunciation gets the success chime (a weaker try gets no sound at all: no pressure).
       if (window.FX && cfg.target && res.score >= (cfg.pass || 0.75)) setTimeout(() => window.FX.good({ from: `.vc[data-vcid="${CSS.escape(id)}"] .vc-score` }), 30);
       paint(id, ".vc-next, [data-vc=start]");
+      // Bring the result and its "Next" button into view if they ended up below the screen.
+      if (window.FX && window.FX.toNext) { const el = panelEl(id); if (el) window.FX.toNext(el.querySelector(".vc-next") || el, { delay: 200 }); }
     };
     try { r.start(); } catch (e) { me.err = "other"; r.onend(); }
   }
