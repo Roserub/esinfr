@@ -18,9 +18,9 @@
 
   /* ── A0 · Phase 0: sounds & survival ── */
   insert("A0", null, [
-    S("a0-start", "Start here: your core kit", "Buradan başla: temel setin", "Commencer ici : ton kit de base",
-      "Read the 'Start here' page: 12 free resources are enough to reach B1. Tick off your first-week checklist there. Don't install everything: one thing at a time.",
-      "'Buradan başla' sayfasını oku: B1'e ulaşmak için 12 ücretsiz kaynak yeterli. Oradaki ilk hafta listesini işaretle. Her şeyi yükleme: her seferinde bir şey.",
+    S("a0-start", "Start here: one session a day", "Buradan başla: günde bir seans", "Commencer ici : une séance par jour",
+      "Your main course is this site: open \"Today's session\" every day (about 15 minutes, chosen for you). The 'Start here' page lists 12 free outside resources to add only if you want more: pick one at most, never all of them.",
+      "Ana kursun bu site: her gün «Bugünün seansı»nı aç (yaklaşık 15 dakika, senin için seçilir). 'Buradan başla' sayfası, daha fazlasını istersen ekleyebileceğin 12 ücretsiz dış kaynağı listeler: en fazla birini seç, hepsini değil.",
       [], { guide: "start" })
   ]);
   more("a0-sounds", ["prononcer", "fonetix", "pointdufle-phon"], { practice: "sounds" });
@@ -140,7 +140,7 @@
 
   /* French version of every step's "do" text (the French interface showed the English one). */
   const DO_FR = {
-    "a0-start": "Lis la page « Commencer ici » : 12 ressources gratuites suffisent pour atteindre le B1. Coche ta liste de la première semaine sur cette page. N'installe pas tout : une chose à la fois.",
+    "a0-start": "Ton cours principal, c'est ce site : ouvre « Ta séance du jour » chaque jour (environ 15 minutes, choisies pour toi). La page « Commencer ici » liste 12 ressources gratuites à ajouter seulement si tu veux plus : choisis-en une au maximum, jamais tout.",
     "a0-loan": "Le turc a emprunté des centaines de mots au français : asansör, kuaför, randevu… Feuillette le paquet et souris : tu en connais déjà beaucoup.",
     "a0-sounds": "Lis le guide de prononciation pour turcophones (u/ou, voyelles nasales, lettres muettes). Puis regarde une vidéo de prononciation.",
     "a0-hello": "Apprends les phrases de survie avec l'audio. Dis chacune à voix haute, lentement. Pas besoin d'être parfaite.",
@@ -213,4 +213,27 @@
     "c2-check": "Seulement si tu en as envie. Tu as déjà gagné."
   };
   for (const l of window.PATH) for (const s of l.steps) if (DO_FR[s.id]) s.do.fr = DO_FR[s.id];
+
+  /* In-site material for each A0–A2 step (Basics topics and adventures), so the path leads to the site's own lessons first. */
+  const IN_SITE = {
+    "a0-start": { session: true },
+    "a0-sounds": { basics: ["alphabet", "sounds"] },
+    "a0-hello": { basics: ["greetings", "survival"], adv: ["av-cafe"] },
+    "a0-numbers": { basics: ["numbers", "calendar", "time"], adv: ["av-boulangerie-dimanche"] },
+    "a1-etre": { basics: ["articles", "verbs"] },
+    "a1-er": { basics: ["verbs", "irregular"] },
+    "a1-me": { basics: ["family", "adjectives", "feelings"], adv: ["av-amie-parc"] },
+    "a1-questions": { basics: ["questions", "negation"], adv: ["av-chemin"] },
+    "a1-daily": { basics: ["house", "food", "shops", "clothes", "weather"], adv: ["av-marche", "av-vetements"] },
+    "a1-mission": { basics: ["directions", "transport", "money"], adv: ["av-metro", "av-bon-bus", "av-taxi"] },
+    "a1-tandem": { basics: ["smalltalk"], adv: ["av-handball"] },
+    "a2-pc": { basics: ["pastsimple", "pcetre"] },
+    "a2-imp": { basics: ["imparfait", "nearfuture", "futursimple"] },
+    "a2-doctor": { basics: ["health"], adv: ["av-pharma", "av-medecin"] },
+    "a2-body": { basics: ["body", "workout"], adv: ["av-kine", "av-urgences"] },
+    "a2-lifefr": { basics: ["phone", "money"], adv: ["av-appart", "av-prefecture", "av-carte"] },
+    "a2-write": { basics: ["connectors"] },
+    "a2-talk": { basics: ["invitations", "smalltalk"], adv: ["av-anniv"] }
+  };
+  for (const l of window.PATH) for (const s of l.steps) if (IN_SITE[s.id]) Object.assign(s, IN_SITE[s.id]);
 })();

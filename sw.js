@@ -3,7 +3,7 @@
 const CACHE = "esinfr-v25";
 const SHELL = [
   "./", "index.html", "manifest.webmanifest", "assets/style.css", "assets/icon.svg",
-  "assets/fonts/cormorant-garamond-latin-500-italic.woff2", "assets/fonts/cormorant-garamond-latin-500-normal.woff2", "assets/fonts/cormorant-garamond-latin-ext-500-italic.woff2", "assets/fonts/cormorant-garamond-latin-ext-500-normal.woff2", "assets/icons.js", "assets/i18n-da.js", "assets/logo.svg", "assets/favicon.svg", "assets/icon-48.png", "assets/icon-maskable-512.png", "assets/icon-192.png", "assets/icon-512.png",
+  "assets/fonts/cormorant-garamond-latin-500-italic.woff2", "assets/fonts/cormorant-garamond-latin-500-normal.woff2", "assets/fonts/cormorant-garamond-latin-ext-500-italic.woff2", "assets/fonts/cormorant-garamond-latin-ext-500-normal.woff2", "assets/icons.js", "assets/i18n-da.js", "assets/i18n-session.js", "assets/logo.svg", "assets/favicon.svg", "assets/icon-48.png", "assets/icon-maskable-512.png", "assets/icon-192.png", "assets/icon-512.png",
   "assets/fonts/cormorant-garamond-latin-400-italic.woff2", "assets/fonts/cormorant-garamond-latin-400-normal.woff2", "assets/fonts/cormorant-garamond-latin-600-italic.woff2", "assets/fonts/cormorant-garamond-latin-600-normal.woff2", "assets/fonts/cormorant-garamond-latin-ext-400-italic.woff2", "assets/fonts/cormorant-garamond-latin-ext-400-normal.woff2", "assets/fonts/cormorant-garamond-latin-ext-600-italic.woff2", "assets/fonts/cormorant-garamond-latin-ext-600-normal.woff2", "assets/fonts/lora-latin-400-italic.woff2", "assets/fonts/lora-latin-400-normal.woff2", "assets/fonts/lora-latin-600-italic.woff2", "assets/fonts/lora-latin-600-normal.woff2", "assets/fonts/lora-latin-ext-400-italic.woff2", "assets/fonts/lora-latin-ext-400-normal.woff2", "assets/fonts/lora-latin-ext-600-italic.woff2", "assets/fonts/lora-latin-ext-600-normal.woff2",
    "assets/icon-180.png", "assets/i18n.js", "assets/i18n-exam.js",
   "assets/i18n-games.js", "assets/i18n-voice.js", "assets/fx.js", "assets/voice.js", "assets/exam.js", "assets/games.js", "assets/app.js", "data/resources.js", "data/resources-fr.js",
@@ -37,16 +37,26 @@ self.addEventListener("activate", e => {
     if (old.length) for (const c of await self.clients.matchAll({ type: "window" })) { try { c.navigate(c.url); } catch (err) { /* ignore */ } }
   })());
 });
+/* Pages: network first, but never wait more than 4 s on a weak connection (metro, train) before falling back to the cache.
+   Scripts, data, fonts and images: answer from the cache at once and refresh the copy in the background, so the app
+   opens instantly even on a bad network and the next visit gets the update (each release also renames the cache). */
 self.addEventListener("fetch", e => {
   const url = new URL(e.request.url);
   if (e.request.method !== "GET" || url.origin !== location.origin) return;
+  const fresh = cache => fetch(e.request, { cache: "no-cache" }).then(res => { if (res.ok) cache.put(e.request, res.clone()); return res; });
+  if (e.request.mode === "navigate") {
+    e.respondWith(caches.open(CACHE).then(async cache => {
+      const net = fresh(cache);
+      const slow = new Promise(r => setTimeout(r, 4000)).then(() => cache.match("index.html"));
+      try { return (await Promise.race([net, slow.then(r => r || net)])) || net; }
+      catch (err) { return (await cache.match(e.request, { ignoreSearch: true })) || cache.match("index.html"); }
+    }));
+    return;
+  }
   e.respondWith(caches.open(CACHE).then(async cache => {
-    try {
-      const res = await fetch(e.request, { cache: "no-cache" });
-      if (res.ok) cache.put(e.request, res.clone());
-      return res;
-    } catch (err) {
-      return (await cache.match(e.request, { ignoreSearch: true })) || (e.request.mode === "navigate" ? cache.match("index.html") : Response.error());
-    }
+    const hit = await cache.match(e.request, { ignoreSearch: true });
+    const net = fresh(cache).catch(() => null);
+    if (hit) { e.waitUntil(net); return hit; }
+    return (await net) || Response.error();
   }));
 });
