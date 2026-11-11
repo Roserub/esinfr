@@ -20,7 +20,7 @@
            choices: [
              { fr: "Près de la fenêtre, s'il vous plaît.", tr: "Pencerenin yanında, lütfen.", en: "By the window, please.", ok: true, go: "c" },
              { fr: "Au fond, s'il vous plaît. C'est plus calme.", tr: "Arkada, lütfen. Daha sakin.", en: "At the back, please. It's quieter.", ok: true, go: "c2" },
-             { fr: "Dans la fenêtre, s'il vous plaît.", tr: "Pencerenin içinde, lütfen.", en: "In the window, please.", ok: false,
+             { fr: "Dans la fenêtre, s'il vous plaît. C'est joli.", tr: "Pencerenin içinde, lütfen. Çok güzel.", en: "In the window, please. It's pretty.", ok: false,
                fb: { fr: "Dans la fenêtre ? Comme une plante verte 🪴😄 ! On dit « près de la fenêtre ».", tr: "Pencerenin içinde mi? Saksı çiçeği gibi 🪴😄! « Près de la fenêtre » denir.", en: "In the window? Like a pot plant 🪴😄! You say « près de la fenêtre » (by the window)." } }
            ] },
       c: { scene: { fr: "La table est au soleil. Vous voyez la rue et les passants.", tr: "Masa güneşte. Sokağı ve yoldan geçenleri görüyorsunuz.", en: "The table is in the sun. You can see the street and the passers-by." },
@@ -40,13 +40,13 @@
       d: { say: [["F", "Vous voulez boire quelque chose ? Nous avons du cidre ou du jus de pomme. C'est 3 € le verre."]],
            choices: [
              { fr: "Deux verres de cidre, s'il vous plaît.", tr: "İki bardak elma şarabı, lütfen.", en: "Two glasses of cider, please.", ok: true, go: "e" },
-             { fr: "Je bois deux pommes.", tr: "İki elma içiyorum.", en: "I drink two apples.", ok: false,
+             { fr: "Je bois deux pommes, s'il vous plaît.", tr: "İki elma içiyorum, lütfen.", en: "I drink two apples, please.", ok: false,
                fb: { fr: "Boire des pommes, c'est difficile 🍎😄 ! Dites « deux jus de pomme » ou « deux verres de cidre ».", tr: "Elma içmek zor 🍎😄! « Deux jus de pomme » ya da « deux verres de cidre » deyin.", en: "Drinking apples is tricky 🍎😄! Say « deux jus de pomme » or « deux verres de cidre »." } },
              { fr: "Deux jus de pomme, s'il vous plaît.", tr: "İki elma suyu, lütfen.", en: "Two apple juices, please.", ok: true, go: "e" }
            ] },
       e: { say: [["F2", "Moi, je prends une galette complète : jambon, œuf, fromage !"], ["F", "Toutes nos galettes sont à 9 €. Et pour vous, madame ?"]],
            choices: [
-             { fr: "Moi aussi, je suis complète.", tr: "Ben de tamamım.", en: "Me too, I'm complete.", ok: false,
+             { fr: "Moi aussi, je suis complète, s'il vous plaît.", tr: "Ben de doluyum, lütfen.", en: "Me too, I am full, please.", ok: false,
                fb: { fr: "Vous êtes complète, comme un hôtel le 14 juillet 🏨😄 ? On dit « pour moi aussi, une complète ».", tr: "14 Temmuz'da bir otel gibi dolu musunuz 🏨😄? « Pour moi aussi, une complète » denir.", en: "You're full up, like a hotel on Bastille Day 🏨😄? You say « pour moi aussi, une complète »." } },
              { fr: "Pour moi aussi, une complète, s'il vous plaît.", tr: "Bana da bir komple galette, lütfen.", en: "A complète for me too, please.", ok: true, go: "f" },
              { fr: "Pour moi, une galette au fromage et aux champignons, s'il vous plaît.", tr: "Bana peynirli ve mantarlı bir galette, lütfen.", en: "For me, a cheese and mushroom galette, please.", ok: true, go: "f" }
@@ -55,7 +55,7 @@
            say: [["F", "C'était bon ? Un dessert ? Nos crêpes sucrées sont à 5 €."], ["F2", "Oh oui ! Moi, une crêpe au citron !"]],
            choices: [
              { fr: "Oui, c'était délicieux ! Une crêpe au chocolat pour moi, s'il vous plaît.", tr: "Evet, çok lezzetliydi! Bana bir çikolatalı krep, lütfen.", en: "Yes, it was delicious! A chocolate crêpe for me, please.", ok: true, go: "g" },
-             { fr: "Oui, je suis bonne !", tr: "Evet, ben iyiyim!", en: "Yes, I'm good!", ok: false,
+             { fr: "Oui, je suis bonne ! Une crêpe au chocolat, s'il vous plaît.", tr: "Evet, ben iyiyim! Bir çikolatalı krep, lütfen.", en: "Yes, I'm hot! A chocolate crêpe, please.", ok: false,
                fb: { fr: "Attention, « je suis bonne » a un autre sens 😳😄 ! Pour le repas, dites « c'était bon » ou « c'était délicieux ».", tr: "Dikkat, « je suis bonne » başka anlama gelir 😳😄! Yemek için « c'était bon » ya da « c'était délicieux » deyin.", en: "Careful, « je suis bonne » means something else 😳😄! For the meal, say « c'était bon » or « c'était délicieux »." } },
              { fr: "Oui, très bon ! Une crêpe caramel au beurre salé, s'il vous plaît.", tr: "Evet, çok güzeldi! Bir tuzlu tereyağlı karamelli krep, lütfen.", en: "Yes, very good! A salted butter caramel crêpe, please.", ok: true, go: "g" }
            ] },
@@ -78,7 +78,7 @@
            choices: [
              { fr: "Oui, on partage : 17 € chacune.", tr: "Evet, bölüşelim: kişi başı 17 €.", en: "Yes, let's split it: 17 € each.", ok: true, go: "j" },
              { fr: "Non, aujourd'hui, c'est moi qui invite !", tr: "Hayır, bugün ben ısmarlıyorum!", en: "No, today it's my treat!", ok: true, go: "j2" },
-             { fr: "Oui, on partage : 34 € chacune.", tr: "Evet, bölüşelim: kişi başı 34 €.", en: "Yes, let's split it: 34 € each.", ok: false,
+             { fr: "Oui, on partage : 34 € chacune. C'est juste !", tr: "Evet, paylaşalım: kişi başı 34 €. Adil!", en: "Yes, let's share: €34 each. That's fair!", ok: false,
                fb: { fr: "La crêperie va adorer 😄💶 ! 34 divisé par 2 = 17. Donc « 17 € chacune ».", tr: "Krepçi buna bayılır 😄💶! 34 bölü 2 = 17. Yani « 17 € chacune ».", en: "The crêperie would love that 😄💶! 34 divided by 2 = 17. So « 17 € chacune »." } }
            ] },
       j: { say: [["F", "Pas de problème : 17 € et 17 €. Vous payez comment, madame ?"]],
@@ -90,7 +90,7 @@
            ] },
       j2: { say: [["F2", "Oh, merci, tu es gentille ! La prochaine fois, c'est moi qui invite."]],
            choices: [
-             { fr: "Merci, vous êtes gentille aussi.", tr: "Teşekkürler, siz de naziksiniz.", en: "Thank you, you're kind too.", ok: false,
+             { fr: "Merci, vous êtes gentille aussi. Madame, l'addition, s'il vous plaît.", tr: "Teşekkürler, siz de naziksiniz. Hanımefendi, hesap lütfen.", en: "Thanks, you're kind too. Madam, the bill, please.", ok: false,
                fb: { fr: "C'est votre amie, pas votre banquière 😄 ! Avec une amie, on dit « tu » : « d'accord, avec plaisir ! ».", tr: "O sizin arkadaşınız, bankacınız değil 😄! Arkadaşla « tu » denir: « d'accord, avec plaisir ! ».", en: "She's your friend, not your bank manager 😄! With a friend, use « tu »: « d'accord, avec plaisir ! »." } },
              { fr: "D'accord, avec plaisir ! Madame, je paie par carte, s'il vous plaît.", tr: "Tamam, memnuniyetle! Hanımefendi, kartla ödüyorum, lütfen.", en: "OK, with pleasure! Excuse me, I'll pay by card, please.", ok: true, go: "fin" }
            ] },
@@ -107,7 +107,7 @@
       a: { scene: { fr: "Samedi, c'est l'anniversaire de votre mari. Vous entrez dans un grand magasin.", tr: "Cumartesi kocanızın doğum günü. Bir büyük mağazaya giriyorsunuz.", en: "Saturday is your husband's birthday. You walk into a department store." },
            say: [["M", "Bonjour madame ! Je peux vous aider ?"]],
            choices: [
-             { fr: "Oui, je cherche mon mari.", tr: "Evet, kocamı arıyorum.", en: "Yes, I'm looking for my husband.", ok: false,
+             { fr: "Oui, merci. Je cherche mon mari, il est grand.", tr: "Evet, teşekkürler. Kocamı arıyorum, uzun boylu.", en: "Yes, thanks. I'm looking for my husband, he's tall.", ok: false,
                fb: { fr: "Oh non, il est perdu dans le magasin ? 😄 Vous cherchez un cadeau POUR votre mari : « je cherche un cadeau pour mon mari ».", tr: "Eyvah, mağazada mı kayboldu? 😄 Kocanız İÇİN bir hediye arıyorsunuz: « je cherche un cadeau pour mon mari ».", en: "Oh no, is he lost in the shop? 😄 You're looking for a present FOR your husband: « je cherche un cadeau pour mon mari »." } },
              { fr: "Oui, merci. Je cherche un cadeau pour mon mari.", tr: "Evet, teşekkürler. Kocama bir hediye arıyorum.", en: "Yes, thanks. I'm looking for a present for my husband.", ok: true, go: "b" },
              { fr: "Non, merci, je regarde.", tr: "Hayır, teşekkürler, sadece bakıyorum.", en: "No thanks, I'm just looking.", ok: false,
@@ -138,7 +138,7 @@
            ] },
       e1: { say: [["M", "Bon choix ! Il est grand et très pratique pour la salle de sport."]],
            choices: [
-             { fr: "Elle est parfaite, je la prends !", tr: "O mükemmel, onu alıyorum!", en: "It's perfect, I'll take it! (feminine)", ok: false,
+             { fr: "Elle est parfaite, je la prends !", tr: "O mükemmel, onu alıyorum!", en: "It's perfect, I'll take it!", ok: false,
                fb: { fr: "Petit piège : on dit « UN sac », c'est masculin 😉. Donc « il est parfait, je le prends ! ».", tr: "Küçük tuzak: « UN sac » denir, eril 😉. Yani « il est parfait, je le prends ! ».", en: "Little trap: it's « UN sac », masculine 😉. So « il est parfait, je le prends ! »." } },
              { fr: "Il est parfait, je le prends !", tr: "Mükemmel, onu alıyorum!", en: "It's perfect, I'll take it!", ok: true, go: "f" },
              { fr: "Je prends le sac de mon mari.", tr: "Kocamın çantasını alıyorum.", en: "I'm taking my husband's bag.", ok: false,
@@ -156,13 +156,13 @@
       e2: { say: [["M", "La tasse existe en rouge ou en vert. Vous préférez laquelle ?"]],
            choices: [
              { fr: "La rouge, s'il vous plaît.", tr: "Kırmızıyı, lütfen.", en: "The red one, please.", ok: true, go: "f" },
-             { fr: "Le rouge, s'il vous plaît.", tr: "Kırmızıyı, lütfen. (eril)", en: "The red one, please. (masculine)", ok: false,
+             { fr: "Le rouge, s'il vous plaît.", tr: "Kırmızıyı, lütfen.", en: "The red one, please.", ok: false,
                fb: { fr: "« UNE tasse », c'est féminin 😉. Donc « la rouge » ou « la verte ».", tr: "« UNE tasse » dişildir 😉. Yani « la rouge » ya da « la verte ».", en: "« UNE tasse » is feminine 😉. So « la rouge » or « la verte »." } },
              { fr: "La verte, s'il vous plaît.", tr: "Yeşili, lütfen.", en: "The green one, please.", ok: true, go: "f" }
            ] },
       f: { say: [["M", "Très bien. Je vous fais un paquet cadeau ? C'est gratuit."]],
            choices: [
-             { fr: "Oui, je fais un paquet.", tr: "Evet, ben bir paket yapıyorum.", en: "Yes, I'm making a package.", ok: false,
+             { fr: "Oui, merci, je fais un paquet.", tr: "Evet, teşekkürler, ben paket yapıyorum.", en: "Yes, thanks, I'm making a parcel.", ok: false,
                fb: { fr: "« Je vous fais » = c'est LUI qui fait le paquet 🎀. Répondez « oui, s'il vous plaît ! ».", tr: "« Je vous fais » = paketi O yapıyor 🎀. « Oui, s'il vous plaît ! » diye cevap verin.", en: "« Je vous fais » = HE wraps it 🎀. Answer « oui, s'il vous plaît ! »." } },
              { fr: "Oui, s'il vous plaît ! C'est une surprise.", tr: "Evet, lütfen! Bu bir sürpriz.", en: "Yes, please! It's a surprise.", ok: true, go: "g" },
              { fr: "Oui, avec plaisir, merci !", tr: "Evet, memnuniyetle, teşekkürler!", en: "Yes, I'd love that, thanks!", ok: true, go: "g" }
@@ -170,14 +170,14 @@
       g: { say: [["M", "Voilà, c'est très joli ! Vous payez comment ?"]],
            choices: [
              { fr: "Par carte, s'il vous plaît.", tr: "Kartla, lütfen.", en: "By card, please.", ok: true, go: "h" },
-             { fr: "Je paie avec mon mari.", tr: "Kocamla ödüyorum.", en: "I'm paying with my husband.", ok: false,
+             { fr: "Je paie avec mon mari, il arrive.", tr: "Kocamla ödüyorum, geliyor.", en: "I'm paying with my husband, he's coming.", ok: false,
                fb: { fr: "Il va payer son cadeau ? Ce n'est plus une surprise 😄 ! Dites « par carte » ou « en espèces ».", tr: "Kendi hediyesini o mu ödeyecek? O zaman sürpriz olmaz 😄! « Par carte » ya da « en espèces » deyin.", en: "He's paying for his own present? No more surprise 😄! Say « par carte » or « en espèces »." } },
              { fr: "En espèces.", tr: "Nakit.", en: "In cash.", ok: true, go: "h" }
            ] },
       h: { say: [["M", "Je mets aussi un ticket cadeau dans le sac ? Comme ça, il peut échanger."]],
            choices: [
              { fr: "Oui, bonne idée, merci !", tr: "Evet, iyi fikir, teşekkürler!", en: "Yes, good idea, thanks!", ok: true, go: "fin" },
-             { fr: "Oui, un ticket de métro, merci.", tr: "Evet, bir metro bileti, teşekkürler.", en: "Yes, a metro ticket, thanks.", ok: false,
+             { fr: "Oui, un ticket de métro, merci. Il va aimer !", tr: "Evet, bir metro bileti, teşekkürler. Beğenecek!", en: "Yes, a metro ticket, thanks. He'll like it!", ok: false,
                fb: { fr: "Il ne vend pas de tickets de métro 🚇😄 ! Un « ticket cadeau » = un ticket sans prix, pour échanger. Répondez « oui, bonne idée ».", tr: "Metro bileti satmıyor 🚇😄! « Ticket cadeau » = değiştirmek için fiyatsız fiş. « Oui, bonne idée » deyin.", en: "He doesn't sell metro tickets 🚇😄! A « ticket cadeau » is a gift receipt with no price, for exchanges. Answer « oui, bonne idée »." } },
              { fr: "Non, merci. Il va aimer, j'en suis sûre !", tr: "Hayır, teşekkürler. Beğenecek, eminim!", en: "No thanks. He'll love it, I'm sure!", ok: true, go: "fin" }
            ] },
@@ -210,7 +210,7 @@
            ] },
       c: { say: [["M", "Pour la Turquie, c'est 2,10 € le timbre. Vous en voulez combien ?"]],
            choices: [
-             { fr: "J'en veux 2,10 €.", tr: "2,10 € istiyorum.", en: "I want 2.10 € of them.", ok: false,
+             { fr: "J'en veux 2,10 €, s'il vous plaît.", tr: "2,10 € istiyorum, lütfen.", en: "I want €2.10 of them, please.", ok: false,
                fb: { fr: "2,10 €, c'est le prix d'un timbre 💶. Il demande combien de timbres : « trois, s'il vous plaît ».", tr: "2,10 € bir pulun fiyatı 💶. Kaç pul istediğinizi soruyor: « trois, s'il vous plaît ».", en: "2.10 € is the price of one stamp 💶. He's asking how many: « trois, s'il vous plaît »." } },
              { fr: "Trois, s'il vous plaît.", tr: "Üç tane, lütfen.", en: "Three, please.", ok: true, go: "d" },
              { fr: "Je voudrais trois cartes postales.", tr: "Üç kartpostal istiyorum.", en: "I'd like three postcards.", ok: false,
@@ -220,12 +220,12 @@
            choices: [
              { fr: "Je voudrais aussi un journal, s'il vous plaît.", tr: "Bir de gazete istiyorum, lütfen.", en: "I'd also like a newspaper, please.", ok: true, go: "e1" },
              { fr: "Vous avez un magazine de sport ?", tr: "Spor dergisi var mı?", en: "Do you have a sports magazine?", ok: true, go: "e2" },
-             { fr: "Non, je suis tout.", tr: "Hayır, ben hepsiyim.", en: "No, I am all.", ok: false,
+             { fr: "Non, je suis tout, merci. Au revoir !", tr: "Hayır, ben her şeyim, teşekkürler. Hoşça kalın!", en: "No, I am everything, thanks. Goodbye!", ok: false,
                fb: { fr: "« Je suis tout » = vous êtes le monde entier 🌍😄 ! On dit « c'est tout »… mais vous voulez aussi quelque chose à lire !", tr: "« Je suis tout » = bütün dünya sizsiniz 🌍😄! « C'est tout » denir… ama okuyacak bir şey de istiyorsunuz!", en: "« Je suis tout » = you are the whole world 🌍😄! It's « c'est tout »… but you also want something to read!" } }
            ] },
       e1: { say: [["M", "Le journal d'aujourd'hui ? Il est à 1,50 €."]],
            choices: [
-             { fr: "Oui, celui-là. C'est bien pour pratiquer le français !", tr: "Evet, şu. Fransızca pratik yapmak için iyi!", en: "Yes, that one. It's good for practising French!", ok: true, go: "f1" },
+             { fr: "Oui, celui-là, merci.", tr: "Evet, şu, teşekkürler.", en: "Yes, that one, thanks.", ok: true, go: "f1" },
              { fr: "Non, le journal de demain, s'il vous plaît.", tr: "Hayır, yarının gazetesi, lütfen.", en: "No, tomorrow's paper, please.", ok: false,
                fb: { fr: "Le journal de demain ? Il n'existe pas encore 🔮😄 ! Prenez celui d'aujourd'hui : « oui, celui-là ».", tr: "Yarının gazetesi mi? Henüz yok 🔮😄! Bugünkünü alın: « oui, celui-là ».", en: "Tomorrow's paper? It doesn't exist yet 🔮😄! Take today's: « oui, celui-là »." } }
            ] },
@@ -233,18 +233,18 @@
            choices: [
              { fr: "Voilà un billet de 10 €.", tr: "Buyurun, 10 €'luk bir banknot.", en: "Here's a 10 € note.", ok: true, go: "g1" },
              { fr: "Voilà 7,80 €.", tr: "Buyurun, 7,80 €.", en: "Here's 7.80 €.", ok: true, go: "h" },
-             { fr: "Ça fait 9 € ?", tr: "9 € mu ediyor?", en: "That's 9 €?", ok: false,
+             { fr: "Ça fait 9 € ? Voilà un billet de 10 €.", tr: "9 € mu ediyor? Buyurun 10 €'luk bir banknot.", en: "Is that €9? Here's a €10 note.", ok: false,
                fb: { fr: "Presque ! 6,30 + 1,50 = 7,80 € 🧮. « Sept euros quatre-vingts ».", tr: "Neredeyse! 6,30 + 1,50 = 7,80 € 🧮. « Sept euros quatre-vingts ».", en: "Almost! 6.30 + 1.50 = 7.80 € 🧮. « Sept euros quatre-vingts »." } }
            ] },
       g1: { say: [["M", "Merci. Je vous rends 2,20 €."]],
            choices: [
              { fr: "Merci beaucoup !", tr: "Çok teşekkürler!", en: "Thank you very much!", ok: true, go: "h" },
-             { fr: "Non, c'est moi qui rends 2,20 €.", tr: "Hayır, 2,20 €'yu ben geri veriyorum.", en: "No, I'm the one giving back 2.20 €.", ok: false,
+             { fr: "Non merci, c'est moi qui rends 2,20 €.", tr: "Hayır teşekkürler, 2,20 €'yu ben geri veriyorum.", en: "No thanks, I'm the one giving back €2.20.", ok: false,
                fb: { fr: "« Je vous rends » = il vous donne la monnaie 🪙. 10 − 7,80 = 2,20 €. Dites simplement « merci ! ».", tr: "« Je vous rends » = size para üstünü veriyor 🪙. 10 − 7,80 = 2,20 €. Sadece « merci ! » deyin.", en: "« Je vous rends » = he gives you your change 🪙. 10 − 7.80 = 2.20 €. Just say « merci ! »." } }
            ] },
       e2: { say: [["M", "Oui, il y a ce magazine de handball. Il est à 4 €."]],
            choices: [
-             { fr: "Super, je la prends !", tr: "Süper, onu alıyorum! (dişil)", en: "Great, I'll take it! (feminine)", ok: false,
+             { fr: "Super, je la prends !", tr: "Süper, onu alıyorum!", en: "Great, I'll take it!", ok: false,
                fb: { fr: "Piège ! « magazine » finit par -e, mais c'est masculin : UN magazine 😉. Donc « je le prends ».", tr: "Tuzak! « magazine » -e ile bitiyor ama eril: UN magazine 😉. Yani « je le prends ».", en: "Trap! « magazine » ends in -e but it's masculine: UN magazine 😉. So « je le prends »." } },
              { fr: "Super, je le prends !", tr: "Süper, onu alıyorum!", en: "Great, I'll take it!", ok: true, go: "f2" }
            ] },
@@ -252,13 +252,13 @@
            choices: [
              { fr: "Voilà un billet de 20 €.", tr: "Buyurun, 20 €'luk bir banknot.", en: "Here's a 20 € note.", ok: true, go: "g2" },
              { fr: "Voilà 10,30 €.", tr: "Buyurun, 10,30 €.", en: "Here's 10.30 €.", ok: true, go: "h" },
-             { fr: "Voilà 10 €.", tr: "Buyurun, 10 €.", en: "Here's 10 €.", ok: false,
+             { fr: "Voilà 10 €. C'est bon ?", tr: "Buyurun 10 €. Tamam mı?", en: "Here's €10. Is that OK?", ok: false,
                fb: { fr: "Il manque 30 centimes 😄🪙 ! C'est 10,30 €, « dix euros trente ».", tr: "30 sent eksik 😄🪙! 10,30 €, « dix euros trente ».", en: "You're 30 cents short 😄🪙! It's 10.30 €, « dix euros trente »." } }
            ] },
       g2: { say: [["M", "Merci. Je vous rends 9,70 €."]],
            choices: [
              { fr: "Merci beaucoup !", tr: "Çok teşekkürler!", en: "Thank you very much!", ok: true, go: "h" },
-             { fr: "Je n'ai pas de monnaie, désolée.", tr: "Bozuk param yok, kusura bakmayın.", en: "I don't have change, sorry.", ok: false,
+             { fr: "Pardon, je n'ai pas de monnaie, désolée.", tr: "Pardon, bozuk param yok, üzgünüm.", en: "Sorry, I don't have any change, sorry.", ok: false,
                fb: { fr: "Pas de problème, c'est LUI qui vous rend la monnaie 😉 : 20 − 10,30 = 9,70 €. Dites « merci ! ».", tr: "Sorun değil, para üstünü veren O 😉: 20 − 10,30 = 9,70 €. « Merci ! » deyin.", en: "No problem, HE's giving you change 😉: 20 − 10.30 = 9.70 €. Say « merci ! »." } }
            ] },
       h: { scene: { fr: "Vous collez les timbres sur les cartes. Maintenant, il faut les poster.", tr: "Pulları kartlara yapıştırıyorsunuz. Şimdi onları postalamak gerekiyor.", en: "You stick the stamps on the cards. Now you need to post them." },
@@ -290,7 +290,7 @@
       a: { scene: { fr: "Mardi, 18 h 45. Vous entrez dans un petit studio de yoga. Ça sent la lavande.", tr: "Salı, saat 18.45. Küçük bir yoga stüdyosuna giriyorsunuz. Lavanta kokuyor.", en: "Tuesday, 6:45 p.m. You walk into a small yoga studio. It smells of lavender." },
            say: [["F", "Bonsoir ! Vous venez pour le cours d'essai ?"]],
            choices: [
-             { fr: "Oui, je viens de l'essai.", tr: "Evet, denemeden geliyorum.", en: "Yes, I come from the trial.", ok: false,
+             { fr: "Bonsoir ! Oui, je viens de l'essai de yoga.", tr: "İyi akşamlar! Evet, yoga denemesinden geliyorum.", en: "Good evening! Yes, I'm coming from the yoga trial.", ok: false,
                fb: { fr: "« Je viens de… » = j'arrive d'un endroit 😄. Vous venez POUR le cours : « oui, c'est mon premier cours ».", tr: "« Je viens de… » = bir yerden geliyorum 😄. Ders İÇİN geldiniz: « oui, c'est mon premier cours ».", en: "« Je viens de… » = I'm coming from a place 😄. You've come FOR the class: « oui, c'est mon premier cours »." } },
              { fr: "Bonsoir ! Oui, c'est mon premier cours de yoga.", tr: "İyi akşamlar! Evet, bu benim ilk yoga dersim.", en: "Good evening! Yes, it's my first yoga class.", ok: true, go: "b" },
              { fr: "Non, je viens pour le cours d'essai.", tr: "Hayır, deneme dersi için geldim.", en: "No, I'm here for the trial class.", ok: false,
@@ -300,13 +300,13 @@
            choices: [
              { fr: "Non, je n'ai pas de tapis.", tr: "Hayır, matım yok.", en: "No, I don't have a mat.", ok: true, go: "c1" },
              { fr: "Oui, j'ai mon tapis dans mon sac.", tr: "Evet, matım çantamda.", en: "Yes, I have my mat in my bag.", ok: true, go: "c2" },
-             { fr: "Non, je n'ai pas un tapis.", tr: "Hayır, bir matım yok.", en: "No, I don't have a mat. (wrong article)", ok: false,
+             { fr: "Non, je n'ai pas un tapis, désolée.", tr: "Hayır, bir matım yok, üzgünüm.", en: "No, I don't have a mat, sorry.", ok: false,
                fb: { fr: "Presque ! Après « ne… pas », « un » devient « de » : « je n'ai pas DE tapis » 😉.", tr: "Neredeyse! « ne… pas »dan sonra « un », « de » olur: « je n'ai pas DE tapis » 😉.", en: "Almost! After « ne… pas », « un » becomes « de »: « je n'ai pas DE tapis » 😉." } }
            ] },
       c1: { say: [["F", "Pas de problème, je vous prête un tapis. Le bleu ou le violet ?"]],
            choices: [
              { fr: "Le violet, s'il vous plaît.", tr: "Mor olanı, lütfen.", en: "The purple one, please.", ok: true, go: "d" },
-             { fr: "La violette, s'il vous plaît.", tr: "Menekşeyi, lütfen.", en: "The violet (flower), please.", ok: false,
+             { fr: "La violette, s'il vous plaît.", tr: "Menekşeyi, lütfen.", en: "The violet, please.", ok: false,
                fb: { fr: "Une violette, c'est une petite fleur 🌸😄 ! Pour le tapis (masculin) : « le violet ».", tr: "« Violette » küçük bir çiçektir 🌸😄! Mat için (eril): « le violet ».", en: "A « violette » is a little flower 🌸😄! For the mat (masculine): « le violet »." } },
              { fr: "Le bleu, merci.", tr: "Mavi olanı, teşekkürler.", en: "The blue one, thanks.", ok: true, go: "d" }
            ] },
@@ -326,30 +326,30 @@
            ] },
       d2: { say: [["F2", "Merci de me le dire. Allez doucement, et si ça fait mal, vous arrêtez. D'accord ?"]],
            choices: [
-             { fr: "Non, je continue, même si j'ai mal !", tr: "Hayır, ağrısa bile devam ediyorum!", en: "No, I'll keep going even if it hurts!", ok: false,
+             { fr: "Merci, mais je continue, même si j'ai mal !", tr: "Teşekkürler ama canım acısa da devam ediyorum!", en: "Thanks, but I'll keep going, even if it hurts!", ok: false,
                fb: { fr: "Pas de héroïsme au yoga 🦸‍♀️😄 ! Si ça fait mal, on arrête. Dites « d'accord, merci ».", tr: "Yogada kahramanlık yok 🦸‍♀️😄! Ağrırsa durulur. « D'accord, merci » deyin.", en: "No heroics in yoga 🦸‍♀️😄! If it hurts, you stop. Say « d'accord, merci »." } },
              { fr: "D'accord, merci. Je vais doucement.", tr: "Tamam, teşekkürler. Yavaş yapacağım.", en: "OK, thanks. I'll go gently.", ok: true, go: "e" }
            ] },
       e: { say: [["F2", "On commence. Fermez les yeux… Inspirez… et expirez."]],
            choices: [
-             { fr: "Je ferme la porte ?", tr: "Kapıyı kapatayım mı?", en: "Shall I close the door?", ok: false,
+             { fr: "D'accord, je ferme la porte ?", tr: "Tamam, kapıyı kapatayım mı?", en: "OK, shall I close the door?", ok: false,
                fb: { fr: "Les YEUX, pas la porte 👀🚪😄 ! « D'accord, je ferme les yeux. »", tr: "GÖZLER, kapı değil 👀🚪😄! « D'accord, je ferme les yeux. »", en: "Your EYES, not the door 👀🚪😄! « D'accord, je ferme les yeux. »" } },
              { fr: "D'accord, je ferme les yeux.", tr: "Tamam, gözlerimi kapatıyorum.", en: "OK, I'm closing my eyes.", ok: true, go: "f" },
-             { fr: "Je dors maintenant ?", tr: "Şimdi uyuyor muyum?", en: "Do I sleep now?", ok: false,
+             { fr: "D'accord, je dors maintenant ?", tr: "Tamam, şimdi uyuyor muyum?", en: "OK, do I sleep now?", ok: false,
                fb: { fr: "Pas encore 😴😄 ! On respire, on ne dort pas. Dites « d'accord, je ferme les yeux ».", tr: "Henüz değil 😴😄! Nefes alıyoruz, uyumuyoruz. « D'accord, je ferme les yeux » deyin.", en: "Not yet 😴😄! We breathe, we don't sleep. Say « d'accord, je ferme les yeux »." } }
            ] },
       f: { say: [["F2", "Maintenant, le chien tête en bas : les mains au sol et les fesses en haut !"]],
            choices: [
-             { fr: "Mais je n'ai pas de chien !", tr: "Ama benim köpeğim yok!", en: "But I don't have a dog!", ok: false,
+             { fr: "Mais je n'ai pas de chien, madame !", tr: "Ama benim köpeğim yok hanımefendi!", en: "But I don't have a dog, madam!", ok: false,
                fb: { fr: "Pas besoin d'un vrai chien 🐶😄 ! C'est le nom d'une posture. Essayez : « comme ça ? »", tr: "Gerçek bir köpeğe gerek yok 🐶😄! Bu bir duruşun adı. Deneyin: « comme ça ? »", en: "No real dog needed 🐶😄! It's the name of a pose. Give it a go: « comme ça ? »" } },
              { fr: "Comme ça ? Oh là là, c'est difficile !", tr: "Böyle mi? Aman, çok zor!", en: "Like this? Oh my, it's hard!", ok: true, go: "g" },
-             { fr: "Les fesses en bas ?", tr: "Kalçalar aşağıda mı?", en: "Bottom down?", ok: false,
+             { fr: "Les fesses en bas ? Oh là là, c'est difficile !", tr: "Kalça aşağıda mı? Of, çok zor!", en: "Bottom down? Oh dear, it's hard!", ok: false,
                fb: { fr: "Non, en HAUT ⬆️, comme un V à l'envers 😄. Essayez et demandez « comme ça ? ».", tr: "Hayır, YUKARIDA ⬆️, ters bir V gibi 😄. Deneyin ve « comme ça ? » diye sorun.", en: "No, UP ⬆️, like an upside-down V 😄. Try it and ask « comme ça ? »." } }
            ] },
       g: { say: [["F2", "Très bien ! Ça va ? Pas de douleur ?"]],
            choices: [
              { fr: "Non, ça va bien, merci.", tr: "Hayır, iyiyim, teşekkürler.", en: "No, I'm fine, thanks.", ok: true, go: "h" },
-             { fr: "Je suis chaude, mais ça va !", tr: "Ben sıcağım, ama iyiyim!", en: "I'm hot (wrong!), but I'm OK!", ok: false,
+             { fr: "Je suis chaude, mais ça va !", tr: "Ben sıcağım, ama iyiyim!", en: "I'm hot, but I'm OK!", ok: false,
                fb: { fr: "Oups, « je suis chaude » a un autre sens en français 😳😄 ! Pour la température, on dit « j'ai chaud ».", tr: "Eyvah, « je suis chaude » Fransızcada başka anlama gelir 😳😄! Sıcaklık için « j'ai chaud » denir.", en: "Oops, « je suis chaude » means something else in French 😳😄! For temperature, say « j'ai chaud »." } },
              { fr: "J'ai chaud, mais ça va !", tr: "Sıcakladım ama iyiyim!", en: "I'm hot, but I'm fine!", ok: true, go: "h" }
            ] },
@@ -358,7 +358,7 @@
            choices: [
              { fr: "J'adore ! Je m'inscris.", tr: "Bayıldım! Kaydoluyorum.", en: "I love it! I'll sign up.", ok: true, go: "i1" },
              { fr: "C'est super, mais je vais réfléchir.", tr: "Harika, ama biraz düşüneceğim.", en: "It's great, but I'll think about it.", ok: true, go: "i2" },
-             { fr: "Je suis très yoga !", tr: "Ben çok yogayım!", en: "I'm very yoga!", ok: false,
+             { fr: "Je suis très yoga ! Je vais réfléchir.", tr: "Ben çok yogayım! Düşüneceğim.", en: "I'm very yoga! I'll think about it.", ok: false,
                fb: { fr: "Joli, mais ce n'est pas une réponse claire 🧘‍♀️😄. Dites « j'adore ! » ou « c'est super, mais je vais réfléchir ».", tr: "Hoş, ama net bir cevap değil 🧘‍♀️😄. « J'adore ! » ya da « c'est super, mais je vais réfléchir » deyin.", en: "Cute, but it's not a clear answer 🧘‍♀️😄. Say « j'adore ! » or « c'est super, mais je vais réfléchir »." } }
            ] },
       i1: { say: [["F", "Génial ! Il y a un cours le mardi et le jeudi à 19 h. Vous préférez quel jour ?"]],
@@ -390,22 +390,22 @@
              { fr: "Avec plaisir ! Il est gentil ?", tr: "Memnuniyetle! Uslu mu?", en: "With pleasure! Is he friendly?", ok: true, go: "b" },
              { fr: "De rien ! Je promène la laisse.", tr: "Rica ederim! Tasmayı gezdiriyorum.", en: "You're welcome! I'm walking the lead.", ok: false,
                fb: { fr: "La laisse toute seule, ça va être triste 😄 ! On promène le chien : « avec plaisir ! Il est gentil ? ».", tr: "Tek başına tasma, biraz hüzünlü olur 😄! Köpek gezdirilir: « avec plaisir ! Il est gentil ? ».", en: "Just the lead on its own would be sad 😄! You walk the dog: « avec plaisir ! Il est gentil ? »." } },
-             { fr: "Bonjour, Biscuit ! Vous allez bien ?", tr: "Merhaba Biscuit! Nasılsınız?", en: "Hello, Biscuit! How are you? (formal)", ok: false,
+             { fr: "Bonjour, Biscuit ! Vous allez bien ?", tr: "Merhaba Biscuit! Nasılsınız?", en: "Hello, Biscuit! How are you?", ok: false,
                fb: { fr: "Très poli 🐶🎩😄 ! Mais à un chien, on dit « tu ». Parlez à la voisine : « avec plaisir ! Il est gentil ? ».", tr: "Çok kibar 🐶🎩😄! Ama köpeğe « tu » denir. Komşuyla konuşun: « avec plaisir ! Il est gentil ? ».", en: "Very polite 🐶🎩😄! But you say « tu » to a dog. Talk to your neighbour: « avec plaisir ! Il est gentil ? »." } }
            ] },
       b: { say: [["F", "Oh oui, très gentil ! Il a 4 ans et il adore courir. Vous revenez à quelle heure ?"]],
            choices: [
-             { fr: "Il est 11 h.", tr: "Saat 11.", en: "It's 11 o'clock.", ok: false,
+             { fr: "Il est 11 h, je reviens.", tr: "Saat 11, dönüyorum.", en: "It's 11 o'clock, I'm coming back.", ok: false,
                fb: { fr: "Il est 10 h maintenant ⏰😄 ! Elle demande l'heure du retour : « je reviens à 11 h ».", tr: "Şu an saat 10 ⏰😄! Dönüş saatini soruyor: « je reviens à 11 h ».", en: "It's 10 o'clock now ⏰😄! She's asking when you'll be back: « je reviens à 11 h »." } },
              { fr: "Je reviens à 11 h.", tr: "Saat 11'de dönerim.", en: "I'll be back at 11.", ok: true, go: "c" },
-             { fr: "Je suis 11 h.", tr: "Ben saat 11'im.", en: "I am 11 o'clock.", ok: false,
+             { fr: "Je suis 11 h, d'accord ?", tr: "Ben saat 11'im, tamam mı?", en: "I am 11 o'clock, OK?", ok: false,
                fb: { fr: "Vous êtes une horloge ? 🕚😄 On dit « je reviens à 11 h ».", tr: "Siz bir saat misiniz? 🕚😄 « Je reviens à 11 h » denir.", en: "Are you a clock? 🕚😄 You say « je reviens à 11 h »." } }
            ] },
       c: { scene: { fr: "Au parc, une petite fille arrive en courant.", tr: "Parkta küçük bir kız koşarak geliyor.", en: "In the park, a little girl comes running up." },
            say: [["K", "Oh, un chien ! Je peux le caresser ?"]],
            choices: [
              { fr: "Oui, tu peux. Doucement !", tr: "Evet, sevebilirsin. Yavaşça!", en: "Yes, you can. Gently!", ok: true, go: "d" },
-             { fr: "Oui, vous pouvez, madame.", tr: "Evet, sevebilirsiniz, hanımefendi.", en: "Yes, you may, madam.", ok: false,
+             { fr: "Oui, bien sûr, vous pouvez, madame.", tr: "Evet, tabii ki, okşayabilirsiniz hanımefendi.", en: "Yes, of course, you may, madam.", ok: false,
                fb: { fr: "« Madame » ? Elle a six ans 😄 ! Avec un enfant, on dit « tu » : « oui, tu peux ».", tr: "« Madame » mı? Altı yaşında 😄! Çocukla « tu » denir: « oui, tu peux ».", en: "« Madame »? She's six 😄! With a child, use « tu »: « oui, tu peux »." } },
              { fr: "Oui, bien sûr ! Il est très gentil.", tr: "Evet, tabii! Çok uslu.", en: "Yes, of course! He's very friendly.", ok: true, go: "d" }
            ] },
@@ -421,7 +421,7 @@
            say: [["M", "Madame ! Votre chien est dans l'eau !"]],
            choices: [
              { fr: "Oh non ! Biscuit, viens ici !", tr: "Eyvah! Biscuit, buraya gel!", en: "Oh no! Biscuit, come here!", ok: true, go: "f" },
-             { fr: "Ce n'est pas mon chien.", tr: "O benim köpeğim değil.", en: "It's not my dog.", ok: false,
+             { fr: "Oh non ! Ce n'est pas mon chien.", tr: "Ah hayır! O benim köpeğim değil.", en: "Oh no! It's not my dog.", ok: false,
                fb: { fr: "C'est vrai… mais aujourd'hui, c'est votre responsabilité 😅🐕 ! Appelez-le : « Biscuit, viens ici ! ».", tr: "Doğru… ama bugün o sizin sorumluluğunuzda 😅🐕! Onu çağırın: « Biscuit, viens ici ! ».", en: "True… but today he's your responsibility 😅🐕! Call him: « Biscuit, viens ici ! »." } },
              { fr: "Biscuit, va dans l'eau !", tr: "Biscuit, suya gir!", en: "Biscuit, go in the water!", ok: false,
                fb: { fr: "Il est déjà dans l'eau, et il est très content 💦😄 ! Dites « viens ici ! ».", tr: "Zaten suda, hem de çok mutlu 💦😄! « Viens ici ! » deyin.", en: "He's already in the water, and very happy 💦😄! Say « viens ici ! »." } }
@@ -430,7 +430,7 @@
            say: [["M", "Ha ha ! Il est tout mouillé, et vous aussi !"]],
            choices: [
              { fr: "Oui, je suis mouillée, mais il est content !", tr: "Evet, ıslandım ama o mutlu!", en: "Yes, I'm wet, but he's happy!", ok: true, go: "g" },
-             { fr: "Oui, j'ai mouillé !", tr: "Evet, ıslattım!", en: "Yes, I have wet!", ok: false,
+             { fr: "Oui, j'ai mouillé, mais il est content !", tr: "Evet, ıslattım, ama o mutlu!", en: "Yes, I have wetted, but he's happy!", ok: false,
                fb: { fr: "Pour décrire, on utilise « être » : « je suis mouillée » 💦😉.", tr: "Tarif etmek için « être » kullanılır: « je suis mouillée » 💦😉.", en: "To describe yourself, use « être »: « je suis mouillée » 💦😉." } },
              { fr: "Oui, il fait mouillé aujourd'hui.", tr: "Evet, bugün hava ıslak.", en: "Yes, it's wet weather today.", ok: false,
                fb: { fr: "Il fait beau, c'est Biscuit le coupable 🐶💦😄 ! Dites « oui, je suis mouillée ! ».", tr: "Hava güzel, suçlu Biscuit 🐶💦😄! « Oui, je suis mouillée ! » deyin.", en: "The weather's fine, Biscuit's the culprit 🐶💦😄! Say « oui, je suis mouillée ! »." } }
@@ -440,20 +440,20 @@
            choices: [
              { fr: "Merci ! Allez, Biscuit, on fait encore un tour du parc !", tr: "Teşekkürler! Hadi Biscuit, parkta bir tur daha atalım!", en: "Thanks! Come on, Biscuit, let's do another lap of the park!", ok: true, go: "h1" },
              { fr: "Merci ! Allez, Biscuit, on rentre à la maison.", tr: "Teşekkürler! Hadi Biscuit, eve dönüyoruz.", en: "Thanks! Come on, Biscuit, we're going home.", ok: true, go: "h2" },
-             { fr: "Merci ! Bonne nuit !", tr: "Teşekkürler! İyi geceler!", en: "Thanks! Good night!", ok: false,
+             { fr: "Merci ! Allez, Biscuit, bonne nuit, on rentre !", tr: "Teşekkürler! Hadi Biscuit, iyi geceler, eve dönüyoruz!", en: "Thanks! Come on, Biscuit, good night, we're going home!", ok: false,
                fb: { fr: "Il est 10 h 30 du matin 🌞😄 ! Dites « merci ! » ou « bonne journée ! ».", tr: "Saat sabah 10.30 🌞😄! « Merci ! » ya da « bonne journée ! » deyin.", en: "It's 10:30 in the morning 🌞😄! Say « merci ! » or « bonne journée ! »." } }
            ] },
       h1: { scene: { fr: "Vous faites un grand tour. Biscuit sèche au soleil. À 11 h, vous sonnez chez la voisine.", tr: "Büyük bir tur atıyorsunuz. Biscuit güneşte kuruyor. Saat 11'de komşunun zilini çalıyorsunuz.", en: "You do a big lap. Biscuit dries in the sun. At 11 you ring your neighbour's bell." },
            say: [["F", "Ah, vous êtes à l'heure ! Oh, Biscuit a l'air très fatigué !"]],
            choices: [
-             { fr: "Oui, il a fatigué.", tr: "Evet, o yorulttu.", en: "Yes, he has tired.", ok: false,
+             { fr: "Oui, il a fatigué, mais il est très content !", tr: "Evet, o yoruldu, ama çok mutlu!", en: "Yes, he has tired, but he's very happy!", ok: false,
                fb: { fr: "Pour l'état, on dit « il EST fatigué » 😉. Essayez « oui, il est fatigué, mais très content ! ».", tr: "Durum için « il EST fatigué » denir 😉. « Oui, il est fatigué, mais très content ! » deneyin.", en: "For a state, it's « il EST fatigué » 😉. Try « oui, il est fatigué, mais très content ! »." } },
              { fr: "Oui, il est fatigué, mais très content !", tr: "Evet, yorgun ama çok mutlu!", en: "Yes, he's tired, but very happy!", ok: true, go: "i" }
            ] },
       h2: { scene: { fr: "À 10 h 45, vous sonnez chez la voisine. Biscuit est encore mouillé.", tr: "Saat 10.45'te komşunun zilini çalıyorsunuz. Biscuit hâlâ ıslak.", en: "At 10:45 you ring your neighbour's bell. Biscuit is still wet." },
            say: [["F", "Déjà là ? Oh là là, Biscuit est tout mouillé !"]],
            choices: [
-             { fr: "Non, il n'est pas mouillé.", tr: "Hayır, ıslak değil.", en: "No, he's not wet.", ok: false,
+             { fr: "Non, il n'est pas mouillé. C'est la pluie !", tr: "Hayır, ıslak değil. Yağmur yüzünden!", en: "No, he's not wet. It's the rain!", ok: false,
                fb: { fr: "Il y a une petite flaque sous Biscuit… 💦😄 Dites la vérité : « oui, désolée, il adore le bassin ! ».", tr: "Biscuit'nin altında küçük bir su birikintisi var… 💦😄 Doğruyu söyleyin: « oui, désolée, il adore le bassin ! ».", en: "There's a little puddle under Biscuit… 💦😄 Tell the truth: « oui, désolée, il adore le bassin ! »." } },
              { fr: "Oui, désolée… il adore le bassin du parc !", tr: "Evet, kusura bakmayın… parktaki havuza bayılıyor!", en: "Yes, sorry… he loves the pond in the park!", ok: true, go: "i" }
            ] },
@@ -461,7 +461,7 @@
            choices: [
              { fr: "Oui, avec plaisir !", tr: "Evet, memnuniyetle!", en: "Yes, I'd love one!", ok: true, go: "fin" },
              { fr: "Non merci, c'est gentil. Une autre fois !", tr: "Hayır teşekkürler, çok naziksiniz. Başka bir zaman!", en: "No thanks, that's kind. Another time!", ok: true, go: "fin" },
-             { fr: "Oui, un café pour Biscuit !", tr: "Evet, Biscuit'ye bir kahve!", en: "Yes, a coffee for Biscuit!", ok: false,
+             { fr: "Oui, avec plaisir, et un café pour Biscuit !", tr: "Evet, memnuniyetle, bir kahve de Biscuit'e!", en: "Yes, with pleasure, and a coffee for Biscuit!", ok: false,
                fb: { fr: "Un café pour un chien ? Il va courir toute la nuit ☕🐕😄 ! Répondez pour vous : « oui, avec plaisir ».", tr: "Köpeğe kahve mi? Bütün gece koşar ☕🐕😄! Kendiniz için cevap verin: « oui, avec plaisir ».", en: "Coffee for a dog? He'd run around all night ☕🐕😄! Answer for yourself: « oui, avec plaisir »." } }
            ] },
       fin: { end: "win", say: [["F", "Merci encore ! Biscuit vous aime beaucoup, c'est sûr."]],

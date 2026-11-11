@@ -37,7 +37,7 @@
            choices: [
              { fr: "Restez assis, j'appelle le 15 tout de suite.", tr: "Oturun, hemen 15'i arıyorum.", en: "Stay seated, I'm calling 15 right away.", ok: true, go: "f" },
              { fr: "Restez assis. Je demande des glaçons au kiosque, juste là, et j'appelle le 15.", tr: "Oturun. Hemen şuradaki büfeden buz isteyip 15'i arıyorum.", en: "Stay seated. I'll ask for some ice at the kiosk just there, and call 15.", ok: true, go: "e" },
-             { fr: "Désolée, j'ai un rendez-vous. Au revoir !", tr: "Üzgünüm, randevum var. Hoşça kalın!", en: "Sorry, I have an appointment. Goodbye!", ok: false,
+             { fr: "Désolée, j'ai un rendez-vous. Restez assis, quelqu'un va venir. Au revoir !", tr: "Üzgünüm, randevum var. Oturun, biri gelir. Hoşça kalın!", en: "Sorry, I have an appointment. Stay seated, someone will come. Goodbye!", ok: false,
                fb: { fr: "Il a la tête qui tourne, on ne le laisse pas seul 🥺 ! Restez avec lui et appelez le 15 (ou le 112).", tr: "Başı dönüyor, onu yalnız bırakmayız 🥺! Yanında kalın ve 15'i (ya da 112'yi) arayın.", en: "He feels dizzy, you don't leave him alone 🥺! Stay with him and call 15 (or 112)." } }
            ] },
       e: { scene: { fr: "Le kiosque est à deux pas : vous voyez toujours l'homme. La vendeuse vous sourit.", tr: "Büfe iki adım ötede: adamı hâlâ görebiliyorsunuz. Satıcı kadın size gülümsüyor.", en: "The kiosk is a few steps away: you can still see the man. The woman selling there smiles at you." },
@@ -50,22 +50,22 @@
       e2: { say: [["F", "Oh, le pauvre ! Tenez, voilà un sac de glaçons. Vous avez appelé les secours ?"]],
            choices: [
              { fr: "Merci beaucoup ! Pas encore, je vais appeler le 15 maintenant.", tr: "Çok teşekkürler! Henüz değil, şimdi 15'i arayacağım.", en: "Thanks a lot! Not yet, I'm going to call 15 now.", ok: true, go: "f" },
-             { fr: "Non, les secours, c'est trop cher en France.", tr: "Hayır, Fransa'da acil yardım çok pahalı.", en: "No, emergency services are too expensive in France.", ok: false,
+             { fr: "Merci beaucoup ! Non, les secours, c'est trop cher en France.", tr: "Çok teşekkürler! Hayır, Fransa'da acil yardım çok pahalı.", en: "Thank you very much! No, emergency services are too expensive in France.", ok: false,
                fb: { fr: "Bonne nouvelle : appeler le 15 ou le 112, c'est gratuit 📞 ! Dites « je vais appeler le 15 maintenant ».", tr: "İyi haber: 15'i ya da 112'yi aramak ücretsiz 📞! « Je vais appeler le 15 maintenant » deyin.", en: "Good news: calling 15 or 112 is free 📞! Say « je vais appeler le 15 maintenant »." } }
            ] },
       f: { scene: { fr: "Vous restez à côté de l'homme, bien assis, et vous appelez le 15.", tr: "Adamın yanında kalıyorsunuz, o da oturuyor; 15'i arıyorsunuz.", en: "You stay next to the man, who stays seated, and call 15." },
            say: [["F2", "SAMU, j'écoute. Quelle est votre urgence ?"]],
            choices: [
-             { fr: "Bonjour, ça va bien, et vous ?", tr: "Merhaba, iyiyim, siz nasılsınız?", en: "Hello, I'm fine, and you?", ok: false,
+             { fr: "Bonjour, ça va bien, et vous ? Je suis au parc avec un homme qui est tombé.", tr: "Merhaba, iyiyim, ya siz? Düşen bir adamla parktayım.", en: "Hello, I'm fine, and you? I'm at the park with a man who fell.", ok: false,
                fb: { fr: "Très polie, mais au 15, on va droit au but 🚑 ! Dites ce qui s'est passé : « un homme est tombé… ».", tr: "Çok kibar, ama 15'te doğrudan konuya girilir 🚑! Ne olduğunu söyleyin: « un homme est tombé… ».", en: "Very polite, but on 15 you get straight to the point 🚑! Say what happened: « un homme est tombé… »." } },
-             { fr: "Il y a un problème.", tr: "Bir sorun var.", en: "There's a problem.", ok: false,
+             { fr: "Il y a un problème. Il a très mal et il a la tête qui tourne.", tr: "Bir sorun var. Çok ağrısı var ve başı dönüyor.", en: "There's a problem. He's in a lot of pain and he feels dizzy.", ok: false,
                fb: { fr: "Un peu trop mystérieux 🕵️‍♀️😄 ! Expliquez qui, quoi, où : « un homme est tombé en courant au parc… ».", tr: "Biraz fazla gizemli 🕵️‍♀️😄! Kim, ne, nerede açıklayın: « un homme est tombé en courant au parc… ».", en: "A bit too mysterious 🕵️‍♀️😄! Explain who, what, where: « un homme est tombé en courant au parc… »." } },
              { fr: "Un homme est tombé en courant au parc. Il a très mal à la cheville et il a la tête qui tourne.", tr: "Parkta bir adam koşarken düştü. Bileği çok ağrıyor ve başı dönüyor.", en: "A man fell while running in the park. His ankle really hurts and he feels dizzy.", ok: true, go: "g" }
            ] },
       g: { say: [["F2", "D'accord. Où êtes-vous exactement ?"]],
            choices: [
              { fr: "Dans le parc municipal, près de l'entrée principale, à côté du kiosque.", tr: "Belediye parkında, ana girişin yakınında, büfenin yanında.", en: "In the town park, near the main entrance, next to the kiosk.", ok: true, go: "h" },
-             { fr: "Je suis en France.", tr: "Fransa'dayım.", en: "I'm in France.", ok: false,
+             { fr: "Je suis en France, dans une ville, près d'un parc.", tr: "Fransa'dayım, bir şehirde, bir parkın yakınında.", en: "I'm in France, in a town, near a park.", ok: false,
                fb: { fr: "C'est un bon début, mais la France est un peu grande 🗺️😄 ! Donnez un repère : le parc, l'entrée, le kiosque…", tr: "İyi bir başlangıç ama Fransa biraz büyük 🗺️😄! Bir işaret verin: park, giriş, büfe…", en: "Good start, but France is a bit big 🗺️😄! Give a landmark: the park, the entrance, the kiosk…" } }
            ] },
       h: { say: [["F2", "Très bien. Il est conscient ? Il respire normalement ?"]],
@@ -78,7 +78,7 @@
            ] },
       i: { say: [["F2", "Parfait. Restez avec lui et ne lui donnez rien à manger ni à boire. Une équipe arrive dans 15 minutes."]],
            choices: [
-             { fr: "Quinze heures ? C'est très long !", tr: "On beş saat mi? Çok uzun!", en: "Fifteen hours? That's very long!", ok: false,
+             { fr: "Quinze heures ? C'est très long ! Merci, madame.", tr: "On beş saat mi? Çok uzun! Teşekkürler hanımefendi.", en: "Fifteen hours? That's very long! Thank you, madam.", ok: false,
                fb: { fr: "Pas d'inquiétude, c'est 15 MINUTES ⏱️😄 ! Répondez « d'accord, je reste avec lui ».", tr: "Merak etmeyin, 15 DAKİKA ⏱️😄! « D'accord, je reste avec lui » diye cevap verin.", en: "Don't worry, it's 15 MINUTES ⏱️😄! Answer « d'accord, je reste avec lui »." } },
              { fr: "D'accord, je lui donne un sandwich pour patienter.", tr: "Tamam, beklerken ona bir sandviç veriyorum.", en: "OK, I'll give him a sandwich while he waits.", ok: false,
                fb: { fr: "Gentil, mais elle a dit « rien à manger ni à boire » 🥪🚫. Dites simplement « d'accord, je reste avec lui ».", tr: "Nazik ama « yiyecek ya da içecek hiçbir şey vermeyin » dedi 🥪🚫. Sadece « d'accord, je reste avec lui » deyin.", en: "Kind, but she said « nothing to eat or drink » 🥪🚫. Just say « d'accord, je reste avec lui »." } },
@@ -113,7 +113,7 @@
            ] },
       b: { say: [["M", "Hmm… Madame, votre ticket n'est pas validé."]],
            choices: [
-             { fr: "Si, il est valide, regardez, il est tout neuf !", tr: "Hayır, geçerli, bakın, yepyeni!", en: "Yes it is valid, look, it's brand new!", ok: false,
+             { fr: "Si, il est valide, regardez, je l'ai acheté ce matin, il est tout neuf !", tr: "Hayır, geçerli, bakın, bu sabah aldım, yepyeni!", en: "Yes it is valid, look, I bought it this morning, it's brand new!", ok: false,
                fb: { fr: "Justement, tout neuf = jamais utilisé 😅. « Validé » = passé dans la machine. Expliquez : « j'ai oublié de le valider, pardon ».", tr: "İşte sorun da bu, yepyeni = hiç kullanılmamış 😅. « Validé » = makineden geçirilmiş. Açıklayın: « j'ai oublié de le valider, pardon ».", en: "Exactly, brand new = never used 😅. « Validé » = put through the machine. Explain: « j'ai oublié de le valider, pardon »." } },
              { fr: "C'est normal, je le garde pour demain.", tr: "Normal, yarın için saklıyorum.", en: "That's normal, I'm keeping it for tomorrow.", ok: false,
                fb: { fr: "Malin, mais vous voyagez aujourd'hui 😄🎫 ! Dans le tram, on valide à chaque montée. Dites plutôt « j'ai oublié de le valider ».", tr: "Akıllıca ama bugün yolculuk ediyorsunuz 😄🎫! Tramvayda her binişte bilet okutulur. Bunun yerine « j'ai oublié de le valider » deyin.", en: "Clever, but you're travelling today 😄🎫! On the tram you validate every time you get on. Say « j'ai oublié de le valider » instead." } },
@@ -123,7 +123,7 @@
            choices: [
              { fr: "Une amende ? Non merci, je suis allergique aux amandes !", tr: "Badem mi? Hayır teşekkürler, bademe alerjim var!", en: "An almond? No thanks, I'm allergic to almonds!", ok: false,
                fb: { fr: "Ha ha, « une amande » 🌰 se mange, « une amende » 💶 se paie ! Excusez-vous plutôt : « je suis désolée, je ne savais pas ».", tr: "Ha ha, « une amande » 🌰 yenir, « une amende » 💶 (para cezası) ödenir! Bunun yerine özür dileyin: « je suis désolée, je ne savais pas ».", en: "Ha ha, « une amande » 🌰 is eaten, « une amende » 💶 (a fine) is paid! Apologise instead: « je suis désolée, je ne savais pas »." } },
-             { fr: "Vous êtes méchant !", tr: "Çok kötüsünüz!", en: "You're mean!", ok: false,
+             { fr: "Vous êtes méchant ! Je suis en France depuis un an seulement.", tr: "Çok kötüsünüz! Sadece bir yıldır Fransa'dayım.", en: "You're mean! I've only been in France for a year.", ok: false,
                fb: { fr: "Il fait juste son travail 😬. Restez calme et polie, ça marche beaucoup mieux : « je suis désolée, je ne savais pas ».", tr: "Sadece işini yapıyor 😬. Sakin ve kibar kalın, çok daha iyi sonuç verir: « je suis désolée, je ne savais pas ».", en: "He's just doing his job 😬. Stay calm and polite, it works much better: « je suis désolée, je ne savais pas »." } },
              { fr: "Je suis vraiment désolée, je ne savais pas. Je suis en France depuis un an seulement.", tr: "Gerçekten çok üzgünüm, bilmiyordum. Sadece bir yıldır Fransa'dayım.", en: "I'm really sorry, I didn't know. I've only been in France for a year.", ok: true, go: "d" }
            ] },
@@ -144,7 +144,7 @@
            choices: [
              { fr: "Oui : est-ce qu'il existe un abonnement moins cher que les tickets ?", tr: "Evet: biletlerden daha ucuz bir abonman var mı?", en: "Yes: is there a pass that's cheaper than tickets?", ok: true, go: "g" },
              { fr: "Oui : je vais à la gare. C'est bien le bon tram ?", tr: "Evet: istasyona gidiyorum. Doğru tramvay bu mu?", en: "Yes: I'm going to the station. Is this the right tram?", ok: true, go: "g2" },
-             { fr: "Oui : vous êtes célibataire ?", tr: "Evet: bekâr mısınız?", en: "Yes: are you single?", ok: false,
+             { fr: "Oui : vous êtes célibataire ? Et c'est bien le bon tram ?", tr: "Evet: bekâr mısınız? Bir de doğru tramvay mı?", en: "Yes: are you single? And is this the right tram?", ok: false,
                fb: { fr: "Hé ! Vous êtes mariée, et lui, il travaille 😳😄. Posez plutôt une question sur le tram ou les tickets.", tr: "Hey! Siz evlisiniz, o da çalışıyor 😳😄. Bunun yerine tramvay ya da biletler hakkında bir soru sorun.", en: "Hey! You're married, and he's working 😳😄. Ask a question about the tram or tickets instead." } }
            ] },
       g: { say: [["M2", "Oui ! Il y a l'abonnement mensuel. Vous pouvez le prendre en agence ou sur l'application."]],
@@ -226,8 +226,8 @@
            ] },
       g1: { say: [["F2", "Pas de souci. Cliquez sur « mot de passe oublié » et suivez les étapes pour en créer un nouveau. Il faut votre numéro d'allocataire."]],
            choices: [
-             { fr: "D'accord. Je demande l'attestation à mon propriétaire, et je la dépose en ligne dès que je l'ai.", tr: "Tamam. Belgeyi ev sahibimden istiyorum, elime geçer geçmez internetten yüklüyorum.", en: "OK. I'll ask my landlord for the certificate and upload it as soon as I have it.", ok: true, go: "h" },
-             { fr: "D'accord, je vais oublier mon mot de passe.", tr: "Tamam, şifremi unutacağım.", en: "OK, I'm going to forget my password.", ok: false,
+             { fr: "D'accord, je vais cliquer sur « mot de passe oublié » ce soir. Merci !", tr: "Tamam, bu akşam « şifremi unuttum »a tıklayacağım. Teşekkürler!", en: "OK, I'll click on « forgotten password » tonight. Thanks!", ok: true, go: "h" },
+             { fr: "D'accord, je vais oublier mon mot de passe ce soir. Merci !", tr: "Tamam, bu akşam şifremi unutacağım. Teşekkürler!", en: "OK, I'm going to forget my password tonight. Thanks!", ok: false,
                fb: { fr: "C'est déjà fait 😄 ! Vous voulez dire « je vais cliquer sur “mot de passe oublié” ce soir ».", tr: "Zaten unuttunuz 😄! Demek istediğiniz « je vais cliquer sur “mot de passe oublié” ce soir ».", en: "You already have 😄! You mean « je vais cliquer sur “mot de passe oublié” ce soir »." } }
            ] },
       f2: { say: [["F2", "Très bien. Vous pourrez la mettre dans la boîte aux lettres à l'entrée, sans rendez-vous."]],
@@ -290,7 +290,7 @@
       d: { say: [["M", "La course commence ! Tout le monde au ravitaillement du kilomètre 5. Tu peux porter ce carton de bouteilles ?"]],
            choices: [
              { fr: "Oui, pas de problème, je suis costaude !", tr: "Evet, sorun değil, güçlüyüm!", en: "Yes, no problem, I'm strong!", ok: true, go: "e" },
-             { fr: "Oui, je le porte sur mon tête.", tr: "Evet, onu başımın üstünde taşıyorum.", en: "Yes, I'll carry it on my head.", ok: false,
+             { fr: "Oui, pas de problème, je le porte sur mon tête !", tr: "Evet, sorun değil, başımın üstünde taşırım!", en: "Yes, no problem, I'll carry it on my head!", ok: false,
                fb: { fr: "Impressionnant 😄, mais attention au genre : « la tête », donc « sur MA tête ». Et dans les bras, c'est plus facile !", tr: "Etkileyici 😄, ama cinsiyete dikkat: « la tête », yani « sur MA tête ». Hem kollarda taşımak daha kolay!", en: "Impressive 😄, but watch the gender: « la tête », so « sur MA tête ». And it's easier in your arms!" } },
              { fr: "Oui, je peux le porter… mais pas tout le camion !", tr: "Evet, onu taşıyabilirim… ama bütün kamyonu değil!", en: "Yes, I can carry it… but not the whole lorry!", ok: true, go: "e" }
            ] },
@@ -316,7 +316,7 @@
              { fr: "Une crêpe ? Désolée, on n'a que des bananes.", tr: "Krep mi? Üzgünüm, sadece muzumuz var.", en: "A crêpe? Sorry, we only have bananas.", ok: false,
                fb: { fr: "« Une crêpe » 🥞 ≠ « une crampe » (le muscle qui se bloque) 😄. Aidez-le : « asseyez-vous, je vais étirer votre mollet ».", tr: "« Une crêpe » 🥞 ≠ « une crampe » (kas krampı) 😄. Ona yardım edin: « asseyez-vous, je vais étirer votre mollet ».", en: "« Une crêpe » 🥞 ≠ « une crampe » (a cramp) 😄. Help him: « asseyez-vous, je vais étirer votre mollet »." } },
              { fr: "Asseyez-vous. Tendez la jambe, je vais vous aider à étirer le mollet.", tr: "Oturun. Bacağınızı uzatın, baldırınızı esnetmenize yardım edeceğim.", en: "Sit down. Straighten your leg, I'll help you stretch your calf.", ok: true, go: "h" },
-             { fr: "C'est normal, continuez à courir !", tr: "Normal, koşmaya devam edin!", en: "That's normal, keep running!", ok: false,
+             { fr: "C'est normal, tendez la jambe et continuez à courir !", tr: "Normal, bacağınızı uzatın ve koşmaya devam edin!", en: "That's normal, stretch your leg and keep running!", ok: false,
                fb: { fr: "Aïe, ça va empirer 😬 ! Vous connaissez le geste : asseyez-le et étirez doucement le mollet.", tr: "Ah, daha da kötüleşir 😬! Ne yapılacağını biliyorsunuz: onu oturtun ve baldırını yavaşça esnetin.", en: "Ouch, that'll make it worse 😬! You know what to do: sit him down and gently stretch the calf." } }
            ] },
       h: { say: [["M2", "Ah… ça va beaucoup mieux, merci ! Vous êtes médecin ?"]],
@@ -363,7 +363,7 @@
            choices: [
              { fr: "Un kir, volontiers ! Je n'en ai jamais goûté.", tr: "Bir kir, memnuniyetle! Hiç tatmadım.", en: "A kir, gladly! I've never tried one.", ok: true, go: "d1" },
              { fr: "Un jus de fruits, s'il vous plaît. Je ne bois pas d'alcool.", tr: "Bir meyve suyu, lütfen. Alkol içmiyorum.", en: "A fruit juice, please. I don't drink alcohol.", ok: true, go: "d2" },
-             { fr: "Je prends tout, j'ai soif !", tr: "Hepsini alıyorum, susadım!", en: "I'll have everything, I'm thirsty!", ok: false,
+             { fr: "Je prends tout, s'il vous plaît, j'ai très soif !", tr: "Hepsini alıyorum, lütfen, çok susadım!", en: "I'll have everything, please, I'm very thirsty!", ok: false,
                fb: { fr: "Un kir ET un jus ? La soirée commence fort 😄🥂 ! Choisissez une boisson : « un kir, volontiers » ou « un jus de fruits ».", tr: "Hem kir HEM meyve suyu mu? Akşam hızlı başlıyor 😄🥂! Bir içecek seçin: « un kir, volontiers » ya da « un jus de fruits ».", en: "A kir AND a juice? The evening's off to a strong start 😄🥂! Choose one drink: « un kir, volontiers » or « un jus de fruits »." } }
            ] },
       d1: { say: [["M", "C'est du vin blanc avec un peu de crème de cassis. À votre santé !"]],
@@ -395,9 +395,9 @@
            ] },
       g: { say: [["F", "Et qu'est-ce que vous faites dans la vie ?"]],
            choices: [
-             { fr: "Je fais la vie.", tr: "Hayatı yapıyorum.", en: "I do the life.", ok: false,
+             { fr: "Je fais la vie, et je voudrais reprendre des études de kiné.", tr: "Hayatı yapıyorum ve fizyoterapi okumaya geri dönmek istiyorum.", en: "I do life, and I'd like to go back to studying physio.", ok: false,
                fb: { fr: "Très philosophe 😄 ! « Qu'est-ce que vous faites dans la vie ? » = quel est votre métier. Parlez de votre travail.", tr: "Çok felsefi 😄! « Qu'est-ce que vous faites dans la vie ? » = mesleğiniz ne. İşinizden bahsedin.", en: "Very philosophical 😄! « Qu'est-ce que vous faites dans la vie ? » = what's your job. Talk about your work." } },
-             { fr: "Je travaille à l'accueil d'une salle de sport, et je voudrais reprendre des études de kiné.", tr: "Bir spor salonunun resepsiyonunda çalışıyorum ve yeniden fizyoterapi okumak istiyorum.", en: "I work at the front desk of a gym, and I'd like to go back to studying physiotherapy.", ok: true, go: "h" },
+             { fr: "Je travaille dans une salle de sport, et je voudrais reprendre des études de kiné.", tr: "Bir spor salonunda çalışıyorum ve fizyoterapi okumaya geri dönmek istiyorum.", en: "I work at a gym, and I'd like to go back to studying physio.", ok: true, go: "h" },
              { fr: "Je suis kiné dans un grand hôpital à Paris.", tr: "Paris'te büyük bir hastanede fizyoterapistim.", en: "I'm a physio in a big hospital in Paris.", ok: false,
                fb: { fr: "Un beau rêve, mais pas encore la réalité 😉. Votre diplôme n'est pas encore reconnu. Parlez de la salle de sport et de votre projet.", tr: "Güzel bir hayal ama henüz gerçek değil 😉. Diplomanız henüz tanınmadı. Spor salonundan ve planınızdan bahsedin.", en: "A lovely dream, but not reality yet 😉. Your diploma isn't recognised yet. Talk about the gym and your plan." } }
            ] },
@@ -405,15 +405,15 @@
            choices: [
              { fr: "Non merci, c'était délicieux, mais je garde de la place pour le dessert !", tr: "Hayır teşekkürler, çok lezzetliydi ama tatlıya yer bırakıyorum!", en: "No thanks, it was delicious, but I'm saving room for dessert!", ok: true, go: "i" },
              { fr: "Avec plaisir, juste un tout petit peu !", tr: "Memnuniyetle, sadece azıcık!", en: "With pleasure, just a tiny bit!", ok: true, go: "i" },
-             { fr: "Non merci, je suis pleine.", tr: "Hayır teşekkürler, doydum.", en: "No thanks, I'm full.", ok: false,
+             { fr: "Non merci, je suis pleine, mais c'était délicieux !", tr: "Hayır teşekkürler, ben gebeyim, ama çok lezzetliydi!", en: "No thanks, I'm pregnant, but it was delicious!", ok: false,
                fb: { fr: "Attention 😳 ! « Je suis pleine » se dit… d'une vache qui attend un petit 🐄. Dites « non merci, c'était délicieux, j'ai bien mangé ».", tr: "Dikkat 😳! « Je suis pleine » … yavru bekleyen bir inek için söylenir 🐄. « Non merci, c'était délicieux, j'ai bien mangé » deyin.", en: "Careful 😳! « Je suis pleine » is said… of a cow expecting a calf 🐄. Say « non merci, c'était délicieux, j'ai bien mangé »." } }
            ] },
       i: { scene: { fr: "Il est minuit. Après le fromage, la tarte et un café, vous vous levez pour partir.", tr: "Saat gece yarısı. Peynir, turta ve kahveden sonra gitmek için kalkıyorsunuz.", en: "It's midnight. After the cheese, the tart and a coffee, you get up to leave." },
            say: [["M", "Merci d'être venue ! Revenez quand vous voulez."]],
            choices: [
-             { fr: "Merci, c'était pas mal.", tr: "Teşekkürler, fena değildi.", en: "Thanks, it wasn't bad.", ok: false,
+             { fr: "Merci, c'était pas mal. La prochaine fois, je vous invite chez moi.", tr: "Teşekkürler, fena değildi. Bir dahaki sefere sizi evime davet ederim.", en: "Thanks, it wasn't bad. Next time, I'll invite you to my place.", ok: false,
                fb: { fr: "Aïe, « pas mal » sonne un peu froid après un si long dîner 😅 ! Soyez généreuse : « merci pour cette excellente soirée ! ».", tr: "Ah, « pas mal » bu kadar uzun bir yemekten sonra biraz soğuk kaçıyor 😅! Cömert olun: « merci pour cette excellente soirée ! ».", en: "Ouch, « pas mal » sounds a bit cold after such a long dinner 😅! Be generous: « merci pour cette excellente soirée ! »." } },
-             { fr: "Merci à vous pour cette excellente soirée ! La prochaine fois, je vous invite pour un repas turc.", tr: "Bu harika akşam için asıl ben teşekkür ederim! Bir dahaki sefere sizi bir Türk yemeğine davet ediyorum.", en: "Thank you for a wonderful evening! Next time, I'll invite you for a Turkish meal.", ok: true, go: "fin" }
+             { fr: "Merci pour cette excellente soirée ! La prochaine fois, repas turc chez moi !", tr: "Bu harika akşam için teşekkürler! Bir dahaki sefere bende Türk yemeği!", en: "Thanks for a wonderful evening! Next time, Turkish dinner at my place!", ok: true, go: "fin" }
            ] },
       fin: { end: "win", say: [["F", "Oh, avec plaisir ! On adore la cuisine turque. Bonne nuit, et à bientôt !"]],
              scene: { fr: "Léa vous fait un clin d'œil : « Ils t'adorent ! » Une belle soirée à la française… et bientôt à la turque ! 🍷🎉", tr: "Léa size göz kırpıyor: « Sana bayıldılar! » Fransız usulü güzel bir akşam… ve yakında Türk usulü! 🍷🎉", en: "Léa winks at you: « They love you! » A lovely French-style evening… and soon a Turkish-style one! 🍷🎉" } }

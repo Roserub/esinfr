@@ -58,4 +58,7 @@ A **node**:
 - A1: présent, futur proche, very frequent words, short sentences. A2: passé composé, imparfait, futur simple, conditionnel de politesse (« je voudrais », « pourriez-vous »), everyday vocabulary.
 - Distractors are plausible and teach something (classic traps: « je suis 25 ans », « je suis fini », « il fait froid / j'ai froid », « bonjour / bonsoir », « tu / vous », « combien / comment », « à / au / chez »…). Keep humour light and kind: she is stressed, never make her feel stupid.
 - Turkish (`tr`) must be natural Turkish; English (`en`) natural English.
-- Original content only. Check: `node tools/check-adventures.js` must print OK.
+- **No giveaways.** The app shuffles the options at every step, so order doesn't matter, but the wording must not betray the answer either:
+  - the right answer must not be the longest option most of the time: give wrong options the same length and the same polite words (« bonjour », « s'il vous plaît », « merci ») as the right one, so that only the trap itself (tu/vous, être/avoir, a wrong word…) separates them;
+  - the `tr`/`en` translation of a wrong option is a plain translation of what it says: no tags like « (yanlış) », « (wrong) », « (formal) », « (fem.) » — they give the answer away in help mode (the explanation belongs in `fb`).
+- Original content only. Check: `node tools/check-adventures.js` and `node tools/check-adventure-spoilers.js` must print OK.

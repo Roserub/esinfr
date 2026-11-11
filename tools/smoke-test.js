@@ -152,6 +152,7 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
     // Adventures: play every story to the end (one wrong answer first, then the good ones).
     const advIds = await page.evaluate(() => (window.ADVENTURES || []).map(a => a.id));
     if (advIds.length < 20) problems.push(`only ${advIds.length} adventures`);
+    const okFirst = [0, 0]; // [not first, first]: with shuffled options the right answer must not sit on top every time
     for (const id of name === "phone" ? advIds : advIds.slice(0, 2)) {
       await page.evaluate(id => { location.hash = "#/adv/" + id; }, id);
       await page.waitForSelector(".av-h");
@@ -160,10 +161,14 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
         if (await page.$("[data-gm=av-go]")) { await page.click("[data-gm=av-go]"); continue; }
         const pick = await page.evaluate(id => {
           const a = window.ADVENTURES.find(x => x.id === id), texts = [...document.querySelectorAll("[data-gm=av-pick] [lang=fr]")].map(e => e.textContent);
-          const n = Object.values(a.nodes).find(n => n.choices && n.choices.length === texts.length && n.choices.every((c, i) => c.fr === texts[i]));
-          return n ? { ok: n.choices.findIndex(c => c.ok), bad: n.choices.findIndex(c => !c.ok && !c.go) } : null;
+          // options are shown shuffled: find the step by its set of options, then use the original index (data-i)
+          const key = l => l.slice().sort().join("|");
+          const n = Object.values(a.nodes).find(n => n.choices && key(n.choices.map(c => c.fr)) === key(texts));
+          const okPos = [...document.querySelectorAll("[data-gm=av-pick]")].findIndex(b => n && n.choices[+b.dataset.i].ok);
+          return n ? { ok: n.choices.findIndex(c => c.ok), bad: n.choices.findIndex(c => !c.ok && !c.go), okPos } : null;
         }, id);
         if (!pick) { problems.push(`${name}: adventure ${id} lost its node`); break; }
+        if (!triedWrong) okFirst[pick.okPos === 0 ? 1 : 0]++;
         if (!triedWrong && pick.bad >= 0) { triedWrong = true; await page.click(`[data-gm=av-pick][data-i="${pick.bad}"]`); if (!(await page.$(".av-fb"))) problems.push(`${name}: adventure ${id} shows no feedback`); }
         await page.click(`[data-gm=av-pick][data-i="${pick.ok}"]`);
       }
@@ -171,6 +176,7 @@ const SIZES = { phone: { width: 375, height: 760 }, ipad: { width: 820, height: 
       const over = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
       if (over > 1) problems.push(`${name}: adventure ${id}: horizontal overflow ${over}px`);
     }
+    if (name === "phone" && okFirst[1] > 0.7 * (okFirst[0] + okFirst[1])) problems.push(`adventures: right answer shown first ${okFirst[1]}/${okFirst[0] + okFirst[1]} times (options not shuffled?)`);
     // Memory: match the pairs using the game's own tiles, then the sentence puzzle with the right order.
     await page.evaluate(() => { location.hash = "#/games/memory/A1"; });
     await page.waitForSelector(".mem-grid");
