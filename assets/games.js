@@ -218,7 +218,7 @@
       case "av-pick": {
         const n = curNode(), c = n.choices[+d.i]; stopAudio();
         if (c.ok) { fx("good", { from: `[data-gm=av-pick][data-i="${d.i}"]` }); AV.log.push({ me: c.fr }); advGo(c.go); return; }
-        fx("soft"); AV.mistakes++; AV.wrong[+d.i] = 1; AV.fb = +d.i;
+        fx("soft"); fx("toNext", "#av-now [data-gm=av-go], #av-now .av-fb", { first: true, delay: 200 }); AV.mistakes++; AV.wrong[+d.i] = 1; AV.fb = +d.i;
         if (c.go) AV.pending = { go: c.go, me: c.fr };
         keepScroll(() => {}); return;
       }
@@ -233,7 +233,7 @@
       case "ord-check": {
         const q = ORD.qs[ORD.i]; if (ORD.checked || ORD.picked.length < q.toks.length) return; ORD.checked = true;
         const right = ORD.picked.map(i => q.toks[i]).join(" ") === q.fr; if (right) ORD.ok++;
-        fx(right ? "good" : "soft", { from: "[data-gm=ord-check]" });
+        fx(right ? "good" : "soft", { from: "[data-gm=ord-check]" }); fx("toNext", ".ord-line");
         A().speak(q.fr); keepScroll(() => {}); return;
       }
       case "ord-next": ORD.i++; ORD.picked = []; ORD.checked = false; A().render(); window.scrollTo(0, 0); return;

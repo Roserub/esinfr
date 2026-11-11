@@ -113,6 +113,7 @@
         if (window.FX) window.FX[ok ? "good" : "soft"]({ from: `[data-bs="ans"][data-i="${Q.given}"]` });
         const S = A().S, day = A().ymd(), p = S.prac[day] || { n: 0, ok: 0 }; p.n++; if (ok) p.ok++; S.prac[day] = p;
         A().save(); A().keepY();
+        if (window.FX) window.FX.toNext(".bs-q .opt.ok");
         if (q.kind !== "listen") A().speak(sayOf(q.it));
         const nx = document.getElementById("bs-next"); if (nx) nx.focus({ preventScroll: true });
         return;

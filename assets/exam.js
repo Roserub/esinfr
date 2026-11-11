@@ -496,12 +496,12 @@
       case "check": {
         c.checked = true; stopAudio();
         const ok = it.questions.filter((q, qi) => c.sel[qi] === q.a).length;
-        saveScore(it, it.pts * ok / it.questions.length); keepScroll(() => {}); checked(ok / it.questions.length); return;
+        saveScore(it, it.pts * ok / it.questions.length); keepScroll(() => {}); checked(ok / it.questions.length); fx("toNext", ".dx-after", { delay: 450 }); return;
       }
       case "checkform": {
         $$("[data-dxf]").forEach(x => { c.fields[+x.dataset.dxf] = x.value; });
         c.checked = true; const ok = it.fields.filter((f, i) => FIELD_OK[f.k](c.fields[i] || "")).length;
-        saveScore(it, it.pts * ok / it.fields.length); keepScroll(() => {}); checked(ok / it.fields.length); return;
+        saveScore(it, it.pts * ok / it.fields.length); keepScroll(() => {}); checked(ok / it.fields.length); fx("toNext", ".dx-after", { delay: 450 }); return;
       }
       case "checktext": { const x = document.getElementById("dx-text"); if (x) c.text = x.value; c.checked = true; keepScroll(() => {}); return; }
       case "checkpo": c.checked = true; stopAudio(); keepScroll(() => {}); return;
@@ -510,9 +510,9 @@
       case "example": c.used[+d.i] = 1; keepScroll(() => {}); A().speak(it.prompts[+d.i].m); return;
       case "answered": {
         c.ok[+d.i] = 1; c.pi = +d.i + 1;
-        if (c.pi >= it.prompts.length) { saveScore(it, poScore(it, c)); keepScroll(() => {}); fx("done"); return; }
+        if (c.pi >= it.prompts.length) { saveScore(it, poScore(it, c)); keepScroll(() => {}); fx("done"); fx("toNext", ".dx-after", { delay: 450 }); return; }
         fx("good", { praise: false });
-        keepScroll(() => {}); if (it.kind === "entretien") A().speak(it.prompts[c.pi].q); return;
+        keepScroll(() => {}); fx("toNext", ".dx-po li.now, li.now", { first: true }); if (it.kind === "entretien") A().speak(it.prompts[c.pi].q); return;
       }
       case "countdown": return countdown(+d.s);
       case "dlg-next": {
@@ -526,7 +526,7 @@
         if (!FL || FL.sel != null) return;
         const q = FL.qs[FL.i].q; FL.sel = +d.o; FL.n++;
         if (FL.sel === q.a) { FL.ok++; FL.combo++; FL.maxc = Math.max(FL.maxc, FL.combo); } else { FL.combo = 0; if (FL.surv) FL.lives--; }
-        stopAudio(); keepScroll(() => {}); fx(FL.sel === q.a ? "good" : "soft", { from: `[data-dx="flash-pick"][data-o="${FL.sel}"]` }); return;
+        stopAudio(); keepScroll(() => {}); fx(FL.sel === q.a ? "good" : "soft", { from: `[data-dx="flash-pick"][data-o="${FL.sel}"]` }); fx("toNext", ".dx-opts .opt.right"); return;
       }
       case "flash-next": if (!FL || FL.sel == null) return; FL.i++; if (FL.surv && FL.lives <= 0) FL.i = FL.qs.length; FL.sel = null; A().render(); window.scrollTo(0, 0); { const n = FL.qs[FL.i]; if (n && n.it.sec === "co") setTimeout(() => playLines(n.q.audio || n.it.audio, { lv: n.it.level, glow: "[data-dx=flash-play]" }), 350); } return;
       case "flash-again": FL = null; A().render(); return;

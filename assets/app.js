@@ -968,6 +968,7 @@
     }
     EX.state = { ok, accent, given, diff };
     if (it.t !== "speak") fx(ok ? "good" : "soft"); // the voice panel already celebrated a good pronunciation
+    fx("toNext", ".ex-card .opt.ok, .ex-card .ex-form, .ex-card .fr-big", { first: true });
     const d = ymd(); const p = S.prac[d] || { n: 0, ok: 0 }; p.n++; if (ok) p.ok++; S.prac[d] = p;
     if (ok) { EX.ok++; if (it.fromErr) S.err = S.err.filter(e => e.id !== it.fromErr); }
     else if (!it.fromErr && it.t !== "speak") {
@@ -1046,6 +1047,9 @@
       logMinutes(sessionMinutes(RD.start));
     }
     save(); const y = window.scrollY; render(); window.scrollTo(0, y);
+    // Glide to the next question (or the score at the end) so she doesn't have to scroll.
+    const nextQ = r.qs.findIndex((q, i) => RD.ans[i] === undefined);
+    fx("toNext", nextQ >= 0 ? document.querySelectorAll(".rq")[nextQ] : ".rq ~ .fb", { delay: 600 });
   }
   function addGlossCards(id) {
     const r = READINGS.find(x => x.id === id); if (!r) return;
@@ -1468,7 +1472,7 @@
     }
     if (d.delword !== undefined) { const c = S.mine[+d.delword]; if (c) { delete S.cards[c.id]; S.mine.splice(+d.delword, 1); save(); render(); } return; }
     switch (d.action) {
-      case "flip": SESSION.flipped = true; fx("flip"); render(); break;
+      case "flip": SESSION.flipped = true; fx("flip"); render(); fx("toNext", ".grade", { delay: 120 }); break;
       case "ex-next": exNext(); break;
       case "stop-speak": SEQ++; TTS.stop(); break;
       case "pl-slow": SLOW = !SLOW; if (PL) { const k = PL.key; TTS.stop(); speakAll(k); } keepY(); break;

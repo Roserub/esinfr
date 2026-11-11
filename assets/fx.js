@@ -240,6 +240,26 @@
     // A whole level finished.
     level(text) { sound("level"); confetti(140); fireworks(6); starRain(40); setTimeout(() => confetti(60), 900); banner("🏆", text); haptic([30, 50, 30, 50, 40]); },
     reset() { streak = 0; best = 0; chip(); },
+    // Gently brings the next useful thing into view after an answer (the next question, the "Continue" button…),
+    // only when it is hidden: below the screen, under the tab bar or under the bottom feedback sheet. No jump when it
+    // is already visible, a small smooth glide otherwise (instant when the system asks for reduced motion).
+    toNext(sel, o) {
+      o = o || {};
+      const run = () => {
+        const el = typeof sel === "string" ? Array.from(document.querySelectorAll(sel)).filter(x => x.getClientRects().length).slice(o.first ? 0 : -1)[0] : sel;
+        if (!el) return;
+        const r = el.getBoundingClientRect(), sheet = el.closest(".fb.sheet") ? null : document.querySelector(".fb.sheet");
+        const bar = document.querySelector(".tabbar"), barTop = bar && getComputedStyle(bar).position === "fixed" && bar.getBoundingClientRect().width > bar.getBoundingClientRect().height ? bar.getBoundingClientRect().top : innerHeight;
+        const tb = document.querySelector(".topbar"), top = Math.max(0, tb ? tb.getBoundingClientRect().bottom : 0) + 12;
+        const bottom = Math.min(barTop, sheet ? sheet.getBoundingClientRect().top : innerHeight) - 16;
+        let dy = 0;
+        if (r.bottom > bottom) dy = r.bottom - bottom;          // hidden below: glide down just enough
+        if (r.top - dy < top) dy = r.top - top;                 // but never push its top out of sight
+        if (Math.abs(dy) < 8) return;
+        window.scrollBy({ top: dy, behavior: calm() ? "auto" : "smooth" });
+      };
+      setTimeout(run, o.delay != null ? o.delay : 260); // after the redraw and the first bounce
+    },
     get best() { return best; },
     // A fixed praise word for question i (stays the same when the screen is redrawn).
     word(i) { return PRAISE[Math.abs(i || 0) % PRAISE.length]; },
