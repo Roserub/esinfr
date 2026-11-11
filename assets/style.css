@@ -1240,3 +1240,184 @@ h2 { font-size: 1.42rem; }
 .opt { font-size: 1.08rem; }
 .ex-tile small, .av-tile small, .av-home small, .dx-tile small, .read-tile small { font-size: .84rem; line-height: 1.4; }
 @media (max-width: 430px) { .lang-switch button { font-size: .74rem; } }
+
+/* ── Launch splash (index.html): Moody greets while the app loads. Ears are animated by the inline script. ── */
+#splash { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; background: var(--bg); cursor: pointer;
+  transition: opacity .34s ease, visibility .34s; -webkit-tap-highlight-color: transparent; }
+html.splashing, html.splashing body { overflow: hidden; }
+#splash .sp-in { display: flex; flex-direction: column; align-items: center; gap: 10px; transform: translateY(-4vh); }
+#splash .sp-cat { width: min(34vw, 150px); height: auto; overflow: visible; animation: sp-pop .62s cubic-bezier(.34, 1.56, .64, 1) both; transform-origin: 50% 60%; }
+#splash .sp-paw { opacity: 0; animation: sp-paw .4s ease-out both; transform-box: fill-box; transform-origin: center; }
+#splash .sp-paw1 { animation-delay: .55s; }
+#splash .sp-paw2 { animation-delay: .78s; }
+#splash .sp-name { font-family: var(--f-head); font-size: 1.9rem; font-weight: 500; color: var(--a900); letter-spacing: .02em; animation: sp-name .5s .38s ease-out both; }
+#splash.out { opacity: 0; visibility: hidden; }
+#splash.out .sp-in { transform: translateY(-4vh) scale(1.04); transition: transform .34s ease; }
+#splash.still .sp-cat, #splash.still .sp-paw, #splash.still .sp-name { animation: none; opacity: 1; }
+@keyframes sp-pop { 0% { opacity: 0; transform: scale(.72) rotate(-6deg); } 100% { opacity: 1; transform: none; } }
+@keyframes sp-paw { 0% { opacity: 0; transform: scale(.3); } 70% { opacity: 1; transform: scale(1.18); } 100% { opacity: 1; transform: none; } }
+@keyframes sp-name { 0% { opacity: 0; transform: translateY(8px); } 100% { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { #splash, #splash.out .sp-in { transition-duration: .2s; } #splash .sp-cat, #splash .sp-paw, #splash .sp-name { animation: none; opacity: 1; } }
+
+/* ═════════════════════ Craft pass (2026-11-11): same Doucement DA, more care ═════════════════════
+   One rhythm for every screen, calmer cards, real touch feedback, clearer navigation, a little motion. */
+:root { --gap: 14px; --press: scale(.985); --ease: cubic-bezier(.2, .7, .2, 1); }
+html { scroll-padding-top: 76px; }
+body { -webkit-tap-highlight-color: transparent; }
+
+/* Page rhythm: titles, back links and the first card always sit at the same place */
+main { padding-top: 14px; }
+main h1 { margin: .15em 0 .35em; }
+main > .view > h1:first-child, main > .view > .back + h1 { margin-top: .1em; }
+main > .view > h1 + p, main > .view > h1 + .muted { margin-top: 0; max-width: 62ch; }
+main > .view > .card, main > .view > section.card { margin: 0 0 var(--gap); }
+.back { display: inline-flex; align-items: center; gap: 4px; min-height: 44px; margin: -6px 0 2px -2px; padding: 0 6px 0 2px; border-radius: var(--r-btn); text-decoration: none; }
+.back:hover { background: var(--a100); }
+
+/* Page entrance: a soft rise, staggered for the first blocks */
+.view.anim { animation: page-in .32s var(--ease) both; }
+.view.anim > * { animation: block-in .38s var(--ease) both; }
+.view.anim > :nth-child(2) { animation-delay: .03s; } .view.anim > :nth-child(3) { animation-delay: .06s; }
+.view.anim > :nth-child(4) { animation-delay: .09s; } .view.anim > :nth-child(5) { animation-delay: .12s; }
+.view.anim > :nth-child(n+6) { animation-delay: .14s; }
+@keyframes page-in { from { opacity: .4; } to { opacity: 1; } }
+@keyframes block-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+/* the feedback sheet and floating bars are positioned: never animate them with the page */
+.view.anim > .fb.sheet, .view.anim > .dx-after { animation: none; }
+
+/* Touch feedback: everything tappable answers the finger (pressed = a hair smaller, deep-blue line) */
+.btn, .chip, .tool, .quick-i, .tile, .ex-tile, .bs-tile, .read-tile, .av-tile, .av-home, .dx-tile, .deck-delf, .guide-item, .feel-btn, .lv-tab, .track, .speak, .key {
+  transition: background-color .15s, border-color .15s, color .15s, transform .12s var(--ease); }
+.btn:not([disabled]):active, .chip:active, .tool:active, .tile:active, .ex-tile:active, .bs-tile:active, .read-tile:active, .av-tile:active, .av-home:active, .dx-tile:active, .deck-delf:active, .feel-btn:active, .speak:active { transform: var(--press); }
+.quick-i:active, .guide-item:active, .lv-tab:active { transform: none; }
+.ex-tile:active, .bs-tile:active, .read-tile:active, .tile:active, .deck-delf:active, .av-tile:active, .av-home:active { border-color: var(--a700); }
+
+/* Touch targets: 44px minimum everywhere */
+.btn, .btn.small { min-height: 44px; }
+.chip { min-height: 40px; padding-left: 12px; padding-right: 12px; }
+.tool { min-height: 44px; display: inline-flex; align-items: center; }
+.icon-btn { min-width: 44px; min-height: 44px; display: inline-grid; place-items: center; border-radius: var(--r-btn); }
+.icon-btn:hover { background: var(--a100); }
+.lang-switch button { min-height: 34px; }
+
+/* Top bar: a quiet frosted strip; the hairline only shows once the page scrolls */
+.topbar { -webkit-backdrop-filter: saturate(1.4) blur(10px); backdrop-filter: saturate(1.4) blur(10px); border-bottom-color: transparent; transition: border-color .2s, box-shadow .2s; }
+html.scrolled .topbar { border-bottom-color: var(--rule); box-shadow: 0 6px 18px -14px rgba(20, 35, 45, .35); }
+.brand { border-radius: var(--r-btn); }
+.brand img { transition: transform .3s var(--ease); }
+.brand:hover img { transform: rotate(-6deg); }
+
+/* Tab bar: a short blue line marks where you are; the icon lifts a little */
+.tabbar { -webkit-backdrop-filter: saturate(1.4) blur(10px); backdrop-filter: saturate(1.4) blur(10px); }
+.tabbar a { position: relative; transition: color .15s; }
+.tabbar a::before { content: ""; position: absolute; top: 0; left: 50%; width: 28px; height: 2px; margin-left: -14px; border-radius: 0 0 2px 2px; background: var(--a); transform: scaleX(0); transition: transform .25s var(--ease); }
+.tabbar a.on::before { transform: scaleX(1); }
+.tabbar a .ti { transition: transform .25s var(--ease); }
+.tabbar a.on .ti { transform: translateY(-1px); }
+.tabbar a:active .ti { transform: scale(.9); }
+.tabbar a .ti .ic { width: 24px; height: 24px; }
+@media (min-width: 1000px) {
+  .tabbar a::before { top: 50%; left: 0; width: 2px; height: 32px; margin: -16px 0 0; border-radius: 0 2px 2px 0; transform: scaleY(0); }
+  .tabbar a.on::before { transform: scaleY(1); }
+  .tabbar a.on { background: var(--a100); }
+}
+
+/* Home: the 3×3 grid stays 3×3 on every screen (no squeezed "Bibliothèq-ue"), roomier on iPad/Mac */
+.quick-i { min-height: 92px; }
+.quick-i > span .ic { width: 24px; height: 24px; transition: transform .25s var(--ease); }
+.quick-i:active > span .ic { transform: scale(.9); }
+@media (min-width: 760px) {
+  .quick { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .quick-i { flex-direction: row; gap: 12px; min-height: 76px; justify-content: flex-start; padding: 14px 20px; }
+  .quick-i b { font-size: 1.12rem; text-align: left; }
+}
+.hero { padding-top: 4px; }
+.hero h1 { margin-bottom: 2px; }
+.goal { gap: 12px; }
+.goal-act { align-items: center; }
+.welcome .row, .welcome .row.wrap { gap: 8px; }
+.feel-btn { min-height: 76px; }
+
+/* Lists of links (More): one calm grouped list instead of eight floating boxes */
+.more-links { display: grid; grid-template-columns: 1fr; gap: 0; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface); overflow: hidden; margin: 0 0 var(--gap); }
+.more-links .card.tile { margin: 0; border: 0; border-radius: 0; border-bottom: 1px solid var(--rule); background: transparent; min-height: 58px; padding: 12px 18px; }
+.more-links .card.tile::after { content: ""; margin-left: auto; width: 8px; height: 8px; border-right: 1.5px solid var(--ink4); border-top: 1.5px solid var(--ink4); transform: rotate(45deg); flex: none; transition: transform .2s var(--ease), border-color .15s; }
+.more-links .card.tile:hover::after { border-color: var(--a700); transform: translateX(2px) rotate(45deg); }
+.more-links .card.tile:last-child { border-bottom: 0; }
+.more-links .card.tile:active { transform: none; background: var(--a200); }
+@media (min-width: 600px) {
+  .more-links { grid-template-columns: 1fr 1fr; }
+  .more-links .card.tile:nth-child(odd) { border-right: 1px solid var(--rule); }
+  .more-links .card.tile:nth-last-child(2):nth-child(odd) { border-bottom: 0; }
+}
+.guide-item { min-height: 52px; transition: color .15s; }
+.guide-item:hover { color: var(--a800); }
+
+/* Tiles (practice, basics, readings, games…): equal heights, clear title, readable caption */
+.ex-grid { gap: 12px; margin: 4px 0 var(--gap); }
+.ex-grid > .ex-tile, .ex-grid > a { margin: 0; }
+.ex-tile { min-height: 132px; padding: 16px; gap: 6px; }
+.ex-tile small, .bs-tile small, .read-tile small, .av-tile small, .av-home small { color: var(--ink3); }
+.ex-tile .ex-ic, .bs-tile .ex-ic { margin-bottom: 4px; }
+.bs-grid { gap: 12px; }
+.bs-tile { min-height: 116px; }
+.read-tile { padding: 14px 16px; }
+
+/* Filter chips: one tidy row that scrolls sideways on a phone instead of wrapping into a jumble */
+.decks-filter, .dx-switch { gap: 8px; }
+@media (max-width: 600px) {
+  .decks-filter { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-left: -16px; margin-right: -16px; padding: 2px 16px 4px; scroll-padding: 0 16px; }
+  .decks-filter::-webkit-scrollbar { display: none; }
+  .decks-filter .chip { flex: none; white-space: nowrap; }
+}
+.chip .ic { margin-right: 4px; }
+
+/* Path: the level strip fades at its edge when it scrolls, so it reads as "there is more" */
+.lv-tabs { scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); }
+.lv-tabs::-webkit-scrollbar { display: none; }
+@media (min-width: 760px) { .lv-tabs { -webkit-mask-image: none; mask-image: none; } }
+.lv-tab { min-height: 56px; transition: background-color .15s; }
+.lv-tab.on { box-shadow: inset 0 -2px 0 var(--a); }
+.step summary { border-radius: var(--r-btn); }
+
+/* Decks: card titles in the heading face, actions aligned */
+.deck h2, .deck h3 { font-family: var(--f-head); font-size: 1.28rem; font-weight: 600; line-height: 1.2; }
+.deck .row { gap: 8px; }
+.deck-delf { padding: 16px 18px; }
+.deck-delf > span:last-child { color: var(--a700); transition: transform .2s var(--ease); }
+.deck-delf:hover > span:last-child { transform: translateX(3px); }
+
+/* Progress numbers: a little more presence */
+.stat b { font-size: 2rem; line-height: 1.1; font-variant-numeric: lining-nums tabular-nums; }
+
+/* Toast: floats above the tab bar with a soft rise */
+#toast { box-shadow: 0 8px 24px -10px rgba(20, 35, 45, .45); padding: 12px 18px; }
+
+/* Text selection and scrollbars in the palette */
+::selection { background: var(--a200); color: var(--ink); }
+@media (hover: hover) and (pointer: fine) {
+  html { scrollbar-color: var(--a300) transparent; }
+}
+
+/* Empty states read as calm notes, not as missing content */
+.empty, .ex-empty, p.muted.center:only-child { text-align: center; padding: 18px 12px; color: var(--ink3); font-style: italic; }
+
+/* iPad / Mac: a slightly wider reading column, tab rail labels whole */
+@media (min-width: 1000px) {
+  main { max-width: 920px; padding-top: 22px; }
+  .hero h1 { font-size: 2.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .view.anim, .view.anim > * { animation: none !important; }
+  .btn:active, .chip:active, .tile:active, .ex-tile:active, .bs-tile:active, .read-tile:active, .av-tile:active, .av-home:active, .dx-tile:active, .deck-delf:active, .feel-btn:active, .speak:active { transform: none; }
+  .tabbar a::before, .tabbar a .ti, .brand img { transition: none; }
+}
+/* featured practice tiles share the generic ".big" class: keep their caption in the text face */
+.ex-tile.big { font-family: var(--f-body); }
+.ex-tile.big small { font-family: var(--f-body); font-size: .84rem; }
+/* Welcome card: the main way in on its own line, the two quieter choices side by side */
+@media (max-width: 520px) {
+  .welcome .row.wrap > .btn:first-child { flex: 1 1 100%; justify-content: center; }
+  .welcome .row.wrap > .btn:not(:first-child) { flex: 1 1 auto; justify-content: center; }
+}

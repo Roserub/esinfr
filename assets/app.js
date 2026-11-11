@@ -678,7 +678,7 @@
       <h2>${esc(t("more.guide"))}</h2>
       <div class="guide-list">${GUIDE.map(g => `<a class="guide-item" href="#/guide/${g.id}"><span>${g.icon}</span>${esc(loc(g.t))}</a>`).join("")}</div>
     </section>
-    <section class="grid2">
+    <section class="grid2 more-links">
       <a class="card tile" href="#/library"><span>📚</span>${esc(t("nav.library"))}</a>
       <a class="card tile" href="#/read"><span>📖</span>${esc(t("rd.title"))}</a>
       <a class="card tile" href="#/talk"><span>💬</span>${esc(t("dg.title"))}</a>
@@ -1548,6 +1548,9 @@
   window.addEventListener("storage", e => { if (e.key === KEY && e.newValue) { S = load(); if (!["practice", "cards", "exam", "games", "adv", "basics"].includes(route().parts[0])) render(); } });
   // "Skip to content": move focus to the page without touching the address (#main is not a route).
   const skip = $(".skip"); if (skip) skip.addEventListener("click", e => { e.preventDefault(); main.focus(); });
+  // Top bar hairline only once the page has scrolled (a calmer first screen).
+  { let on = false; const onScroll = () => { const s = window.scrollY > 4; if (s !== on) { on = s; document.documentElement.classList.toggle("scrolled", s); } };
+    window.addEventListener("scroll", onScroll, { passive: true }); onScroll(); }
   window.APP = { get S() { return S; }, save, render: () => render(), t, esc, loc, lang, toast, practised, logMinutes, route, speak, speakBtn, ymd, tts: TTS, playBar, chip, keepY, sessionMinutes, recap, sheetHead };
   render();
 
